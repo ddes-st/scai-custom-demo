@@ -212,3 +212,170 @@ export const Boxed = ({ fields, params, page }: TabNavigationSectionProps): JSX.
     </div>
   );
 };
+
+/* ────────────────────────────────────────────
+   Sodexo — underline tabs + split content below with asymmetric image
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <TabNavigationSectionDefaultComponent />;
+
+  const tabs = datasource.children?.results || [];
+  const firstTab = tabs[0];
+
+  return (
+    <div className={cn('component tab-navigation-section', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-12 md:py-16"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-7xl md:px-6">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-6 text-2xl font-bold md:text-3xl"
+              style={{
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+              }}
+            />
+          )}
+          {/* Tab bar with underline active state */}
+          <div
+            className="flex items-center gap-6 overflow-x-auto border-b"
+            style={{ borderColor: 'var(--brand-border, #e5e7eb)' }}
+          >
+            {tabs.map((tab, index) => (
+              <ContentSdkLink
+                key={tab.id}
+                field={tab.tabLink?.jsonValue}
+                className={cn(
+                  'relative whitespace-nowrap pb-3 text-sm font-medium transition-all',
+                  index === 0 ? '' : 'opacity-60 hover:opacity-100'
+                )}
+                style={{
+                  color: index === 0 ? 'var(--brand-primary, #283897)' : 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              >
+                <Text field={tab.tabLabel?.jsonValue} />
+                {index === 0 && (
+                  <span
+                    className="absolute bottom-0 left-0 right-0 h-0.5"
+                    style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+                  />
+                )}
+              </ContentSdkLink>
+            ))}
+          </div>
+          {/* Content area — image left, text + CTA right */}
+          {firstTab && (
+            <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
+              <div
+                className="relative min-h-[320px] overflow-hidden bg-gray-100 md:min-h-[380px]"
+                style={{ borderRadius: '60px 3px 3px 3px' }}
+              >
+                <div className="absolute inset-0 flex items-center justify-center text-sm opacity-30">
+                  Image
+                </div>
+              </div>
+              <div>
+                <h3
+                  className="text-xl font-bold md:text-2xl"
+                  style={{
+                    color: 'var(--brand-fg, #2a295c)',
+                    fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+                  }}
+                >
+                  <Text field={firstTab.tabLabel?.jsonValue} />
+                </h3>
+                <p
+                  className="mt-3 text-sm leading-relaxed opacity-70 md:text-base"
+                  style={{
+                    color: 'var(--brand-fg, #2a295c)',
+                    fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  }}
+                >
+                  Discover how we serve this industry with tailored food and facilities management solutions.
+                </p>
+                <ContentSdkLink
+                  field={firstTab.tabLink?.jsonValue}
+                  className="mt-6 inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{
+                    backgroundColor: 'var(--brand-primary, #283897)',
+                    borderRadius: '3px 3px 3px 16px',
+                  }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Sodexo — underline tabs, split content below
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <TabNavigationSectionDefaultComponent />;
+
+  const tabs = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component tab-navigation-section', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-12 md:py-16"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-7xl">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-8 text-2xl font-bold sm:text-3xl"
+              style={{
+                color: 'var(--brand-primary, #283897)',
+                fontFamily: 'var(--brand-heading-font, inherit)',
+              }}
+            />
+          )}
+          <div className="flex gap-6 overflow-x-auto border-b" style={{ borderColor: 'var(--brand-border, #e0dff0)' }}>
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                className={cn(
+                  'shrink-0 pb-3 text-sm font-medium transition-colors',
+                  index === 0
+                    ? 'border-b-2 border-[var(--brand-primary,#283897)] text-[var(--brand-primary,#283897)]'
+                    : 'text-[var(--brand-fg,#2a295c)] opacity-60 hover:opacity-100'
+                )}
+                style={{ fontFamily: 'var(--brand-body-font, inherit)' }}
+              >
+                {tab.tabLabel?.jsonValue?.value || ''}
+              </button>
+            ))}
+          </div>
+          {tabs.length > 0 && (
+            <div className="mt-8">
+              <ContentSdkLink
+                field={tabs[0].tabLink?.jsonValue}
+                className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 rounded-[var(--brand-button-radius,0.25rem)]"
+                style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+              />
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};

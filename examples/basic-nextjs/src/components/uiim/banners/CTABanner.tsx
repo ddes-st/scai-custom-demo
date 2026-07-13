@@ -248,3 +248,117 @@ export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element =
     </div>
   );
 };
+
+/* ────────────────────────────────────────────
+   Sodexo — dark navy bg, image overlay, left-aligned, red CTA
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <CTABannerDefaultComponent />;
+
+  return (
+    <div className={cn('component cta-banner', styles)} id={RenderingIdentifier}>
+      <section className="relative w-full overflow-hidden" style={{ backgroundColor: '#2a295c' }}>
+        {(fields.BackgroundImage?.value?.src || isEditing) && (
+          <div className="absolute inset-0">
+            <SmartMedia
+              field={fields.BackgroundImage}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        )}
+        <div className="absolute inset-0 bg-[#2a295c]/80" />
+        <div className="relative z-10 px-6 py-16 sm:px-12 md:py-24 lg:px-20">
+          <div className="max-w-xl">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-2xl font-bold italic leading-snug text-white sm:text-3xl md:text-4xl"
+                style={{ fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-sm leading-relaxed text-white/80 md:text-base"
+                style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
+              />
+            )}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              {(fields.PrimaryLink?.value?.href || isEditing) && (
+                <ContentSdkLink
+                  field={fields.PrimaryLink}
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{
+                    backgroundColor: 'var(--brand-accent, #da2020)',
+                    borderRadius: '3px 3px 3px 16px',
+                  }}
+                />
+              )}
+              {(fields.SecondaryLink?.value?.href || isEditing) && (
+                <ContentSdkLink
+                  field={fields.SecondaryLink}
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold border border-white/40 text-white bg-transparent transition-opacity hover:opacity-70"
+                  style={{ borderRadius: '3px 3px 3px 16px' }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Sodexo — dark navy bg + background image, red CTA
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <CTABannerDefaultComponent />;
+
+  return (
+    <div className={cn('component cta-banner', styles)} id={RenderingIdentifier}>
+      <section className="relative w-full overflow-hidden px-4 py-20 md:py-28">
+        {fields.BackgroundImage?.value?.src && (
+          <SmartMedia
+            field={fields.BackgroundImage}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-[#2a295c]/80" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="max-w-xl">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-3xl font-bold italic leading-tight text-white sm:text-4xl"
+                style={{ fontFamily: 'var(--brand-heading-font, inherit)' }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base leading-relaxed text-white/90"
+                style={{ fontFamily: 'var(--brand-body-font, inherit)' }}
+              />
+            )}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <PrimaryButton
+                field={fields.PrimaryLink}
+                isEditing={isEditing}
+                className="bg-[var(--brand-accent,#da2020)] text-white rounded-[3px_3px_3px_16px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

@@ -276,3 +276,130 @@ export const IconLeft = ({ fields, params, page }: FeatureHighlightProps): JSX.E
     </div>
   );
 };
+
+/* ────────────────────────────────────────────
+   Sodexo — 50/50 split, italic heading, asymmetric-radius image
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  return (
+    <div className={cn('component feature-highlight', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-24"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2 md:gap-16 md:px-6">
+          {/* Text side */}
+          <div>
+            {(fields.EyebrowText?.value || isEditing) && (
+              <Text
+                field={fields.EyebrowText}
+                tag="span"
+                className="mb-3 inline-block text-xs font-semibold uppercase tracking-wider"
+                style={{ color: 'var(--brand-primary, #283897)' }}
+              />
+            )}
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-2xl font-bold italic leading-snug sm:text-3xl md:text-4xl"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+                }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-sm leading-relaxed opacity-80 md:text-base"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70"
+                style={{ color: 'var(--brand-primary, #283897)' }}
+              />
+            )}
+          </div>
+          {/* Image side — Sodexo asymmetric border-radius */}
+          <div
+            className="relative h-full min-h-[360px] overflow-hidden md:min-h-[440px]"
+            style={{ borderRadius: '60px 3px 3px 3px' }}
+          >
+            {(fields.FeatureImage?.value?.src || isEditing) && (
+              <SmartMedia
+                field={fields.FeatureImage}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   Sodexo — 50/50 split, asymmetric image corners
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  return (
+    <div className={cn('component feature-highlight', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full px-4 py-16 md:py-24"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:px-6">
+          <div>
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-2xl font-bold italic leading-tight sm:text-3xl"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-heading-font, inherit)',
+                }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base leading-relaxed"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, inherit)',
+                }}
+              />
+            )}
+            <CtaButton field={fields.PrimaryLink} isEditing={isEditing} />
+          </div>
+          <div className="overflow-hidden rounded-[60px_3px_3px_3px]">
+            {fields.FeatureImage?.value?.src && (
+              <SmartMedia
+                field={fields.FeatureImage}
+                className="h-full w-full object-cover"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
