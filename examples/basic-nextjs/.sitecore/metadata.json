@@ -1,0 +1,15 @@
+{
+  "packages": {
+    "@sitecore-content-sdk/analytics-core": "2.1.0",
+    "@sitecore-content-sdk/cli": "2.1.0",
+    "@sitecore-content-sdk/content": "2.1.0",
+    "@sitecore-content-sdk/core": "2.1.0",
+    "@sitecore-content-sdk/events": "2.1.0",
+    "@sitecore-content-sdk/nextjs": "2.1.0",
+    "@sitecore-content-sdk/personalize": "2.1.0",
+    "@sitecore-content-sdk/react": "2.1.0",
+    "@sitecore-content-sdk/search": "0.3.0",
+    "@sitecore-feaas/clientside": "0.6.4",
+    "@sitecore/byoc": "0.3.3"
+  }
+}

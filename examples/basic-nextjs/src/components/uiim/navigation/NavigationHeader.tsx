@@ -10,6 +10,7 @@ import {
   Text,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 
@@ -295,94 +296,304 @@ export const Transparent = ({ fields, params, page }: NavigationHeaderProps): JS
 };
 
 /* ────────────────────────────────────────────
-   Sodexo — white bg, primary nav with chevrons, utility links uppercase, search icon
+   Sodexo — utility bar, primary nav with mega-menus, uppercase utility links, search icon
    ──────────────────────────────────────────── */
-export const Sodexo = ({ fields, params, page }: NavigationHeaderProps): JSX.Element => {
+const SODEXO_PRIMARY_ORDER = ['What we do', 'Sustainability', 'Insights', 'Careers', 'About Us'];
+const SODEXO_UTILITY_ORDER = ['Investors', 'Newsroom'];
+
+interface SodexoMegaMenuContent {
+  description: string;
+  links: string[];
+  image: string;
+  secondaryCta?: { heading: string; subtext: string; ctaLabel: string };
+}
+
+const SODEXO_MEGA_MENU_CONTENT: Record<string, SodexoMegaMenuContent> = {
+  'What we do': {
+    description:
+      'Taking a strategic approach to delivering industry-leading services for clients across sectors worldwide — from food, hospitality and facilities management to procurement services.',
+    links: ['Where we operate', 'Services', 'Food brands'],
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106413-section3-img1?v=d480f54d',
+  },
+  Sustainability: {
+    description:
+      'Embedded into operations, driving measurable, meaningful results for clients, consumers and communities – this is how we define business sustainability. Explore our reports, roadmaps, partnerships, and results.',
+    links: ['Our commitment to sustainability', 'For our people', 'For our clients', 'For the planet and society'],
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106461-section4-img6?v=b0b2d3d8',
+    secondaryCta: {
+      heading: 'Stop Hunger 2024 Impact Report',
+      subtext: "Inspiring stories, lasting impact. Discover Stop Hunger's 2024 Impact Report",
+      ctaLabel: 'Read the report',
+    },
+  },
+  Insights: {
+    description:
+      'The latest research-led reports, analysis and expert opinion from around the world – helping business leaders make informed decisions across industries. From future-facing digital solutions transforming the workplace to sector-specific deep dives into the trends and challenges ahead.',
+    links: [
+      'View all latest insights',
+      'Research & reports',
+      'Food and culinary trends',
+      'Workplace experience',
+      'Innovation',
+      'Sustainability',
+      'Career stories',
+    ],
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106439-section3-img4?v=b3ec3d50',
+    secondaryCta: {
+      heading: 'Watch the replay of Cook for Change! 2026',
+      subtext: "Find out the winners of this year's competition in the replay of the YouTube Live.",
+      ctaLabel: 'Watch now',
+    },
+  },
+  Careers: {
+    description:
+      'Finding a career which is more than a job and becoming part of something greater with Sodexo. Learn more about our jobs, benefits, culture and employee career stories.',
+    links: ['More than a job', 'Find a job', 'Culture & belonging', 'Employee career stories', 'Global employee benefits program (Vita)'],
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106479-section6-img8?v=81b54824',
+  },
+  'About Us': {
+    description:
+      'Serving clients all over the world with industry-leading food and facilities management services. Get to know Sodexo – from our leadership team and history to awards and accolades.',
+    links: [
+      'Sodexo in Brief',
+      'Our mission and ambition',
+      'Sodexo Global Executive Team',
+      'Board of Directors',
+      'Our Innovation Approach',
+      'Our History',
+      'Our Awards',
+    ],
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106449-section3-img5?v=409a0f3e',
+    secondaryCta: {
+      heading: 'Integrated Report Fiscal 2025',
+      subtext: 'Discover how we are creating a better everyday in our report.',
+      ctaLabel: 'Download the report',
+    },
+  },
+};
+
+const SodexoLogo = () => (
+  <Link href="/" className="flex items-center gap-1" aria-label="Sodexo">
+    <span className="flex items-center text-2xl font-bold italic" style={{ color: 'var(--brand-primary, #283897)' }}>
+      sodexo
+      <svg width="12" height="12" viewBox="0 0 24 24" className="mb-3 -ml-0.5">
+        <path
+          d="M12 0l1.8 6.6L18 2.4l-2.4 6L22 6l-4.2 4.8L24 12l-6.2 1.2L22 18l-6-1.6L18 22.4 13.5 18l-1.5 6-1.5-6L6 22.4l2.4-6.2L2 18l4.5-4.8L0 12l6.2-.8L2 6l6 1.8L6 6.6l4.2 4.2L12 0z"
+          fill="var(--brand-accent, #da2020)"
+        />
+      </svg>
+    </span>
+  </Link>
+);
+
+const SodexoUtilityBar = () => (
+  <div className="hidden border-b lg:block" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}>
+    <div className="mx-auto flex max-w-7xl items-center justify-end gap-5 px-6 py-1.5 text-xs">
+      <a href="#" className="font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+        Contact Us
+      </a>
+      <a href="#" className="flex items-center gap-1 font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" />
+          <circle cx="12" cy="10" r="2.5" />
+        </svg>
+        Location
+      </a>
+      <div className="flex items-center gap-1.5 font-semibold">
+        <button type="button" className="opacity-40 transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+          FR
+        </button>
+        <span className="opacity-30" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+          /
+        </span>
+        <button type="button" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+          EN
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const SodexoMegaMenuLink = ({ link }: { link: string }) => (
+  <a
+    href="#"
+    className="flex items-start justify-between gap-3 text-sm font-semibold transition-opacity hover:opacity-70"
+    style={{ color: 'var(--brand-fg, #2a295c)' }}
+  >
+    <span>{link}</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent, #da2020)" strokeWidth="2.5" className="mt-0.5 shrink-0">
+      <polyline points="9 6 15 12 9 18" />
+    </svg>
+  </a>
+);
+
+const SodexoMegaMenu = ({ label, onClose }: { label: string; onClose: () => void }) => {
+  const content = SODEXO_MEGA_MENU_CONTENT[label];
+  if (!content) return null;
+  return (
+    <div
+      className="absolute left-0 right-0 top-full hidden border-b shadow-lg lg:block"
+      style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}
+    >
+      <div className="relative mx-auto max-w-7xl px-6 py-10">
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-6 top-6 flex h-6 w-6 items-center justify-center transition-opacity hover:opacity-70"
+          style={{ color: 'var(--brand-fg, #2a295c)' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div className="grid grid-cols-3 gap-10">
+          <div>
+            <h3 className="mb-3 text-2xl font-bold" style={{ color: 'var(--brand-accent, #da2020)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}>
+              {label}
+            </h3>
+            <p className="max-w-xs text-sm leading-relaxed" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
+              {content.description}
+            </p>
+          </div>
+          <div className="flex flex-col gap-5 pr-6">
+            {content.links.map((link) => (
+              <SodexoMegaMenuLink key={link} link={link} />
+            ))}
+          </div>
+          <div>
+            <div className="relative overflow-hidden" style={{ borderRadius: '32px 3px 3px 3px', minHeight: '180px' }}>
+              <Image src={content.image} alt={label} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            </div>
+            {content.secondaryCta && (
+              <div className="mt-4">
+                <p
+                  className="text-sm font-bold"
+                  style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
+                >
+                  {content.secondaryCta.heading}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed opacity-70" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
+                  {content.secondaryCta.subtext}
+                </p>
+                <a
+                  href="#"
+                  className="mt-3 inline-flex items-center gap-2 border px-4 py-2 text-xs font-bold transition-opacity hover:opacity-70"
+                  style={{ borderColor: 'var(--brand-border, #d8d6e8)', color: 'var(--brand-fg, #2a295c)', borderRadius: '4px' }}
+                >
+                  {content.secondaryCta.ctaLabel}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="5" y1="19" x2="19" y2="5" />
+                    <polyline points="9 5 19 5 19 15" />
+                  </svg>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
-  const isEditing = page?.mode?.isEditing;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <NavigationHeaderDefaultComponent />;
 
   const links = datasource.children?.results || [];
-  const brandLogo = datasource.brandLogo?.jsonValue;
-  const primaryLinks = links.slice(0, 5);
-  const utilityLinks = links.slice(5);
+  const byName = (name: string) => links.find((l) => l.linkText?.jsonValue?.value === name);
+  const primaryLinks = SODEXO_PRIMARY_ORDER.map(byName).filter(Boolean) as NavigationLinkFields[];
+  const utilityLinks = SODEXO_UTILITY_ORDER.map(byName).filter(Boolean) as NavigationLinkFields[];
+  const activeLabel = primaryLinks.find((l) => l.linkText?.jsonValue?.value === activeMenu)?.linkText?.jsonValue?.value;
 
   return (
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
-      <header
-        className="w-full border-b"
-        style={{
-          backgroundColor: '#ffffff',
-          borderColor: 'var(--brand-border, #e0dff0)',
-        }}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-          {/* Logo */}
-          <Logo brandLogo={brandLogo} />
+      <header className="relative w-full" style={{ backgroundColor: '#ffffff' }}>
+        <SodexoUtilityBar />
+        <div
+          className="border-b"
+          style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+        >
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+            <SodexoLogo />
 
-          {/* Primary nav */}
-          <nav className="hidden items-center gap-5 lg:flex">
-            {primaryLinks.map((item, index) => (
-              <ContentSdkLink
-                key={item.id}
-                field={item.linkUrl?.jsonValue}
-                className={cn(
-                  'relative flex items-center gap-1 pb-0.5 text-sm font-medium transition-opacity hover:opacity-70',
-                  index === 0 && 'border-b-2'
-                )}
-                style={{
-                  color: 'var(--brand-fg, #2a295c)',
-                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-                  ...(index === 0 ? { borderColor: 'var(--brand-accent, #da2020)' } : {}),
-                }}
-              >
-                {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </ContentSdkLink>
-            ))}
-          </nav>
+            {/* Primary nav */}
+            <nav className="hidden items-center gap-5 lg:flex">
+              {primaryLinks.map((item) => {
+                const label = item.linkText?.jsonValue?.value || '';
+                const isActive = activeMenu === label;
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => setActiveMenu(isActive ? null : label)}
+                    className="relative flex items-center gap-1 pb-0.5 text-sm font-medium transition-opacity hover:opacity-70"
+                    style={{
+                      color: 'var(--brand-fg, #2a295c)',
+                      fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                      borderBottom: isActive ? '2px solid var(--brand-accent, #da2020)' : '2px solid transparent',
+                    }}
+                  >
+                    <Text field={item.linkText?.jsonValue} />
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className={cn('transition-transform', isActive && 'rotate-180')}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                );
+              })}
+            </nav>
 
-          {/* Utility links + search */}
-          <div className="hidden items-center gap-4 lg:flex">
-            {utilityLinks.map((item) => (
-              <ContentSdkLink
-                key={item.id}
-                field={item.linkUrl?.jsonValue}
-                className="flex items-center gap-1 text-xs font-bold uppercase tracking-wide transition-opacity hover:opacity-70"
-                style={{
-                  color: 'var(--brand-fg, #2a295c)',
-                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-                }}
+            {/* Utility links + search */}
+            <div className="hidden items-center gap-4 lg:flex">
+              {utilityLinks.map((item) => (
+                <ContentSdkLink
+                  key={item.id}
+                  field={item.linkUrl?.jsonValue}
+                  className="flex items-center gap-1 text-xs font-bold uppercase tracking-wide transition-opacity hover:opacity-70"
+                  style={{
+                    color: 'var(--brand-primary, #283897)',
+                    fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  }}
+                >
+                  {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </ContentSdkLink>
+              ))}
+              {/* Search icon */}
+              <button
+                type="button"
+                className="ml-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+                aria-label="Search"
+                style={{ color: 'var(--brand-fg, #2a295c)' }}
               >
-                {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
-                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <polyline points="6 9 12 15 18 9" />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-              </ContentSdkLink>
-            ))}
-            {/* Search icon */}
-            <button
-              type="button"
-              className="ml-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-              aria-label="Search"
-              style={{ color: 'var(--brand-fg, #2a295c)' }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-            </button>
+              </button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <MenuButton open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
           </div>
-
-          {/* Mobile hamburger */}
-          <MenuButton open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
+          {activeLabel && <SodexoMegaMenu label={activeLabel} onClose={() => setActiveMenu(null)} />}
         </div>
-        <MobileMenu items={links} open={menuOpen} onClose={() => setMenuOpen(false)} />
+        <MobileMenu items={[...primaryLinks, ...utilityLinks]} open={menuOpen} onClose={() => setMenuOpen(false)} />
       </header>
     </div>
   );

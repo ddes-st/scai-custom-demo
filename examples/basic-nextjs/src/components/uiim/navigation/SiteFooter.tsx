@@ -346,8 +346,121 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
   );
 };
 
+const SODEXO_FOOTER_COLUMNS: { title: string; links: string[] }[] = [
+  {
+    title: 'Clients',
+    links: ['Food Services and Brands', 'Facility Management Services', 'Business insights', 'Contact Us'],
+  },
+  {
+    title: 'Investors',
+    links: [
+      'Financial Results',
+      'Financial Calendar',
+      'Integrated Report Fiscal 2025',
+      'The benefits of being a registered shareholder',
+      'Contact Us',
+    ],
+  },
+  {
+    title: 'Career seekers',
+    links: ['Working at Sodexo', 'Find a job', 'Career Stories', 'Contact Us'],
+  },
+  {
+    title: 'Press & media',
+    links: ['Newsroom', 'Business insights', 'Contact Us'],
+  },
+];
+
+const SODEXO_LEGAL_LINKS = [
+  'Terms & Conditions',
+  'Cookie Policy',
+  'Cookie Settings',
+  'Online Privacy Policy',
+  'Data Protection Policy',
+  'Vulnerability Disclosure Policy',
+];
+
+const SODEXO_SOCIAL_ICONS = [
+  {
+    label: 'X',
+    path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+  },
+  {
+    label: 'LinkedIn',
+    path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.555V9h3.564v11.452z',
+  },
+  {
+    label: 'Instagram',
+    path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z',
+  },
+  {
+    label: 'YouTube',
+    path: 'M23.498 6.186a2.966 2.966 0 00-2.088-2.088C19.692 3.5 12 3.5 12 3.5s-7.692 0-9.41.598A2.966 2.966 0 00.502 6.186 30.909 30.909 0 000 12a30.909 30.909 0 00.502 5.814 2.966 2.966 0 002.088 2.088C4.308 20.5 12 20.5 12 20.5s7.692 0 9.41-.598a2.966 2.966 0 002.088-2.088A30.909 30.909 0 0024 12a30.909 30.909 0 00-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z',
+  },
+];
+
+const SodexoLogo = ({ brandLogo }: { brandLogo?: ImageField }) => {
+  const hasImage = brandLogo?.value?.src;
+  return (
+    <Link href="/" className="flex items-center gap-1" aria-label="Sodexo">
+      {hasImage ? (
+        <ContentSdkImage field={brandLogo} className="h-7 w-auto object-contain brightness-0 invert sm:h-8" />
+      ) : (
+        <span className="flex items-center text-2xl font-bold italic text-white">
+          sodexo
+          <svg width="14" height="14" viewBox="0 0 24 24" className="mb-3 -ml-0.5">
+            <path
+              d="M12 0l1.8 6.6L18 2.4l-2.4 6L22 6l-4.2 4.8L24 12l-6.2 1.2L22 18l-6-1.6L18 22.4 13.5 18l-1.5 6-1.5-6L6 22.4l2.4-6.2L2 18l4.5-4.8L0 12l6.2-.8L2 6l6 1.8L6 6.6l4.2 4.2L12 0z"
+              fill="var(--brand-accent, #da2020)"
+            />
+          </svg>
+        </span>
+      )}
+    </Link>
+  );
+};
+
+const SodexoSharePrice = () => (
+  <div className="flex flex-col gap-1.5">
+    <span
+      className="text-[11px] font-semibold uppercase tracking-wider text-white/70"
+      style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
+    >
+      Share price
+    </span>
+    <div className="flex items-center gap-2 rounded-full bg-white px-4 py-1.5">
+      <span className="text-sm font-semibold" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+        52.70€
+      </span>
+      <span className="flex items-center gap-0.5 text-xs font-semibold" style={{ color: 'var(--brand-accent, #da2020)' }}>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+          <polyline points="4 8 12 16 20 8" />
+        </svg>
+        -0.47%
+      </span>
+    </div>
+  </div>
+);
+
+const SodexoSocialIcons = () => (
+  <div className="flex items-center gap-5">
+    {SODEXO_SOCIAL_ICONS.map((icon) => (
+      <a
+        key={icon.label}
+        href="#"
+        className="flex items-center justify-center text-white opacity-90 transition-opacity hover:opacity-100"
+        aria-label={icon.label}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d={icon.path} />
+        </svg>
+      </a>
+    ))}
+  </div>
+);
+
 /* ────────────────────────────────────────────
-   Sodexo — white background, logo left, utility links, thin top border
+   Sodexo — dark navy bg, share price widget, 4-column links, legal bar
    ──────────────────────────────────────────── */
 export const Sodexo = (props: SiteFooterProps): JSX.Element => {
   const { params } = props;
@@ -356,80 +469,72 @@ export const Sodexo = (props: SiteFooterProps): JSX.Element => {
 
   if (!params) return <SiteFooterDefaultComponent />;
 
-  const hasImage = brandLogo?.value?.src;
-
   return (
     <div className={cn('component site-footer', styles)} id={RenderingIdentifier}>
-      <footer className="w-full bg-white">
-        <div
-          className="border-t"
-          style={{ borderColor: 'var(--brand-border, #e5e7eb)' }}
-        />
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-6 sm:flex-row sm:justify-between sm:px-6">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center text-xl font-bold tracking-tight"
-            style={{ color: 'var(--brand-primary, #283897)' }}
-          >
-            {hasImage ? (
-              <ContentSdkImage
-                field={brandLogo}
-                className="h-7 w-auto object-contain sm:h-9"
-              />
-            ) : (
-              <span style={{ color: 'var(--brand-primary, #283897)' }}>Sodexo</span>
-            )}
-          </Link>
-          {/* Utility links */}
-          <nav className="flex flex-wrap items-center gap-5 text-xs" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-            {['Accessibility', 'Privacy', 'Terms of use', 'Cookies'].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="opacity-60 transition-opacity hover:opacity-100"
-                style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
-              >
-                {link}
-              </a>
-            ))}
-          </nav>
-          {/* Social icons */}
-          <div className="flex items-center gap-3">
-            {[
-              { label: 'Li', path: 'M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zM.02 24h4.96V7.99H.02V24zM8.06 7.99h4.75v2.19h.07c.66-1.25 2.27-2.57 4.68-2.57 5 0 5.93 3.29 5.93 7.57V24h-4.96v-7.82c0-1.87-.03-4.27-2.6-4.27-2.6 0-3 2.03-3 4.13V24H8.06V7.99z' },
-              { label: 'Fb', path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
-              { label: 'Ig', path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z' },
-              { label: 'Tw', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' },
-            ].map((icon) => (
-              <a
-                key={icon.label}
-                href="#"
-                className="flex h-7 w-7 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-                style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
-                aria-label={icon.label}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff">
-                  <path d={icon.path} />
-                </svg>
-              </a>
+      <footer
+        className="w-full"
+        style={{ backgroundColor: 'var(--brand-footer-bg, #2a295c)' }}
+      >
+        {/* Top bar: logo, share price, social icons */}
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <SodexoLogo brandLogo={brandLogo} />
+          <SodexoSharePrice />
+          <SodexoSocialIcons />
+        </div>
+
+        <div className="mx-auto max-w-7xl border-t px-4 sm:px-6" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
+
+        {/* Link columns */}
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {SODEXO_FOOTER_COLUMNS.map((col) => (
+              <div key={col.title}>
+                <h3
+                  className="mb-4 text-base font-bold text-white"
+                  style={{ fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
+                >
+                  {col.title}
+                </h3>
+                <ul className="space-y-3">
+                  {col.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-sm text-white/70 transition-opacity hover:text-white"
+                        style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
-        {/* Copyright line */}
-        <div
-          className="border-t px-4 py-3 text-center"
-          style={{ borderColor: 'var(--brand-border, #e5e7eb)' }}
-        >
-          <p
-            className="text-xs opacity-50"
-            style={{
-              color: 'var(--brand-fg, #2a295c)',
-              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-            }}
-          >
-            &copy; {new Date().getFullYear()} Sodexo. All rights reserved.
-          </p>
+
+        {/* Bottom legal bar */}
+        <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
+          <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-5 text-center sm:flex-row sm:justify-between sm:px-6 sm:text-left">
+            <p
+              className="text-xs text-white/60"
+              style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
+            >
+              &copy; {new Date().getFullYear()} Sodexo. All rights reserved.
+            </p>
+            <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-end">
+              {SODEXO_LEGAL_LINKS.map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="text-xs text-white/60 transition-opacity hover:text-white"
+                  style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
+                >
+                  {link}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       </footer>
     </div>
