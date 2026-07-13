@@ -25,7 +25,8 @@ import { SearchInput } from '@/lib/search/search-components/SearchInput';
 import { useEvent } from '@/lib/search/search-components/useEvent';
 import { useRouter } from '@/lib/search/search-components/useRouter';
 import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE, gridColsClass } from '@/lib/search/search-components/constants';
-import { NextImage, Link, Text, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
+import Image from 'next/image';
+import { Link, Text, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { ChevronDown, Menu, X, User } from 'lucide-react';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
@@ -44,7 +45,6 @@ import { useRouter as useRouter_718da64eaca4c1615fa5f1603d6d6260be2e7c90 } from 
 import { useDebouncedCallback } from 'src/components/search-experience/search-components/useDebounce';
 import { event, pageView } from '@sitecore-content-sdk/events';
 import { ItemCardFrame, ItemListFrame } from 'src/components/search-experience/search-components/SearchItemCommon';
-import Image from 'next/image';
 import { SearchItemTitle } from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
 import { SearchItemSummary } from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
 import { SearchItemLink } from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
@@ -164,11 +164,17 @@ const importMap = [
     ]
   },
   {
+    module: 'next/image',
+    exports: [
+      { name: 'default', value: Image },
+    ]
+  },
+  {
     module: '@sitecore-content-sdk/nextjs',
     exports: [
-      { name: 'NextImage', value: NextImage },
       { name: 'Link', value: Link },
       { name: 'Text', value: Text },
+      { name: 'NextImage', value: NextImage },
       { name: 'useSitecore', value: useSitecore },
       { name: 'RichText', value: RichText },
       { name: 'DateField', value: DateField },
@@ -290,12 +296,6 @@ const importMap = [
     exports: [
       { name: 'ItemCardFrame', value: ItemCardFrame },
       { name: 'ItemListFrame', value: ItemListFrame },
-    ]
-  },
-  {
-    module: 'next/image',
-    exports: [
-      { name: 'default', value: Image },
     ]
   },
   {

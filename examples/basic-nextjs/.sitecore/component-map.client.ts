@@ -4,12 +4,14 @@ import { BYOCClientWrapper, NextjsContentSdkComponent, FEaaSClientWrapper } from
 import { Form } from '@sitecore-content-sdk/nextjs';
 
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
+import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as LandingFAQ from 'src/components/uiim/landing/LandingFAQ';
 import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
+import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
 import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
 import * as SearchExperience from 'src/components/search-experience/SearchExperience';
@@ -42,12 +44,14 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FEaaSWrapper', FEaaSClientWrapper],
   ['Form', Form],
   ['SearchExperienceV2', { ...SearchExperienceV2 }],
+  ['TabNavigationSection', { ...TabNavigationSection }],
   ['NavigationHeader', { ...NavigationHeader }],
   ['SmartMedia', { ...SmartMedia }],
   ['LandingFAQ', { ...LandingFAQ }],
   ['NewsletterSignup', { ...NewsletterSignup }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel }],
+  ['HeroBanner', { ...HeroBanner }],
   ['ArticleHero', { ...ArticleHero }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],
   ['useSearchField', { ...useSearchField }],

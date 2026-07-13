@@ -1,4 +1,6 @@
-import React, { JSX } from 'react';
+'use client';
+
+import React, { JSX, useRef, useState } from 'react';
 import {
   Field,
   ImageField,
@@ -326,27 +328,52 @@ export const Minimal = ({ fields, params, page }: HeroBannerProps): JSX.Element 
 };
 
 /* ────────────────────────────────────────────
-   Sodexo — full-bleed image/video, left-aligned heading, play button
+   Sodexo — full-bleed autoplaying video, left-aligned heading, play/pause toggle
    ──────────────────────────────────────────── */
+const SODEXO_HERO_VIDEO_SRC =
+  'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Videos/60ans-video-banner.mp4';
+
 export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   if (!fields) return <HeroBannerDefaultComponent />;
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
       <section className="relative flex w-full items-end overflow-hidden" style={{ minHeight: '80vh' }}>
-        {(fields.HeroImage?.value?.src || isEditing) && (
-          <div className="absolute inset-0">
-            <SmartMedia
-              field={fields.HeroImage}
-              fill
-              sizes="100vw"
-              className="object-cover"
+        <div className="absolute inset-0">
+          {isEditing ? (
+            (fields.HeroImage?.value?.src || isEditing) && (
+              <SmartMedia field={fields.HeroImage} fill sizes="100vw" className="object-cover" />
+            )
+          ) : (
+            <video
+              ref={videoRef}
+              className="h-full w-full object-cover"
+              src={SODEXO_HERO_VIDEO_SRC}
+              poster={fields.HeroImage?.value?.src}
+              autoPlay
+              loop
+              muted
+              playsInline
             />
-          </div>
-        )}
+          )}
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20" style={{ paddingTop: '195px', paddingBottom: '80px' }}>
           <div className="max-w-2xl">
@@ -361,15 +388,25 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
           </div>
         </div>
         {/* Play / pause indicator — bottom-right */}
-        <button
-          type="button"
-          className="absolute bottom-6 right-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/60 bg-black/30 text-white transition-opacity hover:opacity-80"
-          aria-label="Play video"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="6,3 20,12 6,21" />
-          </svg>
-        </button>
+        {!isEditing && (
+          <button
+            type="button"
+            onClick={togglePlayback}
+            className="absolute bottom-6 right-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/60 bg-black/30 text-white transition-opacity hover:opacity-80"
+            aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          >
+            {isPlaying ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,3 20,12 6,21" />
+              </svg>
+            )}
+          </button>
+        )}
       </section>
     </div>
   );

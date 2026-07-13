@@ -1,4 +1,7 @@
-import React, { JSX } from 'react';
+'use client';
+
+import React, { JSX, useState } from 'react';
+import Image from 'next/image';
 import {
   Field,
   LinkField,
@@ -216,15 +219,51 @@ export const Boxed = ({ fields, params, page }: TabNavigationSectionProps): JSX.
 /* ────────────────────────────────────────────
    Sodexo — underline tabs + split content below with asymmetric image
    ──────────────────────────────────────────── */
+const SODEXO_TAB_CONTENT: Record<string, { description: string; image: string }> = {
+  'Business & Industries': {
+    description:
+      'Creating engaging workplaces that fuel human potential through food and hospitality services, which boost wellbeing and performance, attracting top talent.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106461-section4-img6?v=b0b2d3d8',
+  },
+  Education: {
+    description:
+      'Delivering integrated food, cleaning and facilities management services for schools and universities — creating experiences where every student feels supported, connected and ready to learn.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106449-section3-img5?v=409a0f3e',
+  },
+  Energy: {
+    description:
+      'Supporting people working in remote and complex environments with integrated food, accommodation and facilities services that keep operations safe, comfortable and running smoothly.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106429-section3-img3?v=b3caf991',
+  },
+  Healthcare: {
+    description:
+      'Integrated food, cleaning, technology and hospitality services for hospitals and care facilities — empowering healthcare teams to focus on what matters most: patient care.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106421-section3-img2?v=ee51d56f',
+  },
+  Seniors: {
+    description:
+      'Bringing consistency, care and human connection to senior living communities through dining, clinical nutrition and facilities management that help residents feel respected and truly at home.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106470-section5-img7?v=70b49ab3',
+  },
+  'Sports leisure': {
+    description:
+      'Elevating the fan and visitor experience at stadiums, arenas and leisure venues with premium catering, hospitality and facilities services for major events and everyday operations.',
+    image: 'https://ddes.sitecoresandbox.cloud/api/public/content/106413-section3-img1?v=d480f54d',
+  },
+};
+
 export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
   const datasource = fields?.data?.datasource;
+  const tabs = datasource?.children?.results || [];
+  const [activeId, setActiveId] = useState<string | undefined>(tabs[0]?.id);
+
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
 
-  const tabs = datasource.children?.results || [];
-  const firstTab = tabs[0];
+  const activeTab = tabs.find((tab) => tab.id === activeId) || tabs[0];
+  const activeContent = activeTab && SODEXO_TAB_CONTENT[activeTab.tabLabel?.jsonValue?.value || ''];
 
   return (
     <div className={cn('component tab-navigation-section', styles)} id={RenderingIdentifier}>
@@ -249,39 +288,49 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
             className="flex items-center gap-6 overflow-x-auto border-b"
             style={{ borderColor: 'var(--brand-border, #e5e7eb)' }}
           >
-            {tabs.map((tab, index) => (
-              <ContentSdkLink
-                key={tab.id}
-                field={tab.tabLink?.jsonValue}
-                className={cn(
-                  'relative whitespace-nowrap pb-3 text-sm font-medium transition-all',
-                  index === 0 ? '' : 'opacity-60 hover:opacity-100'
-                )}
-                style={{
-                  color: index === 0 ? 'var(--brand-primary, #283897)' : 'var(--brand-fg, #2a295c)',
-                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-                }}
-              >
-                <Text field={tab.tabLabel?.jsonValue} />
-                {index === 0 && (
-                  <span
-                    className="absolute bottom-0 left-0 right-0 h-0.5"
-                    style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
-                  />
-                )}
-              </ContentSdkLink>
-            ))}
+            {tabs.map((tab) => {
+              const isActive = tab.id === activeTab?.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveId(tab.id)}
+                  className={cn(
+                    'relative whitespace-nowrap pb-3 text-sm font-medium transition-all',
+                    isActive ? '' : 'opacity-60 hover:opacity-100'
+                  )}
+                  style={{
+                    color: isActive ? 'var(--brand-primary, #283897)' : 'var(--brand-fg, #2a295c)',
+                    fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  }}
+                >
+                  <Text field={tab.tabLabel?.jsonValue} />
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-0 right-0 h-0.5"
+                      style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
           {/* Content area — image left, text + CTA right */}
-          {firstTab && (
+          {activeTab && (
             <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
               <div
                 className="relative min-h-[320px] overflow-hidden bg-gray-100 md:min-h-[380px]"
                 style={{ borderRadius: '60px 3px 3px 3px' }}
               >
-                <div className="absolute inset-0 flex items-center justify-center text-sm opacity-30">
-                  Image
-                </div>
+                {activeContent?.image && (
+                  <Image
+                    src={activeContent.image}
+                    alt={activeTab.tabLabel?.jsonValue?.value || ''}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                )}
               </div>
               <div>
                 <h3
@@ -291,7 +340,7 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
                     fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
                   }}
                 >
-                  <Text field={firstTab.tabLabel?.jsonValue} />
+                  <Text field={activeTab.tabLabel?.jsonValue} />
                 </h3>
                 <p
                   className="mt-3 text-sm leading-relaxed opacity-70 md:text-base"
@@ -300,10 +349,10 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
                     fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
                   }}
                 >
-                  Discover how we serve this industry with tailored food and facilities management solutions.
+                  {activeContent?.description}
                 </p>
                 <ContentSdkLink
-                  field={firstTab.tabLink?.jsonValue}
+                  field={activeTab.tabLink?.jsonValue}
                   className="mt-6 inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{
                     backgroundColor: 'var(--brand-primary, #283897)',

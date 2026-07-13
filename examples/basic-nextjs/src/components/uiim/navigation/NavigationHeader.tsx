@@ -513,7 +513,7 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
 
   return (
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
-      <header className="relative w-full" style={{ backgroundColor: '#ffffff' }}>
+      <header className="relative z-50 w-full" style={{ backgroundColor: '#ffffff' }}>
         <SodexoUtilityBar />
         <div
           className="border-b"

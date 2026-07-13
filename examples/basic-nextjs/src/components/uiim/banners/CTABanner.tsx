@@ -250,7 +250,7 @@ export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element =
 };
 
 /* ────────────────────────────────────────────
-   Sodexo — dark navy bg, image overlay, left-aligned, red CTA
+   Sodexo — full-bleed image, readable navy gradient, left-aligned, solid navy CTA with arrow
    ──────────────────────────────────────────── */
 export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
@@ -259,7 +259,7 @@ export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element =>
 
   return (
     <div className={cn('component cta-banner', styles)} id={RenderingIdentifier}>
-      <section className="relative w-full overflow-hidden" style={{ backgroundColor: '#2a295c' }}>
+      <section className="relative w-full overflow-hidden" style={{ minHeight: '420px', backgroundColor: '#2a295c' }}>
         {(fields.BackgroundImage?.value?.src || isEditing) && (
           <div className="absolute inset-0">
             <SmartMedia
@@ -270,21 +270,27 @@ export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element =>
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-[#2a295c]/80" />
-        <div className="relative z-10 px-6 py-16 sm:px-12 md:py-24 lg:px-20">
-          <div className="max-w-xl">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(42,41,92,0.92) 0%, rgba(42,41,92,0.6) 40%, rgba(42,41,92,0.15) 75%)',
+          }}
+        />
+        <div className="relative z-10 mx-auto flex min-h-[420px] max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8">
+          <div className="max-w-lg">
             {(fields.Title?.value || isEditing) && (
               <Text
                 field={fields.Title}
                 tag="h2"
-                className="text-2xl font-bold italic leading-snug text-white sm:text-3xl md:text-4xl"
+                className="text-2xl font-bold leading-snug text-white sm:text-3xl md:text-4xl"
                 style={{ fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
               />
             )}
             {(fields.Description?.value || isEditing) && (
               <ContentSdkRichText
                 field={fields.Description}
-                className="mt-4 text-sm leading-relaxed text-white/80 md:text-base"
+                className="mt-4 text-sm leading-relaxed text-white/85 md:text-base"
                 style={{ fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}
               />
             )}
@@ -292,19 +298,31 @@ export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element =>
               {(fields.PrimaryLink?.value?.href || isEditing) && (
                 <ContentSdkLink
                   field={fields.PrimaryLink}
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
                   style={{
-                    backgroundColor: 'var(--brand-accent, #da2020)',
-                    borderRadius: '3px 3px 3px 16px',
+                    backgroundColor: 'var(--brand-primary, #283897)',
+                    borderRadius: '4px',
                   }}
-                />
+                >
+                  {fields.PrimaryLink?.value?.text || 'Learn more'}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="5" y1="19" x2="19" y2="5" />
+                    <polyline points="9 5 19 5 19 15" />
+                  </svg>
+                </ContentSdkLink>
               )}
               {(fields.SecondaryLink?.value?.href || isEditing) && (
                 <ContentSdkLink
                   field={fields.SecondaryLink}
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold border border-white/40 text-white bg-transparent transition-opacity hover:opacity-70"
-                  style={{ borderRadius: '3px 3px 3px 16px' }}
-                />
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold border border-white/50 text-white bg-transparent transition-opacity hover:opacity-70"
+                  style={{ borderRadius: '4px' }}
+                >
+                  {fields.SecondaryLink?.value?.text || 'Learn more'}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="5" y1="19" x2="19" y2="5" />
+                    <polyline points="9 5 19 5 19 15" />
+                  </svg>
+                </ContentSdkLink>
               )}
             </div>
           </div>
