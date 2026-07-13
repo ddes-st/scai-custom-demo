@@ -294,6 +294,100 @@ export const Transparent = ({ fields, params, page }: NavigationHeaderProps): JS
   );
 };
 
+/* ────────────────────────────────────────────
+   Sodexo — white bg, primary nav with chevrons, utility links uppercase, search icon
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: NavigationHeaderProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <NavigationHeaderDefaultComponent />;
+
+  const links = datasource.children?.results || [];
+  const brandLogo = datasource.brandLogo?.jsonValue;
+  const primaryLinks = links.slice(0, 5);
+  const utilityLinks = links.slice(5);
+
+  return (
+    <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
+      <header
+        className="w-full border-b"
+        style={{
+          backgroundColor: '#ffffff',
+          borderColor: 'var(--brand-border, #e0dff0)',
+        }}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+          {/* Logo */}
+          <Logo brandLogo={brandLogo} />
+
+          {/* Primary nav */}
+          <nav className="hidden items-center gap-5 lg:flex">
+            {primaryLinks.map((item, index) => (
+              <ContentSdkLink
+                key={item.id}
+                field={item.linkUrl?.jsonValue}
+                className={cn(
+                  'relative flex items-center gap-1 pb-0.5 text-sm font-medium transition-opacity hover:opacity-70',
+                  index === 0 && 'border-b-2'
+                )}
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  ...(index === 0 ? { borderColor: 'var(--brand-accent, #da2020)' } : {}),
+                }}
+              >
+                {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </ContentSdkLink>
+            ))}
+          </nav>
+
+          {/* Utility links + search */}
+          <div className="hidden items-center gap-4 lg:flex">
+            {utilityLinks.map((item) => (
+              <ContentSdkLink
+                key={item.id}
+                field={item.linkUrl?.jsonValue}
+                className="flex items-center gap-1 text-xs font-bold uppercase tracking-wide transition-opacity hover:opacity-70"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              >
+                {item.linkText?.jsonValue?.value && <Text field={item.linkText?.jsonValue} />}
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </ContentSdkLink>
+            ))}
+            {/* Search icon */}
+            <button
+              type="button"
+              className="ml-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+              aria-label="Search"
+              style={{ color: 'var(--brand-fg, #2a295c)' }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile hamburger */}
+          <MenuButton open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
+        </div>
+        <MobileMenu items={links} open={menuOpen} onClose={() => setMenuOpen(false)} />
+      </header>
+    </div>
+  );
+};
+
 export const Minimal = ({ fields, params }: NavigationHeaderProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
 
