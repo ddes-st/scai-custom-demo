@@ -375,38 +375,3 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
   );
 };
 
-/* ────────────────────────────────────────────
-   Sodexo — full-bleed hero, minimal white heading
-   ──────────────────────────────────────────── */
-export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
-  const { styles, RenderingIdentifier } = params;
-  const isEditing = page?.mode?.isEditing;
-
-  if (!fields) return <HeroBannerDefaultComponent />;
-
-  return (
-    <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
-      <section className="relative w-full overflow-hidden" style={{ minHeight: '560px' }}>
-        {fields.HeroImage?.value?.src && (
-          <SmartMedia
-            field={fields.HeroImage}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        )}
-        <div className="absolute inset-0 bg-[#2a295c]/60" />
-        <div className="relative z-10 mx-auto flex h-full min-h-[560px] max-w-7xl items-center px-6 py-[195px]">
-          <div className="max-w-2xl">
-            {(fields.Title?.value || isEditing) && (
-              <Text
-                field={fields.Title}
-                tag="h1"
-                className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
-                style={{ fontFamily: 'var(--brand-heading-font, inherit)' }}
-              />
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
