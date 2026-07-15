@@ -296,11 +296,11 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
                   type="button"
                   onClick={() => setActiveId(tab.id)}
                   className={cn(
-                    'relative whitespace-nowrap pb-3 text-sm font-medium transition-all',
-                    isActive ? '' : 'opacity-60 hover:opacity-100'
+                    'relative whitespace-nowrap pb-3 text-sm transition-all',
+                    isActive ? 'font-semibold' : 'font-medium hover:opacity-70'
                   )}
                   style={{
-                    color: isActive ? 'var(--brand-primary, #283897)' : 'var(--brand-fg, #2a295c)',
+                    color: isActive ? 'var(--brand-fg, #2a295c)' : 'var(--brand-primary, #283897)',
                     fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
                   }}
                 >
@@ -308,7 +308,7 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
                   {isActive && (
                     <span
                       className="absolute bottom-0 left-0 right-0 h-0.5"
-                      style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+                      style={{ backgroundColor: 'var(--brand-accent, #da2020)' }}
                     />
                   )}
                 </button>

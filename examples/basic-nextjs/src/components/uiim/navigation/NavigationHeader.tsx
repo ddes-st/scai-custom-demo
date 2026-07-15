@@ -1,6 +1,6 @@
 'use client';
 
-import React, { JSX, useState, useEffect } from 'react';
+import React, { JSX, useState, useEffect, useRef } from 'react';
 import {
   Field,
   ImageField,
@@ -427,69 +427,82 @@ const SodexoMegaMenuLink = ({ link }: { link: string }) => (
   </a>
 );
 
-const SodexoMegaMenu = ({ label, onClose }: { label: string; onClose: () => void }) => {
+const SodexoMegaMenu = ({
+  label,
+  animateIn,
+  onClose,
+}: {
+  label: string;
+  animateIn: boolean;
+  onClose: () => void;
+}) => {
   const content = SODEXO_MEGA_MENU_CONTENT[label];
   if (!content) return null;
   return (
-    <div
-      className="absolute left-0 right-0 top-full hidden border-b shadow-lg lg:block"
-      style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}
-    >
-      <div className="relative mx-auto max-w-7xl px-6 py-10">
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-6 top-6 flex h-6 w-6 items-center justify-center transition-opacity hover:opacity-70"
-          style={{ color: 'var(--brand-fg, #2a295c)' }}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <div className="grid grid-cols-3 gap-10">
-          <div>
-            <h3 className="mb-3 text-2xl font-bold" style={{ color: 'var(--brand-accent, #da2020)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}>
-              {label}
-            </h3>
-            <p className="max-w-xs text-sm leading-relaxed" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
-              {content.description}
-            </p>
-          </div>
-          <div className="flex flex-col gap-5 pr-6">
-            {content.links.map((link) => (
-              <SodexoMegaMenuLink key={link} link={link} />
-            ))}
-          </div>
-          <div>
-            <div className="relative overflow-hidden" style={{ borderRadius: '32px 3px 3px 3px', minHeight: '180px' }}>
-              <Image src={content.image} alt={label} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+    <div className="absolute inset-x-0 top-full z-40 hidden justify-center px-6 lg:flex">
+      <div
+        className={cn(
+          'w-full max-w-6xl origin-top rounded-b-2xl shadow-2xl transition-all duration-300 ease-in-out',
+          animateIn ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
+        )}
+        style={{ backgroundColor: 'var(--brand-muted, #f0eef8)' }}
+      >
+        <div className="relative px-12 py-16">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center transition-opacity hover:opacity-70"
+            style={{ color: 'var(--brand-fg, #2a295c)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div className="grid grid-cols-3 gap-16">
+            <div>
+              <h3 className="mb-5 text-3xl font-bold" style={{ color: 'var(--brand-accent, #da2020)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}>
+                {label}
+              </h3>
+              <p className="max-w-sm text-sm leading-relaxed" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
+                {content.description}
+              </p>
             </div>
-            {content.secondaryCta && (
-              <div className="mt-4">
-                <p
-                  className="text-sm font-bold"
-                  style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
-                >
-                  {content.secondaryCta.heading}
-                </p>
-                <p className="mt-1 text-xs leading-relaxed opacity-70" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
-                  {content.secondaryCta.subtext}
-                </p>
-                <a
-                  href="#"
-                  className="mt-3 inline-flex items-center gap-2 border px-4 py-2 text-xs font-bold transition-opacity hover:opacity-70"
-                  style={{ borderColor: 'var(--brand-border, #d8d6e8)', color: 'var(--brand-fg, #2a295c)', borderRadius: '4px' }}
-                >
-                  {content.secondaryCta.ctaLabel}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <line x1="5" y1="19" x2="19" y2="5" />
-                    <polyline points="9 5 19 5 19 15" />
-                  </svg>
-                </a>
+            <div className="flex flex-col gap-7 pr-10">
+              {content.links.map((link) => (
+                <SodexoMegaMenuLink key={link} link={link} />
+              ))}
+            </div>
+            <div>
+              <div className="relative overflow-hidden" style={{ borderRadius: '32px 3px 3px 3px', minHeight: '220px' }}>
+                <Image src={content.image} alt={label} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
               </div>
-            )}
+              {content.secondaryCta && (
+                <div className="mt-6">
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}
+                  >
+                    {content.secondaryCta.heading}
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed opacity-70" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
+                    {content.secondaryCta.subtext}
+                  </p>
+                  <a
+                    href="#"
+                    className="mt-4 inline-flex items-center gap-2 border px-4 py-2 text-xs font-bold transition-opacity hover:opacity-70"
+                    style={{ borderColor: 'var(--brand-border, #d8d6e8)', color: 'var(--brand-fg, #2a295c)', borderRadius: '4px' }}
+                  >
+                    {content.secondaryCta.ctaLabel}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="9 5 19 5 19 15" />
+                    </svg>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -501,6 +514,41 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
   const { styles, RenderingIdentifier } = params;
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  // Mega-menu mount/animation is decoupled from `activeMenu` so the closing
+  // (down-top) transition can play out before the panel unmounts.
+  const [renderedMenu, setRenderedMenu] = useState<string | null>(null);
+  const [menuAnimateIn, setMenuAnimateIn] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (activeMenu) {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
+      }
+      setRenderedMenu(activeMenu);
+      const raf = requestAnimationFrame(() => setMenuAnimateIn(true));
+      return () => cancelAnimationFrame(raf);
+    }
+    setMenuAnimateIn(false);
+    closeTimeoutRef.current = setTimeout(() => setRenderedMenu(null), 300);
+    return undefined;
+  }, [activeMenu]);
+
+  useEffect(() => {
+    if (!activeMenu) return undefined;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveMenu(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeMenu]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <NavigationHeaderDefaultComponent />;
@@ -509,7 +557,6 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
   const byName = (name: string) => links.find((l) => l.linkText?.jsonValue?.value === name);
   const primaryLinks = SODEXO_PRIMARY_ORDER.map(byName).filter(Boolean) as NavigationLinkFields[];
   const utilityLinks = SODEXO_UTILITY_ORDER.map(byName).filter(Boolean) as NavigationLinkFields[];
-  const activeLabel = primaryLinks.find((l) => l.linkText?.jsonValue?.value === activeMenu)?.linkText?.jsonValue?.value;
 
   return (
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
@@ -591,10 +638,30 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
             {/* Mobile hamburger */}
             <MenuButton open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
           </div>
-          {activeLabel && <SodexoMegaMenu label={activeLabel} onClose={() => setActiveMenu(null)} />}
+          {renderedMenu && (
+            <SodexoMegaMenu
+              label={renderedMenu}
+              animateIn={menuAnimateIn}
+              onClose={() => setActiveMenu(null)}
+            />
+          )}
         </div>
         <MobileMenu items={[...primaryLinks, ...utilityLinks]} open={menuOpen} onClose={() => setMenuOpen(false)} />
       </header>
+      {/* Dark-blue overlay between the mega-menu panel and the rest of the page.
+          Sits below the header (z-40 < header's z-50) so it never covers the nav
+          itself, and closes the panel when clicked. */}
+      {renderedMenu && (
+        <div
+          className={cn(
+            'fixed inset-0 z-40 transition-opacity duration-300 ease-in-out',
+            menuAnimateIn ? 'opacity-100' : 'pointer-events-none opacity-0'
+          )}
+          style={{ backgroundColor: 'rgba(29, 28, 71, 0.55)' }}
+          onClick={() => setActiveMenu(null)}
+          aria-hidden="true"
+        />
+      )}
     </div>
   );
 };

@@ -331,7 +331,7 @@ export const Minimal = ({ fields, params, page }: HeroBannerProps): JSX.Element 
    Sodexo — full-bleed autoplaying video, left-aligned heading, play/pause toggle
    ──────────────────────────────────────────── */
 const SODEXO_HERO_VIDEO_SRC =
-  'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Videos/60ans-video-banner.mp4';
+  'https://ddes.sitecoresandbox.cloud/api/public/content/106592-hero-video?v=0dfcc3e4';
 
 export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
@@ -355,7 +355,7 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
 
   return (
     <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
-      <section className="relative flex w-full items-end overflow-hidden" style={{ minHeight: '80vh' }}>
+      <section className="relative flex w-full items-end overflow-hidden" style={{ minHeight: '440px' }}>
         <div className="absolute inset-0">
           {isEditing ? (
             (fields.HeroImage?.value?.src || isEditing) && (
@@ -375,7 +375,7 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
           )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20" style={{ paddingTop: '195px', paddingBottom: '80px' }}>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <div className="max-w-2xl">
             {(fields.Title?.value || isEditing) && (
               <Text
@@ -387,25 +387,27 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
             )}
           </div>
         </div>
-        {/* Play / pause indicator — bottom-right */}
+        {/* Play / pause indicator — bottom-right, aligned to the same page container as the text */}
         {!isEditing && (
-          <button
-            type="button"
-            onClick={togglePlayback}
-            className="absolute bottom-6 right-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/60 bg-black/30 text-white transition-opacity hover:opacity-80"
-            aria-label={isPlaying ? 'Pause video' : 'Play video'}
-          >
-            {isPlaying ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="6" y="4" width="4" height="16" />
-                <rect x="14" y="4" width="4" height="16" />
-              </svg>
-            ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="6,3 20,12 6,21" />
-              </svg>
-            )}
-          </button>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+            <button
+              type="button"
+              onClick={togglePlayback}
+              className="pointer-events-auto ml-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/60 bg-black/30 text-white transition-opacity hover:opacity-80"
+              aria-label={isPlaying ? 'Pause video' : 'Play video'}
+            >
+              {isPlaying ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16" />
+                  <rect x="14" y="4" width="4" height="16" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6,3 20,12 6,21" />
+                </svg>
+              )}
+            </button>
+          </div>
         )}
       </section>
     </div>
