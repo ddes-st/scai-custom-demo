@@ -14,6 +14,7 @@ import * as BlogListing from 'src/components/uiim/content/BlogListing';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
+import * as SodexoArticleContent from 'src/components/uiim/article/SodexoArticleContent';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
 import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
 import * as SearchExperience from 'src/components/search-experience/SearchExperience';
@@ -56,6 +57,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel }],
   ['HeroBanner', { ...HeroBanner }],
+  ['SodexoArticleContent', { ...SodexoArticleContent }],
   ['ArticleHero', { ...ArticleHero }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],
   ['useSearchField', { ...useSearchField }],

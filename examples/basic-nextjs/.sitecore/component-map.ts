@@ -32,6 +32,7 @@ import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
+import * as SodexoArticleContent from 'src/components/uiim/article/SodexoArticleContent';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
 import * as ArticleBody from 'src/components/uiim/article/ArticleBody';
 import * as input from 'src/components/ui/input';
@@ -108,6 +109,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['CTABanner', { ...CTABanner }],
+  ['SodexoArticleContent', { ...SodexoArticleContent, componentType: 'client' }],
   ['ArticleHero', { ...ArticleHero, componentType: 'client' }],
   ['ArticleBody', { ...ArticleBody }],
   ['input', { ...input }],

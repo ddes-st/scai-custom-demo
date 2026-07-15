@@ -262,6 +262,102 @@ export const Minimal = ({ params, page }: ComponentProps): JSX.Element => {
 /* ────────────────────────────────────────────
    SplitImage — two-column: image right, title + metadata left
    ──────────────────────────────────────────── */
+/* ────────────────────────────────────────────
+   Sodexo — clean white header with brand accent category tag
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+
+  if (!routeFields) return <ArticleHeroDefaultComponent />;
+
+  const { Title: title, ArticlePublicationDate } = routeFields;
+
+  return (
+    <div className={cn('component article-hero', styles)} id={RenderingIdentifier}>
+      <header
+        className="w-full"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+        data-testid="article-hero-header"
+      >
+        <div className="mx-auto max-w-4xl px-4 pb-6 pt-10 sm:px-6 lg:px-8">
+          <nav
+            className="mb-4 flex items-center gap-1.5 text-xs"
+            style={{
+              color: 'var(--brand-fg, #2a295c)',
+              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+            }}
+          >
+            <a href="/" className="opacity-60 transition-opacity hover:opacity-100">Home</a>
+            <span className="opacity-40">&gt;</span>
+            <a href="/Articles" className="opacity-60 transition-opacity hover:opacity-100">Blog</a>
+            <span className="opacity-40">&gt;</span>
+            <span className="opacity-60">Our Everyday Stories</span>
+          </nav>
+
+          <div className="mb-3 flex items-center gap-3">
+            <span
+              className="rounded-full px-3 py-1 text-xs font-semibold"
+              style={{
+                backgroundColor: 'var(--brand-muted, #f0eef8)',
+                color: 'var(--brand-primary, #283897)',
+                fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+              }}
+            >
+              Workplace Experience
+            </span>
+            {(ArticlePublicationDate?.value || isEditing) && ArticlePublicationDate && (
+              <span
+                className="text-xs opacity-60"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              >
+                <DateField
+                  field={ArticlePublicationDate}
+                  tag="span"
+                  render={(date) =>
+                    new Date(String(date)).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    })
+                  }
+                />
+              </span>
+            )}
+          </div>
+
+          {(title?.value || isEditing) && (
+            <Text
+              field={title}
+              tag="h1"
+              className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+              style={{
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+              }}
+              data-testid="article-title"
+            />
+          )}
+
+          <p
+            className="mt-4 max-w-2xl text-base leading-relaxed opacity-70"
+            style={{
+              color: 'var(--brand-fg, #2a295c)',
+              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+            }}
+          >
+            How our global command and intelligence centers aid predictive, adaptive and efficient manufacturing.
+          </p>
+        </div>
+      </header>
+    </div>
+  );
+};
+
 export const SplitImage = ({ params, page }: ComponentProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
