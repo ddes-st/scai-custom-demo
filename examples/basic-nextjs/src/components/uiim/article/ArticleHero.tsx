@@ -263,8 +263,77 @@ export const Minimal = ({ params, page }: ComponentProps): JSX.Element => {
    SplitImage — two-column: image right, title + metadata left
    ──────────────────────────────────────────── */
 /* ────────────────────────────────────────────
-   Sodexo — clean white header with brand accent category tag
+   Sodexo — clean white header, fully data-driven
+   Breadcrumb from URL path, title / date / category from route fields
    ──────────────────────────────────────────── */
+
+function SodexoBreadcrumb() {
+  const [crumbs, setCrumbs] = React.useState<{ label: string; href: string }[]>([]);
+
+  React.useEffect(() => {
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const built: { label: string; href: string }[] = [{ label: 'Home', href: '/' }];
+    let path = '';
+    for (const seg of segments) {
+      path += `/${seg}`;
+      const label = decodeURIComponent(seg)
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+      built.push({ label, href: path });
+    }
+    setCrumbs(built);
+  }, []);
+
+  if (crumbs.length === 0) return null;
+
+  return (
+    <nav
+      className="mb-4 flex flex-wrap items-center gap-1.5 text-xs"
+      style={{
+        color: 'var(--brand-fg, #2a295c)',
+        fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+      }}
+      aria-label="Breadcrumb"
+    >
+      {crumbs.map((crumb, i) => {
+        const isLast = i === crumbs.length - 1;
+        return (
+          <React.Fragment key={crumb.href}>
+            {i > 0 && <span className="opacity-40">&gt;</span>}
+            {isLast ? (
+              <span className="font-semibold opacity-80">{crumb.label}</span>
+            ) : (
+              <a href={crumb.href} className="opacity-60 transition-opacity hover:opacity-100">
+                {crumb.label}
+              </a>
+            )}
+          </React.Fragment>
+        );
+      })}
+    </nav>
+  );
+}
+
+function extractCategoryFromTags(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  page: any
+): string | null {
+  try {
+    const tags = page?.layout?.sitecore?.route?.fields?.SxaTags;
+    if (Array.isArray(tags) && tags.length > 0) {
+      return tags[0]?.displayName || tags[0]?.name || null;
+    }
+    if (tags && typeof tags === 'object' && tags.value) {
+      if (Array.isArray(tags.value) && tags.value.length > 0) {
+        return tags.value[0]?.displayName || tags.value[0]?.name || null;
+      }
+    }
+  } catch {
+    /* graceful fallback */
+  }
+  return null;
+}
+
 export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
@@ -273,6 +342,7 @@ export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
   if (!routeFields) return <ArticleHeroDefaultComponent />;
 
   const { Title: title, ArticlePublicationDate } = routeFields;
+  const category = extractCategoryFromTags(page);
 
   return (
     <div className={cn('component article-hero', styles)} id={RenderingIdentifier}>
@@ -282,31 +352,39 @@ export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
         data-testid="article-hero-header"
       >
         <div className="mx-auto max-w-4xl px-4 pb-6 pt-10 sm:px-6 lg:px-8">
-          <nav
-            className="mb-4 flex items-center gap-1.5 text-xs"
-            style={{
-              color: 'var(--brand-fg, #2a295c)',
-              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-            }}
-          >
-            <a href="/" className="opacity-60 transition-opacity hover:opacity-100">Home</a>
-            <span className="opacity-40">&gt;</span>
-            <a href="/Articles" className="opacity-60 transition-opacity hover:opacity-100">Blog</a>
-            <span className="opacity-40">&gt;</span>
-            <span className="opacity-60">Our Everyday Stories</span>
-          </nav>
+          <SodexoBreadcrumb />
 
-          <div className="mb-3 flex items-center gap-3">
-            <span
-              className="rounded-full px-3 py-1 text-xs font-semibold"
+          {(title?.value || isEditing) && (
+            <Text
+              field={title}
+              tag="h1"
+              className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
               style={{
-                backgroundColor: 'var(--brand-muted, #f0eef8)',
-                color: 'var(--brand-primary, #283897)',
-                fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
               }}
-            >
-              Workplace Experience
-            </span>
+              data-testid="article-title"
+            />
+          )}
+
+          <div className="mt-4 flex items-center gap-3">
+            {category && (
+              <>
+                <span
+                  className="rounded-full px-3 py-1 text-xs font-semibold"
+                  style={{
+                    backgroundColor: 'var(--brand-muted, #f0eef8)',
+                    color: 'var(--brand-primary, #283897)',
+                    fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  }}
+                >
+                  {category}
+                </span>
+                <span className="text-xs opacity-30" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+                  |
+                </span>
+              </>
+            )}
             {(ArticlePublicationDate?.value || isEditing) && ArticlePublicationDate && (
               <span
                 className="text-xs opacity-60"
@@ -329,29 +407,6 @@ export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
               </span>
             )}
           </div>
-
-          {(title?.value || isEditing) && (
-            <Text
-              field={title}
-              tag="h1"
-              className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-              style={{
-                color: 'var(--brand-fg, #2a295c)',
-                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
-              }}
-              data-testid="article-title"
-            />
-          )}
-
-          <p
-            className="mt-4 max-w-2xl text-base leading-relaxed opacity-70"
-            style={{
-              color: 'var(--brand-fg, #2a295c)',
-              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
-            }}
-          >
-            How our global command and intelligence centers aid predictive, adaptive and efficient manufacturing.
-          </p>
         </div>
       </header>
     </div>

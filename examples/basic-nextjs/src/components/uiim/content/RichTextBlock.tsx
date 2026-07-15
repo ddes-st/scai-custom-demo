@@ -131,3 +131,39 @@ export const Narrow = ({ fields, params, page }: RichTextBlockProps): JSX.Elemen
     </div>
   );
 };
+
+/* ────────────────────────────────────────────
+   Sodexo — article-width prose with brand fonts
+   ──────────────────────────────────────────── */
+export const Sodexo = ({ fields, params, page }: RichTextBlockProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <RichTextBlockDefaultComponent />;
+
+  return (
+    <div className={cn('component rich-text-block', styles)} id={RenderingIdentifier}>
+      <section
+        className="w-full"
+        style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+      >
+        <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
+          {(fields.Body?.value || isEditing) && (
+            <ContentSdkRichText
+              field={fields.Body}
+              className="prose prose-neutral max-w-none
+                prose-headings:font-bold prose-headings:tracking-tight
+                prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl sm:prose-h2:text-3xl
+                prose-p:mb-4 prose-p:text-base prose-p:leading-relaxed prose-p:opacity-80
+                prose-img:my-8 prose-img:rounded-2xl prose-img:w-full"
+              style={{
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                '--tw-prose-headings': 'var(--brand-fg, #2a295c)',
+              } as React.CSSProperties}
+            />
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};

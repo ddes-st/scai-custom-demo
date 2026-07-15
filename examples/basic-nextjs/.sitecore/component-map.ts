@@ -23,10 +23,12 @@ import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
 import * as ValuePropositionGrid from 'src/components/uiim/content/ValuePropositionGrid';
 import * as TrustStatsRow from 'src/components/uiim/content/TrustStatsRow';
 import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
+import * as RelatedContent from 'src/components/uiim/content/RelatedContent';
 import * as LegalComplianceBanner from 'src/components/uiim/content/LegalComplianceBanner';
 import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
 import * as BlogListing from 'src/components/uiim/content/BlogListing';
+import * as BenefitHighlight from 'src/components/uiim/content/BenefitHighlight';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
@@ -100,16 +102,18 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ValuePropositionGrid', { ...ValuePropositionGrid }],
   ['TrustStatsRow', { ...TrustStatsRow }],
   ['RichTextBlock', { ...RichTextBlock }],
+  ['RelatedContent', { ...RelatedContent, componentType: 'client' }],
   ['LegalComplianceBanner', { ...LegalComplianceBanner }],
   ['FeatureHighlight', { ...FeatureHighlight, componentType: 'client' }],
   ['FAQAccordion', { ...FAQAccordion }],
   ['BlogListing', { ...BlogListing, componentType: 'client' }],
+  ['BenefitHighlight', { ...BenefitHighlight, componentType: 'client' }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['CTABanner', { ...CTABanner }],
-  ['SodexoArticleContent', { ...SodexoArticleContent, componentType: 'client' }],
+  ['SodexoArticleContent', { ...SodexoArticleContent }],
   ['ArticleHero', { ...ArticleHero, componentType: 'client' }],
   ['ArticleBody', { ...ArticleBody }],
   ['input', { ...input }],
