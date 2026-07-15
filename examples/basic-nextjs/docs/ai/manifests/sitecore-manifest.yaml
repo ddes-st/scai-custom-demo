@@ -3073,5 +3073,33 @@ lookups:
     itemId: "{E38ABC20-C7EA-43C8-AAAF-22CA71342814}"
     lastReadAt: "2026-06-09T00:00:00Z"
 
+# ──────────────────────────────────────────────
+# BlogListing — Sodexo Articles page (2026-07-15)
+# ──────────────────────────────────────────────
+  - name: BlogListing
+    status: complete
+    updatedAt: "2026-07-15"
+    notes: >
+      New component for the Sodexo "Our Everyday Stories" blog listing page.
+      Reuses the RichTextBlock datasource template (Title + Body).
+    rendering:
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Content/BlogListing"
+      itemId: "73db9924-ccb3-4a02-a28d-6c36fd4c4e7c"
+    headlessVariants:
+      groupId: "cbccc9e6-916b-4b77-8cf1-c04d8932ac09"
+      variants:
+        - name: Default
+          itemId: "be23fb6c-87d1-4a9f-abf3-5002cf3ca100"
+        - name: Sodexo
+          itemId: "c9add9fd-a048-4837-9865-47c3cb60a2ec"
+    datasource:
+      name: "Sodexo - Blog Listing"
+      itemId: "8f1ba186-60f2-4602-965c-cdef8c41c3bb"
+      path: "/sitecore/content/group/sodexo/Data/RichTextBlocks/Sodexo - Blog Listing"
+    articlesPage:
+      pageId: "d8b01498-2838-4388-a68f-86665d9c1c80"
+      componentInstanceId: "ce2cae69-f880-4652-a2dc-db2635a3e3aa"
+      note: "Variant must be switched to Sodexo in Pages Builder (FieldNames parameter)"
+
 # Demo datasource items (AI-created content, not new component definitions)
 demoContent: []

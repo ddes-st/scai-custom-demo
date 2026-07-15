@@ -26,6 +26,7 @@ import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
 import * as LegalComplianceBanner from 'src/components/uiim/content/LegalComplianceBanner';
 import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
+import * as BlogListing from 'src/components/uiim/content/BlogListing';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
@@ -101,6 +102,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LegalComplianceBanner', { ...LegalComplianceBanner }],
   ['FeatureHighlight', { ...FeatureHighlight, componentType: 'client' }],
   ['FAQAccordion', { ...FAQAccordion }],
+  ['BlogListing', { ...BlogListing, componentType: 'client' }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
