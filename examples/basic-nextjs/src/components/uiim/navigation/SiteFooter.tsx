@@ -404,7 +404,7 @@ const SodexoLogo = ({ brandLogo }: { brandLogo?: ImageField }) => {
   return (
     <Link href="/" className="flex items-center gap-1" aria-label="Sodexo">
       {hasImage ? (
-        <ContentSdkImage field={brandLogo} className="h-7 w-auto object-contain brightness-0 invert sm:h-8" />
+        <ContentSdkImage field={brandLogo} className="h-7 w-auto object-contain sm:h-8" />
       ) : (
         <span className="flex items-center text-2xl font-bold italic text-white">
           sodexo

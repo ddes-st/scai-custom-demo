@@ -372,19 +372,30 @@ const SODEXO_MEGA_MENU_CONTENT: Record<string, SodexoMegaMenuContent> = {
   },
 };
 
-const SodexoLogo = () => (
-  <Link href="/" className="flex items-center gap-1" aria-label="Sodexo">
-    <span className="flex items-center text-2xl font-bold italic" style={{ color: 'var(--brand-primary, #283897)' }}>
-      sodexo
-      <svg width="12" height="12" viewBox="0 0 24 24" className="mb-3 -ml-0.5">
-        <path
-          d="M12 0l1.8 6.6L18 2.4l-2.4 6L22 6l-4.2 4.8L24 12l-6.2 1.2L22 18l-6-1.6L18 22.4 13.5 18l-1.5 6-1.5-6L6 22.4l2.4-6.2L2 18l4.5-4.8L0 12l6.2-.8L2 6l6 1.8L6 6.6l4.2 4.2L12 0z"
-          fill="var(--brand-accent, #da2020)"
+// Fallback in case the datasource's BrandLogo field is ever cleared —
+// same blue-wordmark asset uploaded to Content Hub for the light header background.
+const SODEXO_LOGO_HEADER_SRC =
+  'https://ddes.sitecoresandbox.cloud/api/public/content/106614-sodexo-logo-header?v=e01aa472';
+
+const SodexoLogo = ({ brandLogo }: { brandLogo?: ImageField }) => {
+  const hasImage = brandLogo?.value?.src;
+  return (
+    <Link href="/" className="flex items-center" aria-label="Sodexo">
+      {hasImage ? (
+        <ContentSdkImage field={brandLogo} className="h-8 w-auto object-contain sm:h-9" />
+      ) : (
+        <Image
+          src={SODEXO_LOGO_HEADER_SRC}
+          alt="Sodexo"
+          width={131}
+          height={42}
+          className="h-8 w-auto sm:h-9"
+          priority
         />
-      </svg>
-    </span>
-  </Link>
-);
+      )}
+    </Link>
+  );
+};
 
 const SodexoUtilityBar = () => (
   <div className="hidden border-b lg:block" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}>
@@ -550,6 +561,28 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
     };
   }, []);
 
+  // Hide the header on scroll-down, reveal it on scroll-up (post page-load).
+  // Only kicks in once the user has scrolled past the header's own height, so
+  // it doesn't flicker while still at the top of the page.
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const scrollingDown = currentY > lastY;
+      const pastHeader = currentY > 120;
+      if (scrollingDown && pastHeader) {
+        setHideOnScroll(true);
+        setActiveMenu(null);
+      } else if (!scrollingDown) {
+        setHideOnScroll(false);
+      }
+      lastY = currentY;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const datasource = fields?.data?.datasource;
   if (!datasource) return <NavigationHeaderDefaultComponent />;
 
@@ -560,14 +593,20 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
 
   return (
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
-      <header className="relative z-50 w-full" style={{ backgroundColor: '#ffffff' }}>
+      <header
+        className={cn(
+          'sticky top-0 z-50 w-full shadow-sm transition-transform duration-300 ease-in-out',
+          hideOnScroll ? '-translate-y-full' : 'translate-y-0'
+        )}
+        style={{ backgroundColor: '#ffffff' }}
+      >
         <SodexoUtilityBar />
         <div
           className="border-b"
           style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
         >
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-            <SodexoLogo />
+            <SodexoLogo brandLogo={datasource.brandLogo?.jsonValue} />
 
             {/* Primary nav */}
             <nav className="hidden items-center gap-5 lg:flex">

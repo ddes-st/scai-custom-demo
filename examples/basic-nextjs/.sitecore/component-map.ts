@@ -99,7 +99,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TrustStatsRow', { ...TrustStatsRow }],
   ['RichTextBlock', { ...RichTextBlock }],
   ['LegalComplianceBanner', { ...LegalComplianceBanner }],
-  ['FeatureHighlight', { ...FeatureHighlight }],
+  ['FeatureHighlight', { ...FeatureHighlight, componentType: 'client' }],
   ['FAQAccordion', { ...FAQAccordion }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
