@@ -1797,7 +1797,7 @@ components:
     category: "Content"
     status: "complete"
     createdAt: "2026-03-25T21:30:00Z"
-    updatedAt: "2026-03-25T21:30:00Z"
+    updatedAt: "2026-09-21T08:58:00Z"
 
     react:
       filePath: "src/components/uiim/content/RichTextBlock.tsx"
@@ -1806,6 +1806,7 @@ components:
         - "Default"
         - "Centered"
         - "Narrow"
+        - "Sodexo"
 
     templates:
       datasource:
@@ -1884,7 +1885,8 @@ components:
         - "Renderings on Available Renderings (silent-write, appended with user-provided value)"
         - "Silent-write fields"
 
-    notes: []
+    notes:
+      - "2026-09-21: Sodexo article variant restyled to match live body (40px/400 headings, media-split image+text). Body HTML updated on datasource 9408cf5a-9f60-4649-85d7-c709b5d40146."
 
   - name: "FeatureHighlight"
     kind: "simple"
