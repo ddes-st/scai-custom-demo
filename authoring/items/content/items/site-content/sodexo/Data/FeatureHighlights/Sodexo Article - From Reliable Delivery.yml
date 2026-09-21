@@ -1,0 +1,42 @@
+﻿---
+ID: "ff1d7640-920a-4ca7-a67b-df8df08552b5"
+Parent: "0a212e28-4ede-45de-8a8f-e1004e8aad25"
+Template: "73a389ee-482a-4974-b4cf-76996b15a5f3"
+Path: "/sitecore/content/group/sodexo/Data/FeatureHighlights/Sodexo Article - From Reliable Delivery"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T151641Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: From reliable delivery to predictable outcomes
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5b5744f2-7c09-4f6b-835a-5240054379ba"
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>By providing continuous data insights to experienced site-based teams, our command and intelligence centers help to power exceptional manufacturing services and continuously improving client outcomes.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/106449-section3-img5?v=409a0f3e" alt="From reliable delivery to predictable outcomes" width="1240" height="698" dam-content-type="Image" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260715T151641Z

@@ -1,0 +1,26 @@
+﻿---
+ID: "13c6254d-e230-4bb3-8fac-7e93ce0a9337"
+Parent: "b0d9ad8d-af09-4777-b4fa-d3524d6fd910"
+Template: "0a12df91-36fc-4579-8dbc-a1d23c13ed74"
+Path: /sitecore/content/group/sodexo/Home/Data/FeatureHighlight
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260409T085810Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: FeatureHighlight
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2e46a388-f3ef-4952-a9da-e69bdf574386"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260409T085810Z

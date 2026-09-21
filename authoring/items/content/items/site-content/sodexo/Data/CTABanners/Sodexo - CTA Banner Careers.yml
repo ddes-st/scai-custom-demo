@@ -1,0 +1,45 @@
+﻿---
+ID: "de1b8965-b1cd-40e1-9891-50b8a43953da"
+Parent: "f86be13d-2f5e-4d7e-b2e5-ef4c9637fc4c"
+Template: "980cb544-bd26-4866-83bb-6dbeb9156558"
+Path: "/sitecore/content/group/sodexo/Data/CTABanners/Sodexo - CTA Banner Careers"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113500Z
+    - ID: "492f28cd-0465-42ee-b7fe-df452729e9bd"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Be part of something greater" anchor="" linktype="external" class="" title="" target="_self" querystring="" url="https://www.sodexo.com/working-at-sodexo/more-than-a-job" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5a17dd1d-78a3-4c4e-b3f4-74cd24cd1793"
+      Hint: Description
+      Value: Joining Sodexo means being part of a company where you belong to a team, can act with purpose and thrive in your own way. It's about making a real difference every day.
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5df404ee-3194-414a-844d-689d3b47355c"
+      Hint: Title
+      Value: Working at Sodexo is more than a job
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b4d91ece-c41e-4d93-a47e-128620a5d881"
+    - ID: "ba6a94ea-4b1f-4160-a0db-35b15779afe7"
+      Hint: BackgroundImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/106479-section6-img8?v=81b54824" dam-id="9vGbJHx5RAiBBFSucvv8XA" width="1440" height="690" alt="Working at Sodexo" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106479/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260713T113500Z

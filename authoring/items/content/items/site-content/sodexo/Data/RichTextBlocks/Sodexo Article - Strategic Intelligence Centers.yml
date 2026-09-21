@@ -1,0 +1,41 @@
+﻿---
+ID: "9408cf5a-9f60-4649-85d7-c709b5d40146"
+Parent: "e94da9f2-19a0-4eeb-9f1c-c5b53df8d8ed"
+Template: "d74f19b9-2239-4f05-8b2f-727393777ed8"
+Path: "/sitecore/content/group/sodexo/Data/RichTextBlocks/Sodexo Article - Strategic Intelligence Centers"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "1e23eeda-e14c-429f-8ca5-4f1d3de10949"
+      Hint: Body
+      Value: |
+        <div class="ck-content"><div class="media-split"><p><img src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/data-insight-model.jpg?h=503&amp;iar=0&amp;w=503" alt="Data and insight model" /></p><div><h2>A data and insight model with transformative value</h2><p>From reducing unplanned downtime by up to 30% to increasing asset life by as much as 40%, this model combines robust data and subject-matter expertise to make a real difference every day.</p><p>Operating out of three global hubs, our network of tactical command centers and strategic intelligence centers is elevating guest experiences and delivering results for our clients. Analyzing millions of data points daily, these complementary centers empower our teams to anticipate demand, isolate efficiencies and optimize the cost-to-comfort balance in the manufacturing workplace.</p></div></div><p>We created this model to deliver real client benefits: consistent, scalable and high-performing services that adapt to ensure future readiness.</p><h2>The challenge: Converting insight into action at pace</h2><p>To ensure smooth operations and retain top talent, manufacturers know the importance of creating seamless, efficient and human-centered workplaces. Yet our clients face a range of challenges, from market competition impacting their bottom line to evolving employee expectations, putting wellbeing under the spotlight.</p><p>To help meet these challenges, we are providing our site teams with robust data, actionable insight and the right digital tools. The goal is to sustain dynamic, adaptive workplaces that control costs and elevate experiences. With new AI and analytics tools extending the art of the possible, we saw an opportunity to shift to a more predictive operating model; one that adds transformative value yet stays cost-effective by avoiding duplicated effort and keeping the focus on clients.</p><p>So, we searched for a way to bring specialized skills and technologies to our experienced site teams while keeping them in control of operational performance 24/7.</p><h2>The solution: Two centers, one smart ecosystem</h2><p>We created a model with two centers of excellence. Our <strong>command centers</strong> sit closer to client sites, using AI agents and bots to analyze ingested data and direct the rapid response that ensures seamless delivery. Our <strong>intelligence centers</strong> use this data to benchmark performance then provide insight and advice that enables local teams to deliver predictive and adaptive services. Together, these centers maintain tight cost control, improve workplace experiences and keep our clients ready for anything.</p><p><img src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-1240x698/blog/2026/illustrative-picture-1.jpg" alt="On-site services" /></p></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T151634Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8a1bde30-c1a6-4eb1-b30a-c9202cd3980a"
+      Hint: Title
+      Value: 
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "76c190e9-fd1e-415d-87ff-5841bcd9d387"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T090016Z

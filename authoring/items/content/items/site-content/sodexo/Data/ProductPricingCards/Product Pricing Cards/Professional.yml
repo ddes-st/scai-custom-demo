@@ -1,0 +1,26 @@
+﻿---
+ID: "7a22498c-2d6f-4835-bb4c-738adb43aa90"
+Parent: "4e17de1d-616d-4e56-bf24-1878fd35bf6e"
+Template: "ed669b5f-4392-498e-8f5b-a550f75b8c87"
+Path: /sitecore/content/group/sodexo/Data/ProductPricingCards/Product Pricing Cards/Professional
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T130414Z
+    - ID: "29cae95a-cb7a-4086-a020-407c0dcd560a"
+      Hint: CardTitle
+      Value: Professional
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "96a2857d-e4b0-46f5-836f-ea7cd6dbecb1"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T130414Z

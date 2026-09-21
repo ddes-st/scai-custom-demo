@@ -1,0 +1,42 @@
+﻿---
+ID: "251cb9b0-38f3-4dad-b001-58d45ca8950c"
+Parent: "79a9dfe3-d529-4ed3-8105-dca4c0a3b25c"
+Template: "ebb89bff-86ff-496d-b4f7-57fe722342b6"
+Path: "/sitecore/content/group/sodexo/Data/HeroBanners/Sodexo About - Hero"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T091209Z
+    - ID: "2c186372-9b86-4940-b496-6ae5b5bdac3a"
+      Hint: Subtitle
+      Value: |
+        <div class="ck-content"><p>Serving clients all over the world with industry-leading food and services which shape better everyday experiences at every moment in life.</p></div>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "729698a6-1380-45b1-b348-a464e5f9825a"
+      Hint: HeroImage
+      Value: |
+        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/hero-720x540/about-us-banner.jpg" alt="About Sodexo Group" width="720" height="540" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "65672be2-82dc-4a91-b120-e5698277445a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c61c7b75-21bd-4b9c-995e-671c9605de14"
+      Hint: Title
+      Value: About Sodexo Group
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T091209Z

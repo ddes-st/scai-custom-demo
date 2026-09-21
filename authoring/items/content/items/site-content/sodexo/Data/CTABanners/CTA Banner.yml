@@ -1,0 +1,37 @@
+﻿---
+ID: "721ba459-90cd-4899-a293-c1c9dbb0df95"
+Parent: "f86be13d-2f5e-4d7e-b2e5-ef4c9637fc4c"
+Template: "980cb544-bd26-4866-83bb-6dbeb9156558"
+Path: /sitecore/content/group/sodexo/Data/CTABanners/CTA Banner
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T133626Z
+    - ID: "5a17dd1d-78a3-4c4e-b3f4-74cd24cd1793"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>cxsxd</p></div>
+    - ID: "5df404ee-3194-414a-844d-689d3b47355c"
+      Hint: Title
+      Value: CTA Banner
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "00cbe2c5-3260-4a04-b22b-5d11fddf778c"
+    - ID: "ba6a94ea-4b1f-4160-a0db-35b15779afe7"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="04dad0fd-db66-4070-881f-17264ca257e1" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T134013Z

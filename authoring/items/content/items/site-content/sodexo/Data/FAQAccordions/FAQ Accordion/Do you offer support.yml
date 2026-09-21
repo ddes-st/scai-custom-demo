@@ -1,0 +1,26 @@
+﻿---
+ID: "4f8e85d7-e408-4564-a4c9-f048a5c9164d"
+Parent: "7fe9e03e-ec08-4c6f-8c79-d20d2ed29130"
+Template: "73df51e6-e92d-4742-9e0a-74d2ca36ef7f"
+Path: /sitecore/content/group/sodexo/Data/FAQAccordions/FAQ Accordion/Do you offer support
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "216901f9-a9fa-439a-a5b1-3f5651c67540"
+      Hint: Question
+      Value: Do you offer support
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T141613Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7f8c2a27-29f8-45e9-84eb-6b9d0eb57206"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T141613Z

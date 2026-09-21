@@ -29,7 +29,9 @@ import Image from 'next/image';
 import { Link, Text, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { ChevronDown, Menu, X, User } from 'lucide-react';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { SODEXO_ABOUT_TECH_IMAGE, sodexoAboutCardImage, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
 import { SearchEmptyResults as SearchEmptyResults_a7fd5bb71665da1ba09c52ff7c1d1a533293f443 } from 'src/components/search-experience/search-components/SearchEmptyResults';
 import { SearchError as SearchError_af1c5e83329285a922b0ebc80453dc52526cfbd2 } from 'src/components/search-experience/search-components/SearchError';
@@ -198,9 +200,23 @@ const importMap = [
     ]
   },
   {
+    module: '@/lib/sodexo-page',
+    exports: [
+      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
+    ]
+  },
+  {
     module: '@/components/uiim/media/SmartMedia',
     exports: [
       { name: 'SmartMedia', value: SmartMedia },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-about-media',
+    exports: [
+      { name: 'SODEXO_ABOUT_TECH_IMAGE', value: SODEXO_ABOUT_TECH_IMAGE },
+      { name: 'sodexoAboutCardImage', value: sodexoAboutCardImage },
+      { name: 'SODEXO_ABOUT_HERO_IMAGE', value: SODEXO_ABOUT_HERO_IMAGE },
     ]
   },
   {

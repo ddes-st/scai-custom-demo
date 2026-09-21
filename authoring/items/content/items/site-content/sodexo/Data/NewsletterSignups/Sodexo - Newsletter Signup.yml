@@ -1,0 +1,40 @@
+﻿---
+ID: "70d3b46f-3c59-4fe7-a088-5af93e78ce94"
+Parent: "4046b0a4-5f07-4f4b-8d6f-e04ede1e1204"
+Template: "a16caf37-8ef7-4fb1-a6d4-a85638f4eb15"
+Path: "/sitecore/content/group/sodexo/Data/NewsletterSignups/Sodexo - Newsletter Signup"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113444Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "22e211a0-4748-401e-bcca-a4b4fcaf1688"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260713T113444Z
+    - ID: "e2a5eaf9-edc2-464c-9cbb-2635fe5d6af0"
+      Hint: PlaceholderText
+      Value: Select your country
+    - ID: "e59c4d09-0b59-4053-bbae-a33e36163807"
+      Hint: ButtonText
+      Value: Visit the website
+    - ID: "f6a33cbc-2271-4f11-89d1-fca832a641a4"
+      Hint: Title
+      Value: "Visit the website for your country:"

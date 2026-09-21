@@ -1,0 +1,90 @@
+﻿---
+ID: "bef9b1fc-e7f6-4296-b60b-780728b557c0"
+Parent: "b9355266-e4f8-4352-8f64-2700d071d46a"
+Template: "fd2059fd-6043-4dfe-8c04-e2437ce87634"
+Path: /sitecore/content/group/sodexo/Presentation/Partial Designs/Landing Page Layout
+SharedFields:
+- ID: "55faae90-3bba-4f7f-96fe-13c3f40055ff"
+  Hint: Signature
+  Value: "landing-page-layout"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{3534B14A-CEEB-4834-BEB7-AE765D44DFFB}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "00b02fa2-3ffa-4cf3-9e58-c05fc853352f"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{5A393DE6-1459-4AE9-AA9F-CAED369E19FA}"
+              p:before="*"
+              s:id="{C9FFEF83-C928-4346-AA68-14B3EE0B0017}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BD1B9E599-F9C5-416F-A204-16F8EBC1E10C%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              s:ph="headless-main" />
+            <r
+              uid="{F5F36080-E813-417C-9CD0-692BC09572AD}"
+              p:after="r[@uid='{5A393DE6-1459-4AE9-AA9F-CAED369E19FA}']"
+              s:id="{B92A0B89-790F-4D94-89C7-B361C8688765}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B31A214D5-7824-476C-8C63-4FB5F942DD28%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{3E8B1AB6-7B61-4E18-A352-596E0433AED2}"
+              p:after="r[@uid='{F5F36080-E813-417C-9CD0-692BC09572AD}']"
+              s:id="{9E525B59-B9BF-4EB7-B75D-10811EF6100D}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B2623EBAE-BF3D-471A-8E7D-176BCF6E4BE6%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{38BFD646-976F-4E61-AA12-D46FD21C99FA}"
+              p:after="r[@uid='{3E8B1AB6-7B61-4E18-A352-596E0433AED2}']"
+              s:id="{66E80043-36E4-48AE-8CAF-EEF4A77690BE}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B8ED8A4F7-10C3-4867-AC0E-B3F79BECC356%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{2E1FD630-45C5-4DA3-AEBA-81E7D947163B}"
+              p:after="r[@uid='{38BFD646-976F-4E61-AA12-D46FD21C99FA}']"
+              s:id="{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BDCA2DB12-8D54-4AD6-8D43-082683AFA518%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+            <r
+              uid="{8EBE1B06-4CEA-4E12-A786-FAA577CCC476}"
+              p:after="*[1=2]"
+              s:id="{14FCB11C-364D-4BC2-9238-B29B4C6F8145}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B2FFE0507-9D6D-4D93-BFFE-43504C63D10C%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=6"
+              s:ph="headless-main" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260609T204915Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "77b5bccb-41a7-42d0-a939-f346ee4ec278"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260609T215628Z

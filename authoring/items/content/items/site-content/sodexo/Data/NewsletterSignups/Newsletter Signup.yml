@@ -1,0 +1,26 @@
+﻿---
+ID: "8d599dd4-86ec-4636-8afd-a1f3c878a3b7"
+Parent: "4046b0a4-5f07-4f4b-8d6f-e04ede1e1204"
+Template: "a16caf37-8ef7-4fb1-a6d4-a85638f4eb15"
+Path: /sitecore/content/group/sodexo/Data/NewsletterSignups/Newsletter Signup
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T140926Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "00841caf-1346-4edd-a518-eb1110b01d0a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T140926Z
+    - ID: "f6a33cbc-2271-4f11-89d1-fca832a641a4"
+      Hint: Title
+      Value: Newsletter Signup

@@ -1,0 +1,23 @@
+﻿---
+ID: "a1055559-2113-4baf-b3c3-05c38404ded2"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "c26817c1-89f4-435a-b3cc-5cb20692886e"
+Path: /sitecore/content/group/sodexo/Data/NavigationHeaders
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260505T201809Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5ce44017-47aa-481e-99e4-d66221aaf4fe"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260505T201809Z

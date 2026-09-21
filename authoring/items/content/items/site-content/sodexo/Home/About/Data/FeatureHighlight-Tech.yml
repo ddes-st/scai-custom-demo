@@ -1,0 +1,46 @@
+﻿---
+ID: "2bdfe0eb-ee27-4113-939e-2c8db698d5b0"
+Parent: "b35b4f1a-8012-4544-a6db-064db8cab639"
+Template: "73a389ee-482a-4974-b4cf-76996b15a5f3"
+Path: "/sitecore/content/group/sodexo/Home/About/Data/FeatureHighlight-Tech"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T091638Z
+    - ID: "3e0cc0d3-5d90-4b6a-b1b5-d9c61a5bb994"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Learn more about our approach" anchor="" linktype="external" class="" title="" target="_self" querystring="" url="https://www.sodexo.com/about-us/tech-innovation-ai" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: "Technology, Innovation & AI:"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "27e3454c-9ba1-42ad-8daf-e12b9663b527"
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>Today's organizations need more than operational excellence. We combine technology, AI, data and human expertise through our global Sodexo Spark platform, transforming millions of daily interactions into actionable insights that create measurable business value.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/about-technology.jpg" alt="Technology, Innovation and AI" width="503" height="503" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T091654Z

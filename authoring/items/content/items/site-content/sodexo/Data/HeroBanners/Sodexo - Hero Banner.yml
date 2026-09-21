@@ -1,0 +1,38 @@
+﻿---
+ID: "231925a3-6f4c-4c9f-ba1f-5ad92d15c68a"
+Parent: "79a9dfe3-d529-4ed3-8105-dca4c0a3b25c"
+Template: "ebb89bff-86ff-496d-b4f7-57fe722342b6"
+Path: "/sitecore/content/group/sodexo/Data/HeroBanners/Sodexo - Hero Banner"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113439Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "729698a6-1380-45b1-b348-a464e5f9825a"
+      Hint: HeroImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/106598-hero-video-poster?v=1704e933" dam-id="lQ1c7MF2SdK16MTCYzDUWQ" width="1440" height="542" alt="Sodexo Hero Banner poster - chef preparing a dish" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106598/thumbnail" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2c5eaed8-a279-487c-9f60-e0f79af2fd46"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c61c7b75-21bd-4b9c-995e-671c9605de14"
+      Hint: Title
+      Value: Food Services, perfected over 60 years.
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260715T124632Z

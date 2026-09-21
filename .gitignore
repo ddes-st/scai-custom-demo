@@ -1,5 +1,7 @@
 ﻿# may contain OAuth secrets, do not commit
 .sitecore/user.json
+.config/dotnet-tools.json
+dotnet-tools.json
 
 # NuGet cache for Sitecore CLI
 .sitecore/package-cache/

@@ -1,0 +1,26 @@
+﻿---
+ID: "0dca9141-175e-4553-a2c6-6b64c71d88ab"
+Parent: "6a826e8e-4ab2-4f62-8605-40430028c64c"
+Template: "88376eb8-a0b7-4ffb-aea1-ad143726cfd3"
+Path: /sitecore/content/group/sodexo/Data/TrustStatsRows/Trust Stats Row
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T132508Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "84b166e3-2ab6-4da1-88da-1684880e139b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "c9f6caf5-6abd-461b-b16c-ac873d4f66b1"
+      Hint: Title
+      Value: Trust Stats Row
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T132508Z

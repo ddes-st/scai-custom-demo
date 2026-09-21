@@ -453,33 +453,32 @@ const SodexoMegaMenu = ({
     <div className="absolute inset-x-0 top-full z-40 hidden justify-center px-6 lg:flex">
       <div
         className={cn(
-          'w-full max-w-6xl origin-top rounded-b-2xl shadow-2xl transition-all duration-300 ease-in-out',
+          'w-full max-w-6xl origin-top overflow-hidden rounded-b-2xl shadow-2xl transition-all duration-300 ease-in-out',
           animateIn ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
         )}
-        style={{ backgroundColor: 'var(--brand-muted, #f0eef8)' }}
       >
-        <div className="relative px-12 py-16">
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center transition-opacity hover:opacity-70"
-            style={{ color: 'var(--brand-fg, #2a295c)' }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-          <div className="grid grid-cols-3 gap-16">
-            <div>
-              <h3 className="mb-5 text-3xl font-bold" style={{ color: 'var(--brand-accent, #da2020)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}>
-                {label}
-              </h3>
-              <p className="max-w-sm text-sm leading-relaxed" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
-                {content.description}
-              </p>
-            </div>
+        <div className="grid grid-cols-3">
+          <div className="bg-white px-12 py-16 pr-8">
+            <h3 className="mb-5 text-3xl font-bold" style={{ color: 'var(--brand-accent, #da2020)', fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)' }}>
+              {label}
+            </h3>
+            <p className="max-w-sm text-sm leading-relaxed" style={{ color: 'var(--brand-fg, #2a295c)', fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)' }}>
+              {content.description}
+            </p>
+          </div>
+          <div className="relative col-span-2 grid grid-cols-2 gap-16 px-12 py-16 pl-8" style={{ backgroundColor: '#eef3f9' }}>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center transition-opacity hover:opacity-70"
+              style={{ color: 'var(--brand-fg, #2a295c)' }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
             <div className="flex flex-col gap-7 pr-10">
               {content.links.map((link) => (
                 <SodexoMegaMenuLink key={link} link={link} />

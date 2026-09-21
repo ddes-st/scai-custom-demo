@@ -1,0 +1,23 @@
+﻿---
+ID: "53464312-21ac-4ed5-851d-8f1433f07efc"
+Parent: "df14fc47-d277-434f-b8ff-3cdbbbeda1de"
+Template: "4828b260-dc19-4c4f-bf0e-1dd5ae47edcc"
+Path: /sitecore/content/group/sodexo/Data/HeroBannerCarousels/Hero Banner Carousel/Slide 2
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260505T170926Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8b566398-01cf-4b56-8b51-aeb2ec22f132"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260505T170926Z

@@ -1,0 +1,26 @@
+﻿---
+ID: "8e50d2dc-2383-409a-aa3f-9dedd9485301"
+Parent: "a20a4fad-1eb6-4cfd-a2b0-4f89f4d81978"
+Template: "c48880b3-b0b9-49ea-bf19-931c68a8a37c"
+Path: /sitecore/content/group/sodexo/Data/LogoClouds/Logo Cloud/Partner C
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "17cc8e99-43cd-4f35-8ed4-6c7a13334449"
+      Hint: CompanyName
+      Value: Partner C
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T135809Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "65b79f0c-70d1-4035-bbe5-194877f3213e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T135809Z

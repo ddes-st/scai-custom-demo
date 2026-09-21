@@ -1,0 +1,23 @@
+﻿---
+ID: "e5004e14-ea49-43b7-a093-006648a14a60"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "15cd446d-4b70-44a4-b422-e746d4ee75a7"
+Path: /sitecore/content/group/sodexo/Data/TestimonialBlocks
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T133023Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "19be527f-f02f-4808-a8bc-0b7d57a937a9"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T133023Z

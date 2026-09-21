@@ -1,0 +1,33 @@
+﻿---
+ID: "ce518dfd-154f-4be2-8b44-28f51fabf854"
+Parent: "3ca50b19-5852-4b00-8a4d-9fbc0333da2d"
+Template: "18975833-7fd9-4ca6-a4dc-d01cd3454d4b"
+Path: /sitecore/content/group/sodexo/Data/ValuePropositionGrids/Value Proposition Grid/Secure Platform
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T131947Z
+    - ID: "26ad50f0-0c17-4313-b9ca-58fb93ce4b30"
+      Hint: ItemTitle
+      Value: Secure Platform
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "90e87dc0-195d-4b7b-ba0f-22f6f9798694"
+    - ID: "bab8dbd7-750d-473a-bf6a-e719cf812dd5"
+      Hint: ItemDescription
+      Value: |
+        <div class="ck-content"><p>fgfg</p></div>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T132332Z

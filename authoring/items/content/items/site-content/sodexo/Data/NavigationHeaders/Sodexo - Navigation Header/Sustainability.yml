@@ -1,0 +1,38 @@
+﻿---
+ID: "e534bf11-2893-4a7d-8787-929861b74052"
+Parent: "bcfcd8b1-f847-4b8b-96fc-d1053398417e"
+Template: "626c308f-5897-48f3-bf83-aefb503cb1e4"
+Path: "/sitecore/content/group/sodexo/Data/NavigationHeaders/Sodexo - Navigation Header/Sustainability"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T154904Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ef47514c-1feb-449e-837d-e9bc335025b2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cc6b4b36-fd8b-482b-a733-6c22b926890a"
+      Hint: LinkUrl
+      Value: |
+        <link linktype="external" url="https://www.sodexo.com/sustainability" text="Sustainability" target="_self" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260713T154904Z
+    - ID: "e9a144f9-e4d5-44c2-b90b-eae536749d5d"
+      Hint: LinkText
+      Value: Sustainability

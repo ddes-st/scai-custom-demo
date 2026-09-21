@@ -1,0 +1,26 @@
+﻿---
+ID: "bc7314d7-d4f4-4e49-a78e-2a482ddfabbc"
+Parent: "bab76c01-9a6e-49d5-9f44-22d7edbe13fe"
+Template: "e94d3c21-7de5-4270-b691-8e29673a1e2c"
+Path: /sitecore/content/group/sodexo/Data/FeatureCardsGrids/Feature Cards Grid
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T134244Z
+    - ID: "3775c623-2a5c-4d86-a41f-9717038d7d73"
+      Hint: Title
+      Value: Feature Cards Grid
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4ce7ed88-22bc-495a-947e-81cdb237c2b6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T134244Z

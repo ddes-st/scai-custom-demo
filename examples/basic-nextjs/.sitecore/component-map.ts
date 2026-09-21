@@ -23,8 +23,8 @@ import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
 import * as ValuePropositionGrid from 'src/components/uiim/content/ValuePropositionGrid';
 import * as TrustStatsRow from 'src/components/uiim/content/TrustStatsRow';
 import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
-import * as Quote from 'src/components/uiim/content/Quote';
 import * as RelatedContent from 'src/components/uiim/content/RelatedContent';
+import * as Quote from 'src/components/uiim/content/Quote';
 import * as LegalComplianceBanner from 'src/components/uiim/content/LegalComplianceBanner';
 import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
 import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
@@ -102,9 +102,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsletterSignup', { ...NewsletterSignup, componentType: 'client' }],
   ['ValuePropositionGrid', { ...ValuePropositionGrid }],
   ['TrustStatsRow', { ...TrustStatsRow }],
-  ['Quote', { ...Quote }],
   ['RichTextBlock', { ...RichTextBlock }],
   ['RelatedContent', { ...RelatedContent, componentType: 'client' }],
+  ['Quote', { ...Quote }],
   ['LegalComplianceBanner', { ...LegalComplianceBanner }],
   ['FeatureHighlight', { ...FeatureHighlight, componentType: 'client' }],
   ['FAQAccordion', { ...FAQAccordion }],

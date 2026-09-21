@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import { isSodexoAboutPage, isSodexoSite } from '@/lib/sodexo-page';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
@@ -64,6 +65,13 @@ const importMap = [
     exports: [
       { name: 'Sparkles', value: Sparkles },
       { name: '*', value: LucideIcons },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-page',
+    exports: [
+      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
+      { name: 'isSodexoSite', value: isSodexoSite },
     ]
   },
   {

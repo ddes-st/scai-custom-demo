@@ -1,0 +1,40 @@
+﻿---
+ID: "06889e39-3fe2-4072-9c87-5e6c8d0051a0"
+Parent: "a03b9129-4d08-435e-b038-29802ce6a603"
+Template: "5cf70cbe-f1c9-4e58-a424-a6614ebd7071"
+Path: /sitecore/content/group/sodexo/Data/SearchResults/Default Search Results
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1de0aed5-178e-48f9-a195-6e10e7e5cd36"
+      Hint: SearchHeading
+      Value: Search Results
+    - ID: "218d3219-7d39-4802-b106-ff753cd94862"
+      Hint: SearchPlaceholderText
+      Value: Search...
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260519T100558Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "825937d6-e6ce-4bf9-9433-944e252aa151"
+      Hint: NoResultsMessage
+      Value: No results found for your query. Try different search terms.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ecc09de7-912a-455b-a05a-f340559685ec"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260519T100558Z

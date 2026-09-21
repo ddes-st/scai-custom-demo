@@ -1,0 +1,26 @@
+﻿---
+ID: "6c0fcf9e-71c1-4721-9957-b5abd0232724"
+Parent: "7fe9e03e-ec08-4c6f-8c79-d20d2ed29130"
+Template: "73df51e6-e92d-4742-9e0a-74d2ca36ef7f"
+Path: /sitecore/content/group/sodexo/Data/FAQAccordions/FAQ Accordion/What is your refund policy
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "216901f9-a9fa-439a-a5b1-3f5651c67540"
+      Hint: Question
+      Value: What is your refund policy
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T141612Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a414ac04-dc67-4ace-95a2-e08f1eb62d9b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T141612Z

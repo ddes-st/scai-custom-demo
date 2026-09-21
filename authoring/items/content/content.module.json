@@ -5,13 +5,13 @@
     "includes": [
       {
         "name": "content-root",
-        "path": "/sitecore/content/main",
+        "path": "/sitecore/content/group",
         "scope": "SingleItem",
         "allowedPushOperations": "CreateAndUpdate"
       },
       {
         "name": "site-content",
-        "path": "/sitecore/content/main/main-website",
+        "path": "/sitecore/content/group/sodexo",
         "scope": "ItemAndDescendants",
         "allowedPushOperations": "CreateAndUpdate"
       }

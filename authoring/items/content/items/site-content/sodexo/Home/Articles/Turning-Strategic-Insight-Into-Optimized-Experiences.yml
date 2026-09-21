@@ -1,0 +1,81 @@
+﻿---
+ID: "00b0d725-6630-495b-86db-742aafb525a7"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/group/sodexo/Home/Articles/Turning-Strategic-Insight-Into-Optimized-Experiences"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{F4BE8398-1CCB-4DC5-9C8E-99925FB7C47C}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "cda7e4e7-74fb-4351-ac8e-9a25188588b6"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{40C522DA-4E16-424E-9123-75E7FF82494F}"
+              p:before="*"
+              s:ds="9408cf5a-9f60-4649-85d7-c709b5d40146"
+              s:id="{D008D5FE-B27E-419F-889C-115B3D48A114}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B49CC5EEC-C205-4C81-8B7C-BF1ABC624F0B%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{EC4A0EE9-8A58-417C-B008-763D53064C56}"
+              p:after="r[@uid='{40C522DA-4E16-424E-9123-75E7FF82494F}']"
+              s:id="{D5D611E0-E088-4EF5-B545-C1DE8CC66990}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B2251BF2B-D459-450F-9756-F5FDB9126E1C%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{9BEA5E6C-A3BE-4F3B-8B3E-962AA4F274CD}"
+              p:after="r[@uid='{EC4A0EE9-8A58-417C-B008-763D53064C56}']"
+              s:ds="ff1d7640-920a-4ca7-a67b-df8df08552b5"
+              s:id="{85CC2A41-AC6F-4C10-9C2F-44308B48C453}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BDD88BE4A-795D-48C8-A066-39F687110446%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=6"
+              s:ph="headless-main" />
+            <r
+              uid="{2DA9D11D-717A-4218-952C-87230AE947BE}"
+              p:after="*[1=2]"
+              s:id="{03964382-C9F2-40F8-B0B9-CD7FE11809C2}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BE53FE299-48E4-4D3A-AF6B-4912B3755888%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+          </d>
+        </r>
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Turning strategic insight into optimized experiences
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T143444Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260630T000000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "Turning-Strategic-Insight-Into-Optimized-Experiences"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 8 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cd46cb4d-07ad-4276-847d-c4ef0ec64fec"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T083946Z

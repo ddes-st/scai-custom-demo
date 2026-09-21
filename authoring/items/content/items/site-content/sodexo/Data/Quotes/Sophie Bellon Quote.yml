@@ -1,0 +1,35 @@
+﻿---
+ID: "373775cb-deb9-46f7-b377-8192af02cf2f"
+Parent: "cdf138b6-15d9-4158-ba71-3dfb633603d7"
+Template: "6038cd05-3166-4a7c-b0fa-505deb204bd9"
+Path: /sitecore/content/group/sodexo/Data/Quotes/Sophie Bellon Quote
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T093624Z
+    - ID: "69b67b30-43d1-4158-95cd-e890ce738b58"
+      Hint: AuthorName
+      Value: Sophie Bellon
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d7b09a60-303e-4bf4-9946-dc1f2038f31a"
+    - ID: "9481999d-7c67-4534-a795-dbbe93bbb295"
+      Hint: Description
+      Value: "<p>« Sodexo a renforcé sa compétitivité et a réalisé des progrès significatifs par rapport aux priorités que j'avais fixées en prenant les fonctions de Directrice Générale. Aujourd'hui, avec notre stratégie de recentrage et d'accélération, et grâce à une attention de chaque instant portée à l'exécution opérationnelle, nous prévoyons la poursuite de l'amélioration de notre performance dans les années à venir. Je suis convaincue de la capacité de Sodexo à réaliser une croissance interne solide et une marge d'exploitation supérieure à 6%. Nos collaborateurs sont essentiels à la réussite de ce plan, et je tiens à les remercier pour l'excellent travail qu'ils accomplissent au quotidien pour offrir des services de qualité à nos clients et consommateurs. Ils contribuent ainsi à notre impact positif sur la société et dans les territoires où nous opérons. Je suis convaincue que nous sommes sur la bonne voie pour réaliser une croissance rentable sur le long terme et être le leader mondial en matière d'alimentation durable et d'expériences à haute valeur ajoutée à tous les moments de la vie : éducation, travail, soin et divertissement. »</p>"
+    - ID: "abfe31d8-39ae-4338-afbd-d3eaf84051b5"
+      Hint: AuthorRole
+      Value: "Présidente-Directrice Générale de Sodexo"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T093624Z
+    - ID: "ed3afb02-a5f5-47c3-aee5-950f207527be"
+      Hint: QuoteTitle
+      Value: « L'exercice 2022 a été un tournant. »

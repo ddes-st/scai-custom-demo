@@ -1,0 +1,48 @@
+﻿---
+ID: "97c2cea0-564d-49cf-80ac-895948f902d7"
+Parent: "c84cc667-c5b7-4e96-9ab9-e49a6d156c56"
+Template: "7f966a80-ea45-48bb-af11-a9416836739a"
+Path: /sitecore/content/group/sodexo/Home/Data/Sodexo_Tab_Navigation_Industries/Business Industries
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "bb40c12f-11bc-4652-b310-e2a0b2920d6d"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T144355Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3f21cfae-d29b-43bf-9da3-59eb96a369a8"
+    - ID: "b7a9024b-7662-4523-be50-8a7c715a0d04"
+      Hint: TabLink
+      Value: |
+        <link linktype="external" url="https://www.sodexo.com/what-we-do/where-we-operate/business-industries" target="_self" text="Business & Industry expertise" title="" class=""/>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d4f0b69c-f14e-465d-b1ea-f0bb4fc6377f"
+      Hint: TabLabel
+      Value: Business & Industries
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260713T164108Z

@@ -1,0 +1,30 @@
+﻿---
+ID: "f8fdfefe-119a-49de-9eae-36849c17b9d3"
+Parent: "79f4a73c-71d2-4959-8fde-c7d9c8748990"
+Template: "98b34bff-0d74-4798-b2d8-cb52c19f7c92"
+Path: /sitecore/content/group/sodexo/Data/SiteFooters/Site Footer
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260505T173216Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "78915400-87e5-477a-9b0a-1a6d26ac7e23"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260505T173456Z
+    - ID: "e65848de-74a2-4211-b246-a022b7da6f6e"
+      Hint: BrandLogo
+      Value: |
+        <image mediaid="7d81fc77-a388-4561-b577-ff94a7c27ef2" />

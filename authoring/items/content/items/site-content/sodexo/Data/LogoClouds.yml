@@ -1,0 +1,23 @@
+﻿---
+ID: "a0f83f36-4bfb-4c6a-9079-a01ec54a5276"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "250b1404-5b91-4249-aa2e-b8adf034e768"
+Path: /sitecore/content/group/sodexo/Data/LogoClouds
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T135727Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f12a99b1-e804-49fc-8565-abbf089b3032"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T135727Z

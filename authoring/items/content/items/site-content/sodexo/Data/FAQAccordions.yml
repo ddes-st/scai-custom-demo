@@ -1,0 +1,23 @@
+﻿---
+ID: "547bf25d-1445-4c45-9c04-66fcb3fd339b"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "241185e3-179a-4689-a63b-760b3e9fdde3"
+Path: /sitecore/content/group/sodexo/Data/FAQAccordions
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T141526Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0ea50d26-e083-44c0-ae0d-36579fc35adb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T141526Z

@@ -1,0 +1,106 @@
+﻿---
+ID: "4c60b186-2f64-4502-a9fb-892204f3216d"
+Parent: "e2124310-f817-4644-8671-bff8e72b66d7"
+Template: "cebd0936-6b37-42b5-b169-369bb1c3c06a"
+Path: /sitecore/content/group/sodexo/Home/About
+BranchID: "aa757cc9-f2da-4f78-a33d-9d382d5fcf92"
+SharedFields:
+- ID: "1fbc6a49-6281-48ee-87e9-a3970b145adb"
+  Hint: NavigationFilter
+  Value: "{D063E9D1-C7B5-4B1E-B31E-69886C9C59F5}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{961AFF58-5512-420D-9955-586D2DFAA70E}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "761b386d-50ec-436a-879a-9bbbc7e27a55"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{B8E694EC-3576-4CC6-8628-AEE286A9AB38}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{B68306DB-0548-451D-B38D-28A662920D4B}"
+              p:before="*"
+              s:ds="local:/Data/HeroBanner"
+              s:id="{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B948210B2-B8AF-47C1-A04F-E220071C0A63%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              s:ph="headless-main" />
+            <r
+              uid="{E979507B-847C-4ABD-BEA2-D0CFDAE2AC6B}"
+              p:after="r[@uid='{B68306DB-0548-451D-B38D-28A662920D4B}']"
+              s:ds="5b92c5bc-396e-4747-91ab-7653f9a94747"
+              s:id="{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B71BDCB75-6061-460C-98BE-86C4E5E79B3A%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{F1346DE1-DEDC-4EDA-A7AF-7A4CC63D4167}"
+              p:after="r[@uid='{E979507B-847C-4ABD-BEA2-D0CFDAE2AC6B}']"
+              s:ds="2d90f68d-dea7-4deb-aec5-9d717d846759"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BF2C49451-6C21-4004-A70C-B346385D5F5F%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{262DBD05-3CF7-4E39-84DB-197F91743C94}"
+              p:after="r[@uid='{F1346DE1-DEDC-4EDA-A7AF-7A4CC63D4167}']"
+              s:ds="local:/Data/FeatureHighlight-Tech"
+              s:id="{85CC2A41-AC6F-4C10-9C2F-44308B48C453}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B3C33C16D-F0D3-4FBF-8D78-CE70CEA0868B%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{98020093-E705-49C4-9836-D148746ABF48}"
+              p:after="r[@uid='{262DBD05-3CF7-4E39-84DB-197F91743C94}']"
+              s:ds="local:/Data/FeatureCardsGrid-Leadership"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BF2C49451-6C21-4004-A70C-B346385D5F5F%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+            <r
+              uid="{BE335D6B-19E5-4814-A9E4-8F62D2D467A8}"
+              p:after="*[1=2]"
+              s:ds="a3422c34-f793-419f-b226-2ae9db3ad19c"
+              s:id="{03964382-C9F2-40F8-B0B9-CD7FE11809C2}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B23901AEC-21D5-40D1-A72E-6415A2FAB235%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=6"
+              s:ph="headless-main" />
+          </d>
+        </r>
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: About Sodexo Group
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T110618Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: About
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "03a10fed-24a1-4fe0-ac23-8553e3fe5c6d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T091736Z

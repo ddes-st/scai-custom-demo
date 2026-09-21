@@ -1,0 +1,26 @@
+﻿---
+ID: "3687232d-b7ac-41e2-8821-05f31416c78d"
+Parent: "62a76b57-53e0-4f57-a793-e5cf0cc8ada5"
+Template: "b2b2ee2c-f290-4e92-bfc8-14cd367e3ea3"
+Path: /sitecore/content/group/sodexo/Data/TabNavigationSections/Tab Navigation Section
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T122804Z
+    - ID: "44e9b658-15ba-436f-9d91-bf07e6e21059"
+      Hint: Title
+      Value: Tab Navigation Section
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0b378eee-0d10-478b-9970-f55b2e63f55b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T122804Z

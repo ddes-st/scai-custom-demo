@@ -1,0 +1,23 @@
+﻿---
+ID: "be69f95d-9d08-4c4b-adf3-59007b2e0bb4"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "1c4155d9-9038-4372-8d50-df5230cc3d5f"
+Path: /sitecore/content/group/sodexo/Data/ValuePropositionGrids
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T131905Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6243fc5e-8643-4092-9694-3cf2d8103581"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T131905Z
