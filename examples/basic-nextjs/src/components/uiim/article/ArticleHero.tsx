@@ -264,27 +264,115 @@ export const Minimal = ({ params, page }: ComponentProps): JSX.Element => {
    ──────────────────────────────────────────── */
 /* ────────────────────────────────────────────
    Sodexo — clean white header, fully data-driven
-   Breadcrumb from URL path, title / date / category from route fields
+   Breadcrumb from Sitecore item path + page title (not the browser URL,
+   which is /api/editing/render in Pages Builder)
    ──────────────────────────────────────────── */
 
-function SodexoBreadcrumb() {
-  const [crumbs, setCrumbs] = React.useState<{ label: string; href: string }[]>([]);
+const EDITOR_PATH_SEGMENTS = new Set([
+  'api',
+  'editing',
+  'render',
+  'preview',
+  'sitecore',
+  'content',
+]);
 
-  React.useEffect(() => {
-    const segments = window.location.pathname.split('/').filter(Boolean);
-    const built: { label: string; href: string }[] = [{ label: 'Home', href: '/' }];
-    let path = '';
-    for (const seg of segments) {
-      path += `/${seg}`;
-      const label = decodeURIComponent(seg)
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, (c) => c.toUpperCase());
-      built.push({ label, href: path });
+function formatPathSegmentLabel(segment: string): string {
+  return decodeURIComponent(segment)
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function toSiteRelativePath(itemPath: string): string {
+  const trimmed = itemPath.trim();
+  if (!trimmed) return '';
+
+  // Full Sitecore tree path → keep everything after /Home
+  const homeMatch = trimmed.match(/\/Home(\/.*)?$/i);
+  if (homeMatch) {
+    return homeMatch[1] || '';
+  }
+
+  return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+}
+
+function getSitecoreLayout(page: ComponentProps['page']) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return page?.layout?.sitecore as any;
+}
+
+function getSitecoreItemPath(page: ComponentProps['page']): string {
+  const layout = getSitecoreLayout(page);
+  const fromContext = layout?.context?.itemPath;
+  const fromRoute = layout?.route?.itemPath;
+  const raw = typeof fromContext === 'string' && fromContext
+    ? fromContext
+    : typeof fromRoute === 'string'
+      ? fromRoute
+      : '';
+  return toSiteRelativePath(raw);
+}
+
+function isArticlePage(page: ComponentProps['page']): boolean {
+  const templateName = String(getSitecoreLayout(page)?.route?.templateName || '');
+  return /article/i.test(templateName);
+}
+
+function buildSodexoBreadcrumbs(
+  page: ComponentProps['page'],
+  pageTitle?: string
+): { label: string; href: string }[] {
+  const crumbs: { label: string; href: string }[] = [{ label: 'Home', href: '/' }];
+  const relativePath = getSitecoreItemPath(page);
+  const segments = relativePath
+    .split('/')
+    .map((seg) => seg.trim())
+    .filter(Boolean)
+    .filter((seg) => !EDITOR_PATH_SEGMENTS.has(seg.toLowerCase()));
+
+  if (segments.length === 0) {
+    if (isArticlePage(page)) {
+      crumbs.push({ label: 'Articles', href: '/Articles' });
     }
-    setCrumbs(built);
-  }, []);
+    if (pageTitle) {
+      crumbs.push({ label: pageTitle, href: '#' });
+    }
+    return crumbs;
+  }
 
-  if (crumbs.length === 0) return null;
+  // Article details live under /Articles. If layout only returns the leaf item, restore the parent.
+  if (segments.length === 1 && isArticlePage(page) && segments[0].toLowerCase() !== 'articles') {
+    crumbs.push({ label: 'Articles', href: '/Articles' });
+    crumbs.push({
+      label: pageTitle || formatPathSegmentLabel(segments[0]),
+      href: `/Articles/${segments[0]}`,
+    });
+    return crumbs;
+  }
+
+  let href = '';
+  segments.forEach((seg, index) => {
+    href += `/${seg}`;
+    const isLast = index === segments.length - 1;
+    crumbs.push({
+      label: isLast && pageTitle ? pageTitle : formatPathSegmentLabel(seg),
+      href,
+    });
+  });
+
+  return crumbs;
+}
+
+function SodexoBreadcrumb({
+  page,
+  pageTitle,
+}: {
+  page: ComponentProps['page'];
+  pageTitle?: string;
+}) {
+  const crumbs = buildSodexoBreadcrumbs(page, pageTitle);
+
+  if (crumbs.length <= 1 && !pageTitle) return null;
 
   return (
     <nav
@@ -352,7 +440,7 @@ export const Sodexo = ({ params, page }: ComponentProps): JSX.Element => {
         data-testid="article-hero-header"
       >
         <div className="mx-auto max-w-4xl px-4 pb-6 pt-10 sm:px-6 lg:px-8">
-          <SodexoBreadcrumb />
+          <SodexoBreadcrumb page={page} pageTitle={title?.value} />
 
           {(title?.value || isEditing) && (
             <Text
