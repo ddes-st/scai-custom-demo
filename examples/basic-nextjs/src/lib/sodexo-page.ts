@@ -10,6 +10,12 @@ function getSitecoreLayout(page?: Page): SitecoreLayout | undefined {
   return (page as any)?.layout?.sitecore as SitecoreLayout | undefined;
 }
 
+export function isSodexoSite(page?: Page): boolean {
+  const sitecore = getSitecoreLayout(page);
+  const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
+  return siteName === 'sodexo';
+}
+
 export function isSodexoAboutPage(page?: Page): boolean {
   const sitecore = getSitecoreLayout(page);
   const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
