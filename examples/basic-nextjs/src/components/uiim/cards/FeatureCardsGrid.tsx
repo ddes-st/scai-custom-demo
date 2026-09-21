@@ -12,6 +12,8 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { sodexoAboutCardImage } from '@/lib/sodexo-about-media';
 
 interface FeatureCardItemFields {
   id: string;
@@ -82,6 +84,11 @@ export const Default = ({ fields, params, page }: FeatureCardsGridProps): JSX.El
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
   const cards = datasource.children?.results || [];
+  if (isSodexoAboutPage(page) && cards.length) {
+    return cards.length <= 4
+      ? SodexoAboutCtas({ fields, params, page })
+      : SodexoAbout({ fields, params, page });
+  }
 
   return (
     <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
@@ -307,6 +314,11 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
   );
 
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  if (isSodexoAboutPage(page) && cards.length) {
+    return cards.length <= 4
+      ? SodexoAboutCtas({ fields, params, page })
+      : SodexoAbout({ fields, params, page });
+  }
 
   return (
     <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
@@ -438,6 +450,175 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
               ))}
             </div>
           )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const brandFg = 'var(--brand-fg, #2a295c)';
+const brandAccent = 'var(--brand-accent, #da2020)';
+const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+const ReadMoreLink = ({ field, isEditing }: { field: LinkField; isEditing?: boolean }) => {
+  if (!field?.value?.href && !isEditing) return null;
+  return (
+    <ContentSdkLink
+      field={field}
+      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold"
+      style={{ color: brandAccent, fontFamily: bodyFont }}
+    />
+  );
+};
+
+const ABOUT_TOPIC_ORDER = [
+  'Mission & Ambition',
+  'Services',
+  'Sectors',
+  'Ethical principles',
+  'Values',
+  'Family owned',
+];
+const ABOUT_CTA_ORDER = [
+  'Global Executive Team:',
+  'Board of Directors:',
+  'History:',
+  'Awards',
+];
+
+function sortAboutCards(cards: FeatureCardItemFields[], order: string[]): FeatureCardItemFields[] {
+  return [...cards].sort((a, b) => {
+    const titleA = a.cardTitle?.jsonValue?.value || '';
+    const titleB = b.cardTitle?.jsonValue?.value || '';
+    const indexA = order.indexOf(titleA);
+    const indexB = order.indexOf(titleB);
+    return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+  });
+}
+
+/* ────────────────────────────────────────────
+   SodexoAbout — 3-column image cards with Read more
+   ──────────────────────────────────────────── */
+export const SodexoAbout = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = sortAboutCards(datasource.children?.results || [], ABOUT_TOPIC_ORDER);
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {cards.map((card) => {
+              const title = card.cardTitle?.jsonValue?.value;
+              const imageSrc = sodexoAboutCardImage(title, card.cardImage?.jsonValue?.value?.src);
+              return (
+              <article
+                key={card.id}
+                className="flex flex-col overflow-hidden border"
+                style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+              >
+                {(imageSrc || isEditing) && (
+                  <div className="relative aspect-square w-full overflow-hidden">
+                    {card.cardImage?.jsonValue?.value?.src || isEditing ? (
+                      <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={imageSrc} alt={title || ''} className="h-full w-full object-cover" />
+                    )}
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col px-5 py-6">
+                  {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                    <Text
+                      field={card.cardTitle?.jsonValue}
+                      tag="h3"
+                      className="text-xl font-normal"
+                      style={{ color: brandFg, fontFamily: headingFont }}
+                    />
+                  )}
+                  {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                    <ContentSdkRichText
+                      field={card.cardDescription?.jsonValue}
+                      className="mt-2 text-sm leading-6"
+                      style={{ color: brandFg, fontFamily: bodyFont }}
+                    />
+                  )}
+                  <ReadMoreLink field={card.cardLink?.jsonValue} isEditing={isEditing} />
+                </div>
+              </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoAboutCtas — 2-column image cards with outlined buttons
+   ──────────────────────────────────────────── */
+export const SodexoAboutCtas = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = sortAboutCards(datasource.children?.results || [], ABOUT_CTA_ORDER);
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 pb-8 pt-4 md:pb-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-14">
+            {cards.map((card) => {
+              const title = card.cardTitle?.jsonValue?.value;
+              const imageSrc = sodexoAboutCardImage(title, card.cardImage?.jsonValue?.value?.src);
+              return (
+              <article key={card.id} className="flex flex-col">
+                {(imageSrc || isEditing) && (
+                  <div className="relative mb-5 aspect-[16/9] w-full overflow-hidden">
+                    {card.cardImage?.jsonValue?.value?.src || isEditing ? (
+                      <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={imageSrc} alt={title || ''} className="h-full w-full object-cover" />
+                    )}
+                  </div>
+                )}
+                {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={card.cardTitle?.jsonValue}
+                    tag="h3"
+                    className="text-xl font-normal"
+                    style={{ color: brandFg, fontFamily: headingFont }}
+                  />
+                )}
+                {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={card.cardDescription?.jsonValue}
+                    className="mt-2 text-sm leading-6"
+                    style={{ color: brandFg, fontFamily: bodyFont }}
+                  />
+                )}
+                {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                  <ContentSdkLink
+                    field={card.cardLink?.jsonValue}
+                    className="mt-5 inline-flex w-fit items-center rounded-md border px-4 py-2 text-sm font-semibold"
+                    style={{
+                      color: brandFg,
+                      borderColor: brandFg,
+                      fontFamily: bodyFont,
+                    }}
+                  />
+                )}
+              </article>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

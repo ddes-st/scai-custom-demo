@@ -14,6 +14,8 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { SODEXO_ABOUT_TECH_IMAGE } from '@/lib/sodexo-about-media';
 
 interface FeatureHighlightFields {
   EyebrowText: Field<string>;
@@ -67,6 +69,7 @@ const CtaButton = ({ field, isEditing }: { field: LinkField; isEditing?: boolean
 export const Default = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -117,6 +120,7 @@ export const Default = ({ fields, params, page }: FeatureHighlightProps): JSX.El
 export const Centered = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -510,6 +514,7 @@ const SodexoNewsCarousel = ({ fields, isEditing }: { fields: FeatureHighlightFie
 export const Sodexo = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   if (fields.Title?.value === SODEXO_NEWS_TITLE) {
@@ -579,6 +584,69 @@ export const Sodexo = ({ fields, params, page }: FeatureHighlightProps): JSX.Ele
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoAbout — image left, outlined CTA (About page only)
+   ──────────────────────────────────────────── */
+export const SodexoAbout = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  const aboutFg = 'var(--brand-fg, #2a295c)';
+  const aboutHeadingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const aboutBodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component feature-highlight', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1224px] items-center gap-10 lg:grid-cols-2 lg:gap-16 lg:px-12">
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[420px]">
+            {fields.FeatureImage?.value?.src || isEditing ? (
+              <SmartMedia
+                field={fields.FeatureImage}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={SODEXO_ABOUT_TECH_IMAGE}
+                alt="Technology, Innovation and AI"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+          </div>
+          <div>
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-[28px] font-normal leading-tight sm:text-[36px]"
+                style={{ color: aboutFg, fontFamily: aboutHeadingFont }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base leading-7"
+                style={{ color: aboutFg, fontFamily: aboutBodyFont }}
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-6 inline-flex items-center rounded-md border px-4 py-2 text-sm font-semibold"
+                style={{ color: aboutFg, borderColor: aboutFg, fontFamily: aboutBodyFont }}
               />
             )}
           </div>

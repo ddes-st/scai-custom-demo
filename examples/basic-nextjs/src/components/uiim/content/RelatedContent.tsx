@@ -8,6 +8,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
 
 interface RelatedContentFields {
   Title: Field<string>;
@@ -31,6 +32,7 @@ const RelatedContentDefaultComponent = (): JSX.Element => (
 export const Default = ({ fields, params, page }: RelatedContentProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } }, params, page });
   if (!fields) return <RelatedContentDefaultComponent />;
 
   return (
@@ -134,6 +136,7 @@ const RELATED_ARTICLES: RelatedArticle[] = [
 export const Sodexo = ({ fields, params, page }: RelatedContentProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } }, params, page });
   if (!fields) return <RelatedContentDefaultComponent />;
 
   return (
@@ -153,6 +156,71 @@ export const Sodexo = ({ fields, params, page }: RelatedContentProps): JSX.Eleme
           )}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {RELATED_ARTICLES.map((article, i) => (
+              <RelatedArticleCard key={i} {...article} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const ABOUT_NEWS: RelatedArticle[] = [
+  {
+    category: 'Food',
+    title: "Carole's story: good food can change lives",
+    image:
+      'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-1240x698/people-stories/2026/carole-galissant-banner.jpeg',
+    href: 'https://www.sodexo.com/working-at-sodexo/our-people-stories/2026/director-food-nutrition',
+  },
+  {
+    category: 'Business and Industries',
+    title: 'The State of Workplace Hospitality 2026',
+    image:
+      'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-card-608x342/built-workplace-leaders.jpg',
+    href: 'https://www.sodexo.com/blog/our-everyday-stories/reports/workplace-hospitality-2026',
+  },
+  {
+    category: 'Business and Industries',
+    title: "Gordon's story: challenges are key to learning your craft",
+    image:
+      'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-1240x698/people-stories/2026/gordon-carberry-banner.jpeg',
+    href: 'https://www.sodexo.com/working-at-sodexo/our-people-stories/2026/development-chef-Ireland',
+  },
+  {
+    category: 'Food',
+    title: 'Food As Medicine: How Data, Science and Behavioral Design Are Turning Nutrition into a Clinical Lever',
+    image:
+      'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-1240x698/2026/food-medicine-healthcare-banner.jpeg',
+    href: 'https://www.sodexo.com/blog/our-everyday-stories/business-stories/2026/food-as-medicine-healthcare-nutrition',
+  },
+];
+
+const FALLBACK_NEWS_TITLE = 'Latest news and thought leadership:';
+
+export const SodexoAbout = ({ fields, params, page }: RelatedContentProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+
+  const titleField: Field<string> = {
+    ...(fields?.Title || { value: '' }),
+    value: fields?.Title?.value || FALLBACK_NEWS_TITLE,
+  };
+
+  return (
+    <div className={cn('component related-content', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          {(titleField.value || isEditing) && (
+            <Text
+              field={titleField}
+              tag="h2"
+              className="mb-10 text-center text-[28px] font-normal sm:text-[32px]"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {ABOUT_NEWS.map((article, i) => (
               <RelatedArticleCard key={i} {...article} />
             ))}
           </div>

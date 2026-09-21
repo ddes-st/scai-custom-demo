@@ -3103,5 +3103,44 @@ lookups:
       componentInstanceId: "ce2cae69-f880-4652-a2dc-db2635a3e3aa"
       note: "Variant must be switched to Sodexo in Pages Builder (FieldNames parameter)"
 
+# ──────────────────────────────────────────────
+# Sodexo About page (2026-09-21)
+# ──────────────────────────────────────────────
+  - name: SodexoAboutPage
+    status: complete
+    updatedAt: "2026-09-21"
+    notes: >
+      Custom About page for group/sodexo based on https://www.sodexo.com/about-us/sodexo-group.
+      Reuses HeroBanner, TrustStatsRow, FeatureCardsGrid, FeatureHighlight, RelatedContent
+      with new SodexoAbout / SodexoAboutCtas named exports. Existing Sodexo homepage and
+      article variants were not modified. About layouts also activate via isSodexoAboutPage()
+      because MCP cannot set FieldNames rendering parameters.
+    page:
+      name: About
+      itemId: "4c60b186-2f64-4502-a9fb-892204f3216d"
+      path: "/sitecore/content/group/sodexo/Home/About"
+      route: "/About"
+    variants:
+      - { component: "HeroBanner", name: "SodexoAbout", itemId: "f48712e1-4da9-42af-aa7a-2c505826e64f" }
+      - { component: "TrustStatsRow", name: "SodexoAbout", itemId: "fcc03264-be55-40e2-aea0-0694bb64ee4c" }
+      - { component: "FeatureCardsGrid", name: "SodexoAbout", itemId: "e3d5d2f2-2619-42d6-8298-f6f271e30a52" }
+      - { component: "FeatureCardsGrid", name: "SodexoAboutCtas", itemId: "c3c87d23-620d-4a7e-8f63-c5fca0c13625" }
+      - { component: "FeatureHighlight", name: "SodexoAbout", itemId: "af9c796a-6ec6-4180-8387-d15b64daa049" }
+      - { component: "RelatedContent", name: "SodexoAbout", itemId: "07512c98-3c31-4a74-ad3c-30dc68e1c6bf" }
+    datasources:
+      - { name: "Sodexo About - Hero", itemId: "251cb9b0-38f3-4dad-b001-58d45ca8950c", path: "/sitecore/content/group/sodexo/Data/HeroBanners/Sodexo About - Hero" }
+      - { name: "Sodexo About - Stats", itemId: "5b92c5bc-396e-4747-91ab-7653f9a94747", path: "/sitecore/content/group/sodexo/Data/TrustStatsRows/Sodexo About - Stats" }
+      - { name: "Sodexo About - Topics", itemId: "2d90f68d-dea7-4deb-aec5-9d717d846759", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo About - Topics" }
+      - { name: "Sodexo About - Leadership CTAs", itemId: "b48d8e0a-bd6d-4bd2-ba88-92a81296efb8", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo About - Leadership CTAs" }
+      - { name: "Sodexo About - Tech Innovation AI", itemId: "4a55b646-63c5-4825-b470-c64e6c2568f5", path: "/sitecore/content/group/sodexo/Data/FeatureHighlights/Sodexo About - Tech Innovation AI" }
+      - { name: "Sodexo About - Latest News", itemId: "a3422c34-f793-419f-b226-2ae9db3ad19c", path: "/sitecore/content/group/sodexo/Data/RichTextBlocks/Sodexo About - Latest News" }
+    pageComponents:
+      - { name: "HeroBanner", instanceId: "b68306db-0548-451d-b38d-28a662920d4b", datasource: "local HeroBanner e19fc487" }
+      - { name: "TrustStatsRow", instanceId: "e979507b-847c-4abd-bea2-d0cfdae2ac6b", datasource: "5b92c5bc" }
+      - { name: "FeatureCardsGrid Topics", instanceId: "f1346de1-dedc-4eda-a7af-7a4cc63d4167", datasource: "2d90f68d" }
+      - { name: "FeatureHighlight", instanceId: "262dbd05-3cf7-4e39-84db-197f91743c94", datasource: "local FeatureHighlight-Tech 2bdfe0eb" }
+      - { name: "FeatureCardsGrid Leadership", instanceId: "98020093-e705-49c4-9836-d148746abf48", datasource: "local 57c81e93" }
+      - { name: "RelatedContent", instanceId: "be335d6b-19e5-4814-a9e4-8f62d2d467a8", datasource: "a3422c34" }
+
 # Demo datasource items (AI-created content, not new component definitions)
 demoContent: []

@@ -8,6 +8,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
 
 interface StatItemFields {
   id: string;
@@ -81,6 +82,7 @@ const SectionHeader = ({
 export const Default = ({ fields, params, page }: TrustStatsRowProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TrustStatsRowDefaultComponent />;
   const items = datasource.children?.results || [];
@@ -229,6 +231,49 @@ export const LogoRow = ({ fields, params, page }: TrustStatsRowProps): JSX.Eleme
               </div>
             ))}
           </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoAbout — lavender stats bar, no section heading
+   ──────────────────────────────────────────── */
+export const SodexoAbout = ({ fields, params, page }: TrustStatsRowProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <TrustStatsRowDefaultComponent />;
+  const items = datasource.children?.results || [];
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component trust-stats-row', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-10 md:py-12" style={{ backgroundColor: 'var(--brand-muted, #e7e9f7)' }}>
+        <div className="mx-auto grid max-w-[1224px] gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:px-16">
+          {items.map((item) => (
+            <div key={item.id} className="text-center">
+              {(item.statValue?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={item.statValue?.jsonValue}
+                  tag="p"
+                  className="text-[28px] font-bold leading-none sm:text-[32px]"
+                  style={{ color: brandFg, fontFamily: headingFont }}
+                />
+              )}
+              {(item.statLabel?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={item.statLabel?.jsonValue}
+                  tag="p"
+                  className="mt-2 text-sm leading-snug"
+                  style={{ color: brandFg, fontFamily: bodyFont }}
+                />
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </div>

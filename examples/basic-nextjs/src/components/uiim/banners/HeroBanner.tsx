@@ -12,6 +12,8 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 
 interface HeroBannerFields {
   Title: Field<string>;
@@ -76,6 +78,7 @@ export const Default = ({ fields, params, page }: HeroBannerProps): JSX.Element 
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -172,6 +175,7 @@ export const BackgroundImage = ({ fields, params, page }: HeroBannerProps): JSX.
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -339,6 +343,7 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
+  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
   if (!fields) return <HeroBannerDefaultComponent />;
 
   const togglePlayback = () => {
@@ -409,6 +414,72 @@ export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element =
             </button>
           </div>
         )}
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoAbout — split text + image, breadcrumb, no video
+   Used only on the About page. Does not replace the homepage Sodexo hero.
+   ──────────────────────────────────────────── */
+export const SodexoAbout = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1224px] items-center gap-10 px-4 py-10 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-16 lg:py-16">
+          <div>
+            <nav className="mb-4 text-sm" aria-label="Breadcrumb" style={{ color: brandFg, fontFamily: bodyFont }}>
+              <ol className="flex flex-wrap items-center gap-2 opacity-70">
+                <li>
+                  <a href="/" className="hover:opacity-70">Home</a>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>About Us</li>
+              </ol>
+            </nav>
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h1"
+                className="text-[32px] font-normal leading-tight tracking-tight sm:text-[42px] sm:leading-[1.15]"
+                style={{ color: brandFg, fontFamily: headingFont }}
+              />
+            )}
+            {(fields.Subtitle?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Subtitle}
+                className="mt-4 max-w-md text-base leading-7"
+                style={{ color: brandFg, fontFamily: bodyFont }}
+              />
+            )}
+          </div>
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px] lg:min-h-[480px]">
+            {fields.HeroImage?.value?.src || isEditing ? (
+              <SmartMedia
+                field={fields.HeroImage}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={SODEXO_ABOUT_HERO_IMAGE}
+                alt="About Sodexo Group"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+          </div>
+        </div>
       </section>
     </div>
   );
