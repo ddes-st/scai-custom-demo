@@ -1,0 +1,41 @@
+﻿---
+ID: "2b30e88b-a24f-4845-bc43-7c7bb2110690"
+Parent: "8c8f0f7d-fbc1-4182-89dd-2a4e33a3362c"
+Template: "4828b260-dc19-4c4f-bf0e-1dd5ae47edcc"
+Path: "/sitecore/content/group/sodexo/Data/HeroBannerCarousels/Sodexo Articles - Featured/03 Sustainable Chefs"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1474d8b8-e0ec-4846-9710-6a81df7a519f"
+      Hint: SlideTitle
+      Value: The sustainable chef superstars fuelling your day
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T100414Z
+    - ID: "25d25511-69d5-489b-8df0-ab9ae8f48964"
+      Hint: SlideImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/106449-section3-img5?v=409a0f3e" dam-id="FtVfaGkHSs2aGWGxKc1IDg" width="1440" height="900" alt="Sustainable chef superstars" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106449/thumbnail" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c5f6ee20-7503-4c43-8bfa-7e1a8be781fe"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T100414Z
+    - ID: "f3094864-2fa0-4bb4-b4a6-a773bf06b96f"
+      Hint: SlideSubtitle
+      Value: <p>Dec. 04, 2025</p>

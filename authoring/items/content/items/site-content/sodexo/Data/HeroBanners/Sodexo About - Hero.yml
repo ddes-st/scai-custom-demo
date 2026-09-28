@@ -26,10 +26,10 @@ Languages:
     - ID: "729698a6-1380-45b1-b348-a464e5f9825a"
       Hint: HeroImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/hero-720x540/about-us-banner.jpg" alt="About Sodexo Group" width="720" height="540" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/107999-about-us-banner?v=c018cef1" dam-id="jdzrQXrhT9KO_QNpcG7Fow" width="720" height="540" alt="About Sodexo Group" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/107999/thumbnail" />
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "65672be2-82dc-4a91-b120-e5698277445a"
+      Value: "168fd830-4852-4768-80d0-6f4c96e08365"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -39,4 +39,4 @@ Languages:
       Value: About Sodexo Group
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091209Z
+      Value: 20260928T094455Z

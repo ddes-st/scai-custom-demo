@@ -29,11 +29,11 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ea2a1994-1676-45fd-a340-0506bbc372e7"
+      Value: "7697b7eb-eeba-4bff-901a-8273fcbdb336"
     - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
       Hint: CardImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-card-608x342/about-board-directors.jpg" alt="Board of Directors" width="608" height="342" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108085-about-board-directors?v=0913973c" dam-id="NNMLhNn8TsiZQqU1rBxMBg" width="608" height="342" alt="Board of Directors" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108085/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -43,4 +43,4 @@ Languages:
       Value: "Board of Directors:"
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091800Z
+      Value: 20260928T094451Z

@@ -1,0 +1,38 @@
+﻿---
+ID: "c38824cd-4d94-4add-83fd-126f01d8fe93"
+Parent: "e2d8d94e-faea-4b41-8928-8c39dd32edbb"
+Template: "c48880b3-b0b9-49ea-bf19-931c68a8a37c"
+Path: "/sitecore/content/group/sodexo/Data/LogoClouds/Sodexo Articles - Social/Instagram"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "17cc8e99-43cd-4f35-8ed4-6c7a13334449"
+      Hint: CompanyName
+      Value: Instagram
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T100542Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "736a53fe-18e4-4fc8-a2c3-164fa8dc9391"
+      Hint: LogoLink
+      Value: |
+        <link text="Instagram" linktype="external" url="https://www.instagram.com/sodexo/" target="_blank" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "039f1f99-d978-43ac-9414-8bc44022d8aa"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T100543Z

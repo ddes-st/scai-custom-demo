@@ -13,7 +13,7 @@ SharedFields:
     <image mediaid="{C14D0378-6450-4FEE-946A-4CB65B4C3A22}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "46142f39-d787-4ffe-b071-9ff4589d09d6"
+  Value: "438364f6-e811-42e9-b3c5-23f7e3aeb4d6"
 Languages:
 - Language: en
   Versions:
@@ -30,10 +30,32 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
-              uid="{CE2CAE69-F880-4652-A2DC-DB2635A3E3AA}"
-              s:ds="8f1ba186-60f2-4602-965c-cdef8c41c3bb"
-              s:id="{73DB9924-CCB3-4A02-A28D-6C36FD4C4E7C}"
-              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BC9ADD9FD-A048-4837-9865-47C3CB60A2EC%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              uid="{59958D81-1F11-464E-8057-C734A507DCF7}"
+              p:before="*"
+              s:ds="72ea31b2-b2c5-46c7-b6ae-377fe681adeb"
+              s:id="{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B948210B2-B8AF-47C1-A04F-E220071C0A63%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{13E3ABE6-F88D-4323-85EB-8D5D296E5DD9}"
+              p:after="r[@uid='{59958D81-1F11-464E-8057-C734A507DCF7}']"
+              s:ds="8c8f0f7d-fbc1-4182-89dd-2a4e33a3362c"
+              s:id="{4C5C1FA5-C077-491D-9686-40D0F68EF03E}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B25EE20ED-BDA5-46D1-A254-E45BFF3602C0%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{95ECEFBA-7120-49D1-855B-1352FE5962C4}"
+              p:after="r[@uid='{13E3ABE6-F88D-4323-85EB-8D5D296E5DD9}']"
+              s:ds="e2d8d94e-faea-4b41-8928-8c39dd32edbb"
+              s:id="{A53006E8-C66B-419F-859D-7CFA92E7E26B}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B125C1A27-2F29-4A84-B45A-DD43279C23CE%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+            <r
+              uid="{B8FA863A-41FC-4C50-AC97-4CCE1E334D08}"
+              p:after="*[1=2]"
+              s:ds="b83af41c-6028-440c-8f6c-1284b5971639"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BB9E9557D-EBD1-407D-AD97-319EE8CC75D7%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
               s:ph="headless-main" />
           </d>
         </r>
@@ -48,11 +70,11 @@ Languages:
       Value: Articles
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5ffc2ad1-d38e-4c23-8fc0-bc985f42c958"
+      Value: "f78d5aea-a11b-4c10-bf8b-9da820322c4a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260715T141558Z
+      Value: 20260928T111439Z

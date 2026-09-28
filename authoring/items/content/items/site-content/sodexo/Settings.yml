@@ -46,10 +46,10 @@ SharedFields:
   Value: "{96E5F4BA-A2CF-4A4C-A4E7-64DA88226362}"
 - ID: "d0ce707c-342f-4c02-ac0a-edb21346dde4"
   Hint: SupportedLanguages
-  Value: "{AF584191-45C9-4201-8740-5409F4CF8BDD}"
+  Value: af58419145c9420187405409f4cf8bdd|397d0dfbd58948b3957eb0f4a8f68a0f|2bf73b009abd4c4c8c1bb5a3336c2c1b|8c5af1e6a0f544038170ae58676c07ac
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "9cd38db5-86a6-4bd7-b6c7-44d012ec45de"
+  Value: "06f904ef-51bc-4ea7-8ad3-99a7296819c8"
 - ID: "e8881464-38af-4655-be4a-ee10586578a2"
   Hint: Templates
   Value: "{786317E3-1F0F-4CE6-8C6A-0683FE1C48A3}"
@@ -77,11 +77,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1e9ad2b6-6db4-462d-bf90-b31dd73089c4"
+      Value: "d9b7dfc0-a3f9-4ba0-a795-d582ebbb5805"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\federico.mujica@sitecore.com
+        sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260325T110510Z
+      Value: 20260924T082235Z

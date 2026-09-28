@@ -36,11 +36,11 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3008cec6-f7a8-4322-9763-54e19906af34"
+      Value: "0c1030da-782c-4143-ae91-e6d182311469"
     - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
       Hint: CardImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/about-sectors.jpg" alt="Sectors" width="503" height="503" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108024-about-sectors?v=944641ae" dam-id="f68zM0UQQaeV_9sPDybBMA" width="503" height="503" alt="Sectors" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108024/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -50,4 +50,4 @@ Languages:
       Value: Sectors
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091606Z
+      Value: 20260928T094447Z

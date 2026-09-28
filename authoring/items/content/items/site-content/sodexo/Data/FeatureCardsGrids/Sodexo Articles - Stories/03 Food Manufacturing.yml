@@ -1,8 +1,8 @@
 ﻿---
-ID: "084fdee4-946b-40b7-b23a-93bc94c1df39"
-Parent: "57c81e93-967b-4c55-b66f-1fc922fa2847"
+ID: "b572b218-d5e5-47cd-8b5a-03c881d81201"
+Parent: "b83af41c-6028-440c-8f6c-1284b5971639"
 Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
-Path: "/sitecore/content/group/sodexo/Home/About/Data/FeatureCardsGrid-Leadership/01 Executive Team"
+Path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo Articles - Stories/03 Food Manufacturing"
 Languages:
 - Language: en
   Versions:
@@ -10,15 +10,14 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260921T091758Z
+      Value: 20260928T100818Z
     - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
       Hint: CardLink
       Value: |
-        <link text="Find out more about our global leadership team" anchor="" linktype="external" class="" title="" target="_self" querystring="" url="https://www.sodexo.com/about-us/sodexo-leadership-team" />
+        <link text="Read more" linktype="external" url="#" target="_self" />
     - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
       Hint: CardDescription
-      Value: |
-        <div class="ck-content"><p>Meet the people leading Sodexo and driving us forward.</p></div>
+      Value: <p>Food</p>
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -29,18 +28,18 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "18031883-c41a-426a-8d12-0ece6c6c4c8d"
+      Value: "d053f6cd-ffca-4153-82ad-89fc96d830af"
     - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
       Hint: CardImage
       Value: |
-        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108076-about-executive-team?v=5961ac4a" dam-id="P5euMxiaQ12BAdI1VklOLw" width="608" height="342" alt="Global Executive Team" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108076/thumbnail" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/106429-section3-img3?v=b3caf991" dam-id="7k3Q4BDUTp2G5nPZkYW9Mg" width="1240" height="698" alt="Shaping food services" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106429/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\damien.despas@sitecore.com
     - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
       Hint: CardTitle
-      Value: "Global Executive Team:"
+      Value: Shaping food services to fuel the future of manufacturing
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260928T094448Z
+      Value: 20260928T100819Z

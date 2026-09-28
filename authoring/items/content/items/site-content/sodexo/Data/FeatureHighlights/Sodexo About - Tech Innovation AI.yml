@@ -28,7 +28,7 @@ Languages:
       Value: "Technology, Innovation & AI:"
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "52d995a8-9eb2-4a4e-8107-944e1d239865"
+      Value: "93b5abe1-d5cf-443a-a79d-faf8f78344fd"
     - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
       Hint: Description
       Value: |
@@ -36,11 +36,11 @@ Languages:
     - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
       Hint: FeatureImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/about-technology.jpg" alt="Technology, Innovation and AI" width="503" height="503" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108064-about-technology?v=57147cf0" dam-id="2Lqij7QNRReeLlFov0jf2g" width="503" height="503" alt="Technology, Innovation and AI" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108064/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091213Z
+      Value: 20260928T094454Z

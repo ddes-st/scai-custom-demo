@@ -36,11 +36,11 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "2d0efb3b-dd93-4fab-b700-f587c42ebc47"
+      Value: "30ea02e1-c81f-4ba1-a2b1-80ce7af921f9"
     - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
       Hint: CardImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/about-services.jpg" alt="Services" width="503" height="503" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108015-about-services?v=548ee6fd" dam-id="trLR9bDpQIiQnL-C_Jpu_Q" width="503" height="503" alt="Services" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108015/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -50,4 +50,4 @@ Languages:
       Value: Services
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091605Z
+      Value: 20260928T094447Z

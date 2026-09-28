@@ -29,11 +29,11 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "bb6e0aa9-19d6-4d11-b652-90120a818d65"
+      Value: "669da8bd-2087-47a6-87f7-3c234b54d0cd"
     - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
       Hint: CardImage
       Value: |
-        <Image src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-card-608x342/about-awards.jpg" alt="Awards" width="608" height="342" />
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108104-about-awards?v=1aee5e69" dam-id="Y3hgm-B9QMW6EJfm3yqJHA" width="608" height="342" alt="Awards" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108104/thumbnail" />
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -43,4 +43,4 @@ Languages:
       Value: Awards
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260921T091802Z
+      Value: 20260928T094454Z
