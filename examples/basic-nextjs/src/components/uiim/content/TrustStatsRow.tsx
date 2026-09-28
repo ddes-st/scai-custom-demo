@@ -79,10 +79,11 @@ const SectionHeader = ({
 /* ────────────────────────────────────────────
    Default — big centered numbers, 4-column grid
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: TrustStatsRowProps): JSX.Element => {
+export const Default = (props: TrustStatsRowProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TrustStatsRowDefaultComponent />;
   const items = datasource.children?.results || [];

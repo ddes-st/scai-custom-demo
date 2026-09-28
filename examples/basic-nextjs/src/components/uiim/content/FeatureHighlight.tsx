@@ -66,10 +66,11 @@ const CtaButton = ({ field, isEditing }: { field: LinkField; isEditing?: boolean
 /* ────────────────────────────────────────────
    Default — image right, text left (alternates via CSS)
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+export const Default = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -117,10 +118,11 @@ export const Default = ({ fields, params, page }: FeatureHighlightProps): JSX.El
 /* ────────────────────────────────────────────
    Centered — centered text above, image below
    ──────────────────────────────────────────── */
-export const Centered = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+export const Centered = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -511,10 +513,11 @@ const SodexoNewsCarousel = ({ fields, isEditing }: { fields: FeatureHighlightFie
   );
 };
 
-export const Sodexo = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+export const Sodexo = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   if (fields.Title?.value === SODEXO_NEWS_TITLE) {

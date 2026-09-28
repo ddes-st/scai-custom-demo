@@ -29,10 +29,13 @@ const RelatedContentDefaultComponent = (): JSX.Element => (
 /* ────────────────────────────────────────────
    Default — title + placeholder grid
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: RelatedContentProps): JSX.Element => {
+export const Default = (props: RelatedContentProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } }, params, page });
+  if (isSodexoAboutPage(page)) {
+    return SodexoAbout({ ...props, fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } } });
+  }
   if (!fields) return <RelatedContentDefaultComponent />;
 
   return (
@@ -133,10 +136,13 @@ const RELATED_ARTICLES: RelatedArticle[] = [
   },
 ];
 
-export const Sodexo = ({ fields, params, page }: RelatedContentProps): JSX.Element => {
+export const Sodexo = (props: RelatedContentProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } }, params, page });
+  if (isSodexoAboutPage(page)) {
+    return SodexoAbout({ ...props, fields: fields || { Title: { value: FALLBACK_NEWS_TITLE } } });
+  }
   if (!fields) return <RelatedContentDefaultComponent />;
 
   return (

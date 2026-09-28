@@ -74,11 +74,12 @@ const SecondaryButton = ({
 /* ────────────────────────────────────────────
    Default — centered text on colored background
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const Default = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -171,11 +172,12 @@ export const SplitImageText = ({ fields, params, page }: HeroBannerProps): JSX.E
 /* ────────────────────────────────────────────
    BackgroundImage — full-bleed image with overlay
    ──────────────────────────────────────────── */
-export const BackgroundImage = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const BackgroundImage = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -337,13 +339,14 @@ export const Minimal = ({ fields, params, page }: HeroBannerProps): JSX.Element 
 const SODEXO_HERO_VIDEO_SRC =
   'https://ddes.sitecoresandbox.cloud/api/public/content/106592-hero-video?v=0dfcc3e4';
 
-export const Sodexo = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const Sodexo = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  if (isSodexoAboutPage(page)) return SodexoAbout({ fields, params, page });
+  if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   const togglePlayback = () => {

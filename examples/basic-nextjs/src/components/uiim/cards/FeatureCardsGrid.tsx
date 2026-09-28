@@ -78,7 +78,8 @@ const SectionHeader = ({
 /* ────────────────────────────────────────────
    Default — 3-column grid, icon top
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+export const Default = (props: FeatureCardsGridProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
@@ -86,8 +87,8 @@ export const Default = ({ fields, params, page }: FeatureCardsGridProps): JSX.El
   const cards = datasource.children?.results || [];
   if (isSodexoAboutPage(page) && cards.length) {
     return cards.length <= 4
-      ? SodexoAboutCtas({ fields, params, page })
-      : SodexoAbout({ fields, params, page });
+      ? SodexoAboutCtas(props)
+      : SodexoAbout(props);
   }
 
   return (
@@ -284,7 +285,8 @@ export const WithImages = ({ fields, params, page }: FeatureCardsGridProps): JSX
 /* ────────────────────────────────────────────
    Carousel — horizontal scrolling cards with dots + arrows
    ──────────────────────────────────────────── */
-export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+export const Carousel = (props: FeatureCardsGridProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
@@ -316,8 +318,8 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
   if (isSodexoAboutPage(page) && cards.length) {
     return cards.length <= 4
-      ? SodexoAboutCtas({ fields, params, page })
-      : SodexoAbout({ fields, params, page });
+      ? SodexoAboutCtas(props)
+      : SodexoAbout(props);
   }
 
   return (
