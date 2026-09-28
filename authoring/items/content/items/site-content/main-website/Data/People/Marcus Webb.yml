@@ -1,0 +1,43 @@
+﻿---
+ID: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+Parent: "b4a7e448-2620-458e-9108-e6123c433660"
+Template: "513c2b76-7415-48b7-84a5-e663d3bb9129"
+Path: "/sitecore/content/main/main-website/Data/People/Marcus Webb"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1ef53a42-6d08-4e93-a944-754ba96073f6"
+      Hint: personBio
+      Value: "<p>Marcus Webb is a Principal DevOps Engineer focused on deployment automation, progressive delivery, and production observability. He has run platform teams at three high-growth SaaS companies.</p>"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260805T155235Z
+    - ID: "3d30f382-ff2d-4687-ba06-450575f55a7f"
+      Hint: personFirstName
+      Value: Marcus
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "7703b7da-c3db-44aa-baad-ffc8a0fc0620"
+      Hint: personJobTitle
+      Value: Principal DevOps Engineer
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c1bc1ea3-959b-410b-91ba-0e2074866236"
+    - ID: "93cd7933-7e2d-4423-a9ae-3d745868bcc5"
+      Hint: personLastName
+      Value: Webb
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260805T155236Z

@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-21T11:40:00Z"
+lastUpdatedAt: "2026-09-28T00:00:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
@@ -15,10 +15,10 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}"
-  lastUpdatedAt: "2026-09-21T11:40:00Z"
-  renderingCount: 33
-  warning: "MCP write of Renderings succeeded and returned the concatenated value including Quote {F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}."
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}"
+  lastUpdatedAt: "2026-09-28T00:00:00Z"
+  renderingCount: 38
+  note: "Merge of sodexo and main: kept Quote {F44F91B0-859A-4FC5-88D8-1920DEEBB5E5} plus search renderings SearchResults {D33F0079-E54F-48C3-A33A-6A3A83146DA8}, SearchCollection {158772E0-46FD-4626-9144-527C24854F97}, and SearchTypeahead {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
 
 components:
   - name: "AnnouncementBar"
@@ -1676,6 +1676,158 @@ components:
 
     notes: []
 
+  - name: "IdentityCaptureForm"
+    kind: "simple"
+    category: "Forms"
+    status: "complete"
+    createdAt: "2026-07-13T00:00:00Z"
+    updatedAt: "2026-07-13T00:00:00Z"
+
+    react:
+      filePath: "src/components/uiim/forms/IdentityCaptureForm.tsx"
+      componentMapKey: "IdentityCaptureForm"
+      variants:
+        - "Default"
+        - "HCA"   # export exists in code; no Headless Variant item provisioned on Main (Default only, by choice)
+
+    templates:
+      datasource:
+        name: "IdentityCaptureForm"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Forms/IdentityCaptureForm"
+        itemId: "{9DB25583-B9C2-466B-8DB5-B5726A356AC1}"
+        sectionName: "Content"
+        fields:
+          - { name: "FormTitle", type: "Single-Line Text" }
+          - { name: "FormDescription", type: "Rich Text" }
+          - { name: "EmailLabel", type: "Single-Line Text" }
+          - { name: "FirstNameLabel", type: "Single-Line Text" }
+          - { name: "LastNameLabel", type: "Single-Line Text" }
+          - { name: "SubmitButtonLabel", type: "Single-Line Text" }
+          - { name: "SuccessMessage", type: "Single-Line Text" }
+          - { name: "ExtensionDataJson", type: "Multi-Line Text" }
+          - { name: "IdentityProvider", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{A32100FB-C6D4-4F67-8BFF-E8AF63C48F68}"
+          linked: true   # silent-write — verify in Content Editor
+
+      folder:
+        name: "IdentityCaptureForm Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/IdentityCaptureForm Folder"
+        itemId: "{DA3E6AB6-1E72-4582-9ECB-E55E9501C35E}"
+        standardValues:
+          itemId: "{F2DDFF41-1F2A-4B99-8D7A-69D915865942}"
+          linked: true   # silent-write — verify in Content Editor
+          masters: ["IdentityCaptureForm"]
+
+      renderingParams:
+        name: "IdentityCaptureForm"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Forms/IdentityCaptureForm"
+        itemId: "{2FE9AC9B-3E46-4AC2-8AB0-36668595F199}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "IdentityCaptureForms"
+      path: "/sitecore/content/main/main-website/Data/IdentityCaptureForms"
+      itemId: "{826BD609-C026-458D-901A-C3503DAEF853}"
+      insertOptionsSet: true   # silent-write — verify in Content Editor
+      exampleItem:
+        name: "Identity Capture Form"
+        itemId: "{05E480DE-DDD3-4A07-871A-87D46802A3A8}"
+
+    rendering:
+      name: "IdentityCaptureForm"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Forms/IdentityCaptureForm"
+      itemId: "{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}"
+      componentName: "IdentityCaptureForm"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Forms/IdentityCaptureForm"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='IdentityCaptureForm Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='IdentityCaptureForm Folder']"
+      parametersTemplateId: "{2FE9AC9B-3E46-4AC2-8AB0-36668595F199}"
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/IdentityCaptureForm"
+      containerId: "{24632B0B-55E2-4F2C-8D98-875972209B99}"
+      variants:
+        - { name: "Default", itemId: "{27234935-C791-404E-84D9-8E83ADD0A60D}" }
+
+    verification:
+      checkedAt: "2026-07-13T00:00:00Z"
+      passed:
+        - "Datasource template with base templates {1930BBEB...}|{44A022DB...}"
+        - "All 9 fields created with correct Types"
+        - "Datasource + folder __Standard Values created"
+        - "Rendering Parameters with 4 base templates"
+        - "Datasource folder + example item created"
+        - "Rendering: componentName, Parameters Template GUID, AddFieldEditorButton=1, empty ComponentQuery (re-read by parent)"
+        - "Headless Variant Definition Default"
+        - "Rendering appended to Available Renderings Page Content (silent-write)"
+        - "React file + component map brought from yokohama"
+      failed: []
+      pendingManual:
+        - "Silent-write fields not surfaced by MCP read — verify in Content Editor: datasource template __Standard values link, folder template SV __Masters, folder instance __Masters, rendering Datasource Template + Datasource Location"
+        - "Renderings field on Available Renderings (silent-write, appended to manifest lastKnownValue)"
+
+    notes:
+      - "2026-07-13: Brought from origin/yokohama (commit 3a05ada). Simple datasource form; fires SDK identity() on submit (email + first/last name + ExtensionDataJson extensionData). Sitecore items created fresh on Main tenant (stale HCA IDs discarded). HCA export kept in code but no HCA variant item provisioned."
+
+  - name: "IdentityEventDevForm"
+    kind: "context"
+    category: "Forms"
+    status: "complete"
+    createdAt: "2026-07-13T00:00:00Z"
+    updatedAt: "2026-07-13T00:00:00Z"
+
+    react:
+      filePath: "src/components/uiim/forms/IdentityEventDevForm.tsx"
+      componentMapKey: "IdentityEventDevForm"
+      variants:
+        - "Default"
+        - "HCA"   # export exists in code; no Headless Variant item provisioned on Main (Default only, by choice)
+
+    templates:
+      renderingParams:
+        name: "IdentityEventDevForm"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Forms/IdentityEventDevForm"
+        itemId: "{A515B444-A9EE-45C1-8254-B60956A18A32}"
+        baseTemplatesSet: true
+
+    rendering:
+      name: "IdentityEventDevForm"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Forms/IdentityEventDevForm"
+      itemId: "{06D05BB6-2DD6-457A-BC64-22A07F7D4359}"
+      componentName: "IdentityEventDevForm"
+      datasourceTemplatePath: ""
+      datasourceLocationQuery: ""
+      parametersTemplateId: "{A515B444-A9EE-45C1-8254-B60956A18A32}"
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/IdentityEventDevForm"
+      containerId: "{DF35E4E7-28AF-49F7-AB9B-037DABBB5F5F}"
+      variants:
+        - { name: "Default", itemId: "{216D0EE6-3A08-429E-A34B-C1AA1CD7E493}" }
+
+    verification:
+      checkedAt: "2026-07-13T00:00:00Z"
+      passed:
+        - "Context-only: no datasource template/folder/ComponentQuery created (correct)"
+        - "Rendering Parameters with 4 base templates"
+        - "Rendering: componentName, Parameters Template GUID, AddFieldEditorButton=1, empty Data source + ComponentQuery (re-read by parent)"
+        - "Headless Variant Definition Default"
+        - "Rendering appended to Available Renderings Page Content (silent-write)"
+        - "React file + component map brought from yokohama"
+      failed: []
+      pendingManual:
+        - "Renderings field on Available Renderings (silent-write, appended to manifest lastKnownValue)"
+
+    notes:
+      - "2026-07-13: Brought from origin/yokohama (commit 3a05ada). Context-only developer/debug panel; fires SDK identity() from a raw JSON payload (auto-skipped in editing/dev mode). Exposed in author component picker on Main by explicit request. HCA export kept in code but no HCA variant item provisioned."
+
   - name: "FAQAccordion"
     kind: "list"
     category: "Content"
@@ -3283,5 +3435,487 @@ lookups:
       - { name: "FeatureCardsGrid Leadership", instanceId: "98020093-e705-49c4-9836-d148746abf48", datasource: "local 57c81e93" }
       - { name: "RelatedContent", instanceId: "be335d6b-19e5-4814-a9e4-8f62d2d467a8", datasource: "a3422c34" }
 
+components-searchv3:
+  # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.
+  - name: "SearchResults"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-08-07"
+    updatedAt: "2026-08-18"
+    note: >
+      From-scratch search results component (spec #45, ticket #46). NAMING COLLISION on
+      arrival: template/rendering/folder items named SearchResults already existed with a
+      foreign field set (SearchHeading, NoResultsMessage, SearchPlaceholderText) — not in
+      manifest, matching no repo code, creator unknown (possibly another agent). Took over
+      non-destructively: spec fields ADDED alongside; foreign fields left in place, unused
+      by the component. Cleanup of foreign fields = user decision.
+
+    react:
+      filePath: "src/components/uiim/search/SearchResults.tsx"
+      componentMapKey: "SearchResults"
+      variants: ["Default"]
+      helpers: "src/lib/search-ui/ (constants, text, useDebouncedValue, useUrlMirror, useSearchLabels, useSearchEvents) — shared foundation for #47/#48"
+      tests: "src/__tests__/components/search-results/SearchResults.test.tsx (10 passing, SDK-mock seam)"
+
+    templates:
+      datasource:
+        name: "SearchResults"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/SearchResults"
+        itemId: "{5CF70CBE-F1C9-4E58-A424-A6614EBD7071}"
+        preExisting: true
+        baseTemplatesSet: true
+        sectionName: "Data"
+        sectionItemId: "{9633E5A4-5C14-48F4-8959-A52D41CFF92E}"
+        fields:
+          - { name: "SearchIndex", itemId: "{3FEA9031-123A-4169-ABC2-6A3101BAE70F}" }
+          - { name: "TitleMapping", itemId: "{55E17195-3DA9-460B-8621-B6934EEA8889}" }
+          - { name: "DescriptionMapping", itemId: "{4ADFE0C6-836D-47D8-84DB-9894BB1626A0}" }
+          - { name: "ImageMapping", itemId: "{4B6A41DE-F71F-4066-B334-9157B381E54A}" }
+          - { name: "LinkMapping", itemId: "{04466D2F-2FF0-47B9-B98F-1C7EE38E6D27}" }
+          - { name: "DateMapping", itemId: "{B8F3C5C3-DBB4-4AAA-8E03-9FD717E96E29}" }
+        foreignFields: ["SearchHeading", "NoResultsMessage", "SearchPlaceholderText"]
+        standardValues:
+          itemId: "{146E3CEA-EF5D-4D7E-AF74-F94FA52E7BC8}"
+          preExisting: true
+
+      renderingParams:
+        name: "SearchResults"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/SearchResults"
+        itemId: "{5406C548-15C9-4377-89B4-E58BC1D62DDF}"
+        preExisting: true
+        note: "Field inventory not audited — verify columns/pageSize params exist before relying on them."
+
+      folder:
+        name: "SearchResults Folder"
+        itemId: "{DB87528F-801E-4170-A642-A48200AF38D0}"
+        preExisting: true
+
+    datasourceFolder:
+      name: "SearchResults"
+      path: "/sitecore/content/main/main-website/Data/SearchResults"
+      itemId: "{A03B9129-4D08-435E-B038-29802CE6A603}"
+      preExisting: true
+      items:
+        - name: "Articles Search Results"
+          itemId: "{583E737F-187B-4939-9579-74CCA7676DED}"
+          fields: { SearchIndex: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc", TitleMapping: "Title", DescriptionMapping: "ArticleContent", ImageMapping: "ArticleImage", DateMapping: "ArticlePublicationDate", LinkMapping: "ArticleUrl" }
+          verified: true
+          note: "LinkMapping pre-wired 2026-08-18 for #49 — inert until ArticleUrl ingests into the index (publish + recrawl)."
+        - name: "Default Search Results"
+          itemId: "{06889E39-3FE2-4072-9C87-5E6C8D0051A0}"
+          preExisting: true
+          note: "Foreign item (heading/placeholder fields only, no index config). Not used."
+
+    rendering:
+      name: "SearchResults"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/SearchResults"
+      itemId: "{D33F0079-E54F-48C3-A33A-6A3A83146DA8}"
+      preExisting: true
+      componentName: "SearchResults"
+      parametersTemplate: "{5406C548-15C9-4377-89B4-E58BC1D62DDF}"
+      registeredInAvailableRenderings: true
+
+    placement:
+      pageId: "{D8B01498-2838-4388-A68F-86665D9C1C80}"
+      placeholder: "headless-main"
+      componentInstanceId: "{F092DA8E-D975-4948-AC09-0AD19CE8B3C5}"
+      datasourceAssigned: "{583E737F-187B-4939-9579-74CCA7676DED}"
+      orphanedLocalDatasource: "{D3E33C53-D060-4503-8F0F-24E40F398CE8}"
+
+    verification:
+      jestTests: passed
+      tscClean: passed
+      componentMapRegistered: passed
+      availableRenderings: passed
+      datasourceItemFields: passed
+      ssrMarkupOnArticlesPage: passed
+      renderingDatasourceTemplateAndLocation: passed  # verified 2026-08-18 via serialization pull from mainv2 — DS Template path present; DS Location was changed in the environment to a static path (/Data/SearchResults) replacing the query pattern, drift accepted (env is source of truth).
+      liveFourPointProtocol: passed  # CLEAN 7/7 2026-08-18 after V2 removal — browse, canary probe, url-mirror, gibberish, deep-link, no-console-errors. Re-run same day on new index 79b6b3db with LINKS LIVE (result-links-work: /Articles/Canary-Releases-Explained) — still 7/7. Cold-server first run flakes browse/probe (2.5s wait < route compile) — always warm the route first.
+      v2RemovedFromPage: passed  # user removed SearchExperienceV2 in Page Builder; verified gone 2026-08-18 via get_components_on_page. Articles page now: SearchTypeahead -> SearchResults.
+
+  # Ticket #47 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-18.
+  - name: "SearchCollection"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-08-17"
+    updatedAt: "2026-08-18"
+    note: >
+      Index-driven "Latest Articles" strip for the Home page (ticket #47). Browse mode:
+      empty keyphrase + sort by date desc + MaxItems cap. Authorable Heading. Built on
+      the src/lib/search-ui foundation from #46. Bug found only in live browser run (mock
+      seam cannot catch it): inline sort object literal = new identity per render =
+      useSearch infinite fetch loop ("Maximum update depth exceeded"). Fixed with useMemo;
+      stable sort identity is load-bearing.
+
+    react:
+      filePath: "src/components/uiim/search/SearchCollection.tsx"
+      componentMapKey: "SearchCollection"
+      variants: ["Default"]
+      tests: "src/__tests__/components/search-collection/SearchCollection.test.tsx (7 passing, SDK-mock seam)"
+
+    templates:
+      datasource:
+        name: "SearchCollection"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/SearchCollection"
+        itemId: "{449FE2DC-8D9A-439E-8BB1-6EBB01D43083}"
+        baseTemplatesSet: true  # verified via read-back
+        sectionName: "Data"
+        sectionItemId: "{C19EB471-A54F-4549-BAC6-9394923F4CAA}"
+        fields:  # all Single-Line Text (spot-verified), all with __Short description help text (silent-write)
+          - { name: "SearchIndex", itemId: "{4EEF0B5C-61CC-4DBA-8493-F18DEB09DFB7}" }
+          - { name: "TitleMapping", itemId: "{837DC774-7844-45A2-8187-DD4EE81B2A75}" }
+          - { name: "DescriptionMapping", itemId: "{338008E7-2ACE-43E6-887E-9CCBCB757F83}" }
+          - { name: "ImageMapping", itemId: "{69B6A975-A99B-4CE9-AE43-01B2AAFB4F79}" }
+          - { name: "LinkMapping", itemId: "{26276001-F7E2-46FB-A1A0-8DFD6436D254}" }
+          - { name: "DateMapping", itemId: "{A4A381AB-9272-42F6-842F-720BDA150C21}" }
+          - { name: "SortBy", itemId: "{22595B58-A51B-4CAD-A1FF-F1D802419D45}" }
+          - { name: "SortOrder", itemId: "{8E8C5310-A28E-4E73-B79B-8E800EDC39CA}" }
+          - { name: "MaxItems", itemId: "{AF6BC28F-F6CA-4728-8055-F2D1823D195D}" }
+          - { name: "Heading", itemId: "{A3EDFFC5-AB38-40A0-BC60-6F0BC2F26F68}" }
+        standardValues:
+          itemId: "{9B27A710-5D47-4A70-A06B-72FC37F022AE}"
+          defaults: { SortOrder: "desc", MaxItems: "3" }
+      folder:
+        name: "SearchCollection Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/SearchCollection Folder"
+        itemId: "{2BC2C0A6-62DE-4125-B058-C7AA6899134A}"
+        standardValues:
+          itemId: "{34792034-B76E-4181-9CE7-306BD1C88FEE}"
+          masters: ["SearchCollection"]
+      renderingParams:
+        name: "SearchCollection"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/SearchCollection"
+        itemId: "{7429FA8F-12D7-4B63-83ED-01379E197397}"
+        baseTemplatesSet: true  # set at creation, 4 GUIDs
+
+    datasourceFolder:
+      name: "SearchCollections"
+      path: "/sitecore/content/main/main-website/Data/SearchCollections"
+      itemId: "{7A7EE0AB-BD25-4CC1-A827-AD88F8C4E75B}"
+      insertOptionsVerified: true  # list_avail_insertopts returns SearchCollection
+      items:
+        - name: "Latest Articles"
+          itemId: "{7C8794D2-9319-4CE0-993C-D983E135DDC9}"
+          fields: { SearchIndex: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc", TitleMapping: "Title", DescriptionMapping: "ArticleContent", ImageMapping: "ArticleImage", LinkMapping: "ArticleUrl", DateMapping: "ArticlePublicationDate", SortBy: "ArticlePublicationDate", SortOrder: "desc", MaxItems: "3", Heading: "Latest Articles" }
+          verified: true
+          note: "LinkMapping pre-wired 2026-08-18 for #49 — inert until ArticleUrl ingests into the index (publish + recrawl)."
+
+    rendering:
+      name: "SearchCollection"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/SearchCollection"
+      itemId: "{158772E0-46FD-4626-9144-527C24854F97}"
+      componentName: "SearchCollection"
+      parametersTemplate: "{7429FA8F-12D7-4B63-83ED-01379E197397}"
+      registeredInAvailableRenderings: true  # verified via get_allowed_comps_by_ph
+
+    placement:
+      pageId: "{E2124310-F817-4644-8671-BFF8E72B66D7}"  # Home
+      placeholder: "headless-main"
+      componentInstanceId: "{90CB6E51-03B8-4E81-BF6E-EF83D18D9E93}"
+      datasourceAssigned: "{7C8794D2-9319-4CE0-993C-D983E135DDC9}"
+      orphanedLocalDatasource: "{0C03C802-F22A-45EF-B2AE-F6BF9C2153FA}"
+
+    verification:
+      jestTests: passed
+      tscClean: passed
+      componentMapRegistered: passed
+      availableRenderings: passed  # live get_allowed_comps_by_ph includes SearchCollection
+      datasourceItemFields: passed
+      folderInsertOptions: passed  # list_avail_insertopts
+      browserRun: passed  # CLEAN 7/7 2026-08-18 after V2 removal — heading, 3 cards, date-desc order (Jul 28 > Jul 15 > Jul 2, sort contract proven live), dates, no-console-errors. Re-run same day on new index 79b6b3db with LINKS LIVE (3 Read-more links, first -> /Articles/Observability-Beyond-Dashboards) — still 7/7, sort contract holds on the new index.
+      renderingDatasourceTemplateAndLocation: passed  # verified 2026-08-18 via serialization pull from mainv2 — full-path DS Template + query-pattern DS Location present in pulled YAML
+      templateSvLinks: passed  # verified via pull — __Standard values carries the correct SV item ID
+      fieldHelpText: passed  # verified via pull — __Short description intact on field items
+      v2RemovedFromHomePage: passed  # user removed in Page Builder; verified gone 2026-08-18 via get_components_on_page. Home now: Image -> SearchCollection.
+
+  # Ticket #48 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-18.
+  - name: "SearchTypeahead"
+    kind: "simple"
+    category: "Search"
+    status: "complete"
+    createdAt: "2026-08-18"
+    note: >
+      Compact suggest box, page-scoped on Articles (ticket #48). Debounced title
+      suggestions, keyboard navigable (arrows/Enter/Escape), Enter or "See all results"
+      hands the query to the SearchResults page via ?q=. No link mapping (index has no
+      URL attribute until #49) — choosing a suggestion degrades to the results page with
+      the title as query. Promotion into the global header = deliberate manual Page
+      Builder step per spec. Testability note: navigation goes through
+      src/lib/search-ui/navigate.ts (navigateTo) because jsdom forbids redefining
+      window.location — mock that module, not location.
+
+    react:
+      filePath: "src/components/uiim/search/SearchTypeahead.tsx"
+      componentMapKey: "SearchTypeahead"
+      variants: ["Default", "Header"]  # Header added 2026-08-18: slim brand-header strip, right-aligned white pill input; shared TypeaheadSearchBox core, variants differ only in chrome
+      helpers: "added src/lib/search-ui/navigate.ts; SEE_ALL_RESULTS + SUGGESTIONS labels in constants"
+      tests: "src/__tests__/components/search-typeahead/SearchTypeahead.test.tsx (11 passing, SDK-mock seam)"
+
+    headlessVariants:
+      container: { path: "/sitecore/content/main/main-website/Presentation/Headless Variants/SearchTypeahead", itemId: "{5F220220-DC16-49D1-8D9E-6C5BAEB51F78}" }
+      definitions:
+        - { name: "Default", itemId: "{9E3E0253-FFF5-42B4-8425-9F8DF87689E4}" }
+        - { name: "Header", itemId: "{7A5E68E3-BEDE-4E83-B453-4A2298BBA3BD}" }
+
+    headerPlacement:  # promotion into global chrome, 2026-08-18
+      pageId: "{42D352B9-D9E4-4F5A-BF6D-67E924741AEA}"  # Header partial design
+      placeholder: "headless-header"
+      componentInstanceId: "{1FAF8BEB-7B20-4A6D-821D-AFC3D6204A0B}"
+      datasourceAssigned: "{EA6E552D-5AAB-4554-89E2-D1E85C2107D3}"
+      orphanedLocalDatasource: "{FC4789CB-849B-4E44-B47A-3D4DB6C83224}"
+      fieldNames: "{9E3E0253-FFF5-42B4-8425-9F8DF87689E4}"  # add_component auto-assigned the Default variant ID; MCP cannot UPDATE FieldNames (params limitation)
+      supersededBy: >
+        2026-08-18 second iteration: user wanted the search box IN the nav row (left of the
+        CTA), which placeholder stacking cannot do. NavigationHeader gained an optional
+        built-in search slot instead: NavigationHeaderData template + "Search" section with
+        SearchIndex {186EF736-8C0E-4261-8C48-28663BA57841}, TitleMapping {2080C25B-DF42-43F6-8C46-5F3AAA4D2FD4},
+        LinkMapping {B6960FE3-5D93-4E16-B1AB-088EB83DEC01}, ResultsPage (General Link)
+        {B57F191F-3721-479E-8AF9-A797BD70E1B4}, MaxSuggestions {2042EB2B-D061-49E4-BDFA-7146799F88BF};
+        NavigationHeader ComponentQuery extended (verified by echo); Main Navigation datasource
+        {8254EB2C-9F05-4082-8CB7-48A968EA6EF1} filled with the articles search config. The shared
+        combobox moved to src/lib/search-ui/TypeaheadSearchBox.tsx (compact/onDark glass style);
+        NavigationHeader Default renders it before the CTA when SearchIndex is set, hidden on
+        mobile. Verified in browser: glass pill in nav row, focus -> solid white, suggestions +
+        see-all dropdown, 2026-08-18 screenshots nav-search-rest/open.png. Empty SearchIndex on
+        any other site's nav datasource = no search box (fully backward compatible).
+      pendingManual:
+        - "Page Builder: REMOVE the now-redundant strip SearchTypeahead instance {1FAF8BEB-7B20-4A6D-821D-AFC3D6204A0B} from the Header partial design (variant flip no longer needed — the nav-row search replaced it)"
+        - "Page Builder: optionally remove the page-scoped SearchTypeahead instance {941CA2B7-65FD-4030-B389-C23907FA5048} from the Articles page (header search now covers it)"
+
+    templates:
+      datasource:
+        name: "SearchTypeahead"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/SearchTypeahead"
+        itemId: "{4FC72579-05B8-4334-8A6E-3307C335A7F7}"
+        baseTemplatesSet: true  # verified via read-back
+        sectionName: "Data"
+        sectionItemId: "{8A68642F-B852-4DA3-8D95-3E40311FF317}"
+        fields:  # all with __Short description help text (silent-write)
+          - { name: "SearchIndex", type: "Single-Line Text", itemId: "{2D059CBC-A2CF-4214-868B-CD6760F41F44}" }
+          - { name: "TitleMapping", type: "Single-Line Text", itemId: "{49EAB0DF-AE58-47DA-93F7-11B65C59C748}" }
+          - { name: "LinkMapping", type: "Single-Line Text", itemId: "{B80F1BED-A19B-464E-9DCC-75503A58549D}" }
+          - { name: "ResultsPage", type: "General Link", itemId: "{49C9B0AF-F4EF-4921-926B-0FBA6387C5D3}" }  # Type verified
+          - { name: "MaxSuggestions", type: "Single-Line Text", itemId: "{F921A4FA-130E-4951-BC08-7E7931374A2A}" }
+        standardValues:
+          itemId: "{A0333D9E-E7BE-4896-B1D3-2095D238ADAF}"
+          defaults: { MaxSuggestions: "5" }
+      folder:
+        name: "SearchTypeahead Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/SearchTypeahead Folder"
+        itemId: "{347CD435-A09A-4636-B17E-F00FB5D7907F}"
+        standardValues:
+          itemId: "{CBE433B7-4499-4491-B938-7FEAB5D588F8}"
+          masters: ["SearchTypeahead"]
+      renderingParams:
+        name: "SearchTypeahead"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Search/SearchTypeahead"
+        itemId: "{28ADEFCC-7F97-4488-AC5C-762FC3EF177D}"
+        baseTemplatesSet: true  # set at creation, 4 GUIDs
+
+    datasourceFolder:
+      name: "SearchTypeaheads"
+      path: "/sitecore/content/main/main-website/Data/SearchTypeaheads"
+      itemId: "{C9A981B0-4852-4036-BEFA-656E95D6ED7D}"
+      insertOptionsVerified: true  # list_avail_insertopts returns SearchTypeahead
+      items:
+        - name: "Articles Typeahead"
+          itemId: "{EA6E552D-5AAB-4554-89E2-D1E85C2107D3}"
+          fields: { SearchIndex: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc", TitleMapping: "Title", LinkMapping: "ArticleUrl", ResultsPage: "internal link -> Articles page {D8B01498-2838-4388-A68F-86665D9C1C80}", MaxSuggestions: "5" }
+          verified: true  # incl. link XML echoed back intact
+          note: "LinkMapping pre-wired 2026-08-18 for #49 — inert until ArticleUrl ingests into the index (publish + recrawl)."
+
+    rendering:
+      name: "SearchTypeahead"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Search/SearchTypeahead"
+      itemId: "{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}"
+      componentName: "SearchTypeahead"
+      parametersTemplate: "{28ADEFCC-7F97-4488-AC5C-762FC3EF177D}"
+      registeredInAvailableRenderings: true  # verified via get_allowed_comps_by_ph
+
+    placement:
+      pageId: "{D8B01498-2838-4388-A68F-86665D9C1C80}"  # Articles, inserted before SearchResults
+      placeholder: "headless-main"
+      componentInstanceId: "{941CA2B7-65FD-4030-B389-C23907FA5048}"
+      datasourceAssigned: "{EA6E552D-5AAB-4554-89E2-D1E85C2107D3}"
+      orphanedLocalDatasource: "{DBF37362-6B81-4EC9-9481-F746858BCCB8}"
+
+    dictionary:
+      - { key: "SearchExperience_SeeAllResults", itemId: "{F8F0D353-7D9C-4278-BE98-10CB348B3A13}" }
+      - { key: "SearchExperience_Suggestions", itemId: "{238FD904-D42F-4EC6-A0D3-45F5F446BD21}" }
+
+    verification:
+      jestTests: passed
+      tscClean: passed
+      componentMapRegistered: passed
+      availableRenderings: passed  # live get_allowed_comps_by_ph includes SearchTypeahead
+      datasourceItemFields: passed
+      folderInsertOptions: passed
+      browserRun: passed  # CLEAN 7/7 2026-08-18 typeahead-verify.mjs, re-run same day on new index 79b6b3db with LINKS LIVE: choosing a suggestion now navigates DIRECTLY to the article (/Articles/Canary-Releases-Explained); Enter-without-selection hands ?q= to SearchResults (probe article ranks first). Gibberish quiet, no console errors. Note: keyphrase matching is loose — the contract is chosen-article-ranks-first, not exact-count-1. First-browser-load runs flake on chunk compile — warm with one browser visit first.
+      renderingDatasourceTemplateAndLocation: passed  # verified 2026-08-18 via serialization pull from mainv2 — full-path DS Template + query-pattern DS Location present in pulled YAML
+      templateSvLinks: passed  # verified via pull — __Standard values carries the correct SV item ID
+      fieldHelpText: passed  # verified via pull — __Short description intact on field items
+      headerPromotion: byDesignManual  # drag into global header partial design in Page Builder when desired (spec #45)
+
 # Demo datasource items (AI-created content, not new component definitions)
-demoContent: []
+demoContent:
+
+  # Articles corpus expansion, created 2026-08-18. Ten articles, DELIBERATELY
+  # UNPUBLISHED (user decision) — they enter the search index only after a
+  # publish + index re-run. All carry ArticleUrl (site-relative path matching
+  # the hyphenated item name), publication dates spread across 2026 for the
+  # sort demo, alternating authors, empty ArticleImage (no media yet).
+  # Titles set at creation (accepted, not echoed — known base-template behavior).
+  # #1 is engineering-themed (created before topic pivot); #2-#10 are themed
+  # after sitecore.com/resources/insights topics per user request.
+  - name: "Articles corpus 2026-08-18 (10 items, unpublished)"
+    kind: "pages"
+    template: "Article Page Template"
+    parentPath: "/sitecore/content/main/main-website/Home/Articles/"
+    items:
+      - { name: "Feature Flags Beyond On And Off", itemId: "{6C2F724D-85B8-4FC0-8F75-F1853C5AF539}", date: "2026-01-13", author: "Marcus Webb" }
+      - { name: "Planning And Designing For Personalization", itemId: "{8BD20E7D-ED8D-4EC6-BD7E-0CBAE3F7F844}", date: "2026-02-05", author: "Jane Smith" }
+      - { name: "Machine Learning For Personalization", itemId: "{7A0F0A79-6779-4503-AE0A-38D127923C14}", date: "2026-02-24", author: "Marcus Webb" }
+      - { name: "One To One Personalization At Scale", itemId: "{9A0D5430-275E-4663-BD5C-852659AE802B}", date: "2026-03-12", author: "Jane Smith" }
+      - { name: "Real Time Customer Data Marketers Can Act On", itemId: "{3DB727F8-FC7D-4BA2-A7C3-73DA328C0DEA}", date: "2026-04-02", author: "Marcus Webb" }
+      - { name: "Generative AI And The Content Supply Chain", itemId: "{D32DD3BD-002F-4BD6-9345-94FB87ACE1DB}", date: "2026-04-21", author: "Jane Smith" }
+      - { name: "Composable DXP Explained Simply", itemId: "{2C3A4C35-FFCC-4820-B098-B382D31617B7}", date: "2026-05-14", author: "Marcus Webb" }
+      - { name: "Search Is The New Homepage", itemId: "{154492B2-934F-4F53-9FF2-9D3A7B0BF91E}", date: "2026-06-03", author: "Jane Smith" }
+      - { name: "Measuring Digital Experience Beyond Page Views", itemId: "{4A5E9AAF-DDEE-48B4-8FD4-C4C032118FC9}", date: "2026-06-19", author: "Marcus Webb" }
+      - { name: "AI Meets Human Connection", itemId: "{00685EEB-EF71-4815-BFC3-9DFFA6F9E415}", date: "2026-08-06", author: "Jane Smith" }
+    verified: true  # spot-check read-back: all template-own fields incl. ArticleUrl intact
+    images: >
+      2026-08-18: 13 photos (seeded Lorem Picsum, 1200x675) uploaded to Content Hub
+      (ffde.sitecoresandbox.cloud, assets 93823-93924, approved, public links) via
+      upload-to-content-hub.mjs; ArticleImage set on ALL 13 articles (the 3 originals + these 10)
+      with DAM image XML, every update echoed intact. Source files + manifest with
+      imageFieldXml: docs/ai/demos/articles-images/. The index's image-typed attribute returns a
+      PLAIN URL string after crawl (proven on canary); extractImageUrl in search-ui/text.ts
+      also tolerates XML/object shapes. Card image verified rendering live. Canary's PUBLISHED
+      version carries a manual test image (asset 80340, no alt text -> next/image alt warning
+      on the article page); the other 12 published versions predate their images — next
+      publish + index re-run flows the proper images everywhere.
+    notes:
+      - "Corpus live since 2026-08-18 re-crawl: 14 indexed (13 articles + undeleted Example Article). Full verification suite 21/21 on the expanded corpus (browse=14, canary probe, sort, strip newest-3, header typeahead incl. direct article navigation)."
+
+  # Ticket #49 approach change (2026-08-18): instead of waiting for an index-side
+  # URL attribute, an ArticleUrl field was added to the Article Page Template and
+  # filled with the site-relative path per article. The index ingests template
+  # fields, so after publish + recrawl the attribute should appear and the
+  # pre-wired LinkMapping: ArticleUrl on all three search datasource items
+  # activates links with zero further changes. Caveat: URL duplicates the item
+  # path — update the field if a page is renamed/moved.
+  - name: "ArticleUrl field on Article Page Template"
+    kind: "templateField"
+    path: "/sitecore/templates/Project/main/Page Types/Article Page Template/Article Data/ArticleUrl"
+    itemId: "{7168B48A-BBBD-4F00-A3DB-2BAB0441128F}"
+    type: "Single-Line Text"
+    createdAt: "2026-08-18"
+    values:  # all verified via update echo
+      - { article: "Canary Releases Explained", value: "/Articles/Canary-Releases-Explained" }
+      - { article: "Zero Downtime Database Migrations", value: "/Articles/Zero-Downtime-Database-Migrations" }
+      - { article: "Observability Beyond Dashboards", value: "/Articles/Observability-Beyond-Dashboards" }
+    resolved: >
+      2026-08-18: user created a NEW search source/index 79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc
+      with ArticleUrl included in the field configuration (the old source's attribute schema
+      was fixed at creation — new template fields do NOT auto-ingest; fields must be Included
+      in the source's content-type field configuration). Probe confirms ArticleUrl as an
+      attribute with correct per-article values. All three datasource items repointed to the
+      new index (SearchIndex updated via MCP, verified by echo). Old index
+      5db6d2f0-4157-45fc-9017-fd928f94f87c is superseded — still referenced only by the
+      retired V2 datasource items. Example Article still published in the corpus (bogus
+      /article/example-article URL) — delete + republish to clean it.
+
+  # Articles corpus for SitecoreAI Search capability proof (articles vertical)
+  # Created 2026-08-05. Each article carries a unique probe keyword for search
+  # verification: a query for it must return exactly that article.
+  - name: "Canary Releases Explained"
+    kind: "page"
+    template: "Article Page Template"
+    path: "/sitecore/content/main/main-website/Home/Articles/Canary Releases Explained"
+    itemId: "{2652AE38-3F8E-484A-B45C-DBBA192DEC9F}"
+    probeKeyword: "canary"
+    author: "Marcus Webb"
+    createdAt: "2026-08-05"
+    notes:
+      - "Title field update accepted by MCP but not echoed in item read-back (API omits base-template fields) — verify visually during search verification."
+      - "ArticleImage empty — no Content Hub credentials configured. Polish item, does not block search proof."
+      - "NOT PUBLISHED yet — publish is a manual step before index ingestion."
+
+  - name: "Zero Downtime Database Migrations"
+    kind: "page"
+    template: "Article Page Template"
+    path: "/sitecore/content/main/main-website/Home/Articles/Zero Downtime Database Migrations"
+    itemId: "{4377E7CA-9CC2-47BE-8996-1A40F717D613}"
+    probeKeyword: "migrations"
+    author: "Jane Smith"
+    createdAt: "2026-08-05"
+    notes:
+      - "Same Title/image/publish caveats as Canary Releases Explained."
+
+  - name: "Observability Beyond Dashboards"
+    kind: "page"
+    template: "Article Page Template"
+    path: "/sitecore/content/main/main-website/Home/Articles/Observability Beyond Dashboards"
+    itemId: "{35035763-61D1-4ADA-A25E-A8FBDB1E659B}"
+    probeKeyword: "observability"
+    author: "Marcus Webb"
+    createdAt: "2026-08-05"
+    notes:
+      - "Same Title/image/publish caveats as Canary Releases Explained."
+
+  - name: "SearchExperience dictionary entries"
+    kind: "dictionary"
+    template: "Dictionary entry ({6D1CD897-1936-4A3A-A511-289A94C2A7B1})"
+    path: "/sitecore/content/main/main-website/Dictionary/"
+    createdAt: "2026-08-06"
+    notes:
+      - "11 entries for all DICTIONARY_KEYS in src/lib/search/search-components/constants.ts. Fixes MISSING_MESSAGE next-intl errors on pages hosting SearchExperienceV2 — the component's t() || fallback pattern is dead code with next-intl (missing key throws, does not return falsy). Component-side fix on improvement backlog."
+      - "Dictionary root (Dictionary Domain): {A4988639-B81E-4045-9177-9D5F66C34EF3} — was empty before this."
+    entries:
+      - { key: "SearchExperience_ResultsFound", itemId: "{9DD19E5C-1B72-448F-85A6-511F8005755C}" }
+      - { key: "SearchExperience_NoResultsFound", itemId: "{F04BB443-5246-4B6C-A7AB-DBAFEB833D15}" }
+      - { key: "SearchExperience_TryAdjustingYourSearch", itemId: "{14958EE8-8EEE-4322-B9C0-AF3951947420}" }
+      - { key: "SearchExperience_ClearSearch", itemId: "{EECE0ADF-4E48-4A3A-B808-664175C4B91E}" }
+      - { key: "SearchExperience_SomethingWentWrong", itemId: "{BCD9352A-F012-4561-A099-3D87AE3B9299}" }
+      - { key: "SearchExperience_TryAgain", itemId: "{A3D78223-ECD9-4336-9C7E-BAB166AC345F}" }
+      - { key: "SearchExperience_LoadMore", itemId: "{D7C8D301-0EA3-491C-9F51-4332C347A8C8}" }
+      - { key: "SearchExperience_SearchInputPlaceholder", itemId: "{382CFFC4-BF33-443F-B523-436222C46A92}" }
+      - { key: "SearchExperience_PreviousPage", itemId: "{2217C094-D9EA-4E99-B734-03B70FC2B1A7}" }
+      - { key: "SearchExperience_NextPage", itemId: "{230CD9EE-1AA4-4784-BCB4-E908A6DC4050}" }
+      - { key: "SearchExperience_ReadMore", itemId: "{51A25256-2A6B-40D0-8E2E-138E393CEE27}" }
+
+  - name: "Articles Search (SearchExperienceV2 datasource)"
+    kind: "dataItem"
+    template: "Search Experience V2"
+    path: "/sitecore/content/main/main-website/Data/Search Experiences V2/Articles Search"
+    itemId: "{638071B9-9241-4096-911B-F5208C30791E}"
+    createdAt: "2026-08-06"
+    fields:
+      SearchIndex: "5db6d2f0-4157-45fc-9017-fd928f94f87c"
+      TitleMapping: "Title"
+      ImageMapping: "ArticleImage"
+    notes:
+      - "Articles-scoped index proved via docs/ai/scripts/search-probe.mjs (canary/migrations/observability = 1 hit each, gibberish = 0)."
+      - "DescriptionMapping left empty: ArticleContent/ArticleKeyTakeaways are HTML, card renders raw text. LinkMapping empty: index has no URL attribute (env-side follow-up in Search Configuration Manager)."
+      - "Placed on Articles page {D8B01498-2838-4388-A68F-86665D9C1C80}, placeholder headless-main, component instance {0676931B-13CC-4B77-947C-C613CB0050DB}. Auto-created local datasource {EFDE9655-A6A9-4868-AE5C-DF8900D37CB9} orphaned after repointing to this shared item — safe to clean up."
+      - "Rendering params NOT set (no MCP tool for params): pageSize default 6 — set pageSize=2 + columns=3 manually in Page Builder to demo pagination with 3-article corpus."
+
+  - name: "Marcus Webb"
+    kind: "dataItem"
+    template: "Person"
+    path: "/sitecore/content/main/main-website/Data/People/Marcus Webb"
+    itemId: "{EB2E25A6-F68D-4E9F-845F-C7A9B1625A55}"
+    createdAt: "2026-08-05"
+    notes:
+      - "Second author for articles corpus. personProfileImage empty (no Content Hub credentials)."
+      - "Jane Smith ({18A183C6-6E69-40F3-A0D9-0973D05C8D3B}) personBio filled in the same session."
+
+  # Pre-existing stub found during corpus creation — not AI-created this session:
+  # "Example Article" {439BC140-419F-4FBF-ABCC-723D389D0FDD} under /Home/Articles
+  # has ALL fields empty. Would pollute search results once indexed.
+  # 2026-08-05: MCP delete_content called twice, returned success:true both times,
+  # but item still resolves via get_content_item_by_id afterwards — delete did NOT
+  # take effect. Status: pendingManual — DELETE MANUALLY in Content Editor before
+  # publishing /Home/Articles.

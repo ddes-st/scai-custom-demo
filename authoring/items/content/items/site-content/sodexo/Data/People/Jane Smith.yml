@@ -8,6 +8,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "1ef53a42-6d08-4e93-a944-754ba96073f6"
+      Hint: personBio
+      Value: <p>Jane Smith is a Senior Content Strategist who writes about release engineering, developer experience, and the practices behind reliable software delivery. She has spent a decade helping engineering teams ship faster without breaking things.</p>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260518T200311Z
@@ -27,7 +30,7 @@ Languages:
       Value: Senior Content Strategist
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a0ec9811-ef39-4a9a-ab3e-f54df445af08"
+      Value: "bdb7cf51-1e09-4a66-ab25-7bed75d81cb9"
     - ID: "93cd7933-7e2d-4423-a9ae-3d745868bcc5"
       Hint: personLastName
       Value: Smith
@@ -37,4 +40,4 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260518T200311Z
+      Value: 20260805T155155Z

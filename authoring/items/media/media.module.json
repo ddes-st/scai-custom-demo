@@ -1,0 +1,12 @@
+{
+  "namespace": "FmcCustomDemo.Media",
+  "items": {
+    "includes": [
+      {
+        "name": "media-fmc-custom-demo",
+        "path": "/sitecore/media library/Project/fmc-custom-demo",
+        "scope": "ItemAndDescendants"
+      }
+    ]
+  }
+}

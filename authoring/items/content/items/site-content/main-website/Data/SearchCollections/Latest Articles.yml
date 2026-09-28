@@ -1,0 +1,47 @@
+﻿---
+ID: "7c8794d2-9319-4ce0-993c-d983e135ddc9"
+Parent: "7a7ee0ab-bd25-4cc1-a827-ad88f8c4e75b"
+Template: "449fe2dc-8d9a-439e-8bb1-6ebb01d43083"
+Path: "/sitecore/content/main/main-website/Data/SearchCollections/Latest Articles"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "22595b58-a51b-4cad-a1ff-f1d802419d45"
+      Hint: SortBy
+      Value: ArticlePublicationDate
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T081618Z
+    - ID: "26276001-f7e2-46fb-a1a0-8dfd6436d254"
+      Hint: LinkMapping
+      Value: ArticleUrl
+    - ID: "338008e7-2ace-43e6-887e-9ccbcb757f83"
+      Hint: DescriptionMapping
+      Value: ArticleContent
+    - ID: "4eef0b5c-61cc-4dba-8493-f18deb09dfb7"
+      Hint: SearchIndex
+      Value: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc"
+    - ID: "69b6a975-a99b-4ce9-ae43-01b2aafb4f79"
+      Hint: ImageMapping
+      Value: ArticleImage
+    - ID: "837dc774-7844-45a2-8187-dd4ee81b2a75"
+      Hint: TitleMapping
+      Value: Title
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "049d5634-830f-413c-b343-7c07758ca658"
+    - ID: "a3edffc5-ab38-40a0-bc60-6f0bc2f26f68"
+      Hint: Heading
+      Value: Latest Articles
+    - ID: "a4a381ab-9272-42f6-842f-720bda150c21"
+      Hint: DateMapping
+      Value: ArticlePublicationDate
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T150356Z

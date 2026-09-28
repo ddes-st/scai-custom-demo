@@ -1,0 +1,56 @@
+﻿---
+ID: "00685eeb-ef71-4815-bfc3-9dffa6f9e415"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/AI Meets Human Connection"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{678AC016-E410-44F8-A2E6-EDF447A1A1D3}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: AI Meets Human Connection
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160902Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260806T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: AI Meets Human Connection
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>The paradox of AI in digital experience is that the more the machinery scales, the more the human moments stand out. Visitors forgive a clumsy recommendation; they remember the message that felt written for them — and increasingly, both come from the same pipeline.</p><p>The organizations getting this right use AI to clear the ground for connection, not to simulate it. Models handle the volume: triaging queries, assembling variants, predicting the next best step. People handle the meaning: the brand voice that survives a thousand generated variations, the judgment call on what should never be automated, the empathy in the escalation path when the model is out of its depth.</p><p>The test worth applying to every AI feature is simple: does it give a human — customer or marketer — time and attention back? Automation that produces more noise to manage fails the test no matter how impressive the demo.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/AI-Meets-Human-Connection"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f275143b-7d41-4f85-ac70-25f4201368d6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93924-ai-meets-human-connection?v=1782b141" dam-id="_nGcbYKvToSZkNDf9yFWDA" width="1200" height="675" alt="AI Meets Human Connection" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93924/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>Use AI to clear ground for human connection, not simulate it.</li><li>Models handle volume; people handle meaning and judgment.</li><li>Good automation returns time and attention — test every feature against that.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164628Z

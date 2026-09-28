@@ -1,0 +1,56 @@
+﻿---
+ID: "3db727f8-fc7d-4ba2-a7c3-73da328c0dea"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Real Time Customer Data Marketers Can Act On"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{14244BAE-E46F-437E-9C13-2523ABBBA42C}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: "Real-Time Customer Data Marketers Can Act On"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160812Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260402T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Real Time Customer Data Marketers Can Act On
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Every click, cart, and pause on a pricing page is a customer telling you something. Most organizations store these signals in systems that answer next quarter’s questions instead of this second’s — a warehouse full of hindsight.</p><p>A customer data platform earns its keep when the loop closes in real time: behavior streams in, the profile updates, and the very next page the visitor sees reflects what just happened. Abandoned a cart? The follow-up should know. Read three articles on one topic? The homepage should have noticed.</p><p>The trap to avoid is collection without activation. Dashboards that describe customers beautifully while every visitor still gets the same experience are the martech equivalent of a gym membership. Start with one activated use case — one signal, one decision, one measurable outcome — and let the wins fund the roadmap.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Real-Time-Customer-Data-Marketers-Can-Act-On"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "735a1f26-f5fe-444a-9120-aa2c737ebc3b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93878-real-time-customer-data?v=f55b15ac" dam-id="dHY5LWUsTwiDDrr1QSP72w" width="1200" height="675" alt="Real-Time Customer Data Marketers Can Act On" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93878/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>Stored signals are hindsight; streamed signals are opportunity.</li><li>Close the loop: behavior updates the very next experience.</li><li>One activated use case beats ten descriptive dashboards.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164625Z

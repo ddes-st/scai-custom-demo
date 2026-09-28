@@ -2,7 +2,7 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { ComponentProps } from 'lib/component-props';
+import { ComponentProps } from '@/lib/component-props';
 
 export type BackgroundThumbailProps = ComponentProps & { children: React.ReactElement<any> };
 

@@ -7,6 +7,9 @@ import { Form } from '@sitecore-content-sdk/nextjs';
 import * as TestimonialBlock from 'src/components/uiim/social-proof/TestimonialBlock';
 import * as LogoCloud from 'src/components/uiim/social-proof/LogoCloud';
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
+import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
+import * as SearchResults from 'src/components/uiim/search/SearchResults';
+import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
@@ -20,6 +23,8 @@ import * as LandingFinalCTA from 'src/components/uiim/landing/LandingFinalCTA';
 import * as LandingFeatures from 'src/components/uiim/landing/LandingFeatures';
 import * as LandingFAQ from 'src/components/uiim/landing/LandingFAQ';
 import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
+import * as IdentityEventDevForm from 'src/components/uiim/forms/IdentityEventDevForm';
+import * as IdentityCaptureForm from 'src/components/uiim/forms/IdentityCaptureForm';
 import * as ValuePropositionGrid from 'src/components/uiim/content/ValuePropositionGrid';
 import * as TrustStatsRow from 'src/components/uiim/content/TrustStatsRow';
 import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
@@ -87,6 +92,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TestimonialBlock', { ...TestimonialBlock }],
   ['LogoCloud', { ...LogoCloud }],
   ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
+  ['SearchTypeahead', { ...SearchTypeahead, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
+  ['SearchCollection', { ...SearchCollection, componentType: 'client' }],
   ['TabNavigationSection', { ...TabNavigationSection, componentType: 'client' }],
   ['SiteFooter', { ...SiteFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
@@ -100,6 +108,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LandingFeatures', { ...LandingFeatures }],
   ['LandingFAQ', { ...LandingFAQ, componentType: 'client' }],
   ['NewsletterSignup', { ...NewsletterSignup, componentType: 'client' }],
+  ['IdentityEventDevForm', { ...IdentityEventDevForm, componentType: 'client' }],
+  ['IdentityCaptureForm', { ...IdentityCaptureForm, componentType: 'client' }],
   ['ValuePropositionGrid', { ...ValuePropositionGrid }],
   ['TrustStatsRow', { ...TrustStatsRow }],
   ['RichTextBlock', { ...RichTextBlock }],

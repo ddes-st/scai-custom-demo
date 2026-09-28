@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ErrorPage, Page } from '@sitecore-content-sdk/nextjs';
-import client from 'lib/sitecore-client';
+import client from '@/lib/sitecore-client';
 import scConfig from 'sitecore.config';
-import Providers from 'src/Providers';
-import Layout from 'src/Layout';
+import Providers from '@/Providers';
+import Layout from '@/Layout';
 
 export default function GlobalError() {
   const [page, setPage] = useState<Page | null>(null);

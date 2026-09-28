@@ -1,0 +1,56 @@
+﻿---
+ID: "7a0f0a79-6779-4503-ae0a-38d127923c14"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Machine Learning For Personalization"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{29030806-0A7F-4A25-A385-A01599208F85}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Machine Learning for Personalization
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160754Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260224T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Machine Learning For Personalization
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Rule-based personalization scales linearly with the patience of the marketer writing the rules. Machine learning changes the economics: instead of enumerating every audience by hand, models find the patterns — which behaviors predict a purchase, which content keeps a segment engaged, what a visitor is likely to want next.</p><p>The practical wins are unglamorous and valuable. Propensity models that surface the visitors worth a discount and the ones who would have bought anyway. Recommendation engines that learn from the whole catalog instead of the five products someone remembered to feature. Send-time optimization that quietly stops emailing night-shift workers at nine in the morning.</p><p>The prerequisite is data hygiene, not data volume. A model trained on inconsistent event names and half-tagged content amplifies the mess at machine speed. Clean, well-defined behavioral events are the boring foundation that makes the impressive demos possible.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Machine-Learning-For-Personalization"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f6aceee9-99c7-4d88-a60d-da33a859d6e5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93862-machine-learning-for-personalization?v=99246005" dam-id="nMqvYmtdREuF5cqBnNgK3Q" width="1200" height="675" alt="Machine Learning for Personalization" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93862/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>ML finds audience patterns that rule-writing cannot scale to.</li><li>Propensity and recommendations are the unglamorous, valuable wins.</li><li>Clean behavioral events matter more than data volume.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164545Z

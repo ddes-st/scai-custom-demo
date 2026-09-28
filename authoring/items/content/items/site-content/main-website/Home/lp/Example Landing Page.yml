@@ -1,0 +1,34 @@
+﻿---
+ID: "ff0d2a81-31a5-4b8d-8a53-a1d03734c178"
+Parent: "af65681c-5c75-40d2-89a3-3779d5a47a27"
+Template: "50af6ec7-85fd-4b9b-adf7-1fde9d9136fe"
+Path: "/sitecore/content/main/main-website/Home/lp/Example Landing Page"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{664FAE5B-563F-4B0C-AD6C-7D4BDF569DEE}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Example Landing Page
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260714T082100Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Example Landing Page
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e278ca29-cb5b-4882-9332-482828331ded"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260714T082100Z

@@ -1,0 +1,50 @@
+﻿---
+ID: "05e480de-ddd3-4a07-871a-87d46802a3a8"
+Parent: "826bd609-c026-458d-901a-c3503daef853"
+Template: "9db25583-b9c2-466b-8db5-b5726a356ac1"
+Path: "/sitecore/content/main/main-website/Data/IdentityCaptureForms/Identity Capture Form"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T154523Z
+    - ID: "419db801-890d-4899-a015-ec0c28b7e074"
+      Hint: FirstNameLabel
+      Value: First name
+    - ID: "46aad8d8-a6aa-44ac-a607-24842a39c67f"
+      Hint: IdentityProvider
+      Value: email
+    - ID: "59ef29ff-d3f0-4185-ae44-89e4ce06acc3"
+      Hint: FormDescription
+      Value: <p>Share your details and we'll keep you updated on what matters to you.</p>
+    - ID: "6a7ed384-5a94-46d9-93e6-fac430933195"
+      Hint: FormTitle
+      Value: Stay in the know
+    - ID: "73d93e3a-cad0-4d7a-b102-a026371144d5"
+      Hint: ExtensionDataJson
+      Value: "{}"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "701d984a-79a1-4e9c-baa9-d3806e2816df"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "c309c450-b000-413d-bf21-07acc4301fb1"
+      Hint: EmailLabel
+      Value: Email address
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260713T154523Z
+    - ID: "f740aa5a-b8a1-4d27-bf22-c84687bb7015"
+      Hint: SuccessMessage
+      Value: "Thanks {firstName}, you're now identified."
+    - ID: "fafbd003-1dde-4eca-b5e2-a6d186d5f873"
+      Hint: LastNameLabel
+      Value: Last name
+    - ID: "ffae8930-debf-47f2-853e-5fe4abc876d2"
+      Hint: SubmitButtonLabel
+      Value: Submit

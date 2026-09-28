@@ -1,0 +1,56 @@
+﻿---
+ID: "9a0d5430-275e-4663-bd5c-852659ae802b"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/One To One Personalization At Scale"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{F4022ED6-2DEF-4043-8B92-968FC8E6FB40}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: "One-to-One Personalization at Scale"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160803Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260312T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: One To One Personalization At Scale
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Segment-based personalization talks to crowds; one-to-one personalization talks to a person. The difference is felt immediately by the visitor: the site remembers what they looked at, respects what they ignored, and picks up the conversation where it left off — across sessions and channels.</p><p>Getting there is a sequencing problem. Listen first: unify the behavioral signals you already collect into a single profile. Think second: decide, per moment, what the next best experience is — a model can rank the options, but the options themselves come from your content. Respond third: deliver in milliseconds, because a personalized experience that arrives after the page paints is a flicker, not a welcome.</p><p>Scale comes from content atomization. You cannot handcraft a page per person, but you can maintain a library of interchangeable blocks — heroes, offers, proof points — that assemble differently for each profile. The marketer curates the vocabulary; the system writes the sentences.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/One-To-One-Personalization-At-Scale"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 6 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9e17dae1-da27-46db-932b-85767f0cba06"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93869-one-to-one-personalization-at-scale?v=d7b88140" dam-id="06-QZEkPTqSqb8GtgHVx5g" width="1200" height="675" alt="One-to-One Personalization at Scale" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93869/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>Listen, think, respond — in that order, in milliseconds.</li><li>Unify signals into one profile before deciding anything.</li><li>Atomized content blocks make individual assembly scalable.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164547Z

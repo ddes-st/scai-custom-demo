@@ -1,0 +1,56 @@
+﻿---
+ID: "8bd20e7d-ed8d-4ec6-bd7e-0cbae3f7f844"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Planning And Designing For Personalization"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{94B1EF13-3012-40AC-9AF9-EF4903E37B4F}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Planning and Designing for Personalization
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160746Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260205T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Planning And Designing For Personalization
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Most personalization programs fail before the first variant ships — not in the technology, but in the planning. Teams buy a platform, then go looking for something to personalize, which is the strategy equivalent of buying a hammer and wandering the house looking for nails.</p><p>The programs that show real uplift start from a customer decision, not a page. Where in the journey does a visitor hesitate? Which audiences arrive with clearly different intent? A returning customer researching an upgrade and a first-time visitor comparing vendors should not see the same hero — that is a design decision you can articulate before touching a tool.</p><p>Design for measurement from day one. Every personalization rule is a hypothesis, and a hypothesis without a control group is an anecdote. Organizations that treat personalization as a disciplined test-and-learn practice report conversion uplifts around twenty percent; organizations that treat it as decoration report meetings.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Planning-And-Designing-For-Personalization"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 6 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e7831324-48a4-496b-9ff4-691a13db8fee"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93854-planning-and-designing-for-personalization?v=bf53baf2" dam-id="Ne_29QwFToGXoLeQpFUmwg" width="1200" height="675" alt="Planning and Designing for Personalization" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93854/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>Start from a customer decision, not a page.</li><li>Define audiences by intent you can articulate before touching a tool.</li><li>Every rule is a hypothesis — measure against a control group.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164542Z

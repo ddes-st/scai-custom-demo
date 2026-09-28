@@ -2,23 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ],
-      "lib/*": [
-        "src/lib/*"
-      ],
-      "temp/*": [
-        "src/temp/*"
-      ],
-      "assets/*": [
-        "src/assets/*"
-      ],
       ".sitecore/*": [
         ".sitecore/*"
-      ],
-      "next/*": [
-        "node_modules/next/*"
       ],
       "@/*": [
         "./src/*"

@@ -10,7 +10,7 @@ SharedFields:
     <image mediaid="{857DDDB6-EB03-4474-B2D6-AB739F05C9E1}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "9a3fd968-7cc0-4c07-8355-6be501586557"
+  Value: "5e01a935-31ff-4fb7-bb1e-f54a7af4fdbf"
 Languages:
 - Language: en
   Versions:
@@ -33,11 +33,11 @@ Languages:
       Value: Search
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "05b4c653-ff37-47f1-a174-27378b3d8649"
+      Value: "cdade1c3-f2c6-45ae-9a5a-0881f563cff1"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260519T115244Z
+      Value: 20260714T080747Z

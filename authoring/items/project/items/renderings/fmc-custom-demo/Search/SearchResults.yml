@@ -15,16 +15,16 @@ SharedFields:
   Value: "{5406C548-15C9-4377-89B4-E58BC1D62DDF}"
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: "query:$site/*[@@name='Data']/*[@@templatename='SearchResults Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='SearchResults Folder']"
+  Value: "/sitecore/content/main/main-website/Data/SearchResults"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "033f37f8-07af-4f80-af1e-a9577d9d7a0a"
+  Value: "a50762ce-8ded-4c52-9b3d-611233c6018f"
 Languages:
 - Language: en
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "604a63a8-5bce-45d1-be51-18daff872b07"
+    Value: "86e7bc28-e189-419d-a329-efe3872415be"
   Versions:
   - Version: 1
     Fields:
@@ -41,11 +41,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "cd5aea19-d231-4db5-bb8a-273a88dc8a8c"
+      Value: "7970d90b-1da2-4e73-b60e-6df5ef7b4f88"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260519T100554Z
+      Value: 20260807T091240Z

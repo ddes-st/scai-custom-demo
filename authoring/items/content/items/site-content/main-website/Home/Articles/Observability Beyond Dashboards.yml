@@ -1,0 +1,56 @@
+﻿---
+ID: "35035763-61d1-4ada-a25e-a8fbdb1e659b"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Observability Beyond Dashboards"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{A994DFFB-ACEF-4B24-A09C-6D4CB495026C}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: "Observability Beyond Dashboards: Metrics, Logs, and Traces That Answer Questions"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260805T155351Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260728T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Observability Beyond Dashboards
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Monitoring tells you that something you predicted might break has broken. Observability is the ability to ask new questions of a running system without shipping new code to answer them. The difference sounds academic until three services away, an unexplained latency spike is eating your error budget.</p><p>The classic three pillars — metrics, logs, and traces — are ingredients, not the meal. Metrics give you cheap, aggregated trend lines. Logs give you high-cardinality detail about single events. Traces stitch a request's journey across service boundaries so you can see where the time actually went. Observability emerges when the three are correlated: a spike on a chart links to the exemplar trace, which links to the structured logs of the slowest span.</p><p>The practices that move the needle are unglamorous. Propagate a request identifier everywhere. Emit structured, machine-parseable events instead of prose. Budget instrumentation like a feature, not an afterthought. And resist the urge to build a wall of dashboards nobody reads — a handful of service-level views tied to alerts beats fifty vanity charts.</p><p>Teams with real observability debug in minutes what others escalate for days, because the system can explain itself while the incident is still small.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Observability-Beyond-Dashboards"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 6 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5fc07bb6-0fb2-4b0c-9c9b-a811677fb729"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93835-observability-beyond-dashboards?v=88295a7c" dam-id="FnHiu9X9QXqW3ufzMv4hIw" width="1200" height="675" alt="Observability Beyond Dashboards" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93835/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>Observability means asking new questions without new code.</li><li>Correlate metrics, logs, and traces — pillars alone are just data.</li><li>Structured events and propagated request identifiers beat dashboard sprawl.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164536Z

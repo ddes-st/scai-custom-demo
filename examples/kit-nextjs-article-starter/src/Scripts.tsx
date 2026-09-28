@@ -2,7 +2,7 @@
 
 import { JSX } from 'react';
 import { EditingScripts } from '@sitecore-content-sdk/nextjs';
-import CdpPageView from 'components/content-sdk/CdpPageView';
+import CdpPageView from '@/components/content-sdk/CdpPageView';
 
 const Scripts = (): JSX.Element => {
   return (

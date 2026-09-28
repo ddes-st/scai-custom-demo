@@ -1,5 +1,3 @@
-const path = require('path');
-
 /**
  * @type {import('next').NextConfig}
  * Next.js 16 defaults to Turbopack; this app relies on custom webpack (Content SDK
@@ -110,17 +108,6 @@ const nextConfig = {
     }
 
     return config;
-  },
-
-  // Sass: dart-sass 1.80+ / Next 16 use the modern compiler API; legacy importers
-  // (e.g. sass-alias getImporter()) are invalid. Use includePaths for theme imports if needed.
-  sassOptions: {
-    includePaths: [
-      path.join(process.cwd(), 'node_modules'),
-      path.join(process.cwd(), 'src', 'assets', 'globals'),
-    ],
-    quietDeps: true,
-    silenceDeprecations: ['import', 'legacy-js-api'],
   },
 };
 

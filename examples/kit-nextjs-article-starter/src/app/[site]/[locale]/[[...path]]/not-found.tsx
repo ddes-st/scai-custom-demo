@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ErrorPage, getCachedPageParams } from '@sitecore-content-sdk/nextjs';
-import client from 'lib/sitecore-client';
+import client from '@/lib/sitecore-client';
 import scConfig from 'sitecore.config';
-import Layout from 'src/Layout';
-import Providers from 'src/Providers';
+import Layout from '@/Layout';
+import Providers from '@/Providers';
 import { NextIntlClientProvider } from 'next-intl';
 
 export default async function NotFound() {

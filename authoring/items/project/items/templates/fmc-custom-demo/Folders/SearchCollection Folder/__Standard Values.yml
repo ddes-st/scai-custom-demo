@@ -1,0 +1,38 @@
+﻿---
+ID: "34792034-b76e-4181-9ce7-306bd1c88fee"
+Parent: "2bc2c0a6-62de-4125-b058-c7aa6899134a"
+Template: "2bc2c0a6-62de-4125-b058-c7aa6899134a"
+Path: "/sitecore/templates/Project/fmc-custom-demo/Folders/SearchCollection Folder/__Standard Values"
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{449FE2DC-8D9A-439E-8BB1-6EBB01D43083}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "374c4268-ac18-495e-a1b9-389d3c8988dc"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260817T164253Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "112c44e1-18af-435a-b5a9-ff0c54b14a41"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260817T164253Z

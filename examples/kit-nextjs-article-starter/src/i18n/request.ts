@@ -1,7 +1,7 @@
 import { getRequestConfig, GetRequestConfigParams } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { routing } from './routing';
-import client from 'src/lib/sitecore-client';
+import client from '@/lib/sitecore-client';
 
 export default getRequestConfig(async ({ requestLocale }: GetRequestConfigParams) => {
   // Provide a static locale, fetch a user setting,

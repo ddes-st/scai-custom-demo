@@ -15,12 +15,28 @@ Languages:
       Hint: CtaLink
       Value: |
         <link linktype="internal" id="e2124310-f817-4644-8671-bff8e72b66d7" anchor="" querystring="" target="" class="" text="Get More Info" title=""/>
+    - ID: "186ef736-8c0e-4261-8c48-28663ba57841"
+      Hint: SearchIndex
+      Value: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc"
+    - ID: "2042eb2b-d061-49e4-bdfa-7146799f88bf"
+      Hint: MaxSuggestions
+      Value: 5
+    - ID: "2080c25b-df42-43f6-8c46-5f3aaa4d2fd4"
+      Hint: TitleMapping
+      Value: Title
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260505T201820Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1ac4cb92-76e2-449d-a494-245e1e7715f7"
+      Value: "80cb2445-f8f9-454a-aa9a-c25d08bf0c8c"
+    - ID: "b57f191f-3721-479e-8af9-a797bd70e1b4"
+      Hint: ResultsPage
+      Value: |
+        <link text="Articles" linktype="internal" querystring="" target="" id="{D8B01498-2838-4388-A68F-86665D9C1C80}" />
+    - ID: "b6960fe3-5d93-4e16-b1ab-088eb83dec01"
+      Hint: LinkMapping
+      Value: ArticleUrl
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -31,4 +47,4 @@ Languages:
         <image mediaid="7d81fc77-a388-4561-b577-ff94a7c27ef2" />
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260505T203810Z
+      Value: 20260818T153655Z

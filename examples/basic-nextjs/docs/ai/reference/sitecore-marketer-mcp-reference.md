@@ -138,6 +138,28 @@ The `create_component_ds` tool accepts a `children` array, but children may not 
 
 **Alternative:** Skip `create_component_ds` entirely for list components. Create parent + each child individually with `create_content_item`.
 
+### `delete_content` silent no-op
+
+**Severity:** Medium — items reported deleted still exist
+
+Observed 2026-08-05: `delete_content` returned `success: true` twice for a page item ("Example Article", Article Page Template), but the item still resolved via `get_content_item_by_id` and still appeared in the parent's children afterwards. The deletion never took effect. Re-confirmed 2026-08-17 on the same item: third `success: true`, item still resolves with all fields.
+
+**Workaround:** Always verify with `get_content_item_by_id` after `delete_content`. If the item still resolves, mark the deletion `pendingManual` and delete in Content Editor.
+
+### `create_page` fields format
+
+`create_page` does **not** use the `{name, value}` pair format that `create_content_item` / `update_fields_on_item` use. Passing pairs fails with `Cannot find a field with the name name`.
+
+**Correct format:** array of single-key objects keyed by field name:
+
+```json
+[{ "Title": "My Page Title" }]
+```
+
+Reliable pattern: create the page with `Title` only, then set remaining fields with `update_fields_on_item` (which uses `{name, value}` pairs).
+
+Note: item read-backs do not echo base-template fields (e.g. `Title` on pages) — only template-own section fields. A `Title` update that returns without error has succeeded even though the echo omits it; verify visually if it matters.
+
 ---
 
 ## Output and Honesty Rules

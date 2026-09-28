@@ -1,4 +1,4 @@
-import { Field, ImageField, LinkField, RichTextField, Page, PageMode, ComponentRendering } from '@sitecore-content-sdk/nextjs';
+import { Field, ImageField, LinkField, RichTextField, Page, PageMode, ComponentRendering, RouteData } from '@sitecore-content-sdk/nextjs';
 import { PersonReference } from 'src/Layout';
 
 const mockPageBase: Page = {
@@ -33,7 +33,7 @@ const mockPageBase: Page = {
               },
             },
           } as PersonReference,
-        } as Record<string, unknown>,
+        } as unknown as RouteData['fields'],
         name: 'test-article',
         displayName: 'Test Article',
         placeholders: {},
@@ -76,7 +76,7 @@ function makePageWith(overrides: Record<string, unknown>): Page {
           fields: {
             ...mockPageBase.layout.sitecore.route!.fields,
             ...overrides,
-          } as Record<string, unknown>,
+          } as unknown as RouteData['fields'],
         },
       },
     },

@@ -1,0 +1,56 @@
+﻿---
+ID: "4377e7ca-9cc2-47be-8996-1a40f717d613"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Zero Downtime Database Migrations"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{E381982A-8091-4A3D-ABA3-ACDF176C3B66}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: "Zero-Downtime Database Migrations, Step by Step"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260805T155350Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260715T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Zero Downtime Database Migrations
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Every team eventually faces a schema change that cannot take the database down: renaming a column that a live service reads a thousand times per second, or splitting a table that has grown past its useful shape. Zero-downtime migrations make those changes boring.</p><p>The core discipline is expand and contract. First you expand: add the new column or table alongside the old one, and update the application to write to both. Then you backfill historical rows in small batches, throttled so replication lag stays flat. Only when reads have fully moved to the new shape do you contract: drop the old column in a later release, once nothing references it.</p><p>The most common failure mode is bundling a migration and a code change in one deploy. If the deploy rolls back but the migration does not, the old code meets a new schema and errors cascade. Keeping migrations forward-compatible for at least one release in each direction removes that trap entirely.</p><p>Tooling helps — online schema-change tools rewrite tables without long locks — but the habit that matters most is treating every migration as three small, reversible steps instead of one big irreversible one.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Zero-Downtime-Database-Migrations"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 7 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "443dd3a0-e7f1-4f5d-b651-c1c18e1e04b5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93828-zero-downtime-database-migrations?v=acf8c977" dam-id="QQEZkV8GQ069z0oUw7HkUA" width="1200" height="675" alt="Zero-Downtime Database Migrations, Step by Step" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93828/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>Use expand-and-contract: add the new schema, migrate readers, then drop the old.</li><li>Backfill in throttled batches to protect replication lag.</li><li>Never couple a schema migration and a code change in a single deploy.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164533Z

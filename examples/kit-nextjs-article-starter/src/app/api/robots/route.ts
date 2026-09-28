@@ -1,6 +1,6 @@
 import { createRobotsRouteHandler } from '@sitecore-content-sdk/nextjs/route-handler';
 import sites from '.sitecore/sites.json';
-import client from 'lib/sitecore-client';
+import client from '@/lib/sitecore-client';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';

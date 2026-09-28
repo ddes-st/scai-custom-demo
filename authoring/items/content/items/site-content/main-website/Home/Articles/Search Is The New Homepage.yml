@@ -1,0 +1,56 @@
+﻿---
+ID: "154492b2-934f-4f53-9ff2-9d3a7b0bf91e"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Search Is The New Homepage"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{DD3E3CDC-4D89-4E4A-A019-737E797BF5E3}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Search Is the New Homepage
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160846Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260603T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Search Is The New Homepage
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Visitors stopped browsing years ago. They arrive mid-journey from a link, a chat, or an AI answer, and the first thing many of them do is type what they want. For that visitor, your search box is your homepage — and its results page is your information architecture.</p><p>Treating search as a first-class experience changes the checklist. Instant suggestions that understand titles, not just tokens. Results that carry enough context — image, date, snippet — to be judged without a click. Zero-result pages that recover with alternatives instead of apologizing. And index freshness measured in minutes, because content that is published but not findable might as well be in a drawer.</p><p>Search data is also the cheapest voice-of-customer program you will ever run. The queries with no results are a content backlog written by your audience; the queries with no clicks are a relevance bug report. Read them monthly and let them steer both content and merchandising.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Search-Is-The-New-Homepage"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a66211e4-e118-4e4e-9860-83c10c0d5772"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93909-search-is-the-new-homepage?v=7cbb6a7f" dam-id="I2QuG1uQRxq0imsBlWJccA" width="1200" height="675" alt="Search Is the New Homepage" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93909/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>Mid-journey visitors experience search as your homepage.</li><li>Results need image, date, and snippet — judgeable without a click.</li><li>No-result queries are a content backlog written by your audience.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164627Z

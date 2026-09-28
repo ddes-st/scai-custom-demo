@@ -1,0 +1,59 @@
+﻿---
+ID: "2652ae38-3f8e-484a-b45c-dbba192dec9f"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Canary Releases Explained"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{E09CD11A-53E1-4E0C-8D98-72B592F4D60E}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: "Canary Releases: Ship Safely at Full Speed"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260805T155336Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260702T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Canary Releases Explained
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>A canary release routes a small slice of production traffic to a new version before rolling it out to everyone. The name comes from the canary in the coal mine: a small, early warning signal that something is wrong, long before the whole team feels it.</p><p>The mechanics are straightforward. You deploy the new version alongside the current one, send one to five percent of requests to it, and watch error rates, latency, and business metrics. If the canary stays healthy, you widen the slice in stages. If it degrades, you route traffic back and nobody outside the platform team ever notices.</p><p>The hard part is not the routing — modern load balancers and service meshes handle that — it is deciding what healthy means. A good canary policy defines success criteria upfront: error budget consumption, p99 latency ceilings, and at least one business signal such as checkout completion. Without explicit criteria, every canary judgement becomes a debate.</p><p>Teams that adopt canary releases consistently report a shift in culture: deploys stop being events. When any change can be sent to a sliver of users and reversed in seconds, shipping on a Friday afternoon stops being taboo and starts being routine.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Canary-Releases-Explained"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "892a331d-7fd0-428a-a6b0-6752389b1005"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93823-canary-releases-explained?v=7604ae81" dam-id="xJc8cyM-Qm6pVw8vw39cbg" width="1200" height="675" alt="Canary Releases: Ship Safely at Full Speed" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93823/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>A canary release exposes a new version to a small traffic slice first.</li><li>Define success criteria before the canary starts, not during.</li><li>Automated rollback turns risky deploys into routine ones.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164531Z

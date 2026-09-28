@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Superseded by [ADR 0006](0006-search-three-component-rebuild.md) (2026-08-18) — SearchExperienceV2 is replaced by SearchResults / SearchCollection / SearchTypeahead and removed from all pages; the proper-template-fields principle it established carries forward. Was: Accepted.
 
 ## Context
 

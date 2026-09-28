@@ -1,0 +1,36 @@
+﻿---
+ID: "ea6e552d-5aab-4554-89e2-d1e85c2107d3"
+Parent: "c9a981b0-4852-4036-befa-656e95d6ed7d"
+Template: "4fc72579-05b8-4334-8a6e-3307c335a7f7"
+Path: "/sitecore/content/main/main-website/Data/SearchTypeaheads/Articles Typeahead"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T091924Z
+    - ID: "2d059cbc-a2cf-4214-868b-cd6760f41f44"
+      Hint: SearchIndex
+      Value: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc"
+    - ID: "49c9b0af-f4ef-4921-926b-0fba6387c5d3"
+      Hint: ResultsPage
+      Value: |
+        <link text="Articles" linktype="internal" querystring="" target="" id="{D8B01498-2838-4388-A68F-86665D9C1C80}" />
+    - ID: "49eab0df-ae58-47da-93f7-11b65c59c748"
+      Hint: TitleMapping
+      Value: Title
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "dadde4ce-8199-4d06-989f-ba57955cba97"
+    - ID: "b80f1bed-a19b-464e-9dcc-75503a58549d"
+      Hint: LinkMapping
+      Value: ArticleUrl
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T150357Z

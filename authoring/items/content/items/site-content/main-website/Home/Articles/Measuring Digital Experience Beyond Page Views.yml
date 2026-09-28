@@ -1,0 +1,56 @@
+﻿---
+ID: "4a5e9aaf-ddee-48b4-8fd4-c4c032118fc9"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Measuring Digital Experience Beyond Page Views"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{F19DC444-C1A5-4F12-9607-8B41505A9FB4}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Measuring Digital Experience Beyond Page Views
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160853Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260619T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Measuring Digital Experience Beyond Page Views
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Page views measure attendance, not experience. A visitor who opened five pages might be delighted or lost — the counter cannot tell the difference, and optimizing for it rewards the labyrinth.</p><p>Experience metrics start from intent. Task completion: did the visitor who came to compare plans reach the comparison? Time-to-value: how long from landing to the first genuinely useful moment? Frustration signals — rage clicks, back-and-forth loops, abandoned forms with one field left — locate the friction that averages hide.</p><p>The discipline is pairing every engagement metric with an outcome it should predict. Scroll depth is trivia until you show it correlates with renewal; search usage is noise until you connect it to conversion. Metrics that predict nothing get retired — the dashboard diet is the healthiest thing an analytics program can do.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Measuring-Digital-Experience-Beyond-Page-Views"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2f41badb-e812-47d8-af62-7c148dcfa530"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93917-measuring-digital-experience?v=f4e16b36" dam-id="-N_H9anGRmKr4AlhIhrfMg" width="1200" height="675" alt="Measuring Digital Experience Beyond Page Views" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93917/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>Page views measure attendance; intent metrics measure experience.</li><li>Track task completion, time-to-value, and frustration signals.</li><li>Retire any metric that predicts no outcome.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164628Z

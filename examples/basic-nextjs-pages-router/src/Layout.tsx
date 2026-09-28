@@ -20,7 +20,9 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
   const { layout, mode } = page;
   const { route } = layout.sitecore;
   const fields = route?.fields as RouteFields;
-  const mainClassPageEditing = mode.isEditing ? 'editing-mode' : 'prod-mode';
+  const mainClassPageEditing = mode.isEditing
+    ? 'editing-mode flex min-h-screen flex-col'
+    : 'prod-mode flex min-h-screen flex-col';
 
   return (
     <>
@@ -42,8 +44,8 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                 {route && <Placeholder name="headless-header" rendering={route} />}
               </div>
             </header>
-            <main>
-              <div id="content">
+            <main className="flex flex-1 flex-col">
+              <div id="content" className="flex flex-1 flex-col">
                 {route && <Placeholder name="headless-main" rendering={route} />}
               </div>
             </main>

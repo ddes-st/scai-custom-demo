@@ -5,6 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Default as ArticleListing } from '@/components/article-listing/ArticleListing';
 import {
   defaultProps,
+  propsThreeArticles,
   propsWithoutTitle,
   propsWithoutDescription,
   propsWithoutLink,
@@ -13,8 +14,8 @@ import {
   propsNoArticles,
   propsEditing,
   mockArticle1,
-  mockArticle2,
-  mockArticle3,
+  mockQaArticle1,
+  mockArticleAdditional,
 } from './ArticleListing.mockProps';
 
 import type { Field, LinkField } from '@sitecore-content-sdk/nextjs';
@@ -131,7 +132,7 @@ describe('ArticleListing Component', () => {
       render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('Introduction to React Hooks')).toBeInTheDocument();
-      expect(screen.getByText('Advanced TypeScript Patterns')).toBeInTheDocument();
+      expect(screen.getByText('Partners in Sustainability')).toBeInTheDocument();
     });
 
     it('should render featured article images', () => {
@@ -139,7 +140,7 @@ describe('ArticleListing Component', () => {
 
       // Images use article title as alt text
       expect(screen.getByAltText('Introduction to React Hooks')).toBeInTheDocument();
-      expect(screen.getByAltText('Advanced TypeScript Patterns')).toBeInTheDocument();
+      expect(screen.getByAltText('Partners in Sustainability')).toBeInTheDocument();
     });
 
     it('should render featured article summaries', () => {
@@ -149,7 +150,7 @@ describe('ArticleListing Component', () => {
         screen.getByText(/Learn the fundamentals of React Hooks/)
       ).toBeInTheDocument();
       expect(
-        screen.getByText(/Explore advanced TypeScript patterns/)
+        screen.getByText(/How Solterra & Co. works with partners/)
       ).toBeInTheDocument();
     });
 
@@ -164,7 +165,7 @@ describe('ArticleListing Component', () => {
       render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('8 min read')).toBeInTheDocument();
-      expect(screen.getByText('12 min read')).toBeInTheDocument();
+      expect(screen.getByText('4 min read')).toBeInTheDocument();
     });
 
     it('should render featured articles in 2-column grid', () => {
@@ -177,31 +178,29 @@ describe('ArticleListing Component', () => {
 
   describe('Regular articles layout (remaining)', () => {
     it('should render remaining articles in regular layout', () => {
-      render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('CSS Grid Layout Guide')).toBeInTheDocument();
-      expect(screen.getByText('Next.js Performance Tips')).toBeInTheDocument();
     });
 
     it('should render regular articles in 3-column grid', () => {
-      const { container } = render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      const { container } = render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       const regularGrid = container.querySelector('.grid.\\@lg\\:grid-cols-3');
       expect(regularGrid).toBeInTheDocument();
     });
 
     it('should not render summaries for regular articles', () => {
-      render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       // Regular articles don't show summary text in the compact layout
       expect(screen.queryByText(/Master CSS Grid/)).not.toBeInTheDocument();
     });
 
     it('should render regular article titles', () => {
-      render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('CSS Grid Layout Guide')).toBeInTheDocument();
-      expect(screen.getByText('Next.js Performance Tips')).toBeInTheDocument();
     });
   });
 
@@ -214,7 +213,7 @@ describe('ArticleListing Component', () => {
     });
 
     it('should render author initials when no image available', () => {
-      render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       // Sarah Johnson has no image, should show initials
       expect(screen.getByText('SJ')).toBeInTheDocument();
@@ -224,20 +223,20 @@ describe('ArticleListing Component', () => {
       // Create props with an article that has author name but no profile image in regular articles section
       // This ensures we test the initials fallback code path (lines 196-202)
       const propsWithAuthorNoImage = {
-        ...defaultProps,
+        ...propsThreeArticles,
         fields: {
-          ...defaultProps.fields,
+          ...propsThreeArticles.fields,
           featuredContent: [
             mockArticle1,
-            mockArticle2,
+            mockQaArticle1,
             {
-              ...mockArticle3,
+              ...mockArticleAdditional,
               fields: {
-                ...mockArticle3.fields,
+                ...mockArticleAdditional.fields,
                 taxAuthor: {
-                  ...mockArticle3.fields.taxAuthor,
+                  ...mockArticleAdditional.fields.taxAuthor,
                   fields: {
-                    ...mockArticle3.fields.taxAuthor.fields,
+                    ...mockArticleAdditional.fields.taxAuthor.fields,
                     personProfileImage: undefined,
                   },
                 },
@@ -290,7 +289,7 @@ describe('ArticleListing Component', () => {
       render(<ArticleListing {...(propsTwoArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('Introduction to React Hooks')).toBeInTheDocument();
-      expect(screen.getByText('Advanced TypeScript Patterns')).toBeInTheDocument();
+      expect(screen.getByText('Partners in Sustainability')).toBeInTheDocument();
       expect(screen.queryByText('CSS Grid Layout Guide')).not.toBeInTheDocument();
     });
 
@@ -298,7 +297,7 @@ describe('ArticleListing Component', () => {
       render(<ArticleListing {...(propsOneArticle as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       expect(screen.getByText('Introduction to React Hooks')).toBeInTheDocument();
-      expect(screen.queryByText('Advanced TypeScript Patterns')).not.toBeInTheDocument();
+      expect(screen.queryByText('Partners in Sustainability')).not.toBeInTheDocument();
     });
 
     it('should render with no articles', () => {
@@ -331,7 +330,7 @@ describe('ArticleListing Component', () => {
     });
 
     it('should render article links for regular articles', () => {
-      render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
 
       const links = screen.getAllByTestId('article-link');
       expect(links.length).toBeGreaterThan(0);
@@ -394,11 +393,15 @@ describe('ArticleListing Component', () => {
     it('should correctly transform featured content to articles', () => {
       render(<ArticleListing {...(defaultProps as unknown as Parameters<typeof ArticleListing>[0])} />);
 
-      // Verify all 4 articles are rendered
+      // Solterra demo: Article 1 + QA Article 1
       expect(screen.getByText('Introduction to React Hooks')).toBeInTheDocument();
-      expect(screen.getByText('Advanced TypeScript Patterns')).toBeInTheDocument();
+      expect(screen.getByText('Partners in Sustainability')).toBeInTheDocument();
+    });
+
+    it('should render a third article in the regular layout when provided', () => {
+      render(<ArticleListing {...(propsThreeArticles as unknown as Parameters<typeof ArticleListing>[0])} />);
+
       expect(screen.getByText('CSS Grid Layout Guide')).toBeInTheDocument();
-      expect(screen.getByText('Next.js Performance Tips')).toBeInTheDocument();
     });
 
     it('should handle articles without author names', () => {

@@ -16,6 +16,15 @@ import type { Field } from '@sitecore-content-sdk/nextjs';
 
 // Mock @sitecore-content-sdk/nextjs
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
+  useSitecore: () => ({
+    page: {
+      mode: {
+        isEditing: false,
+        isPreview: false,
+        isNormal: true,
+      },
+    },
+  }),
   Text: ({
     field,
     tag,

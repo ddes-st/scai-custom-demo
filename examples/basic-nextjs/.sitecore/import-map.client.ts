@@ -9,13 +9,24 @@ import {
 // end of built-in imports
 
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
-import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
+import { cn } from '@/lib/utils';
+import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
+import { useEffect, useMemo, useRef, useState, Suspense, useCallback } from 'react';
 import React from 'react';
+import Image from 'next/image';
+import { ImageOff, Search, X, ChevronDown, Menu, User } from 'lucide-react';
+import { useSearch, useInfiniteSearch } from '@sitecore-content-sdk/nextjs/search';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { DEFAULT_PAGE_SIZE, DEFAULT_MAX_ITEMS } from '@/lib/search-ui/constants';
+import { stripHtml, formatDate, extractImageUrl } from '@/lib/search-ui/text';
+import { useDebouncedValue } from '@/lib/search-ui/useDebouncedValue';
+import { readUrlParam, useUrlMirror } from '@/lib/search-ui/useUrlMirror';
+import { useSearchLabels } from '@/lib/search-ui/useSearchLabels';
+import { useSearchEvents } from '@/lib/search-ui/useSearchEvents';
 import { useTranslations } from 'next-intl';
 import { useSearchParams, useRouter as useRouter_38d453563358e259e30871f8ef5a0334c186c57e, usePathname } from 'next/navigation';
-import { useSearch, useInfiniteSearch } from '@sitecore-content-sdk/nextjs/search';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { SearchEmptyResults } from '@/lib/search/search-components/SearchEmptyResults';
 import { SearchError } from '@/lib/search/search-components/SearchError';
 import { SearchItem } from '@/lib/search/search-components/SearchItem';
@@ -24,13 +35,12 @@ import { SearchPagination } from '@/lib/search/search-components/SearchPaginatio
 import { SearchInput } from '@/lib/search/search-components/SearchInput';
 import { useEvent } from '@/lib/search/search-components/useEvent';
 import { useRouter } from '@/lib/search/search-components/useRouter';
-import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE, gridColsClass } from '@/lib/search/search-components/constants';
-import Image from 'next/image';
-import { Link, Text, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
+import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE as DEFAULT_PAGE_SIZE_d8a3a96ed6893912a4b0e4dff64815d90f82a321, gridColsClass } from '@/lib/search/search-components/constants';
+import { Text, NextImage, Link, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
-import { ChevronDown, Menu, X, User } from 'lucide-react';
-import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { identity, event, pageView } from '@sitecore-content-sdk/events';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { isSodexoAboutPage } from '@/lib/sodexo-page';
 import { SODEXO_ABOUT_TECH_IMAGE, sodexoAboutCardImage, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
 import { SearchEmptyResults as SearchEmptyResults_a7fd5bb71665da1ba09c52ff7c1d1a533293f443 } from 'src/components/search-experience/search-components/SearchEmptyResults';
@@ -45,7 +55,6 @@ import { useParams } from 'src/components/search-experience/search-components/us
 import { DICTIONARY_KEYS as DICTIONARY_KEYS_f395c67553fa1a94298ee04894f3f430873be139, gridColsClass as gridColsClass_f395c67553fa1a94298ee04894f3f430873be139, DEFAULT_PAGE_SIZE as DEFAULT_PAGE_SIZE_f395c67553fa1a94298ee04894f3f430873be139, DEBOUNCE_TIME } from 'src/components/search-experience/search-components/constants';
 import { useRouter as useRouter_718da64eaca4c1615fa5f1603d6d6260be2e7c90 } from 'src/components/search-experience/search-components/useRouter';
 import { useDebouncedCallback } from 'src/components/search-experience/search-components/useDebounce';
-import { event, pageView } from '@sitecore-content-sdk/events';
 import { ItemCardFrame, ItemListFrame } from 'src/components/search-experience/search-components/SearchItemCommon';
 import { SearchItemTitle } from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
 import { SearchItemSummary } from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
@@ -66,14 +75,110 @@ const importMap = [
     ]
   },
   {
+    module: '@/lib/utils',
+    exports: [
+      { name: 'cn', value: cn },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/TypeaheadSearchBox',
+    exports: [
+      { name: 'TypeaheadSearchBox', value: TypeaheadSearchBox },
+    ]
+  },
+  {
     module: 'react',
     exports: [
-      { name: 'useCallback', value: useCallback },
       { name: 'useEffect', value: useEffect },
-      { name: 'useState', value: useState },
-      { name: 'useRef', value: useRef },
       { name: 'useMemo', value: useMemo },
+      { name: 'useRef', value: useRef },
+      { name: 'useState', value: useState },
+      { name: 'Suspense', value: Suspense },
+      { name: 'useCallback', value: useCallback },
       { name: 'default', value: React },
+    ]
+  },
+  {
+    module: 'next/image',
+    exports: [
+      { name: 'default', value: Image },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'ImageOff', value: ImageOff },
+      { name: 'Search', value: Search },
+      { name: 'X', value: X },
+      { name: 'ChevronDown', value: ChevronDown },
+      { name: 'Menu', value: Menu },
+      { name: 'User', value: User },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs/search',
+    exports: [
+      { name: 'useSearch', value: useSearch },
+      { name: 'useInfiniteSearch', value: useInfiniteSearch },
+    ]
+  },
+  {
+    module: '@/components/ui/input',
+    exports: [
+      { name: 'Input', value: Input },
+    ]
+  },
+  {
+    module: '@/components/ui/button',
+    exports: [
+      { name: 'Button', value: Button },
+    ]
+  },
+  {
+    module: '@/components/ui/card',
+    exports: [
+      { name: 'Card', value: Card },
+      { name: 'CardContent', value: CardContent },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/constants',
+    exports: [
+      { name: 'DEFAULT_PAGE_SIZE', value: DEFAULT_PAGE_SIZE },
+      { name: 'DEFAULT_MAX_ITEMS', value: DEFAULT_MAX_ITEMS },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/text',
+    exports: [
+      { name: 'stripHtml', value: stripHtml },
+      { name: 'formatDate', value: formatDate },
+      { name: 'extractImageUrl', value: extractImageUrl },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/useDebouncedValue',
+    exports: [
+      { name: 'useDebouncedValue', value: useDebouncedValue },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/useUrlMirror',
+    exports: [
+      { name: 'readUrlParam', value: readUrlParam },
+      { name: 'useUrlMirror', value: useUrlMirror },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/useSearchLabels',
+    exports: [
+      { name: 'useSearchLabels', value: useSearchLabels },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/useSearchEvents',
+    exports: [
+      { name: 'useSearchEvents', value: useSearchEvents },
     ]
   },
   {
@@ -88,25 +193,6 @@ const importMap = [
       { name: 'useSearchParams', value: useSearchParams },
       { name: 'useRouter', value: useRouter_38d453563358e259e30871f8ef5a0334c186c57e },
       { name: 'usePathname', value: usePathname },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/nextjs/search',
-    exports: [
-      { name: 'useSearch', value: useSearch },
-      { name: 'useInfiniteSearch', value: useInfiniteSearch },
-    ]
-  },
-  {
-    module: '@/lib/utils',
-    exports: [
-      { name: 'cn', value: cn },
-    ]
-  },
-  {
-    module: '@/components/ui/button',
-    exports: [
-      { name: 'Button', value: Button },
     ]
   },
   {
@@ -161,22 +247,16 @@ const importMap = [
     module: '@/lib/search/search-components/constants',
     exports: [
       { name: 'DICTIONARY_KEYS', value: DICTIONARY_KEYS },
-      { name: 'DEFAULT_PAGE_SIZE', value: DEFAULT_PAGE_SIZE },
+      { name: 'DEFAULT_PAGE_SIZE', value: DEFAULT_PAGE_SIZE_d8a3a96ed6893912a4b0e4dff64815d90f82a321 },
       { name: 'gridColsClass', value: gridColsClass },
-    ]
-  },
-  {
-    module: 'next/image',
-    exports: [
-      { name: 'default', value: Image },
     ]
   },
   {
     module: '@sitecore-content-sdk/nextjs',
     exports: [
-      { name: 'Link', value: Link },
       { name: 'Text', value: Text },
       { name: 'NextImage', value: NextImage },
+      { name: 'Link', value: Link },
       { name: 'useSitecore', value: useSitecore },
       { name: 'RichText', value: RichText },
       { name: 'DateField', value: DateField },
@@ -191,24 +271,23 @@ const importMap = [
     ]
   },
   {
-    module: 'lucide-react',
+    module: '@sitecore-content-sdk/events',
     exports: [
-      { name: 'ChevronDown', value: ChevronDown },
-      { name: 'Menu', value: Menu },
-      { name: 'X', value: X },
-      { name: 'User', value: User },
-    ]
-  },
-  {
-    module: '@/lib/sodexo-page',
-    exports: [
-      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
+      { name: 'identity', value: identity },
+      { name: 'event', value: event },
+      { name: 'pageView', value: pageView },
     ]
   },
   {
     module: '@/components/uiim/media/SmartMedia',
     exports: [
       { name: 'SmartMedia', value: SmartMedia },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-page',
+    exports: [
+      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
     ]
   },
   {
@@ -298,13 +377,6 @@ const importMap = [
     module: 'src/components/search-experience/search-components/useDebounce',
     exports: [
       { name: 'useDebouncedCallback', value: useDebouncedCallback },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/events',
-    exports: [
-      { name: 'event', value: event },
-      { name: 'pageView', value: pageView },
     ]
   },
   {

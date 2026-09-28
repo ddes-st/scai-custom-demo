@@ -1,0 +1,56 @@
+﻿---
+ID: "6c2f724d-85b8-4fc0-8f75-f1853c5af539"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Feature Flags Beyond On And Off"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{1646F55D-40E2-4298-BF6A-E2195381DC8B}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Feature Flags Beyond On and Off
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160202Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260113T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Feature Flags Beyond On And Off
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Most teams adopt feature flags as a glorified if-statement: the feature is on or it is off. The real value starts when a flag becomes a decision point that can consider who is asking, where they are, and how the system is doing right now.</p><p>Percentage rollouts turn a launch into a dial instead of a switch. Targeting rules let support enable a fix for one frustrated customer before the general release. Kill switches give operators a way to shed non-essential load during an incident without deploying anything.</p><p>The discipline that keeps this from becoming flag soup is lifecycle management. Every flag gets an owner and an expiry date at creation. A weekly report of expired flags turns cleanup into routine instead of archaeology. Teams that skip this end up with hundreds of permanent branches in production code that nobody dares to remove.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Feature-Flags-Beyond-On-And-Off"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 5 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3e8a5818-8c4d-4700-a734-25944f7f9937"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93844-feature-flags-beyond-on-and-off?v=4e82073f" dam-id="_jJN7rBMS-iPsnzf1yv5_g" width="1200" height="675" alt="Feature Flags Beyond On and Off" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93844/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: <ul><li>Flags are decision points, not just switches — target by user, region, and system health.</li><li>Kill switches let operators shed load without a deploy.</li><li>Give every flag an owner and an expiry date at creation.</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164539Z

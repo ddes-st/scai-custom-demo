@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { ErrorPage } from '@sitecore-content-sdk/nextjs';
-import client from 'lib/sitecore-client';
+import client from '@/lib/sitecore-client';
 import scConfig from 'sitecore.config';
-import Layout from 'src/Layout';
-import Providers from 'src/Providers';
+import Layout from '@/Layout';
+import Providers from '@/Providers';
 
 // Metadata for 404 Not Found page
 export const metadata: Metadata = {

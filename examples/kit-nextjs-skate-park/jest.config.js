@@ -40,10 +40,9 @@ const config = {
     '!src/**/*.props.{ts,tsx}', // Exclude type-only props files
     '!src/components/ui/**', // Exclude third-party Shadcn/ui components
     '!src/components/**/*.dev.{ts,tsx}', // Optionally exclude variant implementations
-    '!src/pages/_app.tsx',
-    '!src/pages/_error.tsx',
-    '!src/pages/404.tsx',
-    '!src/pages/500.tsx',
+    '!src/app/layout.tsx',
+    '!src/app/not-found.tsx',
+    '!src/app/global-error.tsx',
   ],
 
   // The directory where Jest should output its coverage files

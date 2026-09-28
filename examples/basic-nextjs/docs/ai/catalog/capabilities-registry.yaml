@@ -10,38 +10,100 @@ capabilities:
 
   - id: search
     name: "Site Search"
-    description: "Full-text search with pagination or infinite scroll, configured via Page Builder"
-    approach: "OOTB SitecoreAI SearchExperience component from starter kit"
+    description: "Three-component search experience: full results page, index-driven content strip, and typeahead suggest box"
+    approach: "From-scratch components on Content SDK search hooks (ADR 0006, spec #45)"
     sdk: "@sitecore-content-sdk/nextjs/search"
     sdkDependencies: []  # No new dependencies — uses existing Content SDK
     initialization: null  # No global init needed — hooks work via SitecoreProvider
+    sharedFoundation: "src/lib/search-ui/ — constants + labels (guarded dictionary lookups), stripHtml/formatDate, useDebouncedValue, useUrlMirror, useSearchLabels, useSearchEvents, navigateTo"
+    recipe:  # enabling search for a new vertical is a configuration act, not an engineering act
+      - "1. Create/identify a search index in Sitecore AI > Search > Configuration Manager; copy its GUID (visible in index details and the index URL)"
+      - "2. Create one datasource item per component under /Data/<ComponentName>s/ filling index GUID + attribute mappings (attribute names = the index's document fields, e.g. Title, ArticleContent, ArticlePublicationDate)"
+      - "3. Drop the component(s) on pages in Page Builder and assign the datasource items"
     prerequisites:
-      - "Search sources available in the SitecoreAI environment (enabled by default)"
-      - "Search Configuration Manager Marketplace app installed"
-      - "SearchExperience component copied from starter kit into the project"
-      - "Content item created with JSON template (searchIndex + fieldsMapping)"
+      - "Search index exists in the SitecoreAI environment with content published and ingested"
+      - "Index attribute names known (probe with docs/ai/scripts/search-probe.mjs if unsure)"
+      - "Optional: URL attribute on the index for result links (without it, components degrade gracefully — no links)"
+    endpointContract: "keyphrase + sort + limit/offset ONLY; filters/facets/unknown fields silently ignored — see docs/ai/reference/agent-api-limitations.md, section 6"
     components:
-      - id: search-experience
-        name: "SearchExperience"
+
+      - id: search-results
+        name: "SearchResults"
         kind: simple
         category: search
-        filePath: "src/components/search-experience/SearchExperience.tsx"
-        variants: [Default, LoadMore]
+        filePath: "src/components/uiim/search/SearchResults.tsx"
+        variants: [Default]
+        purpose: "Full search page: instant-filtering input (debounced, no server round-trips), result cards, pagination, shareable ?q=/?page= URLs"
         datasourceFields:
-          - { name: "Search", type: "Multi-Line Text", purpose: "JSON config with searchIndex GUID and fieldsMapping" }
+          - { name: "SearchIndex", type: "Single-Line Text", purpose: "search index GUID" }
+          - { name: "TitleMapping", type: "Single-Line Text", purpose: "index attribute for card title" }
+          - { name: "DescriptionMapping", type: "Single-Line Text", purpose: "index attribute for card snippet (HTML stripped)" }
+          - { name: "ImageMapping", type: "Single-Line Text", purpose: "index attribute holding image URL" }
+          - { name: "LinkMapping", type: "Single-Line Text", purpose: "index attribute holding item URL (empty = no links)" }
+          - { name: "DateMapping", type: "Single-Line Text", purpose: "index attribute holding ISO date" }
         renderingParams:
-          - { name: "columns", type: "Single-Line Text", purpose: "grid columns: 1, 2, or 3" }
-          - { name: "pageSize", type: "Single-Line Text", purpose: "results per page" }
-        placement: "any placeholder (typically headless-main)"
-        hooks:
-          - "useSearch (pagination variant)"
-          - "useInfiniteSearch (load-more variant)"
-    configuration:
-      - "In Page Builder: add SearchExperience component to a page"
-      - "Assign a content item with JSON template containing searchIndex and fieldsMapping"
-      - "Use the Search Configuration Manager tab to select source and map fields visually"
-      - "Configure columns and pageSize via rendering parameters"
+          - { name: "columns", type: "Single-Line Text", purpose: "grid columns: 1, 2, or 3 (default 3); set manually in Page Builder — no MCP tool for params" }
+          - { name: "pageSize", type: "Single-Line Text", purpose: "results per page (default 6)" }
+        placement: "the search results page (e.g. /Articles), placeholder headless-main"
+        hooks: ["useSearch"]
+        verification: "docs/ai/scripts/search-verify.mjs (browser four-point protocol)"
+
+      - id: search-collection
+        name: "SearchCollection"
+        kind: simple
+        category: search
+        filePath: "src/components/uiim/search/SearchCollection.tsx"
+        variants: [Default]
+        purpose: "Zero-input index-driven strip (e.g. Latest Articles): browse mode (empty keyphrase) + sort + item cap. Auto-updates as content publishes — search as content infrastructure"
+        datasourceFields:
+          - { name: "SearchIndex", type: "Single-Line Text", purpose: "search index GUID" }
+          - { name: "TitleMapping", type: "Single-Line Text", purpose: "index attribute for card title" }
+          - { name: "DescriptionMapping", type: "Single-Line Text", purpose: "index attribute for card snippet (HTML stripped)" }
+          - { name: "ImageMapping", type: "Single-Line Text", purpose: "index attribute holding image URL" }
+          - { name: "LinkMapping", type: "Single-Line Text", purpose: "index attribute holding item URL (empty = no links)" }
+          - { name: "DateMapping", type: "Single-Line Text", purpose: "index attribute holding ISO date" }
+          - { name: "SortBy", type: "Single-Line Text", purpose: "index attribute to sort by (empty = index default order)" }
+          - { name: "SortOrder", type: "Single-Line Text", purpose: "asc or desc (default desc)" }
+          - { name: "MaxItems", type: "Single-Line Text", purpose: "cards to show (default 3)" }
+          - { name: "Heading", type: "Single-Line Text", purpose: "authorable strip heading, editable in Page Builder" }
+        renderingParams: []
+        placement: "any content page (e.g. Home), placeholder headless-main"
+        hooks: ["useSearch (browse mode: query '', sort, pageSize = MaxItems)"]
+        verification: "docs/ai/scripts/collection-verify.mjs"
+
+      - id: search-typeahead
+        name: "SearchTypeahead"
+        kind: simple
+        category: search
+        filePath: "src/components/uiim/search/SearchTypeahead.tsx"
+        variants: [Default]
+        purpose: "Compact suggest box: debounced title suggestions, keyboard navigable (arrows/Enter/Escape); Enter or See-all hands the query to the results page via ?q="
+        datasourceFields:
+          - { name: "SearchIndex", type: "Single-Line Text", purpose: "search index GUID" }
+          - { name: "TitleMapping", type: "Single-Line Text", purpose: "index attribute for suggestion text" }
+          - { name: "LinkMapping", type: "Single-Line Text", purpose: "index attribute holding item URL (empty = choosing a suggestion searches its title on the results page)" }
+          - { name: "ResultsPage", type: "General Link", purpose: "page hosting SearchResults; navigation target for Enter / See all results" }
+          - { name: "MaxSuggestions", type: "Single-Line Text", purpose: "dropdown size (default 5)" }
+        renderingParams: []
+        placement: "born page-scoped (e.g. top of the results page); promotion into the global header is a deliberate manual Page Builder step"
+        hooks: ["useSearch (pageSize = MaxSuggestions, enabled only while typing)"]
+        verification: "docs/ai/scripts/typeahead-verify.mjs"
+
     gracefulDegradation:
-      - "Shows skeleton items in editing/preview mode"
-      - "Shows empty results message when search returns no matches"
-      - "Shows error state with retry button on API failure"
+      - "Skeleton placeholders in editing/preview mode; no live API calls in authoring surfaces"
+      - "Empty LinkMapping or missing URL attribute: cards/suggestions render without links (typeahead falls back to title-as-query navigation)"
+      - "Empty ImageMapping or missing image values: cards render without images"
+      - "SearchCollection with zero results: renders nothing live (auto-hiding strip)"
+      - "SearchResults no-results state with clear-search action; error state with retry"
+      - "Missing dictionary entries: guarded lookups render English fallbacks, never throw MISSING_MESSAGE"
+    dictionary: "Reuses SearchExperience_* entries in /Dictionary (13 keys incl. SeeAllResults, Suggestions) — optional; fallbacks cover a fresh site"
+    itemIds: "docs/ai/manifests/sitecore-manifest.yaml, components-searchv3 section (templates, renderings, datasource items, verification records)"
+
+    superseded:  # V2-era guidance — kept for history, do not follow
+      note: >
+        The OOTB SearchExperience (JSON-config, ADR 0003) and SearchExperienceV2
+        (template fields, ADR 0004) are superseded by the three components above
+        and removed from all pages. Code remains in the repo as historical
+        reference (src/components/search-experience/, src/components/uiim/search/SearchExperienceV2.tsx).
+        See docs/adr/0006-search-three-component-rebuild.md for the full trail
+        and the V2 failure modes that motivated the rebuild.

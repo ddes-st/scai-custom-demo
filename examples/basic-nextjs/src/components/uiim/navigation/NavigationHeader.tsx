@@ -13,6 +13,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
 
 interface NavigationLinkFields {
   id: string;
@@ -24,6 +25,13 @@ interface NavigationHeaderDatasource {
   brandLogo: { jsonValue: ImageField };
   ctaLabel: { jsonValue: Field<string> };
   ctaLink: { jsonValue: LinkField };
+  // Optional header search slot — renders a typeahead in the nav row when
+  // SearchIndex is filled on the datasource. Empty = no search box.
+  searchIndex?: { jsonValue: Field<string> };
+  titleMapping?: { jsonValue: Field<string> };
+  linkMapping?: { jsonValue: Field<string> };
+  resultsPage?: { jsonValue: LinkField };
+  maxSuggestions?: { jsonValue: Field<string> };
   children: {
     results: NavigationLinkFields[];
   };
@@ -169,6 +177,36 @@ const CtaButton = ({
   );
 };
 
+// The in-row search slot: glass pill sized for the nav bar, only when the
+// datasource carries a search index. Hidden on mobile (the bar is too tight).
+const HeaderSearch = ({
+  datasource,
+  page,
+  rendering,
+}: Pick<ComponentProps, 'page' | 'rendering'> & {
+  datasource: NavigationHeaderDatasource;
+}) => {
+  if (!datasource.searchIndex?.jsonValue?.value) return null;
+  return (
+    <div className="hidden md:block">
+      <TypeaheadSearchBox
+        compact
+        onDark
+        fields={{
+          SearchIndex: datasource.searchIndex?.jsonValue,
+          TitleMapping: datasource.titleMapping?.jsonValue,
+          LinkMapping: datasource.linkMapping?.jsonValue,
+          ResultsPage: datasource.resultsPage?.jsonValue,
+          MaxSuggestions: datasource.maxSuggestions?.jsonValue,
+        }}
+        page={page}
+        rendering={rendering}
+        className="w-44 lg:w-64"
+      />
+    </div>
+  );
+};
+
 const MenuButton = ({ open, onClick }: { open: boolean; onClick: () => void }) => (
   <button
     className="md:hidden p-2"
@@ -191,7 +229,7 @@ const MenuButton = ({ open, onClick }: { open: boolean; onClick: () => void }) =
   </button>
 );
 
-export const Default = ({ fields, params, page }: NavigationHeaderProps): JSX.Element => {
+export const Default = ({ fields, params, page, rendering }: NavigationHeaderProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -214,7 +252,8 @@ export const Default = ({ fields, params, page }: NavigationHeaderProps): JSX.El
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Logo brandLogo={brandLogo} />
           <NavLinks items={links} />
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <HeaderSearch datasource={datasource} page={page} rendering={rendering} />
             <CtaButton
               label={datasource.ctaLabel?.jsonValue}
               link={datasource.ctaLink?.jsonValue}

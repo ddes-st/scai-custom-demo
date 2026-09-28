@@ -1,5 +1,5 @@
 import { draftMode } from 'next/headers';
-import Bootstrap from 'src/Bootstrap';
+import Bootstrap from '@/Bootstrap';
 
 export default async function SiteLayout({
   children,

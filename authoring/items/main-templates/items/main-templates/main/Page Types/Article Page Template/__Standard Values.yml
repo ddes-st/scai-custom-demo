@@ -1,0 +1,23 @@
+﻿---
+ID: "d7a5fcba-77aa-4863-9322-69691462eb46"
+Parent: "74360ad2-d3df-4fce-834c-2f5420488677"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: /sitecore/templates/Project/main/Page Types/Article Page Template/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260518T203218Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7d85831b-a99a-462d-8486-b4cf2a5391fd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260518T203218Z

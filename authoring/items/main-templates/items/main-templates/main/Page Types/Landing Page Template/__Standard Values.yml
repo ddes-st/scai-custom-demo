@@ -1,0 +1,141 @@
+﻿---
+ID: "0014cd13-f3f1-4049-a866-3f30f508202e"
+Parent: "50af6ec7-85fd-4b9b-adf7-1fde9d9136fe"
+Template: "50af6ec7-85fd-4b9b-adf7-1fde9d9136fe"
+Path: /sitecore/templates/Project/main/Page Types/Landing Page Template/__Standard Values
+SharedFields:
+- ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
+  Hint: Page Design
+  Value: "{E38ABC20-C7EA-43C8-AAAF-22CA71342814}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "483619f4-c917-4deb-b5f5-5c617e30e911"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0dae8540-d34c-49c1-89c8-0df5ba0e4e8e"
+      Hint: faq3Answer
+      Value: "<p>SOC 2 Type II, ISO 27001, and HIPAA compliant. SSO, audit logs, and field-level encryption are included on every plan.</p>"
+    - ID: "0dc2e1c8-d594-441b-aa18-2132a1546775"
+      Hint: heroPrimaryCta
+      Value: |
+        <link text="Request a demo" linktype="external" url="https://www.sitecore.com" anchor="" target="_blank" />
+    - ID: "1a7417c0-310d-4e7d-b5ec-92114e7bd533"
+      Hint: stat2Number
+      Value: 10x
+    - ID: "21b8a23c-a8e3-4536-bbc1-64e0c34be37f"
+      Hint: finalCtaSubhead
+      Value: <p>Join 2,000+ engineering teams shipping with confidence every day.</p>
+    - ID: "21dfbd1b-5f08-49c3-9dee-da6b5f5bfd86"
+      Hint: stat3Label
+      Value: Uptime SLA
+    - ID: "2428d498-a53a-410b-b1a7-be458e82a6da"
+      Hint: feature2IconName
+      Value: ShieldCheck
+    - ID: "246dcc86-704d-4438-942f-1b79c4adf78e"
+      Hint: faq4Question
+      Value: "Can we self-host?"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260609T204402Z
+    - ID: "26938adf-aa20-4c38-a40a-52ba925031dc"
+      Hint: feature1Description
+      Value: "<p>Push code at lunch, see it live before coffee. Sub-30-second deploys across every environment.</p>"
+    - ID: "2e6e2359-e8d4-440c-a7ae-07bfb4c952ec"
+      Hint: faq2Answer
+      Value: <p>Yes. We integrate with Jenkins, GitHub Actions, GitLab CI, CircleCI, and Argo natively.</p>
+    - ID: "35c67a2f-620d-466d-a4a8-3b717cf2ed96"
+      Hint: stat1Number
+      Value: 70%
+    - ID: "4440d454-0cbe-4716-ab07-1ee3a6686936"
+      Hint: faq5Answer
+      Value: "<p>Per-engineer monthly with volume discounts above 50 seats. No deploy or environment limits.</p>"
+    - ID: "4a6e980b-fc61-454c-8954-f7df8de56283"
+      Hint: faq3Question
+      Value: "What about security and compliance?"
+    - ID: "4be16324-f69f-438b-9df4-5bdf5c2cc44c"
+      Hint: feature2Title
+      Value: Roll back instantly
+    - ID: "593fdd00-9595-47f9-8bbd-c148af1086c9"
+      Hint: heroHeadline
+      Value: Deploy 70% faster with zero downtime
+    - ID: "6900eaa8-748f-4a12-864b-2115be3c5e5e"
+      Hint: faq1Answer
+      Value: <p>Most teams are running in under 30 minutes. Our setup wizard handles infrastructure configuration automatically.</p>
+    - ID: "69875f2f-766c-43d6-8dad-12ab207c879c"
+      Hint: finalCtaHeadline
+      Value: "Ready to ship faster?"
+    - ID: "699bc92b-f349-48d0-8d1c-38af76bc6d7e"
+      Hint: testimonialAuthorName
+      Value: Sarah Chen
+    - ID: "7a0e27ff-561a-4d4f-864c-b1576ac1f6ba"
+      Hint: faq5Question
+      Value: "How does pricing work?"
+    - ID: "80f81bb3-7127-48af-a8cd-553858610c66"
+      Hint: testimonialAuthorTitle
+      Value: VP of Engineering, Northwind
+    - ID: "872e5129-743b-48ba-98e9-9db9f994114e"
+      Hint: heroEyebrow
+      Value: For DevOps leaders
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0f51c4b8-767d-4d3e-aa2e-8258c1db430b"
+    - ID: "9a7b6ea1-bfb8-4572-9aac-25d584e7e2df"
+      Hint: faq4Answer
+      Value: "<p>Yes. Fully managed cloud, dedicated cloud, and on-prem deployments are all supported.</p>"
+    - ID: "a210b32e-ff19-4909-afea-6afde0d1e41b"
+      Hint: faq1Question
+      Value: "How long does setup take?"
+    - ID: "acc0ec77-5d02-47f4-93f1-dc0971623cd5"
+      Hint: feature3Title
+      Value: See every release
+    - ID: "aea8e7e8-1ae1-49c4-9238-8fe043058f4d"
+      Hint: feature3IconName
+      Value: BarChart3
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bc0dfed4-3b88-49ca-a34d-098141889cf2"
+      Hint: stat1Label
+      Value: Faster deploys
+    - ID: "bd90861e-5db9-49f3-ab72-242cb1c2dc86"
+      Hint: feature2Description
+      Value: <p>One click reverses any deploy. Automated health checks catch regressions before users do.</p>
+    - ID: "c5555b26-dd7b-4027-afcd-999e670eb995"
+      Hint: heroSubhead
+      Value: Stop firefighting releases. Ship to production in minutes with automated rollback and instant health checks.
+    - ID: "c629bd84-bf4d-4ad3-929a-1953db4cb530"
+      Hint: feature1Title
+      Value: Ship in seconds
+    - ID: "cc51c74e-b2e4-414b-ab35-5cc711b08e2f"
+      Hint: testimonialQuote
+      Value: <p>We cut our release cycle from 2 weeks to 2 hours. Game changer for our team.</p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260609T214027Z
+    - ID: "e6055701-1ee7-4ea4-8e8e-bea8bb869c22"
+      Hint: heroSecondaryCta
+      Value: |
+        <link text="Watch the 2-min tour" linktype="external" url="https://www.sitecore.com" anchor="" target="_blank" />
+    - ID: "e712e34f-e20a-49a8-a372-e8f2ec077537"
+      Hint: stat3Number
+      Value: 99.99%
+    - ID: "e82ca53f-5b52-40d6-83ea-9d414dd04978"
+      Hint: feature3Description
+      Value: "<p>Real-time deploy health and rollout dashboards across every service and environment.</p>"
+    - ID: "ea3b0e8e-2e61-43e3-bda7-e9776fe89562"
+      Hint: feature1IconName
+      Value: Zap
+    - ID: "f32737a7-4950-4d3d-8c51-e8375eb3c856"
+      Hint: finalCtaButton
+      Value: |
+        <link text="Start free 14-day trial" linktype="external" url="https://www.sitecore.com" anchor="" target="_blank" />
+    - ID: "f5bc97a7-8ceb-419b-89d6-b6ec2a480a86"
+      Hint: faq2Question
+      Value: "Will this work with our existing CI/CD?"
+    - ID: "faf62bd1-b7fe-4d6e-959e-a9f8cc9aca4d"
+      Hint: stat2Label
+      Value: Less downtime

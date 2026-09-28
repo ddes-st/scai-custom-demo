@@ -4,11 +4,16 @@ import { BYOCClientWrapper, NextjsContentSdkComponent, FEaaSClientWrapper } from
 import { Form } from '@sitecore-content-sdk/nextjs';
 
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
+import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
+import * as SearchResults from 'src/components/uiim/search/SearchResults';
+import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as LandingFAQ from 'src/components/uiim/landing/LandingFAQ';
 import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
+import * as IdentityEventDevForm from 'src/components/uiim/forms/IdentityEventDevForm';
+import * as IdentityCaptureForm from 'src/components/uiim/forms/IdentityCaptureForm';
 import * as RelatedContent from 'src/components/uiim/content/RelatedContent';
 import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
 import * as BlogListing from 'src/components/uiim/content/BlogListing';
@@ -48,11 +53,16 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FEaaSWrapper', FEaaSClientWrapper],
   ['Form', Form],
   ['SearchExperienceV2', { ...SearchExperienceV2 }],
+  ['SearchTypeahead', { ...SearchTypeahead }],
+  ['SearchResults', { ...SearchResults }],
+  ['SearchCollection', { ...SearchCollection }],
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['NavigationHeader', { ...NavigationHeader }],
   ['SmartMedia', { ...SmartMedia }],
   ['LandingFAQ', { ...LandingFAQ }],
   ['NewsletterSignup', { ...NewsletterSignup }],
+  ['IdentityEventDevForm', { ...IdentityEventDevForm }],
+  ['IdentityCaptureForm', { ...IdentityCaptureForm }],
   ['RelatedContent', { ...RelatedContent }],
   ['FeatureHighlight', { ...FeatureHighlight }],
   ['BlogListing', { ...BlogListing }],

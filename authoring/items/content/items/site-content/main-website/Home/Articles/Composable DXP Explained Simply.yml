@@ -1,0 +1,56 @@
+﻿---
+ID: "2c3a4c35-ffcc-4820-b098-b382d31617b7"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Composable DXP Explained Simply"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{05B170B2-5BEB-4B4E-97F5-55893240374E}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "eb2e25a6-f68d-4e9f-845f-c7a9b1625a55"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Composable DXP, Explained Simply
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160836Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260514T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Composable DXP Explained Simply
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>A composable digital experience platform is the difference between buying a house and buying rooms. The monolithic suite gives you everything under one roof — including the rooms you never enter but still pay to heat. Composable lets you assemble the stack from best-of-need pieces: content, search, personalization, commerce, analytics — each replaceable without moving out.</p><p>The glue is APIs and events. When every capability speaks over well-defined interfaces, the front end becomes a consumer of services rather than a hostage of the platform’s rendering engine. That is what makes headless delivery, native mobile apps, and tomorrow’s channel-you-have-not-heard-of-yet the same integration effort.</p><p>Composable is not free lunch: someone owns the seams. Fewer, deeper integrations beat a drawer full of point solutions, and a clear map of which system is the source of truth for what — content, profile, product — saves every future architecture meeting.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Composable-DXP-Explained-Simply"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 6 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d53a5369-75f6-4f35-ae4a-a39c22b0c712"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93901-composable-dxp-explained?v=df940720" dam-id="wpor3x8cQDWeYbZoAFZlLw" width="1200" height="675" alt="Composable DXP, Explained Simply" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93901/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>Composable = assemble best-of-need pieces, replaceable independently.</li><li>APIs and events make every channel the same integration effort.</li><li>Someone owns the seams — map your sources of truth early.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164627Z

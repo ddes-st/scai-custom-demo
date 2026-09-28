@@ -1,0 +1,52 @@
+﻿---
+ID: "583e737f-187b-4939-9579-74cca7676ded"
+Parent: "a03b9129-4d08-435e-b038-29802ce6a603"
+Template: "5cf70cbe-f1c9-4e58-a424-a6614ebd7071"
+Path: "/sitecore/content/main/main-website/Data/SearchResults/Articles Search Results"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04466d2f-2ff0-47b9-b98f-1c7ee38e6d27"
+      Hint: LinkMapping
+      Value: ArticleUrl
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260807T091313Z
+    - ID: "3fea9031-123a-4169-abc2-6a3101bae70f"
+      Hint: SearchIndex
+      Value: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc"
+    - ID: "4adfe0c6-836d-47d8-84db-9894bb1626a0"
+      Hint: DescriptionMapping
+      Value: ArticleContent
+    - ID: "4b6a41de-f71f-4066-b334-9157b381e54a"
+      Hint: ImageMapping
+      Value: ArticleImage
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "55e17195-3da9-460b-8621-b6934eea8889"
+      Hint: TitleMapping
+      Value: Title
+    - ID: "56047a3f-d7c8-4815-b8ac-432245d3796c"
+      Hint: SortBy
+      Value: ArticlePublicationDate
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "627b38f0-f851-4017-b5c7-e4e55a18670b"
+    - ID: "b8f3c5c3-dbb4-4aaa-8e03-9fd717e96e29"
+      Hint: DateMapping
+      Value: ArticlePublicationDate
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T155538Z

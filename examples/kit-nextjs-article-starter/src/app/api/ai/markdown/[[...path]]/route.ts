@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import client from 'src/lib/sitecore-client';
-import { generateMarkdownFromRoute } from 'src/lib/ai-markdown';
+import client from '@/lib/sitecore-client';
+import { generateMarkdownFromRoute } from '@/lib/ai-markdown';
 
 export const dynamic = 'force-dynamic';
 

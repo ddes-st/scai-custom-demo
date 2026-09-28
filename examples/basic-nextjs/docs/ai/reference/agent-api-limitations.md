@@ -259,6 +259,40 @@ Phase 3 Step 3: Agent reads `imageFieldXml` from manifest, includes Image fields
 
 ---
 
+## 6. Search endpoint contract — keyphrase + sort + limit/offset only
+
+**Endpoint:** `POST https://edge-platform.sitecorecloud.io/v1/search` (reached through the Content SDK `useSearch` / `useInfiniteSearch` hooks; authenticated by the context ID). Empirically probed 2026-08 during the spec #45 build.
+
+### What the endpoint honors
+
+| Parameter | Behavior |
+|---|---|
+| `searchIndexId` | required; unknown/unpublished index → HTTP 404 `no search index found for config <contextId>` |
+| `keyphrase` | text query; **empty string = browse mode, returns all documents** |
+| `sort` | `{ name: <attribute>, order: asc\|desc }` or an array of those |
+| `limit` / `offset` | pagination; limit max 500 |
+
+### What the endpoint silently ignores
+
+Filters, facets, field selection, and **any unknown body property**. This is a lenient endpoint: it never errors on unsupported request shapes. The dangerous consequence is that a "filtered" query returns HTTP 200 with *unfiltered* results — there is no signal that the filter was dropped. Do not attempt faceted or filtered search until the platform ships support; do not trust a 200 response as proof a request feature worked.
+
+### Matching semantics
+
+Keyphrase matching is loose (OR-like across words): a multi-word query matches documents containing some of the words, ranked by relevance. Verification contracts must assert *the expected document ranks first*, not exact result counts — a full-title query legitimately returns multiple documents.
+
+### Index attribute caveats
+
+- The set of queryable/sortable attributes is whatever the index ingested (e.g. `Title`, `ArticleContent`, `ArticlePublicationDate`, `sc_item_id`). Rich-text attributes come back as raw HTML — strip before display.
+- **A source's attribute schema is fixed at creation** — template fields added later do NOT auto-ingest, even after publish + re-run. To surface a new field, it must be "Included" in the source's content-type field configuration, which in practice means creating a new source (observed 2026-08-18 with `ArticleUrl`).
+- Indexes have **no URL attribute by default**; this project delivers links through content instead — an `ArticleUrl` template field holding each article's site-relative path, ingested as a normal attribute and consumed via `LinkMapping` (ticket #49). Caveat: the field duplicates the item path — keep it in sync on rename/move.
+- Index content reflects *published* items; deleted-but-unpublished items keep polluting results until a publish + recrawl. Re-running the index without publishing first re-reads the old published state.
+
+### Re-verification tool
+
+`docs/ai/scripts/search-probe.mjs` probes the endpoint directly at the HTTP boundary (bypassing React) — use it to confirm index content, attribute names, and the contract above whenever behavior looks off. Browser-level protocols: `search-verify.mjs`, `collection-verify.mjs`, `typeahead-verify.mjs`.
+
+---
+
 ## References
 
 - Agent API docs: https://api-docs.sitecore.com/ai-capabilities/agent-api

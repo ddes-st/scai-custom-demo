@@ -81,7 +81,7 @@ export const Default = (props: SearchExperienceProps) => {
   );
 
   return (
-    <div className={`component search-indexing ${styles}`} id={id ? id : undefined}>
+    <div className={`component search-experience ${styles}`} id={id ? id : undefined}>
       <div className="component-content">
         <div
           className={cn('max-w-7xl mx-auto p-6', {

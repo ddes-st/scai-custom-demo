@@ -1,0 +1,23 @@
+﻿---
+ID: "7a7ee0ab-bd25-4cc1-a827-ad88f8c4e75b"
+Parent: "e6c852b5-b70d-412c-b5c6-e6502842f74e"
+Template: "2bc2c0a6-62de-4125-b058-c7aa6899134a"
+Path: "/sitecore/content/main/main-website/Data/SearchCollections"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T081600Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5de7b1f8-8dc3-4738-88aa-edff48d5cc86"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T081600Z

@@ -1,0 +1,56 @@
+﻿---
+ID: "d32dd3bd-002f-4bd6-9345-94fb87ace1db"
+Parent: "d8b01498-2838-4388-a68f-86665d9c1c80"
+Template: "74360ad2-d3df-4fce-834c-2f5420488677"
+Path: "/sitecore/content/main/main-website/Home/Articles/Generative AI And The Content Supply Chain"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{46BC237E-7CE6-40E1-A881-D07B98613AE1}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "068d4fa8-7b15-4b86-b38a-9e40a58c548b"
+      Hint: ArticleAuthor
+      Value: "18a183c6-6e69-40f3-a0d9-0973d05c8d3b"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Generative AI and the Content Supply Chain
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T160821Z
+    - ID: "2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c"
+      Hint: ArticlePublicationDate
+      Value: 20260421T090000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Generative AI And The Content Supply Chain
+    - ID: "63471bba-943c-4d82-b7bf-d7ec82babbf7"
+      Hint: ArticleContent
+      Value: "<p>Personalization multiplied the demand for content; generative AI is the first technology that can multiply the supply. Ten audience segments, five channels, three languages — the combinatorics that used to break content calendars become a brief and a review pass.</p><p>The teams getting real value treat generation as a stage in a supply chain, not a replacement for one. Briefs carry brand voice and factual guardrails in. Drafts come out into the same review, legal, and localization workflow that human-authored content follows. Provenance is tracked, so when a claim needs correcting you know every variant that inherited it.</p><p>The craft shifts rather than disappears. Writers spend less time producing the ninth variation of a product blurb and more time on the work models are worst at: the point of view, the story, the sentence a customer quotes back to you.</p>"
+    - ID: "7168b48a-bbbd-4f00-a3db-2bab0441128f"
+      Hint: ArticleUrl
+      Value: "/Articles/Generative-AI-And-The-Content-Supply-Chain"
+    - ID: "76c93dec-a8a6-4185-9fd9-8247ebfb2dd0"
+      Hint: ArticleReadTime
+      Value: 6 min read
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e135be65-13a0-4434-9122-207dee7dccae"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "bb96e156-f355-4cc6-894b-5e70a45d8f30"
+      Hint: ArticleImage
+      Value: |
+        <Image src="https://ffde.sitecoresandbox.cloud/api/public/content/93889-generative-ai-content-supply-chain?v=69a4c86f" dam-id="vzluhnavTPuHG9dOk9iOEw" width="1200" height="675" alt="Generative AI and the Content Supply Chain" dam-content-type="Image" thumbnailsrc="https://ffde.sitecoresandbox.cloud/api/gateway/93889/thumbnail" />
+    - ID: "bfa05db5-8ccf-4ba2-b312-21194a8a5d75"
+      Hint: ArticleKeyTakeaways
+      Value: "<ul><li>GenAI multiplies content supply the way personalization multiplied demand.</li><li>Generation is a supply-chain stage — same review, legal, and localization gates.</li><li>Track provenance so corrections reach every inherited variant.</li></ul>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T164626Z

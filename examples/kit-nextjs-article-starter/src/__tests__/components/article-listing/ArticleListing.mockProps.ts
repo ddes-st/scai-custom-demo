@@ -60,7 +60,7 @@ export const mockPageDataEditing = {
   page: mockPageEditing,
 };
 
-// Mock article 1
+// Solterra demo: Article 1
 export const mockArticle1 = {
   url: '/articles/article-1',
   id: 'article-1',
@@ -107,31 +107,31 @@ export const mockArticle1 = {
   },
 };
 
-// Mock article 2
-export const mockArticle2 = {
-  url: '/articles/article-2',
-  id: 'article-2',
-  name: 'Article 2',
+// Solterra demo: QA Article 1
+export const mockQaArticle1 = {
+  url: '/articles/qa-article-1',
+  id: 'qa-article-1',
+  name: 'QA Article 1',
   fields: {
     pageTitle: {
-      value: 'Advanced TypeScript Patterns',
-      editable: 'Advanced TypeScript Patterns',
+      value: 'Partners in Sustainability',
+      editable: 'Partners in Sustainability',
     } as Field<string>,
     pageSummary: {
-      value: 'Explore advanced TypeScript patterns for building robust applications.',
-      editable: 'Explore advanced TypeScript patterns',
+      value: 'How Solterra & Co. works with partners to advance sustainable wellness.',
+      editable: 'How Solterra & Co. works with partners',
     } as Field<string>,
     pageThumbnail: {
       value: {
-        src: '/article-2-thumb.jpg',
-        alt: 'Article 2 Thumbnail',
+        src: '/qa-article-1-thumb.jpg',
+        alt: 'QA Article 1 Thumbnail',
         width: 800,
         height: 600,
       },
     } as ImageField,
     pageReadTime: {
-      value: '12 min read',
-      editable: '12 min read',
+      value: '4 min read',
+      editable: '4 min read',
     } as Field<string>,
     taxAuthor: {
       id: 'author-2',
@@ -154,11 +154,11 @@ export const mockArticle2 = {
   },
 };
 
-// Mock article 3 (no author image)
-export const mockArticle3 = {
-  url: '/articles/article-3',
-  id: 'article-3',
-  name: 'Article 3',
+// Extra article for tests that cover the regular (3+) article grid layout
+export const mockArticleAdditional = {
+  url: '/articles/article-additional',
+  id: 'article-additional',
+  name: 'Article Additional',
   fields: {
     pageTitle: {
       value: 'CSS Grid Layout Guide',
@@ -170,8 +170,8 @@ export const mockArticle3 = {
     } as Field<string>,
     pageThumbnail: {
       value: {
-        src: '/article-3-thumb.jpg',
-        alt: 'Article 3 Thumbnail',
+        src: '/article-additional-thumb.jpg',
+        alt: 'Article Additional Thumbnail',
         width: 800,
         height: 600,
       },
@@ -196,53 +196,6 @@ export const mockArticle3 = {
   },
 };
 
-// Mock article 4
-export const mockArticle4 = {
-  url: '/articles/article-4',
-  id: 'article-4',
-  name: 'Article 4',
-  fields: {
-    pageTitle: {
-      value: 'Next.js Performance Tips',
-      editable: 'Next.js Performance Tips',
-    } as Field<string>,
-    pageSummary: {
-      value: 'Optimize your Next.js applications for better performance.',
-      editable: 'Optimize your Next.js applications',
-    } as Field<string>,
-    pageThumbnail: {
-      value: {
-        src: '/article-4-thumb.jpg',
-        alt: 'Article 4 Thumbnail',
-        width: 800,
-        height: 600,
-      },
-    } as ImageField,
-    pageReadTime: {
-      value: '10 min read',
-      editable: '10 min read',
-    } as Field<string>,
-    taxAuthor: {
-      id: 'author-4',
-      name: 'Mike Chen',
-      fields: {
-        personFirstName: {
-          value: 'Mike',
-        } as Field<string>,
-        personLastName: {
-          value: 'Chen',
-        } as Field<string>,
-        personProfileImage: {
-          value: {
-            src: '/mike-chen.jpg',
-            alt: 'Mike Chen',
-          },
-        } as ImageField,
-      },
-    },
-  },
-};
-
 // Mock link field
 export const mockLinkField: LinkField = {
   value: {
@@ -253,7 +206,7 @@ export const mockLinkField: LinkField = {
   },
 };
 
-// Mock fields
+// Mock fields — matches Solterra Landing Page Article Listing (Article 1 + QA Article 1)
 export const mockFields = {
   titleOptional: {
     value: 'Latest Articles',
@@ -264,31 +217,38 @@ export const mockFields = {
     editable: 'Discover our latest insights and tutorials',
   } as Field<string>,
   linkOptional: mockLinkField,
-  featuredContent: [mockArticle1, mockArticle2, mockArticle3, mockArticle4] as ArticleItemReferenceFieldType[],
+  featuredContent: [mockArticle1, mockQaArticle1] as ArticleItemReferenceFieldType[],
+};
+
+export const mockFieldsThreeArticles = {
+  titleOptional: mockFields.titleOptional,
+  descriptionOptional: mockFields.descriptionOptional,
+  linkOptional: mockLinkField,
+  featuredContent: [mockArticle1, mockQaArticle1, mockArticleAdditional] as ArticleItemReferenceFieldType[],
 };
 
 export const mockFieldsWithoutTitle = {
   linkOptional: mockLinkField,
-  featuredContent: [mockArticle1, mockArticle2] as ArticleItemReferenceFieldType[],
+  featuredContent: [mockArticle1, mockQaArticle1] as ArticleItemReferenceFieldType[],
 };
 
 export const mockFieldsWithoutDescription = {
   titleOptional: mockFields.titleOptional,
   linkOptional: mockLinkField,
-  featuredContent: [mockArticle1, mockArticle2] as ArticleItemReferenceFieldType[],
+  featuredContent: [mockArticle1, mockQaArticle1] as ArticleItemReferenceFieldType[],
 };
 
 export const mockFieldsWithoutLink = {
   titleOptional: mockFields.titleOptional,
   descriptionOptional: mockFields.descriptionOptional,
-  featuredContent: [mockArticle1, mockArticle2] as ArticleItemReferenceFieldType[],
+  featuredContent: [mockArticle1, mockQaArticle1] as ArticleItemReferenceFieldType[],
 };
 
 export const mockFieldsTwoArticles = {
   titleOptional: mockFields.titleOptional,
   descriptionOptional: mockFields.descriptionOptional,
   linkOptional: mockLinkField,
-  featuredContent: [mockArticle1, mockArticle2] as ArticleItemReferenceFieldType[],
+  featuredContent: [mockArticle1, mockQaArticle1] as ArticleItemReferenceFieldType[],
 };
 
 export const mockFieldsOneArticle = {
@@ -317,6 +277,14 @@ export const mockRendering: ComponentRendering = {
 export const defaultProps = {
   params: mockParams,
   fields: mockFields,
+  isPageEditing: false,
+  rendering: mockRendering,
+  page: mockPageBase,
+};
+
+export const propsThreeArticles = {
+  params: mockParams,
+  fields: mockFieldsThreeArticles,
   isPageEditing: false,
   rendering: mockRendering,
   page: mockPageBase,
@@ -377,5 +345,3 @@ export const propsEditing = {
   rendering: mockRendering,
   page: mockPageEditing,
 };
-
-

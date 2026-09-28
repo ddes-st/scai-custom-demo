@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { useSearch } from '@sitecore-content-sdk/nextjs/search';
@@ -139,7 +139,8 @@ const SearchLayout = ({
 
 // --- Default variant (pagination) ---
 
-export const Default = (props: SearchExperienceProps) => {
+// useSearchParams() requires a Suspense boundary for static prerendering
+const DefaultContent = (props: SearchExperienceProps) => {
   const { params, fields, page, rendering } = props;
   const t = useTranslations();
 
@@ -245,9 +246,15 @@ export const Default = (props: SearchExperienceProps) => {
   );
 };
 
+export const Default = (props: SearchExperienceProps) => (
+  <Suspense>
+    <DefaultContent {...props} />
+  </Suspense>
+);
+
 // --- LoadMore variant (infinite scroll) ---
 
-export const LoadMore = (props: SearchExperienceProps) => {
+const LoadMoreContent = (props: SearchExperienceProps) => {
   const { params, fields, page, rendering } = props;
   const t = useTranslations();
 
@@ -339,3 +346,9 @@ export const LoadMore = (props: SearchExperienceProps) => {
     />
   );
 };
+
+export const LoadMore = (props: SearchExperienceProps) => (
+  <Suspense>
+    <LoadMoreContent {...props} />
+  </Suspense>
+);

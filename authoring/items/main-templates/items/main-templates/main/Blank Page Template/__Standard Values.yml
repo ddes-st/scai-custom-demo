@@ -1,0 +1,46 @@
+﻿---
+ID: "0ae3b1ef-ec50-41d1-9235-f5051a3a9462"
+Parent: "cebd0936-6b37-42b5-b169-369bb1c3c06a"
+Template: "cebd0936-6b37-42b5-b169-369bb1c3c06a"
+Path: /sitecore/templates/Project/main/Blank Page Template/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {CEBD0936-6B37-42B5-B169-369BB1C3C06A}
+    {C14B6289-8AC2-439C-9E5B-40DE9F820C3F}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "44617a77-468e-4e1c-b8a9-08a5b4292feb"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260325T110438Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b87095c1-8a11-4d7c-84f2-698b2b0c94b7"
+    - ID: "ab4bb7b8-5a86-488b-99da-7c7d545dab0b"
+      Hint: ShowInNavigation
+      Value: 1
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\federico.mujica@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260325T120351Z

@@ -13,7 +13,7 @@
         "name": "site-content",
         "path": "/sitecore/content/group/sodexo",
         "scope": "ItemAndDescendants",
-        "allowedPushOperations": "CreateAndUpdate"
+        "allowedPushOperations": "CreateUpdateAndDelete"
       }
     ]
   }

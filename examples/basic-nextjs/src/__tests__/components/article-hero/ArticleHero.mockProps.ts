@@ -1,4 +1,4 @@
-import { Field, ImageField, Page, PageMode, ComponentRendering } from '@sitecore-content-sdk/nextjs';
+import { Field, ImageField, Page, PageMode, ComponentRendering, RouteData } from '@sitecore-content-sdk/nextjs';
 import { PersonReference } from 'src/Layout';
 
 const mockPageBase: Page = {
@@ -37,7 +37,7 @@ const mockPageBase: Page = {
           } as PersonReference,
           ArticlePublicationDate: { value: '2025-06-15' } as Field<string>,
           ArticleReadTime: { value: '5 min read' } as Field<string>,
-        } as Record<string, unknown>,
+        } as unknown as RouteData['fields'],
         name: 'test-article',
         displayName: 'Test Article',
         placeholders: {},
@@ -80,7 +80,7 @@ function makePageWith(overrides: Record<string, unknown>): Page {
           fields: {
             ...mockPageBase.layout.sitecore.route!.fields,
             ...overrides,
-          } as Record<string, unknown>,
+          } as unknown as RouteData['fields'],
         },
       },
     },

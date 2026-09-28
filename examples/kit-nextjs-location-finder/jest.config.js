@@ -36,6 +36,7 @@ const customJestConfig = {
   transformIgnorePatterns: [
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
+    'node_modules/(?!(?:@sitecore-content-sdk|@sitecore-feaas|lucide-react|change-case)/)',
   ],
   testMatch: [
     '<rootDir>/src/__tests__/**/*.test.{js,ts,tsx}',

@@ -18,6 +18,11 @@ SharedFields:
         brandLogo: field(name: "BrandLogo") { jsonValue }
         ctaLabel: field(name: "CtaLabel") { jsonValue }
         ctaLink: field(name: "CtaLink") { jsonValue }
+        searchIndex: field(name: "SearchIndex") { jsonValue }
+        titleMapping: field(name: "TitleMapping") { jsonValue }
+        linkMapping: field(name: "LinkMapping") { jsonValue }
+        resultsPage: field(name: "ResultsPage") { jsonValue }
+        maxSuggestions: field(name: "MaxSuggestions") { jsonValue }
         children {
           results {
             id
@@ -41,7 +46,7 @@ SharedFields:
   Value: "query:$site/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "7d900357-f1c4-439c-b8d4-6cef1f88fc0d"
+  Value: "0dda84a6-2adf-49b2-932c-072e2ed0f262"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -67,11 +72,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "21f25d80-0163-4c1d-bee9-b0a2d675bc97"
+      Value: "7dce1cd6-657b-43a3-96ea-7e2205e75583"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\federico.mujica@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260505T202011Z
+      Value: 20260818T153652Z

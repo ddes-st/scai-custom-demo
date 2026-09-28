@@ -1,19 +1,18 @@
 import { isDesignLibraryPreviewData } from '@sitecore-content-sdk/nextjs/editing';
 import { notFound } from 'next/navigation';
-import { draftMode } from 'next/headers';
+import { draftMode, headers as nextHeaders } from 'next/headers';
 import { SiteInfo } from '@sitecore-content-sdk/nextjs';
 import sites from '.sitecore/sites.json';
-import { routing } from 'src/i18n/routing';
+import { routing } from '@/i18n/routing';
 import scConfig from 'sitecore.config';
-import client from 'src/lib/sitecore-client';
-import Layout, { RouteFields } from 'src/Layout';
-import components from '.sitecore/component-map';
-import Providers from 'src/Providers';
+import client from '@/lib/sitecore-client';
+import Layout, { RouteFields } from '@/Layout';
+import Providers from '@/Providers';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { StructuredData } from '@/components/structured-data/StructuredData';
 import { generateWebPageSchema } from '@/lib/structured-data/schema';
-import { getBaseUrl } from 'lib/utils';
+import { getBaseUrl } from '@/lib/utils';
 
 type PageProps = {
   params: Promise<{
@@ -22,10 +21,9 @@ type PageProps = {
     path?: string[];
     [key: string]: string | string[] | undefined;
   }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { site, locale, path } = await params;
   const draft = await draftMode();
   const baseUrl = getBaseUrl();
@@ -36,11 +34,12 @@ export default async function Page({ params, searchParams }: PageProps) {
   // Fetch the page data from Sitecore
   let page;
   if (draft.isEnabled) {
-    const editingParams = await searchParams;
-    if (isDesignLibraryPreviewData(editingParams)) {
-      page = await client.getDesignLibraryData(editingParams);
+    const headers = await nextHeaders();
+    const previewData = client.getPreviewData(headers);
+    if (isDesignLibraryPreviewData(previewData)) {
+      page = await client.getDesignLibraryData(previewData);
     } else {
-      page = await client.getPreview(editingParams);
+      page = await client.getPreview(previewData);
     }
   } else {
     page = await client.getPage(path ?? [], { site, locale });
@@ -50,13 +49,6 @@ export default async function Page({ params, searchParams }: PageProps) {
   if (!page) {
     notFound();
   }
-
-  // Fetch the component data from Sitecore (Likely will be deprecated)
-  const componentProps = await client.getComponentData(
-    page.layout,
-    {},
-    components,
-  );
 
   const routeFields = page.layout.sitecore.route?.fields as RouteFields;
   const pageTitle = routeFields?.Title?.value?.toString() || 'Page';
@@ -81,7 +73,7 @@ export default async function Page({ params, searchParams }: PageProps) {
 
   return (
     <NextIntlClientProvider>
-      <Providers page={page} componentProps={componentProps}>
+      <Providers page={page}>
         <StructuredData id="webpage-schema" data={webPageSchema} />
         <Layout page={page} />
       </Providers>

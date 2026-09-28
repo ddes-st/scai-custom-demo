@@ -35,7 +35,8 @@ SharedFields:
   Value: Sodexo.com
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid='7d81fc77-a388-4561-b577-ff94a7c27ef2' />"
+  Value: |
+    <image mediaid="{FF324959-F326-481B-AFF8-047B56DEDB3B}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
   Value: "ae28e0ca-ffb7-479f-a5d2-2e9550ea51d8"

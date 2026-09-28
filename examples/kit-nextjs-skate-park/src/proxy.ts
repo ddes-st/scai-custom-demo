@@ -1,6 +1,7 @@
 import { type NextRequest } from 'next/server';
 import {
   defineProxy,
+  PreviewProxy,
   AppRouterMultisiteProxy,
   PersonalizeProxy,
   RedirectsProxy,
@@ -9,6 +10,12 @@ import {
 import sites from '.sitecore/sites.json';
 import scConfig from 'sitecore.config';
 import { routing } from './i18n/routing';
+import client from './lib/sitecore-client';
+
+const preview = new PreviewProxy({
+    client,
+    ...scConfig.api.edge,
+});
 
 const locale = new LocaleProxy({
   /**
@@ -69,7 +76,7 @@ const personalize = new PersonalizeProxy({
 });
 
 export default function proxy(req: NextRequest) {
-  return defineProxy(locale, multisite, redirects, personalize).exec(req);
+  return defineProxy(preview, locale, multisite, redirects, personalize).exec(req);
 }
 
 export const config = {

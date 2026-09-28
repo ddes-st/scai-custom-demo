@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (revised)
+Superseded by [ADR 0006](0006-search-three-component-rebuild.md) (2026-08-18) — the OOTB-component decision is replaced by three from-scratch components; the underlying "use Content SDK search hooks, not the Cloud SDK" reasoning still stands. Was: Accepted (revised).
 
 ## Context
 
