@@ -13,7 +13,7 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { isSodexoAboutPage } from '@/lib/sodexo-page';
-import { SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableAboutImageSrc, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 
 interface HeroBannerFields {
   Title: Field<string>;
@@ -466,7 +466,7 @@ export const SodexoAbout = ({ fields, params, page }: HeroBannerProps): JSX.Elem
             )}
           </div>
           <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px] lg:min-h-[480px]">
-            {fields.HeroImage?.value?.src || isEditing ? (
+            {isEditing || isUsableAboutImageSrc(fields.HeroImage?.value?.src) ? (
               <SmartMedia
                 field={fields.HeroImage}
                 fill

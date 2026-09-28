@@ -13,7 +13,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoAboutPage } from '@/lib/sodexo-page';
-import { sodexoAboutCardImage } from '@/lib/sodexo-about-media';
+import { isUsableAboutImageSrc, sodexoAboutCardImage } from '@/lib/sodexo-about-media';
 
 interface FeatureCardItemFields {
   id: string;
@@ -516,7 +516,8 @@ export const SodexoAbout = ({ fields, params, page }: FeatureCardsGridProps): JS
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => {
               const title = card.cardTitle?.jsonValue?.value;
-              const imageSrc = sodexoAboutCardImage(title, card.cardImage?.jsonValue?.value?.src);
+              const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
+              const imageSrc = sodexoAboutCardImage(title, sitecoreSrc);
               return (
               <article
                 key={card.id}
@@ -525,7 +526,7 @@ export const SodexoAbout = ({ fields, params, page }: FeatureCardsGridProps): JS
               >
                 {(imageSrc || isEditing) && (
                   <div className="relative aspect-square w-full overflow-hidden">
-                    {card.cardImage?.jsonValue?.value?.src || isEditing ? (
+                    {isEditing || isUsableAboutImageSrc(sitecoreSrc) ? (
                       <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
                     ) : (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -578,12 +579,13 @@ export const SodexoAboutCtas = ({ fields, params, page }: FeatureCardsGridProps)
           <div className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-14">
             {cards.map((card) => {
               const title = card.cardTitle?.jsonValue?.value;
-              const imageSrc = sodexoAboutCardImage(title, card.cardImage?.jsonValue?.value?.src);
+              const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
+              const imageSrc = sodexoAboutCardImage(title, sitecoreSrc);
               return (
               <article key={card.id} className="flex flex-col">
                 {(imageSrc || isEditing) && (
                   <div className="relative mb-5 aspect-[16/9] w-full overflow-hidden">
-                    {card.cardImage?.jsonValue?.value?.src || isEditing ? (
+                    {isEditing || isUsableAboutImageSrc(sitecoreSrc) ? (
                       <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
                     ) : (
                       // eslint-disable-next-line @next/next/no-img-element

@@ -3205,13 +3205,17 @@ lookups:
 # ──────────────────────────────────────────────
   - name: SodexoAboutPage
     status: complete
-    updatedAt: "2026-09-21"
+    updatedAt: "2026-09-28"
     notes: >
       Custom About page for group/sodexo based on https://www.sodexo.com/about-us/sodexo-group.
       Reuses HeroBanner, TrustStatsRow, FeatureCardsGrid, FeatureHighlight, RelatedContent
       with new SodexoAbout / SodexoAboutCtas named exports. Existing Sodexo homepage and
       article variants were not modified. About layouts also activate via isSodexoAboutPage()
       because MCP cannot set FieldNames rendering parameters.
+      2026-09-28: About Image fields originally pointed at sodexofrance1 Edge CDN URLs with
+      no dam-id (those srcs 404 from the demo host). Uploaded 12 live About images to Content
+      Hub and rewrote HeroImage / FeatureImage / CardImage on local + shared datasources to
+      DAM XML with public links. Fallbacks in sodexo-about-media.ts now use those CH URLs.
     page:
       name: About
       itemId: "4c60b186-2f64-4502-a9fb-892204f3216d"

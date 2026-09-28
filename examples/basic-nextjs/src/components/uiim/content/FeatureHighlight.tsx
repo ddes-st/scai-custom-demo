@@ -15,7 +15,7 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { isSodexoAboutPage } from '@/lib/sodexo-page';
-import { SODEXO_ABOUT_TECH_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableAboutImageSrc, SODEXO_ABOUT_TECH_IMAGE } from '@/lib/sodexo-about-media';
 
 interface FeatureHighlightFields {
   EyebrowText: Field<string>;
@@ -613,7 +613,7 @@ export const SodexoAbout = ({ fields, params, page }: FeatureHighlightProps): JS
       <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
         <div className="mx-auto grid max-w-[1224px] items-center gap-10 lg:grid-cols-2 lg:gap-16 lg:px-12">
           <div className="relative min-h-[280px] overflow-hidden sm:min-h-[420px]">
-            {fields.FeatureImage?.value?.src || isEditing ? (
+            {isEditing || isUsableAboutImageSrc(fields.FeatureImage?.value?.src) ? (
               <SmartMedia
                 field={fields.FeatureImage}
                 fill
