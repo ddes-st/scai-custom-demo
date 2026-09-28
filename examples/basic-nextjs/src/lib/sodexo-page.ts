@@ -25,3 +25,13 @@ export function isSodexoAboutPage(page?: Page): boolean {
   const routeName = String(sitecore?.route?.name || '');
   return /\/Home\/About(\/|$)/i.test(itemPath) || /\/About(\/|$)/i.test(itemPath) || /^About$/i.test(routeName);
 }
+
+export function isSodexoArticlesPage(page?: Page): boolean {
+  const sitecore = getSitecoreLayout(page);
+  const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
+  if (siteName && siteName !== 'sodexo') return false;
+
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  const routeName = String(sitecore?.route?.name || '');
+  return /\/Home\/Articles$/i.test(itemPath) || /\/Articles$/i.test(itemPath) || /^Articles$/i.test(routeName);
+}

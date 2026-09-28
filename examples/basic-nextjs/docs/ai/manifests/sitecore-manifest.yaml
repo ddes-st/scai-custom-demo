@@ -3177,10 +3177,15 @@ lookups:
 # ──────────────────────────────────────────────
   - name: BlogListing
     status: complete
-    updatedAt: "2026-07-15"
+    updatedAt: "2026-09-28"
     notes: >
       New component for the Sodexo "Our Everyday Stories" blog listing page.
       Reuses the RichTextBlock datasource template (Title + Body).
+      2026-09-28: Articles listing was split onto catalog components (HeroBanner,
+      HeroBannerCarousel, LogoCloud, FeatureCardsGrid). Rendering stays in the
+      library. The leftover page instance cannot be deleted via MCP (layout uid
+      is not a content item); BlogListing now renders nothing on the Articles
+      listing so it does not duplicate the new sections.
     rendering:
       path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Content/BlogListing"
       itemId: "73db9924-ccb3-4a02-a28d-6c36fd4c4e7c"
@@ -3198,7 +3203,42 @@ lookups:
     articlesPage:
       pageId: "d8b01498-2838-4388-a68f-86665d9c1c80"
       componentInstanceId: "ce2cae69-f880-4652-a2dc-db2635a3e3aa"
-      note: "Variant must be switched to Sodexo in Pages Builder (FieldNames parameter)"
+      note: "Leftover instance; UI suppressed via isSodexoArticlesPage(). Remove in Pages Builder when convenient."
+
+# ──────────────────────────────────────────────
+# Sodexo Articles listing split (2026-09-28)
+# ──────────────────────────────────────────────
+  - name: SodexoArticlesPage
+    status: complete
+    updatedAt: "2026-09-28"
+    notes: >
+      Split the Articles listing BlogListing monolith onto existing catalog
+      components. No new renderings. New SodexoArticles named exports plus
+      Headless Variant Definitions. Layouts also activate via
+      isSodexoArticlesPage() because MCP cannot set FieldNames. Homepage,
+      About, and article-detail variants were not modified.
+    page:
+      name: Articles
+      itemId: "d8b01498-2838-4388-a68f-86665d9c1c80"
+      path: "/sitecore/content/group/sodexo/Home/Articles"
+      route: "/Articles"
+    variants:
+      - { component: "HeroBanner", name: "SodexoArticles", itemId: "063a53a5-f5c8-40e6-8ea9-f74609ae0feb" }
+      - { component: "HeroBannerCarousel", name: "Default", itemId: "25ee20ed-bda5-46d1-a254-e45bff3602c0" }
+      - { component: "HeroBannerCarousel", name: "SodexoArticles", itemId: "fa55f9eb-ccd6-403b-9a8e-5669ed29f600" }
+      - { component: "LogoCloud", name: "SodexoArticles", itemId: "10b42854-dfc9-4232-8c0a-a13e977efdb3" }
+      - { component: "FeatureCardsGrid", name: "SodexoArticles", itemId: "b9e9557d-ebd1-407d-ad97-319ee8cc75d7" }
+    datasources:
+      - { name: "Sodexo Articles - Title", itemId: "72ea31b2-b2c5-46c7-b6ae-377fe681adeb", path: "/sitecore/content/group/sodexo/Data/HeroBanners/Sodexo Articles - Title" }
+      - { name: "Sodexo Articles - Featured", itemId: "8c8f0f7d-fbc1-4182-89dd-2a4e33a3362c", path: "/sitecore/content/group/sodexo/Data/HeroBannerCarousels/Sodexo Articles - Featured" }
+      - { name: "Sodexo Articles - Social", itemId: "e2d8d94e-faea-4b41-8928-8c39dd32edbb", path: "/sitecore/content/group/sodexo/Data/LogoClouds/Sodexo Articles - Social" }
+      - { name: "Sodexo Articles - Stories", itemId: "b83af41c-6028-440c-8f6c-1284b5971639", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo Articles - Stories" }
+    pageComponents:
+      - { name: "HeroBanner", instanceId: "59958d81-1f11-464e-8057-c734a507dcf7", datasource: "72ea31b2" }
+      - { name: "HeroBannerCarousel", instanceId: "13e3abe6-f88d-4323-85eb-8d5d296e5dd9", datasource: "8c8f0f7d" }
+      - { name: "LogoCloud", instanceId: "95ecefba-7120-49d1-855b-1352fe5962c4", datasource: "e2d8d94e" }
+      - { name: "FeatureCardsGrid", instanceId: "b8fa863a-41fc-4c50-ac97-4cce1e334d08", datasource: "b83af41c" }
+      - { name: "BlogListing (suppressed)", instanceId: "ce2cae69-f880-4652-a2dc-db2635a3e3aa", datasource: "8f1ba186" }
 
 # ──────────────────────────────────────────────
 # Sodexo About page (2026-09-21)

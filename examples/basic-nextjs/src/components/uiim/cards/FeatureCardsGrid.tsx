@@ -12,7 +12,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
-import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, sodexoAboutCardImage } from '@/lib/sodexo-about-media';
 
 interface FeatureCardItemFields {
@@ -85,6 +85,7 @@ export const Default = (props: FeatureCardsGridProps): JSX.Element => {
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
   const cards = datasource.children?.results || [];
+  if (isSodexoArticlesPage(page) && cards.length) return SodexoArticles(props);
   if (isSodexoAboutPage(page) && cards.length) {
     return cards.length <= 4
       ? SodexoAboutCtas(props)
@@ -623,6 +624,92 @@ export const SodexoAboutCtas = ({ fields, params, page }: FeatureCardsGridProps)
               );
             })}
           </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoArticles — 4-column story cards with load more
+   ──────────────────────────────────────────── */
+const stripHtml = (value?: string): string =>
+  (value || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+
+export const SodexoArticles = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const cards = datasource?.children?.results || [];
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+
+  const visibleCards = isEditing ? cards : cards.slice(0, visibleCount);
+  const hasMore = !isEditing && visibleCount < cards.length;
+
+  return (
+    <div className={cn('component feature-cards-grid', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {visibleCards.map((card) => {
+              const title = card.cardTitle?.jsonValue?.value;
+              const category = stripHtml(card.cardDescription?.jsonValue?.value);
+              const imageSrc = card.cardImage?.jsonValue?.value?.src;
+              return (
+                <article
+                  key={card.id}
+                  className="flex flex-col overflow-hidden rounded-xl border transition-shadow hover:shadow-md"
+                  style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+                >
+                  <div className="p-5 pb-2">
+                    {(category || isEditing) && (
+                      <ContentSdkRichText
+                        field={card.cardDescription?.jsonValue}
+                        className="text-xs font-semibold [&>*]:m-0"
+                        style={{ color: 'var(--brand-primary, #283897)', fontFamily: bodyFont }}
+                      />
+                    )}
+                    {(title || isEditing) && (
+                      <Text
+                        field={card.cardTitle?.jsonValue}
+                        tag="h3"
+                        className="mt-2 line-clamp-3 text-sm font-bold leading-snug"
+                        style={{ color: brandFg, fontFamily: headingFont }}
+                      />
+                    )}
+                  </div>
+                  {(imageSrc || isEditing) && (
+                    <div className="relative mt-auto aspect-[4/3] w-full">
+                      <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-1 px-5 py-3">
+                    {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                      <ContentSdkLink
+                        field={card.cardLink?.jsonValue}
+                        className="inline-flex items-center gap-1 text-xs font-semibold transition-colors hover:opacity-70"
+                        style={{ color: 'var(--brand-accent, #da2020)', fontFamily: bodyFont }}
+                      />
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          {hasMore && (
+            <div className="mt-10 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((count) => count + 4)}
+                className="text-sm font-semibold underline underline-offset-4 transition-opacity hover:opacity-70"
+                style={{ color: 'var(--brand-primary, #283897)', fontFamily: bodyFont }}
+              >
+                Load more
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>

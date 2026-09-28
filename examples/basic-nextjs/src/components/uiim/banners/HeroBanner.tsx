@@ -12,7 +12,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
-import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 
 interface HeroBannerFields {
@@ -79,6 +79,7 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
@@ -177,6 +178,7 @@ export const BackgroundImage = (props: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
@@ -346,6 +348,7 @@ export const Sodexo = (props: HeroBannerProps): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
+  if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
@@ -482,6 +485,47 @@ export const SodexoAbout = ({ fields, params, page }: HeroBannerProps): JSX.Elem
               />
             )}
           </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoArticles — breadcrumb + page title only (Articles listing)
+   ──────────────────────────────────────────── */
+export const SodexoArticles = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <nav
+            className="mb-2 flex items-center gap-1.5 text-xs"
+            aria-label="Breadcrumb"
+            style={{ color: brandFg, fontFamily: bodyFont }}
+          >
+            <a href="/" className="opacity-60 transition-opacity hover:opacity-100">
+              Home
+            </a>
+            <span className="opacity-40">&gt;</span>
+            <span className="font-medium">Blog</span>
+          </nav>
+          {(fields.Title?.value || isEditing) && (
+            <Text
+              field={fields.Title}
+              tag="h1"
+              className="text-3xl font-bold sm:text-4xl"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
         </div>
       </section>
     </div>

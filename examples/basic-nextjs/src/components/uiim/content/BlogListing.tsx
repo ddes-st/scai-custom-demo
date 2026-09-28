@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoArticlesPage } from '@/lib/sodexo-page';
 
 interface BlogListingFields {
   Title: Field<string>;
@@ -27,6 +28,16 @@ const BlogListingDefaultComponent = (): JSX.Element => (
 export const Default = ({ fields, params, page }: BlogListingProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+
+  if (isSodexoArticlesPage(page)) {
+    return isEditing ? (
+      <div className={cn('component blog-listing', styles)} id={RenderingIdentifier}>
+        <span className="is-empty-hint">BlogListing</span>
+      </div>
+    ) : (
+      <></>
+    );
+  }
 
   if (!fields) return <BlogListingDefaultComponent />;
 
@@ -302,6 +313,16 @@ export const Sodexo = ({ fields, params, page }: BlogListingProps): JSX.Element 
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const [visibleCount, setVisibleCount] = useState(8);
+
+  if (isSodexoArticlesPage(page)) {
+    return isEditing ? (
+      <div className={cn('component blog-listing', styles)} id={RenderingIdentifier}>
+        <span className="is-empty-hint">BlogListing</span>
+      </div>
+    ) : (
+      <></>
+    );
+  }
 
   if (!fields && !isEditing) return <BlogListingDefaultComponent />;
 

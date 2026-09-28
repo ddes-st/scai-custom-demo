@@ -13,6 +13,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { isSodexoArticlesPage } from '@/lib/sodexo-page';
 
 interface HeroBannerCarouselSlideFields {
   id: string;
@@ -87,7 +88,8 @@ const SecondaryButton = ({
 /* ────────────────────────────────────────────
    Default — full-width slides with dot indicators
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: HeroBannerCarouselProps): JSX.Element => {
+export const Default = (props: HeroBannerCarouselProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
@@ -110,6 +112,7 @@ export const Default = ({ fields, params, page }: HeroBannerCarouselProps): JSX.
     return () => clearInterval(timer);
   }, [activeIndex, isPaused, isEditing, slides.length, goTo]);
 
+  if (isSodexoArticlesPage(page) && slides.length) return SodexoArticles(props);
   if (!datasource || slides.length === 0) return <HeroBannerCarouselDefaultComponent />;
 
   const ariaLabel = datasource.title?.jsonValue?.value || 'Hero carousel';
@@ -314,6 +317,98 @@ export const WithThumbnails = ({ fields, params, page }: HeroBannerCarouselProps
             ))}
           </div>
         )}
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoArticles — featured stories strip for the Articles listing
+   ──────────────────────────────────────────── */
+export const SodexoArticles = ({ fields, params, page }: HeroBannerCarouselProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const slides = datasource?.children?.results || [];
+  const [index, setIndex] = useState(0);
+
+  if (!datasource || slides.length === 0) return <HeroBannerCarouselDefaultComponent />;
+
+  const goTo = (n: number) => setIndex((n + slides.length) % slides.length);
+  const current = slides[index];
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+
+  return (
+    <div className={cn('component hero-banner-carousel', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl" style={{ minHeight: '400px' }}>
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {slides.map((slide) => (
+                <div key={slide.id} className="relative w-full shrink-0" style={{ minHeight: '400px' }}>
+                  {(slide.slideImage?.jsonValue?.value?.src || isEditing) && (
+                    <SmartMedia
+                      field={slide.slideImage?.jsonValue}
+                      fill
+                      sizes="100vw"
+                      className="object-cover"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
+              <div className="max-w-md">
+                {(current.slideTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={current.slideTitle?.jsonValue}
+                    tag="h3"
+                    className="text-xl font-bold text-white sm:text-2xl"
+                    style={{ fontFamily: headingFont }}
+                  />
+                )}
+                {(current.slideSubtitle?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={current.slideSubtitle?.jsonValue}
+                    className="mt-2 text-sm text-white/70"
+                  />
+                )}
+              </div>
+            </div>
+            {slides.length > 1 && (
+              <>
+                <div className="absolute bottom-6 right-6 flex gap-2 sm:bottom-10 sm:right-10">
+                  {slides.map((slide, i) => (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      onClick={() => goTo(i)}
+                      className={cn(
+                        'h-2.5 rounded-full transition-all',
+                        i === index ? 'w-6 bg-white' : 'w-2.5 bg-white/50'
+                      )}
+                      aria-label={`Go to featured story ${i + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => goTo(index + 1)}
+                  className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-opacity hover:bg-white/30 sm:right-10 sm:top-10"
+                  aria-label="Next story"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="9 6 15 12 9 18" />
+                  </svg>
+                </button>
+              </>
+            )}
+          </div>
+        </div>
       </section>
     </div>
   );
