@@ -56,3 +56,14 @@ export const formatDate = (isoDate: string | undefined, locale = 'en'): string =
     year: 'numeric',
   }).format(parsed);
 };
+
+export const formatDateLong = (isoDate: string | undefined, locale = 'en'): string => {
+  if (!isoDate) return '';
+  const parsed = new Date(isoDate);
+  if (Number.isNaN(parsed.getTime())) return '';
+  return new Intl.DateTimeFormat(locale, {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(parsed);
+};

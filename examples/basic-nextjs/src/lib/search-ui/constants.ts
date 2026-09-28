@@ -30,6 +30,12 @@ export const SEARCH_LABELS = {
     key: 'SearchExperience_SearchInputPlaceholder',
     fallback: 'Search...',
   },
+  SEARCH_HELP_PLACEHOLDER: {
+    key: 'SearchExperience_HelpPlaceholder',
+    fallback: 'What are you looking for?',
+  },
+  LEARN_MORE: { key: 'SearchExperience_LearnMore', fallback: 'Learn more' },
+  BACK_TO_PREVIOUS: { key: 'SearchExperience_BackToPrevious', fallback: 'Back to previous page' },
   PREVIOUS_PAGE: { key: 'SearchExperience_PreviousPage', fallback: 'Previous page' },
   NEXT_PAGE: { key: 'SearchExperience_NextPage', fallback: 'Next page' },
   READ_MORE: { key: 'SearchExperience_ReadMore', fallback: 'Read more' },

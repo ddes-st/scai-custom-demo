@@ -10,7 +10,9 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { DEFAULT_PAGE_SIZE } from '@/lib/search-ui/constants';
-import { stripHtml, formatDate, extractImageUrl } from '@/lib/search-ui/text';
+import { stripHtml, formatDate, formatDateLong, extractImageUrl } from '@/lib/search-ui/text';
+import { isSodexoHelpPage, isSodexoSearchResultsPage } from '@/lib/sodexo-page';
+import { navigateTo } from '@/lib/search-ui/navigate';
 import { useDebouncedValue } from '@/lib/search-ui/useDebouncedValue';
 import { readUrlParam, useUrlMirror } from '@/lib/search-ui/useUrlMirror';
 import { useSearchLabels } from '@/lib/search-ui/useSearchLabels';
@@ -186,6 +188,48 @@ export const Default = (props: SearchResultsProps) => {
   const showSkeletons = isLoading || ((isEditing || isPreview) && results.length === 0);
   const showEmpty = live && !isLoading && !isError && total === 0;
 
+  if (isSodexoHelpPage(page) && searchIndexId) {
+    return (
+      <SodexoHelpLayout
+        params={params}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        mapping={mapping}
+        results={results}
+        live={live}
+        sendEvent={sendEvent}
+        label={label}
+      />
+    );
+  }
+
+  if (isSodexoSearchResultsPage(page) && searchIndexId) {
+    return (
+      <SodexoSearchLayout
+        fields={fields}
+        params={params}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        query={query}
+        mapping={mapping}
+        pageSize={pageSize}
+        total={total}
+        totalPages={totalPages}
+        results={results}
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+        showSkeletons={showSkeletons}
+        showEmpty={showEmpty}
+        live={live}
+        sendEvent={sendEvent}
+        label={label}
+      />
+    );
+  }
+
   return (
     <section
       className={cn('component search-results', params?.styles)}
@@ -327,6 +371,363 @@ export const Default = (props: SearchResultsProps) => {
             </Button>
           </nav>
         )}
+      </div>
+    </section>
+  );
+};
+
+export const SodexoSearch = Default;
+
+const SodexoResultImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [broken, setBroken] = useState(false);
+  return (
+    <div className="relative h-28 w-40 shrink-0 overflow-hidden rounded-md sm:h-32 sm:w-48">
+      {!broken ? (
+        <Image fill src={src} alt={alt} className="object-cover" onError={() => setBroken(true)} />
+      ) : (
+        <div className="bg-muted flex h-full w-full items-center justify-center">
+          <ImageOff className="size-6 text-muted-foreground" />
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SodexoSearchLayout = ({
+  params,
+  inputValue,
+  setInputValue,
+  pageNumber,
+  setPageNumber,
+  query,
+  mapping,
+  pageSize,
+  total,
+  totalPages,
+  results,
+  isLoading,
+  isError,
+  error,
+  showSkeletons,
+  showEmpty,
+  live,
+  sendEvent,
+  label,
+}: {
+  fields: SearchResultsFields;
+  params: SearchResultsProps['params'];
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  pageNumber: number;
+  setPageNumber: (value: number) => void;
+  query: string;
+  mapping: { title?: string; description?: string; image?: string; link?: string; date?: string };
+  pageSize: number;
+  total: number;
+  totalPages: number;
+  results: SearchDoc[];
+  isLoading: boolean;
+  isError: boolean;
+  error?: { message?: string } | null;
+  showSkeletons: boolean;
+  showEmpty: boolean;
+  live: boolean;
+  sendEvent: (name: 'viewed' | 'clicked') => void;
+  label: (name: 'RESULTS_FOUND' | 'NO_RESULTS_FOUND' | 'TRY_ADJUSTING_YOUR_SEARCH' | 'CLEAR_SEARCH' | 'SOMETHING_WENT_WRONG' | 'TRY_AGAIN' | 'SEARCH_INPUT_PLACEHOLDER' | 'LEARN_MORE' | 'BACK_TO_PREVIOUS') => string;
+}) => {
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+  const pages = Array.from({ length: Math.min(totalPages, 7) }, (_, i) => i + 1);
+
+  return (
+    <section
+      className={cn('component search-results', params?.styles)}
+      id={params?.RenderingIdentifier || undefined}
+      style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}
+    >
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+        <a
+          href="/Search"
+          className="mb-8 inline-flex items-center gap-2 text-sm"
+          style={{ color: brandFg, fontFamily: bodyFont }}
+        >
+          <span aria-hidden>‹</span>
+          {label('BACK_TO_PREVIOUS')}
+        </a>
+
+        <form
+          role="search"
+          className="relative mb-10"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <Input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder={label('SEARCH_INPUT_PLACEHOLDER')}
+            aria-label={label('SEARCH_INPUT_PLACEHOLDER')}
+            className="h-14 w-full rounded-md border py-3 pl-12 pr-28 text-base shadow-none"
+            style={{
+              borderColor: 'var(--brand-border, #d4d4e8)',
+              color: brandFg,
+              fontFamily: bodyFont,
+            }}
+          />
+          <Search className="text-muted-foreground absolute left-4 top-1/2 size-5 -translate-y-1/2" />
+          <button
+            type="submit"
+            className="absolute right-1.5 top-1/2 inline-flex h-11 -translate-y-1/2 items-center gap-2 rounded-md px-4 text-sm font-semibold text-white"
+            style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+          >
+            Search
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </form>
+
+        <h2
+          className="mb-8 text-3xl font-bold"
+          style={{ color: brandFg, fontFamily: headingFont }}
+          aria-live="polite"
+        >
+          {total} results
+        </h2>
+
+        {isError && (
+          <div className="py-12 text-center" role="alert">
+            <p className="mb-1 font-medium" style={{ color: brandFg }}>
+              {label('SOMETHING_WENT_WRONG')}
+            </p>
+            {error?.message && <p className="text-muted-foreground mb-4 text-sm">{error.message}</p>}
+            <Button variant="outline" onClick={() => setInputValue('')}>
+              {label('TRY_AGAIN')}
+            </Button>
+          </div>
+        )}
+
+        {showEmpty && (
+          <div className="py-12 text-center">
+            <p className="mb-1 font-medium" style={{ color: brandFg }}>
+              {label('NO_RESULTS_FOUND')}
+            </p>
+            <p className="text-muted-foreground mb-4 text-sm">{label('TRY_ADJUSTING_YOUR_SEARCH')}</p>
+            {query && (
+              <Button variant="outline" onClick={() => setInputValue('')}>
+                {label('CLEAR_SEARCH')}
+              </Button>
+            )}
+          </div>
+        )}
+
+        <div className="mb-10">
+          {showSkeletons &&
+            Array.from({ length: pageSize }).map((_, i) => (
+              <div key={i} className="flex gap-6 border-b py-8" data-testid="search-skeleton">
+                <div className="flex-1 space-y-3">
+                  <div className="bg-muted h-4 w-1/3 animate-pulse rounded" />
+                  <div className="bg-muted h-6 w-3/4 animate-pulse rounded" />
+                  <div className="bg-muted h-4 w-full animate-pulse rounded" />
+                </div>
+                <div className="bg-muted h-28 w-40 animate-pulse rounded" />
+              </div>
+            ))}
+
+          {!isLoading &&
+            results.map((doc, index) => {
+              const title = docValue(doc, mapping.title);
+              const description = docValue(doc, mapping.description);
+              const image = extractImageUrl(mapping.image ? doc[mapping.image] : '');
+              const link = docValue(doc, mapping.link);
+              const date = formatDateLong(docValue(doc, mapping.date) || undefined);
+              const Wrapper = link ? 'a' : 'article';
+
+              return (
+                <Wrapper
+                  key={docValue(doc, 'sc_item_id') || title}
+                  href={link || undefined}
+                  onClick={link ? () => sendEvent('clicked') : undefined}
+                  className="flex flex-col gap-6 border-b py-8 no-underline sm:flex-row sm:items-start sm:justify-between"
+                  style={{
+                    backgroundColor: index % 2 === 1 ? 'var(--brand-surface, #f4f6fb)' : 'transparent',
+                    borderColor: 'var(--brand-border, #e0dff0)',
+                  }}
+                >
+                  <div className="min-w-0 flex-1 px-0 sm:px-2">
+                    {date && (
+                      <p className="mb-2 text-sm" style={{ color: brandFg, fontFamily: bodyFont }}>
+                        {date}
+                      </p>
+                    )}
+                    {title && (
+                      <h3 className="mb-2 text-xl font-semibold" style={{ color: brandFg, fontFamily: headingFont }}>
+                        {title}
+                      </h3>
+                    )}
+                    {description && (
+                      <p className="mb-4 line-clamp-3 text-sm leading-relaxed" style={{ color: brandFg, fontFamily: bodyFont }}>
+                        {stripHtml(description)}
+                      </p>
+                    )}
+                    <span
+                      className="inline-flex items-center gap-2 text-sm font-medium"
+                      style={{ color: brandFg, fontFamily: bodyFont }}
+                    >
+                      {label('LEARN_MORE')}
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </span>
+                  </div>
+                  {image && <SodexoResultImage src={image} alt={title} />}
+                </Wrapper>
+              );
+            })}
+        </div>
+
+        {live && !isLoading && !isError && totalPages > 1 && (
+          <nav className="flex items-center gap-4 pb-8" aria-label="Search pagination">
+            {pages.map((page) => (
+              <button
+                key={page}
+                type="button"
+                onClick={() => setPageNumber(page)}
+                className="text-sm"
+                style={{
+                  color: page === pageNumber ? 'var(--brand-primary, #283897)' : brandFg,
+                  fontFamily: bodyFont,
+                  fontWeight: page === pageNumber ? 700 : 400,
+                }}
+                aria-current={page === pageNumber ? 'page' : undefined}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              type="button"
+              disabled={pageNumber >= totalPages}
+              onClick={() => setPageNumber(pageNumber + 1)}
+              className="text-sm disabled:opacity-40"
+              style={{ color: brandFg }}
+              aria-label="Next page"
+            >
+              ›
+            </button>
+          </nav>
+        )}
+      </div>
+    </section>
+  );
+};
+
+const SodexoHelpLayout = ({
+  params,
+  inputValue,
+  setInputValue,
+  mapping,
+  results,
+  live,
+  sendEvent,
+  label,
+}: {
+  params: SearchResultsProps['params'];
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  mapping: { title?: string; link?: string };
+  results: SearchDoc[];
+  live: boolean;
+  sendEvent: (name: 'viewed' | 'clicked') => void;
+  label: (name: 'SEARCH_HELP_PLACEHOLDER' | 'SEE_ALL_RESULTS') => string;
+}) => {
+  const goToResults = () => {
+    const q = inputValue.trim();
+    if (!q) return;
+    navigateTo(`/SearchResults?q=${encodeURIComponent(q)}`);
+  };
+
+  return (
+    <section
+      className={cn('component search-results', params?.styles)}
+      id={params?.RenderingIdentifier || undefined}
+    >
+      <div className="mx-auto max-w-5xl px-4 pb-8 sm:px-6 lg:px-8">
+        <form
+          role="search"
+          className="relative"
+          onSubmit={(e) => {
+            e.preventDefault();
+            goToResults();
+          }}
+        >
+          <Input
+            type="text"
+            value={inputValue}
+            disabled={!live}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder={label('SEARCH_HELP_PLACEHOLDER')}
+            aria-label={label('SEARCH_HELP_PLACEHOLDER')}
+            className="h-14 w-full rounded-md border py-3 pl-12 pr-28 text-base shadow-none"
+            style={{
+              borderColor: 'var(--brand-border, #d4d4e8)',
+              color: 'var(--brand-fg, #2a295c)',
+              fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+            }}
+          />
+          <Search className="text-muted-foreground absolute left-4 top-1/2 size-5 -translate-y-1/2" />
+          <button
+            type="submit"
+            className="absolute right-1.5 top-1/2 inline-flex h-11 -translate-y-1/2 items-center gap-2 rounded-md px-4 text-sm font-semibold text-white"
+            style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+          >
+            Search
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+          {live && inputValue.trim() && results.length > 0 && (
+            <ul
+              className="absolute z-20 mt-1 w-full overflow-hidden rounded-md border bg-white shadow-md"
+              style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+            >
+              {results.slice(0, 5).map((doc) => {
+                const title = docValue(doc, mapping.title);
+                const link = docValue(doc, mapping.link);
+                if (!title) return null;
+                return (
+                  <li key={docValue(doc, 'sc_item_id') || title}>
+                    <button
+                      type="button"
+                      className="block w-full px-4 py-2 text-left text-sm hover:bg-black/5"
+                      onClick={() => {
+                        sendEvent('clicked');
+                        if (link) navigateTo(link);
+                        else goToResults();
+                      }}
+                    >
+                      {title}
+                    </button>
+                  </li>
+                );
+              })}
+              <li className="border-t" style={{ borderColor: 'var(--brand-border, #e0dff0)' }}>
+                <button
+                  type="button"
+                  className="block w-full px-4 py-2 text-left text-sm font-medium"
+                  style={{ color: 'var(--brand-primary, #283897)' }}
+                  onClick={goToResults}
+                >
+                  {label('SEE_ALL_RESULTS')}
+                </button>
+              </li>
+            </ul>
+          )}
+        </form>
       </div>
     </section>
   );

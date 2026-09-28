@@ -6,6 +6,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoHelpPage } from '@/lib/sodexo-page';
 
 interface FAQItemFields {
   id: string;
@@ -116,6 +117,7 @@ export const Default = ({ fields, params, page }: FAQAccordionProps): JSX.Elemen
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FAQAccordionDefaultComponent />;
+  if (isSodexoHelpPage(page)) return SodexoSearch({ fields, params, page });
   const items = datasource.children?.results || [];
 
   return (
@@ -215,6 +217,82 @@ export const TwoColumn = ({ fields, params, page }: FAQAccordionProps): JSX.Elem
                 <AccordionItem key={item.id} item={item} isEditing={isEditing} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoSearch — help landing FAQ groups
+   ──────────────────────────────────────────── */
+export const SodexoSearch = ({ fields, params, page }: FAQAccordionProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FAQAccordionDefaultComponent />;
+  const items = datasource.children?.results || [];
+
+  return (
+    <div className={cn('component faq-accordion', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-2 text-2xl font-bold"
+              style={{
+                color: 'var(--brand-accent, #da2020)',
+                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+              }}
+            />
+          )}
+          <div>
+            {items.map((item) => (
+              <details
+                key={item.id}
+                className="group border-b"
+                style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+              >
+                <summary
+                  className="flex cursor-pointer list-none items-center justify-between py-6 text-left [&::-webkit-details-marker]:hidden"
+                  style={{
+                    color: 'var(--brand-fg, #2a295c)',
+                    fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                  }}
+                >
+                  {(item.question?.jsonValue?.value || isEditing) && (
+                    <Text field={item.question?.jsonValue} tag="span" className="flex-1 pr-4 text-base" />
+                  )}
+                  <span
+                    className="flex h-6 w-6 items-center justify-center text-2xl font-light leading-none group-open:hidden"
+                    aria-hidden
+                  >
+                    +
+                  </span>
+                  <span
+                    className="hidden h-6 w-6 items-center justify-center text-2xl font-light leading-none group-open:flex"
+                    aria-hidden
+                  >
+                    −
+                  </span>
+                </summary>
+                <div className="pb-6">
+                  {(item.answer?.jsonValue?.value || isEditing) && (
+                    <ContentSdkRichText
+                      field={item.answer?.jsonValue}
+                      className="text-sm opacity-80 [&>*]:m-0"
+                      style={{
+                        color: 'var(--brand-fg, #2a295c)',
+                        fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                      }}
+                    />
+                  )}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

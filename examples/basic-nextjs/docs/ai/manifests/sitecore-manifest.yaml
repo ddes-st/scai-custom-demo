@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}"
-  lastUpdatedAt: "2026-09-28T00:00:00Z"
-  renderingCount: 38
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}"
+  lastUpdatedAt: "2026-09-28T16:24:00Z"
+  renderingCount: 35
   note: "Merge of sodexo and main: kept Quote {F44F91B0-859A-4FC5-88D8-1920DEEBB5E5} plus search renderings SearchResults {D33F0079-E54F-48C3-A33A-6A3A83146DA8}, SearchCollection {158772E0-46FD-4626-9144-527C24854F97}, and SearchTypeahead {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
 
 components:
@@ -3391,6 +3391,55 @@ lookups:
       - { name: "LogoCloud", instanceId: "95ecefba-7120-49d1-855b-1352fe5962c4", datasource: "e2d8d94e" }
       - { name: "FeatureCardsGrid", instanceId: "b8fa863a-41fc-4c50-ac97-4cce1e334d08", datasource: "b83af41c" }
       - { name: "BlogListing (suppressed)", instanceId: "ce2cae69-f880-4652-a2dc-db2635a3e3aa", datasource: "8f1ba186" }
+
+# ──────────────────────────────────────────────
+# Sodexo Search pages (2026-09-28)
+# ──────────────────────────────────────────────
+  - name: SodexoSearchPages
+    status: complete
+    updatedAt: "2026-09-28"
+    notes: >
+      Custom Search help + results pages for group/sodexo, illustrated by
+      sodexo.com/How-can-we-help-you and sodexo.com/SearchResults. Uses the
+      SitecoreAI SearchResults component (useSearch: keyphrase, pagination,
+      shareable ?q=). Type/year facets are not wired — Agent API ignores
+      filters. SearchTypeahead template is missing on this tenant; the help
+      page uses SearchResults in hero mode instead. Homepage, About, Articles,
+      and article-detail variants were not modified. Layouts activate via
+      isSodexoHelpPage() / isSodexoSearchResultsPage().
+      Added V3 mapping fields to the SearchResults template on this tenant
+      (SearchIndex, TitleMapping, DescriptionMapping, ImageMapping, LinkMapping,
+      DateMapping). Index GUID 79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc.
+    helpPage:
+      name: Search
+      itemId: "4de1fea1-0ad7-46c0-83bd-553173084d59"
+      path: "/sitecore/content/group/sodexo/Home/Search"
+      route: "/Search"
+    resultsPage:
+      name: SearchResults
+      itemId: "c471b17d-d2e2-4b21-a246-37816b1da444"
+      path: "/sitecore/content/group/sodexo/Home/SearchResults"
+      route: "/SearchResults"
+    variants:
+      - { component: "HeroBanner", name: "SodexoSearch", itemId: "01e9402f-7a4f-40f2-9f13-d96a7ab003bf" }
+      - { component: "FAQAccordion", name: "SodexoSearch", itemId: "fd2e22e5-752f-466d-a221-7d074a02fc46" }
+      - { component: "SearchResults", name: "SodexoSearch", itemId: "40275f76-916e-4a4a-9dc6-0b56ad614a9f" }
+      - { component: "SearchTypeahead", name: "SodexoSearch", itemId: "bf41719b-0dc5-423c-975b-d1b62201e934" }
+    datasources:
+      - { name: "Sodexo Search - Help Title", itemId: "98ff4cdf-8e98-483c-931c-6c4fa139e04a" }
+      - { name: "Sodexo Search Results", itemId: "01048db0-29a7-43c5-983b-10bc68d7a043" }
+      - { name: "Sodexo Help - Services", itemId: "ec63d8f5-6293-4ef7-aa48-ecee9b1857d8" }
+      - { name: "Sodexo Help - Customer", itemId: "3d2523d4-c872-4498-8797-b5e30f5a1151" }
+      - { name: "Sodexo Help - Careers", itemId: "aff5eb62-4eda-4efe-8061-0b8e2c0fbb4d" }
+    pageComponents:
+      help:
+        - { name: "HeroBanner", instanceId: "be08f264-9dda-4dc2-bc00-73703a21461a", datasource: "98ff4cdf" }
+        - { name: "SearchResults", instanceId: "b0bed7c1-f5cc-41c0-90c9-2d066c8cc9df", datasource: "01048db0" }
+        - { name: "FAQAccordion Services", instanceId: "d414d3f2-6118-4f4a-9082-df98246358b9", datasource: "ec63d8f5" }
+        - { name: "FAQAccordion Customer", instanceId: "a6936a25-c7a2-42f7-a9a5-4d1522f6af77", datasource: "3d2523d4" }
+        - { name: "FAQAccordion Careers", instanceId: "b243052f-83cc-4963-89da-992b51306ec5", datasource: "aff5eb62" }
+      results:
+        - { name: "SearchResults", instanceId: "fdba354e-9213-4260-82cf-3a8407038eb0", datasource: "01048db0" }
 
 # ──────────────────────────────────────────────
 # Sodexo About page (2026-09-21)

@@ -12,7 +12,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
-import { isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
+import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoHelpPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 
 interface HeroBannerFields {
@@ -79,6 +79,7 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
@@ -178,6 +179,7 @@ export const BackgroundImage = (props: HeroBannerProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
@@ -348,6 +350,7 @@ export const Sodexo = (props: HeroBannerProps): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
+  if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (!fields) return <HeroBannerDefaultComponent />;
@@ -524,6 +527,35 @@ export const SodexoArticles = ({ fields, params, page }: HeroBannerProps): JSX.E
               tag="h1"
               className="text-3xl font-bold sm:text-4xl"
               style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoSearch — help landing title
+   ──────────────────────────────────────────── */
+export const SodexoSearch = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  return (
+    <div className={cn('component hero-banner', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-5xl px-4 pb-4 pt-16 sm:px-6 lg:px-8">
+          {(fields.Title?.value || isEditing) && (
+            <Text
+              field={fields.Title}
+              tag="h1"
+              className="text-4xl font-bold tracking-tight sm:text-5xl"
+              style={{
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-heading-font, "DM Sans", sans-serif)',
+              }}
             />
           )}
         </div>

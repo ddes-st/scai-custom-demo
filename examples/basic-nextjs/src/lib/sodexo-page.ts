@@ -35,3 +35,27 @@ export function isSodexoArticlesPage(page?: Page): boolean {
   const routeName = String(sitecore?.route?.name || '');
   return /\/Home\/Articles$/i.test(itemPath) || /\/Articles$/i.test(itemPath) || /^Articles$/i.test(routeName);
 }
+
+export function isSodexoHelpPage(page?: Page): boolean {
+  const sitecore = getSitecoreLayout(page);
+  const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
+  if (siteName && siteName !== 'sodexo') return false;
+
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  const routeName = String(sitecore?.route?.name || '');
+  return /\/Home\/Search$/i.test(itemPath) || /\/Search$/i.test(itemPath) || /^Search$/i.test(routeName);
+}
+
+export function isSodexoSearchResultsPage(page?: Page): boolean {
+  const sitecore = getSitecoreLayout(page);
+  const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
+  if (siteName && siteName !== 'sodexo') return false;
+
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  const routeName = String(sitecore?.route?.name || '');
+  return (
+    /\/Home\/SearchResults$/i.test(itemPath) ||
+    /\/SearchResults$/i.test(itemPath) ||
+    /^SearchResults$/i.test(routeName)
+  );
+}

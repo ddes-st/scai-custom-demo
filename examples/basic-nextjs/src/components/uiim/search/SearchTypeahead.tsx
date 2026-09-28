@@ -2,6 +2,7 @@
 import { ComponentProps } from '@/lib/component-props';
 import { cn } from '@/lib/utils';
 import { TypeaheadSearchBox, TypeaheadFields } from '@/lib/search-ui/TypeaheadSearchBox';
+import { isSodexoHelpPage } from '@/lib/sodexo-page';
 
 interface SearchTypeaheadProps extends ComponentProps {
   fields: TypeaheadFields;
@@ -21,6 +22,8 @@ export const Default = (props: SearchTypeaheadProps) => {
     return isEditing ? <EmptyStateFallback /> : null;
   }
 
+  if (isSodexoHelpPage(page)) return SodexoSearch(props);
+
   return (
     <section
       className={cn('component search-typeahead', params?.styles)}
@@ -32,6 +35,33 @@ export const Default = (props: SearchTypeaheadProps) => {
           page={page}
           rendering={rendering}
           className="max-w-md"
+        />
+      </div>
+    </section>
+  );
+};
+
+export const SodexoSearch = (props: SearchTypeaheadProps) => {
+  const { fields, params, page, rendering } = props;
+  const isEditing = page?.mode?.isEditing ?? false;
+
+  if (!fields || !fields?.SearchIndex?.value) {
+    return isEditing ? <EmptyStateFallback /> : null;
+  }
+
+  return (
+    <section
+      className={cn('component search-typeahead', params?.styles)}
+      id={params?.RenderingIdentifier || undefined}
+    >
+      <div className="mx-auto max-w-5xl px-4 pb-6 sm:px-6">
+        <TypeaheadSearchBox
+          fields={fields}
+          page={page}
+          rendering={rendering}
+          appearance="hero"
+          placeholderName="SEARCH_HELP_PLACEHOLDER"
+          className="w-full"
         />
       </div>
     </section>

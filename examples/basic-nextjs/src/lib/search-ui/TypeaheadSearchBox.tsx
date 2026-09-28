@@ -6,7 +6,7 @@ import { useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { ComponentProps } from '@/lib/component-props';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
-import { DEFAULT_MAX_SUGGESTIONS } from '@/lib/search-ui/constants';
+import { DEFAULT_MAX_SUGGESTIONS, SearchLabelName } from '@/lib/search-ui/constants';
 import { navigateTo } from '@/lib/search-ui/navigate';
 import { useDebouncedValue } from '@/lib/search-ui/useDebouncedValue';
 import { useSearchLabels } from '@/lib/search-ui/useSearchLabels';
@@ -46,11 +46,15 @@ export const TypeaheadSearchBox = ({
   className,
   compact = false,
   onDark = false,
+  appearance = 'default',
+  placeholderName = 'SEARCH_INPUT_PLACEHOLDER',
 }: Pick<ComponentProps, 'page' | 'rendering'> & {
   fields: TypeaheadFields;
   className?: string;
   compact?: boolean;
   onDark?: boolean;
+  appearance?: 'default' | 'hero';
+  placeholderName?: SearchLabelName;
 }) => {
   const label = useSearchLabels();
 
@@ -167,13 +171,15 @@ export const TypeaheadSearchBox = ({
         }}
         onFocus={() => setIsOpen(true)}
         onKeyDown={onKeyDown}
-        placeholder={label('SEARCH_INPUT_PLACEHOLDER')}
-        aria-label={label('SEARCH_INPUT_PLACEHOLDER')}
+        placeholder={label(placeholderName)}
+        aria-label={label(placeholderName)}
         aria-autocomplete="list"
         aria-controls={listboxId}
         className={cn(
           'w-full',
-          !compact && 'py-2 pl-10',
+          appearance === 'hero' &&
+            'h-14 rounded-md border py-3 pl-12 pr-28 text-base shadow-none focus-visible:ring-1',
+          appearance !== 'hero' && !compact && 'py-2 pl-10',
           compact &&
             !onDark &&
             'h-9 rounded-full border-0 bg-white pl-9 pr-4 text-sm text-gray-900 shadow-sm ring-1 ring-black/10 placeholder:text-gray-500 focus-visible:ring-2',
@@ -181,13 +187,37 @@ export const TypeaheadSearchBox = ({
             onDark &&
             'h-9 rounded-full border-0 bg-white/10 pl-9 pr-4 text-sm text-white placeholder:text-white/60 ring-1 ring-white/20 transition-colors focus:bg-white focus:text-gray-900 focus:placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-white/60'
         )}
+        style={
+          appearance === 'hero'
+            ? {
+                borderColor: 'var(--brand-border, #d4d4e8)',
+                color: 'var(--brand-fg, #2a295c)',
+                fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+              }
+            : undefined
+        }
       />
       <Search
         className={cn(
-          'pointer-events-none absolute top-1/2 -translate-y-1/2 left-3 size-4',
+          'pointer-events-none absolute top-1/2 -translate-y-1/2 left-3',
+          appearance === 'hero' ? 'size-5' : 'size-4',
           compact && onDark ? 'text-white/60' : compact ? 'text-gray-400' : 'text-muted-foreground'
         )}
       />
+      {appearance === 'hero' && (
+        <button
+          type="button"
+          onClick={goToResults}
+          className="absolute right-1.5 top-1/2 inline-flex h-11 -translate-y-1/2 items-center gap-2 rounded-md px-4 text-sm font-semibold text-white"
+          style={{ backgroundColor: 'var(--brand-primary, #283897)' }}
+        >
+          Search
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+      )}
 
       {showDropdown && (
         <ul
