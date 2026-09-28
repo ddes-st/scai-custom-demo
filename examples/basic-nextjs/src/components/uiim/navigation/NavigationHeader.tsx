@@ -110,10 +110,12 @@ const MobileMenu = ({
   items,
   open,
   onClose,
+  searchHref,
 }: {
   items: NavigationLinkFields[];
   open: boolean;
   onClose: () => void;
+  searchHref?: string;
 }) => {
   if (!open) return null;
   return (
@@ -135,6 +137,16 @@ const MobileMenu = ({
             )}
           </ContentSdkLink>
         ))}
+        {searchHref && (
+          <Link
+            href={searchHref}
+            className="text-sm font-medium"
+            style={{ color: 'var(--brand-header-fg, inherit)' }}
+            onClick={onClose}
+          >
+            Search
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -340,6 +352,11 @@ export const Transparent = ({ fields, params, page }: NavigationHeaderProps): JS
 const SODEXO_PRIMARY_ORDER = ['What we do', 'Sustainability', 'Insights', 'Careers', 'About Us'];
 const SODEXO_UTILITY_ORDER = ['Investors', 'Newsroom'];
 
+const SODEXO_INTERNAL_LINKS: Record<string, string> = {
+  'Sodexo in Brief': '/About',
+  'View all latest insights': '/Articles',
+};
+
 interface SodexoMegaMenuContent {
   description: string;
   links: string[];
@@ -464,18 +481,40 @@ const SodexoUtilityBar = () => (
   </div>
 );
 
-const SodexoMegaMenuLink = ({ link }: { link: string }) => (
-  <a
-    href="#"
-    className="flex items-start justify-between gap-3 text-sm font-semibold transition-opacity hover:opacity-70"
-    style={{ color: 'var(--brand-fg, #2a295c)' }}
-  >
-    <span>{link}</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent, #da2020)" strokeWidth="2.5" className="mt-0.5 shrink-0">
-      <polyline points="9 6 15 12 9 18" />
-    </svg>
-  </a>
-);
+const SodexoMegaMenuLink = ({
+  link,
+  onNavigate,
+}: {
+  link: string;
+  onNavigate?: () => void;
+}) => {
+  const href = SODEXO_INTERNAL_LINKS[link];
+  const className =
+    'flex items-start justify-between gap-3 text-sm font-semibold transition-opacity hover:opacity-70';
+  const style = { color: 'var(--brand-fg, #2a295c)' };
+  const content = (
+    <>
+      <span>{link}</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent, #da2020)" strokeWidth="2.5" className="mt-0.5 shrink-0">
+        <polyline points="9 6 15 12 9 18" />
+      </svg>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={className} style={style} onClick={onNavigate}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a href="#" className={className} style={style}>
+      {content}
+    </a>
+  );
+};
 
 const SodexoMegaMenu = ({
   label,
@@ -520,7 +559,7 @@ const SodexoMegaMenu = ({
             </button>
             <div className="flex flex-col gap-7 pr-10">
               {content.links.map((link) => (
-                <SodexoMegaMenuLink key={link} link={link} />
+                <SodexoMegaMenuLink key={link} link={link} onNavigate={onClose} />
               ))}
             </div>
             <div>
@@ -699,8 +738,8 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
                 </ContentSdkLink>
               ))}
               {/* Search icon */}
-              <button
-                type="button"
+              <Link
+                href="/Search"
                 className="ml-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity hover:opacity-70"
                 aria-label="Search"
                 style={{ color: 'var(--brand-fg, #2a295c)' }}
@@ -709,7 +748,7 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-              </button>
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -723,7 +762,12 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
             />
           )}
         </div>
-        <MobileMenu items={[...primaryLinks, ...utilityLinks]} open={menuOpen} onClose={() => setMenuOpen(false)} />
+        <MobileMenu
+          items={[...primaryLinks, ...utilityLinks]}
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          searchHref="/Search"
+        />
       </header>
       {/* Dark-blue overlay between the mega-menu panel and the rest of the page.
           Sits below the header (z-40 < header's z-50) so it never covers the nav
