@@ -3,9 +3,9 @@
 import { BYOCClientWrapper, NextjsContentSdkComponent, FEaaSClientWrapper } from '@sitecore-content-sdk/nextjs';
 import { Form } from '@sitecore-content-sdk/nextjs';
 
-import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
 import * as SearchResults from 'src/components/uiim/search/SearchResults';
+import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
@@ -52,9 +52,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCClientWrapper],
   ['FEaaSWrapper', FEaaSClientWrapper],
   ['Form', Form],
-  ['SearchExperienceV2', { ...SearchExperienceV2 }],
   ['SearchTypeahead', { ...SearchTypeahead }],
   ['SearchResults', { ...SearchResults }],
+  ['SearchExperienceV2', { ...SearchExperienceV2 }],
   ['SearchCollection', { ...SearchCollection }],
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['NavigationHeader', { ...NavigationHeader }],

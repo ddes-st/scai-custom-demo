@@ -12,7 +12,7 @@ import React from 'react';
 import * as React_7214d18997ee864dd178de7b3a8430f6783e8b89 from 'react';
 import { NextImage, RichText, Text, Link, AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 import { cn } from '@/lib/utils';
-import { isSodexoArticlesPage, isSodexoAboutPage, isSodexoSite } from '@/lib/sodexo-page';
+import { isSodexoArticlesPage, isSodexoAboutPage, isSodexoSite, isSodexoHelpPage } from '@/lib/sodexo-page';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
@@ -60,6 +60,7 @@ const importMap = [
       { name: 'isSodexoArticlesPage', value: isSodexoArticlesPage },
       { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
       { name: 'isSodexoSite', value: isSodexoSite },
+      { name: 'isSodexoHelpPage', value: isSodexoHelpPage },
     ]
   },
   {

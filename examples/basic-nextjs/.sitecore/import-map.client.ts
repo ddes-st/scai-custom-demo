@@ -11,6 +11,7 @@ import {
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { cn } from '@/lib/utils';
 import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
+import { isSodexoHelpPage, isSodexoSearchResultsPage, isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
 import { useEffect, useMemo, useRef, useState, Suspense, useCallback } from 'react';
 import React from 'react';
 import Image from 'next/image';
@@ -20,7 +21,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { DEFAULT_PAGE_SIZE, DEFAULT_MAX_ITEMS } from '@/lib/search-ui/constants';
-import { stripHtml, formatDate, extractImageUrl } from '@/lib/search-ui/text';
+import { stripHtml, formatDate, formatDateLong, extractImageUrl } from '@/lib/search-ui/text';
+import { navigateTo } from '@/lib/search-ui/navigate';
 import { useDebouncedValue } from '@/lib/search-ui/useDebouncedValue';
 import { readUrlParam, useUrlMirror } from '@/lib/search-ui/useUrlMirror';
 import { useSearchLabels } from '@/lib/search-ui/useSearchLabels';
@@ -36,12 +38,11 @@ import { SearchInput } from '@/lib/search/search-components/SearchInput';
 import { useEvent } from '@/lib/search/search-components/useEvent';
 import { useRouter } from '@/lib/search/search-components/useRouter';
 import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE as DEFAULT_PAGE_SIZE_d8a3a96ed6893912a4b0e4dff64815d90f82a321, gridColsClass } from '@/lib/search/search-components/constants';
-import { Text, NextImage, Link, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
+import { Text, Link, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { identity, event, pageView } from '@sitecore-content-sdk/events';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
-import { isSodexoAboutPage } from '@/lib/sodexo-page';
-import { SODEXO_ABOUT_TECH_IMAGE, sodexoAboutCardImage, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableAboutImageSrc, SODEXO_ABOUT_TECH_IMAGE, sodexoAboutCardImage, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
 import { SearchEmptyResults as SearchEmptyResults_a7fd5bb71665da1ba09c52ff7c1d1a533293f443 } from 'src/components/search-experience/search-components/SearchEmptyResults';
 import { SearchError as SearchError_af1c5e83329285a922b0ebc80453dc52526cfbd2 } from 'src/components/search-experience/search-components/SearchError';
@@ -84,6 +85,15 @@ const importMap = [
     module: '@/lib/search-ui/TypeaheadSearchBox',
     exports: [
       { name: 'TypeaheadSearchBox', value: TypeaheadSearchBox },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-page',
+    exports: [
+      { name: 'isSodexoHelpPage', value: isSodexoHelpPage },
+      { name: 'isSodexoSearchResultsPage', value: isSodexoSearchResultsPage },
+      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
+      { name: 'isSodexoArticlesPage', value: isSodexoArticlesPage },
     ]
   },
   {
@@ -153,7 +163,14 @@ const importMap = [
     exports: [
       { name: 'stripHtml', value: stripHtml },
       { name: 'formatDate', value: formatDate },
+      { name: 'formatDateLong', value: formatDateLong },
       { name: 'extractImageUrl', value: extractImageUrl },
+    ]
+  },
+  {
+    module: '@/lib/search-ui/navigate',
+    exports: [
+      { name: 'navigateTo', value: navigateTo },
     ]
   },
   {
@@ -255,8 +272,8 @@ const importMap = [
     module: '@sitecore-content-sdk/nextjs',
     exports: [
       { name: 'Text', value: Text },
-      { name: 'NextImage', value: NextImage },
       { name: 'Link', value: Link },
+      { name: 'NextImage', value: NextImage },
       { name: 'useSitecore', value: useSitecore },
       { name: 'RichText', value: RichText },
       { name: 'DateField', value: DateField },
@@ -285,14 +302,9 @@ const importMap = [
     ]
   },
   {
-    module: '@/lib/sodexo-page',
-    exports: [
-      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
-    ]
-  },
-  {
     module: '@/lib/sodexo-about-media',
     exports: [
+      { name: 'isUsableAboutImageSrc', value: isUsableAboutImageSrc },
       { name: 'SODEXO_ABOUT_TECH_IMAGE', value: SODEXO_ABOUT_TECH_IMAGE },
       { name: 'sodexoAboutCardImage', value: sodexoAboutCardImage },
       { name: 'SODEXO_ABOUT_HERO_IMAGE', value: SODEXO_ABOUT_HERO_IMAGE },

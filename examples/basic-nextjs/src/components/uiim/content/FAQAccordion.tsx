@@ -112,12 +112,13 @@ const AccordionItem = ({
 /* ────────────────────────────────────────────
    Default — standard accordion, one item open at a time
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: FAQAccordionProps): JSX.Element => {
+export const Default = (props: FAQAccordionProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FAQAccordionDefaultComponent />;
-  if (isSodexoHelpPage(page)) return SodexoSearch({ fields, params, page });
+  if (isSodexoHelpPage(page)) return SodexoSearch(props);
   const items = datasource.children?.results || [];
 
   return (
