@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-28T00:00:00Z"
+lastUpdatedAt: "2026-09-29T00:00:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
@@ -2353,11 +2353,11 @@ components:
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingHero.tsx"
       componentMapKey: "LandingHero"
-      variants: ["Default", "SplitImage", "Minimal"]
+      variants: ["Default", "SplitImage", "Minimal", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingHero"
@@ -2374,11 +2374,12 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{2571BE88-7763-4827-B661-1C6792B95847}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingHero"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingHero"
       definitions:
         - { name: "Default", itemId: "{D1B9E599-F9C5-416F-A204-16F8EBC1E10C}" }
         - { name: "SplitImage", itemId: "{E000909A-01DA-498C-BAB3-54EAC6E2C89F}" }
         - { name: "Minimal", itemId: "{52F4AECD-818D-4A1A-8CC5-DFDCE5F5C928}" }
+        - { name: "Sodexo", itemId: "{BDFE8FB3-C44B-41A1-9230-991E81976594}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2391,17 +2392,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created LandingHero (3 variants — Default, SplitImage, Minimal). Renders heroVideo if set else heroImage. ABM swap surface."
+      - "2026-09-29: Restyled Default to Sodexo brand tokens (navy overlay, DM Sans, primary CTAs). Added Sodexo named export matching Default. Default auto-routes to Sodexo on sodexo site. SplitImage and Minimal unchanged."
 
   - name: "LandingFeatures"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFeatures.tsx"
       componentMapKey: "LandingFeatures"
-      variants: ["Default"]
+      variants: ["Default", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingFeatures"
@@ -2418,9 +2420,10 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{5ADEF5CB-11B4-4743-AA96-4D7EFEE55C5D}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFeatures"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingFeatures"
       definitions:
         - { name: "Default", itemId: "{31A214D5-7824-476C-8C63-4FB5F942DD28}" }
+        - { name: "Sodexo", itemId: "{04DA4E8E-55F4-46D4-A666-7E81CE401895}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2430,17 +2433,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 3 fixed feature slots. Icons via lucide-react dynamic lookup (PascalCase icon name strings → React component)."
+      - "2026-09-29: Restyled Default + added Sodexo. Bordered white cards, navy type, quiet brand-primary icons on muted lavender. Default auto-routes to Sodexo on sodexo site."
 
   - name: "LandingStats"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingStats.tsx"
       componentMapKey: "LandingStats"
-      variants: ["Default"]
+      variants: ["Default", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingStats"
@@ -2457,9 +2461,10 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{5619F2D9-B432-4A47-AA8A-911937AB991B}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingStats"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingStats"
       definitions:
         - { name: "Default", itemId: "{2623EBAE-BF3D-471A-8E7D-176BCF6E4BE6}" }
+        - { name: "Sodexo", itemId: "{8BBF81F8-AB37-409C-B009-CC6C0BA84041}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2469,17 +2474,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 3 fixed stat tiles. Validation regex enforces 8-char limit on numbers."
+      - "2026-09-29: Restyled Default + added Sodexo. Lavender muted band, navy DM Sans numbers. Default auto-routes to Sodexo on sodexo site."
 
   - name: "LandingSocialProof"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingSocialProof.tsx"
       componentMapKey: "LandingSocialProof"
-      variants: ["Default"]
+      variants: ["Default", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingSocialProof"
@@ -2496,9 +2502,10 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{1077B0D2-420D-48E4-ADA2-853C6C0E880A}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingSocialProof"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingSocialProof"
       definitions:
         - { name: "Default", itemId: "{8ED8A4F7-10C3-4867-AC0E-B3F79BECC356}" }
+        - { name: "Sodexo", itemId: "{DAAA83E3-23E5-4B92-84CC-58E6565778DD}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2508,18 +2515,19 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. Single inline testimonial + composite logo strip image (no Treelist)."
+      - "2026-09-29: Restyled Default + added Sodexo. Quote-mark + red accent author rule, matching Quote Sodexo. Default auto-routes to Sodexo on sodexo site."
 
   - name: "LandingFAQ"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFAQ.tsx"
       componentMapKey: "LandingFAQ"
       componentType: "client"
-      variants: ["Default"]
+      variants: ["Default", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingFAQ"
@@ -2536,9 +2544,10 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{4FC4C30A-8A86-43CD-AFF9-4D6C53CB0594}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFAQ"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingFAQ"
       definitions:
         - { name: "Default", itemId: "{DCA2DB12-8D54-4AD6-8D43-082683AFA518}" }
+        - { name: "Sodexo", itemId: "{D005B25F-08A9-46F8-909E-28212582AC63}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2548,17 +2557,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 5 fixed Q/A pairs. Custom accordion (useState) — shadcn does not ship an Accordion primitive in this repo. Marked componentType: client."
+      - "2026-09-29: Restyled Default + added Sodexo. Navy questions, brand borders, pointer cursor. Default auto-routes to Sodexo on sodexo site."
 
   - name: "LandingFinalCTA"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-29T00:00:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFinalCTA.tsx"
       componentMapKey: "LandingFinalCTA"
-      variants: ["Default"]
+      variants: ["Default", "Sodexo"]
     templates:
       renderingParams:
         name: "LandingFinalCTA"
@@ -2575,9 +2585,10 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{C27474AD-EC5C-421E-AAAE-1DE43C9FC0D4}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFinalCTA"
+      containerPath: "/sitecore/content/group/sodexo/Presentation/Headless Variants/LandingFinalCTA"
       definitions:
         - { name: "Default", itemId: "{2FFE0507-9D6D-4D93-BFFE-43504C63D10C}" }
+        - { name: "Sodexo", itemId: "{AB60F2B9-CA71-4249-B5B5-68C9E56F64C1}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2587,6 +2598,7 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. Closing CTA band on dark background."
+      - "2026-09-29: Restyled Default + added Sodexo. Navy band, brand-primary button with arrow. Default auto-routes to Sodexo on sodexo site."
 
 sharedDataTemplates:
   - name: "Person"

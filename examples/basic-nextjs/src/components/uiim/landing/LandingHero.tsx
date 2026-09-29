@@ -9,6 +9,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoSite } from '@/lib/sodexo-page';
 
 interface LandingHeroRouteFields {
   heroEyebrow?: Field<string>;
@@ -19,6 +20,11 @@ interface LandingHeroRouteFields {
   heroImage?: ImageField;
   heroVideo?: LinkField;
 }
+
+const brandPrimary = 'var(--brand-primary, #283897)';
+const brandSecondary = 'var(--brand-secondary, #2a295c)';
+const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
 
 const LandingHeroDefaultComponent = (): JSX.Element => (
   <div className="component landing-hero">
@@ -31,6 +37,15 @@ const LandingHeroDefaultComponent = (): JSX.Element => (
 function getRouteFields(page: ComponentProps['page']): LandingHeroRouteFields | null {
   const fields = page?.layout?.sitecore?.route?.fields;
   return fields ? (fields as unknown as LandingHeroRouteFields) : null;
+}
+
+function CtaArrow() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+      <line x1="5" y1="19" x2="19" y2="5" />
+      <polyline points="9 5 19 5 19 15" />
+    </svg>
+  );
 }
 
 function HeroMedia({
@@ -85,34 +100,49 @@ function CtaPair({
 
   const primaryClasses =
     variant === 'default'
-      ? 'inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-100'
-      : 'inline-flex items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-gray-800';
+      ? 'inline-flex cursor-pointer items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90'
+      : 'inline-flex cursor-pointer items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-gray-800';
 
   const secondaryClasses =
     variant === 'default'
-      ? 'inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10'
-      : 'inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-50';
+      ? 'inline-flex cursor-pointer items-center justify-center gap-2 border border-white/50 bg-transparent px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-70'
+      : 'inline-flex cursor-pointer items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-50';
+
+  const primaryStyle =
+    variant === 'default'
+      ? { backgroundColor: brandPrimary, borderRadius: '4px' }
+      : undefined;
+  const secondaryStyle = variant === 'default' ? { borderRadius: '4px' } : undefined;
 
   return (
     <div className="mt-8 flex flex-wrap items-center gap-4" data-testid="hero-ctas">
       {showPrimary && primary && (
-        <ContentSdkLink field={primary} className={primaryClasses} data-testid="hero-primary-cta" />
+        <ContentSdkLink
+          field={primary}
+          className={primaryClasses}
+          style={primaryStyle}
+          data-testid="hero-primary-cta"
+        >
+          {primary.value?.text || 'Learn more'}
+          {variant === 'default' && <CtaArrow />}
+        </ContentSdkLink>
       )}
       {showSecondary && secondary && (
         <ContentSdkLink
           field={secondary}
           className={secondaryClasses}
+          style={secondaryStyle}
           data-testid="hero-secondary-cta"
-        />
+        >
+          {secondary.value?.text || 'Learn more'}
+          {variant === 'default' && <CtaArrow />}
+        </ContentSdkLink>
       )}
     </div>
   );
 }
 
-/* ────────────────────────────────────────────
-   Default — centered eyebrow + headline + subhead + dual CTAs above hero media
-   ──────────────────────────────────────────── */
-export const Default = ({ params, page }: ComponentProps): JSX.Element => {
+function LandingHeroBranded({ params, page }: ComponentProps): JSX.Element {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const routeFields = getRouteFields(page);
@@ -131,8 +161,15 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
   const hasMedia = heroVideo?.value?.href || heroImage?.value?.src || isEditing;
 
   return (
-    <div className={cn('component landing-hero', styles)} id={RenderingIdentifier}>
-      <section className="relative overflow-hidden bg-gray-900" data-testid="landing-hero">
+    <div
+      className={cn('component landing-hero [&_a]:cursor-pointer [&_button]:cursor-pointer', styles)}
+      id={RenderingIdentifier}
+    >
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: brandSecondary }}
+        data-testid="landing-hero"
+      >
         {hasMedia && (
           <div className="absolute inset-0 opacity-30">
             <HeroMedia image={heroImage} video={heroVideo} isEditing={isEditing} />
@@ -144,6 +181,7 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
               field={heroEyebrow}
               tag="p"
               className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80"
+              style={{ fontFamily: headingFont }}
               data-testid="hero-eyebrow"
             />
           )}
@@ -152,6 +190,7 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
               field={heroHeadline}
               tag="h1"
               className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+              style={{ fontFamily: headingFont }}
               data-testid="hero-headline"
             />
           )}
@@ -160,6 +199,7 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
               field={heroSubhead}
               tag="p"
               className="mt-6 max-w-2xl text-lg text-white/80 md:text-xl"
+              style={{ fontFamily: bodyFont }}
               data-testid="hero-subhead"
             />
           )}
@@ -173,7 +213,21 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
       </section>
     </div>
   );
+}
+
+/* ────────────────────────────────────────────
+   Default — branded centered overlay (Sodexo baseline)
+   On the sodexo site, routes to the Sodexo export.
+   ──────────────────────────────────────────── */
+export const Default = (props: ComponentProps): JSX.Element => {
+  if (isSodexoSite(props.page)) return Sodexo(props);
+  return <LandingHeroBranded {...props} />;
 };
+
+/* ────────────────────────────────────────────
+   Sodexo — same branded overlay as Default
+   ──────────────────────────────────────────── */
+export const Sodexo = (props: ComponentProps): JSX.Element => <LandingHeroBranded {...props} />;
 
 /* ────────────────────────────────────────────
    SplitImage — two-column: text left, hero media right
@@ -197,7 +251,7 @@ export const SplitImage = ({ params, page }: ComponentProps): JSX.Element => {
   const hasMedia = heroVideo?.value?.href || heroImage?.value?.src || isEditing;
 
   return (
-    <div className={cn('component landing-hero', styles)} id={RenderingIdentifier}>
+    <div className={cn('component landing-hero [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
       <section className="bg-white" data-testid="landing-hero">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 md:py-24">
           <div className="flex flex-col justify-center">
@@ -258,7 +312,7 @@ export const Minimal = ({ params, page }: ComponentProps): JSX.Element => {
   const { heroEyebrow, heroHeadline, heroSubhead, heroPrimaryCta, heroSecondaryCta } = routeFields;
 
   return (
-    <div className={cn('component landing-hero', styles)} id={RenderingIdentifier}>
+    <div className={cn('component landing-hero [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
       <section className="bg-white" data-testid="landing-hero">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center md:py-24">
           {(heroEyebrow?.value || isEditing) && (

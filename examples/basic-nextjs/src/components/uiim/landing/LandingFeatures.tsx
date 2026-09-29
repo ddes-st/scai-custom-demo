@@ -9,6 +9,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoSite } from '@/lib/sodexo-page';
 
 interface LandingFeaturesRouteFields {
   feature1IconName?: Field<string>;
@@ -21,6 +22,13 @@ interface LandingFeaturesRouteFields {
   feature3Title?: Field<string>;
   feature3Description?: RichTextField;
 }
+
+const brandFg = 'var(--brand-fg, #2a295c)';
+const brandPrimary = 'var(--brand-primary, #283897)';
+const brandMuted = 'var(--brand-muted, #f0eef8)';
+const brandBorder = 'var(--brand-border, #e0dff0)';
+const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
 
 const LandingFeaturesDefaultComponent = (): JSX.Element => (
   <div className="component landing-features">
@@ -59,22 +67,31 @@ function FeatureCard({
 
   return (
     <div
-      className="flex flex-col items-start rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-md"
+      className="flex flex-col items-start border bg-white p-8"
+      style={{ borderColor: brandBorder, borderRadius: 'var(--brand-card-radius, 0px)' }}
       data-testid="feature-card"
     >
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-md bg-gray-900 text-white">
+      <div
+        className="mb-4 inline-flex h-10 w-10 items-center justify-center"
+        style={{ color: brandPrimary }}
+      >
         <Icon className="h-6 w-6" />
       </div>
       {(title?.value || isEditing) && (
         <Text
           field={title}
           tag="h3"
-          className="text-lg font-semibold text-gray-900"
+          className="text-lg font-semibold"
+          style={{ color: brandFg, fontFamily: headingFont }}
           data-testid="feature-title"
         />
       )}
       {(description?.value || isEditing) && (
-        <div className="mt-2 text-sm text-gray-600" data-testid="feature-description">
+        <div
+          className="mt-2 text-sm leading-relaxed"
+          style={{ color: brandFg, fontFamily: bodyFont }}
+          data-testid="feature-description"
+        >
           <ContentSdkRichText field={description} />
         </div>
       )}
@@ -82,15 +99,18 @@ function FeatureCard({
   );
 }
 
-export const Default = ({ params, page }: ComponentProps): JSX.Element => {
+function LandingFeaturesBranded({ params, page }: ComponentProps): JSX.Element {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const routeFields = getRouteFields(page);
   if (!routeFields) return <LandingFeaturesDefaultComponent />;
 
   return (
-    <div className={cn('component landing-features', styles)} id={RenderingIdentifier}>
-      <section className="bg-gray-50 py-16 md:py-24" data-testid="landing-features">
+    <div
+      className={cn('component landing-features [&_a]:cursor-pointer [&_button]:cursor-pointer', styles)}
+      id={RenderingIdentifier}
+    >
+      <section className="py-16 md:py-24" style={{ backgroundColor: brandMuted }} data-testid="landing-features">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-6 md:grid-cols-3">
             <FeatureCard
@@ -116,4 +136,11 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
       </section>
     </div>
   );
+}
+
+export const Default = (props: ComponentProps): JSX.Element => {
+  if (isSodexoSite(props.page)) return Sodexo(props);
+  return <LandingFeaturesBranded {...props} />;
 };
+
+export const Sodexo = (props: ComponentProps): JSX.Element => <LandingFeaturesBranded {...props} />;
