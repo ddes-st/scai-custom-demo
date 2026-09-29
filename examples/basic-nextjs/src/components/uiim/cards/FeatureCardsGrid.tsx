@@ -12,8 +12,9 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
-import { isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
+import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, sodexoAboutCardImage } from '@/lib/sodexo-about-media';
+import { isUsableBrandsImageSrc, sodexoBrandsCardImage } from '@/lib/sodexo-brands-media';
 
 interface FeatureCardItemFields {
   id: string;
@@ -48,6 +49,17 @@ const FeatureCardsGridDefaultComponent = (): JSX.Element => (
     </div>
   </div>
 );
+
+const routeSodexoBrandsCards = (props: FeatureCardsGridProps): JSX.Element | null => {
+  const { page, fields } = props;
+  const datasource = fields?.data?.datasource;
+  const cards = datasource?.children?.results || [];
+  if (!isSodexoBrandsPage(page) || !cards.length) return null;
+  const title = datasource?.title?.jsonValue?.value || '';
+  if (/^Get started/i.test(title)) return SodexoBrandsCtas(props);
+  if (/Related insights/i.test(title)) return SodexoBrandsInsights(props);
+  return SodexoBrandsGrid(props);
+};
 
 const SectionHeader = ({
   datasource,
@@ -85,6 +97,8 @@ export const Default = (props: FeatureCardsGridProps): JSX.Element => {
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
   const cards = datasource.children?.results || [];
+  const brandsCards = routeSodexoBrandsCards(props);
+  if (brandsCards) return brandsCards;
   if (isSodexoArticlesPage(page) && cards.length) return SodexoArticles(props);
   if (isSodexoAboutPage(page) && cards.length) {
     return cards.length <= 4
@@ -152,11 +166,14 @@ export const Default = (props: FeatureCardsGridProps): JSX.Element => {
 /* ────────────────────────────────────────────
    TwoColumn — 2 wider cards
    ──────────────────────────────────────────── */
-export const TwoColumn = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+export const TwoColumn = (props: FeatureCardsGridProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const brandsCards = routeSodexoBrandsCards(props);
+  if (brandsCards) return brandsCards;
   const cards = datasource.children?.results || [];
 
   return (
@@ -219,11 +236,14 @@ export const TwoColumn = ({ fields, params, page }: FeatureCardsGridProps): JSX.
 /* ────────────────────────────────────────────
    WithImages — larger images at top of each card
    ──────────────────────────────────────────── */
-export const WithImages = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+export const WithImages = (props: FeatureCardsGridProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const brandsCards = routeSodexoBrandsCards(props);
+  if (brandsCards) return brandsCards;
   const cards = datasource.children?.results || [];
 
   return (
@@ -317,6 +337,8 @@ export const Carousel = (props: FeatureCardsGridProps): JSX.Element => {
   );
 
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const brandsCards = routeSodexoBrandsCards(props);
+  if (brandsCards) return brandsCards;
   if (isSodexoAboutPage(page) && cards.length) {
     return cards.length <= 4
       ? SodexoAboutCtas(props)
@@ -710,6 +732,285 @@ export const SodexoArticles = ({ fields, params, page }: FeatureCardsGridProps):
               </button>
             </div>
           )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const stripCardHtml = (value?: string): string =>
+  (value || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+
+const BRANDS_TAB_ORDER = [
+  'Business & Industries',
+  'Healthcare',
+  'Senior living',
+  'Schools & Universities',
+  'Energy & Resources',
+];
+
+const BRANDS_CARD_ORDER = [
+  'Modern Recipe',
+  'The Good Eating Company',
+  'Kitchen Works',
+  'Novae',
+  'Signature',
+  'Clinicia',
+  'Eat',
+  'Aarogyum',
+  'Sogeres Seniors',
+  'Joyous',
+  'Oxygen',
+  'Papilles',
+  'Think Green',
+  'Bright Bites Kitchen',
+  'Independents by Sodexo',
+  'One&All',
+  'Food You',
+  'Eveil et Gout',
+];
+
+const BRANDS_INSIGHTS_ORDER = [
+  'Eating at Work Made Easy',
+  'Why healthy food means healthy business',
+  '6 delicious foods that naturally boost your energy',
+  'How social connection boosts the power of the lunch hour',
+];
+
+const BRANDS_CTA_ORDER = ['Get started with Sodexo', 'Contact our team', 'Explore where we operate'];
+
+const sortCardsByTitle = (cards: FeatureCardItemFields[], order: string[]): FeatureCardItemFields[] =>
+  [...cards].sort((a, b) => {
+    const aTitle = a.cardTitle?.jsonValue?.value || '';
+    const bTitle = b.cardTitle?.jsonValue?.value || '';
+    const aIndex = order.findIndex((title) => aTitle === title);
+    const bIndex = order.findIndex((title) => bTitle === title);
+    return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+  });
+
+export const SodexoBrandsGrid = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+  const tabs = BRANDS_TAB_ORDER.filter((tab) =>
+    cards.some((card) => stripCardHtml(card.cardDescription?.jsonValue?.value) === tab)
+  );
+  const [activeTab, setActiveTab] = useState(tabs[0] || BRANDS_TAB_ORDER[0]);
+  const visibleCards = sortCardsByTitle(
+    isEditing
+      ? cards
+      : cards.filter((card) => stripCardHtml(card.cardDescription?.jsonValue?.value) === activeTab),
+    BRANDS_CARD_ORDER
+  );
+
+  return (
+    <div className={cn('component feature-cards-grid [&_a]:cursor-pointer [&_button]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="text-center text-[28px] font-normal sm:text-[36px]"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+          {(datasource.description?.jsonValue?.value || isEditing) && (
+            <ContentSdkRichText
+              field={datasource.description?.jsonValue}
+              className="mx-auto mt-4 max-w-3xl text-center text-sm leading-6"
+              style={{ color: brandFg, fontFamily: bodyFont }}
+            />
+          )}
+          {tabs.length > 0 && (
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6 border-b" style={{ borderColor: 'var(--brand-border, #e0dff0)' }}>
+              {tabs.map((tab) => {
+                const isActive = tab === activeTab;
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => setActiveTab(tab)}
+                    className={cn('relative cursor-pointer pb-3 text-sm', isActive ? 'font-semibold' : 'hover:opacity-70')}
+                    style={{ color: brandFg, fontFamily: bodyFont }}
+                  >
+                    {tab}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: brandAccent }} />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+          <h3 className="mt-10 text-center text-2xl font-normal" style={{ color: brandFg, fontFamily: headingFont }}>
+            {activeTab}
+          </h3>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleCards.map((card) => {
+              const title = card.cardTitle?.jsonValue?.value;
+              const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
+              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc);
+              return (
+                <article key={card.id} className="relative overflow-hidden" style={{ minHeight: '260px' }}>
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    {isEditing || isUsableBrandsImageSrc(sitecoreSrc) ? (
+                      <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={imageSrc} alt={title || ''} className="h-full w-full object-cover" />
+                    )}
+                    <div className="absolute inset-0 bg-black/25" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 text-center">
+                      {(title || isEditing) && (
+                        <Text
+                          field={card.cardTitle?.jsonValue}
+                          tag="p"
+                          className="text-2xl font-normal text-white"
+                          style={{ fontFamily: headingFont }}
+                        />
+                      )}
+                      {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                        <ContentSdkLink
+                          field={card.cardLink?.jsonValue}
+                          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold"
+                          style={{ color: brandFg, fontFamily: bodyFont }}
+                        >
+                          {card.cardLink?.jsonValue?.value?.text || 'Discover more'}
+                          <span aria-hidden>→</span>
+                        </ContentSdkLink>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const SodexoBrandsInsights = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = sortCardsByTitle(datasource.children?.results || [], BRANDS_INSIGHTS_ORDER);
+
+  return (
+    <div className={cn('component feature-cards-grid [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-10 text-center text-[28px] font-normal sm:text-[36px]"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {cards.map((card) => {
+              const title = card.cardTitle?.jsonValue?.value;
+              const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
+              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc);
+              return (
+                <article
+                  key={card.id}
+                  className="flex flex-col overflow-hidden border bg-white"
+                  style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+                >
+                  <div className="flex flex-1 flex-col px-5 pt-5">
+                    {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                      <ContentSdkRichText
+                        field={card.cardDescription?.jsonValue}
+                        className="text-xs font-semibold [&>*]:m-0"
+                        style={{ color: brandFg, fontFamily: bodyFont }}
+                      />
+                    )}
+                    {(title || isEditing) && (
+                      <Text
+                        field={card.cardTitle?.jsonValue}
+                        tag="h3"
+                        className="mt-2 text-sm font-normal leading-snug"
+                        style={{ color: brandFg, fontFamily: headingFont }}
+                      />
+                    )}
+                  </div>
+                  <div className="relative mt-4 aspect-[16/10] w-full">
+                    {isEditing || isUsableBrandsImageSrc(sitecoreSrc) ? (
+                      <ContentSdkImage field={card.cardImage?.jsonValue} className="h-full w-full object-cover" />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={imageSrc} alt={title || ''} className="h-full w-full object-cover" />
+                    )}
+                  </div>
+                  <div className="px-5 py-4">
+                    {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                      <ContentSdkLink
+                        field={card.cardLink?.jsonValue}
+                        className="inline-flex cursor-pointer items-center gap-1 text-sm font-semibold"
+                        style={{ color: brandFg, fontFamily: bodyFont }}
+                      >
+                        {card.cardLink?.jsonValue?.value?.text || 'Read more'}
+                        <span aria-hidden>→</span>
+                      </ContentSdkLink>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const SodexoBrandsCtas = ({ fields, params, page }: FeatureCardsGridProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = sortCardsByTitle(datasource.children?.results || [], BRANDS_CTA_ORDER);
+
+  return (
+    <div className={cn('component feature-cards-grid [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)' }}>
+        <div className="mx-auto grid max-w-[1224px] gap-10 md:grid-cols-3 lg:px-12">
+          {cards.map((card) => (
+            <div key={card.id}>
+              {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                <Text
+                  field={card.cardTitle?.jsonValue}
+                  tag="h2"
+                  className="text-[28px] font-normal leading-tight"
+                  style={{ color: brandFg, fontFamily: headingFont }}
+                />
+              )}
+              {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                <ContentSdkRichText
+                  field={card.cardDescription?.jsonValue}
+                  className="mt-4 text-sm leading-7 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-2 [&_a]:font-normal"
+                  style={{ color: brandFg, fontFamily: bodyFont }}
+                />
+              )}
+              {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                <ContentSdkLink
+                  field={card.cardLink?.jsonValue}
+                  className="mt-3 inline-flex cursor-pointer items-center gap-2 text-sm"
+                  style={{ color: brandFg, fontFamily: bodyFont }}
+                >
+                  {card.cardLink?.jsonValue?.value?.text || 'Contact us'}
+                  <span aria-hidden>→</span>
+                </ContentSdkLink>
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </div>

@@ -10,6 +10,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoBrandsPage } from '@/lib/sodexo-page';
 
 interface TabItemFields {
   id: string;
@@ -45,12 +46,14 @@ const TabNavigationSectionDefaultComponent = (): JSX.Element => (
 /* ────────────────────────────────────────────
    Default — pill-shaped tabs
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {  
+export const Default = (props: TabNavigationSectionProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs(props);
 
   const tabs = datasource.children?.results || [];
 
@@ -252,7 +255,8 @@ const SODEXO_TAB_CONTENT: Record<string, { description: string; image: string }>
   },
 };
 
-export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+export const Sodexo = (props: TabNavigationSectionProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
@@ -260,6 +264,7 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
   const tabs = datasource?.children?.results || [];
   const [activeId, setActiveId] = useState<string | undefined>(tabs[0]?.id);
 
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs(props);
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
 
   const activeTab = tabs.find((tab) => tab.id === activeId) || tabs[0];
@@ -362,6 +367,57 @@ export const Sodexo = ({ fields, params, page }: TabNavigationSectionProps): JSX
               </div>
             </div>
           )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const SodexoBrandsTabs = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <TabNavigationSectionDefaultComponent />;
+  const tabs = datasource.children?.results || [];
+  const [activeId, setActiveId] = useState<string | undefined>(tabs[0]?.id);
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component tab-navigation-section [&_button]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 pt-12 md:pt-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-8 text-center text-[28px] font-normal sm:text-[36px]"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+          <div
+            className="flex flex-wrap items-center justify-center gap-6 border-b"
+            style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+          >
+            {tabs.map((tab) => {
+              const isActive = tab.id === activeId;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveId(tab.id)}
+                  className={cn('relative cursor-pointer pb-3 text-sm', isActive ? 'font-semibold' : 'hover:opacity-70')}
+                  style={{ color: brandFg, fontFamily: bodyFont }}
+                >
+                  <Text field={tab.tabLabel?.jsonValue} />
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: 'var(--brand-accent, #da2020)' }} />
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

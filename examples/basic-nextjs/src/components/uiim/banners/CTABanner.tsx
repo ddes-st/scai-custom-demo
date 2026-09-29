@@ -10,6 +10,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
+import { isSodexoBrandsPage } from '@/lib/sodexo-page';
 
 interface CTABannerFields {
   Title: Field<string>;
@@ -57,7 +58,9 @@ const SecondaryButton = ({ field, isEditing }: { field: LinkField; isEditing?: b
 /* ────────────────────────────────────────────
    Default — centered, --brand-primary background
    ──────────────────────────────────────────── */
-export const Default = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+export const Default = (props: CTABannerProps): JSX.Element => {
+  if (isSodexoBrandsPage(props.page)) return SodexoBrandsMarket(props);
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   if (!fields) return <CTABannerDefaultComponent />;
@@ -102,9 +105,11 @@ export const Default = ({ fields, params, page }: CTABannerProps): JSX.Element =
 /* ────────────────────────────────────────────
    WithImage — full-bleed background with overlay
    ──────────────────────────────────────────── */
-export const WithImage = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+export const WithImage = (props: CTABannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsMarket(props);
   if (!fields) return <CTABannerDefaultComponent />;
 
   return (
@@ -154,9 +159,11 @@ export const WithImage = ({ fields, params, page }: CTABannerProps): JSX.Element
 /* ────────────────────────────────────────────
    Split — text left, buttons right
    ──────────────────────────────────────────── */
-export const Split = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+export const Split = (props: CTABannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsMarket(props);
   if (!fields) return <CTABannerDefaultComponent />;
 
   return (
@@ -200,9 +207,11 @@ export const Split = ({ fields, params, page }: CTABannerProps): JSX.Element => 
 /* ────────────────────────────────────────────
    Minimal — subtle background, inline text + link
    ──────────────────────────────────────────── */
-export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+export const Minimal = (props: CTABannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsMarket(props);
   if (!fields) return <CTABannerDefaultComponent />;
 
   return (
@@ -252,9 +261,11 @@ export const Minimal = ({ fields, params, page }: CTABannerProps): JSX.Element =
 /* ────────────────────────────────────────────
    Sodexo — full-bleed image, readable navy gradient, left-aligned, solid navy CTA with arrow
    ──────────────────────────────────────────── */
-export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+export const Sodexo = (props: CTABannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsMarket(props);
   if (!fields) return <CTABannerDefaultComponent />;
 
   return (
@@ -325,6 +336,56 @@ export const Sodexo = ({ fields, params, page }: CTABannerProps): JSX.Element =>
                 </ContentSdkLink>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const SodexoBrandsMarket = ({ fields, params, page }: CTABannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <CTABannerDefaultComponent />;
+
+  return (
+    <div className={cn('component cta-banner [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-16 md:py-20" style={{ backgroundColor: 'var(--brand-primary, #283897)' }}>
+        <div className="mx-auto max-w-4xl text-center">
+          {(fields.Title?.value || isEditing) && (
+            <Text
+              field={fields.Title}
+              tag="h2"
+              className="text-[28px] font-normal leading-tight text-white sm:text-[36px] font-[family-name:var(--brand-heading-font)]"
+            />
+          )}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            {(fields.SecondaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.SecondaryLink}
+                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              >
+                {fields.SecondaryLink?.value?.text || 'Select your market'}
+                <span aria-hidden>▾</span>
+              </ContentSdkLink>
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold"
+                style={{
+                  color: 'var(--brand-fg, #2a295c)',
+                  fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
+                }}
+              >
+                {fields.PrimaryLink?.value?.text || 'Reach out to our local teams'}
+                <span aria-hidden>→</span>
+              </ContentSdkLink>
+            )}
           </div>
         </div>
       </section>

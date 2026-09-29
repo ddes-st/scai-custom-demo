@@ -14,8 +14,10 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
-import { isSodexoAboutPage } from '@/lib/sodexo-page';
+import { Search, Eye, Sparkles, Heart } from 'lucide-react';
+import { isSodexoAboutPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_TECH_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableBrandsImageSrc, SODEXO_BRANDS_EXPERTISE_IMAGE, SODEXO_BRANDS_FORMAT_IMAGE } from '@/lib/sodexo-brands-media';
 
 interface FeatureHighlightFields {
   EyebrowText: Field<string>;
@@ -71,6 +73,11 @@ export const Default = (props: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) {
+    return /restaurant/i.test(fields?.Title?.value || '')
+      ? SodexoBrandsFormat(props)
+      : SodexoBrandsExpertise(props);
+  }
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -123,6 +130,11 @@ export const Centered = (props: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) {
+    return /restaurant/i.test(fields?.Title?.value || '')
+      ? SodexoBrandsFormat(props)
+      : SodexoBrandsExpertise(props);
+  }
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -170,9 +182,15 @@ export const Centered = (props: FeatureHighlightProps): JSX.Element => {
 /* ────────────────────────────────────────────
    WithVideo — same as Default but with play button overlay
    ──────────────────────────────────────────── */
-export const WithVideo = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+export const WithVideo = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) {
+    return /restaurant/i.test(fields?.Title?.value || '')
+      ? SodexoBrandsFormat(props)
+      : SodexoBrandsExpertise(props);
+  }
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -235,9 +253,15 @@ export const WithVideo = ({ fields, params, page }: FeatureHighlightProps): JSX.
 /* ────────────────────────────────────────────
    IconLeft — small image left, text right
    ──────────────────────────────────────────── */
-export const IconLeft = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+export const IconLeft = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isSodexoBrandsPage(page)) {
+    return /restaurant/i.test(fields?.Title?.value || '')
+      ? SodexoBrandsFormat(props)
+      : SodexoBrandsExpertise(props);
+  }
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   return (
@@ -518,6 +542,11 @@ export const Sodexo = (props: FeatureHighlightProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) {
+    return /restaurant/i.test(fields?.Title?.value || '')
+      ? SodexoBrandsFormat(props)
+      : SodexoBrandsExpertise(props);
+  }
   if (!fields) return <FeatureHighlightDefaultComponent />;
 
   if (fields.Title?.value === SODEXO_NEWS_TITLE) {
@@ -650,6 +679,152 @@ export const SodexoAbout = ({ fields, params, page }: FeatureHighlightProps): JS
                 field={fields.PrimaryLink}
                 className="mt-6 inline-flex items-center rounded-md border px-4 py-2 text-sm font-semibold"
                 style={{ color: aboutFg, borderColor: aboutFg, fontFamily: aboutBodyFont }}
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const BRANDS_EXPERTISE = [
+  {
+    icon: Search,
+    title: 'Driven by consumer insights.',
+    body: 'Built on a deep understanding of evolving consumer expectations, behaviors, and workplace needs.',
+  },
+  {
+    icon: Eye,
+    title: 'Shaped by food trends.',
+    body: 'Designed to reflect emerging food trends and changing tastes, keeping experiences always fresh and relevant.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Powered by our culinary expertise.',
+    body: 'Bringing together chef-driven creativity, operational know-how, and a passion for great food.',
+  },
+  {
+    icon: Heart,
+    title: 'Designed for every environment.',
+    body: 'Flexible concepts that can be adapted to different sectors, cultures, and workplace settings around the world.',
+  },
+];
+
+export const SodexoBrandsExpertise = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component feature-highlight', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto max-w-[1224px] lg:px-12">
+          {(fields.Title?.value || isEditing) && (
+            <Text
+              field={fields.Title}
+              tag="h2"
+              className="mb-10 max-w-3xl text-[28px] font-normal leading-tight sm:text-[36px]"
+              style={{ color: brandFg, fontFamily: headingFont }}
+            />
+          )}
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              {(fields.Description?.value || isEditing) && (
+                <ContentSdkRichText
+                  field={fields.Description}
+                  className="sr-only"
+                />
+              )}
+              <div className="grid gap-8 sm:grid-cols-2">
+                {BRANDS_EXPERTISE.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title}>
+                      <Icon className="mb-3 h-6 w-6" style={{ color: brandFg }} />
+                      <p className="text-sm font-semibold" style={{ color: brandFg, fontFamily: headingFont }}>
+                        {item.title}
+                      </p>
+                      <p className="mt-2 text-sm leading-6" style={{ color: brandFg, fontFamily: bodyFont }}>
+                        {item.body}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
+              {isEditing || isUsableBrandsImageSrc(fields.FeatureImage?.value?.src) ? (
+                <SmartMedia
+                  field={fields.FeatureImage}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={SODEXO_BRANDS_EXPERTISE_IMAGE}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const SodexoBrandsFormat = ({ fields, params, page }: FeatureHighlightProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component feature-highlight [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full px-4 pb-12 md:pb-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1224px] items-center gap-10 lg:grid-cols-2 lg:gap-16 lg:px-12">
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
+            {isEditing || isUsableBrandsImageSrc(fields.FeatureImage?.value?.src) ? (
+              <SmartMedia
+                field={fields.FeatureImage}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={SODEXO_BRANDS_FORMAT_IMAGE}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+          </div>
+          <div>
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h3"
+                className="text-[28px] font-normal leading-tight sm:text-[32px]"
+                style={{ color: brandFg, fontFamily: headingFont }}
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base leading-7 [&_a]:font-semibold [&_a]:underline"
+                style={{ color: brandFg, fontFamily: bodyFont }}
               />
             )}
           </div>

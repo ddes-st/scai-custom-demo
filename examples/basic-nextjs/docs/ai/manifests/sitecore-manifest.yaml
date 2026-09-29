@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-29T00:00:00Z"
+lastUpdatedAt: "2026-09-29T12:40:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
@@ -3545,6 +3545,63 @@ lookups:
       - { name: "FeatureHighlight", instanceId: "262dbd05-3cf7-4e39-84db-197f91743c94", datasource: "local FeatureHighlight-Tech 2bdfe0eb" }
       - { name: "FeatureCardsGrid Leadership", instanceId: "98020093-e705-49c4-9836-d148746abf48", datasource: "local 57c81e93" }
       - { name: "RelatedContent", instanceId: "be335d6b-19e5-4814-a9e4-8f62d2d467a8", datasource: "a3422c34" }
+
+# ──────────────────────────────────────────────
+# Sodexo Brands page (2026-09-29)
+# ──────────────────────────────────────────────
+  - name: SodexoBrandsPage
+    status: complete
+    updatedAt: "2026-09-29"
+    notes: >
+      Custom Brands page for group/sodexo based on
+      https://www.sodexo.com/what-we-do/food-brands/brands. Reuses catalog
+      HeroBanner, FeatureHighlight, FeatureCardsGrid, TabNavigationSection,
+      and CTABanner with page-gated SodexoBrands* named exports. Default
+      routes via isSodexoBrandsPage() because MCP cannot set FieldNames.
+      Homepage, About, Articles, Search, and landing customizations were
+      not modified. Home children sit About → Articles → Brands → Landing
+      Pages. Shared list-datasource binds often revert; brand cards and
+      market CTA live on local page Data items. Headless Variant Definition
+      items were not created — auto-route covers Default. Images reuse
+      existing Content Hub public URLs via sodexo-brands-media.ts.
+      2026-09-29: Wired What we do > Food brands in NavigationHeader
+      SODEXO_INTERNAL_LINKS to /Brands.
+    page:
+      name: Brands
+      itemId: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
+      path: "/sitecore/content/group/sodexo/Home/Brands"
+      route: "/Brands"
+      templateId: "cebd0936-6b37-42b5-b169-369bb1c3c06a"
+    variants:
+      - { component: "HeroBanner", name: "SodexoBrands", itemId: "" }
+      - { component: "FeatureHighlight", name: "SodexoBrandsExpertise", itemId: "" }
+      - { component: "FeatureHighlight", name: "SodexoBrandsFormat", itemId: "" }
+      - { component: "FeatureCardsGrid", name: "SodexoBrandsGrid", itemId: "" }
+      - { component: "FeatureCardsGrid", name: "SodexoBrandsInsights", itemId: "" }
+      - { component: "FeatureCardsGrid", name: "SodexoBrandsCtas", itemId: "" }
+      - { component: "TabNavigationSection", name: "SodexoBrandsTabs", itemId: "" }
+      - { component: "CTABanner", name: "SodexoBrandsMarket", itemId: "" }
+    datasources:
+      - { name: "Hero", itemId: "ff09b439-4441-49a1-afc3-003623b5a174", path: "/sitecore/content/group/sodexo/Data/HeroBanners/HeroBanner_a8e63b0ad2fc4766918033e0a836678c" }
+      - { name: "Expertise FeatureHighlight", itemId: "44df055b-f35c-441b-9a1c-aee5fc4039d8", path: "/sitecore/content/group/sodexo/Data/FeatureHighlights/FeatureHighlight_78bf538a36904e809a6d8bd37f364564" }
+      - { name: "Brands grid (local)", itemId: "8e814be5-c9b3-4090-aada-983401a42889", path: "/sitecore/content/group/sodexo/Home/Brands/Data/FeatureCardsGrid-Brands" }
+      - { name: "Formats tabs", itemId: "3ccdd9a5-f9ba-4844-baea-5588e28350d9", path: "/sitecore/content/group/sodexo/Data/TabNavigationSections/TabNavigationSection_1c2eb2ec5987468e9271696611e0ac1b" }
+      - { name: "Restaurants FeatureHighlight (local)", itemId: "7ea9fd3d-1761-4852-a2ca-69261a64968d", path: "/sitecore/content/group/sodexo/Home/Brands/Data/FeatureHighlight-Restaurants-3" }
+      - { name: "Market CTA (local)", itemId: "a3718371-b5d3-4d71-a380-a17bd2652bcf", path: "/sitecore/content/group/sodexo/Home/Brands/Data/CTABanner-Market" }
+      - { name: "Related insights", itemId: "dfe2aa02-708a-4009-9abb-e29346054212", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/FeatureCardsGrid_ea67c95dc83d4a4d90c136a66514bf27" }
+      - { name: "Get started", itemId: "dcc6381f-50be-4433-8126-bfd3e5aa4f31", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/FeatureCardsGrid_df88ca997c9649ed955ccaf7d0a92ea3" }
+      - { name: "Shared brands grid unused bind", itemId: "6911193a-5dbb-45fe-a452-e2516b8317f7", note: "Created; page uses local 8e814be5 because set_component_datasource did not stick" }
+      - { name: "Shared restaurants unused bind", itemId: "37988b88-edc5-4315-993a-ca8e51173b7d", note: "Created; page uses local 7ea9fd3d" }
+      - { name: "Shared market CTA unused bind", itemId: "faf90ca8-723e-4d98-8aed-75e9eba6668d", note: "Created; page uses local a3718371" }
+    pageComponents:
+      - { name: "HeroBanner", instanceId: "dc89ce5b-2717-4c4d-b896-e1beadf30847", datasource: "ff09b439" }
+      - { name: "FeatureHighlight Expertise", instanceId: "2f5cc8b2-c18a-4452-84e9-75e972ab19e4", datasource: "44df055b" }
+      - { name: "FeatureCardsGrid Brands", instanceId: "540a4032-382f-4e45-bab6-a32f2ead9bb4", datasource: "local 8e814be5" }
+      - { name: "TabNavigationSection Formats", instanceId: "bd0b9a44-2f43-4d82-9c3b-1efdd553f86b", datasource: "3ccdd9a5" }
+      - { name: "FeatureHighlight Restaurants", instanceId: "e86925f5-ee66-4390-bc88-7a3d608b26d6", datasource: "local 7ea9fd3d" }
+      - { name: "CTABanner Market", instanceId: "38334b00-e508-45ea-8cd6-ce194973ce6e", datasource: "local a3718371" }
+      - { name: "FeatureCardsGrid Insights", instanceId: "ec7704ec-2083-4ce5-8747-d5d176cfb304", datasource: "dfe2aa02" }
+      - { name: "FeatureCardsGrid Get started", instanceId: "2b3cfaa8-9e63-4cd9-88d9-f803821051b9", datasource: "dcc6381f" }
 
 components-searchv3:
   # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.

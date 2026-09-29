@@ -12,8 +12,9 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
-import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoHelpPage } from '@/lib/sodexo-page';
+import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoBrandsPage, isSodexoHelpPage } from '@/lib/sodexo-page';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableBrandsImageSrc, SODEXO_BRANDS_HERO_IMAGE } from '@/lib/sodexo-brands-media';
 
 interface HeroBannerFields {
   Title: Field<string>;
@@ -82,6 +83,7 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
   if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -120,10 +122,12 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
 /* ────────────────────────────────────────────
    SplitImageText — 50/50 grid
    ──────────────────────────────────────────── */
-export const SplitImageText = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const SplitImageText = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -182,6 +186,7 @@ export const BackgroundImage = (props: HeroBannerProps): JSX.Element => {
   if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -230,10 +235,12 @@ export const BackgroundImage = (props: HeroBannerProps): JSX.Element => {
 /* ────────────────────────────────────────────
    VideoBackground — poster image with video overlay indicator
    ──────────────────────────────────────────── */
-export const VideoBackground = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const VideoBackground = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -298,10 +305,12 @@ export const VideoBackground = ({ fields, params, page }: HeroBannerProps): JSX.
 /* ────────────────────────────────────────────
    Minimal — text-only, generous padding
    ──────────────────────────────────────────── */
-export const Minimal = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+export const Minimal = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   return (
@@ -353,6 +362,7 @@ export const Sodexo = (props: HeroBannerProps): JSX.Element => {
   if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
+  if (isSodexoBrandsPage(page)) return SodexoBrands(props);
   if (!fields) return <HeroBannerDefaultComponent />;
 
   const togglePlayback = () => {
@@ -558,6 +568,87 @@ export const SodexoSearch = ({ fields, params, page }: HeroBannerProps): JSX.Ele
               }}
             />
           )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ────────────────────────────────────────────
+   SodexoBrands — split hero with breadcrumb + outlined CTA
+   Used only on the Brands page.
+   ──────────────────────────────────────────── */
+export const SodexoBrands = ({ fields, params, page }: HeroBannerProps): JSX.Element => {
+  const { styles, RenderingIdentifier } = params;
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  const brandFg = 'var(--brand-fg, #2a295c)';
+  const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
+  const bodyFont = 'var(--brand-body-font, "Open Sans", sans-serif)';
+
+  return (
+    <div className={cn('component hero-banner [&_a]:cursor-pointer [&_button]:cursor-pointer', styles)} id={RenderingIdentifier}>
+      <section className="w-full" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+        <div className="mx-auto grid max-w-[1224px] items-center gap-10 px-4 py-10 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-16 lg:py-16">
+          <div>
+            <nav className="mb-4 text-sm" aria-label="Breadcrumb" style={{ color: brandFg, fontFamily: bodyFont }}>
+              <ol className="flex flex-wrap items-center gap-2 opacity-70">
+                <li>
+                  <a href="/" className="hover:opacity-70">Home</a>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>What we do</li>
+                <li aria-hidden="true">›</li>
+                <li>Food brands</li>
+              </ol>
+            </nav>
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h1"
+                className="text-[32px] font-normal leading-tight tracking-tight sm:text-[42px] sm:leading-[1.15]"
+                style={{ color: brandFg, fontFamily: headingFont }}
+              />
+            )}
+            {(fields.Subtitle?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Subtitle}
+                className="mt-4 max-w-xl text-base leading-7"
+                style={{ color: brandFg, fontFamily: bodyFont }}
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
+                style={{ color: brandFg, borderColor: brandFg, fontFamily: bodyFont }}
+              >
+                {fields.PrimaryLink?.value?.text || 'Contact us'}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </ContentSdkLink>
+            )}
+          </div>
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px] lg:min-h-[480px]">
+            {isEditing || isUsableBrandsImageSrc(fields.HeroImage?.value?.src) ? (
+              <SmartMedia
+                field={fields.HeroImage}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={SODEXO_BRANDS_HERO_IMAGE}
+                alt="Food brands"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+          </div>
         </div>
       </section>
     </div>

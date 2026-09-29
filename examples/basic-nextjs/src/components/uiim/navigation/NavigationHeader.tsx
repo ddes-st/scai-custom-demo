@@ -370,6 +370,7 @@ const SODEXO_UTILITY_ORDER = ['Investors', 'Newsroom'];
 const SODEXO_INTERNAL_LINKS: Record<string, string> = {
   'Sodexo in Brief': '/About',
   'View all latest insights': '/Articles',
+  'Food brands': '/Brands',
 };
 
 interface SodexoMegaMenuContent {
