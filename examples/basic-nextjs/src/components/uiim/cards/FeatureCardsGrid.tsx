@@ -779,6 +779,24 @@ const BRANDS_INSIGHTS_ORDER = [
 
 const BRANDS_CTA_ORDER = ['Get started with Sodexo', 'Contact our team', 'Explore where we operate'];
 
+const FEATURED_BI_BRANDS = [
+  { title: 'Modern Recipe', href: '/Brands/modern-recipe' },
+  { title: 'The Good Eating Company', href: '/Brands/the-good-eating-company' },
+  { title: 'Kitchen Works', href: '/Brands/kitchen-works' },
+];
+
+const ensureFeaturedBiCards = (cards: FeatureCardItemFields[]): FeatureCardItemFields[] => {
+  const titles = new Set(cards.map((card) => card.cardTitle?.jsonValue?.value || ''));
+  const extras = FEATURED_BI_BRANDS.filter((brand) => !titles.has(brand.title)).map((brand) => ({
+    id: `fallback-${brand.title}`,
+    cardTitle: { jsonValue: { value: brand.title } },
+    cardDescription: { jsonValue: { value: 'Business & Industries' } },
+    cardImage: { jsonValue: { value: { src: '' } } },
+    cardLink: { jsonValue: { value: { href: brand.href, text: 'Discover more' } } },
+  })) as FeatureCardItemFields[];
+  return extras.length ? [...extras, ...cards] : cards;
+};
+
 const sortCardsByTitle = (cards: FeatureCardItemFields[], order: string[]): FeatureCardItemFields[] =>
   [...cards].sort((a, b) => {
     const aTitle = a.cardTitle?.jsonValue?.value || '';
@@ -793,7 +811,7 @@ export const SodexoBrandsGrid = ({ fields, params, page }: FeatureCardsGridProps
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
-  const cards = datasource.children?.results || [];
+  const cards = ensureFeaturedBiCards(datasource.children?.results || []);
   const tabs = BRANDS_TAB_ORDER.filter((tab) =>
     cards.some((card) => stripCardHtml(card.cardDescription?.jsonValue?.value) === tab)
   );
@@ -873,16 +891,26 @@ export const SodexoBrandsGrid = ({ fields, params, page }: FeatureCardsGridProps
                           style={{ fontFamily: headingFont }}
                         />
                       )}
-                      {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
-                        <ContentSdkLink
-                          field={card.cardLink?.jsonValue}
-                          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold"
-                          style={{ color: brandFg, fontFamily: bodyFont }}
-                        >
-                          {card.cardLink?.jsonValue?.value?.text || 'Discover more'}
-                          <span aria-hidden>→</span>
-                        </ContentSdkLink>
-                      )}
+                      {(card.cardLink?.jsonValue?.value?.href || isEditing) &&
+                        (card.cardLink?.jsonValue && !String(card.id).startsWith('fallback-') ? (
+                          <ContentSdkLink
+                            field={card.cardLink.jsonValue}
+                            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold"
+                            style={{ color: brandFg, fontFamily: bodyFont }}
+                          >
+                            {card.cardLink.jsonValue.value?.text || 'Discover more'}
+                            <span aria-hidden>→</span>
+                          </ContentSdkLink>
+                        ) : (
+                          <a
+                            href={card.cardLink?.jsonValue?.value?.href || '/Brands'}
+                            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold"
+                            style={{ color: brandFg, fontFamily: bodyFont }}
+                          >
+                            {card.cardLink?.jsonValue?.value?.text || 'Discover more'}
+                            <span aria-hidden>→</span>
+                          </a>
+                        ))}
                     </div>
                   </div>
                 </article>
@@ -1007,15 +1035,12 @@ export const SodexoBrandsCtas = ({ fields, params, page }: FeatureCardsGridProps
                     style={{ color: brandFg, fontFamily: bodyFont }}
                   />
                 )}
-                {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                {(card.cardLink?.jsonValue?.value?.href || isEditing) && card.cardLink?.jsonValue && (
                   <ContentSdkLink
-                    field={card.cardLink?.jsonValue}
-                    className="mt-5 inline-flex cursor-pointer items-center gap-2 text-sm font-normal"
+                    field={card.cardLink.jsonValue}
+                    className="mt-5 flex cursor-pointer items-center justify-between py-2.5 text-sm font-normal no-underline transition-colors after:ml-6 after:text-lg after:font-normal after:text-[var(--brand-accent,#da2020)] after:content-['→'] hover:text-[var(--brand-accent,#da2020)]"
                     style={{ color: brandFg, fontFamily: bodyFont }}
-                  >
-                    {card.cardLink?.jsonValue?.value?.text || 'Contact us'}
-                    <span aria-hidden>→</span>
-                  </ContentSdkLink>
+                  />
                 )}
               </div>
             );

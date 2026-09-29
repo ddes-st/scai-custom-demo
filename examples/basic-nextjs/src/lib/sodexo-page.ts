@@ -51,11 +51,10 @@ export function isSodexoBrandsPage(page?: Page): boolean {
   const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
   if (siteName && siteName !== 'sodexo') return false;
 
-  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '').replace(/\/+$/, '');
   const routeName = String(sitecore?.route?.name || '');
-  const isListing =
-    /\/Home\/Brands$/i.test(itemPath) || /\/Brands$/i.test(itemPath) || /^Brands$/i.test(routeName);
-  return isListing && !/\/Home\/Brands\//i.test(itemPath) && !/\/Brands\/.+/i.test(itemPath);
+  if (/\/Home\/Brands\/.+/i.test(itemPath) || /\/Brands\/.+/i.test(itemPath)) return false;
+  return /\/Home\/Brands$/i.test(itemPath) || /\/Brands$/i.test(itemPath) || /^Brands$/i.test(routeName);
 }
 
 export function isSodexoBrandDetailPage(page?: Page): boolean {
@@ -63,7 +62,7 @@ export function isSodexoBrandDetailPage(page?: Page): boolean {
   const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
   if (siteName && siteName !== 'sodexo') return false;
 
-  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '').replace(/\/+$/, '');
   return /\/Home\/Brands\/.+/i.test(itemPath) || /\/Brands\/.+/i.test(itemPath);
 }
 

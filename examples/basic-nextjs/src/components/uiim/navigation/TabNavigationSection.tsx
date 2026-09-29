@@ -111,6 +111,7 @@ export const Underline = ({ fields, params, page }: TabNavigationSectionProps): 
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs({ fields, params, page });
 
   const tabs = datasource.children?.results || [];
 
@@ -168,6 +169,7 @@ export const Boxed = ({ fields, params, page }: TabNavigationSectionProps): JSX.
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs({ fields, params, page });
 
   const tabs = datasource.children?.results || [];
 
@@ -373,12 +375,26 @@ export const Sodexo = (props: TabNavigationSectionProps): JSX.Element => {
   );
 };
 
+const BRANDS_FORMAT_TAB_ORDER = [
+  'Restaurants',
+  'Coffee shops',
+  'Micro markets',
+  'Vending machines',
+  'Catering & events',
+];
+
 export const SodexoBrandsTabs = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
-  const tabs = datasource.children?.results || [];
+  const tabs = [...(datasource.children?.results || [])].sort((a, b) => {
+    const aLabel = a.tabLabel?.jsonValue?.value || '';
+    const bLabel = b.tabLabel?.jsonValue?.value || '';
+    const aIndex = BRANDS_FORMAT_TAB_ORDER.findIndex((label) => aLabel === label);
+    const bIndex = BRANDS_FORMAT_TAB_ORDER.findIndex((label) => bLabel === label);
+    return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+  });
   const [activeId, setActiveId] = useState<string | undefined>(tabs[0]?.id);
   const brandFg = 'var(--brand-fg, #2a295c)';
   const headingFont = 'var(--brand-heading-font, "DM Sans", sans-serif)';
@@ -392,13 +408,13 @@ export const SodexoBrandsTabs = ({ fields, params, page }: TabNavigationSectionP
             <Text
               field={datasource.title?.jsonValue}
               tag="h2"
-              className="mb-8 text-center text-[28px] font-normal sm:text-[36px]"
+              className="mb-8 text-left text-[28px] font-normal sm:text-[36px]"
               style={{ color: brandFg, fontFamily: headingFont }}
             />
           )}
           <div
-            className="flex flex-wrap items-center justify-center gap-6 border-b"
-            style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
+            className="flex flex-wrap items-center justify-start gap-x-8 gap-y-3 border-b"
+            style={{ borderColor: 'var(--brand-border, #e8e8ee)' }}
           >
             {tabs.map((tab) => {
               const isActive = tab.id === activeId;
@@ -407,7 +423,10 @@ export const SodexoBrandsTabs = ({ fields, params, page }: TabNavigationSectionP
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveId(tab.id)}
-                  className={cn('relative cursor-pointer pb-3 text-sm', isActive ? 'font-semibold' : 'hover:opacity-70')}
+                  className={cn(
+                    'relative cursor-pointer pb-3 text-sm font-normal',
+                    isActive ? '' : 'hover:opacity-70'
+                  )}
                   style={{ color: brandFg, fontFamily: bodyFont }}
                 >
                   <Text field={tab.tabLabel?.jsonValue} />

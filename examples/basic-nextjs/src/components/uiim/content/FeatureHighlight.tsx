@@ -792,9 +792,9 @@ export const SodexoBrandsFormat = ({ fields, params, page }: FeatureHighlightPro
 
   return (
     <div className={cn('component feature-highlight [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
-      <section className="w-full px-4 pb-12 md:pb-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
+      <section className="w-full px-4 pb-12 pt-8 md:pb-16" style={{ backgroundColor: 'var(--brand-bg, #ffffff)' }}>
         <div className="mx-auto grid max-w-[1224px] items-center gap-10 lg:grid-cols-2 lg:gap-16 lg:px-12">
-          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[380px]">
             {isEditing || isUsableBrandsImageSrc(fields.FeatureImage?.value?.src) ? (
               <SmartMedia
                 field={fields.FeatureImage}
@@ -823,7 +823,7 @@ export const SodexoBrandsFormat = ({ fields, params, page }: FeatureHighlightPro
             {(fields.Description?.value || isEditing) && (
               <ContentSdkRichText
                 field={fields.Description}
-                className="mt-4 text-base leading-7 [&_a]:font-semibold [&_a]:underline"
+                className="mt-4 max-w-xl text-base leading-7 [&_a]:font-normal [&_a]:underline [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-[var(--brand-accent,#da2020)]"
                 style={{ color: brandFg, fontFamily: bodyFont }}
               />
             )}
