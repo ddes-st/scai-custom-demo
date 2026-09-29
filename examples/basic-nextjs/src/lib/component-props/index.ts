@@ -19,6 +19,10 @@ export type ComponentProps = {
      * The enabled placeholders for the rendering
      */
     EnabledPlaceholders?: string;
+    /**
+     * Optional Brand Page style override from rendering parameters
+     */
+    BrandStyle?: string;
   };
   page: Page;
 };

@@ -288,3 +288,82 @@ pageTemplates:
       noControlBooleans: "Visibility derives from emptiness. No showSecondaryCta or hideTestimonial flags."
       variantSelection: "Layout choice is a Variant Definition picker, not a template field."
       personalizationReady: "Every field individually personalizable via Sitecore Personalize. ABM = same template, different field values per audience."
+
+  - id: brand
+    name: "Brand Page"
+    inheritsFrom: "base-page-template"
+    description: "Food brand detail page under Home > Brands. Same layout for every brand; page-level brandStyle plus optional per-component BrandStyle rendering param selects Modern Recipe, The Good Eating Company, or Kitchen Works tokens."
+    templateSection: "Brand Style / Hero / Pillars / CTA / FAQ Data"
+    fields:
+      - { name: "brandStyle", type: "Droplist", purpose: "page-level style token", source: "/sitecore/content/group/sodexo/Data/BrandStyles" }
+      - { name: "brandHeroEyebrow", type: "Single-Line Text", purpose: "hero eyebrow" }
+      - { name: "brandHeroTitle", type: "Single-Line Text", purpose: "hero title" }
+      - { name: "brandHeroSubtitle", type: "Rich Text", purpose: "hero supporting copy" }
+      - { name: "brandHeroImage", type: "Image", purpose: "hero image" }
+      - { name: "brandHeroCta", type: "General Link", purpose: "hero CTA" }
+      - { name: "brandPillarsTitle", type: "Single-Line Text", purpose: "pillars section title" }
+      - { name: "brandPillar1Title", type: "Single-Line Text", purpose: "pillar 1 title" }
+      - { name: "brandPillar1Description", type: "Rich Text", purpose: "pillar 1 copy" }
+      - { name: "brandPillar1Image", type: "Image", purpose: "pillar 1 image" }
+      - { name: "brandPillar2Title", type: "Single-Line Text", purpose: "pillar 2 title" }
+      - { name: "brandPillar2Description", type: "Rich Text", purpose: "pillar 2 copy" }
+      - { name: "brandPillar2Image", type: "Image", purpose: "pillar 2 image" }
+      - { name: "brandPillar3Title", type: "Single-Line Text", purpose: "pillar 3 title" }
+      - { name: "brandPillar3Description", type: "Rich Text", purpose: "pillar 3 copy" }
+      - { name: "brandPillar3Image", type: "Image", purpose: "pillar 3 image" }
+      - { name: "brandPillar4Title", type: "Single-Line Text", purpose: "pillar 4 title" }
+      - { name: "brandPillar4Description", type: "Rich Text", purpose: "pillar 4 copy" }
+      - { name: "brandPillar4Image", type: "Image", purpose: "pillar 4 image" }
+      - { name: "brandCtaHeadline", type: "Single-Line Text", purpose: "closing CTA headline" }
+      - { name: "brandCtaSubhead", type: "Rich Text", purpose: "closing CTA subhead" }
+      - { name: "brandCtaButton", type: "General Link", purpose: "closing CTA button" }
+      - { name: "brandFaqTitle", type: "Single-Line Text", purpose: "FAQ heading" }
+      - { name: "brandFaq1Question", type: "Single-Line Text", purpose: "FAQ 1 question" }
+      - { name: "brandFaq1Answer", type: "Rich Text", purpose: "FAQ 1 answer" }
+      - { name: "brandFaq2Question", type: "Single-Line Text", purpose: "FAQ 2 question" }
+      - { name: "brandFaq2Answer", type: "Rich Text", purpose: "FAQ 2 answer" }
+      - { name: "brandFaq3Question", type: "Single-Line Text", purpose: "FAQ 3 question" }
+      - { name: "brandFaq3Answer", type: "Rich Text", purpose: "FAQ 3 answer" }
+    contextComponents:
+      - id: brand-hero
+        name: "BrandHero"
+        category: "brand"
+        filePath: "src/components/uiim/brand/BrandHero.tsx"
+        routeFieldsUsed: ["brandHeroEyebrow", "brandHeroTitle", "brandHeroSubtitle", "brandHeroImage", "brandHeroCta"]
+        variants:
+          - { name: "Default", description: "auto-routes to SodexoBrand on brand detail pages" }
+          - { name: "SodexoBrand", description: "tokenized hero; style from page brandStyle or params BrandStyle" }
+      - id: brand-pillars
+        name: "BrandPillars"
+        category: "brand"
+        filePath: "src/components/uiim/brand/BrandPillars.tsx"
+        routeFieldsUsed: ["brandPillarsTitle", "brandPillar1Title", "brandPillar1Description", "brandPillar1Image", "brandPillar2Title", "brandPillar2Description", "brandPillar2Image", "brandPillar3Title", "brandPillar3Description", "brandPillar3Image", "brandPillar4Title", "brandPillar4Description", "brandPillar4Image"]
+        variants:
+          - { name: "Default", description: "auto-routes to SodexoBrand on brand detail pages" }
+          - { name: "SodexoBrand", description: "four-up pillar grid using brand tokens" }
+      - id: brand-final-cta
+        name: "BrandFinalCTA"
+        category: "brand"
+        filePath: "src/components/uiim/brand/BrandFinalCTA.tsx"
+        routeFieldsUsed: ["brandCtaHeadline", "brandCtaSubhead", "brandCtaButton"]
+        variants:
+          - { name: "Default", description: "auto-routes to SodexoBrand on brand detail pages" }
+          - { name: "SodexoBrand", description: "brand-colored closing band" }
+      - id: brand-faq
+        name: "BrandFAQ"
+        category: "brand"
+        filePath: "src/components/uiim/brand/BrandFAQ.tsx"
+        routeFieldsUsed: ["brandFaqTitle", "brandFaq1Question", "brandFaq1Answer", "brandFaq2Question", "brandFaq2Answer", "brandFaq3Question", "brandFaq3Answer"]
+        variants:
+          - { name: "Default", description: "auto-routes to SodexoBrand on brand detail pages" }
+          - { name: "SodexoBrand", description: "accordion FAQ using brand tokens" }
+    partialDesign:
+      name: "Brand Page Layout"
+      placeholder: "headless-main"
+      components: ["BrandHero", "BrandPillars", "BrandFinalCTA", "BrandFAQ"]
+    contentTree:
+      parentPage:
+        name: "Brands"
+        path: "/Home/Brands"
+        template: "base-page-template"
+        insertOptions: ["Brand Page"]

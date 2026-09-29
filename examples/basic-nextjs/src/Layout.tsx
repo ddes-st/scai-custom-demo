@@ -108,6 +108,36 @@ export interface RouteFields {
   finalCtaHeadline?: Field<string>;
   finalCtaSubhead?: RichTextField;
   finalCtaButton?: LinkField;
+  // Brand Page
+  brandStyle?: Field<string>;
+  brandHeroEyebrow?: Field<string>;
+  brandHeroTitle?: Field<string>;
+  brandHeroSubtitle?: RichTextField;
+  brandHeroImage?: ImageField;
+  brandHeroCta?: LinkField;
+  brandPillarsTitle?: Field<string>;
+  brandPillar1Title?: Field<string>;
+  brandPillar1Description?: RichTextField;
+  brandPillar1Image?: ImageField;
+  brandPillar2Title?: Field<string>;
+  brandPillar2Description?: RichTextField;
+  brandPillar2Image?: ImageField;
+  brandPillar3Title?: Field<string>;
+  brandPillar3Description?: RichTextField;
+  brandPillar3Image?: ImageField;
+  brandPillar4Title?: Field<string>;
+  brandPillar4Description?: RichTextField;
+  brandPillar4Image?: ImageField;
+  brandCtaHeadline?: Field<string>;
+  brandCtaSubhead?: RichTextField;
+  brandCtaButton?: LinkField;
+  brandFaqTitle?: Field<string>;
+  brandFaq1Question?: Field<string>;
+  brandFaq1Answer?: RichTextField;
+  brandFaq2Question?: Field<string>;
+  brandFaq2Answer?: RichTextField;
+  brandFaq3Question?: Field<string>;
+  brandFaq3Answer?: RichTextField;
 }
 
 const Layout = ({ page }: LayoutProps): JSX.Element => {

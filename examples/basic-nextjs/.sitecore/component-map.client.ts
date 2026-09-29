@@ -8,7 +8,9 @@ import * as SearchResults from 'src/components/uiim/search/SearchResults';
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
+import * as SodexoLocationOverlay from 'src/components/uiim/navigation/SodexoLocationOverlay';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
+import * as GroupSiteNavigatorBanner from 'src/components/uiim/navigation/GroupSiteNavigatorBanner';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as LandingFAQ from 'src/components/uiim/landing/LandingFAQ';
 import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
@@ -19,6 +21,7 @@ import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight'
 import * as BlogListing from 'src/components/uiim/content/BlogListing';
 import * as BenefitHighlight from 'src/components/uiim/content/BenefitHighlight';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
+import * as BrandFAQ from 'src/components/uiim/brand/BrandFAQ';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
@@ -57,7 +60,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchExperienceV2', { ...SearchExperienceV2 }],
   ['SearchCollection', { ...SearchCollection }],
   ['TabNavigationSection', { ...TabNavigationSection }],
+  ['SodexoLocationOverlay', { ...SodexoLocationOverlay }],
   ['NavigationHeader', { ...NavigationHeader }],
+  ['GroupSiteNavigatorBanner', { ...GroupSiteNavigatorBanner }],
   ['SmartMedia', { ...SmartMedia }],
   ['LandingFAQ', { ...LandingFAQ }],
   ['NewsletterSignup', { ...NewsletterSignup }],
@@ -68,6 +73,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BlogListing', { ...BlogListing }],
   ['BenefitHighlight', { ...BenefitHighlight }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid }],
+  ['BrandFAQ', { ...BrandFAQ }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel }],
   ['HeroBanner', { ...HeroBanner }],
   ['ArticleHero', { ...ArticleHero }],

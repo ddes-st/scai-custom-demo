@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-29T12:40:00Z"
+lastUpdatedAt: "2026-09-29T13:25:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{2BC18A32-4419-4213-8EF3-AC834E0C707A}"
-  lastUpdatedAt: "2026-09-29T08:00:00Z"
-  renderingCount: 36
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{2BC18A32-4419-4213-8EF3-AC834E0C707A}|{EC11AFFD-12FA-4414-99CC-79B269A0BAB0}|{DD5664C6-506E-4466-84CE-F843B32FBC7E}|{16C251E7-24B1-4495-8157-B7A51E12A2E9}|{1409F2DB-2589-4EEA-8F3B-E0FD065D8DDE}"
+  lastUpdatedAt: "2026-09-29T13:25:00Z"
+  renderingCount: 40
   note: "Merge of sodexo and main: kept Quote {F44F91B0-859A-4FC5-88D8-1920DEEBB5E5} plus search renderings SearchResults {D33F0079-E54F-48C3-A33A-6A3A83146DA8}, SearchCollection {158772E0-46FD-4626-9144-527C24854F97}, and SearchTypeahead {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
 
 components:
@@ -3605,6 +3605,50 @@ lookups:
       - { name: "CTABanner Market", instanceId: "38334b00-e508-45ea-8cd6-ce194973ce6e", datasource: "local a3718371" }
       - { name: "FeatureCardsGrid Insights", instanceId: "ec7704ec-2083-4ce5-8747-d5d176cfb304", datasource: "dfe2aa02" }
       - { name: "FeatureCardsGrid Get started", instanceId: "2b3cfaa8-9e63-4cd9-88d9-f803821051b9", datasource: "dcc6381f" }
+
+# ──────────────────────────────────────────────
+# Brand Page template + three brand pages (2026-09-29)
+# ──────────────────────────────────────────────
+  - name: BrandPageTemplate
+    kind: "page-template"
+    status: complete
+    createdAt: "2026-09-29T13:00:00Z"
+    updatedAt: "2026-09-29T13:25:00Z"
+    notes: >
+      New Brand Page route template on group/sodexo with context-only BrandHero,
+      BrandPillars, BrandFinalCTA, BrandFAQ. Each export Default + SodexoBrand.
+      Style is page brandStyle droplist plus optional rendering-param BrandStyle.
+      Listing isSodexoBrandsPage() no longer matches child brand pages.
+      Images reuse existing Content Hub brand photography pending unique hero uploads.
+    template:
+      name: "Brand Page"
+      itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
+      path: "/sitecore/templates/Project/fmc-custom-demo/Page Types/Brand Page"
+      standardValuesId: "d3ab9c3e-fe69-43f9-9170-c179eee4199d"
+    renderingParams:
+      name: "BrandPage"
+      itemId: "b9baf4ba-9190-492f-87f4-9ba912ba0e2b"
+      path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Brand/BrandPage"
+    brandStyles:
+      folderId: "16772a50-30a0-47f6-b51e-775d3549326e"
+      options:
+        - { name: "Modern Recipe", itemId: "39c02373-3821-40e5-b8bc-0432b983d0c9" }
+        - { name: "The Good Eating Company", itemId: "303771f5-dc1f-46dc-89d7-77befc9e4a90" }
+        - { name: "Kitchen Works", itemId: "e28b6f64-497b-495f-8e48-5f377b34884c" }
+    renderings:
+      - { name: "BrandHero", itemId: "ec11affd-12fa-4414-99cc-79b269a0bab0", variants: { Default: "3a2a2003-0017-4d29-9152-d84136f8f445", SodexoBrand: "52c9b63c-ff38-4f67-8ec9-3b5314354c92" } }
+      - { name: "BrandPillars", itemId: "dd5664c6-506e-4466-84ce-f843b32fbc7e", variants: { Default: "3701b502-f19b-43ff-b3f9-84a6777ad216", SodexoBrand: "2ab6dcd5-1534-44ff-9406-98e5d400c9d2" } }
+      - { name: "BrandFinalCTA", itemId: "16c251e7-24b1-4495-8157-b7a51e12a2e9", variants: { Default: "963de255-1ea2-47ac-b749-03c47b1dde1b", SodexoBrand: "52e74831-8fda-4efb-a8cc-030f49fe2114" } }
+      - { name: "BrandFAQ", itemId: "1409f2db-2589-4eea-8f3b-e0fd065d8dde", variants: { Default: "e63fb709-0b0f-4ec9-b1b1-bd56c1c94e69", SodexoBrand: "09310b3f-0aec-4154-9b80-8b80cfb8a801" } }
+    pageDesign:
+      name: "Brand Page"
+      itemId: "864858ae-1dd7-4d7d-a9fa-31a763abbfd1"
+      partialDesignId: "b50b4eb5-bac5-4943-b1f0-2ac05a04bdd1"
+      mapping: "{58BEAC02-7773-41A7-B06B-FE49B1A3F72B}={864858AE-1DD7-4D7D-A9FA-31A763ABBFD1}"
+    pages:
+      - { name: "modern-recipe", itemId: "d8035fa1-9128-44bf-baaa-2f073d1bcca6", route: "/Brands/modern-recipe", style: "Modern Recipe" }
+      - { name: "the-good-eating-company", itemId: "89ada932-cd0e-45b6-92cd-f75aed43320d", route: "/Brands/the-good-eating-company", style: "The Good Eating Company" }
+      - { name: "kitchen-works", itemId: "23d2f71f-6300-4203-bca0-7216404482d0", route: "/Brands/kitchen-works", style: "Kitchen Works" }
 
 components-searchv3:
   # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.

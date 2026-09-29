@@ -53,7 +53,18 @@ export function isSodexoBrandsPage(page?: Page): boolean {
 
   const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
   const routeName = String(sitecore?.route?.name || '');
-  return /\/Home\/Brands(\/|$)/i.test(itemPath) || /\/Brands(\/|$)/i.test(itemPath) || /^Brands$/i.test(routeName);
+  const isListing =
+    /\/Home\/Brands$/i.test(itemPath) || /\/Brands$/i.test(itemPath) || /^Brands$/i.test(routeName);
+  return isListing && !/\/Home\/Brands\//i.test(itemPath) && !/\/Brands\/.+/i.test(itemPath);
+}
+
+export function isSodexoBrandDetailPage(page?: Page): boolean {
+  const sitecore = getSitecoreLayout(page);
+  const siteName = String(sitecore?.context?.site?.name || '').toLowerCase();
+  if (siteName && siteName !== 'sodexo') return false;
+
+  const itemPath = String(sitecore?.context?.itemPath || sitecore?.route?.itemPath || '');
+  return /\/Home\/Brands\/.+/i.test(itemPath) || /\/Brands\/.+/i.test(itemPath);
 }
 
 export function isSodexoSearchResultsPage(page?: Page): boolean {

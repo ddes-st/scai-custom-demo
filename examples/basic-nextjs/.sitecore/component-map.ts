@@ -11,10 +11,11 @@ import * as SearchResults from 'src/components/uiim/search/SearchResults';
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
+import * as SodexoLocationOverlay from 'src/components/uiim/navigation/SodexoLocationOverlay';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
-import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
 import * as GroupSiteNavigatorBanner from 'src/components/uiim/navigation/GroupSiteNavigatorBanner';
+import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as ImageGallery from 'src/components/uiim/media/ImageGallery';
 import * as LandingStats from 'src/components/uiim/landing/LandingStats';
@@ -38,6 +39,10 @@ import * as BlogListing from 'src/components/uiim/content/BlogListing';
 import * as BenefitHighlight from 'src/components/uiim/content/BenefitHighlight';
 import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
 import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
+import * as BrandPillars from 'src/components/uiim/brand/BrandPillars';
+import * as BrandHero from 'src/components/uiim/brand/BrandHero';
+import * as BrandFinalCTA from 'src/components/uiim/brand/BrandFinalCTA';
+import * as BrandFAQ from 'src/components/uiim/brand/BrandFAQ';
 import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
 import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
 import * as CTABanner from 'src/components/uiim/banners/CTABanner';
@@ -97,10 +102,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
   ['SearchCollection', { ...SearchCollection, componentType: 'client' }],
   ['TabNavigationSection', { ...TabNavigationSection, componentType: 'client' }],
+  ['SodexoLocationOverlay', { ...SodexoLocationOverlay, componentType: 'client' }],
   ['SiteFooter', { ...SiteFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
-  ['AnnouncementBar', { ...AnnouncementBar }],
   ['GroupSiteNavigatorBanner', { ...GroupSiteNavigatorBanner, componentType: 'client' }],
+  ['AnnouncementBar', { ...AnnouncementBar }],
   ['SmartMedia', { ...SmartMedia, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery }],
   ['LandingStats', { ...LandingStats }],
@@ -124,6 +130,10 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BenefitHighlight', { ...BenefitHighlight, componentType: 'client' }],
   ['ProductPricingCards', { ...ProductPricingCards }],
   ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
+  ['BrandPillars', { ...BrandPillars }],
+  ['BrandHero', { ...BrandHero }],
+  ['BrandFinalCTA', { ...BrandFinalCTA }],
+  ['BrandFAQ', { ...BrandFAQ, componentType: 'client' }],
   ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['CTABanner', { ...CTABanner }],
