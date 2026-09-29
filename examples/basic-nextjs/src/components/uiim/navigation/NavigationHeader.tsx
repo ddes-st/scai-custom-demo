@@ -484,7 +484,7 @@ const SodexoUtilityBar = ({
       className="hidden lg:block"
       style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-end gap-5 px-6 pb-2 text-xs">
+      <div className="mx-auto flex max-w-7xl items-center justify-end gap-5 px-6 pb-2 pt-3 text-xs">
         <a href="#" className="font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
           Contact Us
         </a>
