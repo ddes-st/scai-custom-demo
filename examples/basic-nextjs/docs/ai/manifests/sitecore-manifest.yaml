@@ -3569,6 +3569,9 @@ lookups:
       Content Hub and bound DAM XML on HeroImage, FeatureImage, and
       CardImage fields. FeatureCardsGrid SodexoBrandsCtas now renders
       Explore sector rows as links with red arrows.
+      2026-09-29: Uploaded live Brands listing hero video (compressed under
+      Content Hub 30MB limit) as asset 108463 and bound HeroImage with
+      dam-content-type=video. SmartMedia plays it in SodexoBrands.
     page:
       name: Brands
       itemId: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
@@ -3620,6 +3623,10 @@ lookups:
       Style is page brandStyle droplist plus optional rendering-param BrandStyle.
       Listing isSodexoBrandsPage() no longer matches child brand pages.
       Images reuse existing Content Hub brand photography pending unique hero uploads.
+      2026-09-29: Live brand-detail hero videos uploaded to Content Hub
+      (Modern Recipe 108430, Good Eating Company 108436, Kitchen Works 108446)
+      and bound on brandHeroImage with dam-content-type=video. BrandHero
+      renders <video> from that field.
     template:
       name: "Brand Page"
       itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"

@@ -1,6 +1,12 @@
 const CH = 'https://ddes.sitecoresandbox.cloud/api/public/content';
 
 export const SODEXO_BRANDS_HERO_IMAGE = `${CH}/108131-our-brands-hero?v=873ef934`;
+
+export const SODEXO_BRAND_HERO_POSTERS: Record<string, string> = {
+  'modern-recipe': `${CH}/108160-modern-recipe-flip?v=6298278e`,
+  'good-eating': `${CH}/108169-good-eating-co-flip?v=766f61d2`,
+  'kitchen-works': `${CH}/108180-kitchen-works-flip?v=39ca410b`,
+};
 export const SODEXO_BRANDS_EXPERTISE_IMAGE = `${CH}/108139-brand-overview-culinary-expertise?v=262f8677`;
 export const SODEXO_BRANDS_FORMAT_IMAGE = `${CH}/108149-tab-restaurants?v=a3570e17`;
 

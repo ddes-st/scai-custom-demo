@@ -13,6 +13,16 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoBrandDetailPage } from '@/lib/sodexo-page';
 import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
+import { SODEXO_BRAND_HERO_POSTERS } from '@/lib/sodexo-brands-media';
+
+function isBrandHeroVideo(field?: ImageField): boolean {
+  const val = field?.value as Record<string, unknown> | undefined;
+  const damType = String(val?.['dam-content-type'] || '').toLowerCase();
+  if (damType === 'video') return true;
+  const src = String(val?.src || '');
+  if (/\.(mp4|webm|mov|m4v)(\?|#|\/|$)/i.test(src)) return true;
+  return /\/(108430|108436|108446)-/.test(src);
+}
 
 interface BrandHeroRouteFields {
   brandHeroEyebrow?: Field<string>;
@@ -93,8 +103,20 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
             )}
           </div>
           {(brandHeroImage?.value?.src || isEditing) && brandHeroImage && (
-            <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
-              <ContentSdkImage field={brandHeroImage} className="h-full w-full object-cover" />
+            <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px] lg:min-h-[480px]">
+              {isBrandHeroVideo(brandHeroImage) && brandHeroImage.value?.src ? (
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={brandHeroImage.value.src}
+                  poster={SODEXO_BRAND_HERO_POSTERS[style]}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <ContentSdkImage field={brandHeroImage} className="h-full w-full object-cover" />
+              )}
             </div>
           )}
         </div>

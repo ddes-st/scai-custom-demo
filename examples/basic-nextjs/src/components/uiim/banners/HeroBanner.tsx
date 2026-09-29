@@ -639,6 +639,7 @@ export const SodexoBrands = ({ fields, params, page }: HeroBannerProps): JSX.Ele
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
+                poster={SODEXO_BRANDS_HERO_IMAGE}
               />
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
