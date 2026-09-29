@@ -128,6 +128,15 @@ export interface RouteFields {
   brandPillar4Title?: Field<string>;
   brandPillar4Description?: RichTextField;
   brandPillar4Image?: ImageField;
+  brandStoryTitle?: Field<string>;
+  brandStoryBody?: RichTextField;
+  brandStoryImage?: ImageField;
+  brandHighlight1Title?: Field<string>;
+  brandHighlight1Body?: RichTextField;
+  brandHighlight2Title?: Field<string>;
+  brandHighlight2Body?: RichTextField;
+  brandHighlight3Title?: Field<string>;
+  brandHighlight3Body?: RichTextField;
   brandCtaHeadline?: Field<string>;
   brandCtaSubhead?: RichTextField;
   brandCtaButton?: LinkField;
@@ -138,6 +147,12 @@ export interface RouteFields {
   brandFaq2Answer?: RichTextField;
   brandFaq3Question?: Field<string>;
   brandFaq3Answer?: RichTextField;
+  brandFaq4Question?: Field<string>;
+  brandFaq4Answer?: RichTextField;
+  brandFaq5Question?: Field<string>;
+  brandFaq5Answer?: RichTextField;
+  brandFaq6Question?: Field<string>;
+  brandFaq6Answer?: RichTextField;
 }
 
 const Layout = ({ page }: LayoutProps): JSX.Element => {

@@ -26,6 +26,15 @@ interface BrandPillarsRouteFields {
   brandPillar4Title?: Field<string>;
   brandPillar4Description?: RichTextField;
   brandPillar4Image?: ImageField;
+  brandStoryTitle?: Field<string>;
+  brandStoryBody?: RichTextField;
+  brandStoryImage?: ImageField;
+  brandHighlight1Title?: Field<string>;
+  brandHighlight1Body?: RichTextField;
+  brandHighlight2Title?: Field<string>;
+  brandHighlight2Body?: RichTextField;
+  brandHighlight3Title?: Field<string>;
+  brandHighlight3Body?: RichTextField;
 }
 
 const BrandPillarsDefaultComponent = (): JSX.Element => (
@@ -55,50 +64,64 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
   if (!routeFields) return <BrandPillarsDefaultComponent />;
 
   const style = resolveBrandStyle(getPageBrandStyle(page), params.BrandStyle);
-  const pillars = [1, 2, 3, 4].map((index) => ({
+  const cards = [1, 2, 3].map((index) => ({
     title: routeFields[`brandPillar${index}Title` as keyof BrandPillarsRouteFields] as Field<string> | undefined,
     description: routeFields[`brandPillar${index}Description` as keyof BrandPillarsRouteFields] as
       | RichTextField
       | undefined,
     image: routeFields[`brandPillar${index}Image` as keyof BrandPillarsRouteFields] as ImageField | undefined,
   }));
+  const featured = {
+    title: routeFields.brandPillar4Title,
+    description: routeFields.brandPillar4Description,
+    image: routeFields.brandPillar4Image,
+  };
+  const highlights = [1, 2, 3].map((index) => ({
+    title: routeFields[`brandHighlight${index}Title` as keyof BrandPillarsRouteFields] as Field<string> | undefined,
+    body: routeFields[`brandHighlight${index}Body` as keyof BrandPillarsRouteFields] as RichTextField | undefined,
+  }));
+  const hasHighlights = highlights.some((item) => item.title?.value || item.body?.value) || isEditing;
+  const hasStory =
+    !!(routeFields.brandStoryTitle?.value || routeFields.brandStoryBody?.value || routeFields.brandStoryImage?.value?.src) ||
+    isEditing;
+  const hasFeatured = !!(featured.title?.value || featured.description?.value || featured.image?.value?.src) || isEditing;
 
   return (
     <div className={cn('component brand-pillars', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
-      <section className="w-full bg-white px-6 py-14 lg:px-12">
+      <section className="w-full bg-white px-4 py-12 sm:px-8 lg:px-16 lg:py-16">
         <div className="mx-auto max-w-[1224px]">
           {(routeFields.brandPillarsTitle?.value || isEditing) && routeFields.brandPillarsTitle && (
             <Text
               field={routeFields.brandPillarsTitle}
               tag="h2"
-              className="mx-auto mb-12 max-w-3xl text-center text-[28px] font-normal leading-tight sm:text-[36px]"
+              className="mb-10 max-w-3xl text-left text-[28px] font-normal leading-tight sm:text-[36px]"
               style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
             />
           )}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {pillars.map((pillar, index) => {
-              if (!pillar.title?.value && !pillar.description?.value && !pillar.image?.value?.src && !isEditing) {
+          <div className="grid gap-10 md:grid-cols-3">
+            {cards.map((card, index) => {
+              if (!card.title?.value && !card.description?.value && !card.image?.value?.src && !isEditing) {
                 return null;
               }
               return (
                 <article key={index} className="flex flex-col">
-                  {(pillar.image?.value?.src || isEditing) && pillar.image && (
+                  {(card.image?.value?.src || isEditing) && card.image && (
                     <div className="relative mb-5 aspect-[4/3] overflow-hidden">
-                      <ContentSdkImage field={pillar.image} className="h-full w-full object-cover" />
+                      <ContentSdkImage field={card.image} className="h-full w-full object-cover" />
                     </div>
                   )}
-                  {(pillar.title?.value || isEditing) && pillar.title && (
+                  {(card.title?.value || isEditing) && card.title && (
                     <Text
-                      field={pillar.title}
+                      field={card.title}
                       tag="h3"
-                      className="text-lg font-normal"
+                      className="text-[22px] font-normal leading-snug"
                       style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
                     />
                   )}
-                  {(pillar.description?.value || isEditing) && pillar.description && (
+                  {(card.description?.value || isEditing) && card.description && (
                     <ContentSdkRichText
-                      field={pillar.description}
-                      className="mt-3 text-sm leading-6"
+                      field={card.description}
+                      className="mt-3 text-sm leading-7"
                       style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
                     />
                   )}
@@ -108,6 +131,93 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
           </div>
         </div>
       </section>
+
+      {hasStory && (
+        <section className="w-full bg-white px-4 py-6 sm:px-8 lg:px-16 lg:py-10">
+          <div className="mx-auto grid max-w-[1224px] items-center gap-10 md:grid-cols-2 lg:gap-16">
+            {(routeFields.brandStoryImage?.value?.src || isEditing) && routeFields.brandStoryImage && (
+              <div className="relative min-h-[260px] overflow-hidden sm:min-h-[380px]">
+                <ContentSdkImage field={routeFields.brandStoryImage} className="h-full w-full object-cover" />
+              </div>
+            )}
+            <div>
+              {(routeFields.brandStoryTitle?.value || isEditing) && routeFields.brandStoryTitle && (
+                <Text
+                  field={routeFields.brandStoryTitle}
+                  tag="h2"
+                  className="text-[28px] font-normal leading-tight sm:text-[36px]"
+                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
+                />
+              )}
+              {(routeFields.brandStoryBody?.value || isEditing) && routeFields.brandStoryBody && (
+                <ContentSdkRichText
+                  field={routeFields.brandStoryBody}
+                  className="mt-5 text-base leading-7"
+                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {hasFeatured && (
+        <section className="w-full bg-white px-4 py-10 sm:px-8 lg:px-16 lg:py-14">
+          <div className="mx-auto grid max-w-[1224px] items-center gap-10 md:grid-cols-2 lg:gap-16">
+            {(featured.image?.value?.src || isEditing) && featured.image && (
+              <div className="relative min-h-[260px] overflow-hidden sm:min-h-[380px]">
+                <ContentSdkImage field={featured.image} className="h-full w-full object-cover" />
+              </div>
+            )}
+            <div>
+              {(featured.title?.value || isEditing) && featured.title && (
+                <Text
+                  field={featured.title}
+                  tag="h3"
+                  className="text-[28px] font-normal leading-tight sm:text-[32px]"
+                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
+                />
+              )}
+              {(featured.description?.value || isEditing) && featured.description && (
+                <ContentSdkRichText
+                  field={featured.description}
+                  className="mt-5 text-base leading-7"
+                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {hasHighlights && (
+        <section className="w-full bg-white px-4 py-10 sm:px-8 lg:px-16 lg:pb-16">
+          <div className="mx-auto grid max-w-[1224px] gap-10 md:grid-cols-3">
+            {highlights.map((item, index) => {
+              if (!item.title?.value && !item.body?.value && !isEditing) return null;
+              return (
+                <article key={index}>
+                  {(item.title?.value || isEditing) && item.title && (
+                    <Text
+                      field={item.title}
+                      tag="h2"
+                      className="text-[24px] font-normal leading-tight sm:text-[28px]"
+                      style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
+                    />
+                  )}
+                  {(item.body?.value || isEditing) && item.body && (
+                    <ContentSdkRichText
+                      field={item.body}
+                      className="mt-4 text-sm leading-7 [&_li]:ml-4 [&_li]:list-disc [&_ul]:mt-3"
+                      style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
+                    />
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

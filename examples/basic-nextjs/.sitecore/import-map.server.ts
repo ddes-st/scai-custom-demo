@@ -16,7 +16,8 @@ import { isSodexoArticlesPage, isSodexoSite, isSodexoAboutPage, isSodexoHelpPage
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
-import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
+import { brandStyleVars, getPageBrandStyle, resolveBrandStyle, BRAND_STYLE_TOKENS } from '@/lib/sodexo-brand-style';
+import { SODEXO_BRAND_HERO_POSTERS } from '@/lib/sodexo-brands-media';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
@@ -85,6 +86,13 @@ const importMap = [
       { name: 'brandStyleVars', value: brandStyleVars },
       { name: 'getPageBrandStyle', value: getPageBrandStyle },
       { name: 'resolveBrandStyle', value: resolveBrandStyle },
+      { name: 'BRAND_STYLE_TOKENS', value: BRAND_STYLE_TOKENS },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-brands-media',
+    exports: [
+      { name: 'SODEXO_BRAND_HERO_POSTERS', value: SODEXO_BRAND_HERO_POSTERS },
     ]
   },
   {

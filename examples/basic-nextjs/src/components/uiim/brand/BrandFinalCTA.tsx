@@ -49,34 +49,41 @@ function BrandFinalCTALayout({ params, page }: ComponentProps): JSX.Element {
 
   return (
     <div className={cn('component brand-final-cta [&_a]:cursor-pointer', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
-      <section className="px-6 py-16 lg:px-12" style={{ backgroundColor: 'var(--brand-primary)' }}>
-        <div className="mx-auto max-w-3xl text-center">
-          {(brandCtaHeadline?.value || isEditing) && brandCtaHeadline && (
-            <Text
-              field={brandCtaHeadline}
-              tag="h2"
-              className="text-[28px] font-normal leading-tight text-white sm:text-[36px]"
-              style={{ fontFamily: 'var(--brand-heading-font)' }}
-            />
-          )}
-          {(brandCtaSubhead?.value || isEditing) && brandCtaSubhead && (
-            <ContentSdkRichText
-              field={brandCtaSubhead}
-              className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/85"
-              style={{ fontFamily: 'var(--brand-body-font)' }}
-            />
-          )}
+      <section className="px-4 py-14 sm:px-8 lg:px-16" style={{ backgroundColor: 'var(--brand-muted)' }}>
+        <div className="mx-auto flex max-w-[1224px] flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            {(brandCtaHeadline?.value || isEditing) && brandCtaHeadline && (
+              <Text
+                field={brandCtaHeadline}
+                tag="h2"
+                className="text-[28px] font-normal leading-tight sm:text-[36px]"
+                style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
+              />
+            )}
+            {(brandCtaSubhead?.value || isEditing) && brandCtaSubhead && (
+              <ContentSdkRichText
+                field={brandCtaSubhead}
+                className="mt-4 max-w-xl text-base leading-7"
+                style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
+              />
+            )}
+          </div>
           {(brandCtaButton?.value?.href || isEditing) && brandCtaButton && (
             <ContentSdkLink
               field={brandCtaButton}
-              className="mt-8 inline-flex cursor-pointer items-center px-6 py-3 text-sm font-semibold"
+              className="inline-flex shrink-0 cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-80"
               style={{
-                backgroundColor: 'var(--brand-accent)',
-                color: style === 'kitchen-works' ? '#111' : '#fff',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: 'var(--brand-button-radius)',
                 fontFamily: 'var(--brand-body-font)',
               }}
-            />
+            >
+              {brandCtaButton.value?.text || 'Get started'}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </ContentSdkLink>
           )}
         </div>
       </section>

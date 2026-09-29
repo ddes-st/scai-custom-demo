@@ -12,7 +12,7 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoBrandDetailPage } from '@/lib/sodexo-page';
-import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
+import { BRAND_STYLE_TOKENS, brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
 import { SODEXO_BRAND_HERO_POSTERS } from '@/lib/sodexo-brands-media';
 
 function isBrandHeroVideo(field?: ImageField): boolean {
@@ -25,6 +25,7 @@ function isBrandHeroVideo(field?: ImageField): boolean {
 }
 
 interface BrandHeroRouteFields {
+  Title?: Field<string>;
   brandHeroEyebrow?: Field<string>;
   brandHeroTitle?: Field<string>;
   brandHeroSubtitle?: RichTextField;
@@ -60,26 +61,43 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
 
   const style = resolveBrandStyle(getPageBrandStyle(page), params.BrandStyle);
   const tokens = brandStyleVars(style);
-  const { brandHeroEyebrow, brandHeroTitle, brandHeroSubtitle, brandHeroImage, brandHeroCta } = routeFields;
+  const brandLabel = BRAND_STYLE_TOKENS[style].label;
+  const { brandHeroEyebrow, brandHeroTitle, brandHeroSubtitle, brandHeroImage, brandHeroCta, Title } = routeFields;
+  const crumbName = Title?.value || brandLabel;
 
   return (
     <div className={cn('component brand-hero [&_a]:cursor-pointer', styles)} id={RenderingIdentifier} style={tokens}>
-      <section className="w-full" style={{ backgroundColor: 'var(--brand-muted)' }}>
-        <div className="mx-auto grid max-w-[1224px] items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:px-12 lg:py-16">
+      <section className="w-full bg-white">
+        <div className="mx-auto grid max-w-[1224px] items-center gap-10 px-4 py-10 sm:px-8 md:grid-cols-2 lg:gap-16 lg:px-16 lg:py-16">
           <div>
-            {(brandHeroEyebrow?.value || isEditing) && brandHeroEyebrow && (
+            <nav className="mb-5 text-sm" aria-label="Breadcrumb" style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}>
+              <ol className="flex flex-wrap items-center gap-2 opacity-70">
+                <li>
+                  <a href="/" className="hover:opacity-70">Home</a>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>What we do</li>
+                <li aria-hidden="true">›</li>
+                <li>
+                  <a href="/Brands" className="hover:opacity-70">Food brands</a>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>{crumbName}</li>
+              </ol>
+            </nav>
+            {isEditing && brandHeroEyebrow && (
               <Text
                 field={brandHeroEyebrow}
                 tag="p"
-                className="mb-3 text-xs font-semibold uppercase tracking-[0.16em]"
-                style={{ color: 'var(--brand-accent)', fontFamily: 'var(--brand-body-font)' }}
+                className="mb-3 text-sm opacity-70"
+                style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
               />
             )}
             {(brandHeroTitle?.value || isEditing) && brandHeroTitle && (
               <Text
                 field={brandHeroTitle}
                 tag="h1"
-                className="text-[32px] font-normal leading-tight sm:text-[42px]"
+                className="text-[32px] font-normal leading-[1.15] tracking-tight sm:text-[42px]"
                 style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
               />
             )}
@@ -93,13 +111,20 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
             {(brandHeroCta?.value?.href || isEditing) && brandHeroCta && (
               <ContentSdkLink
                 field={brandHeroCta}
-                className="mt-8 inline-flex cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white"
+                className="mt-8 inline-flex cursor-pointer items-center gap-2 border px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
                 style={{
-                  backgroundColor: 'var(--brand-primary)',
+                  color: 'var(--brand-fg)',
+                  borderColor: 'var(--brand-fg)',
                   borderRadius: 'var(--brand-button-radius)',
                   fontFamily: 'var(--brand-body-font)',
                 }}
-              />
+              >
+                {brandHeroCta.value?.text || 'Contact us'}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </ContentSdkLink>
             )}
           </div>
           {(brandHeroImage?.value?.src || isEditing) && brandHeroImage && (

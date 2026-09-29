@@ -293,7 +293,7 @@ pageTemplates:
     name: "Brand Page"
     inheritsFrom: "base-page-template"
     description: "Food brand detail page under Home > Brands. Same layout for every brand; page-level brandStyle plus optional per-component BrandStyle rendering param selects Modern Recipe, The Good Eating Company, or Kitchen Works tokens."
-    templateSection: "Brand Style / Hero / Pillars / CTA / FAQ Data"
+    templateSection: "Brand Style / Hero / Pillars / Story / Highlights / CTA / FAQ Data"
     fields:
       - { name: "brandStyle", type: "Droplist", purpose: "page-level style token", source: "/sitecore/content/group/sodexo/Data/BrandStyles" }
       - { name: "brandHeroEyebrow", type: "Single-Line Text", purpose: "hero eyebrow" }
@@ -311,9 +311,18 @@ pageTemplates:
       - { name: "brandPillar3Title", type: "Single-Line Text", purpose: "pillar 3 title" }
       - { name: "brandPillar3Description", type: "Rich Text", purpose: "pillar 3 copy" }
       - { name: "brandPillar3Image", type: "Image", purpose: "pillar 3 image" }
-      - { name: "brandPillar4Title", type: "Single-Line Text", purpose: "pillar 4 title" }
-      - { name: "brandPillar4Description", type: "Rich Text", purpose: "pillar 4 copy" }
-      - { name: "brandPillar4Image", type: "Image", purpose: "pillar 4 image" }
+      - { name: "brandPillar4Title", type: "Single-Line Text", purpose: "featured format title" }
+      - { name: "brandPillar4Description", type: "Rich Text", purpose: "featured format copy" }
+      - { name: "brandPillar4Image", type: "Image", purpose: "featured format image" }
+      - { name: "brandStoryTitle", type: "Single-Line Text", purpose: "mid-page story heading" }
+      - { name: "brandStoryBody", type: "Rich Text", purpose: "mid-page story copy" }
+      - { name: "brandStoryImage", type: "Image", purpose: "mid-page story image" }
+      - { name: "brandHighlight1Title", type: "Single-Line Text", purpose: "highlight 1 title" }
+      - { name: "brandHighlight1Body", type: "Rich Text", purpose: "highlight 1 copy" }
+      - { name: "brandHighlight2Title", type: "Single-Line Text", purpose: "highlight 2 title" }
+      - { name: "brandHighlight2Body", type: "Rich Text", purpose: "highlight 2 copy" }
+      - { name: "brandHighlight3Title", type: "Single-Line Text", purpose: "highlight 3 title" }
+      - { name: "brandHighlight3Body", type: "Rich Text", purpose: "highlight 3 copy" }
       - { name: "brandCtaHeadline", type: "Single-Line Text", purpose: "closing CTA headline" }
       - { name: "brandCtaSubhead", type: "Rich Text", purpose: "closing CTA subhead" }
       - { name: "brandCtaButton", type: "General Link", purpose: "closing CTA button" }
@@ -324,6 +333,12 @@ pageTemplates:
       - { name: "brandFaq2Answer", type: "Rich Text", purpose: "FAQ 2 answer" }
       - { name: "brandFaq3Question", type: "Single-Line Text", purpose: "FAQ 3 question" }
       - { name: "brandFaq3Answer", type: "Rich Text", purpose: "FAQ 3 answer" }
+      - { name: "brandFaq4Question", type: "Single-Line Text", purpose: "FAQ 4 question" }
+      - { name: "brandFaq4Answer", type: "Rich Text", purpose: "FAQ 4 answer" }
+      - { name: "brandFaq5Question", type: "Single-Line Text", purpose: "FAQ 5 question" }
+      - { name: "brandFaq5Answer", type: "Rich Text", purpose: "FAQ 5 answer" }
+      - { name: "brandFaq6Question", type: "Single-Line Text", purpose: "FAQ 6 question" }
+      - { name: "brandFaq6Answer", type: "Rich Text", purpose: "FAQ 6 answer" }
     contextComponents:
       - id: brand-hero
         name: "BrandHero"
@@ -337,7 +352,7 @@ pageTemplates:
         name: "BrandPillars"
         category: "brand"
         filePath: "src/components/uiim/brand/BrandPillars.tsx"
-        routeFieldsUsed: ["brandPillarsTitle", "brandPillar1Title", "brandPillar1Description", "brandPillar1Image", "brandPillar2Title", "brandPillar2Description", "brandPillar2Image", "brandPillar3Title", "brandPillar3Description", "brandPillar3Image", "brandPillar4Title", "brandPillar4Description", "brandPillar4Image"]
+        routeFieldsUsed: ["brandPillarsTitle", "brandPillar1Title", "brandPillar1Description", "brandPillar1Image", "brandPillar2Title", "brandPillar2Description", "brandPillar2Image", "brandPillar3Title", "brandPillar3Description", "brandPillar3Image", "brandPillar4Title", "brandPillar4Description", "brandPillar4Image", "brandStoryTitle", "brandStoryBody", "brandStoryImage", "brandHighlight1Title", "brandHighlight1Body", "brandHighlight2Title", "brandHighlight2Body", "brandHighlight3Title", "brandHighlight3Body"]
         variants:
           - { name: "Default", description: "auto-routes to SodexoBrand on brand detail pages" }
           - { name: "SodexoBrand", description: "four-up pillar grid using brand tokens" }

@@ -3627,6 +3627,11 @@ lookups:
       (Modern Recipe 108430, Good Eating Company 108436, Kitchen Works 108446)
       and bound on brandHeroImage with dam-content-type=video. BrandHero
       renders <video> from that field.
+      2026-09-29: Brand detail pages restyled to live rhythm — white hero with
+      breadcrumb and outlined CTA, 3-up pillars, story split, featured format,
+      3 highlights, muted CTA band, 6-item FAQ. Added Story Data and Highlights
+      Data template sections plus FAQ 4-6 fields. Content refreshed from live
+      modern-recipe, the-good-eating-company, and kitchen-works pages.
     template:
       name: "Brand Page"
       itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"

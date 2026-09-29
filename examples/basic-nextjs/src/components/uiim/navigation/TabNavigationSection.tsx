@@ -105,13 +105,14 @@ export const Default = (props: TabNavigationSectionProps): JSX.Element => {
 /* ────────────────────────────────────────────
    Underline — flat text with bottom border
    ──────────────────────────────────────────── */
-export const Underline = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+export const Underline = (props: TabNavigationSectionProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
-  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs({ fields, params, page });
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs(props);
 
   const tabs = datasource.children?.results || [];
 
@@ -163,13 +164,14 @@ export const Underline = ({ fields, params, page }: TabNavigationSectionProps): 
 /* ────────────────────────────────────────────
    Boxed — rectangular tabs with border
    ──────────────────────────────────────────── */
-export const Boxed = ({ fields, params, page }: TabNavigationSectionProps): JSX.Element => {
+export const Boxed = (props: TabNavigationSectionProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
-  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs({ fields, params, page });
+  if (isSodexoBrandsPage(page)) return SodexoBrandsTabs(props);
 
   const tabs = datasource.children?.results || [];
 

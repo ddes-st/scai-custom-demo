@@ -1,7 +1,6 @@
 'use client';
 
 import React, { JSX, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 import { Field, RichTextField, Text, RichText as ContentSdkRichText } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
@@ -16,6 +15,12 @@ interface BrandFAQRouteFields {
   brandFaq2Answer?: RichTextField;
   brandFaq3Question?: Field<string>;
   brandFaq3Answer?: RichTextField;
+  brandFaq4Question?: Field<string>;
+  brandFaq4Answer?: RichTextField;
+  brandFaq5Question?: Field<string>;
+  brandFaq5Answer?: RichTextField;
+  brandFaq6Question?: Field<string>;
+  brandFaq6Answer?: RichTextField;
 }
 
 const BrandFAQDefaultComponent = (): JSX.Element => (
@@ -46,20 +51,20 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
   if (!routeFields) return <BrandFAQDefaultComponent />;
 
   const style = resolveBrandStyle(getPageBrandStyle(page), params.BrandStyle);
-  const items = [1, 2, 3].map((index) => ({
+  const items = [1, 2, 3, 4, 5, 6].map((index) => ({
     question: routeFields[`brandFaq${index}Question` as keyof BrandFAQRouteFields] as Field<string> | undefined,
     answer: routeFields[`brandFaq${index}Answer` as keyof BrandFAQRouteFields] as RichTextField | undefined,
   }));
 
   return (
     <div className={cn('component brand-faq', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
-      <section className="w-full px-6 py-14 lg:px-12" style={{ backgroundColor: 'var(--brand-muted)' }}>
-        <div className="mx-auto max-w-3xl">
+      <section className="w-full bg-white px-4 py-14 sm:px-8 lg:px-16">
+        <div className="mx-auto max-w-[1224px]">
           {(routeFields.brandFaqTitle?.value || isEditing) && routeFields.brandFaqTitle && (
             <Text
               field={routeFields.brandFaqTitle}
-              tag="h2"
-              className="mb-8 text-[28px] font-normal leading-tight"
+              tag="h3"
+              className="mb-8 text-[24px] font-normal leading-tight sm:text-[28px]"
               style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
             />
           )}
@@ -68,11 +73,11 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
               if (!item.question?.value && !item.answer?.value && !isEditing) return null;
               const isOpen = openIndex === index;
               return (
-                <div key={index} className="border-b" style={{ borderColor: 'color-mix(in srgb, var(--brand-fg) 18%, transparent)' }}>
+                <div key={index} className="border-b" style={{ borderColor: 'color-mix(in srgb, var(--brand-fg) 16%, transparent)' }}>
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left"
+                    className="flex w-full cursor-pointer items-center justify-between gap-6 py-5 text-left"
                     aria-expanded={isOpen}
                   >
                     {item.question && (
@@ -83,12 +88,18 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
                         style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
                       />
                     )}
-                    <ChevronDown className={cn('h-5 w-5 shrink-0 transition-transform', isOpen && 'rotate-180')} style={{ color: 'var(--brand-accent)' }} />
+                    <span
+                      className="flex h-8 w-8 shrink-0 items-center justify-center text-xl leading-none"
+                      style={{ color: 'var(--brand-fg)' }}
+                      aria-hidden
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
                   </button>
                   {isOpen && (item.answer?.value || isEditing) && item.answer && (
                     <ContentSdkRichText
                       field={item.answer}
-                      className="pb-5 text-sm leading-7"
+                      className="max-w-4xl pb-6 text-sm leading-7"
                       style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
                     />
                   )}
