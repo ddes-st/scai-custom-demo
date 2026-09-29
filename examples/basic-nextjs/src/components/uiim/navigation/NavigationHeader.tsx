@@ -20,7 +20,7 @@ import {
 } from '@/components/uiim/navigation/GroupSiteNavigatorBanner';
 import { SodexoLocationOverlay } from '@/components/uiim/navigation/SodexoLocationOverlay';
 import {
-  buildLocalePath,
+  buildLocaleHref,
   getPageLocale,
   isFrenchLocale,
   SODEXO_EN_LOCALE,
@@ -651,7 +651,7 @@ export const Sodexo = ({ fields, params, page }: NavigationHeaderProps): JSX.Ele
   const locale = getPageLocale(page);
   const switchLocale = (nextLocale: string) => {
     if (nextLocale === locale) return;
-    window.location.assign(buildLocalePath(window.location.pathname, nextLocale, window.location.search));
+    window.location.assign(buildLocaleHref(window.location.href, nextLocale, page));
   };
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   // Mega-menu mount/animation is decoupled from `activeMenu` so the closing
@@ -724,7 +724,7 @@ export const Sodexo = ({ fields, params, page }: NavigationHeaderProps): JSX.Ele
     <div className={cn('component navigation-header', styles)} id={RenderingIdentifier}>
       <header
         className={cn(
-          'sticky top-0 z-50 w-full shadow-sm transition-transform duration-300 ease-in-out',
+          'sticky top-0 z-50 w-full shadow-sm transition-transform duration-300 ease-in-out [&_a]:cursor-pointer [&_button]:cursor-pointer',
           hideOnScroll ? '-translate-y-full' : 'translate-y-0'
         )}
         style={{ backgroundColor: '#ffffff' }}

@@ -6,6 +6,7 @@ import {
 import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isSodexoSite } from '@/lib/sodexo-page';
 
 type SiteFooterProps = ComponentProps & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -106,6 +107,7 @@ const Copyright = () => (
    Default — multi-column layout
    ──────────────────────────────────────────── */
 export const Default = (props: SiteFooterProps): JSX.Element => {
+  if (isSodexoSite(props.page)) return Sodexo(props);
   const { params } = props;
   const { styles, RenderingIdentifier } = params;
   const brandLogo = getBrandLogo(props);
@@ -470,7 +472,7 @@ export const Sodexo = (props: SiteFooterProps): JSX.Element => {
   if (!params) return <SiteFooterDefaultComponent />;
 
   return (
-    <div className={cn('component site-footer', styles)} id={RenderingIdentifier}>
+    <div className={cn('component site-footer [&_a]:cursor-pointer [&_button]:cursor-pointer', styles)} id={RenderingIdentifier}>
       <footer
         className="w-full"
         style={{ backgroundColor: 'var(--brand-footer-bg, #2a295c)' }}

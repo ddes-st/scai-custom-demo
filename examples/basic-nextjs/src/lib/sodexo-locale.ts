@@ -42,3 +42,51 @@ export function buildLocalePath(pathname: string, targetLocale: string, search =
   const nextPath = parts.join('/') || '/';
   return `${nextPath}${search}`;
 }
+
+const PREVIEW_QUERY_KEYS = ['sc_lang', 'sc_itemid', 'sc_mode', 'sc_site', 'sc_version', 'secret'];
+
+function getRouteItemId(page?: Page): string {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const route = (page as any)?.layout?.sitecore?.route;
+  return String(route?.itemId || route?.itemID || '');
+}
+
+export function isPreviewOrEditingUrl(href: string): boolean {
+  try {
+    const url = new URL(href, 'http://local.invalid');
+    return (
+      url.pathname.includes('/api/editing') ||
+      PREVIEW_QUERY_KEYS.some((key) => url.searchParams.has(key))
+    );
+  } catch {
+    return false;
+  }
+}
+
+export function buildLocaleHref(
+  href: string,
+  targetLocale: string,
+  page?: Page
+): string {
+  const url = new URL(href, 'http://local.invalid');
+  const isEditing = Boolean(page?.mode?.isEditing || page?.mode?.isPreview);
+  const keepPreview = isEditing || isPreviewOrEditingUrl(href);
+  const isEditingRender = url.pathname.includes('/api/editing');
+
+  if (keepPreview) {
+    url.searchParams.set('sc_lang', targetLocale);
+    const itemId = getRouteItemId(page);
+    if (itemId && !url.searchParams.has('sc_itemid')) {
+      url.searchParams.set('sc_itemid', itemId);
+    }
+    if (!url.searchParams.has('sc_site')) {
+      url.searchParams.set('sc_site', 'sodexo');
+    }
+    if (!isEditingRender) {
+      url.pathname = buildLocalePath(url.pathname, targetLocale);
+    }
+    return `${url.pathname}${url.search}${url.hash}`;
+  }
+
+  return `${buildLocalePath(url.pathname, targetLocale, url.search)}${url.hash}`;
+}

@@ -37,7 +37,7 @@ export const SodexoLocationOverlay = ({ open, onClose }: SodexoLocationOverlayPr
 
   return (
     <div
-      className="fixed inset-0 z-[80] overflow-y-auto bg-white"
+      className="fixed inset-0 z-[80] overflow-y-auto bg-white [&_a]:cursor-pointer [&_button]:cursor-pointer"
       role="dialog"
       aria-modal="true"
       aria-labelledby="sodexo-location-title"

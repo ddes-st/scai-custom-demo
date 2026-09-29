@@ -81,7 +81,7 @@ export const SodexoGroupSiteNavigatorBar = ({
       <div
         className="w-full"
         style={{
-          backgroundColor: 'var(--brand-muted, #f0eef8)',
+          backgroundColor: '#f9faff',
           color: 'var(--brand-fg, #2a295c)',
           fontFamily: 'var(--brand-body-font, "Open Sans", sans-serif)',
         }}
@@ -91,7 +91,7 @@ export const SodexoGroupSiteNavigatorBar = ({
           <div className="flex items-center justify-end gap-3">
             <button
               type="button"
-              className="flex h-10 min-w-[7.5rem] items-center justify-between rounded-full border bg-white px-4 text-sm"
+              className="flex h-10 min-w-[7.5rem] cursor-pointer items-center justify-between rounded-full border bg-white px-4 text-sm"
               style={{
                 borderColor: 'var(--brand-border, #d8d6e8)',
                 color: 'var(--brand-fg, #2a295c)',
@@ -108,7 +108,7 @@ export const SodexoGroupSiteNavigatorBar = ({
             <button
               type="button"
               onClick={handleContinue}
-              className="inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold text-white"
+              className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-full px-5 text-sm font-semibold text-white"
               style={{ backgroundColor: 'var(--brand-fg, #2a295c)' }}
             >
               {continueLabel}
@@ -118,7 +118,7 @@ export const SodexoGroupSiteNavigatorBar = ({
               type="button"
               onClick={dismiss}
               aria-label="Close group site navigator"
-              className="flex h-8 w-8 items-center justify-center transition-opacity hover:opacity-70"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center transition-opacity hover:opacity-70"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
