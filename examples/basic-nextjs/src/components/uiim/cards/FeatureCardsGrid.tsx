@@ -852,7 +852,8 @@ export const SodexoBrandsGrid = ({ fields, params, page }: FeatureCardsGridProps
             {visibleCards.map((card) => {
               const title = card.cardTitle?.jsonValue?.value;
               const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
-              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc);
+              const environment = card.cardDescription?.jsonValue?.value;
+              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc, environment);
               return (
                 <article key={card.id} className="relative overflow-hidden" style={{ minHeight: '260px' }}>
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -917,7 +918,7 @@ export const SodexoBrandsInsights = ({ fields, params, page }: FeatureCardsGridP
             {cards.map((card) => {
               const title = card.cardTitle?.jsonValue?.value;
               const sitecoreSrc = card.cardImage?.jsonValue?.value?.src;
-              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc);
+              const imageSrc = sodexoBrandsCardImage(title, sitecoreSrc, card.cardDescription?.jsonValue?.value);
               return (
                 <article
                   key={card.id}
@@ -982,35 +983,43 @@ export const SodexoBrandsCtas = ({ fields, params, page }: FeatureCardsGridProps
     <div className={cn('component feature-cards-grid [&_a]:cursor-pointer', styles)} id={RenderingIdentifier}>
       <section className="w-full px-4 py-12 md:py-16" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)' }}>
         <div className="mx-auto grid max-w-[1224px] gap-10 md:grid-cols-3 lg:px-12">
-          {cards.map((card) => (
-            <div key={card.id}>
-              {(card.cardTitle?.jsonValue?.value || isEditing) && (
-                <Text
-                  field={card.cardTitle?.jsonValue}
-                  tag="h2"
-                  className="text-[28px] font-normal leading-tight"
-                  style={{ color: brandFg, fontFamily: headingFont }}
-                />
-              )}
-              {(card.cardDescription?.jsonValue?.value || isEditing) && (
-                <ContentSdkRichText
-                  field={card.cardDescription?.jsonValue}
-                  className="mt-4 text-sm leading-7 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-2 [&_a]:font-normal"
-                  style={{ color: brandFg, fontFamily: bodyFont }}
-                />
-              )}
-              {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
-                <ContentSdkLink
-                  field={card.cardLink?.jsonValue}
-                  className="mt-3 inline-flex cursor-pointer items-center gap-2 text-sm"
-                  style={{ color: brandFg, fontFamily: bodyFont }}
-                >
-                  {card.cardLink?.jsonValue?.value?.text || 'Contact us'}
-                  <span aria-hidden>→</span>
-                </ContentSdkLink>
-              )}
-            </div>
-          ))}
+          {cards.map((card) => {
+            const title = card.cardTitle?.jsonValue?.value || '';
+            const isExplore = /explore where we operate/i.test(title);
+            return (
+              <div key={card.id}>
+                {(title || isEditing) && (
+                  <Text
+                    field={card.cardTitle?.jsonValue}
+                    tag="h2"
+                    className="text-[28px] font-normal leading-tight"
+                    style={{ color: brandFg, fontFamily: headingFont }}
+                  />
+                )}
+                {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={card.cardDescription?.jsonValue}
+                    className={
+                      isExplore
+                        ? "mt-5 text-sm leading-none [&_p]:m-0 [&_p]:border-0 [&_a]:flex [&_a]:items-center [&_a]:justify-between [&_a]:py-2.5 [&_a]:no-underline [&_a]:font-normal [&_a]:transition-colors [&_a]:after:ml-6 [&_a]:after:text-lg [&_a]:after:font-normal [&_a]:after:text-[var(--brand-accent,#da2020)] [&_a]:after:content-['→'] hover:[&_a]:text-[var(--brand-accent,#da2020)]"
+                        : 'mt-4 text-sm leading-7 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-2 [&_a]:font-normal'
+                    }
+                    style={{ color: brandFg, fontFamily: bodyFont }}
+                  />
+                )}
+                {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                  <ContentSdkLink
+                    field={card.cardLink?.jsonValue}
+                    className="mt-5 inline-flex cursor-pointer items-center gap-2 text-sm font-normal"
+                    style={{ color: brandFg, fontFamily: bodyFont }}
+                  >
+                    {card.cardLink?.jsonValue?.value?.text || 'Contact us'}
+                    <span aria-hidden>→</span>
+                  </ContentSdkLink>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

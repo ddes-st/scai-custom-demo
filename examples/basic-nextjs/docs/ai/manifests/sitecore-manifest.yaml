@@ -3562,10 +3562,13 @@ lookups:
       not modified. Home children sit About → Articles → Brands → Landing
       Pages. Shared list-datasource binds often revert; brand cards and
       market CTA live on local page Data items. Headless Variant Definition
-      items were not created — auto-route covers Default. Images reuse
-      existing Content Hub public URLs via sodexo-brands-media.ts.
+      items were not created — auto-route covers Default.
       2026-09-29: Wired What we do > Food brands in NavigationHeader
       SODEXO_INTERNAL_LINKS to /Brands.
+      2026-09-29: Uploaded 27 live Brands images from sodexo.com into
+      Content Hub and bound DAM XML on HeroImage, FeatureImage, and
+      CardImage fields. FeatureCardsGrid SodexoBrandsCtas now renders
+      Explore sector rows as links with red arrows.
     page:
       name: Brands
       itemId: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
