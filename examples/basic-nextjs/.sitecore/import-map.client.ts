@@ -11,11 +11,11 @@ import {
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { cn } from '@/lib/utils';
 import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
-import { isSodexoHelpPage, isSodexoSearchResultsPage, isSodexoAboutPage, isSodexoArticlesPage } from '@/lib/sodexo-page';
+import { isSodexoHelpPage, isSodexoSearchResultsPage, isSodexoBrandsPage, isSodexoSite, isSodexoAboutPage, isSodexoArticlesPage, isSodexoBrandDetailPage } from '@/lib/sodexo-page';
 import { useEffect, useMemo, useRef, useState, Suspense, useCallback } from 'react';
 import React from 'react';
 import Image from 'next/image';
-import { ImageOff, Search, X, ChevronDown, Menu, User } from 'lucide-react';
+import { ImageOff, Search, X, ChevronDown, Eye, Sparkles, Heart, Menu, User } from 'lucide-react';
 import { useSearch, useInfiniteSearch } from '@sitecore-content-sdk/nextjs/search';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -39,10 +39,16 @@ import { useEvent } from '@/lib/search/search-components/useEvent';
 import { useRouter } from '@/lib/search/search-components/useRouter';
 import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE as DEFAULT_PAGE_SIZE_d8a3a96ed6893912a4b0e4dff64815d90f82a321, gridColsClass } from '@/lib/search/search-components/constants';
 import { Text, Link, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
+import { filterLocationMatches, SODEXO_ACTIVE_COUNTRY, SODEXO_LOCATION_REGIONS } from '@/lib/sodexo-locations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
+import { GROUP_SITE_NAVIGATOR_COPY, SodexoGroupSiteNavigatorBar } from '@/components/uiim/navigation/GroupSiteNavigatorBanner';
+import { SodexoLocationOverlay } from '@/components/uiim/navigation/SodexoLocationOverlay';
+import { buildLocaleHref, getPageLocale, isFrenchLocale, SODEXO_EN_LOCALE, SODEXO_FR_LOCALE } from '@/lib/sodexo-locale';
 import { identity, event, pageView } from '@sitecore-content-sdk/events';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_TECH_IMAGE, sodexoAboutCardImage, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
+import { isUsableBrandsImageSrc, SODEXO_BRANDS_EXPERTISE_IMAGE, SODEXO_BRANDS_FORMAT_IMAGE, sodexoBrandsCardImage, SODEXO_BRANDS_HERO_IMAGE } from '@/lib/sodexo-brands-media';
+import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
 import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
 import { SearchEmptyResults as SearchEmptyResults_a7fd5bb71665da1ba09c52ff7c1d1a533293f443 } from 'src/components/search-experience/search-components/SearchEmptyResults';
 import { SearchError as SearchError_af1c5e83329285a922b0ebc80453dc52526cfbd2 } from 'src/components/search-experience/search-components/SearchError';
@@ -92,8 +98,11 @@ const importMap = [
     exports: [
       { name: 'isSodexoHelpPage', value: isSodexoHelpPage },
       { name: 'isSodexoSearchResultsPage', value: isSodexoSearchResultsPage },
+      { name: 'isSodexoBrandsPage', value: isSodexoBrandsPage },
+      { name: 'isSodexoSite', value: isSodexoSite },
       { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
       { name: 'isSodexoArticlesPage', value: isSodexoArticlesPage },
+      { name: 'isSodexoBrandDetailPage', value: isSodexoBrandDetailPage },
     ]
   },
   {
@@ -121,6 +130,9 @@ const importMap = [
       { name: 'Search', value: Search },
       { name: 'X', value: X },
       { name: 'ChevronDown', value: ChevronDown },
+      { name: 'Eye', value: Eye },
+      { name: 'Sparkles', value: Sparkles },
+      { name: 'Heart', value: Heart },
       { name: 'Menu', value: Menu },
       { name: 'User', value: User },
     ]
@@ -282,9 +294,40 @@ const importMap = [
     ]
   },
   {
+    module: '@/lib/sodexo-locations',
+    exports: [
+      { name: 'filterLocationMatches', value: filterLocationMatches },
+      { name: 'SODEXO_ACTIVE_COUNTRY', value: SODEXO_ACTIVE_COUNTRY },
+      { name: 'SODEXO_LOCATION_REGIONS', value: SODEXO_LOCATION_REGIONS },
+    ]
+  },
+  {
     module: 'next/link',
     exports: [
       { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
+    ]
+  },
+  {
+    module: '@/components/uiim/navigation/GroupSiteNavigatorBanner',
+    exports: [
+      { name: 'GROUP_SITE_NAVIGATOR_COPY', value: GROUP_SITE_NAVIGATOR_COPY },
+      { name: 'SodexoGroupSiteNavigatorBar', value: SodexoGroupSiteNavigatorBar },
+    ]
+  },
+  {
+    module: '@/components/uiim/navigation/SodexoLocationOverlay',
+    exports: [
+      { name: 'SodexoLocationOverlay', value: SodexoLocationOverlay },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-locale',
+    exports: [
+      { name: 'buildLocaleHref', value: buildLocaleHref },
+      { name: 'getPageLocale', value: getPageLocale },
+      { name: 'isFrenchLocale', value: isFrenchLocale },
+      { name: 'SODEXO_EN_LOCALE', value: SODEXO_EN_LOCALE },
+      { name: 'SODEXO_FR_LOCALE', value: SODEXO_FR_LOCALE },
     ]
   },
   {
@@ -308,6 +351,24 @@ const importMap = [
       { name: 'SODEXO_ABOUT_TECH_IMAGE', value: SODEXO_ABOUT_TECH_IMAGE },
       { name: 'sodexoAboutCardImage', value: sodexoAboutCardImage },
       { name: 'SODEXO_ABOUT_HERO_IMAGE', value: SODEXO_ABOUT_HERO_IMAGE },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-brands-media',
+    exports: [
+      { name: 'isUsableBrandsImageSrc', value: isUsableBrandsImageSrc },
+      { name: 'SODEXO_BRANDS_EXPERTISE_IMAGE', value: SODEXO_BRANDS_EXPERTISE_IMAGE },
+      { name: 'SODEXO_BRANDS_FORMAT_IMAGE', value: SODEXO_BRANDS_FORMAT_IMAGE },
+      { name: 'sodexoBrandsCardImage', value: sodexoBrandsCardImage },
+      { name: 'SODEXO_BRANDS_HERO_IMAGE', value: SODEXO_BRANDS_HERO_IMAGE },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-brand-style',
+    exports: [
+      { name: 'brandStyleVars', value: brandStyleVars },
+      { name: 'getPageBrandStyle', value: getPageBrandStyle },
+      { name: 'resolveBrandStyle', value: resolveBrandStyle },
     ]
   },
   {

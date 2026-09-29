@@ -57,7 +57,7 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
       <section className="w-full" style={{ backgroundColor: 'var(--brand-muted)' }}>
         <div className="mx-auto grid max-w-[1224px] items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:px-12 lg:py-16">
           <div>
-            {(brandHeroEyebrow?.value || isEditing) && (
+            {(brandHeroEyebrow?.value || isEditing) && brandHeroEyebrow && (
               <Text
                 field={brandHeroEyebrow}
                 tag="p"
@@ -65,7 +65,7 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
                 style={{ color: 'var(--brand-accent)', fontFamily: 'var(--brand-body-font)' }}
               />
             )}
-            {(brandHeroTitle?.value || isEditing) && (
+            {(brandHeroTitle?.value || isEditing) && brandHeroTitle && (
               <Text
                 field={brandHeroTitle}
                 tag="h1"
@@ -73,14 +73,14 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
                 style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
               />
             )}
-            {(brandHeroSubtitle?.value || isEditing) && (
+            {(brandHeroSubtitle?.value || isEditing) && brandHeroSubtitle && (
               <ContentSdkRichText
                 field={brandHeroSubtitle}
                 className="mt-5 max-w-xl text-base leading-7"
                 style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
               />
             )}
-            {(brandHeroCta?.value?.href || isEditing) && (
+            {(brandHeroCta?.value?.href || isEditing) && brandHeroCta && (
               <ContentSdkLink
                 field={brandHeroCta}
                 className="mt-8 inline-flex cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white"
@@ -92,7 +92,7 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
               />
             )}
           </div>
-          {(brandHeroImage?.value?.src || isEditing) && (
+          {(brandHeroImage?.value?.src || isEditing) && brandHeroImage && (
             <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
               <ContentSdkImage field={brandHeroImage} className="h-full w-full object-cover" />
             </div>

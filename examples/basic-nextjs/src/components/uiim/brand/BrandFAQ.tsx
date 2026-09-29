@@ -55,7 +55,7 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
     <div className={cn('component brand-faq', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
       <section className="w-full px-6 py-14 lg:px-12" style={{ backgroundColor: 'var(--brand-muted)' }}>
         <div className="mx-auto max-w-3xl">
-          {(routeFields.brandFaqTitle?.value || isEditing) && (
+          {(routeFields.brandFaqTitle?.value || isEditing) && routeFields.brandFaqTitle && (
             <Text
               field={routeFields.brandFaqTitle}
               tag="h2"
@@ -75,15 +75,17 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
                     className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left"
                     aria-expanded={isOpen}
                   >
-                    <Text
-                      field={item.question}
-                      tag="span"
-                      className="text-base font-normal"
-                      style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
-                    />
+                    {item.question && (
+                      <Text
+                        field={item.question}
+                        tag="span"
+                        className="text-base font-normal"
+                        style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
+                      />
+                    )}
                     <ChevronDown className={cn('h-5 w-5 shrink-0 transition-transform', isOpen && 'rotate-180')} style={{ color: 'var(--brand-accent)' }} />
                   </button>
-                  {isOpen && (item.answer?.value || isEditing) && (
+                  {isOpen && (item.answer?.value || isEditing) && item.answer && (
                     <ContentSdkRichText
                       field={item.answer}
                       className="pb-5 text-sm leading-7"

@@ -51,7 +51,7 @@ function BrandFinalCTALayout({ params, page }: ComponentProps): JSX.Element {
     <div className={cn('component brand-final-cta [&_a]:cursor-pointer', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
       <section className="px-6 py-16 lg:px-12" style={{ backgroundColor: 'var(--brand-primary)' }}>
         <div className="mx-auto max-w-3xl text-center">
-          {(brandCtaHeadline?.value || isEditing) && (
+          {(brandCtaHeadline?.value || isEditing) && brandCtaHeadline && (
             <Text
               field={brandCtaHeadline}
               tag="h2"
@@ -59,14 +59,14 @@ function BrandFinalCTALayout({ params, page }: ComponentProps): JSX.Element {
               style={{ fontFamily: 'var(--brand-heading-font)' }}
             />
           )}
-          {(brandCtaSubhead?.value || isEditing) && (
+          {(brandCtaSubhead?.value || isEditing) && brandCtaSubhead && (
             <ContentSdkRichText
               field={brandCtaSubhead}
               className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/85"
               style={{ fontFamily: 'var(--brand-body-font)' }}
             />
           )}
-          {(brandCtaButton?.value?.href || isEditing) && (
+          {(brandCtaButton?.value?.href || isEditing) && brandCtaButton && (
             <ContentSdkLink
               field={brandCtaButton}
               className="mt-8 inline-flex cursor-pointer items-center px-6 py-3 text-sm font-semibold"

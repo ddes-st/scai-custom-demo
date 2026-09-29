@@ -12,10 +12,11 @@ import React from 'react';
 import * as React_7214d18997ee864dd178de7b3a8430f6783e8b89 from 'react';
 import { NextImage, RichText, Text, Link, AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 import { cn } from '@/lib/utils';
-import { isSodexoArticlesPage, isSodexoAboutPage, isSodexoSite, isSodexoHelpPage } from '@/lib/sodexo-page';
+import { isSodexoArticlesPage, isSodexoSite, isSodexoAboutPage, isSodexoHelpPage, isSodexoBrandDetailPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
@@ -58,9 +59,11 @@ const importMap = [
     module: '@/lib/sodexo-page',
     exports: [
       { name: 'isSodexoArticlesPage', value: isSodexoArticlesPage },
-      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
       { name: 'isSodexoSite', value: isSodexoSite },
+      { name: 'isSodexoAboutPage', value: isSodexoAboutPage },
       { name: 'isSodexoHelpPage', value: isSodexoHelpPage },
+      { name: 'isSodexoBrandDetailPage', value: isSodexoBrandDetailPage },
+      { name: 'isSodexoBrandsPage', value: isSodexoBrandsPage },
     ]
   },
   {
@@ -74,6 +77,14 @@ const importMap = [
     exports: [
       { name: 'Sparkles', value: Sparkles },
       { name: '*', value: LucideIcons },
+    ]
+  },
+  {
+    module: '@/lib/sodexo-brand-style',
+    exports: [
+      { name: 'brandStyleVars', value: brandStyleVars },
+      { name: 'getPageBrandStyle', value: getPageBrandStyle },
+      { name: 'resolveBrandStyle', value: resolveBrandStyle },
     ]
   },
   {

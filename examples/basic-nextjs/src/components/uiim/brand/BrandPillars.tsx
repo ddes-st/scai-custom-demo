@@ -67,7 +67,7 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
     <div className={cn('component brand-pillars', styles)} id={RenderingIdentifier} style={brandStyleVars(style)}>
       <section className="w-full bg-white px-6 py-14 lg:px-12">
         <div className="mx-auto max-w-[1224px]">
-          {(routeFields.brandPillarsTitle?.value || isEditing) && (
+          {(routeFields.brandPillarsTitle?.value || isEditing) && routeFields.brandPillarsTitle && (
             <Text
               field={routeFields.brandPillarsTitle}
               tag="h2"
@@ -82,12 +82,12 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
               }
               return (
                 <article key={index} className="flex flex-col">
-                  {(pillar.image?.value?.src || isEditing) && (
+                  {(pillar.image?.value?.src || isEditing) && pillar.image && (
                     <div className="relative mb-5 aspect-[4/3] overflow-hidden">
                       <ContentSdkImage field={pillar.image} className="h-full w-full object-cover" />
                     </div>
                   )}
-                  {(pillar.title?.value || isEditing) && (
+                  {(pillar.title?.value || isEditing) && pillar.title && (
                     <Text
                       field={pillar.title}
                       tag="h3"
@@ -95,7 +95,7 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
                       style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
                     />
                   )}
-                  {(pillar.description?.value || isEditing) && (
+                  {(pillar.description?.value || isEditing) && pillar.description && (
                     <ContentSdkRichText
                       field={pillar.description}
                       className="mt-3 text-sm leading-6"
