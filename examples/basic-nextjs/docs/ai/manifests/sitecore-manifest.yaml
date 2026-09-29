@@ -15,9 +15,9 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}"
-  lastUpdatedAt: "2026-09-28T16:24:00Z"
-  renderingCount: 35
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{F44F91B0-859A-4FC5-88D8-1920DEEBB5E5}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{2BC18A32-4419-4213-8EF3-AC834E0C707A}"
+  lastUpdatedAt: "2026-09-29T08:00:00Z"
+  renderingCount: 36
   note: "Merge of sodexo and main: kept Quote {F44F91B0-859A-4FC5-88D8-1920DEEBB5E5} plus search renderings SearchResults {D33F0079-E54F-48C3-A33A-6A3A83146DA8}, SearchCollection {158772E0-46FD-4626-9144-527C24854F97}, and SearchTypeahead {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
 
 components:
@@ -3323,6 +3323,56 @@ lookups:
 
     notes:
       - "2026-09-21: Created Quote simple component. Not placed on any page. Sodexo variant matches the Sophie Bellon pull-quote screenshot. Default auto-routes to Sodexo when site.name is sodexo so Pages can insert without FieldNames."
+
+  - name: "GroupSiteNavigatorBanner"
+    kind: "simple"
+    category: "Navigation"
+    status: "complete"
+    createdAt: "2026-09-29T08:00:00Z"
+    updatedAt: "2026-09-29T08:00:00Z"
+    notes: >
+      Sodexo group-site chooser bar. The live chrome is rendered from the
+      NavigationHeader Sodexo variant so it scroll-hides with the header.
+      France is the only static option; Continue is inert until a French
+      local site exists. Dismiss uses sessionStorage and returns next visit.
+      Location overlay and FR/EN switcher live in NavigationHeader.
+      fr-FR language versions were added to Home, About, Articles, Search,
+      SearchResults, the featured article, and Header/Footer partials.
+    react:
+      filePath: "src/components/uiim/navigation/GroupSiteNavigatorBanner.tsx"
+      componentMapKey: "GroupSiteNavigatorBanner"
+      variants: ["Default", "Sodexo"]
+    templates:
+      datasource:
+        name: "GroupSiteNavigatorBanner"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/GroupSiteNavigatorBanner"
+        itemId: "{6FD5AD38-3827-41E4-94DC-27C333A29187}"
+        fields:
+          - { name: "Message", type: "Single-Line Text", itemId: "{63584E80-72C2-45CD-8986-A2E76AFB27AD}" }
+          - { name: "RegionLabel", type: "Single-Line Text", itemId: "{F048F2A5-6704-405E-B8C9-F068B68BD7FC}" }
+          - { name: "ContinueLabel", type: "Single-Line Text", itemId: "{5AA8B5DE-4DC8-4B79-BB95-ACEBD202E31C}" }
+          - { name: "ContinueLink", type: "General Link", itemId: "{7A285E2C-85D6-4AC6-9558-EFD3CD6D04C9}" }
+      folder:
+        name: "GroupSiteNavigatorBanner Folder"
+        itemId: "{2EC2539B-197A-452C-832A-C30F3A724973}"
+      renderingParams:
+        name: "GroupSiteNavigatorBanner"
+        itemId: "{34A23F35-8720-4958-8F07-BEB2F2DD887D}"
+    datasourceFolder:
+      name: "GroupSiteNavigatorBanners"
+      itemId: "{FBB404FF-5785-4D02-83B2-E1ADC674E4A8}"
+      exampleItem:
+        name: "Sodexo Group Site Navigator"
+        itemId: "{70984416-25E0-4C13-9B99-439519DB5D28}"
+    rendering:
+      name: "GroupSiteNavigatorBanner"
+      itemId: "{2BC18A32-4419-4213-8EF3-AC834E0C707A}"
+      componentName: "GroupSiteNavigatorBanner"
+    headlessVariants:
+      containerId: "{9610AA9E-DC89-406D-AD73-DB7906ECFE2C}"
+      variants:
+        - { name: "Default", itemId: "{4A606A71-F01E-4E09-80C9-826B1552B832}" }
+        - { name: "Sodexo", itemId: "{E096E4F5-6C50-4944-BA92-27E421480C17}" }
 
 # ──────────────────────────────────────────────
 # BlogListing — Sodexo Articles page (2026-07-15)

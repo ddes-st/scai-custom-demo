@@ -14,6 +14,19 @@ import Image from 'next/image';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { TypeaheadSearchBox } from '@/lib/search-ui/TypeaheadSearchBox';
+import {
+  GROUP_SITE_NAVIGATOR_COPY,
+  SodexoGroupSiteNavigatorBar,
+} from '@/components/uiim/navigation/GroupSiteNavigatorBanner';
+import { SodexoLocationOverlay } from '@/components/uiim/navigation/SodexoLocationOverlay';
+import {
+  buildLocalePath,
+  getPageLocale,
+  isFrenchLocale,
+  SODEXO_EN_LOCALE,
+  SODEXO_FR_LOCALE,
+} from '@/lib/sodexo-locale';
+import { isSodexoSite } from '@/lib/sodexo-page';
 
 interface NavigationLinkFields {
   id: string;
@@ -241,7 +254,9 @@ const MenuButton = ({ open, onClick }: { open: boolean; onClick: () => void }) =
   </button>
 );
 
-export const Default = ({ fields, params, page, rendering }: NavigationHeaderProps): JSX.Element => {
+export const Default = (props: NavigationHeaderProps): JSX.Element => {
+  if (isSodexoSite(props.page)) return Sodexo(props);
+  const { fields, params, page, rendering } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -453,33 +468,64 @@ const SodexoLogo = ({ brandLogo }: { brandLogo?: ImageField }) => {
   );
 };
 
-const SodexoUtilityBar = () => (
-  <div className="hidden border-b lg:block" style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}>
-    <div className="mx-auto flex max-w-7xl items-center justify-end gap-5 px-6 py-1.5 text-xs">
-      <a href="#" className="font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-        Contact Us
-      </a>
-      <a href="#" className="flex items-center gap-1 font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" />
-          <circle cx="12" cy="10" r="2.5" />
-        </svg>
-        Location
-      </a>
-      <div className="flex items-center gap-1.5 font-semibold">
-        <button type="button" className="opacity-40 transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-          FR
+const SodexoUtilityBar = ({
+  locale,
+  onOpenLocation,
+  onSwitchLocale,
+}: {
+  locale: string;
+  onOpenLocation: () => void;
+  onSwitchLocale: (nextLocale: string) => void;
+}) => {
+  const isFrench = isFrenchLocale(locale);
+  return (
+    <div
+      className="hidden lg:block"
+      style={{ backgroundColor: 'var(--brand-muted, #f0eef8)', borderColor: 'var(--brand-border, #e0dff0)' }}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-end gap-5 px-6 pb-2 text-xs">
+        <a href="#" className="font-medium transition-opacity hover:opacity-70" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+          Contact Us
+        </a>
+        <button
+          type="button"
+          onClick={onOpenLocation}
+          className="flex items-center gap-1 font-medium transition-opacity hover:opacity-70"
+          style={{ color: 'var(--brand-fg, #2a295c)' }}
+        >
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          Location
         </button>
-        <span className="opacity-30" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-          /
-        </span>
-        <button type="button" style={{ color: 'var(--brand-fg, #2a295c)' }}>
-          EN
-        </button>
+        <div className="flex items-center gap-1.5 font-semibold">
+          <button
+            type="button"
+            onClick={() => onSwitchLocale(SODEXO_FR_LOCALE)}
+            className={cn('transition-opacity hover:opacity-70', !isFrench && 'opacity-40')}
+            style={{ color: 'var(--brand-fg, #2a295c)' }}
+            aria-current={isFrench ? 'true' : undefined}
+          >
+            FR
+          </button>
+          <span className="opacity-30" style={{ color: 'var(--brand-fg, #2a295c)' }}>
+            /
+          </span>
+          <button
+            type="button"
+            onClick={() => onSwitchLocale(SODEXO_EN_LOCALE)}
+            className={cn('transition-opacity hover:opacity-70', isFrench && 'opacity-40')}
+            style={{ color: 'var(--brand-fg, #2a295c)' }}
+            aria-current={!isFrench ? 'true' : undefined}
+          >
+            EN
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SodexoMegaMenuLink = ({
   link,
@@ -598,9 +644,15 @@ const SodexoMegaMenu = ({
   );
 };
 
-export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element => {
+export const Sodexo = ({ fields, params, page }: NavigationHeaderProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [locationOpen, setLocationOpen] = useState(false);
+  const locale = getPageLocale(page);
+  const switchLocale = (nextLocale: string) => {
+    if (nextLocale === locale) return;
+    window.location.assign(buildLocalePath(window.location.pathname, nextLocale, window.location.search));
+  };
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   // Mega-menu mount/animation is decoupled from `activeMenu` so the closing
   // (down-top) transition can play out before the panel unmounts.
@@ -677,7 +729,20 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
         )}
         style={{ backgroundColor: '#ffffff' }}
       >
-        <SodexoUtilityBar />
+        <SodexoGroupSiteNavigatorBar
+          message={GROUP_SITE_NAVIGATOR_COPY.message}
+          regionLabel={GROUP_SITE_NAVIGATOR_COPY.regionLabel}
+          continueLabel={GROUP_SITE_NAVIGATOR_COPY.continueLabel}
+          isEditing={page?.mode?.isEditing}
+        />
+        <SodexoUtilityBar
+          locale={locale}
+          onOpenLocation={() => {
+            setActiveMenu(null);
+            setLocationOpen(true);
+          }}
+          onSwitchLocale={switchLocale}
+        />
         <div
           className="border-b"
           style={{ borderColor: 'var(--brand-border, #e0dff0)' }}
@@ -783,6 +848,7 @@ export const Sodexo = ({ fields, params }: NavigationHeaderProps): JSX.Element =
           aria-hidden="true"
         />
       )}
+      <SodexoLocationOverlay open={locationOpen} onClose={() => setLocationOpen(false)} />
     </div>
   );
 };
