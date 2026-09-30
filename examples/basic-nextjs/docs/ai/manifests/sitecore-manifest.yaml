@@ -3424,13 +3424,17 @@ lookups:
 # ──────────────────────────────────────────────
   - name: SodexoArticlesPage
     status: complete
-    updatedAt: "2026-09-28"
+    updatedAt: "2026-09-30"
     notes: >
       Split the Articles listing BlogListing monolith onto existing catalog
       components. No new renderings. New SodexoArticles named exports plus
       Headless Variant Definitions. Layouts also activate via
       isSodexoArticlesPage() because MCP cannot set FieldNames. Homepage,
       About, and article-detail variants were not modified.
+      2026-09-30: Stories card 01 Strategic Insight (64f9db31) CardImage
+      replaced with live our-everyday-stories banner (CH asset 108474,
+      1240x698). CardLink is now an internal link to article page 00b0d725
+      /Articles/Turning-Strategic-Insight-Into-Optimized-Experiences.
     page:
       name: Articles
       itemId: "d8b01498-2838-4388-a68f-86665d9c1c80"
@@ -3447,6 +3451,7 @@ lookups:
       - { name: "Sodexo Articles - Featured", itemId: "8c8f0f7d-fbc1-4182-89dd-2a4e33a3362c", path: "/sitecore/content/group/sodexo/Data/HeroBannerCarousels/Sodexo Articles - Featured" }
       - { name: "Sodexo Articles - Social", itemId: "e2d8d94e-faea-4b41-8928-8c39dd32edbb", path: "/sitecore/content/group/sodexo/Data/LogoClouds/Sodexo Articles - Social" }
       - { name: "Sodexo Articles - Stories", itemId: "b83af41c-6028-440c-8f6c-1284b5971639", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo Articles - Stories" }
+      - { name: "01 Strategic Insight", itemId: "64f9db31-b8dd-46c8-b429-8de1002cb036", path: "/sitecore/content/group/sodexo/Data/FeatureCardsGrids/Sodexo Articles - Stories/01 Strategic Insight" }
     pageComponents:
       - { name: "HeroBanner", instanceId: "59958d81-1f11-464e-8057-c734a507dcf7", datasource: "72ea31b2" }
       - { name: "HeroBannerCarousel", instanceId: "13e3abe6-f88d-4323-85eb-8d5d296e5dd9", datasource: "8c8f0f7d" }

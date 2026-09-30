@@ -17,7 +17,7 @@ import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { brandStyleVars, getPageBrandStyle, resolveBrandStyle, BRAND_STYLE_TOKENS } from '@/lib/sodexo-brand-style';
-import { SODEXO_BRAND_HERO_POSTERS } from '@/lib/sodexo-brands-media';
+import { SODEXO_BRAND_PILLAR_ICONS, SODEXO_BRAND_HERO_POSTERS, SODEXO_BRAND_LOGOS } from '@/lib/sodexo-brands-media';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
@@ -92,7 +92,9 @@ const importMap = [
   {
     module: '@/lib/sodexo-brands-media',
     exports: [
+      { name: 'SODEXO_BRAND_PILLAR_ICONS', value: SODEXO_BRAND_PILLAR_ICONS },
       { name: 'SODEXO_BRAND_HERO_POSTERS', value: SODEXO_BRAND_HERO_POSTERS },
+      { name: 'SODEXO_BRAND_LOGOS', value: SODEXO_BRAND_LOGOS },
     ]
   },
   {
