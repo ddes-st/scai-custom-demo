@@ -27,4 +27,13 @@ describe('sodexo-locale', () => {
       buildLocaleHref('https://preview.example/api/editing/render?sc_itemid=abc&sc_lang=en', 'fr-FR')
     ).toBe('/api/editing/render?sc_itemid=abc&sc_lang=fr-FR&sc_site=sodexo');
   });
+
+  it('drops version and previewTime when switching preview language', () => {
+    expect(
+      buildLocaleHref(
+        'https://preview.example/api/editing/render?sc_itemid=abc&sc_lang=en&sc_version=1&sc_previewTime=2026-09-30T00%3A00%3A00Z&mode=preview',
+        'fr-FR'
+      )
+    ).toBe('/api/editing/render?sc_itemid=abc&sc_lang=fr-FR&mode=preview&sc_site=sodexo');
+  });
 });

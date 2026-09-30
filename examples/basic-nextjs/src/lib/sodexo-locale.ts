@@ -45,6 +45,9 @@ export function buildLocalePath(pathname: string, targetLocale: string, search =
 
 const PREVIEW_QUERY_KEYS = ['sc_lang', 'sc_itemid', 'sc_mode', 'sc_site', 'sc_version', 'secret'];
 
+/** Language-specific preview pins that must not follow the EN URL onto FR (or the reverse). */
+const PREVIEW_LOCALE_RESET_KEYS = ['sc_version', 'sc_previewTime', 'sc_previewtime'];
+
 function getRouteItemId(page?: Page): string {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const route = (page as any)?.layout?.sitecore?.route;
@@ -74,6 +77,7 @@ export function buildLocaleHref(
   const isEditingRender = url.pathname.includes('/api/editing');
 
   if (keepPreview) {
+    PREVIEW_LOCALE_RESET_KEYS.forEach((key) => url.searchParams.delete(key));
     url.searchParams.set('sc_lang', targetLocale);
     const itemId = getRouteItemId(page);
     if (itemId && !url.searchParams.has('sc_itemid')) {
