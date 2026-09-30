@@ -12,6 +12,8 @@ const LIVE_LOGO = 'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-p
 
 export const SODEXO_BRAND_LOGOS: Record<string, string> = {
   'modern-recipe': `${LIVE_LOGO}/modern-recipe-logo1.png`,
+  'good-eating': `${LIVE_LOGO}/logo-tgec.png`,
+  'kitchen-works': `${LIVE_LOGO}/kitchen-works-logo186x48.png`,
 };
 
 export const SODEXO_BRAND_PILLAR_ICONS: Record<string, string[]> = {
@@ -19,6 +21,16 @@ export const SODEXO_BRAND_PILLAR_ICONS: Record<string, string[]> = {
     `${LIVE_LOGO}/modernrecipe-fork-icongreen.png`,
     `${LIVE_LOGO}/modernrecipe-bowl-icongreen.png`,
     `${LIVE_LOGO}/modernrecipe-leaf-icongreen.png`,
+  ],
+  'good-eating': [
+    `${LIVE_LOGO}/thegoodeatingcompany-2026-toqueicon.png`,
+    `${LIVE_LOGO}/Leaf-icon.png`,
+    `${LIVE_LOGO}/thegoodeatingcompany-2026-Serveicon.png`,
+  ],
+  'kitchen-works': [
+    `${LIVE_LOGO}/kitchenworks-2026-thundericon.png`,
+    `${LIVE_LOGO}/kitchenworks-2026-moneyicon.png`,
+    `${LIVE_LOGO}/kitchenworks-2026-leaficon.png`,
   ],
 };
 export const SODEXO_BRANDS_EXPERTISE_IMAGE = `${CH}/108139-brand-overview-culinary-expertise?v=262f8677`;

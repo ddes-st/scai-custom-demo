@@ -21,6 +21,7 @@ type BrandTokens = {
   bodyFont: string;
   buttonRadius: string;
   ctaText: string;
+  accentFg: string;
 };
 
 export const BRAND_STYLE_TOKENS: Record<BrandStyleId, BrandTokens> = {
@@ -35,30 +36,33 @@ export const BRAND_STYLE_TOKENS: Record<BrandStyleId, BrandTokens> = {
     bodyFont: '"Open Sans", sans-serif',
     buttonRadius: '3px 3px 16px',
     ctaText: '#ffffff',
+    accentFg: '#063434',
   },
   'good-eating': {
     id: 'good-eating',
     label: 'The Good Eating Company',
-    primary: '#1f3d2a',
-    fg: '#1b2a22',
-    muted: '#e7efe4',
-    accent: '#f3e4c8',
-    headingFont: 'Georgia, "Times New Roman", serif',
+    primary: '#cde14c',
+    fg: '#293826',
+    muted: '#ece7e1',
+    accent: '#cde14c',
+    headingFont: '"Sansa Pro", "DM Sans", sans-serif',
     bodyFont: '"Open Sans", sans-serif',
     buttonRadius: '3px 3px 16px',
-    ctaText: '#ffffff',
+    ctaText: '#293826',
+    accentFg: '#293826',
   },
   'kitchen-works': {
     id: 'kitchen-works',
     label: 'Kitchen Works',
-    primary: '#111111',
-    fg: '#111111',
-    muted: '#f4f1ea',
-    accent: '#f7e3a1',
-    headingFont: '"DM Sans", sans-serif',
+    primary: '#0a0efa',
+    fg: '#000000',
+    muted: '#fed167',
+    accent: '#0a0efa',
+    headingFont: '"Sansa Pro", "DM Sans", sans-serif',
     bodyFont: '"Open Sans", sans-serif',
     buttonRadius: '3px 3px 16px',
     ctaText: '#ffffff',
+    accentFg: '#ffffff',
   },
 };
 
@@ -96,5 +100,6 @@ export function brandStyleVars(style: BrandStyleId): CSSProperties {
     ['--brand-body-font' as string]: tokens.bodyFont,
     ['--brand-button-radius' as string]: tokens.buttonRadius,
     ['--brand-cta-text' as string]: tokens.ctaText,
+    ['--brand-accent-fg' as string]: tokens.accentFg,
   };
 }

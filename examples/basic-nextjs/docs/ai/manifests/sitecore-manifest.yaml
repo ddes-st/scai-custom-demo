@@ -3638,6 +3638,13 @@ lookups:
       bar and a filled CTA. Story sits on the blush band; closing CTA on mint.
       GEC and Kitchen Works follow the same token + section pattern with their
       own muted/accent pair. MR copy aligned to live CTAs and Shell case study.
+      2026-09-30: Good Eating Company tokens set to live olive + lime
+      (#293826 / #CDE14C) with cream wash #ECE7E1. Logo, toque/leaf/serve
+      icons, lime filled CTAs with dark text, and live CTA/FAQ copy applied.
+      2026-09-30: Kitchen Works tokens set to live electric blue + gold
+      (#0A0EFA / #FED167) with black ink. Logo, thunder/money/leaf icons,
+      blue filled CTAs, yellow closing band, Pazuelo case study on the
+      blue story band. Story text uses accentFg (white on KW).
     template:
       name: "Brand Page"
       itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"

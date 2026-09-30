@@ -153,15 +153,15 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
                   field={routeFields.brandStoryTitle}
                   tag="h2"
                   className="text-[28px] font-normal leading-tight sm:text-[36px]"
-                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-heading-font)' }}
-                />
-              )}
-              {(routeFields.brandStoryBody?.value || isEditing) && routeFields.brandStoryBody && (
-                <ContentSdkRichText
-                  field={routeFields.brandStoryBody}
-                  className="mt-5 text-base leading-7"
-                  style={{ color: 'var(--brand-fg)', fontFamily: 'var(--brand-body-font)' }}
-                />
+                style={{ color: 'var(--brand-accent-fg)', fontFamily: 'var(--brand-heading-font)' }}
+              />
+            )}
+            {(routeFields.brandStoryBody?.value || isEditing) && routeFields.brandStoryBody && (
+              <ContentSdkRichText
+                field={routeFields.brandStoryBody}
+                className="mt-5 text-base leading-7"
+                style={{ color: 'var(--brand-accent-fg)', fontFamily: 'var(--brand-body-font)' }}
+              />
               )}
             </div>
           </div>
