@@ -89,8 +89,8 @@ function BrandFAQLayout({ params, page }: ComponentProps): JSX.Element {
                       />
                     )}
                     <span
-                      className="flex h-8 w-8 shrink-0 items-center justify-center text-xl leading-none"
-                      style={{ color: 'var(--brand-fg)' }}
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xl leading-none"
+                      style={{ color: 'var(--brand-fg)', backgroundColor: 'var(--brand-muted)' }}
                       aria-hidden
                     >
                       {isOpen ? '−' : '+'}

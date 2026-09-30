@@ -3,6 +3,13 @@ import type { Page } from '@sitecore-content-sdk/nextjs';
 
 export type BrandStyleId = 'modern-recipe' | 'good-eating' | 'kitchen-works';
 
+/**
+ * Dual-surface brand system (Modern Recipe is the reference):
+ * - primary: filled CTA / chrome
+ * - fg: headings and body
+ * - muted: light brand wash (MR mint) for closing CTA and FAQ chips
+ * - accent: second brand wash (MR blush/pink) for the story / case-study band
+ */
 type BrandTokens = {
   id: BrandStyleId;
   label: string;
@@ -13,30 +20,33 @@ type BrandTokens = {
   headingFont: string;
   bodyFont: string;
   buttonRadius: string;
+  ctaText: string;
 };
 
 export const BRAND_STYLE_TOKENS: Record<BrandStyleId, BrandTokens> = {
   'modern-recipe': {
     id: 'modern-recipe',
     label: 'Modern Recipe',
-    primary: '#063434',
+    primary: '#004c4e',
     fg: '#063434',
-    muted: '#f3efe6',
-    accent: '#d85a2b',
+    muted: '#c6e9e8',
+    accent: '#f4d8d3',
     headingFont: '"Sansa Pro", "DM Sans", sans-serif',
     bodyFont: '"Open Sans", sans-serif',
-    buttonRadius: '999px',
+    buttonRadius: '3px 3px 16px',
+    ctaText: '#ffffff',
   },
   'good-eating': {
     id: 'good-eating',
     label: 'The Good Eating Company',
     primary: '#1f3d2a',
     fg: '#1b2a22',
-    muted: '#f6f1e8',
-    accent: '#8a6a32',
+    muted: '#e7efe4',
+    accent: '#f3e4c8',
     headingFont: 'Georgia, "Times New Roman", serif',
     bodyFont: '"Open Sans", sans-serif',
-    buttonRadius: '0.25rem',
+    buttonRadius: '3px 3px 16px',
+    ctaText: '#ffffff',
   },
   'kitchen-works': {
     id: 'kitchen-works',
@@ -44,10 +54,11 @@ export const BRAND_STYLE_TOKENS: Record<BrandStyleId, BrandTokens> = {
     primary: '#111111',
     fg: '#111111',
     muted: '#f4f1ea',
-    accent: '#f0b429',
+    accent: '#f7e3a1',
     headingFont: '"DM Sans", sans-serif',
     bodyFont: '"Open Sans", sans-serif',
-    buttonRadius: '0',
+    buttonRadius: '3px 3px 16px',
+    ctaText: '#ffffff',
   },
 };
 
@@ -84,5 +95,6 @@ export function brandStyleVars(style: BrandStyleId): CSSProperties {
     ['--brand-heading-font' as string]: tokens.headingFont,
     ['--brand-body-font' as string]: tokens.bodyFont,
     ['--brand-button-radius' as string]: tokens.buttonRadius,
+    ['--brand-cta-text' as string]: tokens.ctaText,
   };
 }

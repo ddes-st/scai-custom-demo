@@ -11,6 +11,8 @@ import Scripts from "src/Scripts";
 import SitecoreStyles from "components/content-sdk/SitecoreStyles";
 import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
 import componentMap from ".sitecore/component-map";
+import { isSodexoBrandDetailPage } from "@/lib/sodexo-page";
+import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from "@/lib/sodexo-brand-style";
 
 interface LayoutProps {
   page: Page;
@@ -164,9 +166,13 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
   const bgHex = routeFields?.BackgroundColor?.value?.toString?.()?.trim();
   const isValidHex =
     bgHex && /^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/.test(bgHex);
-  const rootStyle = isValidHex
-    ? { backgroundColor: bgHex, minHeight: "100vh" }
+  const brandVars = isSodexoBrandDetailPage(page)
+    ? brandStyleVars(resolveBrandStyle(getPageBrandStyle(page)))
     : undefined;
+  const rootStyle = {
+    ...(isValidHex ? { backgroundColor: bgHex, minHeight: "100vh" } : undefined),
+    ...brandVars,
+  };
 
   return (
     <>

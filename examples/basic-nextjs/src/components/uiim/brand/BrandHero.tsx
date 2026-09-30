@@ -13,7 +13,7 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoBrandDetailPage } from '@/lib/sodexo-page';
 import { BRAND_STYLE_TOKENS, brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
-import { SODEXO_BRAND_HERO_POSTERS } from '@/lib/sodexo-brands-media';
+import { SODEXO_BRAND_HERO_POSTERS, SODEXO_BRAND_LOGOS } from '@/lib/sodexo-brands-media';
 
 function isBrandHeroVideo(field?: ImageField): boolean {
   const val = field?.value as Record<string, unknown> | undefined;
@@ -85,6 +85,17 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
                 <li>{crumbName}</li>
               </ol>
             </nav>
+            {SODEXO_BRAND_LOGOS[style] && (
+              <img
+                src={SODEXO_BRAND_LOGOS[style]}
+                alt={brandLabel}
+                className="mb-5 h-10 w-auto sm:h-12"
+              />
+            )}
+            <div className="mb-6 flex h-1.5 w-16 overflow-hidden" aria-hidden>
+              <span className="w-1/2" style={{ backgroundColor: 'var(--brand-muted)' }} />
+              <span className="w-1/2" style={{ backgroundColor: 'var(--brand-accent)' }} />
+            </div>
             {isEditing && brandHeroEyebrow && (
               <Text
                 field={brandHeroEyebrow}
@@ -111,10 +122,10 @@ function BrandHeroLayout({ params, page }: ComponentProps): JSX.Element {
             {(brandHeroCta?.value?.href || isEditing) && brandHeroCta && (
               <ContentSdkLink
                 field={brandHeroCta}
-                className="mt-8 inline-flex cursor-pointer items-center gap-2 border px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
+                className="mt-8 inline-flex max-w-full cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-80"
                 style={{
-                  color: 'var(--brand-fg)',
-                  borderColor: 'var(--brand-fg)',
+                  backgroundColor: 'var(--brand-primary)',
+                  color: 'var(--brand-cta-text)',
                   borderRadius: 'var(--brand-button-radius)',
                   fontFamily: 'var(--brand-body-font)',
                 }}

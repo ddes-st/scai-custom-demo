@@ -7,6 +7,20 @@ export const SODEXO_BRAND_HERO_POSTERS: Record<string, string> = {
   'good-eating': `${CH}/108169-good-eating-co-flip?v=766f61d2`,
   'kitchen-works': `${CH}/108180-kitchen-works-flip?v=39ca410b`,
 };
+
+const LIVE_LOGO = 'https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Logos';
+
+export const SODEXO_BRAND_LOGOS: Record<string, string> = {
+  'modern-recipe': `${LIVE_LOGO}/modern-recipe-logo1.png`,
+};
+
+export const SODEXO_BRAND_PILLAR_ICONS: Record<string, string[]> = {
+  'modern-recipe': [
+    `${LIVE_LOGO}/modernrecipe-fork-icongreen.png`,
+    `${LIVE_LOGO}/modernrecipe-bowl-icongreen.png`,
+    `${LIVE_LOGO}/modernrecipe-leaf-icongreen.png`,
+  ],
+};
 export const SODEXO_BRANDS_EXPERTISE_IMAGE = `${CH}/108139-brand-overview-culinary-expertise?v=262f8677`;
 export const SODEXO_BRANDS_FORMAT_IMAGE = `${CH}/108149-tab-restaurants?v=a3570e17`;
 

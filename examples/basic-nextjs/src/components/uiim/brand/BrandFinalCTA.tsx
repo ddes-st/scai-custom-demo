@@ -71,9 +71,10 @@ function BrandFinalCTALayout({ params, page }: ComponentProps): JSX.Element {
           {(brandCtaButton?.value?.href || isEditing) && brandCtaButton && (
             <ContentSdkLink
               field={brandCtaButton}
-              className="inline-flex shrink-0 cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-80"
+              className="inline-flex shrink-0 cursor-pointer items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-80"
               style={{
                 backgroundColor: 'var(--brand-primary)',
+                color: 'var(--brand-cta-text)',
                 borderRadius: 'var(--brand-button-radius)',
                 fontFamily: 'var(--brand-body-font)',
               }}

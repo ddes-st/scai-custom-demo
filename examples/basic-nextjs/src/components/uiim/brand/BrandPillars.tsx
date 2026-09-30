@@ -11,6 +11,7 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoBrandDetailPage } from '@/lib/sodexo-page';
 import { brandStyleVars, getPageBrandStyle, resolveBrandStyle } from '@/lib/sodexo-brand-style';
+import { SODEXO_BRAND_PILLAR_ICONS } from '@/lib/sodexo-brands-media';
 
 interface BrandPillarsRouteFields {
   brandPillarsTitle?: Field<string>;
@@ -64,6 +65,7 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
   if (!routeFields) return <BrandPillarsDefaultComponent />;
 
   const style = resolveBrandStyle(getPageBrandStyle(page), params.BrandStyle);
+  const pillarIcons = SODEXO_BRAND_PILLAR_ICONS[style] || [];
   const cards = [1, 2, 3].map((index) => ({
     title: routeFields[`brandPillar${index}Title` as keyof BrandPillarsRouteFields] as Field<string> | undefined,
     description: routeFields[`brandPillar${index}Description` as keyof BrandPillarsRouteFields] as
@@ -105,10 +107,15 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
               }
               return (
                 <article key={index} className="flex flex-col">
-                  {(card.image?.value?.src || isEditing) && card.image && (
-                    <div className="relative mb-5 aspect-[4/3] overflow-hidden">
-                      <ContentSdkImage field={card.image} className="h-full w-full object-cover" />
-                    </div>
+                  {pillarIcons[index] ? (
+                    <img src={pillarIcons[index]} alt="" className="mb-5 h-16 w-16 object-contain" />
+                  ) : (
+                    (card.image?.value?.src || isEditing) &&
+                    card.image && (
+                      <div className="relative mb-5 aspect-[4/3] overflow-hidden">
+                        <ContentSdkImage field={card.image} className="h-full w-full object-cover" />
+                      </div>
+                    )
                   )}
                   {(card.title?.value || isEditing) && card.title && (
                     <Text
@@ -133,7 +140,7 @@ function BrandPillarsLayout({ params, page }: ComponentProps): JSX.Element {
       </section>
 
       {hasStory && (
-        <section className="w-full bg-white px-4 py-6 sm:px-8 lg:px-16 lg:py-10">
+        <section className="w-full px-4 py-12 sm:px-8 lg:px-16 lg:py-16" style={{ backgroundColor: 'var(--brand-accent)' }}>
           <div className="mx-auto grid max-w-[1224px] items-center gap-10 md:grid-cols-2 lg:gap-16">
             {(routeFields.brandStoryImage?.value?.src || isEditing) && routeFields.brandStoryImage && (
               <div className="relative min-h-[260px] overflow-hidden sm:min-h-[380px]">

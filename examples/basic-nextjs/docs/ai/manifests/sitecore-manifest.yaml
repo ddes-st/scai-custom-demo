@@ -3632,6 +3632,12 @@ lookups:
       3 highlights, muted CTA band, 6-item FAQ. Added Story Data and Highlights
       Data template sections plus FAQ 4-6 fields. Content refreshed from live
       modern-recipe, the-good-eating-company, and kitchen-works pages.
+      2026-09-30: Modern Recipe is the brand-identity reference. Tokens now use
+      live dual-surface colors (CTA #004C4E, ink #063434, mint #C6E9E8, blush
+      #F4D8D3, button radius 3px 3px 16px). Hero shows the wordmark + mint/pink
+      bar and a filled CTA. Story sits on the blush band; closing CTA on mint.
+      GEC and Kitchen Works follow the same token + section pattern with their
+      own muted/accent pair. MR copy aligned to live CTAs and Shell case study.
     template:
       name: "Brand Page"
       itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
