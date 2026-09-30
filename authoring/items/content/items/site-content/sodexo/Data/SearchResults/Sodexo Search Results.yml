@@ -1,0 +1,49 @@
+﻿---
+ID: "01048db0-29a7-43c5-983b-10bc68d7a043"
+Parent: "a03b9129-4d08-435e-b038-29802ce6a603"
+Template: "5cf70cbe-f1c9-4e58-a424-a6614ebd7071"
+Path: /sitecore/content/group/sodexo/Data/SearchResults/Sodexo Search Results
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T162940Z
+    - ID: "2f0df26a-722f-4fe7-ba85-34b3d4d567fb"
+      Hint: DescriptionMapping
+      Value: ArticleContent
+    - ID: "5241a5d0-1ac0-42d7-a170-e11f93f49981"
+      Hint: SearchIndex
+      Value: "79b6b3db-8ac7-4ab4-9e1b-f8dd9d6fe7fc"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "737f0cba-0708-421e-a124-e0088ff0f752"
+      Hint: TitleMapping
+      Value: Title
+    - ID: "7b11699c-9ea0-4c8a-8a1f-94d96c9f883c"
+      Hint: LinkMapping
+      Value: ArticleUrl
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "52dd883f-3f26-457e-a48f-c0d667e6836f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T162940Z
+    - ID: "db2da01b-9fe1-4f57-b8f0-643e57dc0740"
+      Hint: DateMapping
+      Value: ArticlePublicationDate
+    - ID: "e959ad54-64b7-4cb6-bffa-65df024e9c70"
+      Hint: ImageMapping
+      Value: ArticleImage

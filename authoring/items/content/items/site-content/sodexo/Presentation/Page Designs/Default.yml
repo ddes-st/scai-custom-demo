@@ -6,10 +6,14 @@ Path: /sitecore/content/group/sodexo/Presentation/Page Designs/Default
 SharedFields:
 - ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
   Hint: PartialDesigns
-  Value: "{C08D4FB5-8667-459E-93E0-471C9EFC10DC}|{42D352B9-D9E4-4F5A-BF6D-67E924741AEA}"
+  Value: "c08d4fb5-8667-459e-93e0-471c9efc10dc|42d352b9-d9e4-4f5a-bf6d-67e924741aea"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{12AD5C2D-4AAA-4F27-BAA2-5211E04AFF98}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "46ad0eea-b7c9-49a0-968a-f91d344d124e"
+  Value: "1a6c9f79-662e-43cc-9dd2-45ae32bfa679"
 Languages:
 - Language: en
   Versions:
@@ -28,11 +32,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "2f22abf5-507a-4792-9f09-c0c778325266"
+      Value: "eb39599e-1b77-4c57-b65b-1590a0cdb19e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\federico.mujica@sitecore.com
+        sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260325T110631Z
+      Value: 20260929T094753Z

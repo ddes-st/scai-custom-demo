@@ -1,0 +1,41 @@
+﻿---
+ID: "a0f3c371-6626-41e4-9dd7-5f6e69d33250"
+Parent: "6911193a-5dbb-45fe-a452-e2516b8317f7"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: /sitecore/content/group/sodexo/Data/FeatureCardsGrids/FeatureCardsGrid_af7e44b59eae4845b226a4903f77afc6/Eat
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102023Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Discover more" linktype="external" url="https://www.sodexo.com/what-we-do/food-brands/brands" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: Healthcare
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6de38e61-6bc8-4fdb-a6de-4980da45f52a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Eat
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T102023Z

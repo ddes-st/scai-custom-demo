@@ -1,0 +1,51 @@
+﻿---
+ID: "f44f91b0-859a-4fc5-88d8-1920deebb5e5"
+Parent: "2a701448-0ceb-4b4f-9162-2b9d46434e3d"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Content/Quote"
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: Quote
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/Quote"
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{D1B911B5-CF67-4162-BB12-A7E9F26017CE}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Quote Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Quote Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "6141a240-b6aa-44f1-89a4-fd36dc9399c5"
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "acd9bdcd-b132-4646-ac6f-a0140fea5e4c"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T093407Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5497f78a-59df-40a6-88c9-12fe20231402"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T093603Z

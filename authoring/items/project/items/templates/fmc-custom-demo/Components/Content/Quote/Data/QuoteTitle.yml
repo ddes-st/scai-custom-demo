@@ -1,0 +1,38 @@
+﻿---
+ID: "ed3afb02-a5f5-47c3-aee5-950f207527be"
+Parent: "46adc879-2e02-44fe-ad57-be9a11cf2d0c"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/Quote/Data/QuoteTitle"
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "964d9409-bd1c-46db-a38c-0fb508f36a79"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T093456Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2b0fb09e-40f3-4878-9807-ca5b3aea222b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T093524Z

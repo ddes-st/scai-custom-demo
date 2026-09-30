@@ -40,3 +40,42 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260715T151641Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T151641Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: D’une prestation fiable à des résultats prévisibles
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "50068a9c-353d-41f9-9593-390d3dd4f3e0"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>En fournissant en continu des données et des analyses aux équipes expérimentées sur site, nos centres de commandement et d’intelligence contribuent à offrir des services de fabrication exceptionnels et à améliorer en permanence les résultats de nos clients.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <image height="698" dam-content-type="Image" alt="D’une prestation fiable à des résultats prévisibles" width="1240" src="https://ddes.sitecoresandbox.cloud/api/public/content/106449-section3-img5?v=409a0f3e" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102841Z

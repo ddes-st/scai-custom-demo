@@ -1,0 +1,52 @@
+﻿---
+ID: "fcf5fc75-03fd-4a71-98ba-306f6b166d75"
+Parent: "8e814be5-c9b3-4090-aada-983401a42889"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/group/sodexo/Home/Brands/Data/FeatureCardsGrid-Brands/Modern Recipe"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f97c839f-4231-40b7-89ac-b37f3e13b391"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102354Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Discover more" linktype="internal" id="{D8035FA1-9128-44BF-BAAA-2F073D1BCCA6}" url="/Brands/modern-recipe" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: Business & Industries
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "212dc83a-3fe0-4a06-8361-5be23cb2b17d"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108160-modern-recipe-flip?v=6298278e" dam-id="mCVdgHb6RYeoAu-H4G3EMw" width="503" height="503" alt="Modern Recipe" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108160/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Modern Recipe
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T143445Z

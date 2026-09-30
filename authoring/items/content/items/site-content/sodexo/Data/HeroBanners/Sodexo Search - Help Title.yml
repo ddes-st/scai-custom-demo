@@ -1,0 +1,34 @@
+﻿---
+ID: "98ff4cdf-8e98-483c-931c-6c4fa139e04a"
+Parent: "79a9dfe3-d529-4ed3-8105-dca4c0a3b25c"
+Template: "ebb89bff-86ff-496d-b4f7-57fe722342b6"
+Path: "/sitecore/content/group/sodexo/Data/HeroBanners/Sodexo Search - Help Title"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T162846Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "52823184-103b-4407-b6e3-9ff7cf3603cb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c61c7b75-21bd-4b9c-995e-671c9605de14"
+      Hint: Title
+      Value: "How can we help you?"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T162846Z

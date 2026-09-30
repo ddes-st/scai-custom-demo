@@ -1,0 +1,44 @@
+﻿---
+ID: "f6d8e72b-35d5-4713-87f5-81c228cc733c"
+Parent: "dcc6381f-50be-4433-8126-bfd3e5aa4f31"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: /sitecore/content/group/sodexo/Data/FeatureCardsGrids/FeatureCardsGrid_df88ca997c9649ed955ccaf7d0a92ea3/Explore where we operate
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102103Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: 
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: |
+        <div class="ck-content"><p><a href="https://www.sodexo.com/what-we-do/where-we-operate/business-industries">Business &amp; Industries</a></p><p><a href="https://www.sodexo.com/what-we-do/where-we-operate/healthcare">Healthcare</a></p><p><a href="https://www.sodexo.com/what-we-do/where-we-operate/education">Schools &amp; Universities</a></p><p><a href="https://www.sodexo.com/what-we-do/where-we-operate/seniors">Senior living</a></p><p><a href="https://www.sodexo.com/what-we-do/where-we-operate/energy-resources">Energy &amp; Resources</a></p></div>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "acdbfaa8-01a8-4d87-b00b-9197fa9a1560"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Explore where we operate
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T122418Z

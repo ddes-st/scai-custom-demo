@@ -1,0 +1,32 @@
+﻿---
+ID: "70984416-25e0-4c13-9b99-439519db5d28"
+Parent: "fbb404ff-5785-4d02-83b2-e1adc674e4a8"
+Template: "6fd5ad38-3827-41e4-94dc-27c333a29187"
+Path: /sitecore/content/group/sodexo/Data/GroupSiteNavigatorBanners/Sodexo Group Site Navigator
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T074308Z
+    - ID: "5aa8b5de-4dc8-4b79-bb95-acebd202e31c"
+      Hint: ContinueLabel
+      Value: Continue
+    - ID: "63584e80-72c2-45cd-8986-a2e76afb27ad"
+      Hint: Message
+      Value: "You're visiting our Group website. To see content specific to your location, choose a country or region:"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4f15be9b-da69-49dc-a3b5-d1474f9205ab"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T074308Z
+    - ID: "f048f2a5-6704-405e-b8c9-f068b68bd7fc"
+      Hint: RegionLabel
+      Value: France

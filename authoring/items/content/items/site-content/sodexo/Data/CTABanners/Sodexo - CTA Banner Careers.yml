@@ -43,3 +43,45 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260713T113500Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113500Z
+    - ID: "492f28cd-0465-42ee-b7fe-df452729e9bd"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="_self" title="" linktype="external" text="Faites partie de quelque chose de plus grand" url="https://www.sodexo.com/working-at-sodexo/more-than-a-job" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5a17dd1d-78a3-4c4e-b3f4-74cd24cd1793"
+      Hint: Description
+      Value: Rejoindre Sodexo, c’est faire partie d’une entreprise où vous appartenez à une équipe, pouvez agir avec un but et vous épanouir à votre manière. Il s’agit d’avoir un réel impact chaque jour.
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5df404ee-3194-414a-844d-689d3b47355c"
+      Hint: Title
+      Value: Travailler chez Sodexo, c’est plus qu’un emploi
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9965ca3c-4117-4282-be11-3cf41bd7a72e"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "ba6a94ea-4b1f-4160-a0db-35b15779afe7"
+      Hint: BackgroundImage
+      Value: |
+        <image height="690" dam-content-type="Image" alt="Travailler chez Sodexo" width="1440" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106479/thumbnail" dam-id="9vGbJHx5RAiBBFSucvv8XA" src="https://ddes.sitecoresandbox.cloud/api/public/content/106479-section6-img8?v=81b54824" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102409Z

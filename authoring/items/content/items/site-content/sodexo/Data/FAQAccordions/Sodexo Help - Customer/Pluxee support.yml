@@ -1,0 +1,37 @@
+﻿---
+ID: "83e55c85-6e1f-440a-b72f-599837de00fd"
+Parent: "3d2523d4-c872-4498-8797-b5e30f5a1151"
+Template: "73df51e6-e92d-4742-9e0a-74d2ca36ef7f"
+Path: "/sitecore/content/group/sodexo/Data/FAQAccordions/Sodexo Help - Customer/Pluxee support"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "216901f9-a9fa-439a-a5b1-3f5651c67540"
+      Hint: Question
+      Value: "How can I get support with my Pluxee card or vouchers?"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T162949Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a798a518-df38-4949-8690-8672f0f0edb9"
+    - ID: "acb70819-a9d8-4255-bc4b-36c2ad36ec92"
+      Hint: Answer
+      Value: <p>For Pluxee card or voucher questions, visit the Pluxee support site or contact your local benefits administrator. Sodexo can help route you to the right team.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T162949Z

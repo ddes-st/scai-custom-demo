@@ -5,7 +5,13 @@
       {
         "name": "main-templates",
         "path": "/sitecore/templates/Project/main",
-        "scope": "ItemAndDescendants"
+        "scope": "ItemAndDescendants",
+        "rules": [
+          {
+            "path": "/Page Types",
+            "scope": "Ignored"
+          }
+        ]
       }
     ]
   }

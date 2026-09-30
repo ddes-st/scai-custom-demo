@@ -3645,11 +3645,26 @@ lookups:
       (#0A0EFA / #FED167) with black ink. Logo, thunder/money/leaf icons,
       blue filled CTAs, yellow closing band, Pazuelo case study on the
       blue story band. Story text uses accentFg (white on KW).
+      2026-09-30: Added site-collection Brand Page data template under
+      /sitecore/templates/Project/group/Page Types (61aa2fd9) so Pages can
+      attach a data template to the Brand Page Design. Mapped to design
+      864858ae.
+      2026-09-30: Recreated the three live brand pages on the site-collection
+      Brand Page template (61aa2fd9) + Brand design (864858ae). Same routes
+      and copied field values. New item IDs (Sitecore has no change-template
+      MCP). Listing cards still resolve by URL.
     template:
       name: "Brand Page"
       itemId: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
       path: "/sitecore/templates/Project/fmc-custom-demo/Page Types/Brand Page"
       standardValuesId: "d3ab9c3e-fe69-43f9-9170-c179eee4199d"
+    siteDataTemplate:
+      name: "Brand Page"
+      itemId: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
+      path: "/sitecore/templates/Project/group/Page Types/Brand Page"
+      standardValuesId: "bc1b525f-25e6-4da2-84c0-7bf05825f96b"
+      inheritsFrom: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
+      note: "Site-collection data template so Pages can assign it to the Brand Page Design. The three live brand pages now use this template."
     renderingParams:
       name: "BrandPage"
       itemId: "b9baf4ba-9190-492f-87f4-9ba912ba0e2b"
@@ -3669,11 +3684,11 @@ lookups:
       name: "Brand Page"
       itemId: "864858ae-1dd7-4d7d-a9fa-31a763abbfd1"
       partialDesignId: "b50b4eb5-bac5-4943-b1f0-2ac05a04bdd1"
-      mapping: "{58BEAC02-7773-41A7-B06B-FE49B1A3F72B}={864858AE-1DD7-4D7D-A9FA-31A763ABBFD1}"
+      mapping: "{58BEAC02-7773-41A7-B06B-FE49B1A3F72B}={864858AE-1DD7-4D7D-A9FA-31A763ABBFD1}&{61AA2FD9-3A69-4F7A-963D-BCFB98829EDF}={864858AE-1DD7-4D7D-A9FA-31A763ABBFD1}"
     pages:
-      - { name: "modern-recipe", itemId: "d8035fa1-9128-44bf-baaa-2f073d1bcca6", route: "/Brands/modern-recipe", style: "Modern Recipe" }
-      - { name: "the-good-eating-company", itemId: "89ada932-cd0e-45b6-92cd-f75aed43320d", route: "/Brands/the-good-eating-company", style: "The Good Eating Company" }
-      - { name: "kitchen-works", itemId: "23d2f71f-6300-4203-bca0-7216404482d0", route: "/Brands/kitchen-works", style: "Kitchen Works" }
+      - { name: "modern-recipe", itemId: "7bea92f0-b38a-41ae-95e1-a25cdbf3b167", route: "/Brands/modern-recipe", style: "Modern Recipe", templateId: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf" }
+      - { name: "the-good-eating-company", itemId: "d5a89ad2-23cc-464f-94ec-9b7f3e1c4367", route: "/Brands/the-good-eating-company", style: "The Good Eating Company", templateId: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf" }
+      - { name: "kitchen-works", itemId: "a53530c9-aa4c-485f-9484-67631e212278", route: "/Brands/kitchen-works", style: "Kitchen Works", templateId: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf" }
 
 components-searchv3:
   # Ticket #46 (FMC-ORG/custom-demo). Spec #45. Built 2026-08-07.

@@ -1,0 +1,34 @@
+﻿---
+ID: "f2f5b5e7-0813-46a3-8d9b-0df7e6a34498"
+Parent: "d2eff222-7027-48cc-8fc7-56b625079a33"
+Template: "b2b2ee2c-f290-4e92-bfc8-14cd367e3ea3"
+Path: "/sitecore/content/group/sodexo/Home/Brands/Data/TabNavigation-Formats"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102204Z
+    - ID: "44e9b658-15ba-436f-9d91-bf07e6e21059"
+      Hint: Title
+      Value: "TabNavigation-Formats"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cd174875-d311-4a90-9d9d-9725e88806f2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T102204Z

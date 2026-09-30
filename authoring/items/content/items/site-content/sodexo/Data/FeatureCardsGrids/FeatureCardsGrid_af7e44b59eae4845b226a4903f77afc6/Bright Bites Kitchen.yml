@@ -1,0 +1,41 @@
+﻿---
+ID: "fb31f072-d0cb-4c5f-aecb-ae37c99b8b3e"
+Parent: "6911193a-5dbb-45fe-a452-e2516b8317f7"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: /sitecore/content/group/sodexo/Data/FeatureCardsGrids/FeatureCardsGrid_af7e44b59eae4845b226a4903f77afc6/Bright Bites Kitchen
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102047Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Discover more" linktype="external" url="https://www.sodexo.com/what-we-do/food-brands/brands" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: Schools & Universities
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "64ce10eb-b315-4ed2-9039-bb79c46a0e16"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: Bright Bites Kitchen
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T102047Z

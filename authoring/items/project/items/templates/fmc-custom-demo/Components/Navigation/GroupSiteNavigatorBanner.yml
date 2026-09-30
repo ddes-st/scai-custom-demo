@@ -1,0 +1,43 @@
+﻿---
+ID: "6fd5ad38-3827-41e4-94dc-27c333a29187"
+Parent: "137b3477-f05e-417e-8720-80c78f734a16"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/GroupSiteNavigatorBanner"
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {44A022DB-56D3-419A-B43B-E27E4D8E9C41}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "9741debe-57c2-4451-acf3-9e95eb52b700"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{28016CFE-A6D4-4E94-A0B8-62E9ABE4949E}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T074223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "102cda58-b488-4646-8e37-48bc57506e6c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T074307Z

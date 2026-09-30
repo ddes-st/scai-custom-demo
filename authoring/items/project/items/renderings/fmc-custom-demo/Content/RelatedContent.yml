@@ -1,0 +1,47 @@
+﻿---
+ID: "03964382-c9f2-40f8-b0b9-cd7fe11809c2"
+Parent: "2a701448-0ceb-4b4f-9162-2b9d46434e3d"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Content/RelatedContent"
+SharedFields:
+- ID: "003a72cd-4cd6-4392-9862-41d4159929cd"
+  Hint: Data source
+  Value: "query:$site/Data/RichTextBlocks|query:$sharedSites/Data/RichTextBlocks"
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: RelatedContent
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/RichTextBlock"
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{93D4326D-3525-45C4-BC6B-BC3B5D9C1E9A}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "110c8413-dd58-452a-849a-67ff46fc728e"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T151821Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "53cf31a1-698b-409d-9892-eb57a5e3020e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260921T091723Z

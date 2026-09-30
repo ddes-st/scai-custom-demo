@@ -22,7 +22,7 @@ SharedFields:
   Value: "query:$site/*[@@name='Data']/*[@@templatename='FeatureCardsGrid Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='FeatureCardsGrid Folder']"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "b55f7c56-9c25-499f-a5b2-e6a5e35e0ad4"
+  Value: "3d69bf01-6295-4478-bb0b-b7239e917ba8"
 Languages:
 - Language: en
   Fields:
@@ -45,11 +45,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ababa5cd-c07e-4c25-aa38-e11fdf9d840a"
+      Value: "b150b6bf-ddd6-4c5b-afd1-e822046d3540"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\federico.mujica@sitecore.com
+        sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260325T134243Z
+      Value: 20260929T143725Z

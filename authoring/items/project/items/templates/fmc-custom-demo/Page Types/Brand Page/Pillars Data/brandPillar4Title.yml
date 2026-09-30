@@ -1,0 +1,38 @@
+﻿---
+ID: "f5d57816-f5ac-42ff-a0d8-7dc224f0cac5"
+Parent: "a452083f-dc91-4d12-9a57-35338aa4fbc9"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: "/sitecore/templates/Project/fmc-custom-demo/Page Types/Brand Page/Pillars Data/brandPillar4Title"
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "870160d2-af4b-4981-a758-22bda643e23d"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T131256Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "50358296-1563-4c39-a856-68d3f7f555cc"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T131256Z

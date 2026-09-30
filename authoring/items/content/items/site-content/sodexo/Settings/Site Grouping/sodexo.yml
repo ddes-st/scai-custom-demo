@@ -22,13 +22,13 @@ SharedFields:
   Value: "{5405CE9B-5218-4299-A9CD-E5C01F919B31}"
 - ID: "6e6da5b0-8d01-4514-b7dd-1940aff3e8cd"
   Hint: FieldLanguageFallback
-  Value: 
+  Value: 1
 - ID: "85a7501a-86d9-4243-9075-0b727c3a6db4"
   Hint: Name
   Value: Main Website
 - ID: "8c436235-b85d-4097-89cf-d5a4fa70cc0a"
   Hint: ItemLanguageFallback
-  Value: 
+  Value: 1
 - ID: "8e0dd914-9afb-4d45-bf8b-7ff5d6e5337e"
   Hint: HostName
   Value: *
@@ -43,7 +43,7 @@ SharedFields:
   Value: *
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "40b519d9-3e00-44ed-8e47-63fca747b6f9"
+  Value: "8d767001-e433-48f7-8a6b-d89dc0fb3380"
 - ID: "f57099a3-526a-49f2-aebd-635453e48875"
   Hint: RenderingHost
   Value: "basic-nextjs"
@@ -68,11 +68,11 @@ Languages:
         sitecore\federico.mujica@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "9d7c6017-283d-4849-8945-e81986ec1adc"
+      Value: "39e4587a-5f4a-47be-9875-479d95ab3c1d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260715T094837Z
+      Value: 20260929T090430Z

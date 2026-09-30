@@ -1,0 +1,41 @@
+﻿---
+ID: "44df055b-f35c-441b-9a1c-aee5fc4039d8"
+Parent: "0a212e28-4ede-45de-8a8f-e1004e8aad25"
+Template: "73a389ee-482a-4974-b4cf-76996b15a5f3"
+Path: /sitecore/content/group/sodexo/Data/FeatureHighlights/FeatureHighlight_78bf538a36904e809a6d8bd37f364564
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T101921Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: Food brands built around your people. Powered by our culinary Expertise
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ec804b23-7b75-42f1-91a6-05206920576a"
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: <p>Driven by consumer insights. Shaped by food trends. Powered by our culinary expertise. Designed for every environment.</p>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108139-brand-overview-culinary-expertise?v=262f8677" dam-id="lsWfr5Y5Qh-x28fHTm08Aw" width="720" height="540" alt="Culinary expertise" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108139/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T122649Z

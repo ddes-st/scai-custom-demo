@@ -12,6 +12,11 @@
         "name": "renderings",
         "path": "/sitecore/layout/Renderings/Project/fmc-custom-demo",
         "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "templates-group-page-types",
+        "path": "/sitecore/templates/Project/group/Page Types",
+        "scope": "ItemAndDescendants"
       }
     ]
   }

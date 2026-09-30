@@ -1,0 +1,41 @@
+﻿---
+ID: "5bfb3a1e-b78c-4ba6-9fe9-17e004be89da"
+Parent: "222fab12-4e0e-49c6-85f8-363b1956528f"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Article/SodexoArticleContent"
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: SodexoArticleContent
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{93D4326D-3525-45C4-BC6B-BC3B5D9C1E9A}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "5344a96b-a908-4106-9a23-0775fb852784"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T144035Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9762b4c7-9cdf-4b63-abe2-0ab68bdcd649"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260715T144035Z

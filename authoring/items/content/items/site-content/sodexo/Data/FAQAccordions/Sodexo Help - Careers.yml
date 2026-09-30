@@ -1,0 +1,34 @@
+﻿---
+ID: "aff5eb62-4eda-4efe-8061-0b8e2c0fbb4d"
+Parent: "547bf25d-1445-4c45-9c04-66fcb3fd339b"
+Template: "0a12df91-36fc-4579-8dbc-a1d23c13ed74"
+Path: "/sitecore/content/group/sodexo/Data/FAQAccordions/Sodexo Help - Careers"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T162941Z
+    - ID: "42bb555a-02bc-4294-ad37-de15225aacf4"
+      Hint: Title
+      Value: Working at Sodexo
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "377da294-21b0-4375-85d5-6f6a984f1e64"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T162942Z

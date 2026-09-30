@@ -1,0 +1,41 @@
+﻿---
+ID: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
+Parent: "924de169-4802-4d1f-8986-54647fc0bcc5"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: "/sitecore/templates/Project/fmc-custom-demo/Page Types/Brand Page"
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: "{CEBD0936-6B37-42B5-B169-369BB1C3C06A}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "38baf374-be72-45af-ad82-d5fac891ba7a"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{D3AB9C3E-FE69-43F9-9170-C179EEE4199D}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T131153Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ada1ac9d-25a8-4b94-880a-338ea7d1494d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T131320Z

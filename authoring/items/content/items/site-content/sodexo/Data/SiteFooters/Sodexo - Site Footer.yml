@@ -33,3 +33,32 @@ Languages:
       Hint: BrandLogo
       Value: |
         <image src="https://ddes.sitecoresandbox.cloud/api/public/content/106620-sodexo-logo-footer?v=ae2ddc86" dam-id="0H9mxTP8Q22bSR-CSAHo7g" width="134" height="45" alt="Sodexo logo (white wordmark, red flower mark)" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106620/thumbnail" />
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T090429Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0aebca61-ccd5-40ad-bfe3-fe4718881812"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T090504Z
+    - ID: "e65848de-74a2-4211-b246-a022b7da6f6e"
+      Hint: BrandLogo
+      Value: |
+        <image src="https://ddes.sitecoresandbox.cloud/api/public/content/106620-sodexo-logo-footer?v=ae2ddc86" dam-id="0H9mxTP8Q22bSR-CSAHo7g" width="134" height="45" alt="Sodexo logo (white wordmark, red flower mark)" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106620/thumbnail" />

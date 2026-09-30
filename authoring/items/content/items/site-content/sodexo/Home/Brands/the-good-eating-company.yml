@@ -1,0 +1,181 @@
+﻿---
+ID: "d5a89ad2-23cc-464f-94ec-9b7f3e1c4367"
+Parent: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
+Template: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
+Path: "/sitecore/content/group/sodexo/Home/Brands/the-good-eating-company"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{CD61350F-42B2-441F-BC67-D5A2BF8F0106}" />
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "5c92fed5-e443-42a1-9681-6ba26c9bfb76"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: The Good Eating Company
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0158a60f-0fd2-4044-a72a-56ba603675ba"
+      Hint: brandPillar3Title
+      Value: Hospitality with soul.
+    - ID: "09788aa2-a3c1-4039-9ca5-830265592c4a"
+      Hint: brandFaq1Question
+      Value: "What sets The Good Eating Company apart from traditional workplace dining?"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: The Good Eating Company
+    - ID: "22bea5f1-9c95-4019-a2ee-c6ea9ee70f53"
+      Hint: brandFaq6Answer
+      Value: "<p>We cater to more than a hundred clients across Europe and North America, spanning financial services, legal services, consulting, design and engineering, multi-site real estate, and technology sectors.</p>"
+    - ID: "23e6668f-be0a-47df-acf8-7a8437d237ca"
+      Hint: brandFaq5Answer
+      Value: "<p>We take a partnership-driven approach, working with each organization to shape a dining offer that reflects its culture and goals. We can adapt restaurants, cafés, pantry kitchens, grab &amp; go, and micro markets to create the right solution for your people.</p>"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260930T123325Z
+    - ID: "25f4a9b5-008c-406f-96b3-466f4c13d595"
+      Hint: brandFaq4Question
+      Value: "In what ways do you integrate sustainability into your approach to food and hospitality?"
+    - ID: "26ffba8a-6238-4ee6-8af6-17491bb41c6f"
+      Hint: brandPillarsTitle
+      Value: "How can The Good Eating Company elevate your workplace dining experience?"
+    - ID: "2b396825-1630-4b43-be34-386edab59994"
+      Hint: brandHeroCta
+      Value: |
+        <link text="Contact our team about your premium workplace dining needs." linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "2bc2d769-4c14-40d3-bccb-55fa1686affb"
+      Hint: brandHeroEyebrow
+      Value: Corporate fine dining
+    - ID: "31d7b341-aeec-4156-b522-e9d2e56c9116"
+      Hint: brandPillar4Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108149-tab-restaurants?v=a3570e17" dam-id="G7i4vb-BQ22MBYs-j2y9Lw" width="720" height="480" alt="Destination dining" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108149/thumbnail" />
+    - ID: "38e21ff6-7c3b-4fd8-9af7-db1e06054421"
+      Hint: brandFaq3Question
+      Value: "How do you support diverse dietary needs?"
+    - ID: "3f7b4c28-23dc-4d0c-9939-59147ffa9e88"
+      Hint: brandPillar1Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108139-brand-overview-culinary-expertise?v=262f8677" dam-id="lsWfr5Y5Qh-x28fHTm08Aw" width="720" height="540" alt="Chef crafted menus" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108139/thumbnail" />
+    - ID: "432f620e-bb4c-4a70-b857-cccc3903669f"
+      Hint: brandPillar2Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108386-healthy-food-healthy-business?v=e8cf24fa" dam-id="VsezkvLQQuSZtmV5MuehYQ" width="1240" height="698" alt="Seasonal sourcing" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108386/thumbnail" />
+    - ID: "43694e3f-5b19-451c-a804-12d3c7caf0f9"
+      Hint: brandPillar2Description
+      Value: <p>We source seasonally, partner with certified local producers, and champion sustainability, ensuring every ingredient is traceable and responsibly grown — supporting your ESG goals through everyday food choices.</p>
+    - ID: "4ace98b3-658f-4014-ac5d-b166061745aa"
+      Hint: brandCtaHeadline
+      Value: Trusted by leading organizations across creative, financial, and pharmaceutical industries.
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: The Good Eating Company
+    - ID: "51917c28-0866-4838-a67c-11ba225e3505"
+      Hint: brandHighlight2Title
+      Value: Curate
+    - ID: "58146d2a-351a-4152-bc0b-2c3bd229f7b8"
+      Hint: brandPillar2Title
+      Value: Seasonal sourcing with transparency and care.
+    - ID: "6857a6a6-e240-4fd9-9abd-7dd074ac7806"
+      Hint: brandCtaButton
+      Value: |
+        <link text="Elevate your workplace dining" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "6e686c6c-b1bb-42cb-801a-3590db902025"
+      Hint: brandFaq5Question
+      Value: "How do you partner with organizations to craft a dining experience that reflects their culture?"
+    - ID: "71b92d69-9c71-4282-8b06-1f377512ea2c"
+      Hint: brandFaq6Question
+      Value: "Which industries do you work with?"
+    - ID: "7e9b9af6-c553-4818-8ab8-4f8301531537"
+      Hint: brandFaq2Answer
+      Value: <p>Our expert chefs build menus around what each season naturally offers, allowing ingredients at their peak to guide the experience. We prioritize fresh, responsible ingredients sourced with local producers and adapt the offer throughout the year. We celebrate culinary diversity with cultural respect and a true integrity of flavor.</p>
+    - ID: "81a68f76-c9d4-4d2c-a040-61a3c740f0f0"
+      Hint: brandPillar1Description
+      Value: <p>We elevate simple cuisine with refined technique and meticulous craft, using the freshest ingredients to add creative twists to classic dishes.</p>
+    - ID: "8a4d6cca-c8ab-45b3-9fde-6b87ce56346f"
+      Hint: brandHighlight1Title
+      Value: Discover
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a22fe20a-cde3-4ebe-958a-bf5df4f623a3"
+    - ID: "9559c310-8bb7-4b71-a3f8-3ac6b724a8ed"
+      Hint: brandFaqTitle
+      Value: Frequently asked questions about corporate fine dining and catering
+    - ID: "ad8167b5-33a2-4776-83e6-aa86e55e8779"
+      Hint: brandHighlight3Body
+      Value: <p>For people and planet. Sustainably sourced ingredients, local partnerships, and a commitment to reducing waste, because great food should do good too.</p>
+    - ID: "add025f9-e769-4952-b0e4-b69b0d22c368"
+      Hint: brandPillar4Description
+      Value: <p>Bringing restaurant quality dining into your workplace. We invite your employees to pause from the workday and delight in the culinary adventure we take them on, discovering new flavors and curated food experiences. Our dining spaces are thoughtfully designed so people can collaborate, socialize, work, and relax in an environment they feel proud to share with clients and colleagues.</p>
+    - ID: "b7b0c748-0cf6-4060-b0ea-aa27f59563a3"
+      Hint: brandHighlight1Body
+      Value: "<p>A new destination, every day. Diverse, culturally-rich recipes that transport guests around the world and transform lunch into a culinary journey.</p>"
+    - ID: "b8eca4e8-8b72-4abd-9fc2-e5a2665cd202"
+      Hint: brandHighlight2Body
+      Value: <p>Twists on the ordinary. Our chefs reimagine classic dishes with creativity and craft using the finest and freshest seasonal ingredients to create signature dishes that surprise and delight.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c481585f-e0b7-41c4-8f43-a0da2b98ca57"
+      Hint: brandFaq4Answer
+      Value: "<p>Sustainability is built into how we cook and serve. We prioritize seasonal and responsible sourcing with local producers, reduce food waste in our kitchens, and design menus that lower the carbon impact of dining without compromising flavor. The same care runs through hospitality: recyclable packaging where needed, and partnerships that support people and planet.</p>"
+    - ID: "caf13d4b-3b51-4e51-9481-41182a11541a"
+      Hint: brandStoryImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108404-connecting-over-lunch?v=97c32ccb" dam-id="CJ2WzZQNQniB7VGGoEB9_Q" width="1240" height="698" alt="Destination dining" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108404/thumbnail" />
+    - ID: "ce43ad20-32f6-4ac1-9e3d-0e9bf990ab63"
+      Hint: brandHighlight3Title
+      Value: Care
+    - ID: "cf55747b-f906-4c19-9321-c4260b2ba4b3"
+      Hint: brandFaq1Answer
+      Value: <p>We focus on creating food moments that genuinely elevate the workday. Our chefs craft menus that celebrate flavor, seasonality, and wellbeing, while our service approach brings warmth and hospitality to every interaction. Whether it’s daily meals, meeting refreshments, or bespoke experiences, we design food that supports connection, energy, and a positive workplace culture.</p>
+    - ID: "d47a9059-8500-479e-8990-9797ed0c3ad7"
+      Hint: brandPillar1Title
+      Value: Chef crafted menus, always with care.
+    - ID: "d4f989b6-e6f8-441f-8c44-cfde19d897d5"
+      Hint: brandStoryBody
+      Value: <p>We create workplace dining experiences that give your people a reason to come together. Exceptional food, welcoming service, and spaces designed for connection. Our chefs bring diverse backgrounds and fresh ideas to every plate, with signature recipes and themed events that spark discovery and delight.</p>
+    - ID: "d73ff0ad-fe02-48d5-a9e9-326e951f769b"
+      Hint: brandStyle
+      Value: The Good Eating Company
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T124039Z
+    - ID: "dba480c0-f13c-4054-8ed8-06af9a133abf"
+      Hint: brandPillar3Description
+      Value: "<p>Our hospitality-minded teams bring warmth and attentiveness to every interaction, creating spaces where people feel genuinely valued as guests.</p>"
+    - ID: "e2bb89a0-0b24-4664-a251-260effa4c4de"
+      Hint: brandHeroTitle
+      Value: Premium workplace dining, crafted by chefs who elevate the corporate dining experience.
+    - ID: "e793e03f-169d-4108-8be8-af61094ebd85"
+      Hint: brandStoryTitle
+      Value: Make your corporate dining the destination your people choose.
+    - ID: "ea11d626-0b6d-4bc1-a168-992f59e778d0"
+      Hint: brandHeroImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108436-good-eating-company-hero?v=701f150e" dam-id="JambLlzgSz6GDo8Fr0Vo5g" width="1080" height="1080" alt="The Good Eating Company hero" dam-content-type="video" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108436/thumbnail" />
+    - ID: "ed142c53-d0d7-4f75-8dfd-9c7fb39dc099"
+      Hint: brandHeroSubtitle
+      Value: "<p>Restaurant-quality food. Inviting spaces. Warm, attentive service. The Good Eating Company creates premium corporate fine dining and catering experiences that turn your office into the place to be, helping you attract and retain the talent that drives your business.</p>"
+    - ID: "ef595ce1-8702-44a9-8688-8fb152d43dd3"
+      Hint: brandCtaSubhead
+      Value: <p>For 25 years, The Good Eating Co has delivered distinctive, memorable food experiences for organizations that understand the value of investing in their people. We’re proud to partner with clients who share our belief that exceptional workplace dining strengthens culture and inspires performance.</p>
+    - ID: "f56cf363-5c7b-4038-a081-09e0926dbd81"
+      Hint: brandFaq2Question
+      Value: "What shapes your menu philosophy?"
+    - ID: "f5d57816-f5ac-42ff-a0d8-7dc224f0cac5"
+      Hint: brandPillar4Title
+      Value: Corporate restaurant & Cafe
+    - ID: "f80fcc1b-cb17-4443-96c1-27108e40bbaf"
+      Hint: brandPillar3Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108404-connecting-over-lunch?v=97c32ccb" dam-id="CJ2WzZQNQniB7VGGoEB9_Q" width="1240" height="698" alt="Hospitality with soul" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108404/thumbnail" />
+    - ID: "fac8bd4b-e59e-41a7-8180-c5db3af239fc"
+      Hint: brandFaq3Answer
+      Value: "<p>We ensure every team member feels included at mealtimes, working with chefs and nutritionists to build balanced menus. From plant-forward options to dishes tailored for specific dietary needs, we design menus that are varied, thoughtful, and enjoyable for everyone.</p>"

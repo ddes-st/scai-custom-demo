@@ -1,0 +1,181 @@
+﻿---
+ID: "a53530c9-aa4c-485f-9484-67631e212278"
+Parent: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
+Template: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
+Path: "/sitecore/content/group/sodexo/Home/Brands/kitchen-works"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{533DDABA-E5A9-4353-98CE-A1D5F52C2FB1}" />
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "b5df73df-99d0-469b-a490-653624bd056c"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kitchen Works
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0158a60f-0fd2-4044-a72a-56ba603675ba"
+      Hint: brandPillar3Title
+      Value: Variety & inclusivity works.
+    - ID: "09788aa2-a3c1-4039-9ca5-830265592c4a"
+      Hint: brandFaq1Question
+      Value: "How is Kitchen Works different from traditional workplace canteens?"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Kitchen Works
+    - ID: "22bea5f1-9c95-4019-a2ee-c6ea9ee70f53"
+      Hint: brandFaq6Answer
+      Value: "<p>Yes. Kitchen Works is built for remote environments, from offshore platforms to mining camps and isolated construction sites. Formats adapt to infrastructure constraints: mobile food carts, containerized kitchens, and unmanned vending all work without heavy setup.</p>"
+    - ID: "23e6668f-be0a-47df-acf8-7a8437d237ca"
+      Hint: brandFaq5Answer
+      Value: <p>Kitchen Works is most widely used across manufacturing, mining camps, offshore platforms, hospitals, logistics centers, and construction sites, where reliable dining supports safety, energy, and operational continuity.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260930T123342Z
+    - ID: "25f4a9b5-008c-406f-96b3-466f4c13d595"
+      Hint: brandFaq4Question
+      Value: "How does Kitchen Works support night shift workers?"
+    - ID: "26ffba8a-6238-4ee6-8af6-17491bb41c6f"
+      Hint: brandPillarsTitle
+      Value: "Why on-site food services work for your workforce"
+    - ID: "2b396825-1630-4b43-be34-386edab59994"
+      Hint: brandHeroCta
+      Value: |
+        <link text="Talk to our team about your on-site dining needs" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "2bc2d769-4c14-40d3-bccb-55fa1686affb"
+      Hint: brandHeroEyebrow
+      Value: "On-site food services"
+    - ID: "31d7b341-aeec-4156-b522-e9d2e56c9116"
+      Hint: brandPillar4Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108149-tab-restaurants?v=a3570e17" dam-id="G7i4vb-BQ22MBYs-j2y9Lw" width="720" height="480" alt="The Eatery" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108149/thumbnail" />
+    - ID: "38e21ff6-7c3b-4fd8-9af7-db1e06054421"
+      Hint: brandFaq3Question
+      Value: "How do on-site food services help improve employee morale?"
+    - ID: "3f7b4c28-23dc-4d0c-9939-59147ffa9e88"
+      Hint: brandPillar1Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108365-kitchen-works-er-flip?v=d15b85e5" dam-id="9JdGQ5fuQMSY1geTobiUdA" width="503" height="503" alt="Energy works" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108365/thumbnail" />
+    - ID: "432f620e-bb4c-4a70-b857-cccc3903669f"
+      Hint: brandPillar2Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108180-kitchen-works-flip?v=39ca410b" dam-id="LF9h2LyMRx2Lfb0PpRwEwg" width="503" height="503" alt="Value and consistency" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108180/thumbnail" />
+    - ID: "43694e3f-5b19-451c-a804-12d3c7caf0f9"
+      Hint: brandPillar2Description
+      Value: "<p>Meal price matters, taste shouldn't suffer. We deliver reliable, high-quality meals consistently across all locations, offering value without compromise for your workforce.</p>"
+    - ID: "4ace98b3-658f-4014-ac5d-b166061745aa"
+      Hint: brandCtaHeadline
+      Value: "Already trusted by more than 1,000 clients for on-site dining that works."
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Kitchen Works
+    - ID: "51917c28-0866-4838-a67c-11ba225e3505"
+      Hint: brandHighlight2Title
+      Value: "Convenient on-site dining. From first shift to last."
+    - ID: "58146d2a-351a-4152-bc0b-2c3bd229f7b8"
+      Hint: brandPillar2Title
+      Value: Value & consistency works.
+    - ID: "6857a6a6-e240-4fd9-9abd-7dd074ac7806"
+      Hint: brandCtaButton
+      Value: |
+        <link text="Talk to our on-site dining experts" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "6e686c6c-b1bb-42cb-801a-3590db902025"
+      Hint: brandFaq5Question
+      Value: "Which industries rely on Kitchen Works for on-site food services?"
+    - ID: "71b92d69-9c71-4282-8b06-1f377512ea2c"
+      Hint: brandFaq6Question
+      Value: "Can Kitchen Works operate in remote or hard-to-reach locations?"
+    - ID: "7e9b9af6-c553-4818-8ab8-4f8301531537"
+      Hint: brandFaq2Answer
+      Value: <p>Kitchen Works is modular by design. A site can combine The Eatery, Micro Kitchen, Market, Break Room, and Food Carts to match workforce size, shift patterns, and available space.</p>
+    - ID: "81a68f76-c9d4-4d2c-a040-61a3c740f0f0"
+      Hint: brandPillar1Description
+      Value: "<p>Energizing, feel-good nutrition is essential for a productive workforce. Our balanced, freshly prepared meals keep teams fueled and focused across every shift.</p>"
+    - ID: "8a4d6cca-c8ab-45b3-9fde-6b87ce56346f"
+      Hint: brandHighlight1Title
+      Value: Food that boosts performance.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d9663d78-c0ae-4768-85d9-cde7ca4a7000"
+    - ID: "9559c310-8bb7-4b71-a3f8-3ac6b724a8ed"
+      Hint: brandFaqTitle
+      Value: "Frequently asked questions about on-site food services"
+    - ID: "ad8167b5-33a2-4776-83e6-aa86e55e8779"
+      Hint: brandHighlight3Body
+      Value: "<p>Kitchen Works uses digital solutions, from mobile ordering to self-checkout and scan &amp; go, that deliver fast, frictionless on-site dining across all shifts. These formats ensure 24/7 access to fresh food, reduce queues, and keep break times efficient.</p>"
+    - ID: "add025f9-e769-4952-b0e4-b69b0d22c368"
+      Hint: brandPillar4Description
+      Value: "<p>The Kitchen Works Eatery is your core on-site dining solution. Designed around the rhythm of shift-based work, teams get fresh, satisfying meals from breakfast through dinner — chef-driven menus, a space built to recharge, and a dining experience that keeps energy levels up across the day.</p>"
+    - ID: "b7b0c748-0cf6-4060-b0ea-aa27f59563a3"
+      Hint: brandHighlight1Body
+      Value: "<p>Supporting busy teams starts with fresh, satisfying meals that fit tight schedules.</p><ul><li>Protein-packed choices, full of flavor</li><li>Regional favorites and global cuisine</li><li>Seasonal offers and theme days</li><li>Culinary collaborations that spark new menus</li></ul>"
+    - ID: "b8eca4e8-8b72-4abd-9fc2-e5a2665cd202"
+      Hint: brandHighlight2Body
+      Value: "<p>From familiar favorites to new flavors, our on-site dining solutions are designed to feel welcoming, inclusive and practical.</p><ul><li>Quick ordering — mobile and pre-order pickup</li><li>24/7 access — micro markets and smart vending</li><li>Smart menus that reduce decision fatigue</li><li>Sustainable sourcing and fair-trade options</li></ul>"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c481585f-e0b7-41c4-8f43-a0da2b98ca57"
+      Hint: brandFaq4Answer
+      Value: <p>Night shift workers face disrupted metabolism, limited food access, and energy crashes. Kitchen Works addresses this with balanced overnight menus, 24/7 micro market and vending access, and smart meal timing before and after peak exertion periods.</p>
+    - ID: "caf13d4b-3b51-4e51-9481-41182a11541a"
+      Hint: brandStoryImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108365-kitchen-works-er-flip?v=d15b85e5" dam-id="9JdGQ5fuQMSY1geTobiUdA" width="503" height="503" alt="On-site meals" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108365/thumbnail" />
+    - ID: "ce43ad20-32f6-4ac1-9e3d-0e9bf990ab63"
+      Hint: brandHighlight3Title
+      Value: A seamless omnichannel dining experience
+    - ID: "cf55747b-f906-4c19-9321-c4260b2ba4b3"
+      Hint: brandFaq1Answer
+      Value: "<p>Traditional canteens typically offer a limited, fixed menu during standard lunch hours. Kitchen Works reimagines on-site food services by providing chef-prepared meals across multiple formats, from full-service restaurants to grab-and-go micro markets, available throughout the day and across every shift.</p>"
+    - ID: "d47a9059-8500-479e-8990-9797ed0c3ad7"
+      Hint: brandPillar1Title
+      Value: Energy works.
+    - ID: "d4f989b6-e6f8-441f-8c44-cfde19d897d5"
+      Hint: brandStoryBody
+      Value: "<p><strong>Pazuelo X Kitchen Works</strong></p><p>See how Pazuelo implemented a reliable, scalable on-site dining solution and increased employee dining satisfaction across the site, strengthening the everyday workplace experience.</p>"
+    - ID: "d73ff0ad-fe02-48d5-a9e9-326e951f769b"
+      Hint: brandStyle
+      Value: Kitchen Works
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T124055Z
+    - ID: "dba480c0-f13c-4054-8ed8-06af9a133abf"
+      Hint: brandPillar3Description
+      Value: <p>91% of workers crave variety. We deliver it with seasonal menus and daily options for every taste, dietary need, shift and schedule.</p>
+    - ID: "e2bb89a0-0b24-4664-a251-260effa4c4de"
+      Hint: brandHeroTitle
+      Value: "On-site food services that power your team. Every shift, every day."
+    - ID: "e793e03f-169d-4108-8be8-af61094ebd85"
+      Hint: brandStoryTitle
+      Value: "Purchasers, operations, facilities, HR and real estate teams recommend Kitchen Works as their on-site dining partner."
+    - ID: "ea11d626-0b6d-4bc1-a168-992f59e778d0"
+      Hint: brandHeroImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108446-kitchen-works-hero?v=80548cc2" dam-id="2R3QD1OiQNifEDYjiQLBXA" width="1080" height="1080" alt="Kitchen Works hero" dam-content-type="video" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108446/thumbnail" />
+    - ID: "ed142c53-d0d7-4f75-8dfd-9c7fb39dc099"
+      Hint: brandHeroSubtitle
+      Value: "<p>Kitchen Works delivers on-site food services built for shift-based teams. Our chef-prepared meals support well-being, sustained energy, and operational continuity, helping teams reset, refuel, and reconnect, all while making eating well easy.</p>"
+    - ID: "ef595ce1-8702-44a9-8688-8fb152d43dd3"
+      Hint: brandCtaSubhead
+      Value: "<p>Join a growing number of organizations worldwide choosing Kitchen Works to elevate the everyday on-site dining experience for your teams. Consistent, scalable, and built around the way you operate.</p><p>Ready to fuel well-being and productivity with nutritious meals?</p>"
+    - ID: "f56cf363-5c7b-4038-a081-09e0926dbd81"
+      Hint: brandFaq2Question
+      Value: "What types of on-site dining formats does Kitchen Works offer?"
+    - ID: "f5d57816-f5ac-42ff-a0d8-7dc224f0cac5"
+      Hint: brandPillar4Title
+      Value: The Eatery
+    - ID: "f80fcc1b-cb17-4443-96c1-27108e40bbaf"
+      Hint: brandPillar3Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108212-kitchen-works-hc-flip?v=dedca7f4" dam-id="PTLjalmwQTebx26DEzIotg" width="503" height="503" alt="Variety and inclusivity" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108212/thumbnail" />
+    - ID: "fac8bd4b-e59e-41a7-8180-c5db3af239fc"
+      Hint: brandFaq3Answer
+      Value: "<p>Nearly 90% of employees say food makes them feel more positively about their company, and 67% report being happier when meals are provided at work. For shift-based teams, reliable access to quality meals during every rotation is one of the most direct ways to improve morale and reduce turnover.</p>"

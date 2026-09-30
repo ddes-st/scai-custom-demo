@@ -1,0 +1,42 @@
+﻿---
+ID: "faf90ca8-723e-4d98-8aed-75e9eba6668d"
+Parent: "f86be13d-2f5e-4d7e-b2e5-ef4c9637fc4c"
+Template: "980cb544-bd26-4866-83bb-6dbeb9156558"
+Path: /sitecore/content/group/sodexo/Data/CTABanners/CTABanner_4c031bbf91764098805bf7716e6aa044
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T101923Z
+    - ID: "492f28cd-0465-42ee-b7fe-df452729e9bd"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Reach out to our local teams" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5df404ee-3194-414a-844d-689d3b47355c"
+      Hint: Title
+      Value: Find more food brands and services available in your market
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b12de47c-6182-416b-bb83-85b5fa9b661b"
+    - ID: "8deb4b1a-46de-44af-8bbf-487ca0cba907"
+      Hint: SecondaryLink
+      Value: |
+        <link text="Select your market" linktype="external" url="https://www.sodexo.com/locations" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T101923Z

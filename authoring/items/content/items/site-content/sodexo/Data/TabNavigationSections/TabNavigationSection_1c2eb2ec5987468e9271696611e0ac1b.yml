@@ -1,0 +1,34 @@
+﻿---
+ID: "3ccdd9a5-f9ba-4844-baea-5588e28350d9"
+Parent: "62a76b57-53e0-4f57-a793-e5cf0cc8ada5"
+Template: "b2b2ee2c-f290-4e92-bfc8-14cd367e3ea3"
+Path: /sitecore/content/group/sodexo/Data/TabNavigationSections/TabNavigationSection_1c2eb2ec5987468e9271696611e0ac1b
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T101949Z
+    - ID: "44e9b658-15ba-436f-9d91-bf07e6e21059"
+      Hint: Title
+      Value: Flexible formats to meet every need.
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "13796770-5d16-4483-8a66-bea936782231"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T101949Z

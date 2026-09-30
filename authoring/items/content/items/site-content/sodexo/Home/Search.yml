@@ -7,10 +7,10 @@ SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
-    <image mediaid="{857DDDB6-EB03-4474-B2D6-AB739F05C9E1}" />
+    <image mediaid="{1E182BB8-4455-4054-AEB9-7EFE4251572D}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "5e01a935-31ff-4fb7-bb1e-f54a7af4fdbf"
+  Value: "5245d055-e460-48a5-aecc-9ac1aba0e8b8"
 Languages:
 - Language: en
   Versions:
@@ -21,7 +21,41 @@ Languages:
       Value: <r />
     - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
-      Value: 
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{BE08F264-9DDA-4DC2-BC00-73703A21461A}"
+              p:before="*"
+              s:ds="98ff4cdf-8e98-483c-931c-6c4fa139e04a"
+              s:id="{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B948210B2-B8AF-47C1-A04F-E220071C0A63%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              s:ph="headless-main" />
+            <r
+              uid="{B0BED7C1-F5CC-41C0-90C9-2D066C8CC9DF}"
+              p:after="r[@uid='{BE08F264-9DDA-4DC2-BC00-73703A21461A}']"
+              s:ds="01048db0-29a7-43c5-983b-10bc68d7a043"
+              s:id="{D33F0079-E54F-48C3-A33A-6A3A83146DA8}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B40275F76-916E-4A4A-9DC6-0B56AD614A9F%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{D414D3F2-6118-4F4A-9082-DF98246358B9}"
+              p:after="r[@uid='{B0BED7C1-F5CC-41C0-90C9-2D066C8CC9DF}']"
+              s:ds="ec63d8f5-6293-4ef7-aa48-ecee9b1857d8"
+              s:id="{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BFD2E22E5-752F-466D-A221-7D074A02FC46%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{A6936A25-C7A2-42F7-A9A5-4D1522F6AF77}"
+              p:after="*[1=2]"
+              s:ds="3d2523d4-c872-4498-8797-b5e30f5a1151"
+              s:id="{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BFD2E22E5-752F-466D-A221-7D074A02FC46%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+          </d>
+        </r>
     - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
       Hint: Title
       Value: Search
@@ -33,11 +67,36 @@ Languages:
       Value: Search
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "cdade1c3-f2c6-45ae-9a5a-0881f563cff1"
+      Value: "aaed1feb-738c-4885-b212-bbc6060ac86f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\federico.mujica@sitecore.com
+        sitecore\damien.despas@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260714T080747Z
+      Value: 20260928T170630Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T074236Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "33b11a08-537f-4b94-b7eb-35e177df7104"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T074236Z

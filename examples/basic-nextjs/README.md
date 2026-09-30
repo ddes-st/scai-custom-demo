@@ -40,6 +40,8 @@ Serialization:
 cd ./
 dotnet sitecore cloud login
 dotnet sitecore cloud environment connect --environment-id 7H4qTnTJFjXa1kR8522o90 --allow-write
+dotnet sitecore ser validate --fix -i FmcCustomDemo.Project -n sodexo
+dotnet sitecore ser pull -i FmcCustomDemo.Project -n sodexo
 dotnet sitecore ser validate --fix -i FmcCustomDemo.Content -n sodexo
 dotnet sitecore ser pull -i FmcCustomDemo.Content -n sodexo
 ```

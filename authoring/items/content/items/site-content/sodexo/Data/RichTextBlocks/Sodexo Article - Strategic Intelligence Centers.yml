@@ -39,3 +39,38 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260921T090016Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "1e23eeda-e14c-429f-8ca5-4f1d3de10949"
+      Hint: Body
+      Value: |
+        <div class="ck-content"><div class="media-split"><p><img src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/BannerCard-503x503/data-insight-model.jpg?h=503&amp;iar=0&amp;w=503" alt="Data and insight model" /></p><div><h2>Un modèle de données et d’insights à forte valeur transformatrice</h2><p>De la réduction des temps d’arrêt imprévus jusqu’à 30 % à l’allongement de la durée de vie des actifs jusqu’à 40 %, ce modèle associe des données robustes et une expertise métier pour faire une réelle différence au quotidien.</p><p>Opérant depuis trois hubs mondiaux, notre réseau de centres de commandement tactique et de centres d’intelligence stratégique améliore l’expérience des occupants et génère des résultats pour nos clients. En analysant chaque jour des millions de points de données, ces centres complémentaires permettent à nos équipes d’anticiper la demande, d’identifier des gains d’efficacité et d’optimiser l’équilibre entre coût et confort sur le lieu de travail industriel.</p></div></div><p>Nous avons créé ce modèle pour offrir de vrais bénéfices à nos clients : des services cohérents, évolutifs et performants qui s’adaptent pour assurer la préparation à l’avenir.</p><h2>Le défi : convertir rapidement les insights en actions</h2><p>Pour garantir des opérations fluides et fidéliser les meilleurs talents, les industriels savent combien il est important de créer des environnements de travail simples, efficaces et centrés sur l’humain. Pourtant, nos clients font face à de nombreux défis, de la concurrence sur le marché qui pèse sur leurs résultats à l’évolution des attentes des collaborateurs, qui place le bien-être sous le feu des projecteurs.</p><p>Pour répondre à ces défis, nous donnons à nos équipes sur site des données robustes, des insights actionnables et les bons outils digitaux. L’objectif est de faire vivre des environnements de travail dynamiques et adaptatifs qui maîtrisent les coûts et améliorent les expériences. Alors que les nouveaux outils d’IA et d’analytics élargissent le champ des possibles, nous avons vu l’opportunité d’évoluer vers un modèle opérationnel plus prédictif ; un modèle qui apporte une valeur transformatrice tout en restant rentable, en évitant les efforts en doublon et en gardant l’attention sur les clients.</p><p>Nous avons donc cherché un moyen d’apporter des compétences spécialisées et des technologies à nos équipes expérimentées sur site tout en leur permettant de garder le contrôle de la performance opérationnelle 24 h/24 et 7 j/7.</p><h2>La solution : deux centres, un écosystème intelligent</h2><p>Nous avons créé un modèle avec deux centres d’excellence. Nos <strong>centres de commandement</strong> sont plus proches des sites clients et utilisent des agents d’IA et des bots pour analyser les données ingérées et piloter la réponse rapide qui garantit une prestation fluide. Nos <strong>centres d’intelligence</strong> utilisent ces données pour comparer les performances, puis fournir des insights et des recommandations qui permettent aux équipes locales de délivrer des services prédictifs et adaptatifs. Ensemble, ces centres assurent une maîtrise étroite des coûts, améliorent l’expérience sur le lieu de travail et permettent à nos clients d’être prêts à toute éventualité.</p><p><img src="https://edge.sitecorecloud.io/sodexofrance1-sodexocorpsites-prod-e74c/media/Project/Sodexo-Corp/Global/Media-prod/Images/Banner-1240x698/blog/2026/illustrative-picture-1.jpg" alt="On-site services" /></p></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260715T151634Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ad2c07a3-1652-49de-b3b1-1bb3ae349ac8"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102841Z

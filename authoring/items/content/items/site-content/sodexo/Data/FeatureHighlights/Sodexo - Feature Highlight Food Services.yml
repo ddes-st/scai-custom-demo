@@ -47,3 +47,49 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260716T143523Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113455Z
+    - ID: "3e0cc0d3-5d90-4b6a-b1b5-d9c61a5bb994"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="_self" title="" linktype="external" text="Visitez la page des services de restauration" url="https://www.sodexo.com/what-we-do/services/food-services" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: Des services de restauration adaptés à vos besoins
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "14f050ba-3a6e-4ab8-99f9-4088bcc839cd"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>Quel que soit votre environnement de restauration, nous proposons des services de restauration adaptés à vos besoins spécifiques. Nous servons une cuisine locale, fraîche et saine, délicieuse, à grande échelle au niveau local et international.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <image height="503" dam-content-type="Image" alt="Services de restauration" width="503" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106470/thumbnail" dam-id="ZgZsaesxRZWZpQCsXQQs2Q" src="https://ddes.sitecoresandbox.cloud/api/public/content/106470-section5-img7?v=70b49ab3" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102409Z

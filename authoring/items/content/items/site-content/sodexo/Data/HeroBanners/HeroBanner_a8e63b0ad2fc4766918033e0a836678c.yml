@@ -1,0 +1,45 @@
+﻿---
+ID: "ff09b439-4441-49a1-afc3-003623b5a174"
+Parent: "79a9dfe3-d529-4ed3-8105-dca4c0a3b25c"
+Template: "ebb89bff-86ff-496d-b4f7-57fe722342b6"
+Path: /sitecore/content/group/sodexo/Data/HeroBanners/HeroBanner_a8e63b0ad2fc4766918033e0a836678c
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T101920Z
+    - ID: "2c186372-9b86-4940-b496-6ae5b5bdac3a"
+      Hint: Subtitle
+      Value: <p>The best food brands start with a deep understanding of the people they serve. By combining consumer insights, culinary creativity, and operational expertise, our brands help you create dining experiences that drive engagement, satisfaction, and participation.</p>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "61c5bc1a-453d-4416-8e01-b150cdcfa7b1"
+      Hint: PrimaryLink
+      Value: |
+        <link text="Contact us" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "729698a6-1380-45b1-b348-a464e5f9825a"
+      Hint: HeroImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108463-brands-hero-compressed?v=ff265989" dam-id="-elbDqP3SEKDP8g0dwEOrA" width="1080" height="1080" alt="Food brands hero" dam-content-type="video" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108463/thumbnail" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9074c7ba-d511-40b6-b3f5-ed9d5ee41918"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c61c7b75-21bd-4b9c-995e-671c9605de14"
+      Hint: Title
+      Value: Food Brands shaping memorable experiences
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T145627Z

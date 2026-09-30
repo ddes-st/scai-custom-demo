@@ -1,0 +1,41 @@
+﻿---
+ID: "16c251e7-24b1-4495-8157-b7a51e12a2e9"
+Parent: "8e625612-cf5f-4bb2-a125-262de992b3c9"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Brand/BrandFinalCTA"
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: BrandFinalCTA
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{B9BAF4BA-9190-492F-87F4-9BA912BA0E2B}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "be2c244c-4e1c-4ad2-9a0d-811fc3531e43"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T131553Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1550b66c-f43a-4b61-a553-0753f8f373bf"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T131553Z

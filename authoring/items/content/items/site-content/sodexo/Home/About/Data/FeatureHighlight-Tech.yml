@@ -44,3 +44,46 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260928T094447Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260921T091638Z
+    - ID: "3e0cc0d3-5d90-4b6a-b1b5-d9c61a5bb994"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="_self" title="" linktype="external" text="En savoir plus sur notre approche" url="https://www.sodexo.com/about-us/tech-innovation-ai" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: "Technologie, innovation et IA :"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "58bdd12a-fd17-436f-a89e-b27812da7beb"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>Les organisations d’aujourd’hui ont besoin de plus que l’excellence opérationnelle. Nous associons technologie, IA, données et expertise humaine grâce à notre plateforme mondiale Sodexo Spark, transformant des millions d’interactions quotidiennes en informations exploitables qui créent une valeur mesurable pour l’entreprise.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <image height="503" dam-content-type="Image" alt="Technologie, innovation et IA" width="503" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108064/thumbnail" dam-id="2Lqij7QNRReeLlFov0jf2g" src="https://ddes.sitecoresandbox.cloud/api/public/content/108064-about-technology?v=57147cf0" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102657Z

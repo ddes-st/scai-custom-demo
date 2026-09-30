@@ -1,0 +1,37 @@
+﻿---
+ID: "f953d244-0be6-4c7d-85ee-9b5230383560"
+Parent: "ec63d8f5-6293-4ef7-aa48-ecee9b1857d8"
+Template: "73df51e6-e92d-4742-9e0a-74d2ca36ef7f"
+Path: "/sitecore/content/group/sodexo/Data/FAQAccordions/Sodexo Help - Services/Interested in services"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "216901f9-a9fa-439a-a5b1-3f5651c67540"
+      Hint: Question
+      Value: "Interested in Sodexo's services?"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260928T162949Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a923d119-f510-4b90-8ab5-fbc40fb4cc14"
+    - ID: "acb70819-a9d8-4255-bc4b-36c2ad36ec92"
+      Hint: Answer
+      Value: <p>Sodexo designs, manages and delivers food, facilities management and workplace experience services. Contact our teams to discuss how we can support your sites, people and operations.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260928T162949Z

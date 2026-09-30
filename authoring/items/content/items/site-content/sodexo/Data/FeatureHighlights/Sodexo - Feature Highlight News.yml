@@ -47,3 +47,49 @@ Languages:
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20260713T165154Z
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260713T113450Z
+    - ID: "3e0cc0d3-5d90-4b6a-b1b5-d9c61a5bb994"
+      Hint: PrimaryLink
+      Value: |
+        <link class="" querystring="" anchor="" target="_self" title="" linktype="external" text="En savoir plus" url="https://www.sodexo.com/news/newsroom/2026/Stop-Hunger-annual-dinner" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "801e9d29-fa73-4b5a-8cde-04cde87dae6a"
+      Hint: Title
+      Value: Dernières actualités et analyses
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f4e7ff0f-8054-4f78-830a-cbd8996f5232"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a6546f1c-d76a-4e24-990d-46e3d464c491"
+      Hint: Description
+      Value: |
+        <div class="ck-content"><p>Au service de clients dans le monde entier avec une offre de restauration et de services de premier plan, qui façonne de meilleures expériences du quotidien à chaque moment de la vie.</p></div>
+    - ID: "aefd22cc-1d3e-4f53-a7f3-d30ccf7030af"
+      Hint: FeatureImage
+      Value: |
+        <image height="698" dam-content-type="Image" alt="Photo principale Stop Hunger" width="1240" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/106421/thumbnail" dam-id="aXwHhK_URDO2IKQBYQ11nw" src="https://ddes.sitecoresandbox.cloud/api/public/content/106421-section3-img2?v=ee51d56f" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T102409Z

@@ -21,7 +21,7 @@ Languages:
         sitecore\damien.despas@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "37accbab-abc7-41e0-98a3-d693b64a933d"
+      Value: "49897b69-70d6-41f0-85b3-5259ff73b03f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -29,10 +29,42 @@ Languages:
     - ID: "cc6b4b36-fd8b-482b-a733-6c22b926890a"
       Hint: LinkUrl
       Value: |
-        <link linktype="external" url="https://www.sodexo.com/about-us" text="About Us" target="_self" />
+        <link linktype="internal" id="{4C60B186-2F64-4502-A9FB-892204F3216D}" anchor="" querystring="" target="" class="" text="About Us" title=""/>
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260713T154908Z
+      Value: 20260928T171314Z
+    - ID: "e9a144f9-e4d5-44c2-b90b-eae536749d5d"
+      Hint: LinkText
+      Value: About Us
+- Language: "fr-FR"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T090443Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "91e73f90-6ec6-4425-bbde-7b18e785c5ed"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cc6b4b36-fd8b-482b-a733-6c22b926890a"
+      Hint: LinkUrl
+      Value: |
+        <link linktype="internal" id="{4C60B186-2F64-4502-A9FB-892204F3216D}" anchor="" querystring="" target="" class="" text="About Us" title=""/>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T090504Z
     - ID: "e9a144f9-e4d5-44c2-b90b-eae536749d5d"
       Hint: LinkText
       Value: About Us

@@ -1,0 +1,120 @@
+﻿---
+ID: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
+Parent: "e2124310-f817-4644-8671-bff8e72b66d7"
+Template: "cebd0936-6b37-42b5-b169-369bb1c3c06a"
+Path: /sitecore/content/group/sodexo/Home/Brands
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {61AA2FD9-3A69-4F7A-963D-BCFB98829EDF}
+    {58BEAC02-7773-41A7-B06B-FE49B1A3F72B}
+    {CEBD0936-6B37-42B5-B169-369BB1C3C06A}
+    {C14B6289-8AC2-439C-9E5B-40DE9F820C3F}
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{3F81C3C1-9DF5-442A-98DE-EBE6301923F6}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f65a9b8c-83e8-48ae-a7ea-7b308a36643d"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{DC89CE5B-2717-4C4D-B896-E1BEADF30847}"
+              p:before="*"
+              s:ds="ff09b439-4441-49a1-afc3-003623b5a174"
+              s:id="{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B948210B2-B8AF-47C1-A04F-E220071C0A63%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              s:ph="headless-main" />
+            <r
+              uid="{2F5CC8B2-C18A-4452-84E9-75E972AB19E4}"
+              p:after="r[@uid='{DC89CE5B-2717-4C4D-B896-E1BEADF30847}']"
+              s:ds="44df055b-f35c-441b-9a1c-aee5fc4039d8"
+              s:id="{85CC2A41-AC6F-4C10-9C2F-44308B48C453}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B3C33C16D-F0D3-4FBF-8D78-CE70CEA0868B%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{540A4032-382F-4E45-BAB6-A32F2EAD9BB4}"
+              p:after="r[@uid='{2F5CC8B2-C18A-4452-84E9-75E972AB19E4}']"
+              s:ds="local:/Data/FeatureCardsGrid-Brands"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BF2C49451-6C21-4004-A70C-B346385D5F5F%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{BD0B9A44-2F43-4D82-9C3B-1EFDD553F86B}"
+              p:after="r[@uid='{540A4032-382F-4E45-BAB6-A32F2EAD9BB4}']"
+              s:ds="3ccdd9a5-f9ba-4844-baea-5588e28350d9"
+              s:id="{EFE73752-6046-45A8-92F4-7A68430A0759}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B3A61A7A8-3D68-498D-A79D-9D0191AE4F90%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=6"
+              s:ph="headless-main" />
+            <r
+              uid="{E86925F5-EE66-4390-BC88-7A3D608B26D6}"
+              p:after="r[@uid='{BD0B9A44-2F43-4D82-9C3B-1EFDD553F86B}']"
+              s:ds="local:/Data/FeatureHighlight-Restaurants-3"
+              s:id="{85CC2A41-AC6F-4C10-9C2F-44308B48C453}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B3C33C16D-F0D3-4FBF-8D78-CE70CEA0868B%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=8"
+              s:ph="headless-main" />
+            <r
+              uid="{38334B00-E508-45EA-8CD6-CE194973CE6E}"
+              p:after="r[@uid='{E86925F5-EE66-4390-BC88-7A3D608B26D6}']"
+              s:ds="local:/Data/CTABanner-Market"
+              s:id="{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BB526E0D8-C4F9-4A21-AFA9-B828119FA988%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{EC7704EC-2083-4CE5-8747-D5D176CFB304}"
+              p:after="r[@uid='{38334B00-E508-45EA-8CD6-CE194973CE6E}']"
+              s:ds="dfe2aa02-708a-4009-9abb-e29346054212"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BF2C49451-6C21-4004-A70C-B346385D5F5F%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=7"
+              s:ph="headless-main" />
+            <r
+              uid="{2B3CFAA8-9E63-4CD9-88D9-F803821051B9}"
+              p:after="*[1=2]"
+              s:ds="dcc6381f-50be-4433-8126-bfd3e5aa4f31"
+              s:id="{E194B962-0617-4A10-B4DB-2A4D19248C13}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B495EF058-D306-4328-ABE4-261E7CFE8E9E%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+          </d>
+        </r>
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Food Brands shaping memorable experiences
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T101616Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Brands
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e0c3ef41-605b-4d7e-94be-e8f6e46d5d40"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T122754Z

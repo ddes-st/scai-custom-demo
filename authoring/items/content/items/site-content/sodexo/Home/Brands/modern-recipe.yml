@@ -1,0 +1,181 @@
+﻿---
+ID: "7bea92f0-b38a-41ae-95e1-a25cdbf3b167"
+Parent: "1dbeb7d5-f877-4d5f-b7c8-5e8572c1b053"
+Template: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
+Path: "/sitecore/content/group/sodexo/Home/Brands/modern-recipe"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{3C86D5DA-EA8B-453B-B665-EB06E52CBB47}" />
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "05bfb4a5-e142-4aaa-9b9f-2c405e8c5733"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Modern Recipe
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0158a60f-0fd2-4044-a72a-56ba603675ba"
+      Hint: brandPillar3Title
+      Value: Sustainably sourced food that doesn't cost the earth
+    - ID: "09788aa2-a3c1-4039-9ca5-830265592c4a"
+      Hint: brandFaq1Question
+      Value: "What sets Modern Recipe apart from traditional workplace dining?"
+    - ID: "1cd91ae6-dbe5-40ef-b819-b1959a8a6903"
+      Hint: Title
+      Value: Modern Recipe
+    - ID: "22bea5f1-9c95-4019-a2ee-c6ea9ee70f53"
+      Hint: brandFaq6Answer
+      Value: <p>Our team works with you to understand your workplace, your people, and your priorities. From there, we design a tailored Modern Recipe concept covering menus, space design, hospitality standards, and technology integration.</p>
+    - ID: "23e6668f-be0a-47df-acf8-7a8437d237ca"
+      Hint: brandFaq5Answer
+      Value: "<p>Modern Recipe supports organizations that prioritize employee well-being, workplace culture, and modern corporate dining. We partner across corporate real estate, pharmaceutical and life sciences, professional and financial services, FMCG, consulting, banking, media, and tech.</p>"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260930T123233Z
+    - ID: "25f4a9b5-008c-406f-96b3-466f4c13d595"
+      Hint: brandFaq4Question
+      Value: "How does Modern Recipe integrate sustainability into its food and hospitality?"
+    - ID: "26ffba8a-6238-4ee6-8af6-17491bb41c6f"
+      Hint: brandPillarsTitle
+      Value: "What makes Modern Recipe the best choice for your corporate dining?"
+    - ID: "2b396825-1630-4b43-be34-386edab59994"
+      Hint: brandHeroCta
+      Value: |
+        <link text="Talk to our team about your workplace dining needs" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "2bc2d769-4c14-40d3-bccb-55fa1686affb"
+      Hint: brandHeroEyebrow
+      Value: Corporate dining
+    - ID: "31d7b341-aeec-4156-b522-e9d2e56c9116"
+      Hint: brandPillar4Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108374-eating-at-work?v=45de026c" dam-id="tRw7-g-GSdmhD9hi1iCBZA" width="1240" height="698" alt="Hospitality at our core" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108374/thumbnail" />
+    - ID: "38e21ff6-7c3b-4fd8-9af7-db1e06054421"
+      Hint: brandFaq3Question
+      Value: "How does Modern Recipe support diverse dietary needs?"
+    - ID: "3f7b4c28-23dc-4d0c-9939-59147ffa9e88"
+      Hint: brandPillar1Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108139-brand-overview-culinary-expertise?v=262f8677" dam-id="lsWfr5Y5Qh-x28fHTm08Aw" width="720" height="540" alt="Everyday healthy food" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108139/thumbnail" />
+    - ID: "432f620e-bb4c-4a70-b857-cccc3903669f"
+      Hint: brandPillar2Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108149-tab-restaurants?v=a3570e17" dam-id="G7i4vb-BQ22MBYs-j2y9Lw" width="720" height="480" alt="Made from scratch" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108149/thumbnail" />
+    - ID: "43694e3f-5b19-451c-a804-12d3c7caf0f9"
+      Hint: brandPillar2Description
+      Value: "<p>Wholesome and delicious well-balanced meals tailored to your workplace for the best corporate dining. No shortcuts, no compromises, just honest food that meets the high standards your teams deserve.</p>"
+    - ID: "4ace98b3-658f-4014-ac5d-b166061745aa"
+      Hint: brandCtaHeadline
+      Value: Join +200 leading companies who trust Modern Recipe for their corporate dining experience.
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Modern Recipe
+    - ID: "51917c28-0866-4838-a67c-11ba225e3505"
+      Hint: brandHighlight2Title
+      Value: Customizable spaces and workplace hospitality that spark collaboration and productivity.
+    - ID: "58146d2a-351a-4152-bc0b-2c3bd229f7b8"
+      Hint: brandPillar2Title
+      Value: Made from scratch, every day
+    - ID: "6857a6a6-e240-4fd9-9abd-7dd074ac7806"
+      Hint: brandCtaButton
+      Value: |
+        <link text="Talk to our expert team" linktype="external" url="https://www.sodexo.com/contact-us" />
+    - ID: "6e686c6c-b1bb-42cb-801a-3590db902025"
+      Hint: brandFaq5Question
+      Value: "Which industries does Modern Recipe work with?"
+    - ID: "71b92d69-9c71-4282-8b06-1f377512ea2c"
+      Hint: brandFaq6Question
+      Value: "How do I get started with Modern Recipe for my workplace?"
+    - ID: "7e9b9af6-c553-4818-8ab8-4f8301531537"
+      Hint: brandFaq2Answer
+      Value: "<p>Our menu philosophy is built around three pillars that matter to today’s workforce: health, flavor, and sustainability. We follow a plant-forward, seasonal approach rooted in the EAT-Lancet recommendations. Local chef ambassadors bring global inspiration and regional relevance, creating menus that feel fresh, modern, and aligned with your employees’ expectations.</p>"
+    - ID: "81a68f76-c9d4-4d2c-a040-61a3c740f0f0"
+      Hint: brandPillar1Description
+      Value: "<p>Healthy workplace eating shouldn't mean compromising on flavor. Our chef-crafted menus balance nutrition with the craveable tastes your teams actually want, supporting employee well-being through food they genuinely look forward to.</p>"
+    - ID: "8a4d6cca-c8ab-45b3-9fde-6b87ce56346f"
+      Hint: brandHighlight1Title
+      Value: "Delicious, wholesome food that contributes to employee well-being"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b13b7f82-ae96-4217-97aa-660c2f3cb573"
+    - ID: "9559c310-8bb7-4b71-a3f8-3ac6b724a8ed"
+      Hint: brandFaqTitle
+      Value: Frequently asked questions about Modern Recipe
+    - ID: "ad8167b5-33a2-4776-83e6-aa86e55e8779"
+      Hint: brandHighlight3Body
+      Value: "<p>Sustainability isn't an add-on, it's how we cook. Plant-forward menus, seasonal recipes, local sourcing, and low-waste kitchens reduce environmental impact.</p><ul><li>Plant-forward menus</li><li>Locally-sourced &amp; diverse products</li><li>Fair-trade coffees and teas</li><li>Recyclable packaging</li></ul>"
+    - ID: "add025f9-e769-4952-b0e4-b69b0d22c368"
+      Hint: brandPillar4Description
+      Value: "<p>A full-service dining destination designed for how your teams actually work, inspired by the vibrant food court experience. From grab-and-go breakfast to sit-down lunch meetings, our restaurant hub adapts to every schedule. Seamless digital ordering, chef-crafted menus, and flexible seating create a corporate dining experience that keeps people coming back to the office.</p>"
+    - ID: "b7b0c748-0cf6-4060-b0ea-aa27f59563a3"
+      Hint: brandHighlight1Body
+      Value: "<p>Your employees feel their best when they don't have to choose between healthy and delicious. Modern Recipe brings joy to the table while supporting your teams' well-being.</p><ul><li>Fresh, seasonal and high-quality ingredients</li><li>Balanced and nutrient-dense meals available all day long</li><li>Global &amp; tailor-made menus that celebrate regional flavors</li><li>Local chef ambassadors bringing signature style to every dish</li></ul>"
+    - ID: "b8eca4e8-8b72-4abd-9fc2-e5a2665cd202"
+      Hint: brandHighlight2Body
+      Value: "<p>Modern Recipe designs workplace dining spaces around your unique needs, from morning coffee to after-work drinks, always with a warm welcome.</p><ul><li>Eating spaces thoughtfully designed to spark workplace connection</li><li>Flexible layouts to adapt the space to your people</li><li>Expert-led hospitality training that elevates every employee’s experience</li></ul>"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c481585f-e0b7-41c4-8f43-a0da2b98ca57"
+      Hint: brandFaq4Answer
+      Value: "<p>Sustainability is embedded in every part of our model, not added on. We prioritize seasonal, local sourcing, reduce food miles, and partner with diverse suppliers and small producers. Our kitchens follow low-waste practices, and we use recyclable or reusable packaging as a priority.</p>"
+    - ID: "caf13d4b-3b51-4e51-9481-41182a11541a"
+      Hint: brandStoryImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108139-brand-overview-culinary-expertise?v=262f8677" dam-id="lsWfr5Y5Qh-x28fHTm08Aw" width="720" height="540" alt="Corporate dining experience" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108139/thumbnail" />
+    - ID: "ce43ad20-32f6-4ac1-9e3d-0e9bf990ab63"
+      Hint: brandHighlight3Title
+      Value: Responsibly sourced food. Good for people, good for the planet.
+    - ID: "cf55747b-f906-4c19-9321-c4260b2ba4b3"
+      Hint: brandFaq1Answer
+      Value: "<p>Modern Recipe goes far beyond food service. We help organizations strengthen workplace culture, boost employee well-being and performance, and create spaces where people genuinely want to be. Our offer combines chef-crafted, made-from-scratch meals with hospitality designed to make employees feel taken care of, whether they’re grabbing a quick breakfast or hosting a team lunch.</p>"
+    - ID: "d47a9059-8500-479e-8990-9797ed0c3ad7"
+      Hint: brandPillar1Title
+      Value: Everyday healthy & delicious food
+    - ID: "d4f989b6-e6f8-441f-8c44-cfde19d897d5"
+      Hint: brandStoryBody
+      Value: "<p><strong>Shell x Modern Recipe</strong></p><p>See how Modern Recipe transformed office dining at Shell’s headquarters in London, increasing restaurant visits while strengthening workplace culture and employee satisfaction.</p><p>Ready to transform your workplace dining experience? Contact us.</p>"
+    - ID: "d73ff0ad-fe02-48d5-a9e9-326e951f769b"
+      Hint: brandStyle
+      Value: Modern Recipe
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260930T124047Z
+    - ID: "dba480c0-f13c-4054-8ed8-06af9a133abf"
+      Hint: brandPillar3Description
+      Value: "<p>People increasingly expect sustainable eating at work. Our menus feature responsibly sourced, seasonal ingredients from local partners, with a plant-forward approach and low-waste practices aligned with your ESG and CSR commitments.</p>"
+    - ID: "e2bb89a0-0b24-4664-a251-260effa4c4de"
+      Hint: brandHeroTitle
+      Value: "Modern Recipe: Healthy, delicious meals designed for modern corporate dining."
+    - ID: "e793e03f-169d-4108-8be8-af61094ebd85"
+      Hint: brandStoryTitle
+      Value: Why workplace leaders in facilities, real estate and operations choose Modern Recipe.
+    - ID: "ea11d626-0b6d-4bc1-a168-992f59e778d0"
+      Hint: brandHeroImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108430-modern-recipe-hero?v=25ea6144" dam-id="FoBieSPoSQS4EiucmE5CQg" width="1080" height="1080" alt="Modern Recipe hero" dam-content-type="video" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108430/thumbnail" />
+    - ID: "ed142c53-d0d7-4f75-8dfd-9c7fb39dc099"
+      Hint: brandHeroSubtitle
+      Value: <p>Modern Recipe delivers healthy, made from scratch meals with sustainably sourced ingredients, from morning coffee to late afternoon energy. We design workplace dining experiences that help teams gather, recharge, and perform at their best. Because the best ideas happen when your people feel truly taken care of.</p>
+    - ID: "ef595ce1-8702-44a9-8688-8fb152d43dd3"
+      Hint: brandCtaSubhead
+      Value: <p>A growing number of companies are choosing Modern Recipe to strengthen workplace culture. Turn everyday office dining into a meaningful experience that supports retention, connection, and the way your teams work together.</p>
+    - ID: "f56cf363-5c7b-4038-a081-09e0926dbd81"
+      Hint: brandFaq2Question
+      Value: "What shapes your menu philosophy?"
+    - ID: "f5d57816-f5ac-42ff-a0d8-7dc224f0cac5"
+      Hint: brandPillar4Title
+      Value: Restaurant
+    - ID: "f80fcc1b-cb17-4443-96c1-27108e40bbaf"
+      Hint: brandPillar3Image
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108386-healthy-food-healthy-business?v=e8cf24fa" dam-id="VsezkvLQQuSZtmV5MuehYQ" width="1240" height="698" alt="Sustainably sourced food" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108386/thumbnail" />
+    - ID: "fac8bd4b-e59e-41a7-8180-c5db3af239fc"
+      Hint: brandFaq3Answer
+      Value: "<p>Our food offer includes nutrient-dense meals, global flavors, and a wide variety of plant-forward dishes, alongside options that are low salt, low sugar, or tailored to specific dietary needs. With balanced meals available all day across restaurants, markets, cafés, and smart fridges, employees always find something that fits their lifestyle.</p>"

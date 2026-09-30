@@ -1,0 +1,52 @@
+﻿---
+ID: "af953e54-db85-41dc-ba51-50ff849c4072"
+Parent: "8e814be5-c9b3-4090-aada-983401a42889"
+Template: "e2014bdc-3af2-4add-a731-86e873ebf24c"
+Path: "/sitecore/content/group/sodexo/Home/Brands/Data/FeatureCardsGrid-Brands/The Good Eating Company"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 10
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "1e7a9945-1c71-4755-b96a-3e54788340da"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260929T102354Z
+    - ID: "3d6a0f6b-523e-491a-8b4d-2b84f10855c2"
+      Hint: CardLink
+      Value: |
+        <link text="Discover more" linktype="internal" id="{89ADA932-CD0E-45B6-92CD-F75AED43320D}" url="/Brands/the-good-eating-company" />
+    - ID: "3f85410a-d1a3-426d-9908-777c3a0b7de0"
+      Hint: CardDescription
+      Value: Business & Industries
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d3d5db84-2e43-4e4a-a7fc-3692db8e3e9b"
+    - ID: "ad732d62-2a3e-452a-b7d6-8f943b616f6d"
+      Hint: CardImage
+      Value: |
+        <Image src="https://ddes.sitecoresandbox.cloud/api/public/content/108169-good-eating-co-flip?v=766f61d2" dam-id="4j0R0Sh0RXKfzApleqjFpA" width="503" height="503" alt="The Good Eating Company" dam-content-type="Image" thumbnailsrc="https://ddes.sitecoresandbox.cloud/api/gateway/108169/thumbnail" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c0500111-9439-41c0-89e5-d44cf419ef50"
+      Hint: CardTitle
+      Value: The Good Eating Company
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260929T143445Z
