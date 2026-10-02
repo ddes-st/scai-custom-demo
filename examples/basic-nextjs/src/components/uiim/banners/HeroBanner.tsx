@@ -13,6 +13,8 @@ import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoBrandsPage, isSodexoHelpPage } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeHeroView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_HERO_IMAGE } from '@/lib/sodexo-about-media';
 import { isUsableBrandsImageSrc, SODEXO_BRANDS_HERO_IMAGE } from '@/lib/sodexo-brands-media';
 
@@ -75,11 +77,27 @@ const SecondaryButton = ({
 /* ────────────────────────────────────────────
    Default — centered text on colored background
    ──────────────────────────────────────────── */
+export const ModernRecipe = (props: HeroBannerProps): JSX.Element => {
+  const { fields, params } = props;
+  if (!fields) return <HeroBannerDefaultComponent />;
+  const band = /workplace/i.test(fields.Title?.value || '');
+  return (
+    <ModernRecipeHeroView
+      id={params?.RenderingIdentifier}
+      title={fields.Title}
+      subtitle={fields.Subtitle}
+      image={fields.HeroImage}
+      band={band}
+    />
+  );
+};
+
 export const Default = (props: HeroBannerProps): JSX.Element => {
   const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   if (isSodexoHelpPage(page)) return SodexoSearch(props);
   if (isSodexoArticlesPage(page)) return SodexoArticles(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);

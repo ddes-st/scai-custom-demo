@@ -10,6 +10,8 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipePillarsView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 
 interface ValuePropositionItemFields {
   id: string;
@@ -74,9 +76,26 @@ const SectionHeader = ({
 /* ────────────────────────────────────────────
    Default — 3-column grid, icons above text, centered
    ──────────────────────────────────────────── */
+export const ModernRecipe = ({ fields, params }: ValuePropositionGridProps): JSX.Element => {
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <ValuePropositionGridDefaultComponent />;
+  const items = datasource.children?.results || [];
+  return (
+    <ModernRecipePillarsView
+      id={params?.RenderingIdentifier}
+      title={datasource.title?.jsonValue}
+      items={items.map((item) => ({
+        title: item.itemTitle?.jsonValue,
+        description: item.itemDescription?.jsonValue,
+      }))}
+    />
+  );
+};
+
 export const Default = ({ fields, params, page }: ValuePropositionGridProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isModernRecipeSite(page)) return ModernRecipe({ fields, params, page });
   const datasource = fields?.data?.datasource;
   if (!datasource) return <ValuePropositionGridDefaultComponent />;
   const items = datasource.children?.results || [];

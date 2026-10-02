@@ -7,6 +7,8 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeGalleryView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 
 interface ImageGalleryFields {
   GalleryImage: ImageField;
@@ -29,9 +31,21 @@ const ImageGalleryDefaultComponent = (): JSX.Element => (
 /* ────────────────────────────────────────────
    Default — full-width image, no max-width constraint
    ──────────────────────────────────────────── */
+export const ModernRecipe = ({ fields, params }: ImageGalleryProps): JSX.Element => {
+  if (!fields) return <ImageGalleryDefaultComponent />;
+  return (
+    <ModernRecipeGalleryView
+      id={params?.RenderingIdentifier}
+      caption={fields.Caption}
+      image={fields.GalleryImage}
+    />
+  );
+};
+
 export const Default = ({ fields, params, page }: ImageGalleryProps): JSX.Element => {
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isModernRecipeSite(page)) return ModernRecipe({ fields, params, page });
   if (!fields) return <ImageGalleryDefaultComponent />;
 
   return (

@@ -16,6 +16,8 @@ import { cn } from '@/lib/utils';
 import { SmartMedia } from '@/components/uiim/media/SmartMedia';
 import { Search, Eye, Sparkles, Heart } from 'lucide-react';
 import { isSodexoAboutPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeFeatureView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 import { isUsableAboutImageSrc, SODEXO_ABOUT_TECH_IMAGE } from '@/lib/sodexo-about-media';
 import { isUsableBrandsImageSrc, SODEXO_BRANDS_EXPERTISE_IMAGE, SODEXO_BRANDS_FORMAT_IMAGE } from '@/lib/sodexo-brands-media';
 
@@ -68,10 +70,26 @@ const CtaButton = ({ field, isEditing }: { field: LinkField; isEditing?: boolean
 /* ────────────────────────────────────────────
    Default — image right, text left (alternates via CSS)
    ──────────────────────────────────────────── */
+export const ModernRecipe = (props: FeatureHighlightProps): JSX.Element => {
+  const { fields, params } = props;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+  return (
+    <ModernRecipeFeatureView
+      id={params?.RenderingIdentifier}
+      eyebrow={fields.EyebrowText?.value}
+      title={fields.Title}
+      description={fields.Description}
+      image={fields.FeatureImage}
+      link={fields.PrimaryLink}
+    />
+  );
+};
+
 export const Default = (props: FeatureHighlightProps): JSX.Element => {
   const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   if (isSodexoAboutPage(page)) return SodexoAbout(props);
   if (isSodexoBrandsPage(page)) {
     return /restaurant/i.test(fields?.Title?.value || '')

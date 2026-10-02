@@ -13,6 +13,8 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoAboutPage, isSodexoArticlesPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeCardsView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 import { isUsableAboutImageSrc, sodexoAboutCardImage } from '@/lib/sodexo-about-media';
 import { isUsableBrandsImageSrc, sodexoBrandsCardImage } from '@/lib/sodexo-brands-media';
 
@@ -90,10 +92,29 @@ const SectionHeader = ({
 /* ────────────────────────────────────────────
    Default — 3-column grid, icon top
    ──────────────────────────────────────────── */
+export const ModernRecipe = (props: FeatureCardsGridProps): JSX.Element => {
+  const datasource = props.fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+  const cards = datasource.children?.results || [];
+  return (
+    <ModernRecipeCardsView
+      id={props.params?.RenderingIdentifier}
+      title={datasource.title?.jsonValue?.value}
+      cards={cards.map((card) => ({
+        title: card.cardTitle?.jsonValue,
+        description: card.cardDescription?.jsonValue,
+        image: card.cardImage?.jsonValue,
+        link: card.cardLink?.jsonValue,
+      }))}
+    />
+  );
+};
+
 export const Default = (props: FeatureCardsGridProps): JSX.Element => {
   const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   const datasource = fields?.data?.datasource;
   if (!datasource) return <FeatureCardsGridDefaultComponent />;
   const cards = datasource.children?.results || [];

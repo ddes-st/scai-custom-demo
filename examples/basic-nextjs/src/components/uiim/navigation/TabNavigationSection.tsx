@@ -11,6 +11,8 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoBrandsPage } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeTabsView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 
 interface TabItemFields {
   id: string;
@@ -46,11 +48,27 @@ const TabNavigationSectionDefaultComponent = (): JSX.Element => (
 /* ────────────────────────────────────────────
    Default — pill-shaped tabs
    ──────────────────────────────────────────── */
+export const ModernRecipe = (props: TabNavigationSectionProps): JSX.Element => {
+  const datasource = props.fields?.data?.datasource;
+  if (!datasource) return <TabNavigationSectionDefaultComponent />;
+  const tabs = datasource.children?.results || [];
+  return (
+    <ModernRecipeTabsView
+      id={props.params?.RenderingIdentifier}
+      tabs={tabs.map((tab) => ({
+        label: tab.tabLabel?.jsonValue,
+        link: tab.tabLink?.jsonValue,
+      }))}
+    />
+  );
+};
+
 export const Default = (props: TabNavigationSectionProps): JSX.Element => {
   const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
 
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   const datasource = fields?.data?.datasource;
   if (!datasource) return <TabNavigationSectionDefaultComponent />;
   if (isSodexoBrandsPage(page)) return SodexoBrandsTabs(props);

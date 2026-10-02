@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
 import { isSodexoSite } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeFooterView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 
 type SiteFooterProps = ComponentProps & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -106,7 +108,12 @@ const Copyright = () => (
 /* ────────────────────────────────────────────
    Default — multi-column layout
    ──────────────────────────────────────────── */
+export const ModernRecipe = (props: SiteFooterProps): JSX.Element => (
+  <ModernRecipeFooterView logo={getBrandLogo(props)} id={props.params?.RenderingIdentifier} />
+);
+
 export const Default = (props: SiteFooterProps): JSX.Element => {
+  if (isModernRecipeSite(props.page)) return ModernRecipe(props);
   if (isSodexoSite(props.page)) return Sodexo(props);
   const { params } = props;
   const { styles, RenderingIdentifier } = params;

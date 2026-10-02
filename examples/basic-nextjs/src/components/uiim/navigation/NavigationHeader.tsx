@@ -27,6 +27,8 @@ import {
   SODEXO_FR_LOCALE,
 } from '@/lib/sodexo-locale';
 import { isSodexoSite } from '@/lib/sodexo-page';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeHeaderView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 
 interface NavigationLinkFields {
   id: string;
@@ -254,7 +256,26 @@ const MenuButton = ({ open, onClick }: { open: boolean; onClick: () => void }) =
   </button>
 );
 
+export const ModernRecipe = (props: NavigationHeaderProps): JSX.Element => {
+  const datasource = props.fields?.data?.datasource;
+  if (!datasource) return <NavigationHeaderDefaultComponent />;
+  const links = datasource.children?.results || [];
+  return (
+    <ModernRecipeHeaderView
+      id={props.params?.RenderingIdentifier}
+      logo={datasource.brandLogo?.jsonValue}
+      ctaLabel={datasource.ctaLabel?.jsonValue}
+      ctaLink={datasource.ctaLink?.jsonValue}
+      links={links.map((item) => ({
+        text: item.linkText?.jsonValue,
+        link: item.linkUrl?.jsonValue,
+      }))}
+    />
+  );
+};
+
 export const Default = (props: NavigationHeaderProps): JSX.Element => {
+  if (isModernRecipeSite(props.page)) return ModernRecipe(props);
   if (isSodexoSite(props.page)) return Sodexo(props);
   const { fields, params, page, rendering } = props;
   const { styles, RenderingIdentifier } = params;
