@@ -16,6 +16,7 @@ import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
 import * as GroupSiteNavigatorBanner from 'src/components/uiim/navigation/GroupSiteNavigatorBanner';
 import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
+import * as ModernRecipeViews from 'src/components/uiim/modern-recipe/ModernRecipeViews';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as ImageGallery from 'src/components/uiim/media/ImageGallery';
 import * as LandingStats from 'src/components/uiim/landing/LandingStats';
@@ -107,6 +108,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
   ['GroupSiteNavigatorBanner', { ...GroupSiteNavigatorBanner, componentType: 'client' }],
   ['AnnouncementBar', { ...AnnouncementBar }],
+  ['ModernRecipeViews', { ...ModernRecipeViews }],
   ['SmartMedia', { ...SmartMedia, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery }],
   ['LandingStats', { ...LandingStats }],

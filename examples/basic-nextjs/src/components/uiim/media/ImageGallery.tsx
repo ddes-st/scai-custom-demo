@@ -42,10 +42,11 @@ export const ModernRecipe = ({ fields, params }: ImageGalleryProps): JSX.Element
   );
 };
 
-export const Default = ({ fields, params, page }: ImageGalleryProps): JSX.Element => {
+export const Default = (props: ImageGalleryProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isModernRecipeSite(page)) return ModernRecipe({ fields, params, page });
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   if (!fields) return <ImageGalleryDefaultComponent />;
 
   return (

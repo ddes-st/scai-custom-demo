@@ -92,10 +92,11 @@ export const ModernRecipe = ({ fields, params }: ValuePropositionGridProps): JSX
   );
 };
 
-export const Default = ({ fields, params, page }: ValuePropositionGridProps): JSX.Element => {
+export const Default = (props: ValuePropositionGridProps): JSX.Element => {
+  const { fields, params, page } = props;
   const { styles, RenderingIdentifier } = params;
   const isEditing = page?.mode?.isEditing;
-  if (isModernRecipeSite(page)) return ModernRecipe({ fields, params, page });
+  if (isModernRecipeSite(page)) return ModernRecipe(props);
   const datasource = fields?.data?.datasource;
   if (!datasource) return <ValuePropositionGridDefaultComponent />;
   const items = datasource.children?.results || [];

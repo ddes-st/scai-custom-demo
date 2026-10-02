@@ -5,6 +5,11 @@
     "language": "en"
   },
   {
+    "name": "modern-recipe",
+    "hostName": "*",
+    "language": "en"
+  },
+  {
     "name": "sodexo",
     "hostName": "*",
     "language": "en"

@@ -49,7 +49,7 @@ export function ModernRecipeHeroView({
       <section className="px-6 py-16 md:px-16 md:py-24" style={{ backgroundColor: MR.deep, color: '#fff' }}>
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:items-end">
           <Text field={title} tag="h1" className="text-4xl leading-tight md:text-6xl" style={{ fontFamily: MR.heading, fontWeight: 400 }} />
-          <RichText field={subtitle} className="text-sm leading-7 md:text-base" />
+          <ContentSdkRichText field={subtitle} className="text-sm leading-7 md:text-base" />
         </div>
       </section>,
       id
@@ -64,7 +64,7 @@ export function ModernRecipeHeroView({
       <div className="absolute inset-0 bg-black/25" />
       <div className="relative mx-auto flex min-h-[520px] max-w-4xl flex-col items-center justify-center px-6 py-24 text-center text-white md:min-h-[640px]">
         <Text field={title} tag="h1" className="text-5xl leading-tight md:text-7xl" style={{ fontFamily: MR.heading, fontWeight: 400 }} />
-        <RichText field={subtitle} className="mt-6 max-w-2xl text-sm leading-7 md:text-base" />
+        <ContentSdkRichText field={subtitle} className="mt-6 max-w-2xl text-sm leading-7 md:text-base" />
       </div>
     </section>,
     id
@@ -90,7 +90,7 @@ export function ModernRecipeFeatureView({
   const heading = (
     <Text field={title} tag="h2" className="text-4xl leading-tight md:text-5xl" style={{ fontFamily: MR.heading, fontWeight: 400 }} />
   );
-  const copy = <RichText field={description} className="mt-4 space-y-4 text-sm leading-7" style={{ color: MR.muted }} />;
+  const copy = <ContentSdkRichText field={description} className="mt-4 space-y-4 text-sm leading-7" style={{ color: MR.muted }} />;
 
   if (layout === 'mr-split' || layout === 'mr-about-copy') {
     return shell(
@@ -152,7 +152,9 @@ export function ModernRecipeFeatureView({
           <div>
             {heading}
             {copy}
-            <ContentSdkLink field={link} className="mt-8 inline-flex border px-5 py-2 text-sm" style={{ borderColor: MR.ink, color: MR.ink }} />
+            {link && (
+              <ContentSdkLink field={link} className="mt-8 inline-flex border px-5 py-2 text-sm" style={{ borderColor: MR.ink, color: MR.ink }} />
+            )}
           </div>
         </div>
       </section>,
@@ -199,7 +201,7 @@ export function ModernRecipePillarsView({
         {items.map((item, index) => (
           <article key={index}>
             <Text field={item.title} tag="h3" className="text-lg font-semibold" />
-            <RichText field={item.description} className="mt-3 text-sm leading-7" style={{ color: MR.muted }} />
+            <ContentSdkRichText field={item.description} className="mt-3 text-sm leading-7" style={{ color: MR.muted }} />
           </article>
         ))}
       </div>
@@ -227,7 +229,7 @@ export function ModernRecipeCardsView({
               <div className="absolute inset-0 bg-black/35" />
               <div className="relative flex min-h-[280px] flex-col justify-end p-6">
                 <Text field={card.title} tag="h3" className="text-2xl leading-snug" style={{ fontFamily: MR.heading }} />
-                <RichText field={card.description} className="mt-2 text-sm" />
+                <ContentSdkRichText field={card.description} className="mt-2 text-sm" />
                 <TextLink field={card.link} light />
               </div>
             </article>
@@ -246,7 +248,7 @@ export function ModernRecipeCardsView({
           {cards.map((card, index) => (
             <article key={index}>
               <Text field={card.title} tag="h3" className="text-3xl" style={{ fontFamily: MR.heading, fontWeight: 400 }} />
-              <RichText field={card.description} className="mt-4 text-sm leading-7" />
+              <ContentSdkRichText field={card.description} className="mt-4 text-sm leading-7" />
               <TextLink field={card.link} />
             </article>
           ))}

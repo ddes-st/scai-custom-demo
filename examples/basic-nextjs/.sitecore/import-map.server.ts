@@ -14,6 +14,8 @@ import { NextImage, RichText, Text, Link, AppPlaceholder } from '@sitecore-conte
 import { cn } from '@/lib/utils';
 import { isSodexoArticlesPage, isSodexoSite, isSodexoAboutPage, isSodexoHelpPage, isSodexoBrandDetailPage, isSodexoBrandsPage } from '@/lib/sodexo-page';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
+import { isModernRecipeSite, MR } from '@/lib/modern-recipe-page';
+import { ModernRecipeFooterView, ModernRecipeGalleryView, ModernRecipePillarsView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 import { Sparkles } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { brandStyleVars, getPageBrandStyle, resolveBrandStyle, BRAND_STYLE_TOKENS } from '@/lib/sodexo-brand-style';
@@ -71,6 +73,21 @@ const importMap = [
     module: 'next/link',
     exports: [
       { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
+    ]
+  },
+  {
+    module: '@/lib/modern-recipe-page',
+    exports: [
+      { name: 'isModernRecipeSite', value: isModernRecipeSite },
+      { name: 'MR', value: MR },
+    ]
+  },
+  {
+    module: '@/components/uiim/modern-recipe/ModernRecipeViews',
+    exports: [
+      { name: 'ModernRecipeFooterView', value: ModernRecipeFooterView },
+      { name: 'ModernRecipeGalleryView', value: ModernRecipeGalleryView },
+      { name: 'ModernRecipePillarsView', value: ModernRecipePillarsView },
     ]
   },
   {

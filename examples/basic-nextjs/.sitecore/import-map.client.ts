@@ -39,6 +39,8 @@ import { useEvent } from '@/lib/search/search-components/useEvent';
 import { useRouter } from '@/lib/search/search-components/useRouter';
 import { DICTIONARY_KEYS, DEFAULT_PAGE_SIZE as DEFAULT_PAGE_SIZE_d8a3a96ed6893912a4b0e4dff64815d90f82a321, gridColsClass } from '@/lib/search/search-components/constants';
 import { Text, Link, NextImage, useSitecore, RichText, DateField, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
+import { isModernRecipeSite } from '@/lib/modern-recipe-page';
+import { ModernRecipeTabsView, ModernRecipeHeaderView, ModernRecipeFeatureView, ModernRecipeCardsView, ModernRecipeHeroView } from '@/components/uiim/modern-recipe/ModernRecipeViews';
 import { filterLocationMatches, SODEXO_ACTIVE_COUNTRY, SODEXO_LOCATION_REGIONS } from '@/lib/sodexo-locations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { GROUP_SITE_NAVIGATOR_COPY, SodexoGroupSiteNavigatorBar } from '@/components/uiim/navigation/GroupSiteNavigatorBanner';
@@ -291,6 +293,22 @@ const importMap = [
       { name: 'DateField', value: DateField },
       { name: 'CdpHelper', value: CdpHelper },
       { name: 'withDatasourceCheck', value: withDatasourceCheck },
+    ]
+  },
+  {
+    module: '@/lib/modern-recipe-page',
+    exports: [
+      { name: 'isModernRecipeSite', value: isModernRecipeSite },
+    ]
+  },
+  {
+    module: '@/components/uiim/modern-recipe/ModernRecipeViews',
+    exports: [
+      { name: 'ModernRecipeTabsView', value: ModernRecipeTabsView },
+      { name: 'ModernRecipeHeaderView', value: ModernRecipeHeaderView },
+      { name: 'ModernRecipeFeatureView', value: ModernRecipeFeatureView },
+      { name: 'ModernRecipeCardsView', value: ModernRecipeCardsView },
+      { name: 'ModernRecipeHeroView', value: ModernRecipeHeroView },
     ]
   },
   {
