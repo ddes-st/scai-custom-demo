@@ -593,7 +593,7 @@ export async function runPortalSetup(args) {
 }
 
 async function runPortalSetupInner({ gql, log = (line) => { void line; }, options: opt = {}, discovery = {}, ctl = { release: null } }) {
-const COLLECTION = opt.collection || "collection-almu";
+const COLLECTION = opt.collection || "marketing";
 const SITE = opt.site || "portal";
 const LANG = "en";
 const PUBLISH = opt.publish !== false;

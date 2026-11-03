@@ -16,7 +16,6 @@ import * as LinkList from 'src/components/sxa/link-list/LinkList';
 import * as Image from 'src/components/sxa/image/Image';
 import * as Container from 'src/components/sxa/container/Container';
 import * as ColumnSplitter from 'src/components/sxa/column-splitter/ColumnSplitter';
-import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
 import * as ThemeNights from 'src/components/Portal/ThemeNights';
 import * as TestDriveCta from 'src/components/Portal/TestDriveCta';
 import * as SectionCards from 'src/components/Portal/SectionCards';
@@ -53,6 +52,7 @@ import * as ContentHubDetail from 'src/components/Portal/ContentHubDetail';
 import * as ByTheNumbers from 'src/components/Portal/ByTheNumbers';
 import * as BrandGrid from 'src/components/Portal/BrandGrid';
 import * as BrandBook from 'src/components/Portal/BrandBook';
+import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
@@ -68,7 +68,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Image', { ...Image }],
   ['Container', { ...Container }],
   ['ColumnSplitter', { ...ColumnSplitter }],
-  ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ThemeNights', { ...ThemeNights }],
   ['TestDriveCta', { ...TestDriveCta }],
   ['SectionCards', { ...SectionCards }],
@@ -105,6 +104,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ByTheNumbers', { ...ByTheNumbers }],
   ['BrandGrid', { ...BrandGrid }],
   ['BrandBook', { ...BrandBook }],
+  ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
 ]);
 
 export default componentMap;
