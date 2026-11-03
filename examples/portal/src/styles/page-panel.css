@@ -1,0 +1,5 @@
+/* Tabs of the Page builder context panel (Theme | Content Hub). */
+.pp-tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 4px; padding: 8px 14px 0; background: #fff; border-bottom: 1px solid #e3e7ea; font: 13px/1.4 "Instrument Sans", system-ui, sans-serif; }
+.pp-tabs button { font: inherit; font-weight: 600; color: #5c6b74; background: none; border: 0; border-bottom: 2px solid transparent; padding: 6px 10px 8px; cursor: pointer; }
+.pp-tabs button.on { color: #1b2328; border-bottom-color: #5548d9; }
+.pp-tabs button:focus-visible { outline: 2px solid #5548d9; outline-offset: -2px; border-radius: 4px; }

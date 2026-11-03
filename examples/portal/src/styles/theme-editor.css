@@ -1,0 +1,43 @@
+/* The Portal theme app (Page builder context panel). Self-contained; no site chrome. */
+.te { --te-bg: #fff; --te-ink: #1b2328; --te-muted: #5c6b74; --te-line: #e3e7ea; --te-accent: #5548d9; --te-soft: #f3f1ff;
+  min-height: 100vh; background: var(--te-bg); color: var(--te-ink); font: 13px/1.45 "Instrument Sans", system-ui, sans-serif; padding: 0 0 24px; }
+.te *, .te *::before, .te *::after { box-sizing: border-box; }
+.te button { font: inherit; color: inherit; background: none; border: 1px solid var(--te-line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.te button:disabled { opacity: .45; cursor: default; }
+.te button.primary { background: var(--te-accent); border-color: var(--te-accent); color: #fff; font-weight: 600; }
+.te button.link { border: 0; padding: 0 4px; color: var(--te-accent); font-size: 12px; }
+.te input, .te select, .te textarea { font: inherit; color: inherit; border: 1px solid var(--te-line); border-radius: 8px; padding: 6px 8px; background: #fff; }
+.te input:focus, .te select:focus, .te textarea:focus { outline: 2px solid var(--te-accent); outline-offset: 1px; }
+.te-head { padding: 18px 16px 10px; border-bottom: 1px solid var(--te-line); }
+.te-head h1 { margin: 0 0 4px; font: 500 20px/1.2 "Instrument Serif", Georgia, serif; }
+.te-head p { margin: 0 0 4px; color: var(--te-muted); }
+.te-warn { color: #9a3412; background: #fff4ec; border-radius: 8px; padding: 8px 10px; margin-top: 8px !important; }
+.te-ok { color: #166534; background: #ecfdf3; border-radius: 8px; padding: 8px 10px; margin-top: 8px !important; }
+.te-section { padding: 14px 16px 6px; border-bottom: 1px solid var(--te-line); }
+.te-section h2 { margin: 0 0 10px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--te-muted); }
+.te-presets { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 8px; }
+.te-presets button { padding: 5px 12px; color: var(--te-muted); }
+.te-presets button.on { background: var(--te-soft); color: var(--te-accent); border-color: var(--te-accent); font-weight: 600; }
+.te-row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 190px); gap: 8px 12px; align-items: center; padding: 6px 0; }
+.te-row label { display: flex; flex-direction: column; gap: 1px; }
+.te-row label small { color: var(--te-muted); font-size: 11px; }
+.te-color { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 6px; align-items: center; }
+.te-color input[type="color"] { width: 34px; height: 30px; padding: 2px; border-radius: 6px; }
+.te-color input[type="text"] { width: 100%; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; }
+.te-inherit { color: var(--te-muted); font-size: 11px; white-space: nowrap; }
+.te-font { padding: 8px 0 12px; border-top: 1px dashed var(--te-line); }
+.te-font:first-of-type { border-top: 0; }
+.te-row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; font-weight: 600; }
+.te-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.te-chips button { padding: 2px 9px; font-size: 11px; border-radius: 999px; color: var(--te-muted); }
+.te-chips button.on { background: var(--te-soft); color: var(--te-accent); border-color: var(--te-accent); }
+.te-font-pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 6px; }
+.te-font-pick input, .te-font-pick select { width: 100%; min-width: 0; }
+.te-font-sample { margin-top: 8px; font-size: 16px; line-height: 1.3; color: var(--te-ink); }
+.te-font-sample .te-more { font: 11px/1.2 "Instrument Sans", system-ui, sans-serif; color: var(--te-muted); }
+.te-foot { padding: 14px 16px 0; display: flex; flex-direction: column; gap: 10px; }
+.te-check { display: flex; align-items: center; gap: 8px; }
+.te-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.te-muted { margin: 0; color: var(--te-muted); font-size: 12px; }
+.te-foot textarea { width: 100%; font: 11px/1.4 "JetBrains Mono", ui-monospace, monospace; }
+@media (min-width: 720px) { .te-section, .te-head, .te-foot { padding-inline: 28px; } .te-row { grid-template-columns: minmax(160px, 1fr) minmax(0, 260px); } }

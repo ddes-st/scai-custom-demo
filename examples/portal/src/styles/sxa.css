@@ -1,0 +1,165 @@
+/*
+ * The SXA starter components (components/sxa: Container, Column/Row Splitter, Title, Rich Text, Page
+ * Content, Promo, Image, Link List, Navigation) in the portal's look: the theme's fonts, colours, lines
+ * and radius. Their grid follows SXA's Bootstrap-style classes (row, col-*, col-md-*, …) that the
+ * splitters' and components' Styles/GridParameters put on them — scoped to the SXA rows only, so no
+ * other ".row" in the portal changes.
+ */
+
+/* rows: a Container's, a Column Splitter's (and its columns'), a Row Splitter's — :where, so a block's own
+   width and centring below still apply */
+:where(.container-default > .component-content > .row, .column-splitter, .column-splitter > [class*="col"] > .row, .row-splitter .row) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+}
+/* :where keeps these defaults weaker than the col-* widths below */
+:where(.container-default > .component-content > .row, .column-splitter, .column-splitter > [class*="col"] > .row, .row-splitter .row) > * {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0 calc(var(--site-gutter, 24px) / 2);
+  box-sizing: border-box;
+}
+:is(.container-default > .component-content > .row, .column-splitter, .column-splitter > [class*="col"] > .row, .row-splitter .row) {
+  --sxa-col: calc(100% / 12);
+}
+/* col-1…12, then from 576 / 768 / 992 / 1200 px: col-sm-*, col-md-*, col-lg-*, col-xl-* */
+.column-splitter > .col-1, .row > .component.col-1 { flex-basis: calc(var(--sxa-col) * 1); max-width: calc(var(--sxa-col) * 1); }
+.column-splitter > .col-2, .row > .component.col-2 { flex-basis: calc(var(--sxa-col) * 2); max-width: calc(var(--sxa-col) * 2); }
+.column-splitter > .col-3, .row > .component.col-3 { flex-basis: calc(var(--sxa-col) * 3); max-width: calc(var(--sxa-col) * 3); }
+.column-splitter > .col-4, .row > .component.col-4 { flex-basis: calc(var(--sxa-col) * 4); max-width: calc(var(--sxa-col) * 4); }
+.column-splitter > .col-6, .row > .component.col-6 { flex-basis: 50%; max-width: 50%; }
+.column-splitter > .col-8, .row > .component.col-8 { flex-basis: calc(var(--sxa-col) * 8); max-width: calc(var(--sxa-col) * 8); }
+.column-splitter > .col-9, .row > .component.col-9 { flex-basis: calc(var(--sxa-col) * 9); max-width: calc(var(--sxa-col) * 9); }
+.column-splitter > .col-12, .row > .component.col-12 { flex-basis: 100%; max-width: 100%; }
+@media (min-width: 576px) {
+  .column-splitter > .col-sm-3, .row > .component.col-sm-3 { flex-basis: 25%; max-width: 25%; }
+  .column-splitter > .col-sm-4, .row > .component.col-sm-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); }
+  .column-splitter > .col-sm-6, .row > .component.col-sm-6 { flex-basis: 50%; max-width: 50%; }
+  .column-splitter > .col-sm-8, .row > .component.col-sm-8 { flex-basis: calc(200% / 3); max-width: calc(200% / 3); }
+  .column-splitter > .col-sm-12, .row > .component.col-sm-12 { flex-basis: 100%; max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .column-splitter > .col-md-2, .row > .component.col-md-2 { flex-basis: calc(100% / 6); max-width: calc(100% / 6); }
+  .column-splitter > .col-md-3, .row > .component.col-md-3 { flex-basis: 25%; max-width: 25%; }
+  .column-splitter > .col-md-4, .row > .component.col-md-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); }
+  .column-splitter > .col-md-5, .row > .component.col-md-5 { flex-basis: calc(500% / 12); max-width: calc(500% / 12); }
+  .column-splitter > .col-md-6, .row > .component.col-md-6 { flex-basis: 50%; max-width: 50%; }
+  .column-splitter > .col-md-7, .row > .component.col-md-7 { flex-basis: calc(700% / 12); max-width: calc(700% / 12); }
+  .column-splitter > .col-md-8, .row > .component.col-md-8 { flex-basis: calc(200% / 3); max-width: calc(200% / 3); }
+  .column-splitter > .col-md-9, .row > .component.col-md-9 { flex-basis: 75%; max-width: 75%; }
+  .column-splitter > .col-md-12, .row > .component.col-md-12 { flex-basis: 100%; max-width: 100%; }
+}
+@media (min-width: 992px) {
+  .column-splitter > .col-lg-3, .row > .component.col-lg-3 { flex-basis: 25%; max-width: 25%; }
+  .column-splitter > .col-lg-4, .row > .component.col-lg-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); }
+  .column-splitter > .col-lg-6, .row > .component.col-lg-6 { flex-basis: 50%; max-width: 50%; }
+  .column-splitter > .col-lg-8, .row > .component.col-lg-8 { flex-basis: calc(200% / 3); max-width: calc(200% / 3); }
+  .column-splitter > .col-lg-9, .row > .component.col-lg-9 { flex-basis: 75%; max-width: 75%; }
+  .column-splitter > .col-lg-12, .row > .component.col-lg-12 { flex-basis: 100%; max-width: 100%; }
+}
+@media (min-width: 1200px) {
+  .column-splitter > .col-xl-3, .row > .component.col-xl-3 { flex-basis: 25%; max-width: 25%; }
+  .column-splitter > .col-xl-4, .row > .component.col-xl-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); }
+  .column-splitter > .col-xl-6, .row > .component.col-xl-6 { flex-basis: 50%; max-width: 50%; }
+}
+
+/* the blocks sit in the page's content width, like the portal's own sections */
+.component.container-default, .component.column-splitter, .component.row-splitter {
+  max-width: var(--site-max, 1180px);
+  margin: 0 auto;
+  padding: 0 var(--site-gutter, 24px);
+  box-sizing: border-box;
+}
+.component.container-default .component.container-default,
+.component.column-splitter .component.container-default,
+.component.row-splitter .component.container-default { padding: 0; }
+.row-splitter > .container-fluid { padding: 0; }
+.container-default > .component-content { background-size: cover; background-position: center; }
+
+.component:is(.title, .rich-text, .content, .promo, .image, .link-list, .navigation, .hero-banner) { margin: 0 0 24px; }
+
+/* Title */
+.component.title .field-title {
+  font-family: var(--bgd-serif, Georgia, serif);
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.15;
+  color: var(--site-ink, var(--bgd-text-primary, #1a1a1a));
+}
+.component.title .field-title a { color: inherit; text-decoration: none; }
+
+/* Rich Text, Page Content */
+.component:is(.rich-text, .content) {
+  font-family: var(--bgd-sans, system-ui, sans-serif);
+  color: var(--site-text, var(--bgd-text-primary, #222));
+  line-height: 1.6;
+}
+.component:is(.rich-text, .content) :is(p, ul, ol) { margin: 0 0 0.8em; }
+.component:is(.rich-text, .content) :is(h2, h3) { font-family: var(--bgd-serif, Georgia, serif); color: var(--site-ink, inherit); margin: 1.2em 0 0.4em; line-height: 1.2; }
+.component:is(.rich-text, .content) h2 { font-size: 1.6em; }
+.component:is(.rich-text, .content) h3 { font-size: 1.3em; }
+.component.promo .promo-text h3 { font-family: var(--bgd-serif, Georgia, serif); font-size: 1.3em; margin: 0 0 0.4em; color: var(--site-ink, inherit); }
+.component.promo .promo-text p { margin: 0 0 0.6em; }
+.component:is(.rich-text, .content) a { color: var(--bgd-accent, currentColor); }
+
+/* Promo: a card */
+.component.promo > .component-content {
+  border: 1px solid var(--site-line, var(--bgd-border, #e5e5e5));
+  border-radius: var(--site-radius, 12px);
+  background: var(--site-surface, var(--bgd-surface-card, #fff));
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.component.promo .field-promoicon { margin: 0; }
+.component.promo .field-promoicon img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.component.promo .promo-text { padding: 18px 20px 20px; font-family: var(--bgd-sans, system-ui, sans-serif); color: var(--site-text, inherit); }
+.component.promo .field-promolink a {
+  display: inline-block;
+  margin-top: 10px;
+  font: 600 12px/1.4 var(--bgd-mono, ui-monospace, monospace);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bgd-accent, var(--site-ink, #111));
+  text-decoration: none;
+}
+
+/* Image (and its Banner variant) */
+.component.image, .component.hero-banner { margin-left: 0; margin-right: 0; }
+.component:is(.image, .hero-banner) img { display: block; max-width: 100%; height: auto; border-radius: var(--site-radius, 12px); }
+.component.image .image-caption { display: block; margin-top: 8px; font-size: 13px; color: var(--site-muted, #6b6b6b); }
+
+/* Link List */
+.component.link-list h3 { font-family: var(--bgd-serif, Georgia, serif); color: var(--site-ink, inherit); margin: 0 0 10px; }
+.component.link-list ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--site-line, #e5e5e5); }
+.component.link-list li { border-bottom: 1px solid var(--site-line, #e5e5e5); }
+.component.link-list li a { display: block; padding: 10px 0; color: var(--site-ink, inherit); text-decoration: none; }
+.component.link-list li a:hover { color: var(--bgd-accent, inherit); }
+
+/* Navigation: a horizontal list, sub-levels open on hover; the mobile toggle only on small screens */
+.component.navigation ul { list-style: none; margin: 0; padding: 0; }
+.component.navigation nav > ul { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.component.navigation li { position: relative; }
+.component.navigation .navigation-title a { color: var(--site-ink, inherit); text-decoration: none; font-family: var(--bgd-sans, system-ui, sans-serif); }
+.component.navigation .navigation-title a:hover { color: var(--bgd-accent, inherit); }
+.component.navigation li > ul { display: none; position: absolute; z-index: 5; min-width: 200px; padding: 8px 12px; background: var(--site-surface, #fff); border: 1px solid var(--site-line, #e5e5e5); border-radius: 8px; }
+.component.navigation li:hover > ul, .component.navigation li.active > ul { display: block; }
+.component.navigation .menu-mobile-navigate, .component.navigation .menu-humburger { display: none; }
+@media (max-width: 767px) {
+  .component.navigation nav > ul { flex-direction: column; }
+  .component.navigation li > ul { position: static; display: block; border: 0; padding: 0 0 0 12px; }
+}
+
+/* an empty component (no datasource yet, e.g. in the Page builder or Design Studio) */
+.component .is-empty-hint {
+  display: block;
+  padding: 18px;
+  border: 1px dashed var(--site-line-strong, var(--bgd-border-strong, #bbb));
+  border-radius: 8px;
+  color: var(--site-muted, #6b6b6b);
+  font: 12px/1.4 var(--bgd-mono, ui-monospace, monospace);
+  text-align: center;
+}

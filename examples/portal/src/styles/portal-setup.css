@@ -1,0 +1,39 @@
+/* The Portal setup app (Marketplace full-screen / standalone). Self-contained; no site chrome. */
+.ps { --ps-bg: #fff; --ps-ink: #1b2328; --ps-muted: #5c6b74; --ps-line: #e3e7ea; --ps-accent: #5548d9; --ps-soft: #f3f1ff; --ps-ok: #157f3c; --ps-warn: #9a5b00; --ps-fail: #b3261e;
+  max-width: 980px; margin: 0 auto; padding: 0 24px 48px; background: var(--ps-bg); color: var(--ps-ink); font: 14px/1.5 "Instrument Sans", system-ui, sans-serif; }
+.ps *, .ps *::before, .ps *::after { box-sizing: border-box; }
+.ps button { font: inherit; color: inherit; background: none; border: 1px solid var(--ps-line); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+.ps button:disabled { opacity: .45; cursor: default; }
+.ps button.primary { background: var(--ps-accent); border-color: var(--ps-accent); color: #fff; font-weight: 600; }
+.ps input, .ps select { font: inherit; color: inherit; border: 1px solid var(--ps-line); border-radius: 8px; padding: 7px 10px; background: #fff; width: 100%; }
+.ps input[type="checkbox"], .ps input[type="radio"] { width: auto; }
+.ps-head { padding: 26px 0 14px; border-bottom: 1px solid var(--ps-line); }
+.ps-head h1 { margin: 0 0 6px; font: 500 26px/1.2 "Instrument Serif", Georgia, serif; }
+.ps-head p { margin: 0; color: var(--ps-muted); max-width: 72ch; }
+.ps-section { padding: 18px 0; border-bottom: 1px solid var(--ps-line); }
+.ps-section h2 { margin: 0 0 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ps-muted); }
+.ps-row-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.ps-row-head h2 { margin: 0; }
+.ps-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.ps-check { display: grid; grid-template-columns: 22px minmax(140px, 220px) minmax(0, 1fr); gap: 2px 10px; padding: 6px 4px; border-bottom: 1px solid var(--ps-line); }
+.ps-icon { font-weight: 700; text-align: center; }
+.ps-check.ok .ps-icon { color: var(--ps-ok); } .ps-check.warn .ps-icon { color: var(--ps-warn); } .ps-check.fail .ps-icon { color: var(--ps-fail); }
+.ps-label { font-weight: 600; }
+.ps-detail { color: var(--ps-muted); overflow-wrap: anywhere; }
+.ps-fix { grid-column: 2 / -1; font-size: 12px; color: var(--ps-warn); }
+.ps-check.fail .ps-fix { color: var(--ps-fail); }
+.ps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 16px; margin: 8px 0; }
+.ps-indent { margin-inline-start: 26px; }
+.ps-field { display: grid; gap: 4px; font-weight: 600; font-size: 13px; }
+.ps-field small { font-weight: 400; color: var(--ps-muted); }
+.ps-radio { display: flex; gap: 18px; margin: 4px 0 10px; }
+.ps-check-row { display: flex; gap: 8px; align-items: baseline; margin: 8px 0; }
+.ps-brands { border: 1px solid var(--ps-line); border-radius: 8px; padding: 8px 12px; margin: 10px 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.ps-brands legend { font-size: 12px; color: var(--ps-muted); padding: 0 4px; }
+.ps-muted { color: var(--ps-muted); margin: 6px 0; }
+.ps-warn { color: var(--ps-fail); background: #fdf1f0; border-radius: 8px; padding: 8px 12px; margin: 8px 0; }
+.ps-ok { color: var(--ps-ok); background: #edf8f1; border-radius: 8px; padding: 8px 12px; margin: 8px 0; }
+.ps-log { background: #11161a; color: #d5dde2; border-radius: 8px; padding: 12px 14px; max-height: 420px; overflow: auto; font: 12px/1.5 "JetBrains Mono", ui-monospace, monospace; white-space: pre-wrap; }
+.ps code { font: 12px "JetBrains Mono", ui-monospace, monospace; background: var(--ps-soft); padding: 1px 5px; border-radius: 4px; }
+.ps-fix-row { grid-column: 2 / -1; }
+.ps-fix-row button { padding: 4px 12px; font-size: 13px; border-color: var(--ps-accent); color: var(--ps-accent); font-weight: 600; }

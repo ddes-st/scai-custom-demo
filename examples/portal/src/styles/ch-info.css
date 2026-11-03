@@ -1,0 +1,32 @@
+/* The Content Hub info panel (Marketplace Page context panel). Self-contained; no site chrome. */
+.ci { --ci-ink: #1b2328; --ci-muted: #5c6b74; --ci-line: #e3e7ea; --ci-accent: #5548d9; --ci-ok: #157f3c; --ci-warn: #9a5b00; --ci-fail: #b3261e;
+  padding: 0 14px 28px; background: #fff; color: var(--ci-ink); font: 13px/1.45 "Instrument Sans", system-ui, sans-serif; min-height: 100vh; }
+.ci *, .ci *::before, .ci *::after { box-sizing: border-box; }
+.ci button { font: inherit; color: inherit; background: none; border: 1px solid var(--ci-line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.ci button:disabled { opacity: .45; cursor: default; }
+.ci button.primary { background: var(--ci-accent); border-color: var(--ci-accent); color: #fff; font-weight: 600; }
+.ci-head { padding: 16px 0 12px; border-bottom: 1px solid var(--ci-line); }
+.ci-head h1 { margin: 0 0 4px; font: 500 20px/1.2 "Instrument Serif", Georgia, serif; }
+.ci-head p { margin: 0; color: var(--ci-muted); }
+.ci-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.ci-page { font: 11px "JetBrains Mono", ui-monospace, monospace; overflow-wrap: anywhere; }
+.ci-group { padding: 12px 0; border-bottom: 1px solid var(--ci-line); }
+.ci-group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ci-group h2 { margin: 0; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ci-muted); }
+.ci-count { font-size: 12px; color: var(--ci-muted); }
+.ci-note { margin: 6px 0; font-size: 12px; color: var(--ci-warn); }
+.ci-items { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.ci-items li { display: grid; gap: 3px; padding: 6px 8px; border: 1px solid var(--ci-line); border-radius: 8px; }
+.ci-items li.off { border-style: dashed; color: var(--ci-muted); }
+.ci-title { font-weight: 600; overflow-wrap: anywhere; }
+.ci-badges { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
+.ci-badge { font-size: 11px; border-radius: 999px; padding: 1px 8px; background: #f1f3f4; color: var(--ci-muted); }
+.ci-badge.good { background: #edf8f1; color: var(--ci-ok); }
+.ci-badge.meh { background: #fdf6e7; color: var(--ci-warn); }
+.ci-badge.bad { background: #fdf1f0; color: var(--ci-fail); }
+.ci-link { font-size: 11px; color: var(--ci-accent); text-decoration: none; margin-inline-start: auto; }
+.ci-link:hover { text-decoration: underline; }
+.ci-muted { color: var(--ci-muted); margin: 8px 0; }
+.ci-warn { color: var(--ci-fail); background: #fdf1f0; border-radius: 8px; padding: 8px 10px; margin: 8px 0; }
+.ci-ok { color: var(--ci-ok); background: #edf8f1; border-radius: 8px; padding: 8px 10px; margin: 8px 0; }
+.ci code { font: 11px "JetBrains Mono", ui-monospace, monospace; background: #f3f1ff; padding: 1px 4px; border-radius: 4px; }
