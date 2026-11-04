@@ -1,3 +1,8 @@
+/** Joins class names, dropping empties. Tailwind-merge isn't a dependency of this head. */
+export function cn(...inputs: Array<string | false | null | undefined>): string {
+  return inputs.filter(Boolean).join(" ");
+}
+
 export function getBaseUrl(host?: string | null): string {
   if (host) {
     const protocol = process.env.NODE_ENV === "development" ? "http" : "https";

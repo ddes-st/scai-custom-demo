@@ -31,6 +31,7 @@ export const Default = async (props: PortalComponentProps) => {
   const pick = await pickedImage((fields.LogoPick as Field<string> | undefined)?.value);
   const logoLinks = pick.image?.links?.filter((l) => !l.crop);
   const showNav = fieldValue(fields, "ShowNav").toLowerCase();
+  const bar = fieldValue(fields, "Chrome").toLowerCase() === "bar";
   const editing = isEditing(props.page);
   const { segments, locale } = requestContext();
   const active = segments[0]?.toLowerCase() ?? "";
@@ -41,11 +42,14 @@ export const Default = async (props: PortalComponentProps) => {
   const signedIn = viewer.kind === "staff" || viewer.kind === "partner";
   // a partner: "<contact> · <partner> · <tier>" (the contact person when the Demo Builder set one)
   const who = viewer.kind === "partner" ? [viewer.partner.contact, viewer.partner.name, viewer.partner.tier].filter(Boolean).join(" · ") : viewer.kind === "staff" ? ui("staff") : "";
-  const navVisible = showNav === "always" || (showNav !== "never" && pages.length > 1);
+  const navVisible = showNav === "always" || (showNav !== "never" && (bar || pages.length > 1));
   const c = chrome(props);
+  const homeActive = segments.length === 0;
+  const shortLang = (l: string) => l.split("-")[0].toUpperCase();
+  const initial = (who || ui("signIn")).trim().charAt(0).toUpperCase();
 
   return (
-    <div className={`site-topbar ${c.className}`.trim()} id={c.id}>
+    <div className={`site-topbar${bar ? " hub-bar" : ""} ${c.className}`.trim()} id={c.id}>
       <Link className="wordmark" href="/">
         {pick.image
           ? <ChImage links={logoLinks?.length ? logoLinks : pick.image.links} fallback={pick.image.src} slot="logo" alt={pick.image.title} loading="eager" className="wordmark-logo" />
@@ -54,6 +58,11 @@ export const Default = async (props: PortalComponentProps) => {
       </Link>
       {navVisible && (
         <nav className="site-nav" aria-label={ui("portalSections")}>
+          {bar && (
+            <Link href="/" className={homeActive ? "active" : undefined} aria-current={homeActive ? "page" : undefined}>
+              {ui("brandPortal")}
+            </Link>
+          )}
           {pages.map((p) => (
             <Link key={p.key} href={p.href} className={p.key === active ? "active" : undefined} aria-current={p.key === active ? "page" : undefined}>
               {p.label}
@@ -62,22 +71,25 @@ export const Default = async (props: PortalComponentProps) => {
         </nav>
       )}
       <div className="meta">
-        {routing.locales.length > 1 && (
+        {(routing.locales.length > 1 || bar) && (
           <nav className="site-lang" aria-label={ui("language")}>
-            {routing.locales.map((l) => (
-              <Link key={l} href={samePath} locale={l} hrefLang={l} lang={l} className={l === current ? "active" : undefined} aria-current={l === current ? "true" : undefined}>{langLabel(l)}</Link>
+            {(routing.locales.length > 1 ? routing.locales : [current || routing.defaultLocale]).map((l) => (
+              routing.locales.length > 1 ? (
+                <Link key={l} href={samePath} locale={l} hrefLang={l} lang={l} className={l === current ? "active" : undefined} aria-current={l === current ? "true" : undefined}>{bar ? shortLang(l) : langLabel(l)}</Link>
+              ) : (
+                <span key={l} className="active" lang={l}>{shortLang(l)}</span>
+              )
             ))}
           </nav>
         )}
         {siteModeNow() !== "public" && (signedIn ? (
           <form method="post" action="/api/logout" className="site-session">
-            <span className="who">{who}</span>
-            <button type="submit" className="link">{ui("signOut")}</button>
+            {bar ? <button type="submit" className="hub-avatar" title={`${who} — ${ui("signOut")}`}>{initial}</button> : <><span className="who">{who}</span><button type="submit" className="link">{ui("signOut")}</button></>}
           </form>
         ) : (
-          <a className="site-session" href={`/login?from=${encodeURIComponent(current && current !== routing.defaultLocale ? `/${current}${samePath === "/" ? "" : samePath}` : samePath)}`}>{ui("signIn")}</a>
+          <a className={bar ? "hub-avatar" : "site-session"} title={ui("signIn")} href={`/login?from=${encodeURIComponent(current && current !== routing.defaultLocale ? `/${current}${samePath === "/" ? "" : samePath}` : samePath)}`}>{bar ? initial : ui("signIn")}</a>
         ))}
-        <span>{ui("poweredBy")}</span>
+        {!bar && <span>{ui("poweredBy")}</span>}
       </div>
     </div>
   );

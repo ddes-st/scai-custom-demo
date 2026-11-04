@@ -9,6 +9,8 @@ import { EditorNotice, LoadError } from "src/lib/portal/editor";
 import { EntityCardView } from "components/ui/portal/EntityCards";
 import { columnsOf, EntityItems, variantOf } from "components/ui/portal/EntityItems";
 import { Link } from "src/i18n/navigation";
+import { SECTION_PATH } from "src/lib/portal/sections";
+import { ui } from "src/lib/portal/ui-text";
 
 /**
  * Hand-picked Content Hub entities of any definition (datasource "Portal Picks": Heading,
@@ -31,10 +33,13 @@ export const Default = async (props: PortalComponentProps) => {
   // Columns: items per row (cards, tiles) or slides visible (carousel); auto = the layout's default
   const columns = columnsOf(param(props, "Columns"));
 
-  const head = (heading?.value || intro?.value || editing) && (
-    <div className="portal-section-head">
-      {(heading?.value || editing) && <h2><Text field={heading} /></h2>}
-      {(intro?.value || editing) && <p><Text field={intro} /></p>}
+  const head = (heading?.value || intro?.value || editing || variant === "masonry") && (
+    <div className="portal-section-head hub-section-head">
+      <div>
+        {(heading?.value || editing) && <h2><Text field={heading} /></h2>}
+        {(intro?.value || editing) && <p><Text field={intro} /></p>}
+      </div>
+      {variant === "masonry" && <Link href={SECTION_PATH.media} className="hub-see-all">{ui("hubSeeEverything")}</Link>}
     </div>
   );
   const section = (children: React.ReactNode) => <section className={`portal-section ch-items ch-items-${variant} ${c.className}`.trim()} id={c.id}>{head}{children}</section>;

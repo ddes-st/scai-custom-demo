@@ -9,16 +9,23 @@ import { ChImage } from "components/ui/portal/ChImage";
 
 /** The media library: search, brand / collection / type filters and the asset grid (rendered a page at a time). */
 const PAGE = 60;
-export function MediaBrowser({ items, collections, brands, trackViews }: { items: MediaItem[]; collections: MediaCollection[]; brands: string[]; trackViews?: boolean }) {
+export function MediaBrowser({ items, collections, brands, trackViews, initial }: {
+  items: MediaItem[];
+  collections: MediaCollection[];
+  brands: string[];
+  trackViews?: boolean;
+  /** From the page URL (`?q=`, `?kind=`, `?collection=`), so the brand-hub search opens the library already filtered. */
+  initial?: { q?: string; kind?: string; collection?: string };
+}) {
   const t = useUi();
   const KINDS: Array<{ id: string; label: string }> = [
     { id: "", label: t("allTypes") }, { id: "image", label: t("images") }, { id: "video", label: t("videos") }, { id: "document", label: t("documents") }, { id: "audio", label: t("audio") },
   ];
   const [open, setOpen] = useState<number | null>(null);
-  const [q, setQ] = useState("");
+  const [q, setQ] = useState(initial?.q ?? "");
   const [brand, setBrand] = useState("");
-  const [collection, setCollection] = useState("");
-  const [kind, setKind] = useState("");
+  const [collection, setCollection] = useState(initial?.collection ?? "");
+  const [kind, setKind] = useState(initial?.kind ?? "");
   const [limit, setLimit] = useState(PAGE);
   useEffect(() => setLimit(PAGE), [q, brand, collection, kind]);
   const shown = useMemo(() => {

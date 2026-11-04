@@ -20,15 +20,19 @@ const classes = (node: any) => tree(node).map((n) => n.props?.className).filter(
 // the SXA starter renderings every portal site offers (Feature/JSS Experience Accelerator, componentName)
 const RENDERINGS = ["Image", "Navigation", "LinkList", "PageContent", "Promo", "RichText", "Title", "Container", "ColumnSplitter", "RowSplitter"];
 
+/** Recursive readdir on Windows uses "\"; the checks below are written with "/". */
+const posix = (f: string) => f.split(path.sep).join("/");
+const sxaFiles = () => fs.readdirSync("src/components/sxa", { recursive: true }).map((f) => posix(String(f)));
+
 describe("the SXA starter components (components/sxa, from Sitecore's xmcloud-starter-js)", () => {
   test("one component file per rendering, named as its componentName", () => {
-    const files = fs.readdirSync("src/components/sxa", { recursive: true }).map(String).filter((f) => /^[^.]+\/[A-Z]\w+\.tsx$/.test(f)).map((f) => path.basename(f, ".tsx"));
+    const files = sxaFiles().filter((f) => /^[^.]+\/[A-Z]\w+\.tsx$/.test(f)).map((f) => path.basename(f, ".tsx"));
     assert.deepEqual(files.sort(), [...RENDERINGS].sort());
   });
   test("the licence and the attribution travel with the code", () => {
     assert.match(fs.readFileSync("src/components/sxa/LICENSE-xmcloud-starter-js.md", "utf8"), /Apache License/);
     for (const name of RENDERINGS) {
-      const file = fs.readdirSync("src/components/sxa", { recursive: true }).map(String).find((f) => f.endsWith(`/${name}.tsx`))!;
+      const file = sxaFiles().find((f) => f.endsWith(`/${name}.tsx`))!;
       assert.match(fs.readFileSync(path.join("src/components/sxa", file), "utf8"), /xmcloud-starter-js.*\n\/\/ Apache License 2\.0/, file);
     }
   });
@@ -37,7 +41,7 @@ describe("the SXA starter components (components/sxa, from Sitecore's xmcloud-st
 describe("images", () => {
   // (rendering them needs both the server-only file route and the kit's client link component — checked in a
   // browser instead; here the guarantee that matters: no image bypasses the portal's file route)
-  const src = (name: string) => fs.readFileSync(path.join("src/components/sxa", fs.readdirSync("src/components/sxa", { recursive: true }).map(String).find((f) => f.endsWith(`/${name}.tsx`))!), "utf8");
+  const src = (name: string) => fs.readFileSync(path.join("src/components/sxa", sxaFiles().find((f) => f.endsWith(`/${name}.tsx`))!), "utf8");
   test("Image and Promo pass every image field through the portal's file route (portalImageField)", () => {
     for (const name of ["Image", "Promo"]) {
       const code = src(name);

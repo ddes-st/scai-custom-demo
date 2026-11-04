@@ -107,7 +107,7 @@ describe("banner call to action", () => {
 
 describe("collection fast path", () => {
   // what a microsite run skips in an up-to-date collection: phases [1]–[3] and [5] of the setup core
-  const RECORDED = { version: "1", hash: "9eead894b91b1ff5d3446c3407190e88f8d70ba6157b5fe42f4d8414cd2eec41" };
+  const RECORDED = { version: "2", hash: "8d18fd518f7975ffa33ffc53b2fc482000ca78d44f624098af9d1349d4062743" };
   test("the collection phases change only together with COLLECTION_VERSION", async () => {
     const { readFileSync } = await import("node:fs");
     const { createHash } = await import("node:crypto");

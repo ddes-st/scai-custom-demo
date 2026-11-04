@@ -4,14 +4,18 @@ import { chrome, isEditing, param, routeFields, type PortalComponentProps } from
 import { EditorNotice } from "src/lib/portal/editor";
 import { pickedImage } from "src/lib/portal/image-pick";
 import { ChImage } from "components/ui/portal/ChImage";
+import { HeroSearch } from "components/ui/portal/HeroSearch";
 import { portalImageField } from "src/lib/portal/dam-image";
+import { heroPrompts } from "src/lib/portal/hero-prompts";
+import { ui } from "src/lib/portal/ui-text";
 
 /**
  * The page hero from the page's own fields (templates Portal Home/Section Page: Eyebrow,
  * Title, Lead, and an optional image: HeroImagePick — a "Content Hub image" from this portal's
  * own tenant (Open app), served from its best-fitting public link — or else HeroImage, picked
  * through the media dialog's DAM connector).
- * Rendering parameter Variant: "home" (large) or "compact" (section pages).
+ * Rendering parameter Variant: "home" (large), "compact" (section pages) or "search"
+ * (brand-hub: headline, scoped search and one suggestion chip per line of Lead).
  */
 export const Default = async (props: PortalComponentProps) => {
   const f = routeFields(props.page);
@@ -21,9 +25,33 @@ export const Default = async (props: PortalComponentProps) => {
   const lead = f.Lead as Field<string> | undefined;
   const image = portalImageField(f.HeroImage as ImageField | undefined, 1920);
   const hasImage = !!pick.image || !!image?.value?.src;
-  const compact = param(props, "Variant").toLowerCase() !== "home";
+  const variant = param(props, "Variant").toLowerCase();
+  const compact = variant !== "home" && variant !== "search";
   const editing = isEditing(props.page);
   const c = chrome(props);
+  if (variant === "search") {
+    return (
+      <section className={`variant-search site-index-hero ${c.className}`.trim()} id={c.id}>
+        <div className="text">
+          <h1 className="hub-display"><Text field={title} /></h1>
+        </div>
+        <HeroSearch
+          prompts={heroPrompts(String(lead?.value ?? ""))}
+          placeholder={ui("hubSearchPlaceholder")}
+          searchLabel={ui("search")}
+          kinds={[
+            { id: "", label: ui("hubAnything") },
+            { id: "image", label: ui("images") },
+            { id: "video", label: ui("videos") },
+            { id: "document", label: ui("documents") },
+          ]}
+        />
+        {editing && (
+          <p className="lead"><Text field={lead} /></p>
+        )}
+      </section>
+    );
+  }
   return (
     <div className={`site-index-hero${compact ? " compact" : ""}${hasImage ? " with-image" : ""} ${c.className}`.trim()} id={c.id}>
       <div className="text">

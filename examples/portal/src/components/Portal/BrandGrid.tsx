@@ -6,7 +6,7 @@ import { getBrandVisibilityMap, getGlobalConfig } from "src/lib/ch/siteConfig";
 import { computeBrandPaletteVars } from "src/lib/ch/brandPalette";
 import { env } from "src/lib/ch/env";
 import { attempt } from "src/lib/ch/portalEdge";
-import { brandHref } from "src/lib/portal/sections";
+import { brandHref, SECTION_PATH } from "src/lib/portal/sections";
 import { chrome, isEditing, param, type PortalComponentProps } from "src/lib/portal/component";
 import { brandMasters, type BrandMaster } from "src/lib/ch/brand-masters";
 import { ChImage } from "components/ui/portal/ChImage";
@@ -19,6 +19,7 @@ import { ui } from "src/lib/portal/ui-text";
  *    master asset, else its initial);
  *  - "logo": the brand's master asset alone, large and uncropped (the name as its alt text);
  *  - "name": the name only.
+ *  - "swatch": the brand colour as the whole tile, logo centred (brand-hub home).
  */
 export const Default = async (props: PortalComponentProps) => {
   const editing = isEditing(props.page);
@@ -30,12 +31,45 @@ export const Default = async (props: PortalComponentProps) => {
   if (!res.data) return editing ? <EditorNotice title="Brand grid">{res.error}</EditorNotice> : <LoadError message={res.error} />;
   const { brands, config, visibility, masters } = res.data;
   const v = param(props, "Variant").toLowerCase();
-  const variant = v === "logo" || v === "name" ? v : "default";
+  const variant = v === "logo" || v === "name" || v === "swatch" ? v : "default";
   const uncropped = (m: BrandMaster) => { const l = m.links?.filter((x) => !x.crop); return l?.length ? l : m.links; };
   const fallbackAccent = /^#[0-9a-f]{6}$/i.test(config.site.accent) ? config.site.accent : env.fallbackAccent;
   const visible = brands.filter((b) => (visibility[b.brandId] || "visible") !== "hidden");
   if (!visible.length) {
     return editing ? <EditorNotice title="Brand grid">No brands in scope on this Content Hub tenant (check the Portal Settings brand scope).</EditorNotice> : <p className="portal-empty">{ui("noBrands")}</p>;
+  }
+  if (variant === "swatch") {
+    return (
+      <section className={`hub-brands ${c.className}`.trim()} id={c.id}>
+        <div className="portal-section-head hub-section-head">
+          <h2>{ui("hubOurBrands")}</h2>
+          <Link href={SECTION_PATH.brands} className="hub-see-all">{ui("allBrands")}</Link>
+        </div>
+        <div className="hub-swatch-grid">
+          {visible.map((b) => {
+            const edge = computeBrandPaletteVars(b.visualizationColor, fallbackAccent)["--bgd-accent-vivid"];
+            const comingSoon = (visibility[b.brandId] || "visible") === "comingSoon";
+            const master = masters.get(b.identifier);
+            const logo = b.logoUrl
+              ? <img src={imageFromOrigin(b.logoUrl)} alt="" loading="lazy" />
+              : master
+                ? <ChImage links={uncropped(master)} fallback={master.src} slot="row" alt="" />
+                : <span className="glyph" aria-hidden="true">{b.name.charAt(0)}</span>;
+            const body = (
+              <>
+                <span className="hub-swatch-logo">{logo}</span>
+                <span className="sr-only">{b.name}{comingSoon ? `, ${ui("comingSoon")}` : ""}</span>
+              </>
+            );
+            return comingSoon ? (
+              <span key={b.brandId} className="hub-swatch coming-soon" style={{ background: edge }}>{body}</span>
+            ) : (
+              <Link key={b.brandId} href={brandHref(b.slug)} className="hub-swatch" style={{ background: edge }}>{body}</Link>
+            );
+          })}
+        </div>
+      </section>
+    );
   }
   return (
     <div className={`site-brand-grid variant-${variant} ${c.className}`.trim()} id={c.id}>

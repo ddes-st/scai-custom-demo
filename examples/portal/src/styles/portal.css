@@ -344,12 +344,13 @@
 .portal-grid.ch-cols-2, .ch-tiles.ch-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .portal-grid.ch-cols-3, .ch-tiles.ch-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .portal-grid.ch-cols-4, .ch-tiles.ch-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.portal-grid.ch-cols-5, .ch-tiles.ch-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .ch-per-1 .ch-slide { flex-basis: 100%; }
 .ch-per-2 .ch-slide { flex-basis: calc((100% - 16px) / 2); }
 .ch-per-3 .ch-slide { flex-basis: calc((100% - 32px) / 3); }
 .ch-per-4 .ch-slide { flex-basis: calc((100% - 48px) / 4); }
 @media (max-width: 900px) {
-  .portal-grid.ch-cols-3, .portal-grid.ch-cols-4, .ch-tiles.ch-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portal-grid.ch-cols-3, .portal-grid.ch-cols-4, .portal-grid.ch-cols-5, .ch-tiles.ch-cols-4, .ch-tiles.ch-cols-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ch-per-3 .ch-slide, .ch-per-4 .ch-slide { flex-basis: calc((100% - 16px) / 2); }
 }
 @media (max-width: 640px) {

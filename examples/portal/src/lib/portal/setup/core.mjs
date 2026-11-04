@@ -346,6 +346,11 @@ export const UI_STRINGS = {
   unSource: ["Source: {source}", "Quelle: {source}"],
   unDataYear: ["Data year {year}", "Datenjahr {year}"],
   unTeachesIn: ["Teaches in", "Lehrt in"],
+  hubAnything: ["Anything", "Alles"],
+  hubSearchPlaceholder: ["Describe it, or ask a question", "Beschreiben Sie es, oder stellen Sie eine Frage"],
+  hubOurBrands: ["Our brands", "Unsere Marken"],
+  hubTeamsSearching: ["Your teams are searching for", "Ihre Teams suchen nach"],
+  hubSeeEverything: ["See everything", "Alles ansehen"],
 };
 
 /** Translated page and datasource texts per language, keyed by the item path relative to the site. */
@@ -559,7 +564,7 @@ export const LANGUAGE_CODE = /^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/;
  * whenever they change; tests/setup-core.test.ts fails until the version and the recorded hash
  * of those parts are updated together.
  */
-export const COLLECTION_VERSION = "1";
+export const COLLECTION_VERSION = "2";
 
 /** A slow answer, not a refusal: the app's client gave up waiting ("Request timed out"). */
 const isTimeout = (e) => /timed out/i.test(String(e?.message ?? e ?? ""));
@@ -600,6 +605,8 @@ const PUBLISH = opt.publish !== false;
 // a campaign microsite (PORTAL_SITE_KIND=microsite, or a joint microsite of the portal's deployment):
 // its own pages, no portal sections or partners; a joint one shares the portal's dictionary
 const MICROSITE = discovery.siteKind === "microsite";
+// The marketing brand hub (the default vertical): search home, bar chrome. Sports and higher-ed keep their own home.
+const BRAND_HUB = !MICROSITE && discovery.vertical !== "sports" && discovery.vertical !== "higher-ed";
 const JOINT = MICROSITE && !!discovery.joint;
 // a quick microsite run (see [0]): the collection's templates and renderings by path, else null
 let FAST = null;
@@ -809,7 +816,7 @@ log("\n[1] folders");
   await ensureItem(`${TPL}/Portal Settings/Theme`, "FontMono", T.templateField, { Type: "Single-Line Text", Title: "Monospace font (Google Fonts family, e.g. JetBrains Mono)" });
   await ensureItem(`${TPL}/Portal Settings/Theme`, "BrandBookLayout", T.templateField, { Type: "Single-Line Text", Title: "Brand book layout (tabbed | editorial; empty = Content Hub setting)" });
   await ensureItem(`${TPL}/Portal Settings/Theme`, "ThemeVars", T.templateField, { Type: "Multi-Line Text", Title: "Theme tokens (JSON of CSS variable → value, written by the Portal theme app /theme-editor; empty = defaults)" });
-  const headerTpl = await ensureTemplate(TPL, "Portal Header", [T.standard], [{ name: "Header", fields: [f("Wordmark", "Single-Line Text"), f("Logo", "Image"), f("ShowNav", "Single-Line Text", { title: "Show navigation (auto | always | never)" })] }], true);
+  const headerTpl = await ensureTemplate(TPL, "Portal Header", [T.standard], [{ name: "Header", fields: [f("Wordmark", "Single-Line Text"), f("Logo", "Image"), f("ShowNav", "Single-Line Text", { title: "Show navigation (auto | always | never)" }), f("Chrome", "Single-Line Text", { title: "Chrome (plain | bar)" })] }], true);
   // "Portal Banner": an authored image (Content Hub asset through the DAM connector) with texts and a link.
   const bannerTpl = await ensureTemplate(TPL, "Portal Banner", [T.standard], [{ name: "Banner", fields: [
     f("Image", "Image", { title: "Image (Content hub tab of the media dialog)" }), f("Eyebrow", "Single-Line Text"), f("Title", "Single-Line Text"), f("Text", "Multi-Line Text"), f("Link", "General Link"),
@@ -831,6 +838,7 @@ log("\n[1] folders");
   await ensureItem(`${TPL}/Portal Banner/Banner`, "ImagePick", T.templateField, { Type: "Plugin", ...appSource }, { Title: FIELD_TITLES.image.now });
   await ensureItem(`${TPL}/_Portal Texts/Portal`, "HeroImagePick", T.templateField, { Type: "Plugin", ...appSource }, { Title: FIELD_TITLES.hero.now });
   await ensureItem(`${TPL}/Portal Header/Header`, "LogoPick", T.templateField, { Type: "Plugin", ...appSource }, { Title: FIELD_TITLES.logo.now });
+  await ensureItem(`${TPL}/Portal Header/Header`, "Chrome", T.templateField, { Type: "Single-Line Text", Title: "Chrome (plain | bar)" });
   // the Content Hub fields' titles fit the Page builder's field header (its copy / paste icons cut
   // long ones); a site set up before gets them while its titles are still the old defaults, and
   // the hint moves to the field's help text
@@ -879,6 +887,7 @@ log("\n[1] folders");
   const prmSchedule = await ensureTemplate(PRM, "GameSchedule", T.paramBases, [{ name: "Portal", fields: [f("Filter", "Single-Line Text", { title: "Opens on (all | upcoming | results | theme)" })] }], false);
   const prmRoster = await ensureTemplate(PRM, "Roster", T.paramBases, [{ name: "Portal", fields: [f("Filter", "Single-Line Text", { title: "Opens on (active | all | farm)" })] }], false);
   const prmEvents = await ensureTemplate(PRM, "EventsCalendar", T.paramBases, [{ name: "Portal", fields: [f("Limit", "Single-Line Text", { title: "Upcoming events shown (empty = all, with past events; e.g. 3 for a teaser)" })] }], false);
+  const prmMedia = await ensureTemplate(PRM, "MediaLibrary", T.paramBases, [{ name: "Portal", fields: [f("Variant", "Single-Line Text", { title: "Variant (full | chips)" })] }], false);
 
   // Rendering-parameter dropdowns: lookup items under <site>/Data/Lookups/<list>/<value>; a Droplist
   // parameter stores the selected item's NAME, which is what the head reads (param()).
@@ -891,10 +900,13 @@ log("\n[1] folders");
     return `${P.site}/Data/Lookups/${name}`;
   };
   const dropField = async (tplPath, field, source, title) => ensureItem(`${tplPath}/Portal`, field, T.templateField, { Type: "Droplist", Source: source, Title: title });
-  const variantsSrc = await lookup("Variants", ["cards", "list", "tiles", "carousel", "hero"]);
-  const bannerSrc = await lookup("Banner variants", ["full", "split"]);
-  const brandGridSrc = await lookup("Brand grid variants", ["default", "logo", "name"]);
-  const heroSrc = await lookup("Hero variants", ["home", "compact"]);
+  const variantsSrc = await lookup("Variants", ["cards", "list", "tiles", "carousel", "hero", "overlay", "masonry"]);
+  const bannerSrc = await lookup("Banner variants", ["full", "split", "guide"]);
+  const brandGridSrc = await lookup("Brand grid variants", ["default", "logo", "name", "swatch"]);
+  const heroSrc = await lookup("Hero variants", ["home", "compact", "search"]);
+  const mediaSrc = await lookup("Media library variants", ["full", "chips"]);
+  const chromeSrc = await lookup("Header chrome", ["plain", "bar"]);
+  await ensureItem(`${TPL}/Portal Header/Header`, "Chrome", null, { Type: "Droplist", Source: chromeSrc, Title: "Chrome (plain | bar)" });
   const bookSrc = await lookup("Brand book layouts", ["auto", "tabbed", "editorial"]);
   await dropField(`${PRM}/ContentHubItems`, "Variant", variantsSrc, "Variant");
   await dropField(`${PRM}/ContentHubList`, "Variant", variantsSrc, "Variant");
@@ -904,7 +916,7 @@ log("\n[1] folders");
   await dropField(`${PRM}/ContentHubItems`, "ImageCrop", cropSrc, "Image (auto = best-fitting public link, or a named crop)");
   await dropField(`${PRM}/ContentHubList`, "ImageCrop", cropSrc, "Image (auto = best-fitting public link, or a named crop)");
   // Items per row (cards, tiles) or slides visible at once (carousel); auto = the layout's default.
-  const columnsSrc = await lookup("Columns", ["auto", "1", "2", "3", "4"]);
+  const columnsSrc = await lookup("Columns", ["auto", "1", "2", "3", "4", "5"]);
   await dropField(`${PRM}/GameSchedule`, "Filter", await lookup("Schedule filters", ["all", "upcoming", "results", "theme"]), "Opens on");
   await dropField(`${PRM}/Roster`, "Filter", await lookup("Roster filters", ["active", "all", "farm"]), "Opens on");
   await dropField(`${PRM}/ContentHubItems`, "Columns", columnsSrc, "Columns (items per row; slides visible in the carousel)");
@@ -912,6 +924,7 @@ log("\n[1] folders");
   await dropField(`${PRM}/PortalBanner`, "Variant", bannerSrc, "Variant");
   await dropField(`${PRM}/BrandGrid`, "Variant", brandGridSrc, "Variant (logo and name | master asset only | name only)");
   await dropField(`${PRM}/PortalHero`, "Variant", heroSrc, "Variant");
+  await dropField(`${PRM}/MediaLibrary`, "Variant", mediaSrc, "Variant");
   await dropField(`${PRM}/BrandBook`, "LayoutOverride", bookSrc, "Layout override");
   // Who may see a page (phase 2): everyone | partners (and staff) | staff.
   const audienceSrc = await lookup("Audiences", ["everyone", "partners", "staff"]);
@@ -929,7 +942,7 @@ log("\n[1] folders");
   const SHARED = [
     [`${TPL}/_Portal Texts/Portal`, ["ShowOnHome", "HideFromNav", "VisibleTo", "HeroImage", "HeroImagePick"]],
     [`${TPL}/Portal Banner/Banner`, ["ImagePick"]],
-    [`${TPL}/Portal Header/Header`, ["LogoPick"]],
+    [`${TPL}/Portal Header/Header`, ["LogoPick", "Chrome"]],
     [`${TPL}/Portal Detail Page/Portal detail`, ["DetailKind", "Definition"]],
     [`${TPL}/Portal Picks/Picks`, ["Picks"]],
     [`${TPL}/Portal Settings/Portal`, ["BrandScope", "TrackUsage", "UsageSiteLabel", "SiteMode"]],
@@ -994,7 +1007,7 @@ log("\n[1] folders");
   R.ProductDetail = await rendering("ProductDetail", prmDefault);
   R.PressList = await rendering("PressList", prmDefault);
   R.PressRelease = await rendering("PressRelease", prmDefault);
-  R.MediaLibrary = await rendering("MediaLibrary", prmDefault);
+  R.MediaLibrary = await rendering("MediaLibrary", prmMedia);
   R.ContentHubItems = await rendering("ContentHubItems", prmItems, { "Datasource Template": `${TPL}/Portal Picks`, "Datasource Location": `query:$site/*[@@name='Data']/*[@@name='Portal Picks']|query:$sharedSites/*[@@name='Data']/*[@@name='Portal Picks']` });
   R.ContentHubList = await rendering("ContentHubList", prmList);
   R.ContentHubDetail = await rendering("ContentHubDetail", prmDefault, { "Can select Page as a data source": "1" });
@@ -1041,7 +1054,7 @@ log("\n[1] folders");
   const marqueLogo = MICROSITE && /^[\w.~-]{3,200}$/.test(String(discovery.microsite?.logo ?? "")) ? String(discovery.microsite.logo) : "";
   const heroAsset = /^[\w.~-]{3,200}$/.test(String(branding.heroAsset ?? "").trim()) ? String(branding.heroAsset).trim() : "";
   const heroPick = heroAsset ? JSON.stringify({ definition: "M_Asset", max: 1, items: [{ id: heroAsset, name: "" }] }) : "";
-  const headerDs = await ensureItem(`${P.site}/Data/Portal Header`, "Header", headerTpl, {}, { Wordmark: wordmark || "Brand Portal", ShowNav: "auto" });
+  const headerDs = await ensureItem(`${P.site}/Data/Portal Header`, "Header", headerTpl, {}, { Wordmark: wordmark || "Brand Portal", ShowNav: "auto", ...(BRAND_HUB ? { Chrome: "bar" } : {}) });
   if (wordmark) {
     const h = await getByPath(`${P.site}/Data/Portal Header/Header`);
     const cur = h?.fields.nodes.find((f) => f.name === "Wordmark")?.value ?? "";
@@ -1068,12 +1081,32 @@ log("\n[1] folders");
       log(`  ~ header logo: ${marque?.name ?? "the marque"}'s`);
     }
   }
-  const footerDs = await ensureItem(`${P.site}/Data/Portal Footer`, "Footer", footerTpl, {}, { LeftText: "Brand system portal", RightText: "Content via Experience Edge · files via public links" });
+  if (BRAND_HUB) {
+    const h = await getByPath(`${P.site}/Data/Portal Header/Header`);
+    const cur = h?.fields.nodes.find((f) => f.name === "Chrome")?.value ?? "";
+    if (h && !String(cur).trim()) {
+      await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: h.itemId, language: LANG, fields: [{ name: "Chrome", value: "bar" }] } });
+      log("  ~ header chrome: bar");
+    }
+  }
+  const footerDs = await ensureItem(`${P.site}/Data/Portal Footer`, "Footer", footerTpl, {}, BRAND_HUB
+    ? { LeftText: "Usage terms  ·  Contact the brand team", RightText: "Can't find it? Request an asset" }
+    : { LeftText: "Brand system portal", RightText: "Content via Experience Edge · files via public links" });
+  if (BRAND_HUB) {
+    const foot = await getByPath(`${P.site}/Data/Portal Footer/Footer`);
+    const left = foot?.fields.nodes.find((f) => f.name === "LeftText")?.value ?? "";
+    if (foot && left === "Brand system portal") {
+      await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: foot.itemId, language: LANG, fields: [{ name: "LeftText", value: "Usage terms  ·  Contact the brand team" }, { name: "RightText", value: "Can't find it? Request an asset" }] } });
+      log("  ~ footer: brand hub");
+    }
+  }
   // the portal's own datasources (a microsite has none of these: lean)
   let bannerDs = "";
   if (!MICROSITE) {
   await ensureItem(`${P.site}/Data`, "Portal Banners", T.commonFolder, { __Masters: bannerTpl });
-  bannerDs = await ensureItem(`${P.site}/Data/Portal Banners`, "Home banner", bannerTpl, {}, { Eyebrow: "From the library", Title: "One picture, straight from Content Hub.", Text: "This banner's image is a Content Hub asset chosen in the Page builder's media dialog — served from its public link, never copied.", ...(heroPick ? { ImagePick: heroPick } : {}) });
+  bannerDs = await ensureItem(`${P.site}/Data/Portal Banners`, "Home banner", bannerTpl, {}, BRAND_HUB
+    ? { Eyebrow: "", Title: "This is what good looks like", Text: "Guidelines you can see, not a PDF to dig through. Every rule comes with a real example, and you can check your own draft against them.", ...(heroPick ? { ImagePick: heroPick } : {}) }
+    : { Eyebrow: "From the library", Title: "One picture, straight from Content Hub.", Text: "This banner's image is a Content Hub asset chosen in the Page builder's media dialog — served from its public link, never copied.", ...(heroPick ? { ImagePick: heroPick } : {}) });
   if (heroPick) {
     const b = await getByPath(`${P.site}/Data/Portal Banners/Home banner`);
     const cur = b?.fields.nodes.find((f) => f.name === "ImagePick")?.value ?? "";
@@ -1125,6 +1158,24 @@ log("\n[1] folders");
     }
   }
   const carouselDs = MICROSITE ? "" : await ensureItem(`${P.site}/Data/Portal Picks`, "Image carousel", picksTpl, {}, { Heading: "In pictures", Intro: "Images picked from the Content Hub library — same picker, carousel variant." });
+  const jobsDs = BRAND_HUB ? await ensureItem(`${P.site}/Data/Portal Picks`, "Start from the job", picksTpl, {}, { Heading: "Start from the job", Intro: "" }) : "";
+  if (BRAND_HUB) {
+    const fillIf = async (path, name, from, to) => {
+      const it = await getByPath(path);
+      const cur = it?.fields.nodes.find((f) => f.name === name)?.value ?? "";
+      if (it && String(cur) === from) {
+        await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields: [{ name, value: to }] } });
+        log(`  ~ ${path.split("/").slice(-1)[0]}: ${name}`);
+      }
+    };
+    await fillIf(`${P.site}/Data/Portal Picks/Featured products`, "Heading", PICKS_TEXT.products.Heading, "");
+    await fillIf(`${P.site}/Data/Portal Picks/Featured products`, "Intro", PICKS_TEXT.products.Intro, "");
+    await fillIf(`${P.site}/Data/Portal Picks/Image carousel`, "Heading", "In pictures", "New and approved");
+    await fillIf(`${P.site}/Data/Portal Picks/Image carousel`, "Intro", "Images picked from the Content Hub library — same picker, carousel variant.", "");
+    await fillIf(`${P.site}/Data/Portal Banners/Home banner`, "Title", "One picture, straight from Content Hub.", "This is what good looks like");
+    await fillIf(`${P.site}/Data/Portal Banners/Home banner`, "Text", "This banner's image is a Content Hub asset chosen in the Page builder's media dialog — served from its public link, never copied.", "Guidelines you can see, not a PDF to dig through. Every rule comes with a real example, and you can check your own draft against them.");
+    await fillIf(`${P.site}/Data/Portal Banners/Home banner`, "Eyebrow", "From the library", "");
+  }
   const modelsDs = MICROSITE ? await ensureItem(`${P.site}/Data/Portal Picks`, "Featured models", picksTpl, {}, MODELS_TEXT) : "";
   // the model highlights start with the marque's cars while nothing is picked (the author changes them freely)
   const cars = MICROSITE && Array.isArray(discovery.microsite?.models) ? discovery.microsite.models.filter((c) => c && typeof c.id === "string" && c.id).slice(0, 3) : [];
@@ -1244,11 +1295,16 @@ log("\n[1] folders");
     log(`  - moved the empty ${P.site}/Home (template ${homeTemplate}) to the recycle bin to recreate it as Portal Home Page`);
     home = null;
   }
-  const homeTexts = MICROSITE ? MICROSITE_HOME_TEXT : {
+  const CLASSIC_HOME = {
     Title: "Every brand, one source of truth.",
     Eyebrow: "Brand portal",
     Lead: "Brand guidelines, products, news and approved media — served straight from Content Hub, always current.",
   };
+  const homeTexts = MICROSITE ? MICROSITE_HOME_TEXT : BRAND_HUB ? {
+    Title: "What are you making today?",
+    Eyebrow: "",
+    Lead: "Hero image for a corporate services pitch\nCan partners use our logo?\nOne-pager I can personalise",
+  } : CLASSIC_HOME;
   if (!home) {
     await ensureItem(P.site, "Home", homeTpl, {}, homeTexts);
     home = await getByPath(`${P.site}/Home`);
@@ -1307,7 +1363,24 @@ log("\n[1] folders");
     ? layoutXml([{ id: R.MicrositeCountdown }, { id: R.MicrositeHero }, { id: R.ModelHighlights, ds: modelsDs }, { id: R.MicrositeGallery }, { id: R.TestDriveCta }])
     : null;
   if (homeLayout) await ensureItem(P.site, "Home", homeTpl, await pageLayout(`${P.site}/Home`, homeLayout), { ...homeTexts, "Page Design": pageDesign });
+  else if (BRAND_HUB) await ensureItem(P.site, "Home", homeTpl, await pageLayout(`${P.site}/Home`, layoutXml([
+    { id: R.PortalHero, params: { Variant: "search" } },
+    { id: R.ContentHubItems, ds: picksDs, params: { Variant: "overlay", Columns: "2" } },
+    { id: R.ContentHubItems, ds: jobsDs, params: { Variant: "cards", Columns: "5" } },
+    { id: R.MediaLibrary, params: { Variant: "chips" } },
+    { id: R.BrandGrid, params: { Variant: "swatch" } },
+    { id: R.ContentHubItems, ds: carouselDs, params: { Variant: "masonry" } },
+    { id: R.PortalBanner, ds: bannerDs, params: { Variant: "guide" } },
+  ])), { ...homeTexts, "Page Design": pageDesign });
   else await ensureItem(P.site, "Home", homeTpl, await pageLayout(`${P.site}/Home`, layoutXml([...(SPORTS ? [{ id: R.GameCenter }] : []), { id: R.PortalBanner, ds: bannerDs, params: { Variant: "full" } }, ...(HIGHER_ED ? [{ id: R.ByTheNumbers }, { id: R.EventsCalendar, params: { Limit: "3" } }] : []), { id: R.SectionCards, params: { ExcludeCurrent: "1" } }, { id: R.BrandGrid }, { id: R.ContentHubItems, ds: picksDs, params: { Variant: "cards" } }, { id: R.ContentHubItems, ds: carouselDs, params: { Variant: "carousel" } }])), { ...homeTexts, "Page Design": pageDesign });
+  if (BRAND_HUB) {
+    const homeNow = await getByPath(`${P.site}/Home`);
+    const titleNow = homeNow?.fields.nodes.find((f) => f.name === "Title")?.value ?? "";
+    if (homeNow && titleNow === CLASSIC_HOME.Title) {
+      await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: homeNow.itemId, language: LANG, fields: Object.entries(homeTexts).map(([name, value]) => ({ name, value })) } });
+      log("  ~ home: brand hub headline");
+    }
+  }
   let order = 0;
   const section = async (name, fields, components) => ensureItem(`${P.site}/Home`, name, sectionTpl, await pageLayout(`${P.site}/Home/${name}`, layoutXml(components, afterCompact)), { ShowOnHome: "1", ...fields, __Sortorder: String((order += 100)), "Page Design": pageDesign });
   const detail = async (parent, kind, display, component) => ensureItem(`${P.site}/Home/${parent}`, "*", detailTpl, { DetailKind: kind, ...(await pageLayout(`${P.site}/Home/${parent}/*`, layoutXml([{ id: component }]))) }, { "__Display name": display, "Page Design": pageDesign });
@@ -1331,6 +1404,25 @@ log("\n[1] folders");
   }
   await section("brands", { NavLabel: "Brand guidelines", Eyebrow: "Brand guidelines", Title: "Every brand, one source of truth.", Lead: "Colours, logos, typography, documents, templates and the rules that hold them together — served straight from Content Hub.", Blurb: "The brand books: colours, logos, fonts and the rules behind them." }, [{ id: R.BrandGrid }]);
   await detail("brands", "brand", "Brand book (*)", R.BrandBook);
+  if (BRAND_HUB) {
+    const brandsPage = await getByPath(`${P.site}/Home/brands`);
+    const banner = await getByPath(`${P.site}/Data/Portal Banners/Home banner`);
+    const link = banner?.fields.nodes.find((f) => f.name === "Link")?.value ?? "";
+    if (banner && brandsPage && !String(link).trim()) {
+      await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: banner.itemId, language: LANG, fields: [{ name: "Link", value: ctaLinkXml("Open the brand guide", "/brands", brandsPage.itemId) }] } });
+      log("  ~ home banner: brand guide link");
+    }
+    const retitle = async (rel, from, to) => {
+      const it = await getByPath(`${P.site}/${rel}`);
+      const cur = it?.fields.nodes.find((f) => f.name === "NavLabel")?.value ?? "";
+      if (it && cur === from) {
+        await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields: [{ name: "NavLabel", value: to }] } });
+        log(`  ~ ${rel}: ${to}`);
+      }
+    };
+    await retitle("Home/media", "Media library", "Library");
+    await retitle("Home/brands", "Brand guidelines", "Brands");
+  }
   await section("products", { ...(HIGHER_ED ? { HideFromNav: "1", ShowOnHome: "" } : {}), NavLabel: "Products", Eyebrow: "Product information", Title: "Products", Lead: "Every approved product with its data, images and documents — the same record the product team maintains in Content Hub.", Blurb: "Every approved product with its data, images and documents." }, [{ id: R.ProductCatalog }]);
   await detail("products", "product", "Product detail (*)", R.ProductDetail);
   await section("press", { NavLabel: "Press room", Eyebrow: "Press room", Title: "News & press releases", Lead: "The latest announcements with their images and media kits, ready to publish.", Blurb: "The latest press releases with their images and media kits." }, [{ id: R.PressList }]);

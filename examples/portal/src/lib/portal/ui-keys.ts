@@ -386,6 +386,11 @@ export const UI_DEFAULTS = {
   unSource: "Source: {source}",
   unDataYear: "Data year {year}",
   unTeachesIn: "Teaches in",
+  hubAnything: "Anything",
+  hubSearchPlaceholder: "Describe it, or ask a question",
+  hubOurBrands: "Our brands",
+  hubTeamsSearching: "Your teams are searching for",
+  hubSeeEverything: "See everything",
 } as const;
 
 export type UiKey = keyof typeof UI_DEFAULTS;

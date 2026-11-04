@@ -12,7 +12,7 @@ import { portalImageField } from "src/lib/portal/dam-image";
  * Content Hub tenant, served from its best-fitting public link; it wins over Image, which is
  * picked in the media dialog (the DAM connector serves one tenant per environment). Nothing is
  * copied into SitecoreAI. Rendering parameter Variant: "full" (image behind the text) or "split" (image
- * beside the text).
+ * beside the text) or "guide" (brand-hub: the same split on a full-bleed brand band).
  */
 export const Default = async (props: PortalComponentProps) => {
   const fields = fieldsOf(props);
@@ -23,7 +23,8 @@ export const Default = async (props: PortalComponentProps) => {
   const text = fields.Text as Field<string> | undefined;
   const link = fields.Link as LinkField | undefined;
   const editing = isEditing(props.page);
-  const variant = param(props, "Variant").toLowerCase() === "split" ? "split" : "full";
+  const raw = param(props, "Variant").toLowerCase();
+  const variant = raw === "guide" || raw === "split" ? raw : "full";
   const c = chrome(props);
   const hasImage = !!pick.image || !!image?.value?.src;
   const hasText = !!(title?.value || text?.value || eyebrow?.value);
@@ -40,7 +41,7 @@ export const Default = async (props: PortalComponentProps) => {
     <section className={`site-banner site-banner-${variant}${hasImage ? "" : " no-image"} ${c.className}`.trim()} id={c.id}>
       {(hasImage || editing) && (
         <div className="media">
-          {pick.image ? <ChImage links={pick.image.links} fallback={pick.image.src} slot={variant === "split" ? "lead" : "wide"} alt={pick.image.title} /> : <Image field={image} />}
+          {pick.image ? <ChImage links={pick.image.links} fallback={pick.image.src} slot={variant === "full" ? "wide" : "lead"} alt={pick.image.title} /> : <Image field={image} />}
           {editing && pick.missing && <EditorNotice title="Content Hub image">“{pick.missing}” isn’t on Experience Edge (not approved, not published or outside the brand scope).</EditorNotice>}
         </div>
       )}

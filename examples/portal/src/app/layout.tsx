@@ -8,6 +8,7 @@ import 'src/styles/university.css';
 import 'src/styles/automotive.css';
 import 'src/styles/sxa.css';
 import 'src/styles/sitecoreai.css';
+import 'src/styles/brand-hub.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

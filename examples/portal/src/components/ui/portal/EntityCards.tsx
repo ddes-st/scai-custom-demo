@@ -39,6 +39,29 @@ export function EntityRow({ card, crop = "" }: { card: EntityCard; crop?: string
   );
 }
 
+/**
+ * Image-led card: title and summary sit on the photo. `mosaic` places it in the
+ * brand-hub masonry; `label` is the small category chip on that layout.
+ */
+export function EntityOverlay({ card, crop = "", width = 0, mosaic, label }: { card: EntityCard; crop?: string; width?: number; mosaic?: number; label?: string }) {
+  const mosaicClass = mosaic == null ? "" : ` hub-mosaic hub-mosaic-${mosaic % 6}`;
+  return (
+    <Wrap card={card} className={`hub-overlay-card group${mosaicClass}`}>
+      <span className="media">
+        {card.image ? <ChImage links={card.imageLinks} fallback={card.image} slot="card" crop={crop} width={width} alt="" /> : <span className="glyph">{card.title.charAt(0)}</span>}
+      </span>
+      <span className="hub-overlay-copy">
+        {label && mosaic != null ? <span className="hub-overlay-label">{label}</span> : (
+          <>
+            <span className="name">{card.title}</span>
+            {card.summary && <span className="summary">{card.summary}</span>}
+          </>
+        )}
+      </span>
+    </Wrap>
+  );
+}
+
 export function EntityTile({ card, crop = "", width = 0 }: { card: EntityCard; crop?: string; width?: number }) {
   return (
     <Wrap card={card} className="ch-tile">

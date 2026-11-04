@@ -64,6 +64,10 @@ export const THEME_PRESETS: ThemePreset[] = [
     vars: { "--site-canvas": "#e4e9ee", "--site-surface": "#ffffff", "--site-soft": "#eef2f6", "--site-ink": "#0f1c2e", "--site-ink-hover": "#243a5c", "--site-text": "#3f4f63", "--site-muted": "#7b8794", "--site-line": "#d6dee6", "--site-line-strong": "#aebbc8", "--site-accent-fill": "#1b4fd8", "--site-on-accent": "#ffffff", "--site-radius": "4px" },
   },
   {
+    name: "Brand hub", accent: "#3c1f8b", fonts: { serif: "Plus Jakarta Sans", sans: "Plus Jakarta Sans" },
+    vars: { "--site-canvas": "#ffffff", "--site-surface": "#ffffff", "--site-soft": "#f4f2f7", "--site-ink": "#1a1228", "--site-ink-hover": "#3c1f8b", "--site-text": "#4b4458", "--site-muted": "#7a7384", "--site-line": "#e6e1ec", "--site-line-strong": "#cfc6da", "--site-accent-fill": "#3c1f8b", "--site-on-accent": "#ffffff", "--site-radius": "14px" },
+  },
+  {
     name: "Dark", accent: "#c9a84c", fonts: { serif: "Playfair Display", sans: "Manrope" },
     vars: { "--site-canvas": "#14181b", "--site-surface": "#1d2328", "--site-soft": "#232a30", "--site-ink": "#f3efe6", "--site-ink-hover": "#ffffff", "--site-text": "#c7ccd1", "--site-muted": "#8d969c", "--site-line": "#2d353b", "--site-line-strong": "#4a545b", "--site-accent-fill": "#f3efe6", "--site-on-accent": "#14181b", "--site-radius": "8px" },
   },
