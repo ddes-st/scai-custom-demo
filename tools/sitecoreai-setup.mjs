@@ -13,10 +13,12 @@
  * Environment options (all optional):
  *   XMC_ENV                     name of the connected environment to use (.sitecore/user.json), when several are connected
  *   XMC_COLLECTION / XMC_SITE   site collection and site names
- *   MARKETPLACE_APP_ID          the Marketplace app id → Source of the Picks field
+ *   MARKETPLACE_APP_ID          this org's Marketplace app id → Source of Picks, ImagePick, HeroImagePick and LogoPick
+ *                               (a copied snapshot still has the previous org's id, so Open app is missing until this is set)
  *   PORTAL_PUBLIC_HOST          public hostname of the live site (TargetHostName + https on the site definition)
  *   PORTAL_TRACK_USAGE=1|0      Portal Settings → TrackUsage (left untouched when unset)
- *   PORTAL_BRAND_SCOPE          Portal Settings → BrandScope, comma-separated M.Brand identifiers (untouched when unset)
+ *   PORTAL_BRAND_SCOPE          writes Portal Settings → BrandScope (M.Brand identifiers; untouched when unset).
+ *                               Not the runtime fallback: an empty BrandScope still uses the head's PORTAL_BRANDS.
  *   PORTAL_LANGUAGES            extra site languages (default "de-DE"; "" = none); built-in texts for de, fr, es, it, nl,
  *                               pt, sv, nb/no, da, fi, pl, ar (setup/translations.mjs), others start as English copies
  *   PORTAL_DISCOVERY_URL        read crops and partner kits from a deployed head instead

@@ -594,7 +594,7 @@ export async function runPortalSetup(args) {
 
 async function runPortalSetupInner({ gql, log = (line) => { void line; }, options: opt = {}, discovery = {}, ctl = { release: null } }) {
 const COLLECTION = opt.collection || "marketing";
-const SITE = opt.site || "portal";
+const SITE = opt.site || "brand-hub";
 const LANG = "en";
 const PUBLISH = opt.publish !== false;
 // a campaign microsite (PORTAL_SITE_KIND=microsite, or a joint microsite of the portal's deployment):
