@@ -50,12 +50,14 @@ export const Default = async (props: PortalComponentProps) => {
 
   return (
     <div className={`site-topbar${bar ? " hub-bar" : ""} ${c.className}`.trim()} id={c.id}>
+      {(pick.image || logo?.value?.src || !bar) && (
       <Link className="wordmark" href="/">
         {pick.image
           ? <ChImage links={logoLinks?.length ? logoLinks : pick.image.links} fallback={pick.image.src} slot="logo" alt={pick.image.title} loading="eager" className="wordmark-logo" />
-          : (logo?.value?.src || editing) && <Image field={logo} className="wordmark-logo" />}
-        {wordmark?.value || editing ? <Text field={wordmark} /> : ui("brandPortal") === "Brand portal" ? <>Brand <span className="italic">Portal</span></> : ui("brandPortal")}
+          : logo?.value?.src ? <Image field={logo} className="wordmark-logo" /> : null}
+        {!bar && (wordmark?.value || editing ? <Text field={wordmark} /> : ui("brandPortal") === "Brand portal" ? <>Brand <span className="italic">Portal</span></> : ui("brandPortal"))}
       </Link>
+      )}
       {navVisible && (
         <nav className="site-nav" aria-label={ui("portalSections")}>
           {bar && (

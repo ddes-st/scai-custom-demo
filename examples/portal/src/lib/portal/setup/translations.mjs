@@ -184,7 +184,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Source : {source}",
       unDataYear: "Données {year}",
       unTeachesIn: "Enseigne dans",
-      hubAnything: "Tout", hubSearchPlaceholder: "Décrivez-le, ou posez une question", hubOurBrands: "Nos marques", hubTeamsSearching: "Vos équipes recherchent", hubSeeEverything: "Tout voir",
+      hubAnything: "Tout", hubTeam: "Notre équipe", hubPartner: "Partenaire", hubSearchPlaceholder: "Décrivez-le, ou posez une question", hubOurBrands: "Nos marques", hubTeamsSearching: "Vos équipes recherchent", hubSeeEverything: "Tout voir",
     },
     pages: {
       "Home": { Eyebrow: "Portail de marque", Title: "Chaque marque, une source unique de vérité.", Lead: "Chartes de marque, produits, actualités et médias approuvés — directement depuis Content Hub, toujours à jour." },
@@ -391,7 +391,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Fuente: {source}",
       unDataYear: "Datos de {year}",
       unTeachesIn: "Enseña en",
-      hubAnything: "Cualquier cosa", hubSearchPlaceholder: "Descríbalo o haga una pregunta", hubOurBrands: "Nuestras marcas", hubTeamsSearching: "Sus equipos buscan", hubSeeEverything: "Ver todo",
+      hubAnything: "Todo", hubTeam: "Nuestro equipo", hubPartner: "Socio", hubSearchPlaceholder: "Descríbalo o haga una pregunta", hubOurBrands: "Nuestras marcas", hubTeamsSearching: "Sus equipos buscan", hubSeeEverything: "Ver todo",
     },
     pages: {
       "Home": { Eyebrow: "Portal de marca", Title: "Cada marca, una única fuente de verdad.", Lead: "Directrices de marca, productos, noticias y medios aprobados — directamente desde Content Hub, siempre actualizados." },
@@ -598,7 +598,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Fonte: {source}",
       unDataYear: "Dati {year}",
       unTeachesIn: "Insegna in",
-      hubAnything: "Qualsiasi cosa", hubSearchPlaceholder: "Descrivilo o fai una domanda", hubOurBrands: "I nostri brand", hubTeamsSearching: "I vostri team cercano", hubSeeEverything: "Vedi tutto",
+      hubAnything: "Tutto", hubTeam: "Il nostro team", hubPartner: "Partner", hubSearchPlaceholder: "Descrivilo o fai una domanda", hubOurBrands: "I nostri brand", hubTeamsSearching: "I vostri team cercano", hubSeeEverything: "Vedi tutto",
     },
     pages: {
       "Home": { Eyebrow: "Portale del brand", Title: "Ogni brand, un’unica fonte di verità.", Lead: "Linee guida del brand, prodotti, notizie e media approvati — direttamente da Content Hub, sempre aggiornati." },
@@ -805,7 +805,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Bron: {source}",
       unDataYear: "Peiljaar {year}",
       unTeachesIn: "Doceert in",
-      hubAnything: "Alles", hubSearchPlaceholder: "Beschrijf het, of stel een vraag", hubOurBrands: "Onze merken", hubTeamsSearching: "Uw teams zoeken naar", hubSeeEverything: "Alles bekijken",
+      hubAnything: "Alles", hubTeam: "Ons team", hubPartner: "Partner", hubSearchPlaceholder: "Beschrijf het, of stel een vraag", hubOurBrands: "Onze merken", hubTeamsSearching: "Uw teams zoeken naar", hubSeeEverything: "Alles bekijken",
     },
     pages: {
       "Home": { Eyebrow: "Merkportaal", Title: "Elk merk, één bron van waarheid.", Lead: "Merkrichtlijnen, producten, nieuws en goedgekeurde media — rechtstreeks uit Content Hub, altijd actueel." },
@@ -1009,7 +1009,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Fonte: {source}",
       unDataYear: "Dados de {year}",
       unTeachesIn: "Leciona em",
-      hubAnything: "Qualquer coisa", hubSearchPlaceholder: "Descreva ou faça uma pergunta", hubOurBrands: "As nossas marcas", hubTeamsSearching: "As suas equipas procuram", hubSeeEverything: "Ver tudo",
+      hubAnything: "Tudo", hubTeam: "A nossa equipa", hubPartner: "Parceiro", hubSearchPlaceholder: "Descreva ou faça uma pergunta", hubOurBrands: "As nossas marcas", hubTeamsSearching: "As suas equipas procuram", hubSeeEverything: "Ver tudo",
     },
     pages: {
       "Home": { Eyebrow: "Portal da marca", Title: "Cada marca, uma única fonte de verdade.", Lead: "Diretrizes da marca, produtos, notícias e media aprovados — diretamente do Content Hub, sempre atualizados." },
@@ -1212,7 +1212,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Källa: {source}",
       unDataYear: "Dataår {year}",
       unTeachesIn: "Undervisar i",
-      hubAnything: "Allt", hubSearchPlaceholder: "Beskriv det, eller ställ en fråga", hubOurBrands: "Våra varumärken", hubTeamsSearching: "Era team söker efter", hubSeeEverything: "Se allt",
+      hubAnything: "Allt", hubTeam: "Vårt team", hubPartner: "Partner", hubSearchPlaceholder: "Beskriv det, eller ställ en fråga", hubOurBrands: "Våra varumärken", hubTeamsSearching: "Era team söker efter", hubSeeEverything: "Se allt",
     },
     pages: {
       "Home": { Eyebrow: "Varumärkesportal", Title: "Varje varumärke, en enda sanningskälla.", Lead: "Varumärkesriktlinjer, produkter, nyheter och godkänd media — direkt från Content Hub, alltid aktuellt." },
@@ -1413,7 +1413,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Kilde: {source}",
       unDataYear: "Dataår {year}",
       unTeachesIn: "Underviser i",
-      hubAnything: "Alt", hubSearchPlaceholder: "Beskriv det, eller still et spørsmål", hubOurBrands: "Våre merker", hubTeamsSearching: "Teamene deres søker etter", hubSeeEverything: "Se alt",
+      hubAnything: "Alt", hubTeam: "Teamet vårt", hubPartner: "Partner", hubSearchPlaceholder: "Beskriv det, eller still et spørsmål", hubOurBrands: "Våre merker", hubTeamsSearching: "Teamene deres søker etter", hubSeeEverything: "Se alt",
     },
     pages: {
       "Home": { Eyebrow: "Merkevareportal", Title: "Hvert merke, én kilde til sannhet.", Lead: "Merkevareretningslinjer, produkter, nyheter og godkjente medier — rett fra Content Hub, alltid oppdatert." },
@@ -1616,7 +1616,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Kilde: {source}",
       unDataYear: "Dataår {year}",
       unTeachesIn: "Underviser i",
-      hubAnything: "Alt", hubSearchPlaceholder: "Beskriv det, eller stil et spørgsmål", hubOurBrands: "Vores brands", hubTeamsSearching: "Jeres teams søger efter", hubSeeEverything: "Se alt",
+      hubAnything: "Alt", hubTeam: "Vores team", hubPartner: "Partner", hubSearchPlaceholder: "Beskriv det, eller stil et spørgsmål", hubOurBrands: "Vores brands", hubTeamsSearching: "Jeres teams søger efter", hubSeeEverything: "Se alt",
     },
     pages: {
       "Home": { Eyebrow: "Brandportal", Title: "Hvert brand, én kilde til sandheden.", Lead: "Brandretningslinjer, produkter, nyheder og godkendte medier — direkte fra Content Hub, altid opdateret." },
@@ -1816,7 +1816,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Lähde: {source}",
       unDataYear: "Tietovuosi {year}",
       unTeachesIn: "Opettaa koulutuksissa",
-      hubAnything: "Mitä tahansa", hubSearchPlaceholder: "Kuvaile se tai esitä kysymys", hubOurBrands: "Brändimme", hubTeamsSearching: "Tiiminne hakevat", hubSeeEverything: "Näytä kaikki",
+      hubAnything: "Kaikki", hubTeam: "Tiimimme", hubPartner: "Kumppani", hubSearchPlaceholder: "Kuvaile se tai esitä kysymys", hubOurBrands: "Brändimme", hubTeamsSearching: "Tiiminne hakevat", hubSeeEverything: "Näytä kaikki",
     },
     pages: {
       "Home": { Eyebrow: "Brändiportaali", Title: "Jokainen brändi, yksi totuuden lähde.", Lead: "Brändiohjeet, tuotteet, uutiset ja hyväksytty media — suoraan Content Hubista, aina ajan tasalla." },
@@ -2017,7 +2017,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "Źródło: {source}",
       unDataYear: "Dane z {year} r.",
       unTeachesIn: "Wykłada na",
-      hubAnything: "Cokolwiek", hubSearchPlaceholder: "Opisz to albo zadaj pytanie", hubOurBrands: "Nasze marki", hubTeamsSearching: "Wasze zespoły szukają", hubSeeEverything: "Zobacz wszystko",
+      hubAnything: "Wszystko", hubTeam: "Nasz zespół", hubPartner: "Partner", hubSearchPlaceholder: "Opisz to albo zadaj pytanie", hubOurBrands: "Nasze marki", hubTeamsSearching: "Wasze zespoły szukają", hubSeeEverything: "Zobacz wszystko",
     },
     pages: {
       "Home": { Eyebrow: "Portal marki", Title: "Każda marka, jedno źródło prawdy.", Lead: "Wytyczne marki, produkty, aktualności i zatwierdzone media — prosto z Content Hub, zawsze aktualne." },
@@ -2215,7 +2215,7 @@ export const MORE_TRANSLATIONS = {
       unSource: "المصدر: {source}",
       unDataYear: "سنة البيانات {year}",
       unTeachesIn: "يدرّس في",
-      hubAnything: "أي شيء", hubSearchPlaceholder: "صِفه، أو اطرح سؤالاً", hubOurBrands: "علاماتنا", hubTeamsSearching: "فرقكم تبحث عن", hubSeeEverything: "عرض الكل",
+      hubAnything: "كل شيء", hubTeam: "فريقنا", hubPartner: "شريك", hubSearchPlaceholder: "صِفه، أو اطرح سؤالاً", hubOurBrands: "علاماتنا", hubTeamsSearching: "فرقكم تبحث عن", hubSeeEverything: "عرض الكل",
     },
     pages: {
       "Home": { Eyebrow: "بوابة العلامة التجارية", Title: "كل علامة تجارية، مصدر واحد للحقيقة.", Lead: "إرشادات العلامة التجارية والمنتجات والأخبار والوسائط المعتمدة — مباشرةً من Content Hub، ومحدّثة دائمًا." },

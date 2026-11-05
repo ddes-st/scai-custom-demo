@@ -12,6 +12,47 @@ import { Link } from "src/i18n/navigation";
 import { SECTION_PATH } from "src/lib/portal/sections";
 import { ui } from "src/lib/portal/ui-text";
 
+/** Editor-only stand-in that keeps the brand-hub layout while Picks is empty. */
+function HubEmpty({ variant, columns, note }: { variant: "overlay" | "cards" | "masonry"; columns: number; note: string }) {
+  const caption = <p className="hub-placeholder-note"><span>Placeholder</span>{note}</p>;
+  if (variant === "overlay") {
+    return (
+      <>
+        <div className="hub-overlay-grid">
+          <div className="hub-overlay-card hub-placeholder-card" />
+          <div className="hub-overlay-card hub-placeholder-card" />
+        </div>
+        {caption}
+      </>
+    );
+  }
+  if (variant === "masonry") {
+    return (
+      <>
+        <div className="hub-masonry" aria-hidden="true">
+          {Array.from({ length: 6 }, (_, i) => <div key={i} className={`hub-placeholder-card hub-mosaic hub-mosaic-${i % 6}`} />)}
+        </div>
+        {caption}
+      </>
+    );
+  }
+  const n = columns >= 1 ? columns : 5;
+  return (
+    <>
+      <div className={`portal-grid ch-cols ch-cols-${n}`} aria-hidden="true">
+        {Array.from({ length: n }, (_, i) => (
+          <div key={i} className="hub-placeholder-job">
+            <div className="hub-placeholder-card" />
+            <span className="hub-placeholder-line" />
+            <span className="hub-placeholder-line short" />
+          </div>
+        ))}
+      </div>
+      {caption}
+    </>
+  );
+}
+
 /**
  * Hand-picked Content Hub entities of any definition (datasource "Portal Picks": Heading,
  * Intro and the Picks field filled through the "Content Hub items" Marketplace app), rendered
@@ -33,11 +74,12 @@ export const Default = async (props: PortalComponentProps) => {
   // Columns: items per row (cards, tiles) or slides visible (carousel); auto = the layout's default
   const columns = columnsOf(param(props, "Columns"));
 
-  const head = (heading?.value || intro?.value || editing || variant === "masonry") && (
+  const showHeading = !!(heading?.value || (editing && variant !== "overlay"));
+  const head = (showHeading || !!intro?.value || variant === "masonry") && (
     <div className="portal-section-head hub-section-head">
       <div>
-        {(heading?.value || editing) && <h2><Text field={heading} /></h2>}
-        {(intro?.value || editing) && <p><Text field={intro} /></p>}
+        {(heading?.value || (editing && variant !== "overlay")) && <h2><Text field={heading} /></h2>}
+        {intro?.value && <p><Text field={intro} /></p>}
       </div>
       {variant === "masonry" && <Link href={SECTION_PATH.media} className="hub-see-all">{ui("hubSeeEverything")}</Link>}
     </div>
@@ -46,12 +88,13 @@ export const Default = async (props: PortalComponentProps) => {
 
   if (!picks || !picks.items.length) {
     if (!editing) return null; // nothing picked: the live site shows no half-empty section
-    return section(
-      <EditorNotice title="Content Hub items">
-        {fields.Picks ? "Nothing picked yet — select this component, open the Picks field and click Open app to choose products, brands, images or any other Content Hub type."
-          : "Add a Portal Picks datasource to this component (Data → Portal Picks), then pick items in its Picks field."}
-      </EditorNotice>
-    );
+    const note = fields.Picks
+      ? "Nothing picked yet. Select this component, open Picks, and click Open app."
+      : "Add a Portal Picks datasource (Data → Portal Picks), then pick items in its Picks field.";
+    if (variant === "overlay" || variant === "cards" || variant === "masonry") {
+      return section(<HubEmpty variant={variant} columns={columns || (variant === "cards" ? 5 : 2)} note={note} />);
+    }
+    return section(<EditorNotice title="Placeholder">{note}</EditorNotice>);
   }
   if (!env.edgeToken) {
     const msg = "This section reads Experience Edge for Content Hub, which isn't connected (EDGE_TOKEN).";

@@ -1,5 +1,7 @@
 import React from "react";
 import { Image, Text, type Field, type ImageField } from "@sitecore-content-sdk/nextjs";
+import { Link } from "src/i18n/navigation";
+import { SECTION_PATH } from "src/lib/portal/sections";
 import { chrome, isEditing, param, routeFields, type PortalComponentProps } from "src/lib/portal/component";
 import { EditorNotice } from "src/lib/portal/editor";
 import { pickedImage } from "src/lib/portal/image-pick";
@@ -32,6 +34,10 @@ export const Default = async (props: PortalComponentProps) => {
   if (variant === "search") {
     return (
       <section className={`variant-search site-index-hero ${c.className}`.trim()} id={c.id}>
+        <div className="hub-audience" role="group">
+          <Link href="/" className="is-on" aria-current="page">{ui("hubTeam")}</Link>
+          <Link href={SECTION_PATH.partners}>{ui("hubPartner")}</Link>
+        </div>
         <div className="text">
           <h1 className="hub-display"><Text field={title} /></h1>
         </div>
@@ -46,9 +52,6 @@ export const Default = async (props: PortalComponentProps) => {
             { id: "document", label: ui("documents") },
           ]}
         />
-        {editing && (
-          <p className="lead"><Text field={lead} /></p>
-        )}
       </section>
     );
   }

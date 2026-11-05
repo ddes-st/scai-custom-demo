@@ -41,14 +41,14 @@ export function HeroSearch({
 
   return (
     <form
-      className="hub-search mt-6 max-w-xl"
+      className="hub-search mt-7 max-w-2xl"
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
         go(q);
       }}
     >
-      <div className="flex items-stretch overflow-hidden rounded-2xl bg-white shadow-[0_16px_40px_rgba(20,8,40,0.28)] ring-1 ring-white/40 transition motion-safe:duration-200 focus-within:ring-2 focus-within:ring-white">
+      <div className="flex items-center overflow-hidden rounded-full bg-white ps-1 shadow-[0_16px_40px_rgba(20,8,40,0.22)] ring-1 ring-white/50 transition motion-safe:duration-200 focus-within:ring-2 focus-within:ring-white">
         <label className="relative flex items-center border-r border-black/10">
           <span className="sr-only">{kinds[0]?.label}</span>
           <select
@@ -57,7 +57,7 @@ export function HeroSearch({
             onFocus={() => setOpen(true)}
             onBlur={() => setOpen(false)}
             aria-expanded={open}
-            className="cursor-pointer appearance-none bg-transparent py-3.5 ps-4 pe-8 text-sm font-medium text-neutral-800 outline-none"
+            className="cursor-pointer appearance-none bg-transparent py-3 ps-4 pe-8 text-sm font-medium text-neutral-800 outline-none"
           >
             {kinds.map((k) => (
               <option key={k.id || "any"} value={k.id}>
@@ -75,12 +75,18 @@ export function HeroSearch({
           onChange={(e) => setQ(e.target.value)}
           placeholder={placeholder}
           aria-label={placeholder}
-          className="min-w-0 flex-1 bg-transparent px-4 text-[15px] text-neutral-900 outline-none placeholder:text-neutral-400"
+          className="min-w-0 flex-1 bg-transparent px-4 py-3 text-[15px] text-neutral-900 outline-none placeholder:text-neutral-400"
         />
+        <span aria-hidden="true" className="grid place-items-center pe-1 text-neutral-400">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" strokeWidth="1.8" />
+            <path d="M6 11a6 6 0 0 0 12 0M12 17v3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </span>
         <button
           type="submit"
           aria-label={searchLabel}
-          className="m-1.5 grid w-11 place-items-center rounded-xl bg-[var(--portal-accent,#3c1f8b)] text-white transition motion-safe:duration-200 hover:brightness-110 motion-safe:active:scale-95"
+          className="me-1.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[var(--portal-accent,#3c1f8b)] text-white transition motion-safe:duration-200 hover:brightness-110 motion-safe:active:scale-95"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />

@@ -46,7 +46,7 @@ export const Default = async (props: PortalComponentProps) => {
         </div>
       )}
       <div className="body">
-        {(eyebrow?.value || editing) && <span className="eyebrow"><Text field={eyebrow} /></span>}
+        {(eyebrow?.value || (editing && variant !== "guide")) && <span className="eyebrow"><Text field={eyebrow} /></span>}
         {(title?.value || editing) && <h2><Text field={title} /></h2>}
         {(text?.value || editing) && <p><Text field={text} /></p>}
         {link && (link.value?.href || editing) && <Link field={link} className="site-button" />}
