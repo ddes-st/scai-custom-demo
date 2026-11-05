@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "522fdf75-94d9-4aa8-882b-cbe30fe54efb"
 Parent: "74360ad2-d3df-4fce-834c-2f5420488677"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/Project/group/Page Types/Article Page/Article Data
+Path: /sitecore/templates/Project/main/Page Types/Article Page/Article Data
 Languages:
 - Language: en
   Versions:

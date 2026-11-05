@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "cc51c74e-b2e4-414b-ab35-5cc711b08e2f"
 Parent: "296f0e42-a06b-4a84-b107-5518ada4286b"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Social Proof Data/testimonialQuote
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Social Proof Data/testimonialQuote
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

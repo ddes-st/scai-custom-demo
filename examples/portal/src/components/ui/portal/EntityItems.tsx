@@ -44,7 +44,7 @@ export function EntityItems({ variant, cards, crop = "", columns = 0 }: { varian
     case "masonry":
       return (
         <div className="hub-masonry" style={shape}>
-          {cards.map((card, i) => <EntityOverlay key={card.id} card={card} crop={crop} width={width} mosaic={i} label={card.subtitle || card.title} />)}
+          {cards.map((card, i) => <EntityOverlay key={card.id} card={card} crop={crop} width={width} mosaic={i} label={/^\d{4}-\d{2}-\d{2}/.test(card.subtitle) ? card.title : (card.subtitle || card.title)} />)}
         </div>
       );
     case "carousel":

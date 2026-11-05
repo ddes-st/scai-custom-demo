@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "4440d454-0cbe-4716-ab07-1ee3a6686936"
 Parent: "e8b0db8b-8178-4583-b5b4-7d9bdd7e4859"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/FAQ Data/faq5Answer
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/FAQ Data/faq5Answer
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

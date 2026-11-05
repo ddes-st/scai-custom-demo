@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "74360ad2-d3df-4fce-834c-2f5420488677"
 Parent: "e7769708-59a5-4636-a9ea-c02245185e61"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Project/group/Page Types/Article Page
+Path: /sitecore/templates/Project/main/Page Types/Article Page
 SharedFields:
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template

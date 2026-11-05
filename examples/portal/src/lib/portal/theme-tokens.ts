@@ -20,6 +20,8 @@ export const THEME_TOKENS: ThemeToken[] = [
   { key: "--site-accent-fill", label: "Button fill", group: "Buttons", type: "color", default: "#12171a" },
   { key: "--site-on-accent", label: "Button text", group: "Buttons", type: "color", default: "#ffffff" },
   { key: "--site-radius", label: "Corner radius", group: "Shape", type: "length", default: "6px", hint: "cards, inputs, thumbnails" },
+  { key: "--hub-band", label: "Guidelines band", group: "Brand hub", type: "color", default: "#29295b", hint: "the full-bleed band at the bottom of the home page" },
+  { key: "--hub-footer", label: "Footer", group: "Brand hub", type: "color", default: "#1f1e46", hint: "the bar under the guidelines band" },
 ];
 
 export const TOKEN_KEYS = new Set(THEME_TOKENS.map((t) => t.key));
@@ -65,7 +67,7 @@ export const THEME_PRESETS: ThemePreset[] = [
   },
   {
     name: "Brand hub", accent: "#3c1f8b", fonts: { serif: "Plus Jakarta Sans", sans: "Plus Jakarta Sans" },
-    vars: { "--site-canvas": "#ffffff", "--site-surface": "#ffffff", "--site-soft": "#f4f2f7", "--site-ink": "#1a1228", "--site-ink-hover": "#3c1f8b", "--site-text": "#4b4458", "--site-muted": "#7a7384", "--site-line": "#e6e1ec", "--site-line-strong": "#cfc6da", "--site-accent-fill": "#3c1f8b", "--site-on-accent": "#ffffff", "--site-radius": "14px" },
+    vars: { "--site-canvas": "#ffffff", "--site-surface": "#ffffff", "--site-soft": "#f4f2f7", "--site-ink": "#1a1228", "--site-ink-hover": "#3c1f8b", "--site-text": "#4b4458", "--site-muted": "#7a7384", "--site-line": "#e6e1ec", "--site-line-strong": "#cfc6da", "--site-accent-fill": "#3c1f8b", "--site-on-accent": "#ffffff", "--site-radius": "14px", "--hub-band": "#29295b", "--hub-footer": "#1f1e46" },
   },
   {
     name: "Dark", accent: "#c9a84c", fonts: { serif: "Playfair Display", sans: "Manrope" },

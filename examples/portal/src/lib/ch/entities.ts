@@ -274,6 +274,24 @@ function relSelection(fields: EdgeField[], name: string, inner: string): string 
 }
 const relResults = (e: any, name: string): any[] => { const v = e?.[name]; return !v ? [] : Array.isArray(v.results) ? v.results : [v]; };
 
+/**
+ * A list query returns the type's interface when it has one (`allM_Content` → `IM_Content`).
+ * A subtype such as a press release keeps its title and master image on the concrete type only.
+ * Those fields go in an inline fragment; selecting them on the interface is rejected, and
+ * leaving them out makes every card the raw id.
+ */
+function listSelection(definition: string, iface: EdgeField[] | null, parts: Array<{ name: string; sel: string; force?: boolean }>): string {
+  const onIface = new Set((iface ?? []).map((f) => f.name));
+  const direct: string[] = [];
+  const extra: string[] = [];
+  for (const part of parts) {
+    if (!part.sel) continue;
+    if (part.force || !iface || onIface.has(part.name)) direct.push(part.sel);
+    else extra.push(part.sel);
+  }
+  return ["id", ...direct, extra.length ? `... on ${definition} { ${extra.join(" ")} }` : ""].filter(Boolean).join(" ");
+}
+
 /** The fields that mark a localized or variant copy of another entity. */
 const copyMarkers = (fields: EdgeField[]) => ({
   flags: fields.filter((f) => f.kind === "SCALAR" && f.typeName === "Boolean" && /_IsVariant$/.test(f.name)).map((f) => f.name),
@@ -293,10 +311,16 @@ async function localizedVariantIdsUncached(definition: string): Promise<Record<s
   if (isDefaultCulture()) return {};
   const [p, typeFields, queries] = await Promise.all([profileFor(definition), edgeTypeFields(definition), edgeListQueries()]);
   if (!p || !typeFields || !queries.includes(`all${definition}`)) return {};
-  const fields = (await edgeTypeFields(`I${definition}`)) ?? typeFields;
+  const iface = await edgeTypeFields(`I${definition}`).catch(() => null);
+  const fields = iface ? [...iface, ...typeFields.filter((f) => !iface.some((i) => i.name === f.name))] : typeFields;
   const markers = copyMarkers(fields);
   const locRel = localizationRelation(fields, definition);
-  const selection = ["id", ...p.title.filter((n) => hasField(fields, n)), ...markers.flags, ...markers.parents.map((n) => `${n} { id }`), locRel.field ? `${locRel.field} { id }` : ""].filter(Boolean).join(" ");
+  const selection = listSelection(definition, iface, [
+    ...p.title.filter((n) => hasField(fields, n)).map((n) => ({ name: n, sel: n })),
+    ...markers.flags.map((n) => ({ name: n, sel: n })),
+    ...markers.parents.map((n) => ({ name: n, sel: `${n} { id }` })),
+    ...(locRel.field ? [{ name: locRel.field, sel: `${locRel.field} { id }` }] : []),
+  ]);
   const items = await edgeAllList(`all${definition}`, selection);
   const { byMaster } = await pairLocalizedVariants(items, { definition: dotted(definition), relation: locRel.relation, localizationField: locRel.field, isCopy: (e) => isCopy(e, markers), parentId: (e) => parentIdOf(e, markers), titleOf: (e) => textOf(e, p.title) });
   return Object.fromEntries([...byMaster].map(([m, v]) => [m, String(v.id)]));
@@ -325,24 +349,25 @@ async function listEntitiesUncached(definitionOrType: string): Promise<EntityCar
   }
   const [p, typeFields, queries] = await Promise.all([profileFor(definition), edgeTypeFields(definition), edgeListQueries()]);
   if (!p || !typeFields || !queries.includes(`all${definition}`)) return [];
-  // A list of a base type (allM_Content) yields its interface (IM_Content): only the
-  // interface's fields may be selected there, not the subtype-specific ones.
-  const fields = (await edgeTypeFields(`I${definition}`)) ?? typeFields;
+  // A base type's list returns its interface. Subtype fields (a press release's title and
+  // master image) are selected on the concrete type, inside listSelection.
+  const iface = await edgeTypeFields(`I${definition}`).catch(() => null);
+  const fields = iface ? [...iface, ...typeFields.filter((f) => !iface.some((i) => i.name === f.name))] : typeFields;
   const markers = copyMarkers(fields);
   const brandRel = fields.find(isBrandRel);
   const locRel = localizationRelation(fields, definition);
   const textFields = [...p.title, ...p.subtitle, ...p.summary].filter((n) => hasField(fields, n));
-  const selection = [
-    "id",
-    ...textFields,
-    // (assets select it with ASSET_SELECTION)
-    !p.image.includes("self") && hasField(fields, "modifiedOn") ? "modifiedOn" : "",
-    ...p.image.map((rel) => (rel === "self" ? ASSET_SELECTION : relSelection(fields, rel, ASSET_SELECTION))),
-    brandRel ? relSelection(fields, brandRel.name, "id") : "",
-    ...markers.flags,
-    ...markers.parents.map((n) => `${n} { id }`),
-    locRel.field ? `${locRel.field} { id }` : "",
-  ].filter(Boolean).join(" ");
+  const selection = listSelection(definition, iface, [
+    ...textFields.map((n) => ({ name: n, sel: n })),
+    ...(!p.image.includes("self") && hasField(fields, "modifiedOn") ? [{ name: "modifiedOn", sel: "modifiedOn" }] : []),
+    ...p.image.map((rel) => (rel === "self"
+      ? { name: rel, sel: ASSET_SELECTION, force: true }
+      : { name: rel, sel: relSelection(fields, rel, ASSET_SELECTION) })),
+    ...(brandRel ? [{ name: brandRel.name, sel: relSelection(fields, brandRel.name, "id") }] : []),
+    ...markers.flags.map((n) => ({ name: n, sel: n })),
+    ...markers.parents.map((n) => ({ name: n, sel: `${n} { id }` })),
+    ...(locRel.field ? [{ name: locRel.field, sel: `${locRel.field} { id }` }] : []),
+  ]);
   const [only, items, partnerOnly] = await Promise.all([brandScope(), edgeAllList(`all${definition}`, selection), definition === "M_Asset" ? partnerOnlyAssets() : Promise.resolve(new Map<string, string[]>())]);
   // masters only; in another language each master shows its variant's texts (and images when it has its own)
   const { masters, byMaster } = await pairLocalizedVariants(items, { definition: dotted(definition), relation: locRel.relation, localizationField: locRel.field, isCopy: (e) => isCopy(e, markers), parentId: (e) => parentIdOf(e, markers), titleOf: (e) => textOf(e, p.title) });

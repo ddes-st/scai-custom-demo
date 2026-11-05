@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "126dc528-fcc5-425a-800d-efaea500bccc"
 Parent: "c4c0eac9-964e-42d2-b4cd-be26344026eb"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Hero Data/heroImage
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Hero Data/heroImage
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

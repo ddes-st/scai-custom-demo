@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "e712e34f-e20a-49a8-a372-e8f2ec077537"
 Parent: "ae9bcefb-1175-4562-aa9f-a65b5688887e"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Stats Data/stat3Number
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Stats Data/stat3Number
 SharedFields:
 - ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
   Hint: Validation

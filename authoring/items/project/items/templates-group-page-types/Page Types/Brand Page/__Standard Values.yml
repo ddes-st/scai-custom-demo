@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "bc1b525f-25e6-4da2-84c0-7bf05825f96b"
 Parent: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
 Template: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
-Path: /sitecore/templates/Project/group/Page Types/Brand Page/__Standard Values
+Path: /sitecore/templates/Project/main/Page Types/Brand Page/__Standard Values
 Languages:
 - Language: en
   Versions:

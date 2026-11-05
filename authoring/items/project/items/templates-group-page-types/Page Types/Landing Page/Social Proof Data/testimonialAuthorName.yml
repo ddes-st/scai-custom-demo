@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "699bc92b-f349-48d0-8d1c-38af76bc6d7e"
 Parent: "296f0e42-a06b-4a84-b107-5518ada4286b"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Social Proof Data/testimonialAuthorName
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Social Proof Data/testimonialAuthorName
 SharedFields:
 - ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
   Hint: Validation

@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "d7a5fcba-77aa-4863-9322-69691462eb46"
 Parent: "74360ad2-d3df-4fce-834c-2f5420488677"
 Template: "74360ad2-d3df-4fce-834c-2f5420488677"
-Path: /sitecore/templates/Project/group/Page Types/Article Page/__Standard Values
+Path: /sitecore/templates/Project/main/Page Types/Article Page/__Standard Values
 Languages:
 - Language: en
   Versions:

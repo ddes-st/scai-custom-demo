@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "0dc2e1c8-d594-441b-aa18-2132a1546775"
 Parent: "c4c0eac9-964e-42d2-b4cd-be26344026eb"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Hero Data/heroPrimaryCta
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Hero Data/heroPrimaryCta
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

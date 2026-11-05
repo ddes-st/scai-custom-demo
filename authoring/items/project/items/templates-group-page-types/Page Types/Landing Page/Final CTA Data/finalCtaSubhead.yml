@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "21b8a23c-a8e3-4536-bbc1-64e0c34be37f"
 Parent: "3987ac22-27ba-4e8c-bf2a-6d9d00e8e0c2"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Final CTA Data/finalCtaSubhead
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Final CTA Data/finalCtaSubhead
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

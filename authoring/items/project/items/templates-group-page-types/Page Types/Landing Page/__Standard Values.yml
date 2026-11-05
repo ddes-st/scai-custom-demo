@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "0014cd13-f3f1-4049-a866-3f30f508202e"
 Parent: "50af6ec7-85fd-4b9b-adf7-1fde9d9136fe"
 Template: "50af6ec7-85fd-4b9b-adf7-1fde9d9136fe"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/__Standard Values
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/__Standard Values
 SharedFields:
 - ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
   Hint: Page Design

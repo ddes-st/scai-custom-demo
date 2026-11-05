@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "acc0ec77-5d02-47f4-93f1-dc0971623cd5"
 Parent: "b17c9df3-c754-4152-bc58-222362055aec"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Features Data/feature3Title
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Features Data/feature3Title
 SharedFields:
 - ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
   Hint: Validation

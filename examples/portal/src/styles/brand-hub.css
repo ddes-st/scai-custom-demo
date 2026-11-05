@@ -397,7 +397,7 @@
   margin: 28px 0 0;
   border: 0;
   border-radius: 0;
-  background: var(--portal-accent, #3c1f8b);
+  background: var(--hub-band, #29295b);
   color: #fff;
   min-height: 420px;
   width: 100%;
@@ -440,7 +440,7 @@
 .site-banner-guide .media img { width: 100%; height: 100%; object-fit: cover; }
 .site-banner-guide .site-button {
   background: #fff;
-  color: var(--portal-accent, #3c1f8b);
+  color: var(--hub-band, #29295b);
   border: 0;
   border-radius: 999px;
   align-self: flex-start;
@@ -448,10 +448,10 @@
   letter-spacing: 0;
   font-weight: 600;
 }
-.site-banner-guide .site-button:hover { background: #fff; color: var(--portal-accent, #3c1f8b); filter: brightness(0.95); }
+.site-banner-guide .site-button:hover { background: #fff; color: var(--hub-band, #29295b); filter: brightness(0.95); }
 
 .site-shell:has(.hub-bar) .site-footer {
-  background: var(--portal-accent, #3c1f8b);
+  background: var(--hub-footer, #1f1e46);
   color: rgba(255, 255, 255, 0.82);
   margin: 0;
   padding: 22px max(20px, calc(50vw - 620px));

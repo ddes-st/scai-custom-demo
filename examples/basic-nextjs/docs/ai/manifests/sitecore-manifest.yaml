@@ -3651,7 +3651,7 @@ lookups:
       blue filled CTAs, yellow closing band, Pazuelo case study on the
       blue story band. Story text uses accentFg (white on KW).
       2026-09-30: Added site-collection Brand Page data template under
-      /sitecore/templates/Project/group/Page Types (61aa2fd9) so Pages can
+      /sitecore/templates/Project/main/Page Types (61aa2fd9) so Pages can
       attach a data template to the Brand Page Design. Mapped to design
       864858ae.
       2026-09-30: Recreated the three live brand pages on the site-collection
@@ -3666,7 +3666,7 @@ lookups:
     siteDataTemplate:
       name: "Brand Page"
       itemId: "61aa2fd9-3a69-4f7a-963d-bcfb98829edf"
-      path: "/sitecore/templates/Project/group/Page Types/Brand Page"
+      path: "/sitecore/templates/Project/main/Page Types/Brand Page"
       standardValuesId: "bc1b525f-25e6-4da2-84c0-7bf05825f96b"
       inheritsFrom: "58beac02-7773-41a7-b06b-fe49b1a3f72b"
       note: "Site-collection data template so Pages can assign it to the Brand Page Design. The three live brand pages now use this template."
@@ -4068,7 +4068,7 @@ demoContent:
   # path — update the field if a page is renamed/moved.
   - name: "ArticleUrl field on Article Page Template"
     kind: "templateField"
-    path: "/sitecore/templates/Project/main/Page Types/Article Page Template/Article Data/ArticleUrl"
+    path: "/sitecore/templates/Project/main/Page Types/Article Page/Article Data/ArticleUrl"
     itemId: "{7168B48A-BBBD-4F00-A3DB-2BAB0441128F}"
     type: "Single-Line Text"
     createdAt: "2026-08-18"

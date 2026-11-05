@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "872e5129-743b-48ba-98e9-9db9f994114e"
 Parent: "c4c0eac9-964e-42d2-b4cd-be26344026eb"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Hero Data/heroEyebrow
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Hero Data/heroEyebrow
 SharedFields:
 - ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
   Hint: Validation

@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 ID: "593fdd00-9595-47f9-8bbd-c148af1086c9"
 Parent: "c4c0eac9-964e-42d2-b4cd-be26344026eb"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/group/Page Types/Landing Page/Hero Data/heroHeadline
+Path: /sitecore/templates/Project/main/Page Types/Landing Page/Hero Data/heroHeadline
 SharedFields:
 - ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
   Hint: Validation

@@ -15,7 +15,7 @@
       },
       {
         "name": "templates-group-page-types",
-        "path": "/sitecore/templates/Project/group/Page Types",
+        "path": "/sitecore/templates/Project/main/Page Types",
         "scope": "ItemAndDescendants"
       }
     ]
