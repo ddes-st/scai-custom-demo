@@ -46,7 +46,8 @@ export const Default = async (props: PortalComponentProps) => {
   const c = chrome(props);
   const homeActive = segments.length === 0;
   const shortLang = (l: string) => l.split("-")[0].toUpperCase();
-  const initial = (who || ui("signIn")).trim().charAt(0).toUpperCase();
+  // Brand-hub mockup: a fixed demo avatar until the portal session carries a Content Hub user name.
+  const initial = bar ? "JD" : (who || ui("signIn")).trim().charAt(0).toUpperCase();
 
   return (
     <div className={`site-topbar${bar ? " hub-bar" : ""} ${c.className}`.trim()} id={c.id}>

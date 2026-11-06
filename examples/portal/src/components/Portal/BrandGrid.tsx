@@ -31,12 +31,45 @@ export const Default = async (props: PortalComponentProps) => {
   if (!res.data) return editing ? <EditorNotice title="Brand grid">{res.error}</EditorNotice> : <LoadError message={res.error} />;
   const { brands, config, visibility, masters } = res.data;
   const v = param(props, "Variant").toLowerCase();
-  const variant = v === "logo" || v === "name" || v === "swatch" ? v : "default";
+  const variant = v === "logo" || v === "name" || v === "swatch" || v === "family" ? v : "default";
   const uncropped = (m: BrandMaster) => { const l = m.links?.filter((x) => !x.crop); return l?.length ? l : m.links; };
   const fallbackAccent = /^#[0-9a-f]{6}$/i.test(config.site.accent) ? config.site.accent : env.fallbackAccent;
   const visible = brands.filter((b) => (visibility[b.brandId] || "visible") !== "hidden");
   if (!visible.length) {
     return editing ? <EditorNotice title="Brand grid">No brands in scope on this Content Hub tenant (check the Portal Settings brand scope).</EditorNotice> : <p className="portal-empty">{ui("noBrands")}</p>;
+  }
+  if (variant === "family") {
+    const [lead, ...rest] = visible;
+    const photo = lead ? masters.get(lead.identifier) : undefined;
+    return (
+      <div className={`hub-family ${c.className}`.trim()} id={c.id}>
+        {lead && (
+          <Link href={brandHref(lead.slug)} className="hub-family-lead">
+            <span className="copy" style={{ background: computeBrandPaletteVars(lead.visualizationColor, fallbackAccent)["--bgd-accent-vivid"] }}>
+              {lead.logoUrl ? <img src={imageFromOrigin(lead.logoUrl)} alt="" /> : <span className="glyph">{lead.name.charAt(0)}</span>}
+              <strong>{lead.name}</strong>
+              <span className="hub-badges"><span className="is-ok">{lead.logoUrl ? ui("hubGuideCurrent") : ui("hubAssetsToConnect")}</span></span>
+            </span>
+            <span className="media">{photo ? <ChImage links={photo.links} fallback={photo.src} slot="lead" alt="" /> : null}</span>
+          </Link>
+        )}
+        <div className="hub-family-grid">
+          {rest.map((b) => {
+            const master = masters.get(b.identifier);
+            const comingSoon = (visibility[b.brandId] || "visible") === "comingSoon";
+            const body = (
+              <>
+                <span className="media">{master ? <ChImage links={uncropped(master)} fallback={master.src} slot="card" alt="" /> : <span className="hub-needed">{ui("hubAssetsToConnect")}</span>}</span>
+                <span className="logo">{b.logoUrl ? <img src={imageFromOrigin(b.logoUrl)} alt="" /> : <span>{b.name}</span>}</span>
+                <span className="name">{b.name}</span>
+                <span className="hub-badges"><span className={b.logoUrl ? "is-ok" : undefined}>{b.logoUrl ? ui("hubGuideCurrent") : ui("hubAssetsToConnect")}</span></span>
+              </>
+            );
+            return comingSoon ? <span key={b.brandId} className="hub-family-card">{body}</span> : <Link key={b.brandId} href={brandHref(b.slug)} className="hub-family-card">{body}</Link>;
+          })}
+        </div>
+      </div>
+    );
   }
   if (variant === "swatch") {
     return (

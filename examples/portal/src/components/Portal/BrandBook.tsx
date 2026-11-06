@@ -14,6 +14,7 @@ import { getPortalTheme } from "src/lib/portal/theme";
 import { JsonLd } from "components/ui/portal/JsonLd";
 import { getBaseUrl } from "lib/utils";
 import { BrandBookClient } from "components/ui/portal/BrandBookClient";
+import { GuidelinesBoard } from "components/ui/portal/GuidelinesBoard";
 import { TrackView } from "components/ui/portal/UsageTracker";
 import { getPortalSettings } from "src/lib/portal/settings";
 import { ui } from "src/lib/portal/ui-text";
@@ -21,15 +22,26 @@ import { ui } from "src/lib/portal/ui-text";
 /**
  * The brand book of the brand in the URL (/brands/<slug>, a wildcard page): files via REST,
  * do & don'ts / personas / characteristics via Content Hub Edge, settings from BrandSite.Config.
- * Rendering parameter LayoutOverride: auto | tabbed | editorial (auto = ?layout= or the
- * brand's configured default). In the Page builder (no slug) the first visible brand is shown.
+ * Rendering parameter LayoutOverride: auto | tabbed | editorial | guide (auto = ?layout= or the
+ * brand's configured default). "guide" is the brand-hub guidelines page: the master brand's
+ * logos, colours and photography. In the Page builder (no slug) the first visible brand is shown.
  */
 export const Default = async (props: PortalComponentProps) => {
   const editing = isEditing(props.page);
   const { slug: urlSlug, search } = requestContext();
   const c = chrome(props);
 
+  const guide = param(props, "LayoutOverride").toLowerCase() === "guide";
   let slug = urlSlug;
+  if (guide && !slug) {
+    const master = await attempt(async () => {
+      const [brands, visibility] = await Promise.all([listBrands(), getBrandVisibilityMap()]);
+      const visible = brands.filter((b) => (visibility[b.brandId] || "visible") === "visible");
+      return (visible.find((b) => /^sodexo$/i.test(b.name)) ?? visible[0])?.slug ?? "";
+    });
+    slug = master.data ?? "";
+    if (!slug) return editing ? <EditorNotice title="Guidelines">{master.error ?? "No visible brand to show the guide."}</EditorNotice> : <p className="portal-empty">{ui("noBrands")}</p>;
+  }
   if (!slug && editing) {
     const sample = await attempt(async () => {
       const [brands, visibility] = await Promise.all([listBrands(), getBrandVisibilityMap()]);
@@ -71,6 +83,18 @@ export const Default = async (props: PortalComponentProps) => {
   const paletteVars = computeBrandPaletteVars(data.visualizationColor, fallbackAccent);
   const book = toBookConfig(config);
   const settings = await getPortalSettings(props.page.siteName, props.page.locale);
+
+  if (guide) {
+    return (
+      <div className={c.className || undefined} id={c.id}>
+        <GuidelinesBoard
+          logos={data.logos.slice(0, 4).map((logo) => ({ title: logo.title, url: logo.url }))}
+          colors={data.colors.slice(0, 6).map((color) => ({ title: color.title, hex: color.color?.hexValue ?? "" }))}
+          shots={data.doDonts.filter((item) => item.imageUrl).slice(0, 6).map((item) => ({ title: item.name, url: item.imageUrl, dont: item.isDont }))}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={c.className || undefined} id={c.id}>

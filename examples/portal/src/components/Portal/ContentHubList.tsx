@@ -5,6 +5,7 @@ import { attempt } from "src/lib/ch/portalEdge";
 import { chrome, isEditing, param, type PortalComponentProps } from "src/lib/portal/component";
 import { EditorNotice, LoadError } from "src/lib/portal/editor";
 import { columnsOf, EntityItems, variantOf } from "components/ui/portal/EntityItems";
+import { CampaignBoard } from "components/ui/portal/CampaignBoard";
 import { ui } from "src/lib/portal/ui-text";
 
 /**
@@ -17,7 +18,8 @@ export const Default = async (props: PortalComponentProps) => {
   const editing = isEditing(props.page);
   const c = chrome(props);
   const definition = param(props, "Definition");
-  const variant = variantOf(param(props, "Variant"));
+  const variantParam = param(props, "Variant").toLowerCase();
+  const variant = variantOf(variantParam);
   const crop = param(props, "ImageCrop");
   const columns = columnsOf(param(props, "Columns"));
   const limit = Math.min(Math.max(Number(param(props, "Limit")) || 60, 1), 600);
@@ -40,6 +42,9 @@ export const Default = async (props: PortalComponentProps) => {
   }
   const { profile, cards } = res.data;
   if (!cards.length) return editing ? <EditorNotice title="Content Hub list">No {profile.labelPlural.toLowerCase()} are published yet.</EditorNotice> : <p className="portal-empty">{ui("nothingPublished")}</p>;
+  if (variantParam === "board") {
+    return <div className={c.className || undefined} id={c.id}><CampaignBoard cards={cards} /></div>;
+  }
   return (
     <div className={`ch-items ch-items-${variant} ${c.className}`.trim()} id={c.id}>
       <EntityItems variant={variant} cards={cards} crop={crop} columns={columns} />

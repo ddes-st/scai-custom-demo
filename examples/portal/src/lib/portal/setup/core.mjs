@@ -353,6 +353,64 @@ export const UI_STRINGS = {
   hubOurBrands: ["Our brands", "Unsere Marken"],
   hubTeamsSearching: ["Your teams are searching for", "Ihre Teams suchen nach"],
   hubSeeEverything: ["See everything", "Alles ansehen"],
+  hubAssetCount: ["{count} assets", "{count} Assets"],
+  hubNarrow: ["That's a lot. Narrow it down:", "Das ist viel. Grenzen Sie es ein:"],
+  hubMostRelevant: ["Most relevant", "Am relevantesten"],
+  hubNewest: ["Newest", "Neueste"],
+  hubMostUsed: ["Most used", "Am häufigsten genutzt"],
+  hubApproved: ["Approved", "Freigegeben"],
+  hubInReview: ["In review", "In Prüfung"],
+  hubExpires: ["Expires soon", "Läuft bald ab"],
+  hubDraft: ["Draft", "Entwurf"],
+  hubStatus: ["Status", "Status"],
+  hubWhoCanUse: ["Who can use it", "Wer darf es nutzen"],
+  hubMarket: ["Market", "Markt"],
+  hubShowing: ["Showing the first {shown} of {total}", "Die ersten {shown} von {total}"],
+  hubNotOnFeed: ["Not published in Content Hub yet.", "In Content Hub noch nicht veröffentlicht."],
+  hubImageNeeded: ["Image needed", "Bild fehlt"],
+  hubCards: ["Cards", "Karten"],
+  hubTable: ["Table", "Tabelle"],
+  hubProductsCount: ["{count} products", "{count} Produkte"],
+  hubGuideCurrent: ["Guide current", "Guide aktuell"],
+  hubAssetsToConnect: ["Brand assets to connect", "Marken-Assets verbinden"],
+  hubAskGuide: ["Ask the guide", "Den Guide fragen"],
+  hubAskPlaceholder: ["Can partners use our logo?", "Dürfen Partner unser Logo nutzen?"],
+  hubDraftTitle: ["Is my draft on brand?", "Ist mein Entwurf markenkonform?"],
+  hubDraftLead: ["Drop in a slide, flyer or post. You get specific fixes in seconds, before it goes to the brand team.", "Legen Sie eine Folie, ein Flugblatt oder einen Beitrag ab. Sie erhalten konkrete Korrekturen, bevor es ans Markenteam geht."],
+  hubTryDraft: ["Try the sample draft", "Musterentwurf prüfen"],
+  hubUploadFile: ["Upload a file", "Datei hochladen"],
+  hubOfficial: ["Official", "Offiziell"],
+  hubShared: ["Shared with me", "Mit mir geteilt"],
+  hubMine: ["Mine", "Meine"],
+  hubCreate: ["Create", "Erstellen"],
+  hubDownloadAll: ["Download all", "Alle herunterladen"],
+  hubLive: ["Live", "Live"],
+  hubUpcoming: ["Upcoming", "Bevorstehend"],
+  hubPlanning: ["In planning", "In Planung"],
+  hubEnded: ["Ended", "Beendet"],
+  hubSeasonal: ["Seasonal", "Saisonal"],
+  hubInDevelopment: ["In development", "In Entwicklung"],
+  hubRetiring: ["Retiring", "Auslaufend"],
+  hubDiet: ["Diet", "Ernährung"],
+  hubDietPlant: ["Plant based", "Pflanzlich"],
+  hubDietGluten: ["Gluten free", "Glutenfrei"],
+  hubDietNut: ["Nut free", "Nussfrei"],
+  hubLibrary: ["Library", "Bibliothek"],
+  hubFindFilter: ["Find a filter, like “Germany”", "Filter suchen, etwa „Deutschland“"],
+  hubSize: ["Size", "Größe"],
+  hubJumpTo: ["Jump to", "Springen zu"],
+  hubEarlier: ["Earlier", "Früher"],
+  hubNameCollection: ["Name a new collection", "Neue Sammlung benennen"],
+  hubWhoCanSee: ["Who can see it", "Wer darf es sehen"],
+  hubLogo: ["Logo", "Logo"],
+  hubColour: ["Colour", "Farbe"],
+  hubPhotography: ["Photography", "Fotografie"],
+  hubSampleDraft: ["Sample draft", "Musterentwurf"],
+  hubAssetSearch: ["Describe what you need, like “chef plating food, bright kitchen, landscape”", "Beschreiben Sie, was Sie brauchen, etwa „Koch richtet Essen an, helle Küche, Landschaft“"],
+  hubFindSimilar: ["Find similar", "Ähnliche finden"],
+  hubProductSearch: ["Name, product number, GTIN, or “school lunch without nuts”", "Name, Produktnummer, GTIN oder „Schulessen ohne Nüsse“"],
+  hubYesThis: ["Yes.", "Ja."],
+  hubNotThis: ["Not this.", "Nicht so."],
 };
 
 /** Translated page and datasource texts per language, keyed by the item path relative to the site. */
@@ -1404,7 +1462,7 @@ log("\n[1] folders");
     await detail("team", "player", "Player (*)", R.PlayerDetail);
     await section("sponsors", { NavLabel: "Partners", Eyebrow: "Partners", Title: "Our partners", Lead: "The partners who make the season possible — placements, rights and activations.", Blurb: "Our partners and how they show up across the season." }, [{ id: R.PartnerWall }]);
   }
-  await section("brands", { NavLabel: "Brand guidelines", Eyebrow: "Brand guidelines", Title: "Every brand, one source of truth.", Lead: "Colours, logos, typography, documents, templates and the rules that hold them together — served straight from Content Hub.", Blurb: "The brand books: colours, logos, fonts and the rules behind them." }, [{ id: R.BrandGrid }]);
+  await section("brands", { NavLabel: "Brand guidelines", Eyebrow: "Brand guidelines", Title: "Every brand, one source of truth.", Lead: "Colours, logos, typography, documents, templates and the rules that hold them together — served straight from Content Hub.", Blurb: "The brand books: colours, logos, fonts and the rules behind them." }, [{ id: R.BrandGrid, ...(BRAND_HUB ? { params: { Variant: "family" } } : {}) }]);
   await detail("brands", "brand", "Brand book (*)", R.BrandBook);
   if (BRAND_HUB) {
     const brandsPage = await getByPath(`${P.site}/Home/brands`);
@@ -1414,24 +1472,14 @@ log("\n[1] folders");
       await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: banner.itemId, language: LANG, fields: [{ name: "Link", value: ctaLinkXml("Open the brand guide", "/brands", brandsPage.itemId) }] } });
       log("  ~ home banner: brand guide link");
     }
-    const retitle = async (rel, from, to) => {
-      const it = await getByPath(`${P.site}/${rel}`);
-      const cur = it?.fields.nodes.find((f) => f.name === "NavLabel")?.value ?? "";
-      if (it && cur === from) {
-        await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields: [{ name: "NavLabel", value: to }] } });
-        log(`  ~ ${rel}: ${to}`);
-      }
-    };
-    await retitle("Home/media", "Media library", "Library");
-    await retitle("Home/brands", "Brand guidelines", "Brands");
   }
-  await section("products", { ...(HIGHER_ED ? { HideFromNav: "1", ShowOnHome: "" } : {}), NavLabel: "Products", Eyebrow: "Product information", Title: "Products", Lead: "Every approved product with its data, images and documents — the same record the product team maintains in Content Hub.", Blurb: "Every approved product with its data, images and documents." }, [{ id: R.ProductCatalog }]);
+  await section("products", { ...(HIGHER_ED ? { HideFromNav: "1", ShowOnHome: "" } : {}), NavLabel: "Products", Eyebrow: "Product information", Title: "Products", Lead: "Every approved product with its data, images and documents — the same record the product team maintains in Content Hub.", Blurb: "Every approved product with its data, images and documents." }, [{ id: R.ProductCatalog, ...(BRAND_HUB ? { params: { Variant: "serve" } } : {}) }]);
   await detail("products", "product", "Product detail (*)", R.ProductDetail);
-  await section("press", { NavLabel: "Press room", Eyebrow: "Press room", Title: "News & press releases", Lead: "The latest announcements with their images and media kits, ready to publish.", Blurb: "The latest press releases with their images and media kits." }, [{ id: R.PressList }]);
+  await section("press", { NavLabel: BRAND_HUB ? "News" : "Press room", Eyebrow: "Press room", Title: "News & press releases", Lead: "The latest announcements with their images and media kits, ready to publish.", Blurb: "The latest press releases with their images and media kits." }, [{ id: R.PressList }]);
   await detail("press", "press", "Press release (*)", R.PressRelease);
-  await section("campaigns", { NavLabel: "Campaigns", Eyebrow: "Campaigns", Title: "Campaigns", Lead: "Every campaign Content Hub publishes — a generic listing of one definition, with a generic detail page.", Blurb: "Campaigns from Content Hub — the generic entity pages." }, [{ id: R.ContentHubList, params: { Definition: "M_CMP_Campaign", Variant: "cards" } }]);
+  await section("campaigns", { NavLabel: "Campaigns", Eyebrow: "Campaigns", Title: "Campaigns", Lead: "Every campaign Content Hub publishes — a generic listing of one definition, with a generic detail page.", Blurb: "Campaigns from Content Hub — the generic entity pages." }, [{ id: R.ContentHubList, params: { Definition: "M_CMP_Campaign", Variant: BRAND_HUB ? "board" : "cards" } }]);
   await ensureItem(`${P.site}/Home/campaigns`, "*", detailTpl, { Definition: "M_CMP_Campaign", ...(await pageLayout(`${P.site}/Home/campaigns/*`, layoutXml([{ id: R.ContentHubDetail }]))) }, { "__Display name": "Campaign (*)", "Page Design": pageDesign });
-  await section("media", { NavLabel: "Media library", Eyebrow: "Media library", Title: "Approved media", Lead: "Images, videos and documents cleared for use — find them by collection, brand or type and download the original.", Blurb: "Approved images, videos and documents to find and download." }, [...(SPORTS ? [{ id: R.MediaHubTile }] : []), { id: R.MediaLibrary }]);
+  await section("media", { NavLabel: BRAND_HUB ? "Assets" : "Media library", Eyebrow: BRAND_HUB ? "" : "Media library", Title: BRAND_HUB ? "Assets" : "Approved media", Lead: BRAND_HUB ? "" : "Images, videos and documents cleared for use — find them by collection, brand or type and download the original.", Blurb: BRAND_HUB ? "" : "Approved images, videos and documents to find and download." }, [...(SPORTS ? [{ id: R.MediaHubTile }] : []), { id: R.MediaLibrary, ...(BRAND_HUB ? { params: { Variant: "assets" } } : {}) }]);
   // Phase 2: the partner hub (partners and staff) and the sales kit (staff only) — hidden from
   // everyone else by VisibleTo (the head redirects to /login or 404s).
   await section("partners", { NavLabel: "Partner hub", Eyebrow: "Partner hub", Title: "Your partner kit", Lead: "Approved assets of your focus brand and the campaign kits you can localize — for signed-in channel partners.", Blurb: "Partner kits and co-marketing campaign kits for our channel partners.", VisibleTo: "partners" }, [{ id: R.PartnerHub }]);
@@ -1446,6 +1494,46 @@ log("\n[1] folders");
   await salesSub("case-studies", { NavLabel: "Case studies", Eyebrow: "Sales kit", Title: "Case studies", Lead: "Customer stories with challenge, solution and results.", Blurb: "Customer case studies." }, "M_Content_CaseStudy", "list");
   // the dealer locator, public, when the deployment has dealers with showrooms (PORTAL_DEALERS / PORTAL_PARTNERS)
   if (discovery.dealers > 0) await section("dealers", DEALERS_TEXT, [{ id: R.DealerLocator }]);
+  if (BRAND_HUB) {
+    await section("collections", { NavLabel: "Collections", Eyebrow: "", Title: "Collections", Lead: "", Blurb: "Published collections from Content Hub.", ShowOnHome: "" }, [{ id: R.MediaLibrary, params: { Variant: "collections" } }]);
+    await section("guidelines", { NavLabel: "Guidelines", Eyebrow: "", Title: "What good looks like", Lead: "", Blurb: "The master brand: logo, colour and photography.", ShowOnHome: "" }, [{ id: R.BrandBook, params: { LayoutOverride: "guide" } }]);
+    const retitle = async (rel, from, to) => {
+      const it = await getByPath(`${P.site}/${rel}`);
+      const cur = it?.fields.nodes.find((f) => f.name === "NavLabel")?.value ?? "";
+      if (it && from.includes(cur) && cur !== to) {
+        await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields: [{ name: "NavLabel", value: to }] } });
+        log(`  ~ ${rel}: ${to}`);
+      }
+    };
+    await retitle("Home/media", ["Media library", "Library"], "Assets");
+    await retitle("Home/brands", ["Brand guidelines"], "Brands");
+    await retitle("Home/press", ["Press room"], "News");
+    const PRODUCT_LEAD = "Every approved product with its data, images and documents — the same record the product team maintains in Content Hub.";
+    const BRAND_LEAD = "Colours, logos, typography, documents, templates and the rules that hold them together — served straight from Content Hub.";
+    const CAMPAIGN_LEAD = "Every campaign Content Hub publishes — a generic listing of one definition, with a generic detail page.";
+    const MEDIA_LEAD = "Images, videos and documents cleared for use — find them by collection, brand or type and download the original.";
+    const rewrite = async (rel, pairs) => {
+      const it = await getByPath(`${P.site}/${rel}`);
+      if (!it) return;
+      const cur = new Map(it.fields.nodes.map((f) => [f.name, f.value ?? ""]));
+      const fields = pairs.filter(([name, from, to]) => (cur.get(name) ?? "") === from && from !== to).map(([name, , to]) => ({ name, value: to }));
+      if (!fields.length) return;
+      await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields } });
+      log(`  ~ ${rel}: ${fields.map((f) => f.name).join(", ")}`);
+    };
+    await rewrite("Home/products", [["Title", "Products", "What we serve"], ["Eyebrow", "Product information", ""], ["Lead", PRODUCT_LEAD, ""]]);
+    await rewrite("Home/brands", [["Title", "Every brand, one source of truth.", "One family of brands"], ["Eyebrow", "Brand guidelines", ""], ["Lead", BRAND_LEAD, ""]]);
+    await rewrite("Home/campaigns", [["Title", "Campaigns", "What's on, and what's next"], ["Eyebrow", "Campaigns", ""], ["Lead", CAMPAIGN_LEAD, ""]]);
+    await rewrite("Home/media", [["Title", "Approved media", "Assets"], ["Eyebrow", "Media library", ""], ["Lead", MEDIA_LEAD, ""]]);
+    for (const [name, n] of [["media", 100], ["products", 200], ["brands", 300], ["campaigns", 400], ["collections", 500], ["press", 600], ["guidelines", 700], ["partners", 800], ["sales", 900]]) {
+      const it = await getByPath(`${P.site}/Home/${name}`);
+      const cur = it?.fields.nodes.find((f) => f.name === "__Sortorder")?.value ?? "";
+      if (it && cur !== String(n)) {
+        await gql(`mutation($i:UpdateItemInput!){ updateItem(input:$i){ item { itemId } } }`, { i: { itemId: it.itemId, language: LANG, fields: [{ name: "__Sortorder", value: String(n) }] } });
+        log(`  ~ Home/${name}: sort ${n}`);
+      }
+    }
+  }
   }
 
   // [8] languages — the head's UI strings as dictionary entries (every language), and for each

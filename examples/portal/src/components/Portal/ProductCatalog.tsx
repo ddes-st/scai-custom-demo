@@ -2,9 +2,10 @@ import React from "react";
 import { env } from "src/lib/ch/env";
 import { loadCatalog } from "src/lib/ch/products";
 import { attempt, idParam } from "src/lib/ch/portalEdge";
-import { chrome, isEditing, type PortalComponentProps } from "src/lib/portal/component";
+import { chrome, isEditing, param, type PortalComponentProps } from "src/lib/portal/component";
 import { EditorNotice, LoadError } from "src/lib/portal/editor";
 import { ProductCard } from "components/ui/portal/ProductCard";
+import { ProductBrowser } from "components/ui/portal/ProductBrowser";
 import { ui } from "src/lib/portal/ui-text";
 
 /** The product catalog: families (each a card grid), then the products without a family. */
@@ -20,6 +21,10 @@ export const Default = async (props: PortalComponentProps) => {
   const catalog = res.data;
   if (catalog.total === 0) {
     return <p className="portal-empty">{ui("noProducts")}</p>;
+  }
+  if (param(props, "Variant").toLowerCase() === "serve") {
+    const products = [...catalog.families.flatMap((f) => f.products), ...catalog.unassigned];
+    return <div className={c.className || undefined} id={c.id}><ProductBrowser products={products} /></div>;
   }
   return (
     <div className={c.className || undefined} id={c.id}>

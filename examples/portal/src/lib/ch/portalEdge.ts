@@ -108,6 +108,8 @@ export interface PortalAsset {
   fileName: string;
   /** Size in MB as Content Hub reports it, when known. */
   sizeMb?: number;
+  /** Last modified in Content Hub (ISO), when Edge publishes it. */
+  modified?: string;
   kind: AssetKind;
   /** Image to show (preview rendition); empty when there's none. */
   preview: string;
@@ -167,6 +169,7 @@ export function toPortalAsset(a: any): PortalAsset | null {
     title: loc(a.title) || String(a.fileName ?? id),
     fileName: String(a.fileName ?? ""),
     ...(Number.isFinite(size) && size > 0 ? { sizeMb: size } : {}),
+    ...(typeof a.modifiedOn === "string" && a.modifiedOn ? { modified: a.modifiedOn } : {}),
   };
 }
 

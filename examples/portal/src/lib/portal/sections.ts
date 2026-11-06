@@ -2,7 +2,7 @@
  * Client-safe helpers shared by the Portal components: hrefs of the sections and detail
  * pages (public paths, never the internal /[site]/[locale] form) and the brand slug.
  */
-export const SECTION_PATH = { brands: "/brands", products: "/products", press: "/press", media: "/media", partners: "/partners", sales: "/sales", games: "/games", team: "/team", sponsors: "/sponsors", programs: "/programs", events: "/events", experts: "/experts" } as const;
+export const SECTION_PATH = { brands: "/brands", products: "/products", press: "/press", media: "/media", collections: "/collections", guidelines: "/guidelines", partners: "/partners", sales: "/sales", games: "/games", team: "/team", sponsors: "/sponsors", programs: "/programs", events: "/events", experts: "/experts" } as const;
 export type SectionKey = keyof typeof SECTION_PATH;
 
 export type DetailKind = "brand" | "product" | "press" | "partner" | "game" | "player" | "program";

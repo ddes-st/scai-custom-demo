@@ -11,6 +11,8 @@ import { getPortalSettings } from "src/lib/portal/settings";
 import { getViewer } from "src/lib/ch/viewer";
 import { loadPartners } from "src/lib/portal/partners";
 import { MediaBrowser } from "components/ui/portal/MediaBrowser";
+import { AssetLibrary } from "components/ui/portal/AssetLibrary";
+import { CollectionBoard } from "components/ui/portal/CollectionBoard";
 import { ui } from "src/lib/portal/ui-text";
 
 /**
@@ -28,7 +30,7 @@ export const Default = async (props: PortalComponentProps) => {
   const res = await attempt(() => loadMedia());
   if (res.error) return editing ? <EditorNotice title="Media library">{res.error}</EditorNotice> : <LoadError message={res.error} />;
   const lib = res.data;
-  if (!lib || lib.items.length === 0) return <p className="portal-empty">{ui("noMedia")}</p>;
+  if (!lib || (lib.items.length === 0 && variant !== "collections")) return <p className="portal-empty">{ui("noMedia")}</p>;
   const settings = await getPortalSettings(props.page.siteName, props.page.locale);
   // Files that exist only in partner kits are private: listed for staff and the kit's partner only.
   const viewer = await getViewer();
@@ -55,6 +57,21 @@ export const Default = async (props: PortalComponentProps) => {
   }
   let search: { q?: string; kind?: string; collection?: string } = {};
   try { search = requestContext().search; } catch { /* outside a request */ }
+  if (variant === "assets") {
+    return (
+      <div className={c.className || undefined} id={c.id}>
+        <AssetLibrary items={items} brands={lib.brands} initial={{ q: search.q, kind: search.kind }} />
+        {lib.capped && <p className="portal-empty">{ui("mediaCapped", { count: lib.items.length })}</p>}
+      </div>
+    );
+  }
+  if (variant === "collections") {
+    return (
+      <div className={c.className || undefined} id={c.id}>
+        <CollectionBoard collections={collections} items={items} />
+      </div>
+    );
+  }
   return (
     <div className={c.className || undefined} id={c.id}>
       <MediaBrowser items={items} collections={collections} brands={lib.brands} trackViews={settings.trackUsage && !editing} initial={{ q: search.q, kind: search.kind, collection: search.collection }} />
