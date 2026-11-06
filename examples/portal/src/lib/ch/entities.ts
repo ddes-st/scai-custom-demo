@@ -72,6 +72,8 @@ export interface EntityCard {
   modified?: string;
   /** A small version of `image` for tiles (thumbnail rendition), when there is one. */
   thumb?: string;
+  /** Brand names linked on the entity, joined when there are several. */
+  brand?: string;
 }
 
 export interface EntityRelation { name: string; label: string; definition: string; items: EntityCard[] }
@@ -273,6 +275,7 @@ function relSelection(fields: EdgeField[], name: string, inner: string): string 
   return isList(f) ? `${name} { results { ${inner} } }` : `${name} { ${inner} }`;
 }
 const relResults = (e: any, name: string): any[] => { const v = e?.[name]; return !v ? [] : Array.isArray(v.results) ? v.results : [v]; };
+const brandNames = (e: any, rel?: string) => !rel ? "" : relResults(e, rel).map((b) => loc(b?.brandName) || loc(b?.brandLabel)).filter(Boolean).join(", ");
 
 /**
  * A list query returns the type's interface when it has one (`allM_Content` → `IM_Content`).
@@ -354,7 +357,14 @@ async function listEntitiesUncached(definitionOrType: string): Promise<EntityCar
   const iface = await edgeTypeFields(`I${definition}`).catch(() => null);
   const fields = iface ? [...iface, ...typeFields.filter((f) => !iface.some((i) => i.name === f.name))] : typeFields;
   const markers = copyMarkers(fields);
-  const brandRel = fields.find(isBrandRel);
+  // Press releases publish the brand on brandToContent. A subtype schema sometimes omits it;
+  // the press room still selects it, and so does this list.
+  const knownBrand = fields.find((f) => f.name === "brandToContent") ?? fields.find(isBrandRel);
+  const brandRelName = knownBrand?.name ?? ((definition === "M_Content" || definition.startsWith("M_Content_")) ? "brandToContent" : "");
+  const brandInner = !knownBrand || knownBrand.name === "brandToContent" || definition.startsWith("M_Content") ? "id brandName" : "id";
+  const brandSel = knownBrand
+    ? relSelection(fields, knownBrand.name, brandInner)
+    : brandRelName ? "brandToContent { results { id brandName } }" : "";
   const locRel = localizationRelation(fields, definition);
   const textFields = [...p.title, ...p.subtitle, ...p.summary].filter((n) => hasField(fields, n));
   const selection = listSelection(definition, iface, [
@@ -363,7 +373,7 @@ async function listEntitiesUncached(definitionOrType: string): Promise<EntityCar
     ...p.image.map((rel) => (rel === "self"
       ? { name: rel, sel: ASSET_SELECTION, force: true }
       : { name: rel, sel: relSelection(fields, rel, ASSET_SELECTION) })),
-    ...(brandRel ? [{ name: brandRel.name, sel: relSelection(fields, brandRel.name, "id") }] : []),
+    ...(brandSel ? [{ name: brandRelName, sel: brandSel, force: !knownBrand }] : []),
     ...markers.flags.map((n) => ({ name: n, sel: n })),
     ...markers.parents.map((n) => ({ name: n, sel: `${n} { id }` })),
     ...(locRel.field ? [{ name: locRel.field, sel: `${locRel.field} { id }` }] : []),
@@ -373,8 +383,8 @@ async function listEntitiesUncached(definitionOrType: string): Promise<EntityCar
   const { masters, byMaster } = await pairLocalizedVariants(items, { definition: dotted(definition), relation: locRel.relation, localizationField: locRel.field, isCopy: (e) => isCopy(e, markers), parentId: (e) => parentIdOf(e, markers), titleOf: (e) => textOf(e, p.title) });
   const imageRels = p.image.filter((r) => r !== "self");
   return masters
-    .filter((e) => !brandRel || inScope(e[brandRel.name], only))
-    .map((e) => { const v = byMaster.get(String(e.id)); const m = overlay(e, v, [...textFields, ...imageRels]); const card = cardOf(p, { ...m, id: e.id }); return v ? { ...card, title: stripVariantSuffix(card.title) } : card; })
+    .filter((e) => !brandRelName || inScope(e[brandRelName], only))
+    .map((e) => { const v = byMaster.get(String(e.id)); const m = overlay(e, v, [...textFields, ...imageRels]); const card = cardOf(p, { ...m, id: e.id }); const brand = brandNames(m, brandRelName); return { ...card, ...(brand ? { brand } : {}), ...(v ? { title: stripVariantSuffix(card.title) } : {}) }; })
     .filter((c) => definition !== "M_Asset" || (c.image && !partnerOnly.has(c.id)))
     .sort((a, b) => a.title.localeCompare(b.title));
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import type { EntityCard } from "src/lib/ch/entities";
+import { formatDate } from "src/lib/ch/press";
 import { EntityCardView, EntityOverlay, EntityRow, EntityTile } from "components/ui/portal/EntityCards";
 import { EntityCarousel } from "components/ui/portal/EntityCarousel";
 import { namedLinkRatio } from "src/lib/ch/image-links";
@@ -44,7 +45,7 @@ export function EntityItems({ variant, cards, crop = "", columns = 0 }: { varian
     case "masonry":
       return (
         <div className="hub-masonry" style={shape}>
-          {cards.map((card, i) => <EntityOverlay key={card.id} card={card} crop={crop} width={width} mosaic={i} label={/^\d{4}-\d{2}-\d{2}/.test(card.subtitle) ? card.title : (card.subtitle || card.title)} />)}
+          {cards.map((card, i) => <EntityOverlay key={card.id} card={card} crop={crop} width={width} mosaic={i} labels={[card.brand, formatDate(card.subtitle)].filter((s): s is string => !!s)} />)}
         </div>
       );
     case "carousel":

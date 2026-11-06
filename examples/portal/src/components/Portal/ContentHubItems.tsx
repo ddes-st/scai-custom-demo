@@ -81,7 +81,7 @@ export const Default = async (props: PortalComponentProps) => {
         {(heading?.value || (editing && variant !== "overlay")) && <h2><Text field={heading} /></h2>}
         {intro?.value && <p><Text field={intro} /></p>}
       </div>
-      {variant === "masonry" && <Link href={SECTION_PATH.media} className="hub-see-all">{ui("hubSeeEverything")}</Link>}
+      {variant === "masonry" && <Link href={SECTION_PATH.press} className="hub-see-all">{ui("hubSeeEverything")}</Link>}
     </div>
   );
   const section = (children: React.ReactNode) => <section className={`portal-section ch-items ch-items-${variant} ${c.className}`.trim()} id={c.id}>{head}{children}</section>;
