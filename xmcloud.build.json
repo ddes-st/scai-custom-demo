@@ -74,7 +74,7 @@
     }
   }, 
   "deployItems": {
-    "modules": ["BQ"]
+    "modules": []
   },
   "postActions": {
     "actions": {
