@@ -131,14 +131,14 @@ export const Default = (props: DealerLocatorProps) => {
             <Text
               field={heading}
               tag="h1"
-              className="m-0 text-[1.56rem] font-light leading-[1.1] text-[#111] lg:text-[2.55rem]"
+              className="m-0 text-[2.4rem] font-light leading-[1.1] text-[#333] lg:text-[63px] lg:leading-[69px]"
             />
           ) : null}
           {subtitle ? (
             <Text
               field={subtitle}
               tag="h2"
-              className="mt-2 mb-0 text-[1.05rem] font-light leading-normal text-[#646363] lg:text-[1.35rem]"
+              className="mt-5 mb-0 text-[1.25rem] font-light leading-normal text-black lg:text-[30px]"
             />
           ) : null}
         </div>

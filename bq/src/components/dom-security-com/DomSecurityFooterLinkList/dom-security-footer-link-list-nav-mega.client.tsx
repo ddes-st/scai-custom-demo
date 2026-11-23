@@ -25,10 +25,10 @@ export default function NavMegaColumnChrome({
   const hasTitle = Boolean(label || title);
 
   return (
-    <div className="px-0 font-[Source_Sans_Pro] text-[14px] text-[#333] lg:border-r lg:border-[#e3e2e2] lg:px-4 lg:last:border-r-0">
+    <div className="h-full px-0 font-[Source_Sans_Pro] text-[18px] font-light text-[#333] lg:px-6">
       {hasTitle ? (
         <>
-          <h3 className="m-0 mb-0 text-[15px] font-semibold text-[#d51130] max-lg:hidden lg:mb-6">
+          <h3 className="m-0 mb-0 hidden max-w-[16rem] text-[1.85rem] font-light leading-[2.15rem] text-[#d51130] lg:mb-5 lg:block">
             {label || title}
           </h3>
           <button

@@ -188,6 +188,7 @@ describe("flattenResolvedChildrenToRows / buildHomeRenderingsXml", () => {
         ],
       },
     ]);
+    assert.match(xml, /l="\{96E5F4BA-A2CF-4A4C-A4E7-64DA88226362\}"/);
     assert.match(xml, /s:ph="headless-footer"/);
     assert.match(xml, /DynamicPlaceholderId=1/);
     assert.match(xml, /s:ph="\/headless-footer\/footer-navigation-1"/);

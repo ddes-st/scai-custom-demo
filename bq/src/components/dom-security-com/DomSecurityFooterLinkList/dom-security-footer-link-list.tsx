@@ -71,6 +71,40 @@ export const Default = (props: FooterLinkListProps) => {
   );
 };
 
+/** Live products menu names for the two category links authored under older labels. */
+function liveProductsLabel(href: string, text: string): string {
+  const path = href.toLowerCase();
+  if (path.includes("apps-software") || text === "Programming Equipment") return "Apps & Software";
+  if (path.includes("transponders") || text === "Media") return "Transponders";
+  return text;
+}
+
+function menuLinks(title: string, results: LinkListChild[]): LinkField[] {
+  const links = results
+    .map((child) => getFieldValue(child.link ?? child.field?.link))
+    .filter((field): field is LinkField => Boolean(field))
+    .map((field) => {
+      const href = String(field.value?.href || "");
+      const text = typeof field.value?.text === "string" ? field.value.text : "";
+      const next = liveProductsLabel(href, text);
+      if (next === text) return field;
+      return { ...field, value: { ...field.value, text: next } };
+    });
+  const industrial = /industrial locking/i.test(title);
+  const hasTrapped = links.some((field) =>
+    String(field.value?.href || "").toLowerCase().includes("trapped-key"),
+  );
+  if (industrial && !hasTrapped) {
+    links.push({
+      value: {
+        href: "/products/categories/trapped-key-interlocking-systems",
+        text: "Trapped Key Interlocking Systems",
+      },
+    });
+  }
+  return links;
+}
+
 /** Products mega-menu column — red title on desktop; accordion on mobile. */
 export const NavMega = (props: FooterLinkListProps) => {
   const { titleField, results, renderingId, uid } = useLinkList(props);
@@ -84,19 +118,15 @@ export const NavMega = (props: FooterLinkListProps) => {
         titleText={titleValue}
         title={titleValue || null}
       >
-        <ul className="m-0 list-none space-y-1 p-0 max-lg:pb-2">
-          {results.map((child, index) => {
-            const linkField = getFieldValue(child.link ?? child.field?.link);
-            if (!linkField) return null;
-            return (
-              <li key={index}>
-                <Link
-                  field={linkField}
-                  className="block py-1 text-[#646363] no-underline transition-colors hover:text-[#e30613] max-lg:text-[0.95rem]"
-                />
-              </li>
-            );
-          })}
+        <ul className="m-0 list-none space-y-0 p-0 max-lg:pb-2">
+          {menuLinks(titleValue, results).map((linkField, index) => (
+            <li key={index} className="py-[0.15rem]">
+              <Link
+                field={linkField}
+                className="block py-1 text-[18px] font-light leading-7 text-[#333] no-underline transition-colors hover:text-[#d51130] max-lg:text-[0.95rem]"
+              />
+            </li>
+          ))}
         </ul>
       </NavMegaColumnChrome>
     </div>

@@ -1,15 +1,13 @@
 import { ComponentProps } from 'lib/component-props';
 import ServiceRequestFormChrome from './dom-security-service-request-form.client';
+import { resolveServiceRequestPostEndpoint } from './service-request-endpoint';
 
-/**
- * Hardcoded service / spare-parts request form for the DOM Security demo.
- * No Sitecore datasource fields — register the rendering in SitecoreAI yourself.
- */
 type DomSecurityServiceRequestFormProps = ComponentProps;
 
 export const Default = (props: DomSecurityServiceRequestFormProps) => {
   const params = props.params ?? props.rendering?.params ?? {};
   const renderingId = params.RenderingIdentifier || params.id;
+  const endpoint = resolveServiceRequestPostEndpoint(params);
 
   return (
     <section
@@ -26,7 +24,7 @@ export const Default = (props: DomSecurityServiceRequestFormProps) => {
           order media, or get support for digital access — we&apos;ll route your
           request to the right team.
         </p>
-        <ServiceRequestFormChrome />
+        <ServiceRequestFormChrome endpoint={endpoint} />
       </div>
     </section>
   );

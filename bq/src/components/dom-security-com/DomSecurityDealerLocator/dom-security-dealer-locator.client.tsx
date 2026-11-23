@@ -112,6 +112,20 @@ function parsePostalHint(query: string): { lat: number; lng: number } | null {
 /** Zoom level after postcode / geolocation search (street–neighborhood scale). */
 const SEARCH_ZOOM = 12;
 
+const DEALER_CALLBACK_ENDPOINT =
+  'https://webhooks.eu.workato.com/webhooks/rest/99427827-2367-4264-88c3-eb6701fe0d85/dealer-callback-request';
+
+function dealerPinIcon(L: any, active: boolean) {
+  const fill = active ? '#d51130' : '#ffffff';
+  const ring = active ? '#a50d25' : '#cfcfcf';
+  return L.divIcon({
+    className: 'dealer-map-pin',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+    html: `<span style="display:block;width:20px;height:20px;border-radius:50%;background:${fill};border:2px solid ${ring};box-shadow:0 0 10px rgba(0,0,0,.22)"></span>`,
+  });
+}
+
 function safeFitBounds(map: any, L: any, points: [number, number][]) {
   if (!map || !L || !points.length) return;
   try {
@@ -170,6 +184,8 @@ export default function DealerLocatorChrome({
   );
   const [callbackPhone, setCallbackPhone] = useState('');
   const [callbackSent, setCallbackSent] = useState(false);
+  const [callbackSending, setCallbackSending] = useState(false);
+  const [callbackError, setCallbackError] = useState('');
   const mapEl = useRef<HTMLDivElement>(null);
   const mapRef = useRef<any>(null);
   const markersRef = useRef<Map<string, any>>(new Map());
@@ -331,12 +347,8 @@ export default function DealerLocatorChrome({
     for (const d of filtered) {
       if (!isValidLatLng(d.latitude, d.longitude)) continue;
       try {
-        const marker = L.circleMarker([d.latitude, d.longitude], {
-          radius: 6,
-          color: '#d51130',
-          fillColor: '#d51130',
-          fillOpacity: 0.9,
-          weight: 2,
+        const marker = L.marker([d.latitude, d.longitude], {
+          icon: dealerPinIcon(L, false),
         })
           .bindPopup(
             `<strong>${escapeHtml(d.title)}</strong><br/>${escapeHtml(d.address)}<br/>${escapeHtml(d.address2)}`,
@@ -351,20 +363,6 @@ export default function DealerLocatorChrome({
     }
 
     if (origin && isValidLatLng(origin.lat, origin.lng)) {
-      try {
-        const originMarker = L.circleMarker([origin.lat, origin.lng], {
-          radius: 7,
-          color: '#111',
-          fillColor: '#fdc300',
-          fillOpacity: 1,
-          weight: 2,
-        }).bindPopup('Search origin');
-        originMarker.addTo(map);
-        originMarkerRef.current = originMarker;
-      } catch {
-        /* ignore */
-      }
-      // Postcode / geolocation: zoom in with the search point centered.
       focusMapOnOrigin(map, origin);
       return;
     }
@@ -374,19 +372,18 @@ export default function DealerLocatorChrome({
 
   // Highlight active marker without rebuilding the whole layer group.
   useEffect(() => {
+    const leaflet = typeof window !== 'undefined' ? (window as any).L : null;
+    if (!leaflet) return;
+    const selectedId = activeId ?? filtered[0]?.id ?? null;
     markersRef.current.forEach((marker, id) => {
       if (id === '__origin') return;
       try {
-        marker.setStyle?.({
-          radius: activeId === id ? 9 : 6,
-          fillColor: activeId === id ? '#00a0de' : '#d51130',
-          color: '#d51130',
-        });
+        marker.setIcon?.(dealerPinIcon(leaflet, id === selectedId));
       } catch {
         /* ignore */
       }
     });
-  }, [activeId]);
+  }, [activeId, filtered]);
 
   const handleSearch = () => {
     setGeoError(false);
@@ -405,18 +402,41 @@ export default function DealerLocatorChrome({
     setCallbackDealer(dealer);
     setCallbackPhone(profile?.phone || DEMO_PROFILE.phone);
     setCallbackSent(false);
+    setCallbackError('');
+    setCallbackSending(false);
   };
 
-  const submitCallback = (event: FormEvent) => {
+  const submitCallback = async (event: FormEvent) => {
     event.preventDefault();
-    if (!callbackDealer) return;
-    pushDealerCallbackRequest({
+    if (!callbackDealer || callbackSending) return;
+    const payload = {
       dealerId: callbackDealer.id,
       dealerName: callbackDealer.title,
-      postalCode: query.trim() || undefined,
       phone: callbackPhone,
-    });
-    setCallbackSent(true);
+      postalCode: query.trim() || undefined,
+    };
+    setCallbackError('');
+    setCallbackSending(true);
+    try {
+      const response = await fetch(DEALER_CALLBACK_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        setCallbackError('We could not send your request. Please try again.');
+        return;
+      }
+      pushDealerCallbackRequest(payload);
+      setCallbackSent(true);
+    } catch {
+      setCallbackError('We could not send your request. Please try again.');
+    } finally {
+      setCallbackSending(false);
+    }
   };
 
   const handleUseLocation = () => {
@@ -443,8 +463,11 @@ export default function DealerLocatorChrome({
     );
   };
 
+  const selectedId = activeId ?? filtered[0]?.id ?? null;
+
   return (
     <div className="find-a-dealer font-[Source_Sans_Pro] text-[#333]">
+      <style>{`.dealer-map-pin{background:transparent!important;border:none!important;}`}</style>
       <button
         type="button"
         className="mb-4 inline-block border border-[#cac9c9] px-4 py-2 text-[0.9rem] text-[#333] lg:hidden"
@@ -456,10 +479,12 @@ export default function DealerLocatorChrome({
         {searchCriteriaLabel}
       </button>
 
-      <div className="mb-6 grid gap-6 lg:grid-cols-2">
-        <div>
-          <h3 className="mb-2 text-[1.1rem] font-light">{searchPlaceholder}</h3>
-          <div className="relative mb-3">
+      <div className="mb-6 grid gap-8 lg:grid-cols-[320px_1fr]">
+        <div className="lg:border-r lg:border-[#cac9c9] lg:pr-[27px]">
+          <h3 className="m-0 text-[13px] font-semibold uppercase tracking-normal text-black">
+            {searchPlaceholder}
+          </h3>
+          <div className="relative mt-2">
             <input
               type="text"
               value={query}
@@ -467,21 +492,21 @@ export default function DealerLocatorChrome({
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               placeholder={searchPlaceholder}
               aria-label={searchPlaceholder}
-              className="h-11 w-full rounded-[3px] border border-[#cac9c9] px-3 pr-12 text-base outline-none focus:border-[#00a0de]"
+              className="h-[50px] w-full border border-[#cac9c9] bg-white py-[9px] pr-12 pl-5 text-[20px] text-black outline-none focus:border-[#00a0de]"
             />
             <button
               type="button"
               aria-label="Search"
               onClick={handleSearch}
-              className="absolute right-0 top-0 flex h-11 w-11 items-center justify-center bg-[#d51130] text-white"
+              className="absolute top-0 right-0 flex h-[50px] w-12 items-center justify-center text-[#7e7c7c]"
             >
-              ⌕
+              <SearchIcon />
             </button>
           </div>
           <button
             type="button"
             onClick={handleUseLocation}
-            className="text-[0.95rem] font-normal text-[#00a0de] underline"
+            className="mt-[15px] block text-[18px] font-semibold text-[#00a0de] no-underline"
           >
             {useMyLocationLabel}
           </button>
@@ -491,39 +516,31 @@ export default function DealerLocatorChrome({
         </div>
 
         <div>
-          <h3 className="mb-2 text-[1.1rem] font-light">{selectDealersLabel}</h3>
-          <ul className="m-0 list-none space-y-2 p-0">
+          <h3 className="m-0 text-[13px] font-semibold uppercase tracking-normal text-black">
+            {selectDealersLabel}
+          </h3>
+          <ul className="m-0 mt-3 list-none space-y-3 p-0">
             <li>
-              <label className="inline-flex items-center gap-2 text-[0.95rem]">
+              <label className="inline-flex items-center gap-2 text-[14.4px] text-[#333]">
                 <input
                   type="checkbox"
                   checked={mechanical}
                   onChange={(e) => setMechanical(e.target.checked)}
-                  className="shrink-0"
+                  className="h-[18px] w-[18px] shrink-0 accent-[#5ac50b]"
                 />
-                <span
-                  aria-hidden="true"
-                  className="inline-flex w-5 shrink-0 items-center justify-center text-[#d51130]"
-                >
-                  ⚙
-                </span>
+                <TypeIcon kind="mechanical" />
                 <span>{mechanicalLabel}</span>
               </label>
             </li>
             <li>
-              <label className="inline-flex items-center gap-2 text-[0.95rem]">
+              <label className="inline-flex items-center gap-2 text-[14.4px] text-[#333]">
                 <input
                   type="checkbox"
                   checked={digital}
                   onChange={(e) => setDigital(e.target.checked)}
-                  className="shrink-0"
+                  className="h-[18px] w-[18px] shrink-0 accent-[#5ac50b]"
                 />
-                <span
-                  aria-hidden="true"
-                  className="inline-flex w-5 shrink-0 items-center justify-center text-[#f5a623]"
-                >
-                  ⚡
-                </span>
+                <TypeIcon kind="digital" />
                 <span>{digitalLabel}</span>
               </label>
             </li>
@@ -532,7 +549,7 @@ export default function DealerLocatorChrome({
       </div>
 
       <div className="grid gap-0 lg:grid-cols-2">
-        <div className="relative min-h-[180px] bg-[#e9e9e9] lg:min-h-[500px]">
+        <div className="relative mt-[18px] min-h-[180px] bg-[#e9e9e9] lg:min-h-[500px]">
           <div ref={mapEl} className="absolute inset-0 z-0 h-full w-full" />
           {!mapReady ? (
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 bg-[#f5f5f5] p-6 text-center">
@@ -542,7 +559,7 @@ export default function DealerLocatorChrome({
           ) : null}
         </div>
 
-        <ul className="m-0 max-h-[518px] list-none overflow-y-auto p-0 lg:pl-6">
+        <ul className="m-0 max-h-[518px] list-none overflow-y-auto py-0 pr-2 pl-[27px]">
           {filtered.length === 0 ? (
             <li className="border border-[#d51130] bg-[#fff5f5] p-4 text-[#d51130]">
               {noResultsMessage}
@@ -553,126 +570,123 @@ export default function DealerLocatorChrome({
               const hasMech = dealerHasMechanical(d.types);
               const hasDig = dealerHasDigital(d.types);
               const keystone = isKeystonePartner(d.label);
+              const isActive = selectedId === d.id;
               return (
                 <li
                   key={d.id}
-                  className={`border-b border-[#e9e9e9] px-1 py-4 ${
-                    activeId === d.id ? 'bg-[#f7f7f7]' : ''
-                  }`}
+                  className="relative my-[18px] min-h-[180px] bg-white px-[27px] py-[27px] shadow-[0_0_20px_-10px_rgba(0,0,0,0.2)]"
                 >
-                  <div className="flex gap-3">
-                    <span
-                      aria-hidden="true"
-                      className={`mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-[#d51130] ${
-                        activeId === d.id ? 'bg-[#d51130]' : 'bg-white'
-                      }`}
-                    />
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-3">
-                        <button
-                          type="button"
-                          className="min-w-0 flex-1 text-left"
-                          onClick={() => {
-                            setActiveId(d.id);
-                            const marker = markersRef.current.get(d.id);
-                            try {
-                              marker?.openPopup?.();
-                              if (isValidLatLng(d.latitude, d.longitude)) {
-                                mapRef.current?.setView?.(
-                                  [d.latitude, d.longitude],
-                                  SEARCH_ZOOM,
-                                  { animate: true },
-                                );
-                              }
-                            } catch {
-                              /* ignore map interaction errors in editor */
-                            }
-                          }}
-                        >
-                          <h3 className="m-0 text-[1.15rem] font-semibold leading-tight text-[#111]">
-                            {d.title}
-                          </h3>
-                          <p className="mt-2 mb-0 whitespace-pre-line text-[0.9rem] leading-relaxed text-[#646363]">
-                            {d.address}
-                            {d.address2 ? `\n${d.address2}` : ''}
-                            {d.phone ? `\nT: ${d.phone}` : ''}
-                            {d.fax ? `\nF: ${d.fax}` : ''}
-                          </p>
-                        </button>
-                        <div className="flex shrink-0 flex-col items-end gap-1.5 text-right">
-                          {keystone ? (
-                            <span className="inline-flex items-center gap-1 bg-[#fdc300] px-2 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-[#111]">
-                              <span aria-hidden="true">★</span>
-                              {d.label || 'Keystone Partner'}
-                            </span>
-                          ) : d.label ? (
-                            <span className="text-[0.75rem] font-semibold uppercase text-[#d51130]">
-                              {d.label}
-                            </span>
-                          ) : null}
-                          {distanceKm != null ? (
-                            <span className="max-w-[9.5rem] text-[0.7rem] font-semibold uppercase leading-snug tracking-wide text-[#7e7c7c]">
-                              {Math.max(1, Math.round(distanceKm))} kilometers
-                              from your location
-                            </span>
-                          ) : null}
-                        </div>
-                      </div>
-                      {d.email ? (
-                        <a
-                          href={`mailto:${d.email}`}
-                          className="mt-2 mr-3 inline-block text-[0.9rem] text-[#00a0de] underline"
-                        >
-                          {d.email}
-                        </a>
+                  <span
+                    aria-hidden="true"
+                    className={`absolute top-[25px] -left-[12px] h-[23px] w-[23px] rounded-full ${
+                      isActive
+                        ? 'bg-[#d51130]'
+                        : 'bg-white shadow-[0_0_20px_3px_rgba(0,0,0,0.1)]'
+                    }`}
+                  />
+                  {keystone ? (
+                    <span className="absolute top-0 right-0 inline-flex items-center gap-1 bg-[#fdc300] px-[11px] py-[4px] text-[10.6px] font-semibold uppercase text-[#333]">
+                      <span aria-hidden="true">★</span>
+                      {d.label || 'Keystone Partner'}
+                    </span>
+                  ) : d.label ? (
+                    <span className="absolute top-0 right-0 text-[10.6px] font-semibold uppercase text-[#d51130]">
+                      {d.label}
+                    </span>
+                  ) : null}
+                  {distanceKm != null ? (
+                    <span className="absolute top-5 right-[18px] max-w-[210px] text-right text-[13px] leading-tight font-normal uppercase text-[#979696]">
+                      {Math.max(1, Math.round(distanceKm))} kilometers from your location
+                    </span>
+                  ) : null}
+                  <button
+                    type="button"
+                    className="block max-w-[58%] text-left"
+                    onClick={() => {
+                      setActiveId(d.id);
+                      const marker = markersRef.current.get(d.id);
+                      try {
+                        marker?.openPopup?.();
+                        if (isValidLatLng(d.latitude, d.longitude)) {
+                          mapRef.current?.setView?.(
+                            [d.latitude, d.longitude],
+                            SEARCH_ZOOM,
+                            { animate: true },
+                          );
+                        }
+                      } catch {
+                        /* ignore map interaction errors in editor */
+                      }
+                    }}
+                  >
+                    <h3 className="m-0 text-[18px] leading-6 font-semibold text-black">{d.title}</h3>
+                    <p className="m-0 text-[16px] leading-[1.35] font-light text-[#646363]">
+                      {d.address}
+                      {d.address2 ? (
+                        <>
+                          <br />
+                          {d.address2}
+                        </>
                       ) : null}
-                      {d.website ? (
-                        <a
-                          href={d.website}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-1 block text-[0.9rem] text-[#00a0de] underline"
-                        >
-                          {d.website}
-                        </a>
+                      {d.phone ? (
+                        <>
+                          <br />
+                          <em>T: </em>
+                          {d.phone}
+                        </>
                       ) : null}
-                      {isLoggedIn && activeId === d.id ? (
-                        <button
-                          type="button"
-                          className="mt-3 inline-flex h-9 items-center bg-[#d51130] px-4 text-[0.85rem] font-normal text-white hover:bg-[#a50d25]"
-                          onClick={() => openCallback(d)}
-                        >
-                          Request a callback
-                        </button>
+                      {d.fax ? (
+                        <>
+                          <br />
+                          <em>F: </em>
+                          {d.fax}
+                        </>
                       ) : null}
-                      {hasMech || hasDig ? (
-                        <ul className="mt-3 flex list-none flex-col items-end gap-2 p-0 sm:flex-row sm:flex-wrap sm:justify-end">
-                          {hasMech ? (
-                            <li className="inline-flex items-center gap-2 text-[0.8rem] text-[#333]">
-                              <span
-                                aria-hidden="true"
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#ececec] text-[#646363]"
-                              >
-                                ⚙
-                              </span>
-                              <span>{mechanicalLabel}</span>
-                            </li>
-                          ) : null}
-                          {hasDig ? (
-                            <li className="inline-flex items-center gap-2 text-[0.8rem] text-[#333]">
-                              <span
-                                aria-hidden="true"
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#ececec] text-[#f5a623]"
-                              >
-                                ⚡
-                              </span>
-                              <span>{digitalLabel}</span>
-                            </li>
-                          ) : null}
-                        </ul>
+                    </p>
+                  </button>
+                  {d.email ? (
+                    <a
+                      href={`mailto:${d.email}`}
+                      className="block max-w-[58%] text-[16px] font-light text-[#00a0de] no-underline"
+                    >
+                      {d.email}
+                    </a>
+                  ) : null}
+                  {d.website ? (
+                    <a
+                      href={d.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block max-w-[58%] text-[16px] font-light text-[#00a0de] no-underline"
+                    >
+                      {d.website}
+                    </a>
+                  ) : null}
+                  {isLoggedIn && isActive ? (
+                    <button
+                      type="button"
+                      className="mt-3 inline-flex h-9 items-center bg-[#d51130] px-4 text-[0.85rem] font-normal text-white hover:bg-[#a50d25]"
+                      onClick={() => openCallback(d)}
+                    >
+                      Request a callback
+                    </button>
+                  ) : null}
+                  {hasMech || hasDig ? (
+                    <ul className="absolute top-[103px] right-[9px] m-0 w-[190px] list-none p-0">
+                      {hasMech ? (
+                        <li className="my-[9px] flex items-center gap-[7px] text-[15px] text-[#333]">
+                          <TypeIcon kind="mechanical" />
+                          <span>{mechanicalLabel}</span>
+                        </li>
                       ) : null}
-                    </div>
-                  </div>
+                      {hasDig ? (
+                        <li className="my-[9px] flex items-center gap-[7px] text-[15px] text-[#333]">
+                          <TypeIcon kind="digital" />
+                          <span>{digitalLabel}</span>
+                        </li>
+                      ) : null}
+                    </ul>
+                  ) : null}
                 </li>
               );
             })
@@ -738,11 +752,15 @@ export default function DealerLocatorChrome({
                     className="mt-1 block h-10 w-full border border-[#cac9c9] px-3 text-[0.95rem] outline-none focus:border-[#00a0de]"
                   />
                 </label>
+                {callbackError ? (
+                  <p className="m-0 text-sm text-[#d51130]">{callbackError}</p>
+                ) : null}
                 <button
                   type="submit"
-                  className="mt-2 inline-flex h-11 items-center justify-center bg-[#d51130] px-5 text-[0.95rem] text-white hover:bg-[#a50d25]"
+                  disabled={callbackSending}
+                  className="mt-2 inline-flex h-11 items-center justify-center bg-[#d51130] px-5 text-[0.95rem] text-white hover:bg-[#a50d25] disabled:opacity-60"
                 >
-                  Send request
+                  {callbackSending ? 'Sending…' : 'Send request'}
                 </button>
               </form>
             )}
@@ -750,6 +768,34 @@ export default function DealerLocatorChrome({
         </div>
       ) : null}
     </div>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />
+      <path d="M16 16.5L20 20.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function TypeIcon({ kind }: { kind: 'mechanical' | 'digital' }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-flex h-[27px] w-[27px] shrink-0 items-center justify-center rounded-full bg-[#7e7c7c] text-white"
+    >
+      {kind === 'mechanical' ? (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14.5 3a3.5 3.5 0 0 0-3.45 4.1L4 14.15V20h5.85l1.2-1.2-1.55-1.55 1.4-1.4 1.55 1.55 1.4-1.4-1.55-1.55 2.05-2.05A3.5 3.5 0 1 0 14.5 3Zm0 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+        </svg>
+      ) : (
+        <svg width="12" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6Z" />
+        </svg>
+      )}
+    </span>
   );
 }
 

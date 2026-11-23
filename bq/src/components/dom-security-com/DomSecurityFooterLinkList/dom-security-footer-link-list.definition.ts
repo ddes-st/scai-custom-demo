@@ -232,7 +232,7 @@ export const footerLinkListDefinition = {
             name: "Programming Equipment",
             fields: {
               Link: {
-                text: "Programming Equipment",
+                text: "Apps & Software",
                 url: "/products/categories/apps-software",
               },
             },
@@ -241,7 +241,7 @@ export const footerLinkListDefinition = {
             name: "Media",
             fields: {
               Link: {
-                text: "Media",
+                text: "Transponders",
                 url: "/products/categories/transponders",
               },
             },

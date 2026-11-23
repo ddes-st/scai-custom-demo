@@ -26,13 +26,13 @@ export const Default = (props: ContactInformationSectionProps) => {
     <section
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="bg-[#00a0de] px-0 pb-8 pt-5 font-[Source_Sans_Pro] text-black lg:pb-20 lg:pt-5"
+      className="bg-[#00a0de] px-[15px] pt-5 pb-[36px] font-['Source_Sans_Pro',sans-serif] font-light text-[#333] lg:pb-[90px]"
     >
-      <div className="mx-auto w-full max-w-[970px] px-[15px] lg:max-w-[970px]">
+      <div className="mx-auto w-full max-w-[1170px]">
         <Text
           field={fields["Section Title"]}
           tag="h2"
-          className="mb-8 text-center text-[1.9rem] font-light leading-[1.1] lg:mb-8 lg:text-[2.55rem]"
+          className="mb-8 text-center text-[28px] font-light leading-[34px] text-[#333] lg:mb-[18px] lg:text-[45.9px] lg:leading-[50.04px]"
         />
         <div className="mx-auto w-[90%] border border-[#e9e9e9] bg-white p-4 text-[#7e7c7c] lg:p-12">
           <Text

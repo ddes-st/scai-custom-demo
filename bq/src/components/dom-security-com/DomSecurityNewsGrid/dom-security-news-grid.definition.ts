@@ -18,7 +18,15 @@ export const domSecurityNewsGridDefinition = {
         {
           name: "Data",
           sortOrder: 100,
-          fields: [{ name: "Title", type: "Single-Line Text" }],
+          fields: [
+            { name: "Title", type: "Single-Line Text" },
+            {
+              name: "Promoted",
+              type: "Multilist",
+              shared: true,
+              source: { root: "data", folder: ["News Teasers"] },
+            },
+          ],
         },
       ],
     },

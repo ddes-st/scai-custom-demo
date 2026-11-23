@@ -19,31 +19,25 @@ export const Default = (props: RecommendationCardProps) => {
     <article
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="group card relative min-h-0 pb-2 font-[Source_Sans_Pro] font-light text-black lg:min-h-[466px]"
+      className="font-['Source_Sans_Pro',sans-serif] font-light text-[#333]"
     >
-      <div className="relative h-[512px] overflow-hidden lg:h-[466px]">
+      <div className="dom-rec-media overflow-hidden">
         <Image
           field={fields.Image}
-          className="h-full w-full object-cover md:transition-transform md:duration-[350ms] md:ease-out md:group-hover:scale-[1.1]"
+          className="block h-auto w-full object-cover lg:h-[434px]"
         />
-        <div className="absolute bottom-0 left-3 right-3 bg-white px-3 py-3 shadow-[7px_7px_65px_-16px_rgba(0,0,0,0.75)] lg:left-[15px] lg:right-[15px] lg:px-[30px] lg:py-4">
-          <Text
-            field={fields.Label}
-            tag="h3"
-            className="mb-1 text-[0.78rem] font-medium leading-[0.89rem] text-[#d51130] lg:text-[1.1rem] lg:leading-[1.4rem]"
-          />
-          <Text
-            field={fields.Title}
-            tag="h3"
-            className="pr-8 text-[0.78rem] font-normal leading-[0.89rem] text-black lg:text-[1.35rem] lg:leading-normal"
-          />
-          <span
-            aria-hidden="true"
-            className="absolute bottom-3 right-3 text-[0.7rem] leading-none text-[#00a0de] lg:bottom-4 lg:right-5 lg:text-base"
-          >
-            →
-          </span>
-        </div>
+      </div>
+      <div className="dom-rec-copy pt-4 lg:pt-0">
+        <Text
+          field={fields.Label}
+          tag="h3"
+          className="m-0 mt-5 mb-[10px] text-[30.06px] font-light leading-9 text-[#333]"
+        />
+        <Text
+          field={fields.Title}
+          tag="p"
+          className="m-0 text-[21.96px] font-light leading-[39.96px] text-[#333]"
+        />
       </div>
     </article>
   );

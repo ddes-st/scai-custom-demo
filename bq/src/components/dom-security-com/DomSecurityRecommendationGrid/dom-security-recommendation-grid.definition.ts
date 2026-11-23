@@ -41,9 +41,9 @@ export const recommendationGridDefinition = {
     items: [
       {
         name: "Product Recommendations",
-        displayName: "Our product recommendations",
+        displayName: "Smart security without compromise",
         fields: {
-          Heading: "Our product recommendations"
+          Heading: "Smart security without compromise"
         },
       },
     ],

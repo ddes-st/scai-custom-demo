@@ -54,19 +54,19 @@ export default function DealerFinderSearch({
   };
 
   return (
-    <div className="relative mt-[0.72rem] lg:mt-0">
+    <div className="relative mt-0">
       <input
         aria-label={placeholder}
         placeholder={placeholder}
         value={postal}
         onChange={(e) => setPostal(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && go()}
-        className="block h-[2.3rem] w-full rounded-[3px] border border-[#cac9c9] bg-white px-[0.8rem] pr-[11rem] text-[0.83rem] font-normal text-black outline-none placeholder:text-[#999] focus:border-[#00a0de] lg:h-[2.8rem] lg:px-[1.1rem] lg:pr-[12rem] lg:text-[1.11rem]"
+        className="block h-[42px] w-full rounded-[3px] border border-[#cac9c9] bg-white px-[12px] pr-[11rem] font-['Source_Sans_Pro',sans-serif] text-[16px] font-normal text-black outline-none placeholder:text-[#999] focus:border-[#00a0de] lg:h-[50px] lg:px-[19.8px] lg:pr-[12.5rem] lg:text-[19.98px]"
       />
       <button
         type="button"
         onClick={go}
-        className="absolute right-0 top-0 inline-flex h-[2.3rem] items-center rounded-[50px] border border-transparent bg-[#d51130] px-5 text-[0.83rem] font-normal leading-none text-white no-underline transition-colors hover:bg-[#a50d25] lg:h-[2.8rem] lg:text-[1rem]"
+        className="absolute right-0 top-0 inline-flex h-[42px] items-center rounded-[50px] border border-transparent bg-[#d51130] px-5 font-['Source_Sans_Pro',sans-serif] text-[16px] font-normal leading-none text-white no-underline transition-colors hover:bg-[#a50d25] lg:h-[50px] lg:px-5 lg:text-[18px]"
       >
         {label}
         <span aria-hidden="true" className="ml-5 text-[1.35rem] leading-none">

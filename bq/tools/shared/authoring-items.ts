@@ -822,18 +822,26 @@ export async function ensureItemTemplate(options: {
   }
 
   if (existingId) {
-    const updated = await updateItemTemplate({
-      templateId: existingId,
-      name,
-      sections: options.sections,
-      baseTemplates: options.baseTemplates,
-      icon: options.icon,
-      path: sitecorePath,
-      endpointName: options.endpointName,
-      auth: options.auth,
-      fetchImpl: options.fetchImpl,
-    });
-    return { ...updated, created: false };
+    try {
+      const updated = await updateItemTemplate({
+        templateId: existingId,
+        name,
+        sections: options.sections,
+        baseTemplates: options.baseTemplates,
+        icon: options.icon,
+        path: sitecorePath,
+        endpointName: options.endpointName,
+        auth: options.auth,
+        fetchImpl: options.fetchImpl,
+      });
+      return { ...updated, created: false };
+    } catch (err) {
+      // Re-applying a template resends sections that Sitecore already has.
+      if (!isNameExistsError(err)) throw err;
+      const id = normalizeId(existingId);
+      if (sitecorePath) cacheAuthoringPathId(sitecorePath, id);
+      return { itemId: id, path: sitecorePath, created: false };
+    }
   }
 
   try {
@@ -858,18 +866,25 @@ export async function ensureItemTemplate(options: {
       fetchImpl: options.fetchImpl,
     });
     if (!again?.itemId) throw err;
-    const updated = await updateItemTemplate({
-      templateId: again.itemId,
-      name,
-      sections: options.sections,
-      baseTemplates: options.baseTemplates,
-      icon: options.icon,
-      path: sitecorePath,
-      endpointName: options.endpointName,
-      auth: options.auth,
-      fetchImpl: options.fetchImpl,
-    });
-    return { ...updated, created: false };
+    try {
+      const updated = await updateItemTemplate({
+        templateId: again.itemId,
+        name,
+        sections: options.sections,
+        baseTemplates: options.baseTemplates,
+        icon: options.icon,
+        path: sitecorePath,
+        endpointName: options.endpointName,
+        auth: options.auth,
+        fetchImpl: options.fetchImpl,
+      });
+      return { ...updated, created: false };
+    } catch (updateErr) {
+      if (!isNameExistsError(updateErr)) throw updateErr;
+      const id = normalizeId(again.itemId);
+      if (sitecorePath) cacheAuthoringPathId(sitecorePath, id);
+      return { itemId: id, path: sitecorePath, created: false };
+    }
   }
 }
 

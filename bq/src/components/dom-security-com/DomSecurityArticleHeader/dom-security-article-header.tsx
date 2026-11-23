@@ -1,16 +1,25 @@
 import { Text } from "@sitecore-content-sdk/nextjs";
 import type { TextField } from "@sitecore-content-sdk/nextjs";
 import { ComponentProps } from "lib/component-props";
+import { preferField, routeFields } from "../news/page-fields.util";
 
 interface Fields {
   Title: TextField;
   Date: TextField;
 }
 
-type DomSecurityArticleHeaderProps = ComponentProps & { fields: Fields };
+type DomSecurityArticleHeaderProps = ComponentProps & {
+  fields: Fields;
+  page?: { layout?: Parameters<typeof routeFields>[0] };
+};
 
 export const Default = (props: DomSecurityArticleHeaderProps) => {
-  const { fields } = props;
+  const route = routeFields(props.page?.layout);
+  const title = preferField(
+    props.fields?.Title,
+    (route.NavigationTitle || route.Title) as TextField | undefined,
+  );
+  const date = preferField(props.fields?.Date, route.Date as TextField | undefined);
   const params = props.params ?? props.rendering?.params ?? {};
   const renderingId = params.RenderingIdentifier || params.id;
 
@@ -18,18 +27,18 @@ export const Default = (props: DomSecurityArticleHeaderProps) => {
     <div
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="mx-auto w-full px-[15px] pb-0 lg:max-w-[1170px]"
+      className="w-full bg-white"
     >
-      <div className="mb-4 md:mb-20 lg:mb-20">
+      <div className="mx-auto mb-2 w-full px-[15px] pt-6 lg:max-w-[1170px]">
         <Text
-          field={fields.Title}
+          field={title}
           tag="h1"
-          className="m-0 w-full font-[Source_Sans_Pro] text-[1.56rem] font-light leading-[1.56rem] text-black md:text-[3.9rem] md:leading-[1.1]"
+          className="m-0 w-full font-[Source_Sans_Pro] text-[2.2rem] font-light leading-[1.15] text-black md:text-[70px] md:leading-[77px]"
         />
         <Text
-          field={fields.Date}
+          field={date}
           tag="p"
-          className="m-0 mt-5 w-full font-[Source_Sans_Pro] text-[0.83rem] font-light leading-normal text-black md:mt-[1.1rem] md:text-[1.67rem] md:leading-normal"
+          className="m-0 mt-5 mb-2.5 w-full font-[Source_Sans_Pro] text-[1.15rem] font-light leading-8 text-[#333] md:text-[30px] md:leading-9"
         />
       </div>
     </div>

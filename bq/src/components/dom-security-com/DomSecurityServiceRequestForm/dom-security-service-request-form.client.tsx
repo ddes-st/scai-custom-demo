@@ -13,7 +13,13 @@ import {
 } from '../_demo/demo-service-catalog';
 import { useDemoSession } from '../_demo/demo-session';
 
-export default function ServiceRequestFormChrome() {
+type ServiceRequestFormChromeProps = {
+  endpoint: string;
+};
+
+export default function ServiceRequestFormChrome({
+  endpoint,
+}: ServiceRequestFormChromeProps) {
   const { isLoggedIn, profile } = useDemoSession();
   const [productId, setProductId] = useState(DEFAULT_PRODUCT_ID);
   const [requestId, setRequestId] = useState(DEFAULT_REQUEST_ID);
@@ -27,6 +33,8 @@ export default function ServiceRequestFormChrome() {
   const [message, setMessage] = useState('');
   const [newsletter, setNewsletter] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const requests = useMemo(() => getRequestsForProduct(productId), [productId]);
   const product = getProductById(productId);
@@ -56,19 +64,57 @@ export default function ServiceRequestFormChrome() {
     return Array.from(map.entries());
   }, []);
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    if (submitting) return;
     const requestLabel =
       requests.find((r) => r.id === requestId)?.label || requestId;
-    pushServiceRequest({
+    const preferredTimeLabel =
+      PREFERRED_TIME_OPTIONS.find((option) => option.id === preferredTime)
+        ?.label || preferredTime;
+    const payload = {
       productId,
       productName: product?.name || productId,
       requestType: requestLabel,
+      firstName,
+      lastName,
       email,
+      phone,
       preferredTime,
+      preferredTimeLabel,
+      message,
       newsletter,
-    });
-    setSubmitted(true);
+    };
+
+    setSubmitError('');
+    setSubmitting(true);
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        setSubmitError('We could not send your request. Please try again.');
+        return;
+      }
+      pushServiceRequest({
+        productId,
+        productName: payload.productName,
+        requestType: requestLabel,
+        email,
+        preferredTime,
+        newsletter,
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitError('We could not send your request. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -233,11 +279,18 @@ export default function ServiceRequestFormChrome() {
         </label>
       </div>
 
+      {submitError ? (
+        <p className="mt-5 mb-0 text-[0.9rem] text-[#d51130]" role="alert">
+          {submitError}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="mt-6 inline-flex h-11 items-center justify-center bg-[#d51130] px-6 text-[0.95rem] font-normal text-white hover:bg-[#a50d25]"
+        disabled={submitting}
+        className="mt-6 inline-flex h-11 items-center justify-center bg-[#d51130] px-6 text-[0.95rem] font-normal text-white hover:bg-[#a50d25] disabled:opacity-60"
       >
-        Submit request
+        {submitting ? 'Sending…' : 'Submit request'}
         <span aria-hidden="true" className="ml-3 text-[1.2rem] leading-none">
           →
         </span>

@@ -1,7 +1,8 @@
-import { AppPlaceholder, Link, Text } from '@sitecore-content-sdk/nextjs';
-import componentMap from '.sitecore/component-map';
+import { Link, Text } from '@sitecore-content-sdk/nextjs';
 import type { LinkField, TextField } from '@sitecore-content-sdk/nextjs';
 import type { ComponentWithContextProps } from 'lib/component-props';
+import NewsArticleList from '../news/news-article-list.client';
+import { promotedKeysFromFields, resolveNewsTeaserMaxItems } from '../news/news-articles.util';
 
 interface Fields {
   Heading: TextField;
@@ -14,48 +15,33 @@ export const Default = (props: NewsTeasersProps) => {
   const { fields } = props;
   const params = props.params ?? props.rendering?.params ?? {};
   const renderingId = params.RenderingIdentifier || params.id;
-  const dynId = params.DynamicPlaceholderId;
-  const placeholderBase = 'news-teasers';
-  const placeholderName = dynId ? `${placeholderBase}-${dynId}` : placeholderBase;
+  const promotedKeys = promotedKeysFromFields(fields);
+  const maxItems = resolveNewsTeaserMaxItems(params);
 
   return (
     <section
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="bg-white px-[15px] pt-8 pb-12 font-[Source_Sans_Pro] text-[18px] font-light text-[#333] lg:pt-20 lg:pb-20"
+      className="bg-white px-[15px] pt-[36px] pb-12 font-['Source_Sans_Pro',sans-serif] text-[18px] font-light text-[#333] lg:pt-[90px] lg:pb-[90px]"
     >
       <div className="mx-auto w-full max-w-[1170px]">
-        <div className="mb-4 flex items-start justify-between lg:mb-[2.78rem]">
+        <div className="flex items-start justify-between gap-4">
           <Text
             field={fields.Heading}
             tag="h2"
-            className="m-0 border-l-[3px] border-[#d51130] pl-4 text-[1.278rem] font-light leading-[1.09] text-[#111] lg:pl-4 lg:text-[2.55rem] lg:leading-[2.78rem]"
+            className="dom-accent dom-accent-tight m-0 max-w-[70%]"
           />
           <Link
             field={fields["More Link"]}
-            className="mt-1 shrink-0 text-[0.78rem] font-normal leading-[1.35] text-[#00a0de] no-underline lg:mt-4 lg:text-[1rem] lg:leading-normal"
+            className="mt-[18px] shrink-0 text-[19.8px] font-normal leading-[28px] text-[#00a0de] no-underline hover:text-[#00a0de]"
             showLinkTextWithChildrenPresent
           >
-            <span aria-hidden="true" className="ml-3 text-[1.15rem] leading-none lg:ml-5">
+            <span aria-hidden="true" className="ml-5 text-[18px] leading-none">
               →
             </span>
           </Link>
         </div>
-        {/* Capture: `.row.eh-grid` + three `.col-sm-4` — equal-width columns, stretch cards */}
-        <div
-          className={[
-            "grid grid-cols-1 gap-9",
-            "md:grid-cols-3 md:gap-x-[30px] md:gap-y-0",
-            "md:[&>*]:min-w-0 md:[&>*]:h-full",
-          ].join(" ")}
-        >
-          <AppPlaceholder
-            name={placeholderName}
-            rendering={props.rendering}
-            page={props.page}
-            componentMap={componentMap}
-          />
-        </div>
+        <NewsArticleList variant="home" promotedKeys={promotedKeys} maxItems={maxItems} />
       </div>
     </section>
   );

@@ -17,6 +17,7 @@ import type {
 } from "../types";
 import { toSystemName } from "../../shared/naming";
 import { applySitePresentationDefinition } from "./site-presentation";
+import { ensureProjectPageTemplate } from "./page-template";
 
 export type AnyPageDefinition = PageDefinition | PageStubDefinition;
 
@@ -30,6 +31,18 @@ export async function applyPageStubDefinition(
     ? definition.routePath
     : `/${definition.routePath}`;
 
+  const pageTemplate =
+    definition.kind === "page" ? definition.pageTemplate : undefined;
+  const pageFields = definition.kind === "page" ? definition.fields : undefined;
+  let pageTemplateId = definition.pageTemplateId;
+  if (pageTemplate?.name?.trim()) {
+    const ensuredTemplate = await ensureProjectPageTemplate({
+      collectionSystem,
+      name: pageTemplate.name.trim(),
+    });
+    pageTemplateId = ensuredTemplate.templateId;
+  }
+
   const ensured = await ensureHomePageFromRoute({
     collectionSystem,
     siteSystem,
@@ -38,7 +51,7 @@ export async function applyPageStubDefinition(
     sourceLanguage: definition.culture || null,
     cultures: definition.cultures ?? [],
     handleKey: saiHandleFrom(definition.definitionKey, 1),
-    leafTemplateId: definition.pageTemplateId,
+    leafTemplateId: pageTemplateId,
   });
 
   let stats = ensured ? ensured.stats : emptyWriteStats();
@@ -59,7 +72,9 @@ export async function applyPageStubDefinition(
         [pageKey]: {
           routePath: isHome ? undefined : pathname,
           navigationTitle: definition.navigationTitle || definition.name,
-          pageTemplateId: definition.pageTemplateId,
+          pageTemplateId,
+          pageTemplate,
+          fields: pageFields,
           renderings,
         },
       },

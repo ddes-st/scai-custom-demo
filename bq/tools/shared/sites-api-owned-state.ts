@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { findSaiModuleJsonPath } from "../definitions/apply/module-json";
+import { BQ_DEFINITIONS_DIR } from "./paths";
 
 /**
  * Desired-state inventory for Sites API collections/sites managed by BQ.
@@ -10,7 +10,8 @@ import { findSaiModuleJsonPath } from "../definitions/apply/module-json";
  * (by definitionKey). On the next run, keys missing from current definitions are
  * deleted remotely — same “remove the definition file → remove the entity” model.
  *
- * File lives next to the SAI `*.module.json` and should be committed.
+ * Stored under `.bq/definitions`. Content is written through the Authoring API;
+ * this inventory does not depend on a serialization module.
  */
 export type OwnedCollectionRecord = {
   systemName: string;
@@ -32,8 +33,7 @@ export type SitesApiOwnedState = {
 const STATE_FILE_NAME = "bq-sites-api-owned.json";
 
 export function sitesApiOwnedStatePath(): string {
-  const moduleJson = findSaiModuleJsonPath();
-  return path.join(path.dirname(moduleJson), STATE_FILE_NAME);
+  return path.join(BQ_DEFINITIONS_DIR, STATE_FILE_NAME);
 }
 
 export function emptySitesApiOwnedState(): SitesApiOwnedState {
@@ -68,6 +68,7 @@ export function writeSitesApiOwnedState(state: SitesApiOwnedState): void {
       Object.entries(state.sites).sort(([a], [b]) => a.localeCompare(b)),
     ),
   };
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
   console.log(
     `[sites-api-owned] wrote ${filePath} ` +

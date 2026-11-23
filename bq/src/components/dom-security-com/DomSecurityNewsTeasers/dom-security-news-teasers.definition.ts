@@ -28,12 +28,34 @@ export const newsTeasersDefinition = {
           fields: [
             { name: "Heading", type: "Single-Line Text" },
             { name: "More Link", type: "General Link" },
+            {
+              name: "Promoted",
+              type: "Multilist",
+              shared: true,
+              source: { root: "data", folder: ["News Teasers"] },
+            },
           ],
         },
       ],
     },
   },
   variants: [{ name: "Default" }],
+  parameters: {
+    sections: [
+      {
+        name: "Settings",
+        sortOrder: 100,
+        fields: [
+          {
+            name: "Maximum Items",
+            type: "Integer",
+            shared: true,
+            default: "3",
+          },
+        ],
+      },
+    ],
+  },
   placeholders: [
     {
       key: "news-teasers",

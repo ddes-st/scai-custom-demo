@@ -42,11 +42,15 @@ async function fetchChildrenPage(
   return payload.data ?? null;
 }
 
-/** Load all Edge children for a path, paging past the default first:10 limit. */
+/**
+ * Load Edge children for a path, paging past the default first:10 limit.
+ * `maxItems` stops once that many raw children are in hand, before the next page.
+ */
 export async function fetchWildcardChildren(options: {
   path: string;
   language?: string;
   signal?: AbortSignal;
+  maxItems?: number;
 }): Promise<WildcardLinkedItem[]> {
   const language = options.language?.trim() || 'en';
   const collected: WildcardChildRaw[] = [];
@@ -58,6 +62,9 @@ export async function fetchWildcardChildren(options: {
     const results = children?.results ?? [];
     collected.push(...results);
 
+    if (options.maxItems && collected.length >= options.maxItems) {
+      break;
+    }
     if (!children?.pageInfo?.hasNext || !children.pageInfo.endCursor) {
       break;
     }

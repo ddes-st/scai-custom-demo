@@ -220,7 +220,12 @@ export default function NavigationChrome({
   return (
     <>
       {/* Desktop top-right utilities — capture `.top-links { top: 0; right: 15px }` (flush with logo top, not mid-bar). */}
-      <div className="pointer-events-auto absolute right-[15px] top-0 z-50 hidden items-start gap-2 lg:flex">
+      <div
+        className={cn(
+          "pointer-events-auto absolute top-0 z-50 hidden items-start gap-2 lg:flex",
+          productsOpen ? "right-[56px]" : "right-[15px]",
+        )}
+      >
         <DemoAccountChrome />
         {languageChip(false, langRefDesktop)}
         {searchChip}
@@ -333,15 +338,15 @@ export default function NavigationChrome({
               <span aria-hidden="true">←</span>
               Back to menu
             </button>
-            <div className="border-t border-[#e5e5e5] px-4 py-4 max-lg:border-0 max-lg:px-4 max-lg:py-4 lg:px-6 lg:py-5">
-              <div className="grid grid-cols-1 gap-0 lg:grid-cols-3 lg:gap-0 lg:divide-x-0">
+            <div className="border-t border-[#e5e5e5] px-[15px] py-6 max-lg:border-0 max-lg:px-4 max-lg:py-4">
+              <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-3 lg:divide-x lg:divide-[#e3e2e2] [&>:nth-child(n+4)]:hidden [&_header]:hidden">
                 {mega}
               </div>
               {megaFooter}
             </div>
             <button
               type="button"
-              className="absolute right-3 top-3 hidden h-8 w-8 items-center justify-center text-black lg:inline-flex"
+              className="absolute top-3 right-3 hidden h-8 w-8 items-center justify-center text-[22px] leading-none text-black lg:inline-flex lg:top-[-80px] lg:right-[8px]"
               aria-label="close"
               onClick={() => setProductsOpen(false)}
             >

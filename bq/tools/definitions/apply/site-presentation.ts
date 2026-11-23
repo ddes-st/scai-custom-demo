@@ -18,6 +18,10 @@ import { braceGuid, canonicalItemId, stableGuid, toScsYamlGuid } from "../../sha
 import { resolveItemIdByPath } from "../../shared/resolve-item-id-by-path";
 import { saiHandleFrom } from "../../shared/sai-handle";
 import { encodeFieldNamesParam } from "./variants";
+import {
+  applyPageTemplateBindings,
+  ensureProjectPageTemplate,
+} from "./page-template";
 import { getProjectRenderingsSitecorePath } from "../../shared/data-placement";
 import { projectRenderingPathLeaf } from "./component-to-rendering";
 import { BQ_DEFINITIONS_DIR } from "../../shared/paths";
@@ -97,6 +101,8 @@ const FIELD_PARTIAL_DESIGNS = "0966b999-0d0e-4278-acc9-9da69d461fe6";
 const PAGE_DESIGN_TEMPLATE_ID = "1105b8f8-1e00-426b-bf1f-c840742d827b";
 /** Default device in XM Cloud / JSS layouts. */
 const DEVICE_DEFAULT = "{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}";
+/** Headless Layout assigned on the device. Edge drops presentation that has no layout item. */
+const HEADLESS_LAYOUT = "{96E5F4BA-A2CF-4A4C-A4E7-64DA88226362}";
 const LOG_PREFIX = "[bq:apply:site-presentation]";
 
 export type CmAlignLookupOptions = {
@@ -212,6 +218,8 @@ type ResolvedHomeChild = {
 type ResolvedHomeRendering = HomeRenderingEntry & {
   renderingId: string | null;
   datasourceId: string | null;
+  /** Headless Variant item GUID when a non-Default variant is set on the root. */
+  fieldNamesId?: string | null;
   uid: string;
   /** Assigned when this entry has nested children (dynamic placeholder parent). */
   dynamicPlaceholderId?: number;
@@ -542,9 +550,22 @@ export async function applySitePresentationDefinition(
   // explicit pageTemplateIds from presentation.pages.
   const pages = definition.pages || {};
   const pageTemplateIds = new Set<string>();
-  for (const pageDef of Object.values(pages)) {
+  const ensuredTemplates = new Map<
+    string,
+    { templateId: string; templatePath: string }
+  >();
+  for (const [pageKey, pageDef] of Object.entries(pages)) {
     const tid = pageDef?.pageTemplateId?.replace(/[{}]/g, "").trim().toLowerCase();
     if (tid) pageTemplateIds.add(tid);
+    const templateName = pageDef?.pageTemplate?.name?.trim();
+    if (!templateName) continue;
+    const ensuredTemplate = await ensureProjectPageTemplate({
+      collectionSystem,
+      name: templateName,
+      endpointName,
+    });
+    ensuredTemplates.set(pageKey, ensuredTemplate);
+    pageTemplateIds.add(canonicalItemId(ensuredTemplate.templateId));
   }
   const projectPageId = await resolvePathId(
     site,
@@ -579,11 +600,14 @@ export async function applySitePresentationDefinition(
         registry,
         site,
       );
-      const datasourceId = await resolveDatasourceId(
-        entry,
+      const datasourceId =
+        entry.datasourceItem === "$page"
+          ? null
+          : await resolveDatasourceId(entry, registry, site, pageKey);
+      const fieldNamesId = await resolveChildFieldNamesId(
+        { definitionKey: entry.definitionKey, variant: entry.variant },
         registry,
         site,
-        pageKey,
       );
       const childDefs = entry.children || [];
       const { parentPhKeys, childPlaceholderKey } =
@@ -617,6 +641,7 @@ export async function applySitePresentationDefinition(
         ...entry,
         renderingId,
         datasourceId,
+        fieldNamesId,
         uid: braceGuid(
           stableGuid(handle, `${uidPrefix}:${entry.definitionKey}:${index}`),
         ),
@@ -640,7 +665,8 @@ export async function applySitePresentationDefinition(
         sourceLanguage: "en",
         cultures: siteCultures,
         handleKey: saiHandleFrom(`${definition.definitionKey}:${pageKey}`, 1),
-        leafTemplateId: pageDef.pageTemplateId,
+        leafTemplateId:
+          ensuredTemplates.get(pageKey)?.templateId || pageDef.pageTemplateId,
         endpointName: cmAlign?.endpointName,
         lookupPath: cmAlign?.lookupPath,
         skipCm: cmAlign?.skipCm,
@@ -662,6 +688,10 @@ export async function applySitePresentationDefinition(
       continue;
     }
 
+    for (const row of resolved) {
+      if (row.datasourceItem === "$page") row.datasourceId = pageId;
+    }
+
     assertResolvedPageRenderingsComplete(
       pageKey,
       collectionSystem,
@@ -670,7 +700,11 @@ export async function applySitePresentationDefinition(
     );
     const withRendering = resolved;
     if (withRendering.length) {
-      const layoutXml = buildHomeRenderingsXml(withRendering);
+      // Custom page templates only keep a route on Edge when the item layout
+      // assigns the headless layout and leaves component XML to the page design.
+      const layoutXml = pageDef.pageTemplate
+        ? `<r xmlns:xsd="http://www.w3.org/2001/XMLSchema"><d id="${DEVICE_DEFAULT}" l="${HEADLESS_LAYOUT}" /></r>`
+        : buildHomeRenderingsXml(withRendering);
       try {
         await updateItem({
           itemId: pageId,
@@ -686,6 +720,35 @@ export async function applySitePresentationDefinition(
         console.warn(
           `${LOG_PREFIX} failed to patch ${pageSitecorePath}: ${err instanceof Error ? err.message : err}`,
         );
+      }
+      const boundTemplate = ensuredTemplates.get(pageKey);
+      if (boundTemplate && pageDef.pageTemplate) {
+        try {
+          const standardValuesLayoutXml = pageDef.pageTemplate
+            ? layoutXml
+            : buildHomeRenderingsXml(
+                withRendering.map((row) => ({ ...row, datasourceId: null })),
+              );
+          stats = mergeWriteStats(
+            stats,
+            await applyPageTemplateBindings({
+              collectionSystem,
+              siteSystem,
+              templateId: boundTemplate.templateId,
+              templatePath: boundTemplate.templatePath,
+              insertOnlyUnder: pageDef.pageTemplate.insertOnlyUnder || [],
+              fields: pageDef.fields,
+              pageId,
+              pagePath: pageSitecorePath,
+              standardValuesLayoutXml,
+              endpointName,
+            }),
+          );
+        } catch (err) {
+          console.warn(
+            `${LOG_PREFIX} page template bindings for ${pageSitecorePath}: ${err instanceof Error ? err.message : err}`,
+          );
+        }
       }
     }
 
@@ -1081,10 +1144,19 @@ async function resolveRenderingId(
 ): Promise<string | null> {
   const def = registry.get(definitionKey);
   if (!def || (def.kind !== "component" && def.kind !== "rendering")) return null;
-  const name = projectRenderingPathLeaf(def);
-  if (!name) return null;
-  const sitecorePath = `${getProjectRenderingsSitecorePath(site.collectionSystem)}/${name}`;
-  return resolvePathId(site, sitecorePath);
+  const folder = getProjectRenderingsSitecorePath(site.collectionSystem);
+  const names = [
+    projectRenderingPathLeaf(def),
+    def.kind === "component" ? def.componentName : "",
+    def.name,
+  ]
+    .map((name) => String(name || "").trim())
+    .filter(Boolean);
+  for (const name of [...new Set(names)]) {
+    const id = await resolvePathId(site, `${folder}/${name}`);
+    if (id) return id;
+  }
+  return null;
 }
 
 /**
@@ -1296,6 +1368,7 @@ export function buildHomeRenderingsXml(entries: ResolvedHomeRendering[]): string
       entry.dynamicPlaceholderId != null
         ? `DynamicPlaceholderId=${entry.dynamicPlaceholderId}`
         : "",
+      entry.fieldNamesId ? encodeFieldNamesParam(entry.fieldNamesId) : "",
       encodeRenderingIdentifierParam(entry.renderingIdentifier),
     ]);
     flat.push({
@@ -1319,7 +1392,8 @@ export function buildHomeRenderingsXml(entries: ResolvedHomeRendering[]): string
     `<r xmlns:p="p" xmlns:s="s"`,
     `  p:p="1">`,
     `  <d`,
-    `    id="${DEVICE_DEFAULT}">`,
+    `    id="${DEVICE_DEFAULT}"`,
+    `    l="${HEADLESS_LAYOUT}">`,
   ];
 
   for (let i = 0; i < flat.length; i++) {

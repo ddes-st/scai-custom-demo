@@ -48,11 +48,11 @@ export const recommendationCardDefinition = {
         displayName: "Open and close the frontdoor with your smartphone",
         fields: {
           Image: {
-            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-Global/Image/Products/DOM-Tapkey/Dom-Tapkey-door-bike-small.png?mw=900&crop=1&modified=20180110122433&extension=webp",
-            alt: "DOM Tapkey door bike small",
+            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-NL/Image/Products/Mechanical/Locks/Lifestyle-Pictures-IX/IX-bro-story-lifestyle40-0519_activities.jpg?h=1287&iar=0&w=1928&modified=20190808122635&extension=webp",
+            alt: "ix-mailbox",
           },
-          Label: "DOM Tapkey",
-          Title: "Open and close the frontdoor with your smartphone"
+          Label: "Mechanical Locking Systems",
+          Title: "We develop high-quality mechanical locking systems that ensure durability, precision, and optimal security. Discover our mechanical locking solutions."
         },
       },
       {
@@ -60,11 +60,11 @@ export const recommendationCardDefinition = {
         displayName: "Create a tailor-made security solution for your building",
         fields: {
           Image: {
-            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-NL/Image/Products/Digital/ENiQ/teaser_eniq.jpg?mw=900&crop=1&modified=20181218135334&extension=webp",
-            alt: "Create a tailor-made security solution for your building",
+            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-NL/Landingspages/Elektronisch-deurbeslag/Card.jpg?h=2505&iar=0&w=3750&modified=20230728135314&extension=webp",
+            alt: "DOM Guard on black door",
           },
-          Label: "ENiQ Security Ecosystem",
-          Title: "Create a tailor-made security solution for your building"
+          Label: "Access Control System",
+          Title: "Loss of keys, unauthorized access, and inefficient key management are a thing of the past with our digital locking systems. Manage your access control system with an App or Software."
         },
       },
       {
@@ -72,11 +72,11 @@ export const recommendationCardDefinition = {
         displayName: "Our most intelligent mechanical security system",
         fields: {
           Image: {
-            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-NL/Image/Professionals/Cards/twinstar_card_prof_1.jpg?mw=900&crop=1&modified=20190809064531&extension=webp",
-            alt: "door open with key and office background",
+            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-BE/image/About-us.jpg?h=800&iar=0&w=1920&modified=20211231080756&extension=webp",
+            alt: "Building DOM Belgium",
           },
-          Label: "DOM ix TwinStar",
-          Title: "Our most intelligent mechanical security system"
+          Label: "DOM Hoberg",
+          Title: "We offer over 50 years of experience in security technology. With more than 150 reliable dealers, there's always one nearby."
         },
       },
     ],

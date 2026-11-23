@@ -82,3 +82,117 @@ code.scpm,
     animation: none;
   }
 }
+
+/*
+ * DOM Security homepage type. The live site sets html { font-size: 18px }
+ * and Source Sans Pro. These faces and heading metrics match that scale
+ * without changing the document root (the demo audience toggle stays put).
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+.dom-accent {
+  margin: 0 0 90px;
+  color: #333;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 45.9px;
+  font-weight: 300;
+  line-height: 50.04px;
+}
+
+.dom-accent::before {
+  content: "";
+  display: inline-block;
+  width: 3.6px;
+  height: 28.8px;
+  margin-right: 14.4px;
+  background: #d51130;
+  vertical-align: -4px;
+}
+
+.dom-accent-tight {
+  margin-bottom: 50px;
+}
+
+.dom-accent-snug {
+  margin-bottom: 9px;
+}
+
+@media (min-width: 1024px) {
+  .dom-accent-aside {
+    max-width: 320px;
+    margin-bottom: 0;
+  }
+}
+
+/* Zigzag recommendation rows: image left, then image right. */
+.dom-rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media (min-width: 1024px) {
+  .dom-rec-list > * {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 49px;
+  }
+
+  .dom-rec-list > *:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .dom-rec-list .dom-rec-media {
+    width: 395px;
+    flex: 0 0 395px;
+  }
+
+  .dom-rec-list .dom-rec-copy {
+    width: 345px;
+    flex: 0 0 345px;
+  }
+}
+
+/* Sitecore AI Design → Style "Gray background" (class container-gray-background). */
+.container-gray-background {
+  background-color: #f5f5f5;
+}

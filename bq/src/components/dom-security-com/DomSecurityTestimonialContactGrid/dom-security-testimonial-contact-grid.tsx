@@ -32,14 +32,21 @@ export const Default = (props: TestimonialContactGridProps) => {
   const organizationLogo = fields?.['Organization Logo'];
   const params = props.params ?? props.rendering?.params ?? {};
   const renderingId = params.RenderingIdentifier || params.id;
+  // Sitecore AI Design → Style. "Gray background" emits container-gray-background.
+  const designStyles = String(params.styles || params.Styles || '').trim();
 
   return (
     <section
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="bg-[#f5f5f5] py-8 font-[Source_Sans_Pro] text-black md:py-20"
+      className={[
+        "px-[15px] pt-8 pb-4 font-['Source_Sans_Pro',sans-serif] font-light text-[#333] lg:pt-[90px] lg:pb-[90px]",
+        designStyles,
+      ]
+        .filter(Boolean)
+        .join(' ')}
     >
-      <div className="mx-auto w-full max-w-[1170px] px-[15px]">
+      <div className="mx-auto w-full max-w-[1170px]">
         {/*
           Source: .eh-grid.row + col-sm-6 / col-lg-6.
           Use CSS grid (not flex+w-1/2+gap) so 50/50 never wraps on desktop.
@@ -47,12 +54,12 @@ export const Default = (props: TestimonialContactGridProps) => {
         <div className="grid grid-cols-1 items-stretch gap-0 md:grid-cols-2 md:min-h-[433px]">
           {/* Left: cyan testimonial — same column height as right */}
           <div className="flex min-h-[178px] min-w-0 px-0 md:min-h-0 md:px-[15px]">
-            <div className="flex h-full w-full flex-col justify-center bg-[#00a0de] px-[1.2rem] py-4 text-white md:px-8 md:py-8">
+            <div className="flex h-full w-full flex-col justify-center bg-[#00a0de] px-[1.2rem] py-4 text-white lg:p-9">
               <RichText
                 field={Testimonial}
-                className="mb-2.5 text-left text-[0.83rem] font-light italic leading-normal md:mb-0 md:text-[1.8rem] md:leading-normal [&_p]:mb-0 [&_p]:mt-0 [&_p:empty]:hidden"
+                className="mb-2.5 text-left text-[18px] font-light italic leading-normal lg:mb-0 lg:text-[32.4px] lg:leading-normal [&_p]:mb-0 [&_p]:mt-0 [&_p:empty]:hidden"
               />
-              <div className="mt-auto pt-4 text-[0.78rem] font-normal leading-none text-white md:text-base md:font-semibold md:leading-normal">
+              <div className="mt-auto pt-4 text-[14px] font-normal leading-none text-white lg:text-[18px] lg:leading-normal">
                 <Text field={Author} />
               </div>
             </div>
@@ -61,7 +68,7 @@ export const Default = (props: TestimonialContactGridProps) => {
           {/* Right: contact card — no vertical margin (that made it shorter than the quote) */}
           <div className="mt-4 flex min-h-[246px] min-w-0 px-0 md:mt-0 md:min-h-0 md:px-[15px]">
             <div className="flex h-full w-full flex-col bg-white px-4 py-4 shadow-[3px_3px_64px_-16px_rgba(0,0,0,0.25)] md:px-8 md:py-8 md:shadow-[3px_3px_64px_-10px_rgba(0,0,0,0.75)]">
-              <h2 className="m-0 mb-5 text-center text-[1.278rem] font-light leading-[1.39rem] text-black md:mb-6 md:text-[2.55rem] md:leading-[2.78rem]">
+              <h2 className="m-0 mb-5 text-center text-[23px] font-light leading-[28px] text-[#333] lg:mb-6 lg:text-[45.9px] lg:leading-[50.04px]">
                 <Text field={Title} />
               </h2>
 

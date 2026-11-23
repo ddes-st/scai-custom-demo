@@ -1173,9 +1173,29 @@ export type SitePresentationDefinition = DefinitionKeyed & {
       routePath?: string;
       navigationTitle?: string;
       pageTemplateId?: string;
+      pageTemplate?: PageTemplateBinding;
+      fields?: PageContentFields;
       renderings?: PageRenderingEntry[];
     };
   };
+};
+
+/**
+ * Page-item field value. Image fields use `{ url, alt }`; everything else is
+ * the raw field value (plain text or HTML).
+ */
+export type PageFieldValue = string | { url: string; alt?: string };
+
+export type PageContentFields = Record<string, PageFieldValue>;
+
+/**
+ * Custom page template (inherits the site Page template).
+ * `insertOnlyUnder` routes are the only places that offer this template
+ * in Insert Options.
+ */
+export type PageTemplateBinding = {
+  name: string;
+  insertOnlyUnder: string[];
 };
 
 /** One headless-main (or nested) rendering placement on a page or legacy presentation.pages entry. */
@@ -1183,8 +1203,16 @@ export type PageRenderingEntry = {
   definitionKey: string;
   placeholder: string;
   role?: "page" | "partial-header" | "partial-footer" | "partial-cookie";
-  /** Must match a content.items[].name on the component definition (s:ds). */
+  /**
+   * Content item name (s:ds), or `"$page"` to bind the page item itself
+   * so the rendering reads this page template's fields.
+   */
   datasourceItem?: string;
+  /**
+   * Headless variant name matching `variants[].name` / TSX `export const`.
+   * Omit or `"Default"` → no `FieldNames` param.
+   */
+  variant?: string;
   renderingIdentifier?: string;
   children?: PresentationNestedChild[];
 };
@@ -1232,6 +1260,13 @@ export type PageDefinition = DefinitionKeyed & {
   culture?: string;
   cultures?: string[];
   pageTemplateId?: string;
+  /**
+   * Create this template (inheriting the site Page template) and limit
+   * Insert Options to `insertOnlyUnder`. The page item uses the template.
+   */
+  pageTemplate?: PageTemplateBinding;
+  /** Field values stored on the page item (the template's own fields). */
+  fields?: PageContentFields;
   /** headless-main body only — cookie/header/footer live on site-presentation partialDesigns. */
   renderings?: PageRenderingEntry[];
 };

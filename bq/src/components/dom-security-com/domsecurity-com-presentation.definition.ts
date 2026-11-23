@@ -29,6 +29,7 @@ export const domsecuritycomPresentation = {
     "dom-security-dealer-locator",
     "dom-security-article-header",
     "dom-security-share-bar",
+    "dom-security-service-request-form",
     "dom-security-editorial-article-body",
     "dom-security-product",
     "dom-security-product-listing",
@@ -150,24 +151,6 @@ export const domsecuritycomPresentation = {
   "home": {
     "renderings": [
       {
-        "definitionKey": "dom-security-header-block",
-        "placeholder": "headless-main",
-        "children": [
-          {
-            "definitionKey": "dom-security-audience-link",
-            "datasourceItem": "Professionals Audience Link"
-          },
-          {
-            "definitionKey": "dom-security-audience-link",
-            "datasourceItem": "Industry Audience Link"
-          },
-          {
-            "definitionKey": "dom-security-audience-link",
-            "datasourceItem": "Homeowners Audience Link"
-          }
-        ]
-      },
-      {
         "definitionKey": "dom-security-technology-hero",
         "placeholder": "headless-main"
       },
@@ -198,11 +181,11 @@ export const domsecuritycomPresentation = {
         "placeholder": "headless-main"
       },
       {
-        "definitionKey": "dom-security-contact-information-section",
+        "definitionKey": "dom-security-partner-portal-card",
         "placeholder": "headless-main"
       },
       {
-        "definitionKey": "dom-security-partner-portal-card",
+        "definitionKey": "dom-security-contact-information-section",
         "placeholder": "headless-main"
       },
       {
@@ -211,15 +194,15 @@ export const domsecuritycomPresentation = {
         "children": [
           {
             "definitionKey": "dom-security-news-teaser",
+            "datasourceItem": "Den Dam Tapkey"
+          },
+          {
+            "definitionKey": "dom-security-news-teaser",
+            "datasourceItem": "Tapkey Premium Launch"
+          },
+          {
+            "definitionKey": "dom-security-news-teaser",
             "datasourceItem": "Tapkey Event"
-          },
-          {
-            "definitionKey": "dom-security-news-teaser",
-            "datasourceItem": "Fifty Years Hoberg"
-          },
-          {
-            "definitionKey": "dom-security-news-teaser",
-            "datasourceItem": "Tapkey Shareholder"
           }
         ]
       },

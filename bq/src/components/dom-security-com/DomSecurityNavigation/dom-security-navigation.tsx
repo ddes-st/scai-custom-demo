@@ -79,7 +79,7 @@ export const Default = (props: NavigationProps) => {
       aria-label="Primary"
       data-nav-overlap={overlap ? "true" : "false"}
       className={cn(
-        "w-full font-[Source_Sans_Pro]",
+        "group w-full font-[Source_Sans_Pro]",
         overlap
           ? "pointer-events-none absolute inset-x-0 top-0 z-40 bg-transparent text-white data-[products-open=true]:bg-white data-[products-open=true]:text-black data-[nav-open=true]:bg-white data-[nav-open=true]:text-black"
           : "relative z-10 shrink-0 border-b border-[#e5e5e5] bg-white text-black",
@@ -96,7 +96,7 @@ export const Default = (props: NavigationProps) => {
       >
         <Link
           field={fields["Home Link"]}
-          className="relative z-20 inline-flex shrink-0 py-2 no-underline max-lg:mx-auto lg:absolute lg:left-[15px] lg:top-0 lg:z-20 lg:h-[97px] lg:w-[85px] lg:py-0 lg:pt-0"
+          className="relative z-20 inline-flex shrink-0 py-2 no-underline max-lg:mx-auto lg:absolute lg:left-[15px] lg:top-0 lg:z-20 lg:h-[97px] lg:w-[85px] lg:py-0 lg:pt-0 group-data-[products-open=true]:lg:z-0"
           showLinkTextWithChildrenPresent={false}
           aria-label={fields["Home Link"]?.value?.text || "home"}
         >
@@ -151,7 +151,7 @@ export const Default = (props: NavigationProps) => {
                   />
                   <span
                     aria-hidden="true"
-                    className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-[#646363] text-[0.65rem] leading-none text-[#646363]"
+                    className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-black text-[0.65rem] font-semibold leading-none text-white"
                   >
                     i
                   </span>
