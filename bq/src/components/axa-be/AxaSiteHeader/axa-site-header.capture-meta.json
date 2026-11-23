@@ -1,0 +1,16 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-02",
+  "contentHash": "444c0bb34157e1bc50988025af177f31d46c2088164b63ac09b0d532b22ab7c3",
+  "conversionSourceHash": "4c6c96ccdfe6dfef833c308b2cf9fd3c51b9a01195b0af2008681a25618969da",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-site-header",
+  "menuStates": [
+    "menu-verzekeringen",
+    "menu-schadegevallen"
+  ],
+  "generatedAt": "2026-09-30T14:10:27.102Z"
+}

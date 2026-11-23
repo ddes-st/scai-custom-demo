@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-06",
+  "contentHash": "01a4891c2ae07935d5c173f1aa7bcdfd9fa01af5bee46c4f484db61ba5875808",
+  "conversionSourceHash": "000fdc08d1ff6a0ab35ea47cb9915d2361e99225e1953eef9c6c54544a4c0cbb",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "badge-items",
+  "children": [
+    {
+      "componentName": "SitecoreRecognitionBadgeItem",
+      "definitionKey": "sitecore-recognition-badge-item",
+      "placeholderKey": "badge-items"
+    }
+  ],
+  "definitionKey": "sitecore-awards-logo-carousel",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:17:19.457Z",
+  "placeholderKeys": [
+    "badge-items"
+  ],
+  "componentName": "SitecoreAwardsLogoCarousel",
+  "mediaFolders": [
+    "Recognition Badge Carousels"
+  ],
+  "contentFolders": [
+    [
+      "Recognition Badge Carousels"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

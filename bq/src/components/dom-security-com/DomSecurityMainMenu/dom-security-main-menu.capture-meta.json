@@ -1,0 +1,18 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom",
+  "sectionDir": "sections/section-03",
+  "contentHash": "34aec10b526902b0ef90aa4d2b2b80b4e5f805d627a29667842bd2de778017bd",
+  "conversionSourceHash": "d8d35188c2fc929c1cc5e1415763ffcfb05fab8b07eb766dca45637b7706f29b",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "header-navigation",
+  "children": [
+    "DomSecurityMainMenu",
+    "DomSecurityMainMenu"
+  ],
+  "definitionKey": "dom-security-main-menu",
+  "menuStates": [
+    "menu-products"
+  ],
+  "generatedAt": "2026-10-05T01:36:37.083Z"
+}

@@ -1,0 +1,59 @@
+import type { ParametersDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Standalone rendering-parameters definition (Example Rendering).
+ * Creates the parent folder if missing, then `{name} Parameters` + sections/fields.
+ * Prefer inline `parameters` on component for most components.
+ */
+export const exampleRenderingParametersDefinition = {
+  kind: "parameters",
+  definitionKey: "mycustom-test-parameters",
+  name: "Custom Test Rendering",
+  model: {
+    sections: [
+      {
+        name: "Data",
+        sortOrder: 100,
+        fields: [
+          {
+            name: "CssClass",
+            type: "Single-Line Text",
+            shared: true,
+            description: "Optional extra CSS class(es) on the rendering root.",
+            sortOrder: 100,
+          },
+          {
+            name: "HideOnMobile",
+            type: "Checkbox",
+            shared: true,
+            description: "Hide this rendering on small viewports.",
+            default: false,
+            sortOrder: 200,
+          },
+          {
+            name: "FallbackImage",
+            type: "Image",
+            shared: true,
+            description:
+              "Optional default image. Uses a dedicated kind: \"media\" definition.",
+            default: {
+              definitionKey: "sample-hero",
+              alt: "Custom test fallback image",
+            },
+            sortOrder: 300,
+          },
+          {
+            name: "LearnMoreLink",
+            type: "General Link",
+            shared: true,
+            description: "Optional default link for this rendering parameter.",
+            default: { text: "Learn more", url: "/learn-more" },
+            sortOrder: 400,
+          },
+        ],
+      },
+    ],
+  },
+} satisfies ParametersDefinition;
+
+export default exampleRenderingParametersDefinition;

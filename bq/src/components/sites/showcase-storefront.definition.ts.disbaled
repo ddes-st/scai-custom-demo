@@ -1,0 +1,14 @@
+import type { SiteDefinition } from "../../../tools/definitions/types";
+
+/**
+ * First sample site under the Showcase Catalog collection.
+ * Remove this file to delete the remote site on the next generate.
+ */
+export const showcaseStorefrontSite = {
+  kind: "site",
+  definitionKey: "showcase-storefront-site",
+  name: "Showcase Storefront",
+  systemName: "showcasestorefront",
+  description: "Primary demo storefront site.",
+  collectionSystem: "showcasecatalog",
+} satisfies SiteDefinition;

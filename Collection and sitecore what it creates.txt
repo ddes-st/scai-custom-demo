@@ -1,0 +1,23 @@
+Collection
+
+Templates     /sitecore/templates/Project/mysaicollectionsystemname                                 OK
+Content       /sitecore/content/mysaicollectionsystemname
+System        /sitecore/system/Settings/Project/mysaicollectionsystemname/mysaicollectionsystemname OK
+System        /sitecore/system/Settings/Project/mysaicollectionsystemname                           OK
+Media Library /sitecore/media library/Project/mysaicollectionsystemname                             OK
+Layout        /sitecore/layout/Placeholder Settings/Project/mysaicollectionsystemname               OK
+Renderings    /sitecore/layout/Renderings/Project/mysaicollectionsystemname                         OK
+Branches      /sitecore/templates/Branches/Project/mysaicollectionsystemname                        OK
+
+
+Website
+
+/sitecore/content/mysaicollectionsystemname/mywebsite/Settings/Site Grouping/mywebsite
+/sitecore/content/mysaicollectionsystemname/mywebsite
+/sitecore/content/mysaicollectionsystemname/mywebsite/Settings
+/sitecore/media library/Project/mysaicollectionsystemname/mywebsite
+
+
+
+
+

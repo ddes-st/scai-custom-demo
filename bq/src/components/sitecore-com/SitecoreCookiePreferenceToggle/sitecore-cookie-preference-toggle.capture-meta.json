@@ -1,0 +1,30 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-01",
+  "contentHash": "ca11f8d3697b2fc9007eb4e94a20d045936ce96e781deff5ff92b7d90d294078",
+  "conversionSourceHash": "e09bc6f4a72c5c7b2a95be02bf75850a9362043cfbf82ce9415a77899ca3ec9a",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-cookie-preference-toggle",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:22:59.176Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreCookiePreferenceToggle",
+  "mediaFolders": [
+    "Cookie Preference Toggles"
+  ],
+  "contentFolders": [
+    [
+      "Cookie Preference Toggles"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

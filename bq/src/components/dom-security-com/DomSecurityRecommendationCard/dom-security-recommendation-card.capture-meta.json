@@ -1,0 +1,10 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-06",
+  "contentHash": "f08490828c7d27b1916e523ff70238cfefbad9d0a1669eb16e2713b9f5bda0fc",
+  "conversionSourceHash": "f8bc8bc0b306df42a535ca88670b53b721ee6883b4df6faf89f551e8df708f79",
+  "role": "child",
+  "parentComponentName": "DomSecurityRecommendationGrid",
+  "definitionKey": "dom-security-recommendation-card",
+  "generatedAt": "2026-10-03T00:50:18.834Z"
+}

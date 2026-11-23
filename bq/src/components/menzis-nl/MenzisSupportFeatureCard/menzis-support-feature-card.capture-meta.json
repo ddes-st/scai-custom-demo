@@ -1,0 +1,30 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-04",
+  "contentHash": "bd26c1ea151bfcce5b45d1a3e9a0607add41a15d67a960c0444f80100ddeffd8",
+  "conversionSourceHash": "d4487c2bf707482285ae3b09db9e4d9f1d754738794e30c01dbf1277082decdb",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "menzis-support-feature-card",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-19T15:41:33.427Z",
+  "placeholderKeys": [],
+  "componentName": "MenzisSupportFeatureCard",
+  "mediaFolders": [
+    "Health And Support Content"
+  ],
+  "contentFolders": [
+    [
+      "Health And Support Content"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

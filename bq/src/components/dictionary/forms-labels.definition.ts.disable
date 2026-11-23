@@ -1,0 +1,39 @@
+import type { DictionaryDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Form-related dictionary entries for the bq-demo site.
+ * Lands at `{site}/Dictionary/Forms/…` per `location.folder`.
+ */
+export const formsLabelsDictionaryDefinition = {
+  kind: "dictionary",
+  definitionKey: "forms-labels",
+  name: "FormsLabels",
+  location: { scope: "site", folder: ["Forms"] },
+  cultures: ["nl-BE", "fr-BE"],
+  displayName: "Forms Labels",
+  description: "Core form control phrases (submit, required, thanks, error).",
+  entries: [
+    {
+      key: "form-submit",
+      phrase: "Submit",
+      description: "Generic form-submit button label.",
+    },
+    {
+      key: "form-required-field",
+      phrase: "Required",
+      description: "Label or hint marking a form field as required.",
+    },
+    {
+      key: "form-thanks",
+      phrase: "Thanks — we'll be in touch.",
+      description: "Post-submit confirmation on simple lead forms.",
+    },
+    {
+      key: "form-error",
+      phrase: "Something went wrong. Please try again.",
+      description: "Generic submit-failure status message.",
+    },
+  ],
+} satisfies DictionaryDefinition;
+
+export default formsLabelsDictionaryDefinition;

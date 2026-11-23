@@ -1,0 +1,30 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-08",
+  "contentHash": "1cf402b166ed3334c01c79e689b637962f19a8505d06502e2f85fad6a19792e3",
+  "conversionSourceHash": "bba496950c444ba3182e2ce93c1ca5fbd815c56eeb2f38930cb37ffad17bb493",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-trusted-answer-card",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:18:26.653Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreTrustedAnswerCard",
+  "mediaFolders": [
+    "Trusted Answer Cards"
+  ],
+  "contentFolders": [
+    [
+      "Trusted Answer Cards"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

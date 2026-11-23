@@ -1,0 +1,10 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-12",
+  "contentHash": "a2a354a5360399f59ff139d41fe8f34ffa077062fdd039d0622c3b7e631fa2fd",
+  "conversionSourceHash": "9655fd9d45fcfa31c2f64f7745cfc2b2b40e03c9f8161fcb58919f2f4a106f61",
+  "role": "child",
+  "parentComponentName": "DomSecuritySiteFooter",
+  "definitionKey": "dom-security-footer-link-list",
+  "generatedAt": "2026-10-03T00:52:37.156Z"
+}

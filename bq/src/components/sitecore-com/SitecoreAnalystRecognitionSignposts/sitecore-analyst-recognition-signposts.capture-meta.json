@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-10",
+  "contentHash": "faa922a43a814e089e4e3dd1467c46675a31507fbb551cc02972bbf7fed5f51c",
+  "conversionSourceHash": "40d2a779419b680ae48a6a1a6e3ee574a5b7fa1deb6e269f344d3f752025a1ee",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "report-cards",
+  "children": [
+    {
+      "componentName": "SitecoreAnalystRecognitionReportSignpost",
+      "definitionKey": "sitecore-analyst-recognition-report-signpost",
+      "placeholderKey": "report-cards"
+    }
+  ],
+  "definitionKey": "sitecore-analyst-recognition-signposts",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:28:44.513Z",
+  "placeholderKeys": [
+    "report-cards"
+  ],
+  "componentName": "SitecoreAnalystRecognitionSignposts",
+  "mediaFolders": [
+    "Analyst Recognition Signposts"
+  ],
+  "contentFolders": [
+    [
+      "Analyst Recognition Signposts"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-13",
+  "contentHash": "b3a63ccca0987b21c8438e0cdb320e8f8ff48c7debf2af632b81078a1e32e0b8",
+  "conversionSourceHash": "451f1966163526c5e5ee589195d0054eb71848a04dc466b043660eec1e80f5ba",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "signposts",
+  "children": [
+    {
+      "componentName": "SitecoreGlobalFooterSignpost",
+      "definitionKey": "sitecore-global-footer-signpost",
+      "placeholderKey": "signposts"
+    },
+    {
+      "componentName": "SitecoreGlobalFooterLinkColumn",
+      "definitionKey": "sitecore-global-footer-link-column",
+      "placeholderKey": "link-columns"
+    },
+    {
+      "componentName": "SitecoreGlobalFooterSocialLink",
+      "definitionKey": "sitecore-global-footer-social-link",
+      "placeholderKey": "social-links"
+    }
+  ],
+  "definitionKey": "sitecore-footer-signpost-and-legal",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:22:14.481Z",
+  "placeholderKeys": [
+    "signposts",
+    "link-columns",
+    "social-links"
+  ],
+  "componentName": "SitecoreFooterSignpostAndLegal",
+  "mediaFolders": [
+    "Global Footer Signposts"
+  ],
+  "contentFolders": [
+    [
+      "Global Footer Signposts"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

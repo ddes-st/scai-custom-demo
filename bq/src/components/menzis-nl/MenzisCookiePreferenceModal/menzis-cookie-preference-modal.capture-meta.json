@@ -1,0 +1,31 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-01",
+  "contentHash": "cd8e861f64cea5a1390b3dd54bb8df7d1c4bea37b45687428e542799a53a3558",
+  "conversionSourceHash": "f7bf4e69883edc859067375d7a54c0dad406d26f97eb0d6be3db561628df7a41",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "menzis-cookie-preference-modal",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-20T02:20:56.188Z",
+  "placeholderKeys": [],
+  "componentName": "MenzisCookiePreferenceModal",
+  "mediaFolders": [
+    "Cookie Preference Modals"
+  ],
+  "contentFolders": [
+    [
+      "Cookie Preference Modals"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

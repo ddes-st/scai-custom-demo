@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-05",
+  "contentHash": "12d9f88863fd036f96b420b8d0b9eaa9f2f084376d54afd43041547249e6a470",
+  "conversionSourceHash": "061139e4358c1b8d9ef1e90d6e7cfbfd09d40bb8590166f1e59ed55372764411",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "logo-items",
+  "children": [
+    {
+      "componentName": "SitecoreCustomerLogoItem",
+      "definitionKey": "sitecore-customer-logo-item",
+      "placeholderKey": "logo-items"
+    }
+  ],
+  "definitionKey": "sitecore-customer-logo-marquee",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:24:31.690Z",
+  "placeholderKeys": [
+    "logo-items"
+  ],
+  "componentName": "SitecoreCustomerLogoMarquee",
+  "mediaFolders": [
+    "Customer Logo Marquees"
+  ],
+  "contentFolders": [
+    [
+      "Customer Logo Marquees"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

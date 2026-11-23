@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-11",
+  "contentHash": "798d0b1cf6a9323e6b7b7e70b50ef87726d8014e4d231aaf78ab951a5afacef6",
+  "conversionSourceHash": "394d0cce39774deb6d3abac5ecc3faec001b3c26cedb0a8ac2ecdf56fe6ab07b",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-broker-callout",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:14:59.604Z"
+}

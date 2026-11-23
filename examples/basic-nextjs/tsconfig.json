@@ -2,14 +2,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
+      "components/lib/registry/*": [
+        "src/lib/registry/*"
+      ],
+      "components/hooks/*": [
+        "src/hooks/*"
       ],
       "components/*": [
         "src/components/*"
       ],
       "lib/*": [
         "src/lib/*"
+      ],
+      "hooks/*": [
+        "src/hooks/*"
       ],
       "temp/*": [
         "src/temp/*"
@@ -60,7 +66,6 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "content-sdk"
+    "node_modules"
   ]
 }

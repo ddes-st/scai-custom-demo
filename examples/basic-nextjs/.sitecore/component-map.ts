@@ -1,187 +1,144 @@
 // Below are built-in components that are available in the app, it's recommended to keep them as is
+import { NextjsContentSdkComponent } from '@sitecore-content-sdk/nextjs';
 
-import { BYOCServerWrapper, NextjsContentSdkComponent, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
+
+import { BYOCServerWrapper, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
 import { Form } from '@sitecore-content-sdk/nextjs';
 
-// end of built-in components
-import * as TestimonialBlock from 'src/components/uiim/social-proof/TestimonialBlock';
-import * as LogoCloud from 'src/components/uiim/social-proof/LogoCloud';
-import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
-import * as SearchResults from 'src/components/uiim/search/SearchResults';
-import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
-import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
-import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
-import * as SodexoLocationOverlay from 'src/components/uiim/navigation/SodexoLocationOverlay';
-import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
-import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
-import * as GroupSiteNavigatorBanner from 'src/components/uiim/navigation/GroupSiteNavigatorBanner';
-import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
-import * as ModernRecipeViews from 'src/components/uiim/modern-recipe/ModernRecipeViews';
-import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
-import * as ImageGallery from 'src/components/uiim/media/ImageGallery';
-import * as LandingStats from 'src/components/uiim/landing/LandingStats';
-import * as LandingSocialProof from 'src/components/uiim/landing/LandingSocialProof';
-import * as LandingHero from 'src/components/uiim/landing/LandingHero';
-import * as LandingFinalCTA from 'src/components/uiim/landing/LandingFinalCTA';
-import * as LandingFeatures from 'src/components/uiim/landing/LandingFeatures';
-import * as LandingFAQ from 'src/components/uiim/landing/LandingFAQ';
-import * as NewsletterSignup from 'src/components/uiim/forms/NewsletterSignup';
-import * as IdentityEventDevForm from 'src/components/uiim/forms/IdentityEventDevForm';
-import * as IdentityCaptureForm from 'src/components/uiim/forms/IdentityCaptureForm';
-import * as ValuePropositionGrid from 'src/components/uiim/content/ValuePropositionGrid';
-import * as TrustStatsRow from 'src/components/uiim/content/TrustStatsRow';
-import * as RichTextBlock from 'src/components/uiim/content/RichTextBlock';
-import * as RelatedContent from 'src/components/uiim/content/RelatedContent';
-import * as Quote from 'src/components/uiim/content/Quote';
-import * as LegalComplianceBanner from 'src/components/uiim/content/LegalComplianceBanner';
-import * as FeatureHighlight from 'src/components/uiim/content/FeatureHighlight';
-import * as FAQAccordion from 'src/components/uiim/content/FAQAccordion';
-import * as BlogListing from 'src/components/uiim/content/BlogListing';
-import * as BenefitHighlight from 'src/components/uiim/content/BenefitHighlight';
-import * as ProductPricingCards from 'src/components/uiim/cards/ProductPricingCards';
-import * as FeatureCardsGrid from 'src/components/uiim/cards/FeatureCardsGrid';
-import * as BrandPillars from 'src/components/uiim/brand/BrandPillars';
-import * as BrandHero from 'src/components/uiim/brand/BrandHero';
-import * as BrandFinalCTA from 'src/components/uiim/brand/BrandFinalCTA';
-import * as BrandFAQ from 'src/components/uiim/brand/BrandFAQ';
-import * as HeroBannerCarousel from 'src/components/uiim/banners/HeroBannerCarousel';
-import * as HeroBanner from 'src/components/uiim/banners/HeroBanner';
-import * as CTABanner from 'src/components/uiim/banners/CTABanner';
-import * as SodexoArticleContent from 'src/components/uiim/article/SodexoArticleContent';
-import * as ArticleHero from 'src/components/uiim/article/ArticleHero';
-import * as ArticleBody from 'src/components/uiim/article/ArticleBody';
-import * as input from 'src/components/ui/input';
-import * as card from 'src/components/ui/card';
-import * as button from 'src/components/ui/button';
-import * as badge from 'src/components/ui/badge';
-import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
-import * as SearchExperience from 'src/components/search-experience/SearchExperience';
-import * as useSearchField from 'src/components/search-experience/search-components/useSearchField';
-import * as useRouter from 'src/components/search-experience/search-components/useRouter';
-import * as useParams from 'src/components/search-experience/search-components/useParams';
-import * as useEvent from 'src/components/search-experience/search-components/useEvent';
-import * as useDebounce from 'src/components/search-experience/search-components/useDebounce';
-import * as SearchSkeletonItem from 'src/components/search-experience/search-components/SearchSkeletonItem';
-import * as SearchPagination from 'src/components/search-experience/search-components/SearchPagination';
-import * as SearchItemCommon from 'src/components/search-experience/search-components/SearchItemCommon';
-import * as SearchInput from 'src/components/search-experience/search-components/SearchInput';
-import * as SearchError from 'src/components/search-experience/search-components/SearchError';
-import * as SearchEmptyResults from 'src/components/search-experience/search-components/SearchEmptyResults';
-import * as models from 'src/components/search-experience/search-components/models';
-import * as constants from 'src/components/search-experience/search-components/constants';
-import * as SearchItemTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
-import * as SearchItemTags from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
-import * as SearchItemSummary from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
-import * as SearchItemSubTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemSubTitle';
-import * as SearchItemLink from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
-import * as SearchItemImage from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
-import * as SearchItemCategory from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
-import * as index from 'src/components/search-experience/search-components/SearchItem/index';
-import * as Title from 'src/components/basic/title/Title';
-import * as RowSplitter from 'src/components/basic/row-splitter/RowSplitter';
-import * as RichText from 'src/components/basic/rich-text/RichText';
-import * as Promo from 'src/components/basic/promo/Promo';
-import * as PartialDesignDynamicPlaceholder from 'src/components/basic/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
-import * as PageContent from 'src/components/basic/page-content/PageContent';
-import * as Navigation from 'src/components/basic/navigation/Navigation';
-import * as LinkList from 'src/components/basic/link-list/LinkList';
-import * as Image from 'src/components/basic/image/Image';
-import * as SitecoreStyles from 'src/components/basic/content-sdk/SitecoreStyles';
-import * as CdpPageView from 'src/components/basic/content-sdk/CdpPageView';
-import * as ContentBlock from 'src/components/basic/content-block/ContentBlock';
-import * as Container from 'src/components/basic/container/Container';
-import * as ColumnSplitter from 'src/components/basic/column-splitter/ColumnSplitter';
+// end of built-in import section
+import * as Text from 'src/components/registry/primitives/editables/text';
+import * as SourceNormalizers from 'src/components/registry/primitives/editables/source-normalizers';
+import * as Richtext from 'src/components/registry/primitives/editables/richtext';
+import * as Link from 'src/components/registry/primitives/editables/link';
+import * as Image from 'src/components/registry/primitives/editables/image';
+import * as FieldMetadata from 'src/components/registry/primitives/editables/field-metadata';
+import * as Typography from 'src/components/registry/primitives/core/typography';
+import * as Tooltip from 'src/components/registry/primitives/core/tooltip';
+import * as Toggle from 'src/components/registry/primitives/core/toggle';
+import * as ToggleGroup from 'src/components/registry/primitives/core/toggle-group';
+import * as Timeline from 'src/components/registry/primitives/core/timeline';
+import * as ThemeIcon from 'src/components/registry/primitives/core/theme-icon';
+import * as Textarea from 'src/components/registry/primitives/core/textarea';
+import * as Tabs from 'src/components/registry/primitives/core/tabs';
+import * as Table from 'src/components/registry/primitives/core/table';
+import * as Switch from 'src/components/registry/primitives/core/switch';
+import * as Sonner from 'src/components/registry/primitives/core/sonner';
+import * as Skeleton from 'src/components/registry/primitives/core/skeleton';
+import * as Sheet from 'src/components/registry/primitives/core/sheet';
+import * as Separator from 'src/components/registry/primitives/core/separator';
+import * as Select from 'src/components/registry/primitives/core/select';
+import * as ScrollArea from 'src/components/registry/primitives/core/scroll-area';
+import * as Resizable from 'src/components/registry/primitives/core/resizable';
+import * as RadioGroup from 'src/components/registry/primitives/core/radio-group';
+import * as Prose from 'src/components/registry/primitives/core/prose';
+import * as Progress from 'src/components/registry/primitives/core/progress';
+import * as Popover from 'src/components/registry/primitives/core/popover';
+import * as Pagination from 'src/components/registry/primitives/core/pagination';
+import * as NavigationMenu from 'src/components/registry/primitives/core/navigation-menu';
+import * as LibraryIcon from 'src/components/registry/primitives/core/library-icon';
+import * as Label from 'src/components/registry/primitives/core/label';
+import * as Kbd from 'src/components/registry/primitives/core/kbd';
+import * as Item from 'src/components/registry/primitives/core/item';
+import * as Input from 'src/components/registry/primitives/core/input';
+import * as InputOtp from 'src/components/registry/primitives/core/input-otp';
+import * as Icon from 'src/components/registry/primitives/core/icon';
+import * as Field from 'src/components/registry/primitives/core/field';
+import * as ErrorStates from 'src/components/registry/primitives/core/error-states';
+import * as EmptyStates from 'src/components/registry/primitives/core/empty-states';
+import * as Editable from 'src/components/registry/primitives/core/editable';
+import * as EditPlaceholder from 'src/components/registry/primitives/core/edit-placeholder';
+import * as DropdownMenu from 'src/components/registry/primitives/core/dropdown-menu';
+import * as Dialog from 'src/components/registry/primitives/core/dialog';
+import * as DatePicker from 'src/components/registry/primitives/core/date-picker';
+import * as DataTable from 'src/components/registry/primitives/core/data-table';
+import * as ContextMenu from 'src/components/registry/primitives/core/context-menu';
+import * as Command from 'src/components/registry/primitives/core/command';
+import * as Combobox from 'src/components/registry/primitives/core/combobox';
+import * as Collapsible from 'src/components/registry/primitives/core/collapsible';
+import * as Checkbox from 'src/components/registry/primitives/core/checkbox';
+import * as Chart from 'src/components/registry/primitives/core/chart';
+import * as Carousel from 'src/components/registry/primitives/core/carousel';
+import * as Card from 'src/components/registry/primitives/core/card';
+import * as Calendar from 'src/components/registry/primitives/core/calendar';
+import * as Button from 'src/components/registry/primitives/core/button';
+import * as ButtonGroup from 'src/components/registry/primitives/core/button-group';
+import * as Breadcrumb from 'src/components/registry/primitives/core/breadcrumb';
+import * as Badge from 'src/components/registry/primitives/core/badge';
+import * as Avatar from 'src/components/registry/primitives/core/avatar';
+import * as AspectRatio from 'src/components/registry/primitives/core/aspect-ratio';
+import * as Alert from 'src/components/registry/primitives/core/alert';
+import * as AlertDialog from 'src/components/registry/primitives/core/alert-dialog';
+import * as Accordion from 'src/components/registry/primitives/core/accordion';
+import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
   ['FEaaSWrapper', FEaaSServerWrapper],
   ['Form', { ...Form, componentType: 'client' }],
-  ['TestimonialBlock', { ...TestimonialBlock }],
-  ['LogoCloud', { ...LogoCloud }],
-  ['SearchTypeahead', { ...SearchTypeahead, componentType: 'client' }],
-  ['SearchResults', { ...SearchResults, componentType: 'client' }],
-  ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
-  ['SearchCollection', { ...SearchCollection, componentType: 'client' }],
-  ['TabNavigationSection', { ...TabNavigationSection, componentType: 'client' }],
-  ['SodexoLocationOverlay', { ...SodexoLocationOverlay, componentType: 'client' }],
-  ['SiteFooter', { ...SiteFooter }],
-  ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
-  ['GroupSiteNavigatorBanner', { ...GroupSiteNavigatorBanner, componentType: 'client' }],
-  ['AnnouncementBar', { ...AnnouncementBar }],
-  ['ModernRecipeViews', { ...ModernRecipeViews }],
-  ['SmartMedia', { ...SmartMedia, componentType: 'client' }],
-  ['ImageGallery', { ...ImageGallery }],
-  ['LandingStats', { ...LandingStats }],
-  ['LandingSocialProof', { ...LandingSocialProof }],
-  ['LandingHero', { ...LandingHero }],
-  ['LandingFinalCTA', { ...LandingFinalCTA }],
-  ['LandingFeatures', { ...LandingFeatures }],
-  ['LandingFAQ', { ...LandingFAQ, componentType: 'client' }],
-  ['NewsletterSignup', { ...NewsletterSignup, componentType: 'client' }],
-  ['IdentityEventDevForm', { ...IdentityEventDevForm, componentType: 'client' }],
-  ['IdentityCaptureForm', { ...IdentityCaptureForm, componentType: 'client' }],
-  ['ValuePropositionGrid', { ...ValuePropositionGrid }],
-  ['TrustStatsRow', { ...TrustStatsRow }],
-  ['RichTextBlock', { ...RichTextBlock }],
-  ['RelatedContent', { ...RelatedContent, componentType: 'client' }],
-  ['Quote', { ...Quote }],
-  ['LegalComplianceBanner', { ...LegalComplianceBanner }],
-  ['FeatureHighlight', { ...FeatureHighlight, componentType: 'client' }],
-  ['FAQAccordion', { ...FAQAccordion }],
-  ['BlogListing', { ...BlogListing, componentType: 'client' }],
-  ['BenefitHighlight', { ...BenefitHighlight, componentType: 'client' }],
-  ['ProductPricingCards', { ...ProductPricingCards }],
-  ['FeatureCardsGrid', { ...FeatureCardsGrid, componentType: 'client' }],
-  ['BrandPillars', { ...BrandPillars }],
-  ['BrandHero', { ...BrandHero }],
-  ['BrandFinalCTA', { ...BrandFinalCTA }],
-  ['BrandFAQ', { ...BrandFAQ, componentType: 'client' }],
-  ['HeroBannerCarousel', { ...HeroBannerCarousel, componentType: 'client' }],
-  ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
-  ['CTABanner', { ...CTABanner }],
-  ['SodexoArticleContent', { ...SodexoArticleContent }],
-  ['ArticleHero', { ...ArticleHero, componentType: 'client' }],
-  ['ArticleBody', { ...ArticleBody }],
-  ['input', { ...input }],
-  ['card', { ...card }],
-  ['button', { ...button }],
-  ['badge', { ...badge }],
-  ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience, componentType: 'client' }],
-  ['useSearchField', { ...useSearchField, componentType: 'client' }],
-  ['useRouter', { ...useRouter, componentType: 'client' }],
-  ['useParams', { ...useParams, componentType: 'client' }],
-  ['useEvent', { ...useEvent, componentType: 'client' }],
-  ['useDebounce', { ...useDebounce, componentType: 'client' }],
-  ['SearchSkeletonItem', { ...SearchSkeletonItem, componentType: 'client' }],
-  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
-  ['SearchItemCommon', { ...SearchItemCommon, componentType: 'client' }],
-  ['SearchInput', { ...SearchInput, componentType: 'client' }],
-  ['SearchError', { ...SearchError, componentType: 'client' }],
-  ['SearchEmptyResults', { ...SearchEmptyResults, componentType: 'client' }],
-  ['models', { ...models }],
-  ['constants', { ...constants }],
-  ['SearchItemTitle', { ...SearchItemTitle, componentType: 'client' }],
-  ['SearchItemTags', { ...SearchItemTags, componentType: 'client' }],
-  ['SearchItemSummary', { ...SearchItemSummary, componentType: 'client' }],
-  ['SearchItemSubTitle', { ...SearchItemSubTitle, componentType: 'client' }],
-  ['SearchItemLink', { ...SearchItemLink, componentType: 'client' }],
-  ['SearchItemImage', { ...SearchItemImage, componentType: 'client' }],
-  ['SearchItemCategory', { ...SearchItemCategory, componentType: 'client' }],
-  ['index', { ...index, componentType: 'client' }],
-  ['Title', { ...Title }],
-  ['RowSplitter', { ...RowSplitter }],
-  ['RichText', { ...RichText }],
-  ['Promo', { ...Promo }],
+  ['Text', { ...Text }],
+  ['SourceNormalizers', { ...SourceNormalizers }],
+  ['Richtext', { ...Richtext }],
+  ['Link', { ...Link }],
+  ['Image', { ...Image, componentType: 'client' }],
+  ['FieldMetadata', { ...FieldMetadata }],
+  ['Typography', { ...Typography }],
+  ['Tooltip', { ...Tooltip, componentType: 'client' }],
+  ['Toggle', { ...Toggle, componentType: 'client' }],
+  ['ToggleGroup', { ...ToggleGroup, componentType: 'client' }],
+  ['Timeline', { ...Timeline }],
+  ['ThemeIcon', { ...ThemeIcon }],
+  ['Textarea', { ...Textarea }],
+  ['Tabs', { ...Tabs, componentType: 'client' }],
+  ['Table', { ...Table, componentType: 'client' }],
+  ['Switch', { ...Switch, componentType: 'client' }],
+  ['Sonner', { ...Sonner, componentType: 'client' }],
+  ['Skeleton', { ...Skeleton }],
+  ['Sheet', { ...Sheet, componentType: 'client' }],
+  ['Separator', { ...Separator, componentType: 'client' }],
+  ['Select', { ...Select, componentType: 'client' }],
+  ['ScrollArea', { ...ScrollArea, componentType: 'client' }],
+  ['Resizable', { ...Resizable, componentType: 'client' }],
+  ['RadioGroup', { ...RadioGroup, componentType: 'client' }],
+  ['Prose', { ...Prose }],
+  ['Progress', { ...Progress, componentType: 'client' }],
+  ['Popover', { ...Popover, componentType: 'client' }],
+  ['Pagination', { ...Pagination }],
+  ['NavigationMenu', { ...NavigationMenu, componentType: 'client' }],
+  ['LibraryIcon', { ...LibraryIcon, componentType: 'client' }],
+  ['Label', { ...Label, componentType: 'client' }],
+  ['Kbd', { ...Kbd }],
+  ['Item', { ...Item }],
+  ['Input', { ...Input }],
+  ['InputOtp', { ...InputOtp, componentType: 'client' }],
+  ['Icon', { ...Icon }],
+  ['Field', { ...Field }],
+  ['ErrorStates', { ...ErrorStates }],
+  ['EmptyStates', { ...EmptyStates }],
+  ['Editable', { ...Editable, componentType: 'client' }],
+  ['EditPlaceholder', { ...EditPlaceholder }],
+  ['DropdownMenu', { ...DropdownMenu, componentType: 'client' }],
+  ['Dialog', { ...Dialog, componentType: 'client' }],
+  ['DatePicker', { ...DatePicker, componentType: 'client' }],
+  ['DataTable', { ...DataTable, componentType: 'client' }],
+  ['ContextMenu', { ...ContextMenu, componentType: 'client' }],
+  ['Command', { ...Command, componentType: 'client' }],
+  ['Combobox', { ...Combobox, componentType: 'client' }],
+  ['Collapsible', { ...Collapsible, componentType: 'client' }],
+  ['Checkbox', { ...Checkbox, componentType: 'client' }],
+  ['Chart', { ...Chart, componentType: 'client' }],
+  ['Carousel', { ...Carousel, componentType: 'client' }],
+  ['Card', { ...Card }],
+  ['Calendar', { ...Calendar, componentType: 'client' }],
+  ['Button', { ...Button }],
+  ['ButtonGroup', { ...ButtonGroup }],
+  ['Breadcrumb', { ...Breadcrumb }],
+  ['Badge', { ...Badge }],
+  ['Avatar', { ...Avatar, componentType: 'client' }],
+  ['AspectRatio', { ...AspectRatio, componentType: 'client' }],
+  ['Alert', { ...Alert }],
+  ['AlertDialog', { ...AlertDialog, componentType: 'client' }],
+  ['Accordion', { ...Accordion, componentType: 'client' }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
-  ['PageContent', { ...PageContent }],
-  ['Navigation', { ...Navigation, componentType: 'client' }],
-  ['LinkList', { ...LinkList }],
-  ['Image', { ...Image }],
-  ['SitecoreStyles', { ...SitecoreStyles, componentType: 'client' }],
-  ['CdpPageView', { ...CdpPageView, componentType: 'client' }],
-  ['ContentBlock', { ...ContentBlock, componentType: 'client' }],
-  ['Container', { ...Container }],
-  ['ColumnSplitter', { ...ColumnSplitter }],
 ]);
 
 export default componentMap;

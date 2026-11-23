@@ -1,0 +1,28 @@
+import type { MediaDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Example standalone SVG media-library item (authored as markup).
+ *
+ * Emits:
+ * `authoring/items/bq-demo/sai/media-library/…/bq-demo/Samples/sample-star-svg.yml`
+ *
+ * Reference from Image fields / defaults:
+ * `{ definitionKey: "sample-star-svg" }` (optional `alt` override).
+ *
+ * Image field defaults can also inline the same markup:
+ * `{ svgMarkup: \`<svg…>\`, alt: "…" }` (data / parameters / component / rendering).
+ */
+export const sampleStarSvgMediaDefinition = {
+  kind: "media",
+  definitionKey: "sample-star-svg",
+  name: "sample-star-svg",
+  alt: "Lime star polygon on transparent background",
+  svgMarkup: `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>`,
+  location: {
+    folder: ["Samples"],
+  },
+} satisfies MediaDefinition;
+
+export default sampleStarSvgMediaDefinition;

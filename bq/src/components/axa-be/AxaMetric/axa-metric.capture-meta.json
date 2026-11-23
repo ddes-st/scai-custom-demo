@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-06",
+  "contentHash": "a31d817f01c538a82b476e124aec6763206d3a4a93b73ef221301c1856757268",
+  "conversionSourceHash": "587c7756680396d6161680229e167440ab9c0d8dcb1b0c13354c0ba3a380a048",
+  "role": "child",
+  "parentComponentName": "AxaTrustMetrics",
+  "definitionKey": "axa-metric",
+  "generatedAt": "2026-10-02T12:03:14.113Z"
+}

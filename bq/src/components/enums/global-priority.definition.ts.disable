@@ -1,0 +1,23 @@
+import type { EnumerationDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Shared priority levels for cross-site / system-wide use.
+ * Lands at `/sitecore/system/Enums/Global/Priority` (system scope).
+ */
+export const globalPriorityEnumDefinition = {
+  kind: "enumeration",
+  definitionKey: "global-priority",
+  name: "Priority",
+  location: { scope: "system", folder: ["Global"] },
+  displayName: "Priority",
+  description: "Shared priority levels for system-wide configuration.",
+  default: "normal",
+  constants: [
+    { name: "low", displayName: "Low" },
+    { name: "normal", displayName: "Normal" },
+    { name: "high", displayName: "High" },
+    { name: "critical", displayName: "Critical" },
+  ],
+} satisfies EnumerationDefinition;
+
+export default globalPriorityEnumDefinition;

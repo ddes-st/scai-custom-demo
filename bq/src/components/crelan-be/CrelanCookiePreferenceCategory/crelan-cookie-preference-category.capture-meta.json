@@ -1,0 +1,30 @@
+{
+  "url": "https://www.crelan.be/nl/particulieren",
+  "pageSlug": "www-crelan-be--nl-particulieren",
+  "sectionDir": "www-crelan-be--nl-particulieren/sections/section-01",
+  "contentHash": "434904fad1a5a8b53df0a3e437136628afaa6a44830935dcd8f31fe19ce8763d",
+  "conversionSourceHash": "824f35603de92ac846c725fddbc2bc404a307f84b467ce7293af36ebb6afd932",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "crelan-cookie-preference-category",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T13:03:36.419Z",
+  "placeholderKeys": [],
+  "componentName": "CrelanCookiePreferenceCategory",
+  "mediaFolders": [
+    "Cookie Categories"
+  ],
+  "contentFolders": [
+    [
+      "Cookie Categories"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

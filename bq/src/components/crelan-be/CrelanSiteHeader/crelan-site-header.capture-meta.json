@@ -1,0 +1,31 @@
+{
+  "url": "https://www.crelan.be/nl/particulieren",
+  "pageSlug": "www-crelan-be--nl-particulieren",
+  "sectionDir": "www-crelan-be--nl-particulieren/sections/section-02",
+  "contentHash": "49cc4a221dba62da8e8a054c4daffcc95f8bbc5497a4c937f738da0ccfeabfdc",
+  "conversionSourceHash": "0c7e35d03db800490b80aa5a1d80c6894ac61236f19667603b7afe9d449367c7",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "navigation",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "crelan-site-header",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T13:04:34.739Z",
+  "placeholderKeys": [],
+  "componentName": "CrelanSiteHeader",
+  "mediaFolders": [
+    "Site Headers"
+  ],
+  "contentFolders": [
+    [
+      "Site Headers"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

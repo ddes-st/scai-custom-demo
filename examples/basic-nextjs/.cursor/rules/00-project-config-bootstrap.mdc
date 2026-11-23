@@ -1,6 +1,0 @@
----
-description: Bootstrap project configuration before any Sitecore task. Read docs/ai/config/project.yaml and derive all project paths from it.
-alwaysApply: true
----
-
-Read and follow `docs/ai/rules/00-project-config-bootstrap.md` in full.

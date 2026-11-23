@@ -1,0 +1,23 @@
+---
+description: Sitecore AI viewport widths for TSX/component creation (importSection, design-to-code, responsive breakpoints)
+alwaysApply: false
+---
+
+# Sitecore AI — required viewport widths
+
+When building or updating the **TSX creation skill/code** for Sitecore AI (section → React/TSX, `*.definition.ts`, import pipelines, responsive previews), support these viewport widths (Pages / Sitecore AI device presets):
+
+| Label | Width |
+|-------|-------|
+| Mobile | **370px** |
+| Tablet Portrait | **768px** |
+| Desktop Small | **1024px** |
+| Flexible | no fixed width (user-resizable; do not hardcode a px width) |
+| Desktop Regular | **1280px** |
+| Desktop Large | **1536px** |
+
+## Usage notes
+
+- Prefer these widths for capture alignment, component responsive CSS, and any generated preview/test harnesses tied to Sitecore AI.
+- Do not invent alternate “standard” breakpoints (e.g. 375 / 1440) when the task is Sitecore AI TSX creation unless the user overrides.
+- **Flexible** is a mode, not a fixed breakpoint — keep layout fluid; still ensure the fixed presets above look correct.

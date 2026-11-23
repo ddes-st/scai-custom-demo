@@ -1,0 +1,35 @@
+import type { EnumerationDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Shared enumeration backing the `BottomAlignment` rendering parameter
+ * on the `section-wrapper@1` component. Controls horizontal alignment
+ * of the bottom region in split-layout headings.
+ *
+ * Values are **logical** (`start`/`center`/`end`), not physical
+ * (`left`/`right`) — the codebase enforces logical directional values
+ * end-to-end so layouts mirror under RTL writing direction.
+ *
+ * Reference from a component definition via
+ * `enumeration: { definitionKey: "bottom-alignment" }`.
+ *
+ * Lands at `<enumerationsRoot>/Layout/Section Wrapper/BottomAlignment`.
+ */
+export const bottomAlignmentEnumDefinition = {
+  kind: "enumeration",
+  definitionKey: "bottom-alignment",
+  name: "BottomAlignment",
+  location: { scope: "site", folder: ["Layout", "Section Wrapper"] },
+  cultures: ["nl-BE", "fr-BE"],
+  displayName: "Bottom Alignment",
+  description:
+    "Horizontal alignment of the optional bottom region in section-wrapped components.",
+  default: "center",
+
+  constants: [
+    { name: "start", displayName: "Start" },
+    { name: "center", displayName: "Center" },
+    { name: "end", displayName: "End" },
+  ],
+} satisfies EnumerationDefinition;
+
+export default bottomAlignmentEnumDefinition;

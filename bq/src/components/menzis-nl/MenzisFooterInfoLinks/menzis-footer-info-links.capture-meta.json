@@ -1,0 +1,39 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-06",
+  "contentHash": "fc6f350aab8b5c773bcdd5666066d8a4f60e60e085ca152144149670e8f57337",
+  "conversionSourceHash": "f53be77d57c11146120e742260438d8b939f2b9675b0e116470ee77cbca9646e",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "footer-legal-links",
+  "children": [
+    {
+      "componentName": "MenzisFooterLegalLinkList",
+      "definitionKey": "menzis-footer-legal-link-list",
+      "placeholderKey": "footer-legal-links"
+    }
+  ],
+  "definitionKey": "menzis-footer-info-links",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-20T02:26:59.473Z",
+  "placeholderKeys": [
+    "footer-legal-links"
+  ],
+  "componentName": "MenzisFooterInfoLinks",
+  "mediaFolders": [
+    "Footer Legal Links Bands"
+  ],
+  "contentFolders": [
+    [
+      "Footer Legal Links Bands"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

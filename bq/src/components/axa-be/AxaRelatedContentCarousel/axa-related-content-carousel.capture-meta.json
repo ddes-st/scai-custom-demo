@@ -1,0 +1,15 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-10",
+  "contentHash": "9589377eb2b5cd2aae6cc28ce90edd2268ad60b37333ed98b5a24542f99bad0c",
+  "conversionSourceHash": "b27b0d8defb47c90f4a42cf6c108d47ef0d5f36362c883e9d75b896bea7d1f7c",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "related-content-cards",
+  "children": [
+    "RelatedContentCard"
+  ],
+  "definitionKey": "axa-related-content-carousel",
+  "menuStates": [],
+  "generatedAt": "2026-10-02T13:59:17.988Z"
+}

@@ -1,0 +1,13 @@
+---
+description: Getting started with your Sitecore Content SDK Next.js App Router + Cache Components project
+alwaysApply: true
+globs: []
+---
+
+# Sitecore Content SDK — App Router + Cache Components
+
+Next.js App Router + Cache Components (`cacheComponents: true`) + tag-based revalidation. **Commands:** `npm install`, `npm run dev`, `npm run build`, `npm run lint`, `npm run type-check`. Copy `.env.example` → `.env.local` (set `SITECORE_REVALIDATE_SECRET` when using OSR).
+
+**Structure:** `src/app/[site]/[locale]/[[...path]]/`, `src/lib/cache/`, `src/app/api/revalidate/route.ts`, `src/proxy.ts`, `.sitecore/`, `sitecore.config.ts`, `next.config.ts`.
+
+**Detail:** Guardrails in [`AGENTS.md`](../../AGENTS.md). Depth: [`.agents/docs/`](../../.agents/docs/) (cache helpers, `POST /api/revalidate`, `BUILD_VALIDATION_SITE`). Skills: [`Skills.md`](../../Skills.md).

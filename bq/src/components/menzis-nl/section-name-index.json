@@ -1,0 +1,110 @@
+{
+  "www-menzis-nl--home/sections/section-01": {
+    "componentName": "MenzisCookiePreferenceModal",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Cookie Preference Modals"
+    ],
+    "definitionKey": "menzis-cookie-preference-modal",
+    "updatedAt": "2026-11-20T02:20:58.685Z"
+  },
+  "www-menzis-nl--home/sections/section-02": {
+    "componentName": "MenzisGlobalHeader",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Global Header Navigations"
+    ],
+    "definitionKey": "menzis-global-header",
+    "updatedAt": "2026-11-20T02:22:55.104Z"
+  },
+  "www-menzis-nl--home/sections/section-03": {
+    "componentName": "MenzisIntroductionHero",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Introduction Heroes"
+    ],
+    "definitionKey": "menzis-introduction-hero",
+    "updatedAt": "2026-11-20T02:23:35.232Z"
+  },
+  "www-menzis-nl--home/sections/section-04": {
+    "componentName": "MenzisSupportAndHealthContent",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "MenzisSupportCardsBand",
+        "definitionKey": "menzis-support-cards-band",
+        "placeholderKey": "support-health-content"
+      },
+      {
+        "componentName": "MenzisEditorialContentBand",
+        "definitionKey": "menzis-editorial-content-band",
+        "placeholderKey": "support-health-content"
+      },
+      {
+        "componentName": "MenzisHealthCardsBand",
+        "definitionKey": "menzis-health-cards-band",
+        "placeholderKey": "support-health-content"
+      },
+      {
+        "componentName": "MenzisAppInformationBand",
+        "definitionKey": "menzis-app-information-band",
+        "placeholderKey": "support-health-content"
+      },
+      {
+        "componentName": "MenzisInformationBand",
+        "definitionKey": "menzis-information-band",
+        "placeholderKey": "support-health-content"
+      },
+      {
+        "componentName": "MenzisReasonsBand",
+        "definitionKey": "menzis-reasons-band",
+        "placeholderKey": "support-health-content"
+      }
+    ],
+    "mediaFolders": [
+      "Support And Health Content"
+    ],
+    "definitionKey": "menzis-support-and-health-content",
+    "updatedAt": "2026-11-20T02:25:34.475Z"
+  },
+  "www-menzis-nl--home/sections/section-05": {
+    "componentName": "MenzisFooterSupportNavigation",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "MenzisFooterHelpBand",
+        "definitionKey": "menzis-footer-help-band",
+        "placeholderKey": "footer-help-and-links-content"
+      },
+      {
+        "componentName": "MenzisFooterHelpLinkList",
+        "definitionKey": "menzis-footer-help-link-list",
+        "placeholderKey": "footer-help-and-links-content"
+      }
+    ],
+    "mediaFolders": [
+      "Footer Help And Links"
+    ],
+    "definitionKey": "menzis-footer-support-navigation",
+    "updatedAt": "2026-11-20T02:26:26.398Z"
+  },
+  "www-menzis-nl--home/sections/section-06": {
+    "componentName": "MenzisFooterInfoLinks",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "MenzisFooterLegalLinkList",
+        "definitionKey": "menzis-footer-legal-link-list",
+        "placeholderKey": "footer-legal-links"
+      }
+    ],
+    "mediaFolders": [
+      "Footer Legal Links Bands"
+    ],
+    "definitionKey": "menzis-footer-info-links",
+    "updatedAt": "2026-11-20T02:27:17.638Z"
+  }
+}

@@ -1,0 +1,19 @@
+import type { SiteDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Proves create-or-reuse: inline collection uses the same system name as
+ * `showcase-catalog.definition.ts`. After that collection is synced via API,
+ * this site reuses it and nests under it.
+ */
+export const showcaseReuseSite = {
+  kind: "site",
+  definitionKey: "showcase-reuse-site",
+  name: "Showcase Reuse",
+  systemName: "showcasereuse",
+  description: "Site whose inline collection already exists.",
+  collection: {
+    name: "Showcase Catalog",
+    systemName: "showcasecatalog",
+    description: "Demo collection for BQ collection/site emitters.",
+  },
+} satisfies SiteDefinition;

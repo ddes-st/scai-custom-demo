@@ -71,12 +71,7 @@
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\**" />
-    <Content Include="App_Data\Xdts\web.config.xdt" CopyToPublishDirectory="PreserveNewest" />
-  </ItemGroup>
-  <ItemGroup>
-  <Compile Include="Events\FixEscapedXmlFields.cs" />  
-  <Compile Include="Properties\AssemblyInfo.cs" />
+    <Folder Include="App_Config\Include\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

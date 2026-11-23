@@ -1,0 +1,194 @@
+﻿---
+ID: "3f45e6c7-6fee-470f-b0e1-7e1bf4637e7c"
+Parent: "0ba76178-7a30-5fa5-8584-32c0f23cd30c"
+Template: "82780ab4-db4e-539b-a8e1-78410744909a"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Partner Portal Cards/Partner Portal Card_var2"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Keystone®
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0e676b19-4785-5124-a369-1c7f9f110f4d"
+      Hint: Portal Link
+      Value: |
+        <link text="Log in to our partner portal" linktype="external" url="https://www.domextranet.de" anchor="" target="" />
+    - ID: "110b3e2b-40d0-5852-92f3-ff4281cc719d"
+      Hint: Heading
+      Value: DOM Keystone®
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "83046a75-0a22-5c71-b0c5-3ed7f6a09c09"
+      Hint: Description
+      Value: Login credentials are required for the partner portal. Please contact your Account Manager for more information about this partner program.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "27e07c16-79a8-4c2a-bd2b-32b0635bc50e"
+    - ID: "90bd88c9-e82e-5c50-ad98-989220944f7e"
+      Hint: Card Title
+      Value: Log in to our partner portal
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cdca721e-5ed1-5b41-9935-d852e735eabe"
+      Hint: Card Subtitle
+      Value: DOM Keystone®
+    - ID: "d95bc388-de0f-5163-87b1-a2b034b6aa12"
+      Hint: Portal Image
+      Value: |
+        <image mediaid="{B94075E0-33CA-5338-B17E-D1B7C83124B2}" alt="Log in to our partner portal" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T120302Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Keystone®
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0e676b19-4785-5124-a369-1c7f9f110f4d"
+      Hint: Portal Link
+      Value: |
+        <link text="Log in to our partner portal" linktype="external" url="https://www.domextranet.de" anchor="" target="" />
+    - ID: "110b3e2b-40d0-5852-92f3-ff4281cc719d"
+      Hint: Heading
+      Value: DOM Keystone®
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "83046a75-0a22-5c71-b0c5-3ed7f6a09c09"
+      Hint: Description
+      Value: Login credentials are required for the partner portal. Please contact your Account Manager for more information about this partner program.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3705687e-eeb9-41eb-a209-633ee24d5996"
+    - ID: "90bd88c9-e82e-5c50-ad98-989220944f7e"
+      Hint: Card Title
+      Value: Log in to our partner portal
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cdca721e-5ed1-5b41-9935-d852e735eabe"
+      Hint: Card Subtitle
+      Value: DOM Keystone®
+    - ID: "d95bc388-de0f-5163-87b1-a2b034b6aa12"
+      Hint: Portal Image
+      Value: |
+        <image mediaid="{B94075E0-33CA-5338-B17E-D1B7C83124B2}" alt="Log in to our partner portal" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T120301Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Keystone®
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0e676b19-4785-5124-a369-1c7f9f110f4d"
+      Hint: Portal Link
+      Value: |
+        <link text="Connectez-vous à notre portail partenaire" linktype="external" url="https://www.domextranet.de" anchor="" target="" />
+    - ID: "110b3e2b-40d0-5852-92f3-ff4281cc719d"
+      Hint: Heading
+      Value: DOM Keystone®
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "83046a75-0a22-5c71-b0c5-3ed7f6a09c09"
+      Hint: Description
+      Value: Des identifiants de connexion sont requis pour accéder au portail des partenaires. Veuillez contacter votre gestionnaire de compte pour plus d’informations sur ce programme partenaire.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "60b7e447-ea06-4f8b-908c-404a4eb77055"
+    - ID: "90bd88c9-e82e-5c50-ad98-989220944f7e"
+      Hint: Card Title
+      Value: "Connectez-vous à notre portail partenaire"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cdca721e-5ed1-5b41-9935-d852e735eabe"
+      Hint: Card Subtitle
+      Value: DOM Keystone®
+    - ID: "d95bc388-de0f-5163-87b1-a2b034b6aa12"
+      Hint: Portal Image
+      Value: |
+        <image mediaid="{B94075E0-33CA-5338-B17E-D1B7C83124B2}" alt="Log in to our partner portal" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T120301Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Keystone®
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0e676b19-4785-5124-a369-1c7f9f110f4d"
+      Hint: Portal Link
+      Value: |
+        <link text="Log in to our partner portal" linktype="external" url="https://www.domextranet.de" anchor="" target="" />
+    - ID: "110b3e2b-40d0-5852-92f3-ff4281cc719d"
+      Hint: Heading
+      Value: DOM Keystone®
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "83046a75-0a22-5c71-b0c5-3ed7f6a09c09"
+      Hint: Description
+      Value: Login credentials are required for the partner portal. Please contact your Account Manager for more information about this partner program.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8e5657b1-d2d8-4e9a-bfdb-ee9946fd639c"
+    - ID: "90bd88c9-e82e-5c50-ad98-989220944f7e"
+      Hint: Card Title
+      Value: Log in to our partner portal
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cdca721e-5ed1-5b41-9935-d852e735eabe"
+      Hint: Card Subtitle
+      Value: DOM Keystone®
+    - ID: "d95bc388-de0f-5163-87b1-a2b034b6aa12"
+      Hint: Portal Image
+      Value: |
+        <image mediaid="{B94075E0-33CA-5338-B17E-D1B7C83124B2}" alt="Log in to our partner portal" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T120302Z

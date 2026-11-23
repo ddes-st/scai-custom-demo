@@ -1,0 +1,30 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-10",
+  "contentHash": "d3306a91805d6ac2d4a3fa1fd89680d98d1465b39bafa3fa7200c53a15977a84",
+  "conversionSourceHash": "efa68711e77860197c8dd591d2a4377e1dcf8c7e30700b549c20d5730cc27b77",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-customer-story-item",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T22:09:16.639Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreCustomerStoryItem",
+  "mediaFolders": [
+    "Customer Story Media Items"
+  ],
+  "contentFolders": [
+    [
+      "Customer Story Media Items"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

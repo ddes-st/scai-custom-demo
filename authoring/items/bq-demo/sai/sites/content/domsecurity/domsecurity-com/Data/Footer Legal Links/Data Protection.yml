@@ -1,0 +1,98 @@
+---
+ID: "a6ddaefa-d7b4-58bc-9435-9526c81aaabe"
+Parent: "6109041b-a797-50df-b307-47ac45ddd0f1"
+Template: "d6474de7-4868-549f-a786-166b3a1ad348"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Footer Legal Links/Data Protection"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Data Protection
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "2732bf95-a487-5031-83f6-c4ce31a4d12d"
+      Hint: Link
+      Value: "<link text=\"Data Protection\" linktype=\"internal\" url=\"/legal/data-protection\" anchor=\"\" target=\"\" id=\"{0B154823-7813-5AEB-AF29-EC61CF5C57BC}\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Data Protection
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "2732bf95-a487-5031-83f6-c4ce31a4d12d"
+      Hint: Link
+      Value: "<link text=\"Data Protection\" linktype=\"internal\" url=\"/legal/data-protection\" anchor=\"\" target=\"\" id=\"{0B154823-7813-5AEB-AF29-EC61CF5C57BC}\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Data Protection
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "2732bf95-a487-5031-83f6-c4ce31a4d12d"
+      Hint: Link
+      Value: "<link text=\"Data Protection\" linktype=\"internal\" url=\"/legal/data-protection\" anchor=\"\" target=\"\" id=\"{0B154823-7813-5AEB-AF29-EC61CF5C57BC}\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: protection des données
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "2732bf95-a487-5031-83f6-c4ce31a4d12d"
+      Hint: Link
+      Value: "<link text=\"protection des données\" linktype=\"internal\" url=\"/legal/data-protection\" anchor=\"\" target=\"\" id=\"{0B154823-7813-5AEB-AF29-EC61CF5C57BC}\" />"

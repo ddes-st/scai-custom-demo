@@ -1,0 +1,43 @@
+﻿---
+ID: "a1368733-0142-43fb-ba74-e7c3f2e4d883"
+Parent: "ec98b276-8777-4164-8f7b-6bbbfef0b8fa"
+Template: "8f8e2549-c77f-4860-b83b-54fa31e2befa"
+Path: /sitecore/system/Settings/Validation Rules/Field Rules/System/Image Has Alt Text
+SharedFields:
+- ID: "43a829d1-43da-465c-b772-ebaa0d515e3e"
+  Hint: Type
+  Value: Sitecore.Data.Validators.FieldValidators.ImageAltFieldValidator,Sitecore.Kernel
+- ID: "8f9d8603-2e34-4c5f-b0bb-f0d91eb956ca"
+  Hint: Parameters
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20071113T130830Z
+    - ID: "58014183-26fe-4568-b19f-c26745824c32"
+      Hint: Description
+      Value: The field must have an Alt text.
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b1d046fb-0495-4b2f-b5ed-bc3c131a5b33"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: "20141017T155021:635491578215487007Z"
+    - ID: "da43c533-cbae-43d0-9019-65b1e346f984"
+      Hint: Title
+      Value: Has required alt text

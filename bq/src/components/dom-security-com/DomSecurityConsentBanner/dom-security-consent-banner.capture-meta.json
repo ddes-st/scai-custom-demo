@@ -1,0 +1,13 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-01",
+  "contentHash": "78a7b1e2b9e82ffa8ff874e93c6e40c765a87a19b1201ccf4cc525427bddea43",
+  "conversionSourceHash": "4a73453f30c27dc7611d9fd431e58da3528f682fa2b46347ef0552903b453fb8",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "dom-security-consent-banner",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:48:47.089Z"
+}

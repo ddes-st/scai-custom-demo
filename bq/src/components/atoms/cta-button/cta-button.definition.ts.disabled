@@ -1,0 +1,121 @@
+import type { ComponentTemplateDefinition } from "../../../../tools/definitions/types";
+
+/**
+ * Definition for the `CtaButton` atom (./cta-button.tsx).
+ *
+ * Hybrid component package (one file):
+ * - `model` → datasource templates (same shape as `kind: "data"`)
+ * - `parameters` → inline params (same emitter as `kind: "parameters"`; extract
+ *   to a standalone parameters definition + `parameters: { definitionKey }` when shared)
+ * - rendering registration / scaffolding / variants → `emitRenderingDefinition`
+ * - `content` → site seed items (same helpers as data content)
+ */
+export const ctaButtonDefinition = {
+  kind: "component",
+  definitionKey: "cta-button",
+  name: "cta-button",
+  displayName: "CTA Button",
+  description:
+    "Call-to-action button with a Sitecore link field, presentation params, and Font Awesome Free icons.",
+  componentName: "CtaButton",
+  icon: "Office/32x32/button.png",
+  openPropertiesAfterAdd: false,
+  datasourceLocation: {
+    scope: "site",
+    root: "data",
+    folder: ["CtaButtons"],
+  },
+  model: {
+    folderTemplate: {
+      name: "CtaButton Folder",
+    },
+    itemTemplate: {
+      name: "CtaButton",
+      sections: [
+        {
+          name: "Data",
+          sortOrder: 100,
+          fields: [
+            {
+              name: "Link",
+              type: "General Link",
+              description:
+                "Where the button goes. The link text doubles as the button label.",
+              default: { text: "Get started", url: "/" },
+              sortOrder: 100,
+              validators: [{ rule: "Required" }],
+            },
+          ],
+        },
+      ],
+    },
+  },
+  variants: [{ name: "Default" }],
+  parameters: {
+    sections: [
+      {
+        name: "Data",
+        sortOrder: 100,
+        fields: [
+          {
+            name: "Variant",
+            type: "Droplink",
+            shared: true,
+            description:
+              "Visual treatment: default, outline, secondary, ghost, destructive, or link.",
+            default: "default",
+            sortOrder: 100,
+            enumeration: { definitionKey: "button-variant" },
+          },
+          {
+            name: "Size",
+            type: "Droplink",
+            shared: true,
+            description: "Button size (maps to the shadcn button primitive).",
+            default: "default",
+            sortOrder: 110,
+            enumeration: { definitionKey: "size" },
+          },
+          {
+            name: "ShowArrow",
+            type: "Checkbox",
+            shared: true,
+            description: "Append a trailing arrow after the button label.",
+            sortOrder: 150,
+          },
+          {
+            name: "IconName",
+            type: "Single-Line Text",
+            shared: true,
+            description:
+              "Font Awesome Free 7.3.1 icon id (e.g. arrow-right). Use none to clear.",
+            default: "none",
+            sortOrder: 250,
+          },
+          {
+            name: "IconStyle",
+            type: "Droplink",
+            shared: true,
+            description: "Font Awesome style: solid, regular, or brands.",
+            default: "solid",
+            sortOrder: 260,
+            enumeration: { definitionKey: "fa-icon-style" },
+          },
+        ],
+      },
+    ],
+  },
+  content: {
+    location: { root: "data", folder: ["CtaButtons"] },
+    items: [
+      {
+        name: "Get started",
+        fields: {
+          Link: { text: "Get started", url: "/" },
+        },
+      },
+    ],
+  },
+} satisfies ComponentTemplateDefinition;
+
+export default ctaButtonDefinition;

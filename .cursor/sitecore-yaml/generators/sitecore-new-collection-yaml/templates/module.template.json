@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "new-collection-scs",
+  "items": {
+    "path": "serialized-content",
+    "includes": [
+      {
+        "name": "templates",
+        "path": "/sitecore/templates/Project/new-collection",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "branches",
+        "path": "/sitecore/templates/Branches/Project/new-collection",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "media-library",
+        "path": "/sitecore/media library/Project/new-collection",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "renderings",
+        "path": "/sitecore/Layout/Renderings/Project/new-collection",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "placeholder-settings",
+        "path": "/sitecore/Layout/Placeholder Settings/Project/new-collection",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "project-settings",
+        "path": "/sitecore/system/Settings/Project/new-collection",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "collection",
+        "path": "/sitecore/content/new-collection/",
+        "allowedPushOperations": "CreateUpdateAndDelete",
+        "scope": "SingleItem"
+      }
+    ]
+  }
+}

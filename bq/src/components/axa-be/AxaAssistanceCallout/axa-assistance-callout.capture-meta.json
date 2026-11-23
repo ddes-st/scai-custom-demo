@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-05",
+  "contentHash": "95d0602b374e55f59379783b0c665698b47c54b8a6fc827590287cfd0aa6d578",
+  "conversionSourceHash": "1f18b5c691ea43c97a4b6836420aa90c936a90376524daebd744c356f3f73a4f",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-assistance-callout",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:12:51.921Z"
+}

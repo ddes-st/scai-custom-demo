@@ -1,6 +1,0 @@
----
-description: Read and update the Sitecore AI manifest on every Sitecore component task. The manifest tracks all AI-created items, IDs, and verification status.
-alwaysApply: true
----
-
-Read and follow `docs/ai/rules/05-sitecore-manifest.md` in full.

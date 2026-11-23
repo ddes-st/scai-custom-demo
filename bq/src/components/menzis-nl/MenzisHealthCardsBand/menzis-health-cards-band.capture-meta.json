@@ -1,0 +1,32 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-04",
+  "contentHash": "bd26c1ea151bfcce5b45d1a3e9a0607add41a15d67a960c0444f80100ddeffd8",
+  "conversionSourceHash": "c0b22800708e8715abf62d519778684f1ce98be10811cd063d121af82548973b",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "menzis-health-cards-band",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-20T02:25:09.822Z",
+  "forceRenamedFrom": "MenzisHelpHealthCardsBand",
+  "previousDefinitionKey": "menzis-help-health-cards-band",
+  "placeholderKeys": [],
+  "componentName": "MenzisHealthCardsBand",
+  "mediaFolders": [
+    "Health Cards Bands"
+  ],
+  "contentFolders": [
+    [
+      "Health Cards Bands"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

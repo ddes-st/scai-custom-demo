@@ -1,0 +1,79 @@
+import type { DataDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Avatars data model + sample items under `{site}/Data/Avatars`.
+ */
+export const avatarsDataDefinition = {
+  kind: "data",
+  definitionKey: "avatars",
+  name: "Avatars",
+  cultures: ["nl-BE", "fr-BE"],
+  location: { root: "data", folder: ["Avatars"] },
+  model: {
+    folderTemplate: {
+      name: "Avatars",
+      displayName: "Avatars",
+      description: "Reusable avatar people for demos.",
+      // insert omitted → { items: true, folders: true }
+    },
+    itemTemplate: {
+      name: "Avatar",
+      sections: [
+        {
+          name: "Avatar",
+          fields: [
+            {
+              name: "Name",
+              type: "Single-Line Text",
+              shared: true,
+              description:
+                "Display name. Used for initials fallback when no image is set.",
+              default: "Jane Doe",
+              sortOrder: 100,
+            },
+            {
+              name: "Image",
+              type: "Image",
+              shared: true,
+              description: "Avatar image. Falls back to initials when empty.",
+              sortOrder: 200,
+            },
+            {
+              name: "Description",
+              type: "Multi-Line Text",
+              description:
+                "Short description shown alongside the avatar (e.g. 'Head of Experience').",
+              default: "Head of Experience",
+              sortOrder: 300,
+            },
+          ],
+        },
+        {
+          name: "Additional section",
+          sortOrder: 200,
+          fields: [
+            {
+              name: "Related avatars",
+              type: "Droplink",
+              shared: true,
+              source: { root: "data", folder: ["Avatars"] },
+              sortOrder: 100,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  items: [
+    {
+      name: "Avatar 1",
+      fields: { Name: "Avatar 1" },
+    },
+    {
+      name: "Avatar 2",
+      fields: { Name: "Avatar 2" },
+    },
+  ],
+} satisfies DataDefinition;
+
+export default avatarsDataDefinition;

@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "sitecore.config": ["./sitecore.config.ts"],
+      "src/*": ["./src/*"],
+      "components/*": ["./src/components/*"],
+      "lib/*": ["./src/lib/*"],
+      "temp/*": ["./src/temp/*"],
+      "assets/*": ["./src/assets/*"],
+      ".sitecore/*": ["./.sitecore/*"],
+      "use-intl/core.js": ["./node_modules/use-intl/dist/types/core.d.ts"],
+      "use-intl/react.js": ["./node_modules/use-intl/dist/types/react.d.ts"],
+      "use-intl/dist/types/core/index.js": [
+        "./node_modules/use-intl/dist/types/core/index.d.ts"
+      ],
+      "use-intl/dist/types/core/*.js": [
+        "./node_modules/use-intl/dist/types/core/*.d.ts"
+      ],
+      "next-intl/dist/types/shared/NextIntlClientProvider.js": [
+        "./node_modules/next-intl/dist/types/shared/NextIntlClientProvider.d.ts"
+      ],
+      "next-intl/dist/types/routing/defineRouting.js": [
+        "./node_modules/next-intl/dist/types/routing/defineRouting.d.ts"
+      ],
+      "next-intl/dist/types/routing/index.js": [
+        "./node_modules/next-intl/dist/types/routing/index.d.ts"
+      ],
+      "next-intl/dist/types/react-client/index.js": [
+        "./node_modules/next-intl/dist/types/react-client/index.d.ts"
+      ],
+      "next-intl/dist/types/react-server/index.js": [
+        "./node_modules/next-intl/dist/types/react-server/index.d.ts"
+      ],
+      "next-intl/dist/types/react-server/NextIntlClientProviderServer.js": [
+        "./node_modules/next-intl/dist/types/react-server/NextIntlClientProviderServer.d.ts"
+      ]
+    },
+    "target": "ES2017",
+    "types": ["node"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictFunctionTypes": false,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tools/create-section-components/prompts/**"
+  ]
+}

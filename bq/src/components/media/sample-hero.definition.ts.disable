@@ -1,0 +1,25 @@
+import type { MediaDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Example standalone media-library image.
+ *
+ * Emits:
+ * `authoring/items/bq-demo/sai/media-library/…/bq-demo/Samples/sample-hero.yml`
+ *
+ * Reference from Image fields / defaults:
+ * `{ definitionKey: "sample-hero" }` (optional `alt` override).
+ * Inline `{ url, alt }` / `{ base64, alt }` still work and use the same emitter.
+ */
+export const sampleHeroMediaDefinition = {
+  kind: "media",
+  definitionKey: "sample-hero",
+  name: "sample-hero",
+  // Stable Pexels CDN asset (search: sample) — avoid ephemeral hosts like picsum.
+  url: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop",
+  alt: "Sample hero image",
+  location: {
+    folder: ["Samples"],
+  },
+} satisfies MediaDefinition;
+
+export default sampleHeroMediaDefinition;

@@ -1,0 +1,94 @@
+import type { RenderingDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Custom Card — card block datasource + layout registration.
+ *
+ * Emits:
+ * - renderings/Project/{collection}/Custom Card.yml
+ * - templates/{collection}/Custom Card/… (branch + datasource templates)
+ * - systemSettings/…/Add Custom Cards Data Item.yml
+ * - site/…/Presentation/Headless Variants/Custom Card/{Default,Variant2,…}.yml
+ *
+ * Datasource picker: site Data/…/Custom Card Folder
+ */
+export const customCardRenderingDefinition = {
+  kind: "rendering",
+  definitionKey: "custom-card",
+  name: "Custom Card",
+  displayName: "Custom Card",
+  componentName: "Custom Card",
+  renderingCssClass: "customcardcssclass",
+  icon: "Apps/32x32/Carousel.png",
+  cultures: ["nl-BE", "fr-BE"],
+  openPropertiesAfterAdd: false,
+
+  model: {
+    folderTemplate: {
+      name: "Custom Card Folder",
+    },
+    itemTemplate: {
+      name: "Custom Card",
+      sections: [
+        {
+          name: "Card",
+          sortOrder: 100,
+          fields: [
+            {
+              name: "CardTitle",
+              type: "Single-Line Text",
+              sortOrder: 100,
+            },
+            {
+              name: "CardText",
+              type: "Rich Text",
+              sortOrder: 200,
+            },
+            {
+              name: "CardImage",
+              type: "Image",
+              sortOrder: 300,
+            },
+            {
+              name: "CardLink",
+              type: "General Link",
+              sortOrder: 400,
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  datasourceLocation: {
+    scope: "site",
+    root: "data",
+  },
+  variants: [{ name: "Default" }, { name: "Variant2" }, { name: "Variant3" }],
+  parameters: {
+    sections: [
+      {
+        name: "Data",
+        sortOrder: 100,
+        fields: [
+          {
+            name: "CssClass",
+            type: "Single-Line Text",
+            shared: true,
+            description: "Optional extra CSS class(es) on the rendering root.",
+            sortOrder: 100,
+          },
+          {
+            name: "HideOnMobile",
+            type: "Checkbox",
+            shared: true,
+            description: "Hide this rendering on small viewports.",
+            default: false,
+            sortOrder: 200,
+          },
+        ],
+      },
+    ],
+  },
+} satisfies RenderingDefinition;
+
+export default customCardRenderingDefinition;

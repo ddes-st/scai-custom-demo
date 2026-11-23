@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-05",
+  "contentHash": "22f1ab497cf52b9efbdb8100209420f02196f7eade83d54a6ab00aaeaea3da67",
+  "conversionSourceHash": "420c25c2b2660bc6fef041cf1abc74d3195baf31749167f3a85b2d048d108709",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-assistance-split-panel",
+  "menuStates": [],
+  "generatedAt": "2026-10-02T13:56:40.836Z"
+}

@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-01",
+  "contentHash": "27b03763b7d4915f444835d3a034bfdf6d02d079c0f5aa3c1f0a1cc933af443a",
+  "conversionSourceHash": "38f0e356bec189a231705f96165b2569cce0dd1fb61ebec06713f96181424cd0",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "cookie-categories",
+  "children": [
+    {
+      "componentName": "SitecoreCookieConsentCategory",
+      "definitionKey": "sitecore-cookie-consent-category",
+      "placeholderKey": "cookie-categories"
+    }
+  ],
+  "definitionKey": "sitecore-cookie-consent-banner",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:14:04.178Z",
+  "placeholderKeys": [
+    "cookie-categories"
+  ],
+  "componentName": "SitecoreCookieConsentBanner",
+  "mediaFolders": [
+    "Cookie Consent Banners"
+  ],
+  "contentFolders": [
+    [
+      "Cookie Consent Banners"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

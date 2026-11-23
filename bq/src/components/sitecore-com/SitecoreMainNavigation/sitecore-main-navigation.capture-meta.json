@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-03",
+  "contentHash": "677a1c4071671ca93b0eafbb870a4dd085652a01c1fc89121a5928263d621f7f",
+  "conversionSourceHash": "65371e438eb4ac845b17305c7b637879c209f7231b7e9f122988b7f4cbd33884",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "navigation",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-main-navigation",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:15:20.279Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreMainNavigation",
+  "mediaFolders": [
+    "Main Navigations"
+  ],
+  "contentFolders": [
+    [
+      "Main Navigations"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

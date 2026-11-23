@@ -55,8 +55,6 @@ import * as Logodev from 'src/components/logo/Logo.dev';
 import * as nextImageSrcdev from 'src/components/image/nextImageSrc.dev';
 import * as ImageWrapperdev from 'src/components/image/ImageWrapper.dev';
 import * as ImageWrapperclient from 'src/components/image/ImageWrapper.client';
-
-import * as imageoptimizationcontext from 'src/components/image/image-optimization.context';
 import * as Icon from 'src/components/icon/Icon';
 import * as YoutubeIcondev from 'src/components/icon/svg/YoutubeIcon.dev';
 import * as TwitterIcondev from 'src/components/icon/svg/TwitterIcon.dev';
@@ -133,7 +131,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NavigationList', { ...NavigationListclient }],
   ['Navigation', { ...Navigation }],
   ['LinkList', { ...LinkList }],
-  ['Image', { ...Image, componentType: 'client' }],
+  ['Image', { ...Image }],
   ['ContentBlock', { ...ContentBlock, componentType: 'client' }],
   ['Container', { ...Container }],
   ['ColumnSplitter', { ...ColumnSplitter }],
@@ -160,8 +158,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Logo', { ...Logodev }],
   ['nextImageSrc', { ...nextImageSrcdev }],
   ['ImageWrapper', { ...ImageWrapperdev, ...ImageWrapperclient }],
-
-  ['image-optimization', { ...imageoptimizationcontext }],
   ['Icon', { ...Icon, componentType: 'client' }],
   ['YoutubeIcon', { ...YoutubeIcondev }],
   ['TwitterIcon', { ...TwitterIcondev }],

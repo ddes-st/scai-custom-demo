@@ -134,7 +134,6 @@ import * as ImageGallery from 'src/components/image-gallery/ImageGallery';
 import * as nextImageSrcdev from 'src/components/image/nextImageSrc.dev';
 import * as ImageWrapperdev from 'src/components/image/ImageWrapper.dev';
 import * as ImageWrapperclient from 'src/components/image/ImageWrapper.client';
-
 import * as imageoptimizationcontext from 'src/components/image/image-optimization.context';
 import * as Icon from 'src/components/icon/Icon';
 import * as YoutubeIcondev from 'src/components/icon/svg/YoutubeIcon.dev';
@@ -350,7 +349,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ImageGallery', { ...ImageGallerydev, ...ImageGallery, componentType: 'client' }],
   ['nextImageSrc', { ...nextImageSrcdev }],
   ['ImageWrapper', { ...ImageWrapperdev, ...ImageWrapperclient }],
-
   ['image-optimization', { ...imageoptimizationcontext }],
   ['Icon', { ...Icon, componentType: 'client' }],
   ['YoutubeIcon', { ...YoutubeIcondev }],

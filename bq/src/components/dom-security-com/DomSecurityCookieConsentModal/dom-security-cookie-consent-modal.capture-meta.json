@@ -1,0 +1,13 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom",
+  "sectionDir": "sections/section-01",
+  "contentHash": "78a7b1e2b9e82ffa8ff874e93c6e40c765a87a19b1201ccf4cc525427bddea43",
+  "conversionSourceHash": "c359405280b357fcb5b61e91be8d2e004a0581acf09a2c1b4f69c7f52b7a3cb1",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "dom-security-cookie-consent-modal",
+  "menuStates": [],
+  "generatedAt": "2026-10-05T01:33:57.955Z"
+}

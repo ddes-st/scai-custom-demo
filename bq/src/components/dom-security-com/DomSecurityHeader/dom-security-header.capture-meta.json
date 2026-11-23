@@ -1,0 +1,13 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-02",
+  "contentHash": "ddeee42e4345542227858cb76d3760d13eefc4677d9e2c8261566057df5be1f5",
+  "conversionSourceHash": "c024cb568cdcf3006b253b1dd9fde601693333916b64c7681e682d304b45fd9d",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "dom-security-header",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:48:57.485Z"
+}

@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-01",
+  "contentHash": "01e2c70ecb291369ffd39012642c4da10a41343fd1622db4c0068af54f80dfb0",
+  "conversionSourceHash": "95ba17391b938fd28a20135c94dde78d4b1a7dde5e52d5f93c7425cad9add960",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-consent-banner",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:10:55.707Z"
+}

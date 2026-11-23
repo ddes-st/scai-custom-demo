@@ -14,6 +14,7 @@ import SitecoreStyles from '@/components/content-sdk/SitecoreStyles';
 import { Figtree } from 'next/font/google';
 import componentMap from '.sitecore/component-map';
 import Providers from './Providers';
+import type { HomeItemFields } from '@/components/hero/hero.props';
 
 const heading = Figtree({
   weight: ['400', '500'],
@@ -30,6 +31,7 @@ const body = Figtree({
 });
 interface LayoutProps {
   page: Page;
+  homeFields?: HomeItemFields;
 }
 
 export interface RouteFields {
@@ -47,7 +49,7 @@ export interface RouteFields {
   thumbnailImage?: ImageField;
 }
 
-const Layout = ({ page }: LayoutProps): JSX.Element => {
+const Layout = ({ page, homeFields }: LayoutProps): JSX.Element => {
   const { layout, mode } = page;
   const { route } = layout.sitecore;
   const mainClassPageEditing = mode.isEditing ? 'editing-mode' : 'prod-mode';
@@ -57,7 +59,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
     <>
       <Scripts />
       <SitecoreStyles layoutData={layout} />
-      <Providers page={page}>
+      <Providers page={page} homeFields={homeFields}>
         {/* root placeholder for the app, which we add components to using route data */}
         <div className={`min-h-screen flex flex-col ${classNamesMain}`}>
           {mode.isDesignLibrary ? (

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Title",
+    "title": "Title",
+    "type": "Single-Line Text",
+    "sort": 100
+  },
+  {
+    "name": "Description",
+    "title": "Description",
+    "type": "Rich Text",
+    "sort": 200
+  },
+  {
+    "name": "Image",
+    "title": "Image",
+    "type": "Image",
+    "sort": 300
+  },
+  {
+    "name": "Link",
+    "title": "Link",
+    "type": "General Link",
+    "sort": 400
+  }
+]

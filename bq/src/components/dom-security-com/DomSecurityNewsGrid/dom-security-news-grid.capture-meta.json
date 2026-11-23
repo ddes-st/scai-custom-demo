@@ -1,0 +1,15 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom",
+  "sectionDir": "sections/section-06",
+  "contentHash": "c24061bf9c609e575303499ecc6c09688eebaf0b99dd9f094ccbd2ef4bff10b4",
+  "conversionSourceHash": "81e5365a9c476f5c5fee944a780894c6140ff4b4e1f36bcb5ec1a2f61718d78c",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "news-grid",
+  "children": [
+    "DomSecurityNewsTeaser"
+  ],
+  "definitionKey": "dom-security-news-grid",
+  "menuStates": [],
+  "generatedAt": "2026-10-05T11:59:11.428Z"
+}

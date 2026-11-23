@@ -1,0 +1,91 @@
+---
+ID: "e78a0a8f-fbca-5e48-9d3a-ed3b23bdfd01"
+Parent: "86b86489-fb72-5a01-8ea0-bb0d972080f2"
+Template: "f304aec3-7ca9-5b35-84b3-78476f135962"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessory Sections/Optional Accessories"
+SharedFields:
+- ID: "aeddbe0b-fb4a-5514-95ac-7ba15e680c8c"
+  Hint: Accessories Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories
+- ID: "e9a2120b-146d-5c97-82d3-417cd67b396e"
+  Hint: Source Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Products
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Optional Accessories
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b171ceed-0ed2-489d-8577-ae258a1601b2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d899b54-3eaa-51b3-9008-c6f9b1dfc600"
+      Hint: Heading
+      Value: Optional accessories
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Optionele accessoires
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b171ceed-0ed2-489d-8577-ae258a1601b2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d899b54-3eaa-51b3-9008-c6f9b1dfc600"
+      Hint: Heading
+      Value: Optionele accessoires
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Accessoires facultatifs
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b171ceed-0ed2-489d-8577-ae258a1601b2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d899b54-3eaa-51b3-9008-c6f9b1dfc600"
+      Hint: Heading
+      Value: Accessoires facultatifs

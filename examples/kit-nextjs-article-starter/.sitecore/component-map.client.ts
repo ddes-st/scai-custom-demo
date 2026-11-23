@@ -12,7 +12,6 @@ import * as TestimonialCarousel from 'src/components/testimonial-carousel/Testim
 import * as Title from 'src/components/sxa/Title';
 import * as NavigationMenuToggleclient from 'src/components/sxa/NavigationMenuToggle.client';
 import * as NavigationListclient from 'src/components/sxa/NavigationList.client';
-import * as Image from 'src/components/sxa/Image';
 import * as ContentBlock from 'src/components/sxa/ContentBlock';
 import * as SubscriptionBanner from 'src/components/subscription-banner/SubscriptionBanner';
 import * as SecondaryNavigation from 'src/components/secondary-navigation/SecondaryNavigation';
@@ -53,7 +52,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Title', { ...Title }],
   ['NavigationMenuToggle', { ...NavigationMenuToggleclient }],
   ['NavigationList', { ...NavigationListclient }],
-  ['Image', { ...Image }],
   ['ContentBlock', { ...ContentBlock }],
   ['SubscriptionBanner', { ...SubscriptionBanner }],
   ['SecondaryNavigation', { ...SecondaryNavigation }],

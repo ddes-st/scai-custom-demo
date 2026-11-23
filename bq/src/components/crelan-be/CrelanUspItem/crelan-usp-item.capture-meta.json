@@ -1,0 +1,30 @@
+{
+  "url": "https://www.crelan.be/nl/particulieren",
+  "pageSlug": "www-crelan-be--nl-particulieren",
+  "sectionDir": "www-crelan-be--nl-particulieren/sections/section-04",
+  "contentHash": "5fe355767afa53fb8fdcfe0eae6229f6f4ea597994a4a0b0e2e72fe355c7766e",
+  "conversionSourceHash": "0456c3d9dedc89d583820bf477e239de6139e7d3b6fdd26ea590ac14f76982ac",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "crelan-usp-item",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T13:06:07.873Z",
+  "placeholderKeys": [],
+  "componentName": "CrelanUspItem",
+  "mediaFolders": [
+    "Usp Items"
+  ],
+  "contentFolders": [
+    [
+      "Usp Items"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

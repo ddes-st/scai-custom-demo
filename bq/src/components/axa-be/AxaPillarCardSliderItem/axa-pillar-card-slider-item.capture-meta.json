@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-07",
+  "contentHash": "3a7bbbd18dc417f24d33b67524ada120d8b94b7005593b483dd90cf83ddc615c",
+  "conversionSourceHash": "2c3113064a4ac36f3f291766605dae9b3a304b9131af040467e35323fdfeac2d",
+  "role": "child",
+  "parentComponentName": "AxaPillarCardSlider",
+  "definitionKey": "axa-pillar-card-slider-item",
+  "generatedAt": "2026-09-24T21:07:31.972Z"
+}

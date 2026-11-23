@@ -1,0 +1,106 @@
+---
+ID: "1048c5d9-6d46-5c07-bb25-89ff2439e962"
+Parent: "c159ae01-ddeb-5684-9f42-b5217f0689a1"
+Template: "3dbf9296-fe1b-5248-bfd9-bb9a0c844fbb"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories/installation-tool-set"
+SharedFields:
+- ID: "723828e4-a060-50e0-ae22-ef84ff5d9671"
+  Hint: SKU
+  Value: 516574
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Installation tool set
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b450d72a-5e37-4ac8-95da-4c1f6b1782d2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Installation tool set
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: "Torx screwdriver TX6, knob tool and fixing bracket."
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{63FBD745-C988-5D37-873A-215083713BC9}\" alt=\"Installation tool set\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Installatiegereedschapsset
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b450d72a-5e37-4ac8-95da-4c1f6b1782d2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Installatiegereedschapsset
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: "Torx-schroevendraaier TX6, knopgereedschap en bevestigingsbeugel."
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{63FBD745-C988-5D37-873A-215083713BC9}\" alt=\"Installation tool set\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kit d’outils d’installation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b450d72a-5e37-4ac8-95da-4c1f6b1782d2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Kit d’outils d’installation
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: "Tournevis Torx TX6, outil pour bouton et support de fixation."
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{63FBD745-C988-5D37-873A-215083713BC9}\" alt=\"Installation tool set\" />"

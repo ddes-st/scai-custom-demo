@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
+      "sitecore.config": [
+        "./sitecore.config.ts"
+      ],
+      "src/*": [
+        "./src/*"
+      ],
       ".sitecore/*": [
-        ".sitecore/*"
+        "./.sitecore/*"
       ],
       "@/*": [
         "./src/*"

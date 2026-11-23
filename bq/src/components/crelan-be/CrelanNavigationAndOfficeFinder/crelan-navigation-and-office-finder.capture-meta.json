@@ -1,0 +1,45 @@
+{
+  "url": "https://www.crelan.be/nl/particulieren",
+  "pageSlug": "www-crelan-be--nl-particulieren",
+  "sectionDir": "www-crelan-be--nl-particulieren/sections/section-04",
+  "contentHash": "5fe355767afa53fb8fdcfe0eae6229f6f4ea597994a4a0b0e2e72fe355c7766e",
+  "conversionSourceHash": "0456c3d9dedc89d583820bf477e239de6139e7d3b6fdd26ea590ac14f76982ac",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "navigation-cards",
+  "children": [
+    {
+      "componentName": "CrelanNavigationCard",
+      "definitionKey": "crelan-navigation-card",
+      "placeholderKey": "navigation-cards"
+    },
+    {
+      "componentName": "CrelanUspItem",
+      "definitionKey": "crelan-usp-item",
+      "placeholderKey": "usp-items"
+    }
+  ],
+  "definitionKey": "crelan-navigation-and-office-finder",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T13:06:07.925Z",
+  "placeholderKeys": [
+    "navigation-cards",
+    "usp-items"
+  ],
+  "componentName": "CrelanNavigationAndOfficeFinder",
+  "mediaFolders": [
+    "Navigation And Office Finders"
+  ],
+  "contentFolders": [
+    [
+      "Navigation And Office Finders"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

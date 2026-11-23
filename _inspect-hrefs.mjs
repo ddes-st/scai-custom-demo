@@ -1,0 +1,12 @@
+﻿import { readFileSync, writeFileSync } from 'fs';
+const html = readFileSync('.bq/captures/www-sitecore-com/www-sitecore-com--home/sections/section-03/section.html', 'utf8');
+console.log('HTML length:', html.length);
+const allHref = [...html.matchAll(/href\s*=\s*["']([^"']+)["']/gi)].map(m => m[1]);
+console.log('Total href attrs:', allHref.length);
+const counts = {};
+for (const h of allHref) counts[h] = (counts[h]||0)+1;
+const unique = Object.keys(counts).sort();
+console.log('Unique href values:', unique.length);
+writeFileSync('_hrefs-raw.json', JSON.stringify({ total: allHref.length, uniqueCount: unique.length, unique }, null, 2));
+console.log(unique.slice(0, 80).join('\n'));
+if (unique.length > 80) console.log('... and', unique.length-80, 'more');

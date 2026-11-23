@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-11",
+  "contentHash": "5a5f2ccf34ca700446a529255f5ff6c7b45b9006ca1e624695109677e05ad4d0",
+  "conversionSourceHash": "cad015b352f0ee9468fd1d5fa9e9b99fe19bf0fbc021bf8ddf7cbbab20d1d9e5",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-advisor-support-split",
+  "menuStates": [],
+  "generatedAt": "2026-10-02T13:59:40.795Z"
+}

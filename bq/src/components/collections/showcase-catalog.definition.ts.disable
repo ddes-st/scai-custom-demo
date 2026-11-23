@@ -1,0 +1,14 @@
+import type { CollectionDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Sample collection — managed via Sites API.
+ * After create/pull, YAML is stamped `__Created by: BQ` and pushed.
+ * Remove this definition file to delete remotely on the next generate.
+ */
+export const showcaseCatalogCollection = {
+  kind: "collection",
+  definitionKey: "showcase-catalog-collection",
+  name: "Showcase Catalog",
+  systemName: "showcasecatalog",
+  description: "Demo collection for BQ collection/site emitters.",
+} satisfies CollectionDefinition;

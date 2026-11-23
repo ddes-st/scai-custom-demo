@@ -1,0 +1,18 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg",
+  "sectionDir": "sections/section-03",
+  "contentHash": "34aec10b526902b0ef90aa4d2b2b80b4e5f805d627a29667842bd2de778017bd",
+  "conversionSourceHash": "0a725b8416b30f3425a75591be0b4fe2e464e57a428e68b985f4db6e71256d0c",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "primary-navigation",
+  "children": [
+    "DomSecurityNavigationItem",
+    "DomSecurityProductCategoryColumn"
+  ],
+  "definitionKey": "dom-security-primary-navigation",
+  "menuStates": [
+    "menu-products"
+  ],
+  "generatedAt": "2026-10-05T01:51:47.110Z"
+}

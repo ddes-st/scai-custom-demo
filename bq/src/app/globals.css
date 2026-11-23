@@ -1,0 +1,84 @@
+/*
+ * Scan bq/src only (relative to this file). Do not use bare @import "tailwindcss"
+ * — that also scans tools/ and can emit broken utilities from prompt/test text
+ * (e.g. bg-[url(…)] → Module not found).
+ */
+@import "tailwindcss" source("..");
+
+/*
+ * Font Awesome 7 styles.css incorrectly applies stack positioning to ALL
+ * .svg-inline--fa (position:absolute; inset:0), which collapses parent links
+ * and hides glyphs. Keep icons in normal flow; restore absolute only in .fa-stack.
+ */
+.svg-inline--fa {
+  position: static;
+  inset: auto;
+  margin: 0;
+}
+
+.fa-stack .svg-inline--fa {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+/*
+ * Sitecore Pages editing chrome: Content SDK emits hidden <code class="scpm">
+ * markers. Tailwind preflight styles `code` as visible — hide chrome so
+ * datasource JSON does not paint as body copy. Sitecore still reads the nodes.
+ */
+code.scpm,
+.scChromeData {
+  display: none;
+}
+
+/*
+ * Sitecore-style CTA trailing arrow (capture: empty content + bg + mask-image).
+ * Color via currentColor / Tailwind after:bg-*; spacing via after:ml-* on the control.
+ * Prefer this over after:h-[22px] after:w-[22px] after:bg-* + after:content-['→'] (solid square).
+ * Mask uses a filled path (not stroke-only) so luminance/alpha masks cut a visible arrow.
+ */
+.sc-cta-after-arrow::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath fill='%23000' d='M3.5 10.25h9.34L9.7 6.11l1.06-1.06L15.95 11l-5.19 5.95-1.06-1.06 3.14-4.14H3.5z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath fill='%23000' d='M3.5 10.25h9.34L9.7 6.11l1.06-1.06L15.95 11l-5.19 5.95-1.06-1.06 3.14-4.14H3.5z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 22px auto;
+  mask-size: 22px auto;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 50% center;
+  mask-position: 50% center;
+}
+
+/*
+ * Band-ticker continuous loop: track must contain two equal-width halves
+ * (content + gap, then DOM clone). translate -50% lands on the twin copy forever.
+ */
+@keyframes sc-marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.sc-marquee-track {
+  animation: sc-marquee-x var(--sc-marquee-duration, 20s) linear infinite;
+  will-change: transform;
+}
+
+.sc-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-marquee-track {
+    animation: none;
+  }
+}

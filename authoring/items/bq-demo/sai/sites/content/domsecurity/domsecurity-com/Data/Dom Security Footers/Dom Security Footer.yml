@@ -1,0 +1,110 @@
+---
+ID: "145403ab-7878-5db7-a2f4-5b5b492bfd4f"
+Parent: "da0378c3-165d-56f4-b12f-5e43dec03eb1"
+Template: "fe63b36f-48fb-5094-a00d-46adeb5c031b"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Dom Security Footers/Dom Security Footer"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "542aa879-39bb-5a27-9d5b-0d917d9c898c"
+      Hint: Brand Endorsement
+      Value: "<image mediaid=\"{469B57F7-73C1-54D2-82CB-70E9A855327B}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "e0969684-5ec5-549f-abdc-499582441c3a"
+      Hint: Country Selector
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "542aa879-39bb-5a27-9d5b-0d917d9c898c"
+      Hint: Brand Endorsement
+      Value: "<image mediaid=\"{469B57F7-73C1-54D2-82CB-70E9A855327B}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "e0969684-5ec5-549f-abdc-499582441c3a"
+      Hint: Country Selector
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "542aa879-39bb-5a27-9d5b-0d917d9c898c"
+      Hint: Brand Endorsement
+      Value: "<image mediaid=\"{469B57F7-73C1-54D2-82CB-70E9A855327B}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "e0969684-5ec5-549f-abdc-499582441c3a"
+      Hint: Country Selector
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Pied de page
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "542aa879-39bb-5a27-9d5b-0d917d9c898c"
+      Hint: Brand Endorsement
+      Value: "<image mediaid=\"{469B57F7-73C1-54D2-82CB-70E9A855327B}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "e0969684-5ec5-549f-abdc-499582441c3a"
+      Hint: Country Selector
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"

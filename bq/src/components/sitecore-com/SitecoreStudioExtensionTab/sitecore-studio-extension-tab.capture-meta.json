@@ -1,0 +1,35 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-08",
+  "contentHash": "7b73e412cce103d00f88339e47ccc98536241793a745c2d89a6b29895e86e338",
+  "conversionSourceHash": "0f649cf41e02b9fbb3499f570fa1e34275c2692c3814abe6a0d888ec310b90ca",
+  "role": "child",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "tabpanel",
+  "definitionKey": "sitecore-studio-extension-tab",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:27:06.305Z",
+  "forceRenamedFrom": "SitecoreStudioExtensibilityFeatureItem",
+  "placeholderKeys": [
+    "tabpanel",
+    "tab",
+    "studio-tabs"
+  ],
+  "componentName": "SitecoreStudioExtensionTab",
+  "mediaFolders": [
+    "Studio Extension Tabs"
+  ],
+  "contentFolders": [
+    [
+      "Studio Extension Tabs"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

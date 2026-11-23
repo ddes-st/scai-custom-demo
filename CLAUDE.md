@@ -192,42 +192,37 @@ npm run dev
 - Handle destructuring, undefined errors and null values in datasource and field values gracefully
 
 ```typescript
-// Good component pattern — uses named exports (never export default)
-import { Text, Image, useSitecore, Field, ImageField } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
+// Good component pattern
+import { Text, Image, useSitecore } from '@sitecore-content-sdk/nextjs';
 
-interface HeroFields {
-  data?: {
-    datasource?: {
-      title?: { jsonValue?: Field };
-      subtitle?: { jsonValue?: Field };
-      backgroundImage?: { jsonValue?: ImageField };
+interface HeroProps {
+  fields: {
+    data?: {
+      datasource?: {
+        title?: { jsonValue?: Field };
+        subtitle?: { jsonValue?: Field };
+        backgroundImage?: { jsonValue?: Field };
+      };
     };
   };
 }
 
-type HeroProps = ComponentProps & {
-  fields: HeroFields;
-};
+export default function Hero({ fields }: HeroProps) {
+  const { page } = useSitecore();
+  const { isEditing } = page.mode;
 
-// Non-exported empty-state fallback
-const HeroDefaultComponent = (): JSX.Element => (
-  <div className="component hero">
-    <span className="is-empty-hint">Hero</span>
-  </div>
-);
-
-export const Default = ({ fields, params, page }: HeroProps): JSX.Element => {
-  const isEditing = page?.mode?.isEditing;
-
-  if (!fields?.data?.datasource) {
-    return <HeroDefaultComponent />;
+  if (!fields) {
+    return <div>Hero content not configured</div>;
   }
 
-  const { title, subtitle, backgroundImage } = fields.data.datasource;
+  // Handle destructuring errors with safe fallbacks
+  const { data } = fields || {};
+  const { datasource } = data || {};
+  const { title, subtitle, backgroundImage } = datasource || {};
 
   return (
-    <section className={`component hero ${params.styles}`} id={params.RenderingIdentifier}>
+    <section className="hero">
+      {/* Show field components in editing mode even if no content */}
       {(title?.jsonValue?.value || isEditing) && <Text field={title?.jsonValue} tag="h1" />}
       {(subtitle?.jsonValue?.value || isEditing) && <Text field={subtitle?.jsonValue} tag="p" />}
       {(backgroundImage?.jsonValue?.value?.src || isEditing) && (
@@ -235,7 +230,7 @@ export const Default = ({ fields, params, page }: HeroProps): JSX.Element => {
       )}
     </section>
   );
-};
+}
 ```
 
 ### Safe Destructuring Examples
@@ -603,7 +598,7 @@ SITECORE_EDITING_SECRET=your-editing-secret
 import type React from 'react';
 import { useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from '@/lib/component-props';
-import { Field, ImageField } from '@sitecore-content-sdk/nextjs';
+import { Field, ImageField } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface HeroParams {
   [key: string]: any;

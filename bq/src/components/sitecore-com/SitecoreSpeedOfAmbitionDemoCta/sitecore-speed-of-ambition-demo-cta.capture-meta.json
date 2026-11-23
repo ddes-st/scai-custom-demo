@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-12",
+  "contentHash": "d48ea789ac0e70034fcf979e888f42fdb7de55a4e10d3485830783aacd99d0eb",
+  "conversionSourceHash": "29926ce0d617bb0f2cccead25f22556a94711c424534f1a388cc81c12beb050f",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-speed-of-ambition-demo-cta",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:29:56.836Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreSpeedOfAmbitionDemoCta",
+  "mediaFolders": [
+    "Speed Of Ambition Demo Ctas"
+  ],
+  "contentFolders": [
+    [
+      "Speed Of Ambition Demo Ctas"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-04",
+  "contentHash": "f910c93aa844c0e8a3a4d86195c81ea732a6994bcf4a63bbc4a4f2b9560ca786",
+  "conversionSourceHash": "63982e7100c89773714ccec38e06e4c3759fddea6cb41a96540dd909de9add6d",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-ai-assisted-hero-banner",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:15:48.344Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreAiAssistedHeroBanner",
+  "mediaFolders": [
+    "AI Assisted Hero Banners"
+  ],
+  "contentFolders": [
+    [
+      "AI Assisted Hero Banners"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

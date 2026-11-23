@@ -1,0 +1,206 @@
+---
+ID: "37103004-aae0-5e74-9a90-a1b0075114d2"
+Parent: "d673554d-1782-53c1-8eb1-27ec6b94d807"
+Template: "9fb1e2d4-fbac-507d-a915-062085c75830"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Testimonial Contact Grids/Customer Service"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Customer Service
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d6a17e69-9e47-4ad0-a88f-73ff72494c89"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "c8aabebc-4f9c-5873-823f-2495f08c8356"
+      Hint: Testimonial
+      Value: "<div class=\"ck-content\"><p>We have always been very satisfied with DOM products, and still are today. The products offer a very high level of protection with an excellent price-quality ratio. It is also always a pleasure to work with the Belgian DOM team. They offer an after-sales service to be proud of.</p></div>"
+    - ID: "e570e768-c2d4-5169-97f5-ff7fe8599d32"
+      Hint: Author
+      Value: "Roel Dhallé, R. Janssen & Sons plc"
+    - ID: "3f9928b6-7200-5946-9d5d-64b9f060c706"
+      Hint: Title
+      Value: Customer Service
+    - ID: "545d87fe-8fec-56b0-8d58-20c6e58ee716"
+      Hint: Contact Heading
+      Value: Contact information
+    - ID: "3cc25107-a028-545f-9201-3f0d06b94d9a"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "52b1a4d6-06fc-5536-8498-f8e7bdfa5069"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "b6ca6303-387c-59e7-b340-386c79f0bb81"
+      Hint: Availability
+      Value: "08:00 - 16:30"
+    - ID: "ab9acd96-0c15-5655-8614-a12bd3df4e5e"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "b47d2f76-4737-5180-a9ab-97fb72b9c102"
+      Hint: Organization Logo
+      Value: "<image mediaid=\"{8B0AD42C-92BA-5DEA-90BC-94AE10E3280C}\" alt=\"HOBERG S.A.\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Customer Service
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d6a17e69-9e47-4ad0-a88f-73ff72494c89"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "c8aabebc-4f9c-5873-823f-2495f08c8356"
+      Hint: Testimonial
+      Value: "We have always been very satisfied with DOM products, and still are today. The products offer a very high protection with an excellent price-quality ratio. It is also always a pleasure to work with the Belgian DOM team. They offer an after sales service to be proud of."
+    - ID: "e570e768-c2d4-5169-97f5-ff7fe8599d32"
+      Hint: Author
+      Value: "Roel Dhallé, R. Janssen & Zn nv"
+    - ID: "3f9928b6-7200-5946-9d5d-64b9f060c706"
+      Hint: Title
+      Value: Customer Service
+    - ID: "545d87fe-8fec-56b0-8d58-20c6e58ee716"
+      Hint: Contact Heading
+      Value: Contact information
+    - ID: "3cc25107-a028-545f-9201-3f0d06b94d9a"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "52b1a4d6-06fc-5536-8498-f8e7bdfa5069"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "b6ca6303-387c-59e7-b340-386c79f0bb81"
+      Hint: Availability
+      Value: "08:00 - 16:30"
+    - ID: "ab9acd96-0c15-5655-8614-a12bd3df4e5e"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "b47d2f76-4737-5180-a9ab-97fb72b9c102"
+      Hint: Organization Logo
+      Value: "<image mediaid=\"{8B0AD42C-92BA-5DEA-90BC-94AE10E3280C}\" alt=\"HOBERG S.A.\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Klantenservice
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d6a17e69-9e47-4ad0-a88f-73ff72494c89"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "c8aabebc-4f9c-5873-823f-2495f08c8356"
+      Hint: Testimonial
+      Value: "We zijn altijd zeer tevreden geweest over de producten van DOM, en dat zijn we vandaag nog steeds. De producten bieden een zeer hoge beveiliging met een uitstekende prijs-kwaliteitsverhouding. Het is ook altijd een plezier om met het Belgische DOM-team samen te werken. Ze bieden een dienst-na-verkoop om trots op te zijn."
+    - ID: "e570e768-c2d4-5169-97f5-ff7fe8599d32"
+      Hint: Author
+      Value: "Roel Dhallé, R. Janssen & Zn nv"
+    - ID: "3f9928b6-7200-5946-9d5d-64b9f060c706"
+      Hint: Title
+      Value: Klantenservice
+    - ID: "545d87fe-8fec-56b0-8d58-20c6e58ee716"
+      Hint: Contact Heading
+      Value: Contactgegevens
+    - ID: "3cc25107-a028-545f-9201-3f0d06b94d9a"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "52b1a4d6-06fc-5536-8498-f8e7bdfa5069"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "b6ca6303-387c-59e7-b340-386c79f0bb81"
+      Hint: Availability
+      Value: "08:00 - 16:30"
+    - ID: "ab9acd96-0c15-5655-8614-a12bd3df4e5e"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "b47d2f76-4737-5180-a9ab-97fb72b9c102"
+      Hint: Organization Logo
+      Value: "<image mediaid=\"{8B0AD42C-92BA-5DEA-90BC-94AE10E3280C}\" alt=\"HOBERG S.A.\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Service clientèle
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d6a17e69-9e47-4ad0-a88f-73ff72494c89"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "c8aabebc-4f9c-5873-823f-2495f08c8356"
+      Hint: Testimonial
+      Value: "Nous avons toujours été très satisfaits des produits DOM, et le sommes encore aujourd’hui. Les produits offrent un niveau de protection très élevé avec un excellent rapport qualité-prix. C’est également toujours un plaisir de travailler avec l’équipe belge de DOM. Elle offre un service après-vente dont on peut être fier."
+    - ID: "e570e768-c2d4-5169-97f5-ff7fe8599d32"
+      Hint: Author
+      Value: "Roel Dhallé, R. Janssen & Fils SA"
+    - ID: "3f9928b6-7200-5946-9d5d-64b9f060c706"
+      Hint: Title
+      Value: Service clientèle
+    - ID: "545d87fe-8fec-56b0-8d58-20c6e58ee716"
+      Hint: Contact Heading
+      Value: Coordonnées
+    - ID: "3cc25107-a028-545f-9201-3f0d06b94d9a"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "52b1a4d6-06fc-5536-8498-f8e7bdfa5069"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "b6ca6303-387c-59e7-b340-386c79f0bb81"
+      Hint: Availability
+      Value: "08:00 - 16:30"
+    - ID: "ab9acd96-0c15-5655-8614-a12bd3df4e5e"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "b47d2f76-4737-5180-a9ab-97fb72b9c102"
+      Hint: Organization Logo
+      Value: "<image mediaid=\"{8B0AD42C-92BA-5DEA-90BC-94AE10E3280C}\" alt=\"HOBERG S.A.\" />"

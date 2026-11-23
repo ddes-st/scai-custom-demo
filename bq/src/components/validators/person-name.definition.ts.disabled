@@ -1,0 +1,22 @@
+import type { FieldValidatorDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Person display name: at least two letter-words separated by single spaces
+ * (no consecutive spaces). Examples: "Jordan Lee", "Mary Jane Watson".
+ *
+ * Reference from data fields: `{ definitionKey: "person-name" }`.
+ */
+export const personNameValidatorDefinition = {
+  kind: "field-validator",
+  definitionKey: "person-name",
+  name: "Person Name",
+  folder: "BQ",
+  type: "regex",
+  pattern: "^[A-Za-z]+( [A-Za-z]+)+$",
+  text: 'Field "{0}" must be a name with at least two words separated by single spaces (no double spaces).',
+  title: "Is person name",
+  description:
+    "At least two letter groups separated by a single space; optional additional words; never two spaces in a row.",
+} satisfies FieldValidatorDefinition;
+
+export default personNameValidatorDefinition;

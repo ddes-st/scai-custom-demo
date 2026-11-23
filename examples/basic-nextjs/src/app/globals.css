@@ -1,192 +1,1084 @@
 @import 'tailwindcss';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-/* ColumnSplitter dynamic classes — injected by Sitecore rendering params at runtime */
-@source inline("basis-{1,2,3,4,5,6,7,8,9,10,11}/{2,3,4,5,6,12}");
-@source inline("{sm,md,lg,xl,2xl}:basis-{1,2,3,4,5,6,7,8,9,10,11}/{2,3,4,5,6,12}");
+@custom-variant dark (&:is(.dark *));
 
-@theme {
-  /* Font family */
-  --font-sans: var(--font-open-sans), "Open Sans", Arial, Helvetica, sans-serif;
-
-  /* Saga brand colors */
-  --color-saga-navy: #1B2A6B;
-  --color-saga-light-blue: #E8F4F8;
-  --color-saga-teal: #A8D8D8;
-  --color-saga-gold: #F9BA44;
-  --color-saga-dark-navy: #0F1B4D;
-
-  /* shadcn/ui semantic color tokens */
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  /* Chart colors */
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
-  /* Sidebar colors */
-  --color-sidebar: hsl(var(--sidebar-background));
-  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
-  --color-sidebar-primary: hsl(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
-  --color-sidebar-accent: hsl(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
-  --color-sidebar-border: hsl(var(--sidebar-border));
-  --color-sidebar-ring: hsl(var(--sidebar-ring));
-
-  /* Border radius */
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-
-  /* Animations */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: var(--font-sans);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+    --input-background-hover: var(--input-background-hover);
+    --input-background: var(--input-background);
+    --input-border-width: var(--input-border-width);
+    --input-border: var(--input-border);
+    --card-foreground: var(--card-foreground);
+    --card-description-color: var(--card-description-color);
+    --card-title-tracking: var(--card-title-tracking);
+    --card-title-weight: var(--card-title-weight);
+    --card-shadow: var(--card-shadow);
+    --card-muted-background: var(--card-muted-background);
+    --card-background: var(--card-background);
+    --card-border: var(--card-border);
+    --card-radius: var(--card-radius);
+    --button-shadow: var(--button-shadow);
+    --button-text-transform: var(--button-text-transform);
+    --button-letter-spacing: var(--button-letter-spacing);
+    --button-icon-radius: var(--button-icon-radius);
+    --button-radius: var(--button-radius);
+    --font-code: var(--font-code);
+    --font-accent: var(--font-accent);
+    --font-body: var(--font-body);
+    --font-mono: var(--font-mono);
+    --font-serif: var(--font-serif);
+    --background-image-sound-waves: var(--background-image-sound-waves);
+    --background-image-gradient-secondary: var(--background-image-gradient-secondary);
+    --background-image-gradient: var(--background-image-gradient);
+    --background-accent: var(--background-accent);
+    --chart-5: var(--chart-5);
+    --chart-4: var(--chart-4);
+    --chart-3: var(--chart-3);
+    --chart-2: var(--chart-2);
+    --chart-1: var(--chart-1);
+    --icon-set: var(--icon-set);
+    --radius-full: var(--radius-full);
+    --radius-xs: var(--radius-xs);
+    --radius-none: var(--radius-none);
+    --radius-base: var(--radius-base);
+    --color-shadow-dark-lg: var(--shadow-dark-lg);
+    --shadow-inner: var(--shadow-inner);
+    --shadow-outline: var(--shadow-outline);
+    --shadow-2xl: var(--shadow-2xl);
+    --shadow-xl: var(--shadow-xl);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-md: var(--shadow-md);
+    --shadow-base: var(--shadow-base);
+    --shadow-sm: var(--shadow-sm);
+    --shadow-xs: var(--shadow-xs);
+    --shadow-none: var(--shadow-none);
+    --spacing: var(--spacing);
+    --leading-relaxed: var(--leading-relaxed);
+    --leading-tight: var(--leading-tight);
+    --leading-heading: var(--leading-heading);
+    --leading-body: var(--leading-body);
+    --text-9xl: var(--text-9xl);
+    --text-8xl: var(--text-8xl);
+    --text-7xl: var(--text-7xl);
+    --text-6xl: var(--text-6xl);
+    --text-5xl: var(--text-5xl);
+    --text-4xl: var(--text-4xl);
+    --text-3xl: var(--text-3xl);
+    --text-2xl: var(--text-2xl);
+    --text-xl: var(--text-xl);
+    --text-lg: var(--text-lg);
+    --text-md: var(--text-md);
+    --text-base: var(--text-base);
+    --text-sm: var(--text-sm);
+    --text-xs: var(--text-xs);
+    --text-2xs: var(--text-2xs);
+    --text-3xs: var(--text-3xs);
+    --sidebar-ring: var(--sidebar-ring);
+    --sidebar-border: var(--sidebar-border);
+    --sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --sidebar-accent: var(--sidebar-accent);
+    --sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --sidebar-primary: var(--sidebar-primary);
+    --sidebar-foreground: var(--sidebar-foreground);
+    --sidebar: var(--sidebar);
+    --neutral-active: var(--neutral-active);
+    --neutral-hover: var(--neutral-hover);
+    --muted-active: var(--muted-active);
+    --muted-hover: var(--muted-hover);
+    --muted-background-active: var(--muted-background-active);
+    --muted-background: var(--muted-background);
+    --accent-3-active: var(--accent-3-active);
+    --accent-3-hover: var(--accent-3-hover);
+    --accent-3-background-active: var(--accent-3-background-active);
+    --accent-3-background: var(--accent-3-background);
+    --accent-3-foreground: var(--accent-3-foreground);
+    --accent-2-active: var(--accent-2-active);
+    --accent-2-hover: var(--accent-2-hover);
+    --accent-2-background-active: var(--accent-2-background-active);
+    --accent-2-background: var(--accent-2-background);
+    --accent-2-foreground: var(--accent-2-foreground);
+    --accent-active: var(--accent-active);
+    --accent-hover: var(--accent-hover);
+    --accent-background-active: var(--accent-background-active);
+    --accent-background: var(--accent-background);
+    --tertiary-active: var(--tertiary-active);
+    --tertiary-hover: var(--tertiary-hover);
+    --tertiary-background-active: var(--tertiary-background-active);
+    --tertiary-background: var(--tertiary-background);
+    --tertiary-foreground: var(--tertiary-foreground);
+    --secondary-active: var(--secondary-active);
+    --secondary-hover: var(--secondary-hover);
+    --secondary-background-active: var(--secondary-background-active);
+    --secondary-background: var(--secondary-background);
+    --neutral-background-active: var(--neutral-background-active);
+    --neutral-background: var(--neutral-background);
+    --info-background-active: var(--info-background-active);
+    --info-background: var(--info-background);
+    --success-background-active: var(--success-background-active);
+    --success-background: var(--success-background);
+    --warning-background-active: var(--warning-background-active);
+    --warning-background: var(--warning-background);
+    --destructive-background-active: var(--destructive-background-active);
+    --destructive-background: var(--destructive-background);
+    --ring: var(--ring);
+    --placeholder: var(--placeholder);
+    --border-a11y: var(--border-a11y);
+    --border: var(--border);
+    --destructive-active: var(--destructive-active);
+    --destructive-hover: var(--destructive-hover);
+    --destructive-foreground: var(--destructive-foreground);
+    --destructive: var(--destructive);
+    --neutral-foreground: var(--neutral-foreground);
+    --neutral: var(--neutral);
+    --info-active: var(--info-active);
+    --info-hover: var(--info-hover);
+    --info-foreground: var(--info-foreground);
+    --info: var(--info);
+    --warning-active: var(--warning-active);
+    --warning-hover: var(--warning-hover);
+    --warning-foreground: var(--warning-foreground);
+    --warning: var(--warning);
+    --success-active: var(--success-active);
+    --success-hover: var(--success-hover);
+    --success-foreground: var(--success-foreground);
+    --success: var(--success);
+    --accent-3: var(--accent-3);
+    --accent-2: var(--accent-2);
+    --tertiary: var(--tertiary);
+    --accent-foreground: var(--accent-foreground);
+    --accent: var(--accent);
+    --secondary-foreground: var(--secondary-foreground);
+    --secondary: var(--secondary);
+    --primary-background-active: var(--primary-background-active);
+    --primary-background: var(--primary-background);
+    --primary-active: var(--primary-active);
+    --primary-hover: var(--primary-hover);
+    --primary-foreground: var(--primary-foreground);
+    --primary: var(--primary);
+    --muted-foreground: var(--muted-foreground);
+    --muted: var(--muted);
+    --popover-foreground: var(--popover-foreground);
+    --popover: var(--popover);
+    --card: var(--card);
+    --foreground: var(--foreground);
+    --background-surface: var(--background-surface);
+    --background: var(--background);
+    --overlay: var(--overlay);
+    --inverse-text: var(--inverse-text);
+    --color-pink-900: var(--pink-900);
+    --color-pink-800: var(--pink-800);
+    --color-pink-700: var(--pink-700);
+    --color-pink-600: var(--pink-600);
+    --color-pink-500: var(--pink-500);
+    --color-pink-400: var(--pink-400);
+    --color-pink-300: var(--pink-300);
+    --color-pink-200: var(--pink-200);
+    --color-pink-100: var(--pink-100);
+    --color-pink-50: var(--pink-50);
+    --accent-3-900: var(--accent-3-900);
+    --accent-3-800: var(--accent-3-800);
+    --accent-3-700: var(--accent-3-700);
+    --accent-3-600: var(--accent-3-600);
+    --accent-3-500: var(--accent-3-500);
+    --accent-3-400: var(--accent-3-400);
+    --accent-3-300: var(--accent-3-300);
+    --accent-3-200: var(--accent-3-200);
+    --accent-3-100: var(--accent-3-100);
+    --accent-3-50: var(--accent-3-50);
+    --accent-2-900: var(--accent-2-900);
+    --accent-2-800: var(--accent-2-800);
+    --accent-2-700: var(--accent-2-700);
+    --accent-2-600: var(--accent-2-600);
+    --accent-2-500: var(--accent-2-500);
+    --accent-2-400: var(--accent-2-400);
+    --accent-2-300: var(--accent-2-300);
+    --accent-2-200: var(--accent-2-200);
+    --accent-2-100: var(--accent-2-100);
+    --accent-2-50: var(--accent-2-50);
+    --accent-900: var(--accent-900);
+    --accent-800: var(--accent-800);
+    --accent-700: var(--accent-700);
+    --accent-600: var(--accent-600);
+    --accent-500: var(--accent-500);
+    --accent-400: var(--accent-400);
+    --accent-300: var(--accent-300);
+    --accent-200: var(--accent-200);
+    --accent-100: var(--accent-100);
+    --accent-50: var(--accent-50);
+    --tertiary-900: var(--tertiary-900);
+    --tertiary-800: var(--tertiary-800);
+    --tertiary-700: var(--tertiary-700);
+    --tertiary-600: var(--tertiary-600);
+    --tertiary-500: var(--tertiary-500);
+    --tertiary-400: var(--tertiary-400);
+    --tertiary-300: var(--tertiary-300);
+    --tertiary-200: var(--tertiary-200);
+    --tertiary-100: var(--tertiary-100);
+    --tertiary-50: var(--tertiary-50);
+    --secondary-900: var(--secondary-900);
+    --secondary-800: var(--secondary-800);
+    --secondary-700: var(--secondary-700);
+    --secondary-600: var(--secondary-600);
+    --secondary-500: var(--secondary-500);
+    --secondary-400: var(--secondary-400);
+    --secondary-300: var(--secondary-300);
+    --secondary-200: var(--secondary-200);
+    --secondary-100: var(--secondary-100);
+    --secondary-50: var(--secondary-50);
+    --color-primary-900: var(--primary-900);
+    --color-primary-800: var(--primary-800);
+    --color-primary-700: var(--primary-700);
+    --color-primary-600: var(--primary-600);
+    --color-primary-500: var(--primary-500);
+    --color-primary-400: var(--primary-400);
+    --color-primary-300: var(--primary-300);
+    --color-primary-200: var(--primary-200);
+    --color-primary-100: var(--primary-100);
+    --color-primary-50: var(--primary-50);
+    --info-900: var(--info-900);
+    --info-800: var(--info-800);
+    --info-700: var(--info-700);
+    --info-600: var(--info-600);
+    --info-500: var(--info-500);
+    --info-400: var(--info-400);
+    --info-300: var(--info-300);
+    --info-200: var(--info-200);
+    --info-100: var(--info-100);
+    --info-50: var(--info-50);
+    --color-purple-900: var(--purple-900);
+    --color-purple-800: var(--purple-800);
+    --color-purple-700: var(--purple-700);
+    --color-purple-600: var(--purple-600);
+    --color-purple-500: var(--purple-500);
+    --color-purple-400: var(--purple-400);
+    --color-purple-300: var(--purple-300);
+    --color-purple-200: var(--purple-200);
+    --color-purple-100: var(--purple-100);
+    --color-purple-50: var(--purple-50);
+    --destructive-900: var(--destructive-900);
+    --destructive-800: var(--destructive-800);
+    --destructive-700: var(--destructive-700);
+    --destructive-600: var(--destructive-600);
+    --destructive-500: var(--destructive-500);
+    --destructive-400: var(--destructive-400);
+    --destructive-300: var(--destructive-300);
+    --destructive-200: var(--destructive-200);
+    --destructive-100: var(--destructive-100);
+    --destructive-50: var(--destructive-50);
+    --color-red-900: var(--red-900);
+    --color-red-800: var(--red-800);
+    --color-red-700: var(--red-700);
+    --color-red-600: var(--red-600);
+    --color-red-500: var(--red-500);
+    --color-red-400: var(--red-400);
+    --color-red-300: var(--red-300);
+    --color-red-200: var(--red-200);
+    --color-red-100: var(--red-100);
+    --color-red-50: var(--red-50);
+    --warning-900: var(--warning-900);
+    --warning-800: var(--warning-800);
+    --warning-700: var(--warning-700);
+    --warning-600: var(--warning-600);
+    --warning-500: var(--warning-500);
+    --warning-400: var(--warning-400);
+    --warning-300: var(--warning-300);
+    --warning-200: var(--warning-200);
+    --warning-100: var(--warning-100);
+    --warning-50: var(--warning-50);
+    --color-orange-900: var(--orange-900);
+    --color-orange-800: var(--orange-800);
+    --color-orange-700: var(--orange-700);
+    --color-orange-600: var(--orange-600);
+    --color-orange-500: var(--orange-500);
+    --color-orange-400: var(--orange-400);
+    --color-orange-300: var(--orange-300);
+    --color-orange-200: var(--orange-200);
+    --color-orange-100: var(--orange-100);
+    --color-orange-50: var(--orange-50);
+    --color-yellow-900: var(--yellow-900);
+    --color-yellow-800: var(--yellow-800);
+    --color-yellow-700: var(--yellow-700);
+    --color-yellow-600: var(--yellow-600);
+    --color-yellow-500: var(--yellow-500);
+    --color-yellow-400: var(--yellow-400);
+    --color-yellow-300: var(--yellow-300);
+    --color-yellow-200: var(--yellow-200);
+    --color-yellow-100: var(--yellow-100);
+    --color-yellow-50: var(--yellow-50);
+    --success-900: var(--success-900);
+    --success-800: var(--success-800);
+    --success-700: var(--success-700);
+    --success-600: var(--success-600);
+    --success-500: var(--success-500);
+    --success-400: var(--success-400);
+    --success-300: var(--success-300);
+    --success-200: var(--success-200);
+    --success-100: var(--success-100);
+    --success-50: var(--success-50);
+    --color-green-900: var(--green-900);
+    --color-green-800: var(--green-800);
+    --color-green-700: var(--green-700);
+    --color-green-600: var(--green-600);
+    --color-green-500: var(--green-500);
+    --color-green-400: var(--green-400);
+    --color-green-300: var(--green-300);
+    --color-green-200: var(--green-200);
+    --color-green-100: var(--green-100);
+    --color-green-50: var(--green-50);
+    --color-teal-900: var(--teal-900);
+    --color-teal-800: var(--teal-800);
+    --color-teal-700: var(--teal-700);
+    --color-teal-600: var(--teal-600);
+    --color-teal-500: var(--teal-500);
+    --color-teal-400: var(--teal-400);
+    --color-teal-300: var(--teal-300);
+    --color-teal-200: var(--teal-200);
+    --color-teal-100: var(--teal-100);
+    --color-teal-50: var(--teal-50);
+    --color-cyan-900: var(--cyan-900);
+    --color-cyan-800: var(--cyan-800);
+    --color-cyan-700: var(--cyan-700);
+    --color-cyan-600: var(--cyan-600);
+    --color-cyan-500: var(--cyan-500);
+    --color-cyan-400: var(--cyan-400);
+    --color-cyan-300: var(--cyan-300);
+    --color-cyan-200: var(--cyan-200);
+    --color-cyan-100: var(--cyan-100);
+    --color-cyan-50: var(--cyan-50);
+    --color-blue-900: var(--blue-900);
+    --color-blue-800: var(--blue-800);
+    --color-blue-700: var(--blue-700);
+    --color-blue-600: var(--blue-600);
+    --color-blue-500: var(--blue-500);
+    --color-blue-400: var(--blue-400);
+    --color-blue-300: var(--blue-300);
+    --color-blue-200: var(--blue-200);
+    --color-blue-100: var(--blue-100);
+    --color-blue-50: var(--blue-50);
+    --color-neutral-900: var(--neutral-900);
+    --color-neutral-800: var(--neutral-800);
+    --color-neutral-700: var(--neutral-700);
+    --color-neutral-600: var(--neutral-600);
+    --color-neutral-500: var(--neutral-500);
+    --color-neutral-400: var(--neutral-400);
+    --color-neutral-300: var(--neutral-300);
+    --color-neutral-200: var(--neutral-200);
+    --color-neutral-100: var(--neutral-100);
+    --color-neutral-50: var(--neutral-50);
+    --color-gray-900: var(--gray-900);
+    --color-gray-800: var(--gray-800);
+    --color-gray-700: var(--gray-700);
+    --color-gray-600: var(--gray-600);
+    --color-gray-500: var(--gray-500);
+    --color-gray-400: var(--gray-400);
+    --color-gray-300: var(--gray-300);
+    --color-gray-200: var(--gray-200);
+    --color-gray-100: var(--gray-100);
+    --color-gray-50: var(--gray-50);
+    --color-blackAlpha-900: var(--blackAlpha-900);
+    --color-blackAlpha-800: var(--blackAlpha-800);
+    --color-blackAlpha-700: var(--blackAlpha-700);
+    --color-blackAlpha-600: var(--blackAlpha-600);
+    --color-blackAlpha-500: var(--blackAlpha-500);
+    --color-blackAlpha-400: var(--blackAlpha-400);
+    --color-blackAlpha-300: var(--blackAlpha-300);
+    --color-blackAlpha-200: var(--blackAlpha-200);
+    --color-blackAlpha-100: var(--blackAlpha-100);
+    --color-blackAlpha-50: var(--blackAlpha-50);
+    --color-whiteAlpha-900: var(--whiteAlpha-900);
+    --color-whiteAlpha-800: var(--whiteAlpha-800);
+    --color-whiteAlpha-700: var(--whiteAlpha-700);
+    --color-whiteAlpha-600: var(--whiteAlpha-600);
+    --color-whiteAlpha-500: var(--whiteAlpha-500);
+    --color-whiteAlpha-400: var(--whiteAlpha-400);
+    --color-whiteAlpha-300: var(--whiteAlpha-300);
+    --color-whiteAlpha-200: var(--whiteAlpha-200);
+    --color-whiteAlpha-100: var(--whiteAlpha-100);
+    --color-whiteAlpha-50: var(--whiteAlpha-50);
+    --color-white: var(--white);
+    --color-black: var(--black);
+    --current: var(--current);
+    --transparent: var(--transparent);
 }
 
-@keyframes accordion-down {
-  from { height: 0; }
-  to { height: var(--radix-accordion-content-height); }
-}
-
-@keyframes accordion-up {
-  from { height: var(--radix-accordion-content-height); }
-  to { height: 0; }
-}
-
-/* ===================================================================
-   Client brand overrides — UNLAYERED :root beats @layer base.
-   Generated by sitecore-build-demo Phase 4.
-
-   TWO delivery options (see docs/ai/reference/brand-variables.md):
-   1. PREFERRED (globals-inlined): paste client :root block HERE
-   2. FALLBACK (globals-brand-import): @import './globals-brand.css' at bottom
-
-   Option 1 is preferred because Next.js App Router CSS processing
-   can strip or reorder @import, causing @layer base defaults to win.
-   An unlayered :root block above @layer base ALWAYS wins the cascade.
-   =================================================================== */
-
-/* CLIENT THEME — Sodexo */
 :root {
-  --brand-primary: #283897;
-  --brand-primary-foreground: #ffffff;
-  --brand-secondary: #2a295c;
-  --brand-secondary-foreground: #ffffff;
-  --brand-accent: #da2020;
-  --brand-accent-foreground: #ffffff;
-  --brand-bg: #ffffff;
-  --brand-fg: #2a295c;
-  --brand-muted: #f0eef8;
-  --brand-muted-fg: #5c5b7a;
-  --brand-header-bg: #ffffff;
-  --brand-header-fg: #2a295c;
-  --brand-footer-bg: #2a295c;
-  --brand-footer-fg: #ffffff;
-  --brand-border: #e0dff0;
-  --brand-ring: #283897;
-  --brand-heading-font: 'DM Sans', sans-serif;
-  --brand-body-font: 'Open Sans', sans-serif;
-  --brand-radius: 0.5rem;
-  --brand-button-radius: 0.25rem;
-  --brand-card-radius: 0px;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+    --transparent: transparent;
+    --current: currentColor;
+    --black: #000000;
+    --white: #ffffff;
+    --whiteAlpha-50: rgba(255, 255, 255, 0.04);
+    --whiteAlpha-100: rgba(255, 255, 255, 0.06);
+    --whiteAlpha-200: rgba(255, 255, 255, 0.11);
+    --whiteAlpha-300: rgba(255, 255, 255, 0.29);
+    --whiteAlpha-400: rgba(255, 255, 255, 0.42);
+    --whiteAlpha-500: rgba(255, 255, 255, 0.55);
+    --whiteAlpha-600: rgba(255, 255, 255, 0.68);
+    --whiteAlpha-700: rgba(255, 255, 255, 0.76);
+    --whiteAlpha-800: rgba(255, 255, 255, 0.78);
+    --whiteAlpha-900: rgba(255, 255, 255, 0.94);
+    --blackAlpha-50: rgba(0, 0, 0, 0.04);
+    --blackAlpha-100: rgba(0, 0, 0, 0.06);
+    --blackAlpha-200: rgba(0, 0, 0, 0.11);
+    --blackAlpha-300: rgba(0, 0, 0, 0.29);
+    --blackAlpha-400: rgba(0, 0, 0, 0.42);
+    --blackAlpha-500: rgba(0, 0, 0, 0.55);
+    --blackAlpha-600: rgba(0, 0, 0, 0.68);
+    --blackAlpha-700: rgba(0, 0, 0, 0.76);
+    --blackAlpha-800: rgba(0, 0, 0, 0.78);
+    --blackAlpha-900: rgba(0, 0, 0, 0.94);
+    --gray-50: #f7f7f7;
+    --gray-100: #e9e9e9;
+    --gray-200: #d8d8d8;
+    --gray-300: #b5b5b5;
+    --gray-400: #8e8e8e;
+    --gray-500: #717171;
+    --gray-600: #535353;
+    --gray-700: #3b3b3b;
+    --gray-800: #282828;
+    --gray-900: #212121;
+    --neutral-50: #f8f6f3;
+    --neutral-100: #eee9e3;
+    --neutral-200: #e0d7cf;
+    --neutral-300: #c6b9ad;
+    --neutral-400: #a08f83;
+    --neutral-500: #7f7066;
+    --neutral-600: #5f534a;
+    --neutral-700: #3f362f;
+    --neutral-800: #2b241f;
+    --neutral-900: #211b16;
+    --blue-50: #f4f7ff;
+    --blue-100: #e1eaff;
+    --blue-200: #c9d8ff;
+    --blue-300: #9cb3fd;
+    --blue-400: #6987f9;
+    --blue-500: #4a65e8;
+    --blue-600: #344bc3;
+    --blue-700: #293ba1;
+    --blue-800: #1f2d7f;
+    --blue-900: #16215f;
+    --cyan-50: #eafaff;
+    --cyan-100: #c6f1ff;
+    --cyan-200: #a0e3fd;
+    --cyan-300: #5cc0f1;
+    --cyan-400: #2695de;
+    --cyan-500: #0873c8;
+    --cyan-600: #0059a1;
+    --cyan-700: #004783;
+    --cyan-800: #003767;
+    --cyan-900: #00294d;
+    --teal-50: #e7fbfb;
+    --teal-100: #bbf4f3;
+    --teal-200: #8be9e8;
+    --teal-300: #3cc8cb;
+    --teal-400: #019ea5;
+    --teal-500: #007c85;
+    --teal-600: #00626b;
+    --teal-700: #0a4e57;
+    --teal-800: #103b44;
+    --teal-900: #102c33;
+    --green-50: #e8fcf5;
+    --green-100: #bef6e3;
+    --green-200: #8bebd0;
+    --green-300: #44cbac;
+    --green-400: #0ea184;
+    --green-500: #007f66;
+    --green-600: #006450;
+    --green-700: #085040;
+    --green-800: #0d3e31;
+    --green-900: #0f2d25;
+    --success-50: var(--green-50);
+    --success-100: var(--green-100);
+    --success-200: var(--green-200);
+    --success-300: var(--green-300);
+    --success-400: var(--green-400);
+    --success-500: var(--green-500);
+    --success-600: var(--green-600);
+    --success-700: var(--green-700);
+    --success-800: var(--green-800);
+    --success-900: var(--green-900);
+    --yellow-50: #fdf8d2;
+    --yellow-100: #faec79;
+    --yellow-200: #f8d904;
+    --yellow-300: #d7b300;
+    --yellow-400: #ae8a00;
+    --yellow-500: #8b6b00;
+    --yellow-600: #705300;
+    --yellow-700: #5b4300;
+    --yellow-800: #483300;
+    --yellow-900: #362500;
+    --orange-50: #fff6e7;
+    --orange-100: #ffe6bd;
+    --orange-200: #fdd291;
+    --orange-300: #ffa037;
+    --orange-400: #e26e00;
+    --orange-500: #ba5200;
+    --orange-600: #953d00;
+    --orange-700: #7a2f00;
+    --orange-800: #612300;
+    --orange-900: #491901;
+    --warning-50: var(--orange-50);
+    --warning-100: var(--orange-100);
+    --warning-200: var(--orange-200);
+    --warning-300: var(--orange-300);
+    --warning-400: var(--orange-400);
+    --warning-500: var(--orange-500);
+    --warning-600: var(--orange-600);
+    --warning-700: var(--orange-700);
+    --warning-800: var(--orange-800);
+    --warning-900: var(--orange-900);
+    --red-50: #fff5f4;
+    --red-100: #ffe4e2;
+    --red-200: #ffccc8;
+    --red-300: #ff9a94;
+    --red-400: #f4595a;
+    --red-500: #d92739;
+    --red-600: #b30426;
+    --red-700: #92001f;
+    --red-800: #730019;
+    --red-900: #580113;
+    --destructive-50: var(--red-50);
+    --destructive-100: var(--red-100);
+    --destructive-200: var(--red-200);
+    --destructive-300: var(--red-300);
+    --destructive-400: var(--red-400);
+    --destructive-500: var(--red-500);
+    --destructive-600: var(--red-600);
+    --destructive-700: var(--red-700);
+    --destructive-800: var(--red-800);
+    --destructive-900: var(--red-900);
+    --purple-50: #f7f6ff;
+    --purple-100: #eae7ff;
+    --purple-200: #d9d4ff;
+    --purple-300: #b8a9ff;
+    --purple-400: #9373ff;
+    --purple-500: #6e3fff;
+    --purple-600: #5319e0;
+    --purple-700: #4715af;
+    --purple-800: #401791;
+    --purple-900: #2f1469;
+    --info-50: var(--purple-50);
+    --info-100: var(--purple-100);
+    --info-200: var(--purple-200);
+    --info-300: var(--purple-300);
+    --info-400: var(--purple-400);
+    --info-500: var(--purple-500);
+    --info-600: var(--purple-600);
+    --info-700: var(--purple-700);
+    --info-800: var(--purple-800);
+    --info-900: var(--purple-900);
+    --primary-50: #faf3ea;
+    --primary-100: #f3e3c8;
+    --primary-200: #ead1a2;
+    --primary-300: #e0be7b;
+    --primary-400: #d1aa5f;
+    --primary-500: #c1a25f;
+    --primary-600: #a7864f;
+    --primary-700: #8d6a3e;
+    --primary-800: #73502e;
+    --primary-900: #5a3a21;
+    --secondary-50: var(--teal-50);
+    --secondary-100: var(--teal-100);
+    --secondary-200: var(--teal-200);
+    --secondary-300: var(--teal-300);
+    --secondary-400: var(--teal-400);
+    --secondary-500: var(--teal-500);
+    --secondary-600: var(--teal-600);
+    --secondary-700: var(--teal-700);
+    --secondary-800: var(--teal-800);
+    --secondary-900: var(--teal-900);
+    --tertiary-50: var(--purple-50);
+    --tertiary-100: var(--purple-100);
+    --tertiary-200: var(--purple-200);
+    --tertiary-300: var(--purple-300);
+    --tertiary-400: var(--purple-400);
+    --tertiary-500: var(--purple-500);
+    --tertiary-600: var(--purple-600);
+    --tertiary-700: var(--purple-700);
+    --tertiary-800: var(--purple-800);
+    --tertiary-900: var(--purple-900);
+    --accent-50: var(--orange-50);
+    --accent-100: var(--orange-100);
+    --accent-200: var(--orange-200);
+    --accent-300: var(--orange-300);
+    --accent-400: var(--orange-400);
+    --accent-500: var(--orange-500);
+    --accent-600: var(--orange-600);
+    --accent-700: var(--orange-700);
+    --accent-800: var(--orange-800);
+    --accent-900: var(--orange-900);
+    --accent-2-50: var(--cyan-50);
+    --accent-2-100: var(--cyan-100);
+    --accent-2-200: var(--cyan-200);
+    --accent-2-300: var(--cyan-300);
+    --accent-2-400: var(--cyan-400);
+    --accent-2-500: var(--cyan-500);
+    --accent-2-600: var(--cyan-600);
+    --accent-2-700: var(--cyan-700);
+    --accent-2-800: var(--cyan-800);
+    --accent-2-900: var(--cyan-900);
+    --accent-3-50: var(--pink-50);
+    --accent-3-100: var(--pink-100);
+    --accent-3-200: var(--pink-200);
+    --accent-3-300: var(--pink-300);
+    --accent-3-400: var(--pink-400);
+    --accent-3-500: var(--pink-500);
+    --accent-3-600: var(--pink-600);
+    --accent-3-700: var(--pink-700);
+    --accent-3-800: var(--pink-800);
+    --accent-3-900: var(--pink-900);
+    --pink-50: #fff4fe;
+    --pink-100: #ffe2fb;
+    --pink-200: #fec7f8;
+    --pink-300: #f592f3;
+    --pink-400: #de53e0;
+    --pink-500: #bc29bd;
+    --pink-600: #9d039e;
+    --pink-700: #800081;
+    --pink-800: #640664;
+    --pink-900: #470e46;
+    --inverse-text: var(--white);
+    --overlay: var(--blackAlpha-500);
+    --background-surface: var(--primary-50);
+    --primary-hover: var(--primary-600);
+    --primary-active: var(--primary-700);
+    --primary-background: var(--primary-50);
+    --primary-background-active: var(--primary-100);
+    --tertiary: var(--tertiary-500);
+    --accent-2: var(--accent-2-500);
+    --accent-3: var(--accent-3-500);
+    --success: var(--success-500);
+    --success-foreground: var(--success-600);
+    --success-hover: var(--success-600);
+    --success-active: var(--success-700);
+    --warning: var(--warning-500);
+    --warning-foreground: var(--warning-600);
+    --warning-hover: var(--warning-600);
+    --warning-active: var(--warning-700);
+    --info: var(--info-500);
+    --info-foreground: var(--info-600);
+    --info-hover: var(--info-600);
+    --info-active: var(--info-700);
+    --neutral: var(--neutral-500);
+    --neutral-foreground: var(--neutral-600);
+    --destructive-foreground: var(--destructive-600);
+    --destructive-hover: var(--destructive-600);
+    --destructive-active: var(--destructive-700);
+    --border-a11y: var(--primary-foreground);
+    --placeholder: var(--primary-foreground);
+    --destructive-background: var(--destructive-100);
+    --destructive-background-active: var(--destructive-200);
+    --warning-background: var(--warning-100);
+    --warning-background-active: var(--warning-200);
+    --success-background: var(--success-100);
+    --success-background-active: var(--success-200);
+    --info-background: var(--info-100);
+    --info-background-active: var(--info-200);
+    --neutral-background: var(--neutral-100);
+    --neutral-background-active: var(--neutral-200);
+    --secondary-background: var(--secondary-100);
+    --secondary-background-active: var(--secondary-200);
+    --secondary-hover: var(--secondary-600);
+    --secondary-active: var(--secondary-700);
+    --tertiary-foreground: var(--tertiary-600);
+    --tertiary-background: var(--tertiary-100);
+    --tertiary-background-active: var(--tertiary-200);
+    --tertiary-hover: var(--tertiary-600);
+    --tertiary-active: var(--tertiary-700);
+    --accent-background: var(--accent-100);
+    --accent-background-active: var(--accent-200);
+    --accent-hover: var(--accent-600);
+    --accent-active: var(--accent-700);
+    --accent-2-foreground: var(--accent-2-600);
+    --accent-2-background: var(--accent-2-100);
+    --accent-2-background-active: var(--accent-2-200);
+    --accent-2-hover: var(--accent-2-600);
+    --accent-2-active: var(--accent-2-700);
+    --accent-3-foreground: var(--accent-3-600);
+    --accent-3-background: var(--accent-3-100);
+    --accent-3-background-active: var(--accent-3-200);
+    --accent-3-hover: var(--accent-3-600);
+    --accent-3-active: var(--accent-3-700);
+    --muted-background: var(--neutral-100);
+    --muted-background-active: var(--neutral-200);
+    --muted-hover: var(--neutral-600);
+    --muted-active: var(--neutral-700);
+    --neutral-hover: var(--neutral-600);
+    --neutral-active: var(--neutral-700);
+    --text-3xs: 0.625rem;
+    --text-2xs: 0.6875rem;
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.875rem;
+    --text-md: 0.875rem;
+    --text-lg: 1rem;
+    --text-xl: 1.125rem;
+    --text-2xl: 1.25rem;
+    --text-3xl: 1.5rem;
+    --text-4xl: 1.875rem;
+    --text-5xl: 2.25rem;
+    --text-6xl: 3rem;
+    --text-7xl: 3.75rem;
+    --text-8xl: 4.5rem;
+    --text-9xl: 6rem;
+    --leading-body: 1.5;
+    --leading-heading: 1.3;
+    --leading-tight: 1.25;
+    --leading-relaxed: 1.625;
+    --spacing: 0.25rem;
+    --shadow-none: none;
+    --shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+    rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px
+    rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px
+    rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-outline: 0 0 0 3px rgba(110, 63, 255, 0.6);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --shadow-dark-lg: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 5px 10px,
+    rgba(0, 0, 0, 0.4) 0px 15px 40px;
+    --radius-base: 0.5rem;
+    --radius-none: 0;
+    --radius-xs: calc(var(--radius-base) * 0.25);
+    --radius-sm: calc(var(--radius-base) * 0.5);
+    --radius-md: var(--radius-base);
+    --radius-lg: calc(var(--radius-base) * 1.5);
+    --radius-xl: calc(var(--radius-base) * 2);
+    --radius-2xl: calc(var(--radius-base) * 3);
+    --radius-3xl: calc(var(--radius-base) * 4);
+    --radius-4xl: calc(var(--radius-base) * 5);
+    --radius-full: 624.938rem;
+    --icon-set: lucide;
+    --background-accent: var(--primary-100);
+    --background-image-gradient: linear-gradient(
+    135deg,
+    var(--primary-400) 0%,
+    var(--blue-500) 50%,
+    var(--purple-500) 100%
+  );
+    --background-image-gradient-secondary: linear-gradient(
+    90deg,
+    var(--cyan-200) 0%,
+    var(--blue-200) 50%,
+    var(--purple-200) 100%
+  );
+    --background-image-sound-waves: repeating-linear-gradient(
+    90deg,
+    var(--blackAlpha-200) 0,
+    var(--blackAlpha-200) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+    --font-sans: "Manrope", sans-serif;
+    --font-serif: Georgia, "Times New Roman", serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-heading: var(--sans);
+    --font-body: var(--sans);
+    --font-accent: var(--serif, var(--sans));
+    --font-code: var(--mono);
+    --button-radius: var(--radius-4xl);
+    --button-icon-radius: 999px;
+    --button-letter-spacing: normal;
+    --button-text-transform: none;
+    --button-shadow: none;
+    --card-radius: 0.75rem;
+    --card-border: var(--border);
+    --card-background: var(--background);
+    --card-muted-background: var(--muted-background);
+    --card-shadow: none;
+    --card-title-weight: 600;
+    --card-title-tracking: normal;
+    --card-description-color: var(--muted-foreground);
+    --input-border: var(--border);
+    --input-border-width: 1px;
+    --input-background: var(--background);
+    --input-background-hover: var(--background);
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 228 62% 18%;
-    --card: 0 0% 100%;
-    --card-foreground: 228 62% 18%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 228 62% 18%;
-    --primary: 228 62% 24%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 195 50% 94%;
-    --secondary-foreground: 228 62% 18%;
-    --muted: 210 20% 96%;
-    --muted-foreground: 228 10% 45%;
-    --accent: 180 35% 78%;
-    --accent-foreground: 228 62% 18%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 228 62% 24%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --saga-navy: 228 62% 24%;
-    --saga-light-blue: 195 50% 94%;
-    --saga-teal: 180 35% 78%;
-
-    /* Brand token defaults: consumed by all 18 uiim components.
-       These derive from shadcn tokens above.
-       Client overrides go in the UNLAYERED :root block above @layer base.
-       Full contract: docs/ai/reference/brand-variables.md */
-    --font-open-sans: "Open Sans", Arial, sans-serif;
-
-    /* Colors */
-    --brand-primary: hsl(var(--primary));
-    --brand-primary-foreground: hsl(var(--primary-foreground));
-    --brand-accent: hsl(var(--accent));
-    --brand-accent-foreground: hsl(var(--accent-foreground));
-    --brand-dark: hsl(var(--foreground));
-    --brand-dark-foreground: hsl(var(--background));
-    --brand-bg: hsl(var(--background));
-    --brand-fg: hsl(var(--foreground));
-    --brand-muted: hsl(var(--muted));
-    --brand-muted-foreground: hsl(var(--muted-foreground));
-    --brand-border: hsl(var(--border));
-
-    /* Section-specific backgrounds */
-    --brand-header-bg: hsl(var(--foreground));
-    --brand-header-fg: hsl(var(--background));
-    --brand-footer-bg: hsl(var(--foreground));
-    --brand-footer-fg: hsl(var(--muted-foreground));
-
-    /* Typography */
-    --brand-heading-font: inherit;
-    --brand-body-font: var(--font-open-sans);
-
-    /* Shape */
-    --brand-button-radius: var(--radius);
-    --brand-card-radius: calc(var(--radius) * 1.5);
-  }
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+    --placeholder: var(--muted-foreground);
+    --inverse-text: var(--blackAlpha-900);
+    --border-a11y: var(--whiteAlpha-400);
+    --overlay: var(--blackAlpha-700);
+    --background-accent: var(--primary-800);
+    --background-surface: var(--gray-800);
+    --primary-background: var(--primary-100);
+    --primary-background-active: var(--primary-200);
+    --primary-hover: var(--primary-600);
+    --primary-active: var(--primary-700);
+    --muted-background: var(--neutral-100);
+    --muted-background-active: var(--neutral-200);
+    --muted-hover: var(--neutral-300);
+    --muted-active: var(--neutral-400);
+    --neutral: var(--neutral-200);
+    --neutral-foreground: var(--neutral-300);
+    --neutral-background: var(--neutral-100);
+    --neutral-background-active: var(--neutral-200);
+    --neutral-hover: var(--neutral-300);
+    --neutral-active: var(--neutral-400);
+    --destructive-foreground: var(--destructive-200);
+    --destructive-background: color-mix(
+    in srgb,
+    var(--destructive-200) 12%,
+    transparent
+  );
+    --destructive-background-active: color-mix(
+    in srgb,
+    var(--destructive-200) 24%,
+    transparent
+  );
+    --destructive-hover: var(--destructive-300);
+    --destructive-active: var(--destructive-400);
+    --warning: var(--warning-200);
+    --warning-foreground: var(--warning-200);
+    --warning-background: color-mix(
+    in srgb,
+    var(--warning-200) 12%,
+    transparent
+  );
+    --warning-background-active: color-mix(
+    in srgb,
+    var(--warning-200) 24%,
+    transparent
+  );
+    --warning-hover: var(--warning-300);
+    --warning-active: var(--warning-400);
+    --success: var(--success-200);
+    --success-foreground: var(--success-200);
+    --success-background: color-mix(
+    in srgb,
+    var(--success-200) 12%,
+    transparent
+  );
+    --success-background-active: color-mix(
+    in srgb,
+    var(--success-200) 24%,
+    transparent
+  );
+    --success-hover: var(--success-300);
+    --success-active: var(--success-400);
+    --info: var(--info-200);
+    --info-foreground: var(--info-200);
+    --info-background: color-mix(
+    in srgb,
+    var(--info-200) 12%,
+    transparent
+  );
+    --info-background-active: color-mix(
+    in srgb,
+    var(--info-200) 24%,
+    transparent
+  );
+    --info-hover: var(--info-300);
+    --info-active: var(--info-400);
+    --secondary-background: var(--secondary-100);
+    --secondary-background-active: var(--secondary-200);
+    --secondary-hover: var(--secondary-300);
+    --secondary-active: var(--secondary-400);
+    --tertiary: var(--tertiary-200);
+    --tertiary-foreground: var(--tertiary-300);
+    --tertiary-background: var(--tertiary-100);
+    --tertiary-background-active: var(--tertiary-200);
+    --tertiary-hover: var(--tertiary-300);
+    --tertiary-active: var(--tertiary-400);
+    --accent-background: var(--accent-100);
+    --accent-background-active: var(--accent-200);
+    --accent-hover: var(--accent-300);
+    --accent-active: var(--accent-400);
+    --accent-2: var(--accent-2-200);
+    --accent-2-foreground: var(--accent-2-300);
+    --accent-2-background: var(--accent-2-100);
+    --accent-2-background-active: var(--accent-2-200);
+    --accent-2-hover: var(--accent-2-300);
+    --accent-2-active: var(--accent-2-400);
+    --accent-3: var(--accent-3-200);
+    --accent-3-foreground: var(--accent-3-300);
+    --accent-3-background: var(--accent-3-100);
+    --accent-3-background-active: var(--accent-3-200);
+    --accent-3-hover: var(--accent-3-300);
+    --accent-3-active: var(--accent-3-400);
+    --background-image-gradient: linear-gradient(
+    135deg,
+    var(--primary-600) 0%,
+    var(--blue-700) 50%,
+    var(--purple-700) 100%
+  );
+    --background-image-gradient-secondary: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--primary-500) 20%, transparent) 0%,
+    color-mix(in srgb, var(--blue-600) 25%, transparent) 50%,
+    color-mix(in srgb, var(--blue-800) 35%, transparent) 100%
+  );
+    --background-image-sound-waves: repeating-linear-gradient(
+    90deg,
+    var(--whiteAlpha-200) 0,
+    var(--whiteAlpha-200) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+    --font-sans: "Manrope", sans-serif;
+    --font-serif: Georgia, "Times New Roman", serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-heading: var(--sans);
+    --font-body: var(--sans);
+    --font-accent: var(--serif, var(--sans));
+    --font-code: var(--mono);
+    --button-radius: var(--radius-4xl);
+    --button-icon-radius: 999px;
+    --button-letter-spacing: normal;
+    --button-text-transform: none;
+    --button-shadow: none;
+    --card-radius: 0.75rem;
+    --card-border: var(--border);
+    --card-background: var(--background);
+    --card-muted-background: var(--muted);
+    --card-shadow: none;
+    --card-title-weight: 600;
+    --card-title-tracking: normal;
+    --card-description-color: var(--muted-foreground);
+    --input-border-width: 1px;
+    --input-border: var(--border);
+    --input-background: color-mix(in srgb, var(--input-border) 30%, transparent);
+    --input-background-hover: color-mix(
+    in srgb,
+    var(--input-border) 50%,
+    transparent
+  );
+    --shadow-xs: 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+    --shadow-base: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0
+    rgba(255, 255, 255, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px
+    rgba(255, 255, 255, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px
+    rgba(255, 255, 255, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px
+    rgba(255, 255, 255, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(255, 255, 255, 0.25);
+    --shadow-outline: 0 0 0 3px rgba(110, 63, 255, 0.6);
+    --shadow-inner: inset 0 2px 4px 0 rgba(255, 255, 255, 0.06);
+    --shadow-dark-lg: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px,
+    rgba(255, 255, 255, 0.2) 0px 5px 10px,
+    rgba(255, 255, 255, 0.4) 0px 15px 40px;
 }
 
 @layer base {
   * {
-    @apply border-border;
-  }
+    @apply border-border outline-ring/50;
+    }
   body {
     @apply bg-background text-foreground;
-  }
+    }
+  html {
+    @apply font-sans;
+    }
 }
-
-/* FALLBACK delivery: @import globals-brand.css.
-   Only use this if the inlined :root block above is empty.
-   Next.js App Router may strip this import — verify in DevTools. */
-/* @import './globals-brand.css'; */

@@ -1,0 +1,37 @@
+---
+ID: "c183053f-f463-55a9-b302-949d3b6ed59c"
+Parent: "8b2c4623-981c-5e62-b382-41beb0777dd0"
+Template: "8b2c4623-981c-5e62-b382-41beb0777dd0"
+Path: "/sitecore/templates/Project/domsecurity/DomSecurityGlobalNavigationHeader/Global Navigation Header Folder/__Standard Values"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_window.png
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {C132E5CE-737E-5B3A-BBD7-7988C0C876FA}
+    {8B2C4623-981C-5E62-B382-41BEB0777DD0}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "103b945c-5ba3-408b-972b-867fe9db7479"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

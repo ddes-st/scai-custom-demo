@@ -1,0 +1,130 @@
+﻿---
+ID: "3b51b4e6-7788-5709-a9f8-bac1e4d44288"
+Parent: "af7431a6-0852-5b8a-8236-3818b2d3a61f"
+Template: "c3e5dd6e-33d6-5d53-b06d-217c1084996f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/News Teasers/Tapkey IPhone Transponder"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Tapkey Major Update: Program your Transponders with iPhone"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Tapkey Major Update: Program your Transponders with iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{5680B827-32C3-5B86-8A54-ECBF78A8D410}" alt="Hand holding a smartphone over a key fob to scan an NFC transponder." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/dom-tapkey-major-update" anchor="" target="" id="{61D5E510-C308-50BD-8EB0-F56E49AAD442}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Tapkey Major Update: Program your Transponders with iPhone"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Tapkey Major Update: Program your Transponders with iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{5680B827-32C3-5B86-8A54-ECBF78A8D410}" alt="Hand holding a smartphone over a key fob to scan an NFC transponder." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/dom-tapkey-major-update" anchor="" target="" id="{61D5E510-C308-50BD-8EB0-F56E49AAD442}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Mise à jour majeure de DOM Tapkey : programmez vos transpondeurs avec un iPhone"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "Mise à jour majeure de DOM Tapkey : programmez vos transpondeurs avec un iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{5680B827-32C3-5B86-8A54-ECBF78A8D410}" alt="Hand holding a smartphone over a key fob to scan an NFC transponder." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lire l’article" linktype="internal" url="/newsroom/group-news/dom-tapkey-major-update" anchor="" target="" id="{61D5E510-C308-50BD-8EB0-F56E49AAD442}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Tapkey: belangrijke update – programmeer uw transponders met een iPhone"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Tapkey: belangrijke update – programmeer uw transponders met een iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{5680B827-32C3-5B86-8A54-ECBF78A8D410}" alt="Hand holding a smartphone over a key fob to scan an NFC transponder." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lees artikel" linktype="internal" url="/newsroom/group-news/dom-tapkey-major-update" anchor="" target="" id="{61D5E510-C308-50BD-8EB0-F56E49AAD442}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

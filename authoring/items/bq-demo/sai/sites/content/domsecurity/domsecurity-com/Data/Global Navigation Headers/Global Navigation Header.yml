@@ -1,0 +1,182 @@
+---
+ID: "232ef02b-d3ff-5208-bc2a-d34200d11a12"
+Parent: "ccd8486b-ba7a-5a67-87e5-8ab11d6caf02"
+Template: "c132e5ce-737e-5b3a-bbd7-7988c0c876fa"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Global Navigation Headers/Global Navigation Header"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Toggle navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261005T055707Z
+    - ID: "cc1f4eaf-0a98-555a-9e35-ab45773a3e8d"
+      Hint: Heading
+      Value: Toggle navigation
+    - ID: "088aabe3-6f44-5b76-bf80-cb6a6eff520b"
+      Hint: Logo
+      Value: "<image mediaid=\"{25FA18BD-839E-5C4E-A70B-D23F90EFC34C}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "6dea1f64-1dc7-58f4-88eb-db0425e498c9"
+      Hint: Logo Link
+      Value: "<link text=\"home\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "384664b5-1372-5f20-81d8-fca50386e50b"
+      Hint: Navigation
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/homeowners\">Homeowners</a></li><li><a href=\"https://www.dom-security.com/be/en/professionals\">Professionals</a></li><li><a href=\"https://www.dom-security.com/be/en/industry\">Industry</a></li><li><a href=\"#products\">Products</a></li><li><a href=\"https://www.dom-security.com/be/en/service-and-support\">Service &amp; Support</a></li><li><a href=\"https://www.dom-security.com/be/en/about-us\">About Us</a></li><li><a href=\"https://www.dom-security.com/be/en/newsroom\">Newsroom</a></li></ul>"
+    - ID: "477cb406-7ce2-5a52-9ce9-0575a4b83008"
+      Hint: Product Menu
+      Value: "<div><h3>Door Hardware</h3><ul><li><a href=\"/products/categories/mechanical-cylinders\">Mechanical cylinders</a></li><li><a href=\"/products/categories/mechanical-locks\">Mechanical Locks</a></li></ul></div><div><h3>Access Control</h3><ul><li><a href=\"/products/categories/digital-cylinders\">Digital Cylinders</a></li><li><a href=\"/products/categories/digital-handles\">Digital Handles</a></li><li><a href=\"/products/categories/wall-readers-and-terminals\">Wall Readers &amp; Terminals</a></li><li><a href=\"/products/categories/apps-software\">Programming Equipment</a></li><li><a href=\"/products/categories/transponders\">Media</a></li></ul></div><div><h3>Industrial Locking Equipment</h3><ul><li><a href=\"/products/categories/digital-furniture-locks\">Digital Furniture Locks</a></li><li><a href=\"/products/categories/furniture-locks\">Furniture Locks</a></li><li><a href=\"/products/categories/trapped-key-interlocking-systems\">Trapped Key Interlocking Systems</a></li></ul></div>"
+    - ID: "e3c8ec46-ffda-5114-9678-e968ab8355f8"
+      Hint: Languages
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/newsroom\">en</a></li><li><a href=\"https://www.dom-security.com/be/fr/actualités\">fr</a></li><li><a href=\"https://www.dom-security.com/be/nl/nieuws\">nl</a></li></ul>"
+    - ID: "bf07e00e-41c8-53d0-8de6-d08ee88c76e8"
+      Hint: Search Label
+      Value: Search
+    - ID: "580556b7-f77f-588c-901c-dc351930da25"
+      Hint: Search Placeholder
+      Value: Type here
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Toggle navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261005T055707Z
+    - ID: "cc1f4eaf-0a98-555a-9e35-ab45773a3e8d"
+      Hint: Heading
+      Value: Toggle navigation
+    - ID: "088aabe3-6f44-5b76-bf80-cb6a6eff520b"
+      Hint: Logo
+      Value: "<image mediaid=\"{25FA18BD-839E-5C4E-A70B-D23F90EFC34C}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "6dea1f64-1dc7-58f4-88eb-db0425e498c9"
+      Hint: Logo Link
+      Value: "<link text=\"home\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "384664b5-1372-5f20-81d8-fca50386e50b"
+      Hint: Navigation
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/homeowners\">Homeowners</a></li><li><a href=\"https://www.dom-security.com/be/en/professionals\">Professionals</a></li><li><a href=\"https://www.dom-security.com/be/en/industry\">Industry</a></li><li><a href=\"#products\">Products</a></li><li><a href=\"https://www.dom-security.com/be/en/service-and-support\">Service &amp; Support</a></li><li><a href=\"https://www.dom-security.com/be/en/about-us\">About Us</a></li><li><a href=\"https://www.dom-security.com/be/en/newsroom\">Newsroom</a></li></ul>"
+    - ID: "477cb406-7ce2-5a52-9ce9-0575a4b83008"
+      Hint: Product Menu
+      Value: "<div><h3>Door Hardware</h3><ul><li><a href=\"/products/categories/mechanical-cylinders\">Mechanical cylinders</a></li><li><a href=\"/products/categories/mechanical-locks\">Mechanical Locks</a></li></ul></div><div><h3>Access Control</h3><ul><li><a href=\"/products/categories/digital-cylinders\">Digital Cylinders</a></li><li><a href=\"/products/categories/digital-handles\">Digital Handles</a></li><li><a href=\"/products/categories/wall-readers-and-terminals\">Wall Readers &amp; Terminals</a></li><li><a href=\"/products/categories/apps-software\">Programming Equipment</a></li><li><a href=\"/products/categories/transponders\">Media</a></li></ul></div><div><h3>Industrial Locking Equipment</h3><ul><li><a href=\"/products/categories/digital-furniture-locks\">Digital Furniture Locks</a></li><li><a href=\"/products/categories/furniture-locks\">Furniture Locks</a></li><li><a href=\"/products/categories/trapped-key-interlocking-systems\">Trapped Key Interlocking Systems</a></li></ul></div>"
+    - ID: "e3c8ec46-ffda-5114-9678-e968ab8355f8"
+      Hint: Languages
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/newsroom\">en</a></li><li><a href=\"https://www.dom-security.com/be/fr/actualités\">fr</a></li><li><a href=\"https://www.dom-security.com/be/nl/nieuws\">nl</a></li></ul>"
+    - ID: "bf07e00e-41c8-53d0-8de6-d08ee88c76e8"
+      Hint: Search Label
+      Value: Search
+    - ID: "580556b7-f77f-588c-901c-dc351930da25"
+      Hint: Search Placeholder
+      Value: Type here
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Toggle navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261005T055707Z
+    - ID: "cc1f4eaf-0a98-555a-9e35-ab45773a3e8d"
+      Hint: Heading
+      Value: Toggle navigation
+    - ID: "088aabe3-6f44-5b76-bf80-cb6a6eff520b"
+      Hint: Logo
+      Value: "<image mediaid=\"{25FA18BD-839E-5C4E-A70B-D23F90EFC34C}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "6dea1f64-1dc7-58f4-88eb-db0425e498c9"
+      Hint: Logo Link
+      Value: "<link text=\"home\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "384664b5-1372-5f20-81d8-fca50386e50b"
+      Hint: Navigation
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/homeowners\">Homeowners</a></li><li><a href=\"https://www.dom-security.com/be/en/professionals\">Professionals</a></li><li><a href=\"https://www.dom-security.com/be/en/industry\">Industry</a></li><li><a href=\"#products\">Products</a></li><li><a href=\"https://www.dom-security.com/be/en/service-and-support\">Service &amp; Support</a></li><li><a href=\"https://www.dom-security.com/be/en/about-us\">About Us</a></li><li><a href=\"https://www.dom-security.com/be/en/newsroom\">Newsroom</a></li></ul>"
+    - ID: "477cb406-7ce2-5a52-9ce9-0575a4b83008"
+      Hint: Product Menu
+      Value: "<div><h3>Door Hardware</h3><ul><li><a href=\"/products/categories/mechanical-cylinders\">Mechanical cylinders</a></li><li><a href=\"/products/categories/mechanical-locks\">Mechanical Locks</a></li></ul></div><div><h3>Access Control</h3><ul><li><a href=\"/products/categories/digital-cylinders\">Digital Cylinders</a></li><li><a href=\"/products/categories/digital-handles\">Digital Handles</a></li><li><a href=\"/products/categories/wall-readers-and-terminals\">Wall Readers &amp; Terminals</a></li><li><a href=\"/products/categories/apps-software\">Programming Equipment</a></li><li><a href=\"/products/categories/transponders\">Media</a></li></ul></div><div><h3>Industrial Locking Equipment</h3><ul><li><a href=\"/products/categories/digital-furniture-locks\">Digital Furniture Locks</a></li><li><a href=\"/products/categories/furniture-locks\">Furniture Locks</a></li><li><a href=\"/products/categories/trapped-key-interlocking-systems\">Trapped Key Interlocking Systems</a></li></ul></div>"
+    - ID: "e3c8ec46-ffda-5114-9678-e968ab8355f8"
+      Hint: Languages
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/newsroom\">en</a></li><li><a href=\"https://www.dom-security.com/be/fr/actualités\">fr</a></li><li><a href=\"https://www.dom-security.com/be/nl/nieuws\">nl</a></li></ul>"
+    - ID: "bf07e00e-41c8-53d0-8de6-d08ee88c76e8"
+      Hint: Search Label
+      Value: Search
+    - ID: "580556b7-f77f-588c-901c-dc351930da25"
+      Hint: Search Placeholder
+      Value: Type here
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Basculer la navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261005T055707Z
+    - ID: "cc1f4eaf-0a98-555a-9e35-ab45773a3e8d"
+      Hint: Heading
+      Value: Basculer la navigation
+    - ID: "088aabe3-6f44-5b76-bf80-cb6a6eff520b"
+      Hint: Logo
+      Value: "<image mediaid=\"{25FA18BD-839E-5C4E-A70B-D23F90EFC34C}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "6dea1f64-1dc7-58f4-88eb-db0425e498c9"
+      Hint: Logo Link
+      Value: "<link text=\"Accueil\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "384664b5-1372-5f20-81d8-fca50386e50b"
+      Hint: Navigation
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/homeowners\">Propriétaires</a></li><li><a href=\"https://www.dom-security.com/be/en/professionals\">Professionnels</a></li><li><a href=\"https://www.dom-security.com/be/en/industry\">Industrie</a></li><li><a href=\"#products\">Produits</a></li><li><a href=\"https://www.dom-security.com/be/en/service-and-support\">Service et assistance</a></li><li><a href=\"https://www.dom-security.com/be/en/about-us\">À propos de nous</a></li><li><a href=\"https://www.dom-security.com/be/en/newsroom\">Actualités</a></li></ul>"
+    - ID: "477cb406-7ce2-5a52-9ce9-0575a4b83008"
+      Hint: Product Menu
+      Value: "<div><h3>Quincaillerie de porte</h3><ul><li><a href=\"/products/categories/mechanical-cylinders\">Cylindres mécaniques</a></li><li><a href=\"/products/categories/mechanical-locks\">Serrures mécaniques</a></li></ul></div><div><h3>Contrôle d’accès</h3><ul><li><a href=\"/products/categories/digital-cylinders\">Cylindres numériques</a></li><li><a href=\"/products/categories/digital-handles\">Béquilles numériques</a></li><li><a href=\"/products/categories/wall-readers-and-terminals\">Lecteurs muraux et terminaux</a></li><li><a href=\"/products/categories/apps-software\">Équipements de programmation</a></li><li><a href=\"/products/categories/transponders\">Supports</a></li></ul></div><div><h3>Équipements de verrouillage industriels</h3><ul><li><a href=\"/products/categories/digital-furniture-locks\">Serrures numériques pour meubles</a></li><li><a href=\"/products/categories/furniture-locks\">Serrures pour meubles</a></li><li><a href=\"/products/categories/trapped-key-interlocking-systems\">Systèmes d’interverrouillage à clé captive</a></li></ul></div>"
+    - ID: "e3c8ec46-ffda-5114-9678-e968ab8355f8"
+      Hint: Languages
+      Value: "<ul><li><a href=\"https://www.dom-security.com/be/en/newsroom\">en</a></li><li><a href=\"https://www.dom-security.com/be/fr/actualités\">fr</a></li><li><a href=\"https://www.dom-security.com/be/nl/nieuws\">nl</a></li></ul>"
+    - ID: "bf07e00e-41c8-53d0-8de6-d08ee88c76e8"
+      Hint: Search Label
+      Value: Rechercher
+    - ID: "580556b7-f77f-588c-901c-dc351930da25"
+      Hint: Search Placeholder
+      Value: Tapez ici

@@ -86,7 +86,6 @@
 # Configuration that might contain secrets
 **/scjssconfig.json
 **/.sitecore/user.json
-**/sitecore.json
 
 # Lock files (optional - you may want to include these)
 **/package-lock.json

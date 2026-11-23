@@ -1,0 +1,22 @@
+---
+description: Sitecore development patterns for your App Router + Cache Components project
+alwaysApply: false
+globs:
+  - 'src/app/**'
+  - 'src/components/**'
+  - 'src/lib/**'
+  - 'sitecore.config.ts'
+  - '**/*sitecore*'
+---
+
+# Sitecore (App Router + Cache Components)
+
+- **Authoring (this app):** Sitecore items for module `BQ` are authored as `src/components/**/*.definition.ts` (+ optional `*.content.ts`), then emitted with `npm run definitions:generate` / `authoring:generate`. Agents must **never** create/edit/delete `authoring/items/**/*.yml` — only the generate tooling may. Skill: `.cursor/skills/bq-definitions`.
+- **Cached reads:** `getSitecorePage`, `getSitecoreDictionary`, `getSitecoreErrorPage` in `src/lib/cache/` (`use cache` + `cacheTag`)
+- **Preview/editing:** `draftMode()` + `client.getPreview` / `getDesignLibraryData` directly — **never** wrap preview in `use cache`
+- **OSR:** `POST /api/revalidate` with `sc:route` / `sc:item` / `sc:dict` tags; optional `SITECORE_REVALIDATE_SECRET`
+- **Routing:** `src/app/[site]/[locale]/[[...path]]/page.tsx`; `setRequestLocale`; `setCachedPageParams` / `getCachedPageParams` for SSG-safe not-found
+- **Fields:** `<Text>`, `<RichText>`, `<Image>`, `<Link>`; validate before render
+- **Config:** keep SDK dictionary cache **disabled** in `sitecore.config.ts`
+
+Depth: [`.agents/docs/`](../../.agents/docs/) · skill: [content-sdk-cache-components-and-osr](../../.agents/skills/content-sdk-cache-components-and-osr/SKILL.md)

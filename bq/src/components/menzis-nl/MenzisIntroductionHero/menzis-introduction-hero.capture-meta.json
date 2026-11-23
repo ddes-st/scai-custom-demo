@@ -1,0 +1,31 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-03",
+  "contentHash": "949f18443389a21b90b01cddc5118d883263cb6c84337fc3e919f0aa1ccc0484",
+  "conversionSourceHash": "9964594892f48e92d97647d0e625269312c8b3f542930fc4c64af54edbb01153",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "menzis-introduction-hero",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-20T02:23:33.394Z",
+  "placeholderKeys": [],
+  "componentName": "MenzisIntroductionHero",
+  "mediaFolders": [
+    "Introduction Heroes"
+  ],
+  "contentFolders": [
+    [
+      "Introduction Heroes"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

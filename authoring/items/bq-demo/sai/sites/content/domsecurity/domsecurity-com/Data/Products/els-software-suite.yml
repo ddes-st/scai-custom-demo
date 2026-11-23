@@ -1,0 +1,129 @@
+﻿---
+ID: "b11e949e-2aaa-5856-92d2-1f6f7e8b8505"
+Parent: "cbc69344-3523-51ad-b088-f5d61c52b4f6"
+Template: "bdad13a2-9694-5806-b32d-db96fea7286c"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Products/els-software-suite"
+SharedFields:
+- ID: "23dc8ecc-2c6e-5be6-844f-40905285b19f"
+  Hint: Theme Slug
+  Value: "access-control-solutions"
+- ID: "4f72d8e8-2d81-5581-b881-714703a1e88e"
+  Hint: Gallery Images
+  Value: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/PimDam/jpg/dom/e/elssoftware/domelssoftware-main-p-p-laptop-els-software.jpg?extension=webp"
+- ID: "a2d45069-ceea-5bf8-bb9e-0f9ca22a01ac"
+  Hint: Category1 Slug
+  Value: "apps-software"
+- ID: "abc825f7-81ac-5ad2-8d1d-f6f86a7c830d"
+  Hint: Related Software Keys
+  Value: |
+    ELS Software
+    ELS Mobile
+- ID: "ebc1d0bd-a60b-51fb-87c5-5d76446fa899"
+  Hint: Family
+  Value: "els-software"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Software Suite
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: ELS Software Suite
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Platform: Windows · Companion: ELS Mobile</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Program cylinders, manage users and audit events from your desktop.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Central credential management</li><li>Works with ELS Mobile</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Desktop management for ELS Pro
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Suite logicielle ELS
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: Suite logicielle ELS
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Plateforme : Windows · Compagnon : ELS Mobile</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Programmez les cylindres, gérez les utilisateurs et auditez les événements depuis votre ordinateur.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Gestion centralisée des identifiants</li><li>Compatible avec ELS Mobile</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Gestion des postes de travail pour ELS Pro
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Software Suite
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: ELS Software Suite
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Platform: Windows · Metgezel: ELS Mobile</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Programmeer cilinders, beheer gebruikers en controleer gebeurtenissen vanaf uw desktop.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Centraal beheer van aanmeldgegevens</li><li>Werkt met ELS Mobile</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Desktopbeheer voor ELS Pro

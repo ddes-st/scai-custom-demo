@@ -1,0 +1,230 @@
+---
+ID: "602e7ade-25f5-5a4c-a058-d65fe96e0c20"
+Parent: "0addefdb-9096-5918-9628-1cd696e36e45"
+Template: "1d5daa8a-e1df-5162-9ea9-26114c52857d"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Contact Information Sections/Dom Hoberg Contact Information"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: link
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "efadf512-f8d7-462f-8c90-39bef8219c3e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "faf629ad-6af6-5907-a11c-a7cee4694809"
+      Hint: Section Title
+      Value: DOM HOBERG
+    - ID: "8370725a-5e50-58f0-a57a-0d719d9f20d8"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "e3979606-bfb5-511c-b825-ab53d12ffaf7"
+      Hint: Contact Heading
+      Value: Contact Information
+    - ID: "ff190582-947b-549a-a17e-f1d1d6a4a732"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "c50717ab-8eaa-56d6-be9b-8a85d54627ea"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "855a6295-4b3d-515c-81e3-598cae044fae"
+      Hint: Address Heading
+      Value: Address
+    - ID: "0b1b95c7-363a-5343-96d4-45021afcbe8b"
+      Hint: Address
+      Value: |
+        Avenue Edison 27
+        B-1300 Wavre
+        Belgium
+    - ID: "5cac934e-ed35-550a-9c93-01a0e7a0e8a4"
+      Hint: Directions Link
+      Value: "<link text=\"How do I get here?\" linktype=\"external\" url=\"http://maps.google.com/?q=Avenue+Edison+27+B-1300+Wavre+Belgium\" anchor=\"\" target=\"\" />"
+    - ID: "887f60a7-6b29-5296-8bac-b3e821f917c3"
+      Hint: Call Me Back
+      Value: "<link text=\"Call me back\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69cecb3b-da1f-598c-bd69-7eb7ffe4343f"
+      Hint: Fill Out The Form
+      Value: "<link text=\"Fill out the form\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: link
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "efadf512-f8d7-462f-8c90-39bef8219c3e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "faf629ad-6af6-5907-a11c-a7cee4694809"
+      Hint: Section Title
+      Value: DOM HOBERG
+    - ID: "8370725a-5e50-58f0-a57a-0d719d9f20d8"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "e3979606-bfb5-511c-b825-ab53d12ffaf7"
+      Hint: Contact Heading
+      Value: Contact Information
+    - ID: "ff190582-947b-549a-a17e-f1d1d6a4a732"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "c50717ab-8eaa-56d6-be9b-8a85d54627ea"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "855a6295-4b3d-515c-81e3-598cae044fae"
+      Hint: Address Heading
+      Value: Address
+    - ID: "0b1b95c7-363a-5343-96d4-45021afcbe8b"
+      Hint: Address
+      Value: |
+        Avenue Edison 27
+        B-1300 Wavre
+        Belgium
+    - ID: "5cac934e-ed35-550a-9c93-01a0e7a0e8a4"
+      Hint: Directions Link
+      Value: "<link text=\"How do I get here?\" linktype=\"external\" url=\"http://maps.google.com/?q=Avenue+Edison+27+B-1300+Wavre+Belgium\" anchor=\"\" target=\"\" />"
+    - ID: "887f60a7-6b29-5296-8bac-b3e821f917c3"
+      Hint: Call Me Back
+      Value: "<link text=\"Call me back\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69cecb3b-da1f-598c-bd69-7eb7ffe4343f"
+      Hint: Fill Out The Form
+      Value: "<link text=\"Fill out the form\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: link
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "efadf512-f8d7-462f-8c90-39bef8219c3e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "faf629ad-6af6-5907-a11c-a7cee4694809"
+      Hint: Section Title
+      Value: DOM HOBERG
+    - ID: "8370725a-5e50-58f0-a57a-0d719d9f20d8"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "e3979606-bfb5-511c-b825-ab53d12ffaf7"
+      Hint: Contact Heading
+      Value: Contact Information
+    - ID: "ff190582-947b-549a-a17e-f1d1d6a4a732"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "c50717ab-8eaa-56d6-be9b-8a85d54627ea"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "855a6295-4b3d-515c-81e3-598cae044fae"
+      Hint: Address Heading
+      Value: Address
+    - ID: "0b1b95c7-363a-5343-96d4-45021afcbe8b"
+      Hint: Address
+      Value: |
+        Avenue Edison 27
+        B-1300 Wavre
+        Belgium
+    - ID: "5cac934e-ed35-550a-9c93-01a0e7a0e8a4"
+      Hint: Directions Link
+      Value: "<link text=\"How do I get here?\" linktype=\"external\" url=\"http://maps.google.com/?q=Avenue+Edison+27+B-1300+Wavre+Belgium\" anchor=\"\" target=\"\" />"
+    - ID: "887f60a7-6b29-5296-8bac-b3e821f917c3"
+      Hint: Call Me Back
+      Value: "<link text=\"Call me back\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69cecb3b-da1f-598c-bd69-7eb7ffe4343f"
+      Hint: Fill Out The Form
+      Value: "<link text=\"Fill out the form\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: lien
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "efadf512-f8d7-462f-8c90-39bef8219c3e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "faf629ad-6af6-5907-a11c-a7cee4694809"
+      Hint: Section Title
+      Value: DOM HOBERG
+    - ID: "8370725a-5e50-58f0-a57a-0d719d9f20d8"
+      Hint: Organization
+      Value: HOBERG S.A.
+    - ID: "e3979606-bfb5-511c-b825-ab53d12ffaf7"
+      Hint: Contact Heading
+      Value: Coordonnées de contact
+    - ID: "ff190582-947b-549a-a17e-f1d1d6a4a732"
+      Hint: Phone
+      Value: "<link text=\"+ 32 (0) 10 23 22 20\" linktype=\"external\" url=\"tel:+ 32 (0) 10 23 22 20\" anchor=\"\" target=\"\" />"
+    - ID: "c50717ab-8eaa-56d6-be9b-8a85d54627ea"
+      Hint: Email
+      Value: "<link text=\"dom@hoberg.be\" linktype=\"mailto\" url=\"mailto:dom@hoberg.be\" anchor=\"\" target=\"\" />"
+    - ID: "855a6295-4b3d-515c-81e3-598cae044fae"
+      Hint: Address Heading
+      Value: Adresse
+    - ID: "0b1b95c7-363a-5343-96d4-45021afcbe8b"
+      Hint: Address
+      Value: |
+        Avenue Edison 27
+        B-1300 Wavre
+        Belgique
+    - ID: "5cac934e-ed35-550a-9c93-01a0e7a0e8a4"
+      Hint: Directions Link
+      Value: "<link text=\"Comment est-ce que j’arrive ici ?\" linktype=\"external\" url=\"http://maps.google.com/?q=Avenue+Edison+27+B-1300+Wavre+Belgium\" anchor=\"\" target=\"\" />"
+    - ID: "887f60a7-6b29-5296-8bac-b3e821f917c3"
+      Hint: Call Me Back
+      Value: "<link text=\"Rappelez-moi\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69cecb3b-da1f-598c-bd69-7eb7ffe4343f"
+      Hint: Fill Out The Form
+      Value: "<link text=\"Remplissez le formulaire\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"

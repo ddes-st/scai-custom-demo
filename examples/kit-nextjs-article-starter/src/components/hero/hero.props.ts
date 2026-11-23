@@ -23,7 +23,12 @@ interface HeroFields {
   heroImageOptional4?: ImageField;
 }
 
+/** Sitecore home route fields from layout service (`route.fields`). */
+export type HomeItemFields = Record<string, unknown>;
+
 export interface HeroProps extends ComponentProps {
   params: HeroParams;
   fields?: HeroFields;
+  /** Home item fields (optional override; normally from HomeFieldsProvider). */
+  homeFields?: HomeItemFields;
 }

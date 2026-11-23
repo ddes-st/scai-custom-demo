@@ -1,0 +1,44 @@
+﻿---
+ID: "b50ccf80-59d8-49d1-b021-b43f66191253"
+Parent: "366a7c36-122b-4709-b556-38f1f18f3089"
+Template: "8f8e2549-c77f-4860-b83b-54fa31e2befa"
+Path: /sitecore/system/Settings/Validation Rules/Item Rules/Links/Item is not referenced
+SharedFields:
+- ID: "43a829d1-43da-465c-b772-ebaa0d515e3e"
+  Hint: Type
+  Value: Sitecore.Data.Validators.ItemValidators.ItemIsNotReferencedValidator,Sitecore.Kernel
+- ID: "b3607d43-e523-494e-9aff-102678d11670"
+  Hint: Use Thread
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20071107T083200Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "58014183-26fe-4568-b19f-c26745824c32"
+      Hint: Description
+      Value: The item is not referenced by any other items. This might indicate that the item is unused and can be deleted.
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a66e879f-ecd8-4517-a1fe-90052713c532"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: "20141027T124432:635500106721259038Z"
+    - ID: "da43c533-cbae-43d0-9019-65b1e346f984"
+      Hint: Title
+      Value: Is not referenced

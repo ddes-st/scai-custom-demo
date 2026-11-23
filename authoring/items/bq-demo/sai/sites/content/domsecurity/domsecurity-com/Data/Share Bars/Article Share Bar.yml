@@ -1,0 +1,276 @@
+﻿---
+ID: "8c31f818-ba6c-53ef-9823-53dc26df4e06"
+Parent: "d0e45527-4c99-56cd-b347-ceb7a7e38bb8"
+Template: "c15e6736-438f-5f25-8c11-7a401c68f17f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Share Bars/Article Share Bar"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Share this
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link text="share to mail" linktype="mailto" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link text="share to twitter" linktype="external" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "69895083-5ea8-4798-b8ec-731834e0a088"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link text="share to facebook" linktype="external" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link text="share to linkedin" linktype="external" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" anchor="" target="_blank" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Share this
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Share this
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link text="share to mail" linktype="mailto" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link text="share to twitter" linktype="external" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "69895083-5ea8-4798-b8ec-731834e0a088"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link text="share to facebook" linktype="external" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link text="share to linkedin" linktype="external" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" anchor="" target="_blank" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Share this
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "d5a95363-8df0-4238-902e-35e71b5f4a2a"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Partager ceci
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link text="Partager par e-mail" linktype="mailto" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link text="Partager sur Twitter" linktype="external" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "69895083-5ea8-4798-b8ec-731834e0a088"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link text="partager sur Facebook" linktype="external" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link text="partager sur LinkedIn" linktype="external" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" anchor="" target="_blank" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Partager ceci
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+  - Version: 2
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T133853Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link anchor="" target="" linktype="mailto" text="Partager par e-mail" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="Partager sur Twitter" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "163db955-91a5-4aab-ba80-9b8176da510f"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="Partager sur Facebook" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="Partager sur LinkedIn" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Partager ceci
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20261027T133853Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T133903Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "6cac9ad5-701a-4df8-89ee-ad6dc0980d37"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Deel dit
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link text="share to mail" linktype="mailto" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link text="share to twitter" linktype="external" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "69895083-5ea8-4798-b8ec-731834e0a088"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link text="share to facebook" linktype="external" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" anchor="" target="_blank" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link text="share to linkedin" linktype="external" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" anchor="" target="_blank" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Share this
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+  - Version: 2
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T115048Z
+    - ID: "362cf113-b6ab-58c9-895b-431e8ba1e8e1"
+      Hint: Email
+      Value: |
+        <link anchor="" target="" linktype="mailto" text="delen via e-mail" url="mailto:?subject=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;body=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "84d2df73-1a2a-5096-82bc-09427a1dd10a"
+      Hint: Twitter
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="delen via Twitter" url="http://twitter.com/intent/tweet?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "174e5bbd-245f-40ab-9e2f-3dcae6877cff"
+    - ID: "940c6849-bcd6-58d4-aa8b-f2617caff574"
+      Hint: Facebook
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="delen via Facebook" url="https://www.facebook.com/sharer/sharer.php?u=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg" />
+    - ID: "9717db71-499c-5b2c-b66a-1d213e66f2d6"
+      Hint: LinkedIn
+      Value: |
+        <link anchor="" target="_blank" linktype="external" text="delen via LinkedIn" url="https://www.linkedin.com/shareArticle?url=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;title=DOM HOBERG's New &quot;Baby&quot;: the Silca Key-cutting Machine&amp;summary=https://www.dom-security.com/be/en/newsroom/group-news/new-silca-machine-dom-hoberg&amp;" />
+    - ID: "9851fbc9-3a60-53b7-bcad-a43b269c37e0"
+      Hint: Label
+      Value: Deel dit
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20261027T115048Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T115056Z

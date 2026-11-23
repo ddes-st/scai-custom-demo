@@ -1,0 +1,103 @@
+﻿---
+ID: "61d5e510-c308-50bd-8eb0-f56e49aad442"
+Parent: "06f50065-7320-5d04-a372-cd62da090f66"
+Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/dom-tapkey-major-update"
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{4FDBEBF9-BF9A-52FE-AD0F-3A60DD3CBAE3}"
+          p:before="*"
+          s:ds="{3B51B4E6-7788-5709-A9F8-BAC1E4D44288}"
+          s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{01D31614-5F17-554A-BFBF-7ECDA8B3E4E1}"
+          p:after="r[@uid='{4FDBEBF9-BF9A-52FE-AD0F-3A60DD3CBAE3}']"
+          s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
+          s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{121DDBB6-22D4-54EF-A795-3C7F4A72AEF8}"
+          p:after="*[1=2]"
+          s:ds="{3B51B4E6-7788-5709-A9F8-BAC1E4D44288}"
+          s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
+          s:par=""
+          s:ph="headless-main" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "DOM Tapkey Major Update: Program your Transponders with iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "123f8db0-164a-4a48-b49e-4c778e30be77"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "Mise à jour majeure de DOM Tapkey : programmez vos transpondeurs avec un iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "123f8db0-164a-4a48-b49e-4c778e30be77"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "Grote DOM Tapkey-update: programmeer uw transponders met een iPhone"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "123f8db0-164a-4a48-b49e-4c778e30be77"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

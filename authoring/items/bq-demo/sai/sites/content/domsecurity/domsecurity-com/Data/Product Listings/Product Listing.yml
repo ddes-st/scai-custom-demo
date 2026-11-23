@@ -1,0 +1,127 @@
+---
+ID: "5b848271-b637-5941-9e2a-4d0762150da5"
+Parent: "ca737657-7a4c-54cb-b2e5-c1c63887bdc4"
+Template: "3fc9924f-c5d4-560f-811a-83f6cf3b8913"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Listings/Product Listing"
+SharedFields:
+- ID: "1ba0bfad-ce04-5381-a77e-51c2c8677c0e"
+  Hint: Products Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Products
+- ID: "b6edc218-d2cc-5dcd-a788-90070e48ade6"
+  Hint: Categories Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Product Categories
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Products
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "87cc21e8-90fe-4df0-b4e0-3ead683366a7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "75a6f1f4-9cbc-5d46-8e5f-aca358a7fc5c"
+      Hint: Title
+      Value: Products
+    - ID: "52d988ca-4e63-55ca-b5d3-e60a4084c250"
+      Hint: Subtitle
+      Value: Explore DOM Security locking and access solutions.
+    - ID: "0769c2ee-9398-50d7-9f48-ff23c41fff8c"
+      Hint: Sort Label
+      Value: Sort alphabetically
+    - ID: "b05eb434-8ad2-5dad-880b-df3d73c2d979"
+      Hint: Filter Label
+      Value: Filter by category
+    - ID: "ed4e0a81-fd5f-54d8-a056-17a72a53a202"
+      Hint: Empty Message
+      Value: No products found.
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Products
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "87cc21e8-90fe-4df0-b4e0-3ead683366a7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "75a6f1f4-9cbc-5d46-8e5f-aca358a7fc5c"
+      Hint: Title
+      Value: Products
+    - ID: "52d988ca-4e63-55ca-b5d3-e60a4084c250"
+      Hint: Subtitle
+      Value: Ontdek DOM-beveiligingsoplossingen voor vergrendeling en toegangsbeheer.
+    - ID: "0769c2ee-9398-50d7-9f48-ff23c41fff8c"
+      Hint: Sort Label
+      Value: Sorteer alfabetisch
+    - ID: "b05eb434-8ad2-5dad-880b-df3d73c2d979"
+      Hint: Filter Label
+      Value: Filteren op categorie
+    - ID: "ed4e0a81-fd5f-54d8-a056-17a72a53a202"
+      Hint: Empty Message
+      Value: Geen producten gevonden.
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Produits
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "87cc21e8-90fe-4df0-b4e0-3ead683366a7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "75a6f1f4-9cbc-5d46-8e5f-aca358a7fc5c"
+      Hint: Title
+      Value: Produits
+    - ID: "52d988ca-4e63-55ca-b5d3-e60a4084c250"
+      Hint: Subtitle
+      Value: Découvrez les solutions de verrouillage et de contrôle d’accès de DOM Security.
+    - ID: "0769c2ee-9398-50d7-9f48-ff23c41fff8c"
+      Hint: Sort Label
+      Value: Trier par ordre alphabétique
+    - ID: "b05eb434-8ad2-5dad-880b-df3d73c2d979"
+      Hint: Filter Label
+      Value: Filtrer par catégorie
+    - ID: "ed4e0a81-fd5f-54d8-a056-17a72a53a202"
+      Hint: Empty Message
+      Value: Aucun produit trouvé.

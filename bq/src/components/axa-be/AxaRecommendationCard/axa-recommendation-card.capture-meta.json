@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-10",
+  "contentHash": "04dea890ba2eb201be6f26da87ceedd92f47ec9aa3a1a618663af97f70595b67",
+  "conversionSourceHash": "c95b51ddf5a0e61ab5c4bdce0e427f99ea2d0f00b342e6a1d3abb3d55157f2e6",
+  "role": "child",
+  "parentComponentName": "AxaRecommendationCards",
+  "definitionKey": "axa-recommendation-card",
+  "generatedAt": "2026-10-03T00:14:28.165Z"
+}

@@ -1,0 +1,106 @@
+---
+ID: "a29e70ae-3fcc-540c-af92-560e153d85c2"
+Parent: "c159ae01-ddeb-5684-9f42-b5217f0689a1"
+Template: "3dbf9296-fe1b-5248-bfd9-bb9a0c844fbb"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories/els-design-tag"
+SharedFields:
+- ID: "723828e4-a060-50e0-ae22-ef84ff5d9671"
+  Hint: SKU
+  Value: DESTAC504599
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Design Tag
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1eaa8c5-2559-40a9-a993-e633198c009c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS Design Tag
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Design RFID tag for ELS Pro systems.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{207F4D1E-C2F4-5D73-9791-D6C815F6C608}\" alt=\"ELS Design Tag\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS-ontwerptag
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1eaa8c5-2559-40a9-a993-e633198c009c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS-ontwerptag
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Ontwerp RFID-tag voor ELS Pro-systemen.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{207F4D1E-C2F4-5D73-9791-D6C815F6C608}\" alt=\"ELS Design Tag\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Étiquette de design ELS
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1eaa8c5-2559-40a9-a993-e633198c009c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Étiquette de design ELS
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Concevoir une étiquette RFID pour les systèmes ELS Pro.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{207F4D1E-C2F4-5D73-9791-D6C815F6C608}\" alt=\"ELS Design Tag\" />"

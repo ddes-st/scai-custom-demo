@@ -1,0 +1,102 @@
+---
+ID: "c82c9e03-4535-5dd2-9497-64e790734e14"
+Parent: "5705aa71-689f-56ef-8fb9-641aa919f999"
+Template: "3d81e425-4e19-5559-969c-14840ddce53a"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Header Blocks/Security Header"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We DOMore for security
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "a3ce77b8-f372-5198-9f18-8717319cd3c1"
+      Hint: Heading
+      Value: We DOMore for security
+    - ID: "be56d3db-c29c-55a0-9305-8302cba9de0b"
+      Hint: Background Image
+      Value: "<image mediaid=\"{BD0C6288-DE01-5B2A-8AF7-A066992FCC3D}\" alt=\"A family relaxes in a modern living room while a large white dog walks across the foreground.\" />"
+    - ID: "f2f8fe60-d350-547a-9827-a19be9b3e332"
+      Hint: Logo
+      Value: "<image mediaid=\"{264A846E-A7D7-5BD2-A917-7B91F4F0D1FB}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "61c3f745-c133-5b7c-ad37-01af810dcb99"
+      Hint: CTA
+      Value: "<link text=\"Go to the homepage\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Wij doen meer voor veiligheid
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "a3ce77b8-f372-5198-9f18-8717319cd3c1"
+      Hint: Heading
+      Value: Wij doen meer voor veiligheid
+    - ID: "be56d3db-c29c-55a0-9305-8302cba9de0b"
+      Hint: Background Image
+      Value: "<image mediaid=\"{BD0C6288-DE01-5B2A-8AF7-A066992FCC3D}\" alt=\"A family relaxes in a modern living room while a large white dog walks across the foreground.\" />"
+    - ID: "f2f8fe60-d350-547a-9827-a19be9b3e332"
+      Hint: Logo
+      Value: "<image mediaid=\"{264A846E-A7D7-5BD2-A917-7B91F4F0D1FB}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "61c3f745-c133-5b7c-ad37-01af810dcb99"
+      Hint: CTA
+      Value: "<link text=\"Ga naar de startpagina\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Nous en faisons plus pour la sécurité
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "a3ce77b8-f372-5198-9f18-8717319cd3c1"
+      Hint: Heading
+      Value: Nous en faisons plus pour la sécurité
+    - ID: "be56d3db-c29c-55a0-9305-8302cba9de0b"
+      Hint: Background Image
+      Value: "<image mediaid=\"{BD0C6288-DE01-5B2A-8AF7-A066992FCC3D}\" alt=\"A family relaxes in a modern living room while a large white dog walks across the foreground.\" />"
+    - ID: "f2f8fe60-d350-547a-9827-a19be9b3e332"
+      Hint: Logo
+      Value: "<image mediaid=\"{264A846E-A7D7-5BD2-A917-7B91F4F0D1FB}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "61c3f745-c133-5b7c-ad37-01af810dcb99"
+      Hint: CTA
+      Value: "<link text=\"Accéder à la page d’accueil\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"

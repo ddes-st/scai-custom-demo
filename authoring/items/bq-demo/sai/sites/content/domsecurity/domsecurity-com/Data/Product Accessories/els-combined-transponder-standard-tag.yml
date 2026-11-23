@@ -1,0 +1,106 @@
+---
+ID: "fc053feb-aef5-59d6-bcd3-698c6b498671"
+Parent: "c159ae01-ddeb-5684-9f42-b5217f0689a1"
+Template: "3dbf9296-fe1b-5248-bfd9-bb9a0c844fbb"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories/els-combined-transponder-standard-tag"
+SharedFields:
+- ID: "723828e4-a060-50e0-ae22-ef84ff5d9671"
+  Hint: SKU
+  Value: STANTAC504599K
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Combined Transponder Standard Tag
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b759217e-8629-47da-bed5-bf16e5f80048"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS Combined Transponder Standard Tag
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Combined transponder keyring tag for ELS credentials.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ELS Combined Transponder Standard Tag\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS-standaardtag voor gecombineerde transponders
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b759217e-8629-47da-bed5-bf16e5f80048"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS-standaardtag voor gecombineerde transponders
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Gecombineerd transponderlabel voor aan de sleutelhanger voor ELS-inloggegevens.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ELS Combined Transponder Standard Tag\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Étiquette standard de transpondeur combiné ELS
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b759217e-8629-47da-bed5-bf16e5f80048"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Étiquette standard de transpondeur combiné ELS
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Porte-clés à transpondeur combiné pour les identifiants ELS.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ELS Combined Transponder Standard Tag\" />"

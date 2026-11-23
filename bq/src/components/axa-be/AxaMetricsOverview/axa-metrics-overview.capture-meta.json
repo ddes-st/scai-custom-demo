@@ -1,0 +1,15 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-08",
+  "contentHash": "e7d807bb2070dce0b205ad217b00188a2d4f46e991b2155e2e3478a17fb93a33",
+  "conversionSourceHash": "c9327ab29a58ffb5e8c6072a85435b0f45e65182aa1ae46b586a636743e9d619",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "metrics",
+  "children": [
+    "Metric"
+  ],
+  "definitionKey": "axa-metrics-overview",
+  "menuStates": [],
+  "generatedAt": "2026-10-02T13:58:24.295Z"
+}

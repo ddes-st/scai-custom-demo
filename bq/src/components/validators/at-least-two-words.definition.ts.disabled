@@ -1,0 +1,22 @@
+import type { FieldValidatorDefinition } from "../../../tools/definitions/types";
+
+/**
+ * At least two words separated by single spaces (no consecutive spaces).
+ * Examples: "Jordan Lee", "Mary Jane Watson". Rejects: "Jordan", "Jordan  Lee".
+ *
+ * Reference from data fields: `{ definitionKey: "at-least-two-words" }`.
+ */
+export const atLeastTwoWordsValidatorDefinition = {
+  kind: "field-validator",
+  definitionKey: "at-least-two-words",
+  name: "At Least Two Words",
+  folder: "BQ",
+  type: "regex",
+  pattern: "^\\S+( \\S+)+$",
+  text: 'Field "{0}" must contain at least two words separated by single spaces (no double spaces).',
+  title: "Has at least two words",
+  description:
+    "At least two words separated by a single space; optional additional words; never two spaces in a row.",
+} satisfies FieldValidatorDefinition;
+
+export default atLeastTwoWordsValidatorDefinition;

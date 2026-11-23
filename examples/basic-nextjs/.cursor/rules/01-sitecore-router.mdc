@@ -1,6 +1,0 @@
----
-description: Route Sitecore XM Cloud component requests to the correct skill before implementation.
-alwaysApply: true
----
-
-Read and follow `docs/ai/rules/01-sitecore-router.md` in full.

@@ -1,0 +1,326 @@
+{
+  "www-sitecore-com--home/sections/section-01": {
+    "componentName": "SitecoreCookieConsentBanner",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreCookieConsentCategory",
+        "definitionKey": "sitecore-cookie-consent-category",
+        "placeholderKey": "cookie-categories"
+      }
+    ],
+    "mediaFolders": [
+      "Cookie Consent Banners"
+    ],
+    "definitionKey": "sitecore-cookie-consent-banner",
+    "updatedAt": "2026-11-06T01:14:04.226Z"
+  },
+  "www-sitecore-com--home/sections/section-02": {
+    "componentName": "SitecoreAnnouncementBar",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Announcement Marquees"
+    ],
+    "definitionKey": "sitecore-announcement-bar",
+    "updatedAt": "2026-11-06T01:14:31.812Z"
+  },
+  "www-sitecore-com--home/sections/section-03": {
+    "componentName": "SitecoreMainNavigation",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Main Navigations"
+    ],
+    "definitionKey": "sitecore-main-navigation",
+    "updatedAt": "2026-11-06T01:15:20.362Z"
+  },
+  "www-sitecore-com--home/sections/section-04": {
+    "componentName": "SitecoreAiAssistedHeroBanner",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "AI Assisted Hero Banners"
+    ],
+    "definitionKey": "sitecore-ai-assisted-hero-banner",
+    "updatedAt": "2026-11-06T01:15:48.371Z"
+  },
+  "www-sitecore-com--home/sections/section-05": {
+    "componentName": "SitecorePlatformCapabilitiesCarousel",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecorePlatformCapabilityTile",
+        "definitionKey": "sitecore-platform-capability-tile",
+        "placeholderKey": "capability-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Platform Capabilities Carousels"
+    ],
+    "definitionKey": "sitecore-platform-capabilities-carousel",
+    "updatedAt": "2026-11-06T01:16:33.200Z"
+  },
+  "www-sitecore-com--home/sections/section-06": {
+    "componentName": "SitecoreAwardsLogoCarousel",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreRecognitionBadgeItem",
+        "definitionKey": "sitecore-recognition-badge-item",
+        "placeholderKey": "badge-items"
+      }
+    ],
+    "mediaFolders": [
+      "Recognition Badge Carousels"
+    ],
+    "definitionKey": "sitecore-awards-logo-carousel",
+    "updatedAt": "2026-11-06T01:17:19.493Z"
+  },
+  "www-sitecore-com--home/sections/section-07": {
+    "componentName": "SitecoreScrunchAiVisibilityMedia",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Scrunch AI Visibility Video CTAs"
+    ],
+    "definitionKey": "sitecore-scrunch-ai-visibility-media",
+    "updatedAt": "2026-11-06T01:17:55.909Z"
+  },
+  "www-sitecore-com--home/sections/section-08": {
+    "componentName": "SitecoreTransformMarketingTiles",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreTrustedAnswerCard",
+        "definitionKey": "sitecore-trusted-answer-card",
+        "placeholderKey": "trusted-answer-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Trusted Answer Cards"
+    ],
+    "definitionKey": "sitecore-transform-marketing-tiles",
+    "updatedAt": "2026-11-06T01:18:26.801Z"
+  },
+  "www-sitecore-com--home/sections/section-09": {
+    "componentName": "SitecoreEventsWebinarsCarousel",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Events Webinar Cards"
+    ],
+    "definitionKey": "sitecore-events-webinars-carousel",
+    "updatedAt": "2026-11-06T01:19:12.698Z"
+  },
+  "www-sitecore-com--home/sections/section-10": {
+    "componentName": "SitecoreCustomerStoriesMediaSlider",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Customer Story Media Items"
+    ],
+    "definitionKey": "sitecore-customer-stories-media-slider",
+    "updatedAt": "2026-11-06T01:20:10.106Z"
+  },
+  "www-sitecore-com--home/sections/section-11": {
+    "componentName": "SitecoreAnalystRecognitionReports",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreAnalystRecognitionReportCard",
+        "definitionKey": "sitecore-analyst-recognition-report-card",
+        "placeholderKey": "report-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Analyst Recognition Reports"
+    ],
+    "definitionKey": "sitecore-analyst-recognition-reports",
+    "updatedAt": "2026-11-06T01:20:49.587Z"
+  },
+  "www-sitecore-com--home/sections/section-12": {
+    "componentName": "SitecoreAiVisibilitySnapshotCta",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "AI Visibility Snapshot CTAs"
+    ],
+    "definitionKey": "sitecore-ai-visibility-snapshot-cta",
+    "updatedAt": "2026-11-06T01:21:16.490Z"
+  },
+  "www-sitecore-com--home/sections/section-13": {
+    "componentName": "SitecoreFooterSignpostAndLegal",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreGlobalFooterSignpost",
+        "definitionKey": "sitecore-global-footer-signpost",
+        "placeholderKey": "signposts"
+      },
+      {
+        "componentName": "SitecoreGlobalFooterLinkColumn",
+        "definitionKey": "sitecore-global-footer-link-column",
+        "placeholderKey": "link-columns"
+      },
+      {
+        "componentName": "SitecoreGlobalFooterSocialLink",
+        "definitionKey": "sitecore-global-footer-social-link",
+        "placeholderKey": "social-links"
+      }
+    ],
+    "mediaFolders": [
+      "Global Footer Signposts"
+    ],
+    "definitionKey": "sitecore-footer-signpost-and-legal",
+    "updatedAt": "2026-11-06T01:22:14.604Z"
+  },
+  "www-sitecore-com--platform/sections/section-01": {
+    "componentName": "SitecoreCookieConsentPreferences",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreCookiePreferenceToggle",
+        "definitionKey": "sitecore-cookie-preference-toggle",
+        "placeholderKey": "cookie-categories"
+      }
+    ],
+    "mediaFolders": [
+      "Cookie Preferences Banners"
+    ],
+    "definitionKey": "sitecore-cookie-consent-preferences",
+    "updatedAt": "2026-11-06T01:22:59.372Z"
+  },
+  "www-sitecore-com--platform/sections/section-04": {
+    "componentName": "SitecoreProductWideVideoHero",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Sitecore Ai Discovery Video Heros"
+    ],
+    "definitionKey": "sitecore-product-wide-video-hero",
+    "updatedAt": "2026-11-06T01:23:40.169Z"
+  },
+  "www-sitecore-com--platform/sections/section-05": {
+    "componentName": "SitecoreCustomerLogoMarquee",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreCustomerLogoItem",
+        "definitionKey": "sitecore-customer-logo-item",
+        "placeholderKey": "logo-items"
+      }
+    ],
+    "mediaFolders": [
+      "Customer Logo Marquees"
+    ],
+    "definitionKey": "sitecore-customer-logo-marquee",
+    "updatedAt": "2026-11-06T01:24:31.771Z"
+  },
+  "www-sitecore-com--platform/sections/section-06": {
+    "componentName": "SitecoreWorkflowAiCardsCarousel",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreAiWorkflowCard",
+        "definitionKey": "sitecore-ai-workflow-card",
+        "placeholderKey": "carousel-cards"
+      }
+    ],
+    "mediaFolders": [
+      "AI Workflow Cards Carousels"
+    ],
+    "definitionKey": "sitecore-workflow-ai-cards-carousel",
+    "updatedAt": "2026-11-06T01:25:11.030Z"
+  },
+  "www-sitecore-com--platform/sections/section-07": {
+    "componentName": "SitecorePlatformCapabilityExplorer",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecorePlatformCapabilityPanel",
+        "definitionKey": "sitecore-platform-capability-panel",
+        "placeholderKey": "capability-panels"
+      }
+    ],
+    "mediaFolders": [
+      "Sitecore Platform Capability Explorers"
+    ],
+    "definitionKey": "sitecore-platform-capability-explorer",
+    "updatedAt": "2026-11-06T01:26:11.380Z"
+  },
+  "www-sitecore-com--platform/sections/section-08": {
+    "componentName": "SitecoreStudioExtensibilityTabs",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreStudioExtensionTab",
+        "definitionKey": "sitecore-studio-extension-tab",
+        "placeholderKey": "studio-tabs"
+      }
+    ],
+    "mediaFolders": [
+      "Studio Extension Tabs"
+    ],
+    "definitionKey": "sitecore-studio-extensibility-tabs",
+    "updatedAt": "2026-11-06T01:27:06.512Z"
+  },
+  "www-sitecore-com--platform/sections/section-09": {
+    "componentName": "SitecoreBuiltByYouCustomerStoriesCarousel",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreCustomerStoryCard",
+        "definitionKey": "sitecore-customer-story-card",
+        "placeholderKey": "pillar-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Customer Story Pillar Carousels"
+    ],
+    "definitionKey": "sitecore-built-by-you-customer-stories-carousel",
+    "updatedAt": "2026-11-06T01:28:04.449Z"
+  },
+  "www-sitecore-com--platform/sections/section-10": {
+    "componentName": "SitecoreAnalystRecognitionSignposts",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreAnalystRecognitionReportSignpost",
+        "definitionKey": "sitecore-analyst-recognition-report-signpost",
+        "placeholderKey": "report-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Analyst Recognition Signposts"
+    ],
+    "definitionKey": "sitecore-analyst-recognition-signposts",
+    "updatedAt": "2026-11-06T01:28:44.585Z"
+  },
+  "www-sitecore-com--platform/sections/section-11": {
+    "componentName": "SitecoreFrequentlyAskedQuestionsAccordion",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "SitecoreFrequentlyAskedQuestionItem",
+        "definitionKey": "sitecore-frequently-asked-question-item",
+        "placeholderKey": "faq-items"
+      }
+    ],
+    "mediaFolders": [
+      "Frequently Asked Questions Accordions"
+    ],
+    "definitionKey": "sitecore-frequently-asked-questions-accordion",
+    "updatedAt": "2026-11-06T01:29:28.533Z"
+  },
+  "www-sitecore-com--platform/sections/section-12": {
+    "componentName": "SitecoreSpeedOfAmbitionDemoCta",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Speed Of Ambition Demo Ctas"
+    ],
+    "definitionKey": "sitecore-speed-of-ambition-demo-cta",
+    "updatedAt": "2026-11-06T01:29:56.896Z"
+  }
+}

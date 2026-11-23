@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-07",
+  "contentHash": "b3207766e7af845992bc5fae81acf078c85acface75986e627565eca832b756d",
+  "conversionSourceHash": "f35977795c77a10bd221c1890190ccb17d4208baab1374edc556b3d2d3038ae2",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-platform-capability-panel",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:26:11.118Z",
+  "forceRenamedFrom": "SitecorePlatformCapabilityCardItem",
+  "placeholderKeys": [],
+  "componentName": "SitecorePlatformCapabilityPanel",
+  "mediaFolders": [
+    "Sitecore Platform Capability Panels"
+  ],
+  "contentFolders": [
+    [
+      "Sitecore Platform Capability Panels"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

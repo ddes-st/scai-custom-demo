@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-13",
+  "contentHash": "b3a63ccca0987b21c8438e0cdb320e8f8ff48c7debf2af632b81078a1e32e0b8",
+  "conversionSourceHash": "451f1966163526c5e5ee589195d0054eb71848a04dc466b043660eec1e80f5ba",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-global-footer-signpost",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:22:13.732Z",
+  "forceRenamedFrom": "SitecoreFooterSignpostItem",
+  "placeholderKeys": [],
+  "componentName": "SitecoreGlobalFooterSignpost",
+  "mediaFolders": [
+    "Global Footer Signposts"
+  ],
+  "contentFolders": [
+    [
+      "Global Footer Signposts"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

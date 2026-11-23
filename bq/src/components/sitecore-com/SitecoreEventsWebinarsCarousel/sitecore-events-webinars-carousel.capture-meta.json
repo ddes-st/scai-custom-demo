@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-09",
+  "contentHash": "60839a57cdbc61a7d601e0e980b8c5382fefa41a08346b200ce94c4bed44605c",
+  "conversionSourceHash": "d50eb9d29d3081b62298ef223d63c2a4e22ab51d5fe80d7fc0070f3db2433b3f",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-events-webinars-carousel",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:19:12.662Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreEventsWebinarsCarousel",
+  "mediaFolders": [
+    "Events Webinar Cards"
+  ],
+  "contentFolders": [
+    [
+      "Events Webinar Cards"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

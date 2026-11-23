@@ -1,0 +1,15 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-10",
+  "contentHash": "0170d96d0900a408c3e6d2acb16f383ba36700bcae2f48792585be5118f22895",
+  "conversionSourceHash": "b513367caeda2d705566e9b69066493bc32b46201097c032bbc1457be1321f0f",
+  "role": "section",
+  "mode": "composite",
+  "placeholderKey": "news-teasers",
+  "children": [
+    "NewsTeaserCard"
+  ],
+  "definitionKey": "dom-security-news-teasers",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:52:03.516Z"
+}

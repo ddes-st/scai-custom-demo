@@ -1,0 +1,259 @@
+import type { DataDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Authors data model + sample items under `{site}/Data/Authors`.
+ */
+export const authorsDataDefinition = {
+  kind: "data",
+  definitionKey: "authors",
+  name: "Authors",
+  cultures: ["nl-BE", "fr-BE"],
+  location: { root: "data", folder: ["Authors"] },
+  model: {
+    folderTemplate: {
+      name: "Authors",
+      displayName: "Authors",
+      description: "Reusable author profiles for bylines and profile pages.",
+      sections: [
+        {
+          name: "Authors",
+          sortOrder: 100,
+          fields: [
+            {
+              name: "Authors IntroText",
+              type: "Multi-Line Text",
+              description:
+                "Optional intro copy shown at the top of the authors listing.",
+              default: "Meet the people behind our stories.",
+              sortOrder: 100,
+            },
+          ],
+        },
+      ],
+    },
+    itemTemplate: {
+      name: "Author",
+      sections: [
+        {
+          name: "Profile",
+          sortOrder: 100,
+          fields: [
+            {
+              name: "AuthorName",
+              type: "Single-Line Text",
+              shared: true,
+              description:
+                "Required. Display name (at least two words). Used for initials fallback when no image is set.",
+              default: "Jordan Lee",
+              sortOrder: 100,
+              validators: [
+                { rule: "Required" },
+                { definitionKey: "at-least-two-words" },
+              ],
+            },
+            {
+              name: "JobTitle",
+              type: "Single-Line Text",
+              description:
+                "Role or job title (e.g. 'Lead Designer', 'Senior Editor').",
+              default: "Senior Editor",
+              sortOrder: 200,
+            },
+            {
+              name: "Pronouns",
+              type: "Single-Line Text",
+              description: "Display pronouns (e.g. 'she/her', 'they/them').",
+              sortOrder: 300,
+            },
+            {
+              name: "Avatar",
+              type: "Image",
+              shared: true,
+              description: "Profile image. Falls back to initials when empty.",
+              default: {
+                // Stable Pexels CDN portrait — avoid ephemeral hosts like picsum.
+                url: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+                alt: "Author avatar",
+              },
+              sortOrder: 400,
+            },
+          ],
+        },
+        {
+          name: "Biography",
+          sortOrder: 200,
+          fields: [
+            {
+              name: "About",
+              type: "Multi-Line Text",
+              description: "Short description shown alongside the avatar.",
+              default: "Senior editor covering design and travel.",
+              sortOrder: 100,
+            },
+            {
+              name: "Bio",
+              type: "Rich Text",
+              description:
+                "Full biography. Rendered on dedicated author profile pages, not in compact avatar surfaces.",
+              default:
+                "<p>Replace with the full biography. Rendered on dedicated author profile pages.</p>",
+              sortOrder: 200,
+            },
+          ],
+        },
+        {
+          name: "Contact",
+          sortOrder: 300,
+          fields: [
+            {
+              name: "Email",
+              type: "Single-Line Text",
+              shared: true,
+              description:
+                "Public contact email. Surfaced on profile pages and bylines that opt in.",
+              sortOrder: 100,
+              validators: [
+                { rule: "Required" },
+                { rule: "Common/Is Email" },
+              ],
+            },
+            {
+              name: "Website",
+              type: "General Link",
+              shared: true,
+              description: "Personal website or portfolio.",
+              sortOrder: 200,
+            },
+            {
+              name: "Twitter",
+              type: "General Link",
+              shared: true,
+              description: "Twitter / X profile URL.",
+              sortOrder: 300,
+            },
+            {
+              name: "LinkedIn",
+              type: "General Link",
+              shared: true,
+              description: "LinkedIn profile URL.",
+              sortOrder: 400,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  items: [
+    {
+      name: "Jordan Lee",
+      fields: {
+        AuthorName: "Jordan Lee",
+        JobTitle: "Senior Editor",
+        Pronouns: "they/them",
+        About: "Senior editor covering design and travel.",
+        Bio: "<p>Jordan Lee has spent a decade editing design and travel features, with bylines across print and digital. They lead the editorial voice for destination storytelling.</p>",
+        Avatar: {
+          url: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          alt: "Jordan Lee",
+        },
+        Email: "jordan.lee@example.com",
+        Website: { text: "Website", url: "https://jordanlee.example" },
+        Twitter: { text: "Twitter", url: "https://x.com/jordanlee" },
+        LinkedIn: {
+          text: "LinkedIn",
+          url: "https://www.linkedin.com/in/jordanlee",
+        },
+      },
+    },
+    {
+      name: "Amara Okonkwo",
+      fields: {
+        AuthorName: "Amara Okonkwo",
+        JobTitle: "Lead Designer",
+        Pronouns: "she/her",
+        About: "Lead designer exploring brand systems and editorial layout.",
+        Bio: "<p>Amara Okonkwo designs identity systems for magazines and cultural institutions. Her work bridges typography, photography, and interactive storytelling.</p>",
+        Avatar: {
+          url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          alt: "Amara Okonkwo",
+        },
+        Email: "amara.okonkwo@example.com",
+        Website: { text: "Website", url: "https://amaraokonkwo.example" },
+        Twitter: { text: "Twitter", url: "https://x.com/amaraok" },
+        LinkedIn: {
+          text: "LinkedIn",
+          url: "https://www.linkedin.com/in/amaraokonkwo",
+        },
+      },
+    },
+    {
+      name: "Mateo Alvarez",
+      fields: {
+        AuthorName: "Mateo Alvarez",
+        JobTitle: "Staff Writer",
+        Pronouns: "he/him",
+        About: "Staff writer covering food culture and city life.",
+        Bio: "<p>Mateo Alvarez reports on food culture, markets, and urban rituals. He previously wrote for regional newspapers across Spain and Latin America.</p>",
+        Avatar: {
+          url: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          alt: "Mateo Alvarez",
+        },
+        Email: "mateo.alvarez@example.com",
+        Website: { text: "Website", url: "https://mateoalvarez.example" },
+        Twitter: {
+          text: "Twitter",
+          url: "https://x.com/mateoalvarez",
+          target: "_blank",
+        },
+        LinkedIn: {
+          text: "LinkedIn",
+          url: "https://www.linkedin.com/in/mateoalvarez",
+        },
+      },
+    },
+    {
+      name: "Priya Nair",
+      fields: {
+        AuthorName: "Priya Nair",
+        JobTitle: "Features Editor",
+        Pronouns: "she/her",
+        About: "Features editor focused on climate and community stories.",
+        Bio: "<p>Priya Nair commissions long-form features on climate, community, and place. She previously edited an independent magazine dedicated to South Asian diaspora voices.</p>",
+        Avatar: {
+          url: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          alt: "Priya Nair",
+        },
+        Email: "priya.nair@example.com",
+        Website: { text: "Website", url: "https://priyanair.example" },
+        Twitter: { text: "Twitter", url: "https://x.com/priyanair" },
+        LinkedIn: {
+          text: "LinkedIn",
+          url: "https://www.linkedin.com/in/priyanair",
+        },
+      },
+    },
+    {
+      name: "Noah Bergman",
+      fields: {
+        AuthorName: "Noah Bergman",
+        JobTitle: "Photo Editor",
+        Pronouns: "he/him",
+        About: "Photo editor specializing in documentary and travel imagery.",
+        Bio: "<p>Noah Bergman shapes photographic narratives for print and web. His editing emphasizes documentary clarity and the quiet details of travel.</p>",
+        Avatar: {
+          url: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          alt: "Noah Bergman",
+        },
+        Email: "noah.bergman@example.com",
+        Website: { text: "Website", url: "https://noahbergman.example" },
+        Twitter: { text: "Twitter", url: "https://x.com/noahbergman" },
+        LinkedIn: {
+          text: "LinkedIn",
+          url: "https://www.linkedin.com/in/noahbergman",
+        },
+      },
+    },
+  ],
+} satisfies DataDefinition;
+
+export default authorsDataDefinition;

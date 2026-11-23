@@ -1,0 +1,52 @@
+import type { EnumerationDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Enumeration backing the `CaptionStyle` rendering parameter on the
+ * media-gallery + media-carousel renderings — how a media tile's
+ * title/caption renders relative to its image.
+ *
+ *   - `none`    — caption hidden; the tile is a pure image.
+ *   - `below`   — (default) caption sits under the image in plain prose.
+ *   - `overlay` — caption floats over the bottom of the image on a
+ *                 gradient scrim (light text).
+ *   - `card`    — image + caption sit together in a bordered card panel.
+ *
+ * Lands at `<enumerationsRoot>/Media/CaptionStyle` per-site.
+ */
+export const captionStyleEnumDefinition = {
+  kind: "enumeration",
+  definitionKey: "caption-style",
+  name: "CaptionStyle",
+  location: { scope: "site", folder: ["Media"] },
+  cultures: ["nl-BE", "fr-BE"],
+  displayName: "Caption Style",
+  description:
+    "How a media tile's caption renders — `none`, `below` (default), `overlay`, or `card`.",
+  default: "below",
+  constants: [
+    {
+      name: "none",
+      displayName: "None",
+      description: "Caption hidden; the tile is a pure image.",
+    },
+    {
+      name: "below",
+      displayName: "Below",
+      description: "Caption sits under the image in plain prose.",
+    },
+    {
+      name: "overlay",
+      displayName: "Overlay",
+      description:
+        "Caption floats over the bottom of the image on a gradient scrim (light text).",
+    },
+    {
+      name: "card",
+      displayName: "Card",
+      description:
+        "Image + caption sit together in a bordered card panel.",
+    },
+  ],
+} satisfies EnumerationDefinition;
+
+export default captionStyleEnumDefinition;

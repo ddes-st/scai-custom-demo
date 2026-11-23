@@ -1,6 +1,0 @@
----
-description: Enforce shared Sitecore XM Cloud implementation standards for React, renderings, templates, and MCP usage.
-alwaysApply: true
----
-
-Read and follow `docs/ai/rules/02-sitecore-implementation-standards.md` in full.

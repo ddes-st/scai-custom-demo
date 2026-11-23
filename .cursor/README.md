@@ -1,58 +1,51 @@
-# Cursor Rules for XM Cloud Starter Applications
+# Optimized Cursor skills: website screenshots → Sitecore TSX + definitions
 
-This directory contains AI coding agent guidance files to help maintain consistent code quality and follow Sitecore XM Cloud best practices across all starter applications in this repository.
+This pack keeps orchestration thin: skills dispatch to programmed tooling where possible.
 
-## Rules Overview
+## Install / Playwright (BQ)
 
-### Core Rules (Always Applied)
-- **`general.mdc`** - Universal coding principles and architecture patterns
-- **`code-style.mdc`** - Vibe-coding principles, TypeScript standards, and quality guidelines
-- **`project-context.mdc`** - Repository-specific context and multi-starter architecture
-- **`safety.mdc`** - Safety rules to prevent editing compiled artifacts and generated files
+Capture tooling and Playwright live in **`bq/`**, not under `.cursor/node_modules`.
 
-### Scoped Rules (Applied to Specific Files)
-- **`javascript.mdc`** - JavaScript/TypeScript naming conventions, performance, and import patterns
-- **`sitecore.mdc`** - Sitecore XM Cloud development patterns and component guidelines
-- **`nextjs.mdc`** - Next.js specific patterns, routing, and API development
-- **`testing.mdc`** - Testing strategies for XM Cloud components and integrations
+```bash
+cd bq
+npm install
+npm run setup:playwright
+```
 
-## Usage
+## Recommended workflow
 
-When using AI coding assistants like Cursor:
-1. Rules automatically provide context based on the files you're working with
-2. Follow the naming conventions and architectural guidance provided
-3. Refer to specific rules when uncertain about implementation approaches
-4. All starter applications inherit these rules for consistent development
+```txt
+1. website-to-sitecore
+   Orchestrates the flow and keeps the agent on track.
 
-## XM Cloud Starter Context
+2. capture-website
+   Invokes: cd bq && npm run capture:webpage -- …
+   (implementation: bq/tools/capture/)
 
-This repository contains multiple starter applications:
-- **basic-nextjs** - Simple Next.js starter with basic XM Cloud integration
-- **kit-nextjs-article-starter** - Editorial-style template (Solterra & Co.)
-- **kit-nextjs-location-finder** - Car brand template with location finder (Alaris)
-- **kit-nextjs-product-listing** - Product-focused template (SYNC)
-- **kit-nextjs-skate-park** - Simple demo site with component examples
-- **basic-spa** - SPA starter kit with Angular and Node proxy
+3. visual-cms-map
+   Reads screenshots/manifests and produces a CMS component inventory.
 
-Each starter follows the same patterns and conventions defined in these rules while maintaining their unique functionality and design.
+4. sitecore-from-capture
+   Builds TSX components, variants, placeholders, page composition, and component-map registration.
 
-## Contributing
+5. Serialization
+   - BQ / bq-demo: use bq/.cursor/skills/bq-definitions
+     (write *.definition.ts, then npm run authoring:generate from bq/).
+     Agents must never create/edit/delete *.yml — only generate may.
+   - Other modules: sitecore-yaml generator scripts + site authoring wiring;
+     validate with ser validate --fix. See references/non-unique-item-paths.md
+     when validate reports NON-UNIQUE ITEM PATH.
+```
 
-To improve these rules:
-1. Edit the relevant `.mdc` files in this directory
-2. Keep rules under 500 lines and focused on specific concerns
-3. Include concrete examples and file references using `@filepath` syntax
-4. Test changes with AI coding assistants to ensure effectiveness
-5. Consider impact across all starter applications
+## Why this should consume fewer tokens
 
-For more details, see the [Contributing Guide](../CONTRIBUTING.md#ai-assisted-development).
+Skills stay narrow:
 
-## Development Workflow
+- `website-to-sitecore` is the workflow skill.
+- `capture-website` only invokes `npm run capture:webpage` (logic in `bq/tools/capture`).
+- `visual-cms-map` is the screenshot interpretation skill.
+- `sitecore-from-capture` is the TSX/page/component skill.
+- `sitecore-yaml` is the serialization skill for **non-BQ** modules.
+- For this fork’s **BQ** app, serialization is **`bq-definitions`** (`*.definition.ts` → `definitions:generate`), not hand-written YAML.
 
-When working on any starter application:
-- The AI assistant will automatically apply relevant rules based on file types
-- XM Cloud-specific patterns will be suggested for component development
-- Next.js best practices will be enforced for routing and API development
-- Consistent naming and code organization will be maintained across all starters
-
-These rules ensure that all starter applications maintain high code quality and follow established XM Cloud development patterns.
+See also [RUNTIME-DEPENDENCIES.md](RUNTIME-DEPENDENCIES.md).

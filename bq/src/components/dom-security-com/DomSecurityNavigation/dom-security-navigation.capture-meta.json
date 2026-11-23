@@ -1,0 +1,14 @@
+{
+  "url": "https://www.dom-security.com/be/en/find-a-dom-dealer",
+  "sectionDir": "sections/section-03",
+  "homepageSectionDir": "sections/section-13",
+  "contentHash": "a9247306871ee96083a280eed8d26e62a9af9b153097d2ca4eacd0b111b41f1b",
+  "role": "partial-header",
+  "mode": "composite",
+  "placeholderKey": "nav-mega-columns",
+  "children": ["FooterLinkList"],
+  "definitionKey": "dom-security-navigation",
+  "menuStates": ["menu-products"],
+  "notes": "Most L1 items are plain links; only Products has a mega panel. Closed section.html already includes submenu markup — open-states are optional.",
+  "generatedAt": "2026-10-05T00:40:00.000Z"
+}

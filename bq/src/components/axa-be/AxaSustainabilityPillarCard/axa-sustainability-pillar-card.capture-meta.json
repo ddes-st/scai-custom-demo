@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-07",
+  "contentHash": "4301a663998169d3e29e976f8638efbdcfeb2bfb22c6c52412ac51ab5bbf4eb8",
+  "conversionSourceHash": "6500486e39a1a75eeff308edc33bd637439f80c4ff420bcbeca7f7df365323f4",
+  "role": "child",
+  "parentComponentName": "AxaSustainabilityPillars",
+  "definitionKey": "axa-sustainability-pillar-card",
+  "generatedAt": "2026-10-03T00:13:19.237Z"
+}

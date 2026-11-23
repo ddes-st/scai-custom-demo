@@ -1,0 +1,13 @@
+import type { SiteDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Second sample site under the Showcase Catalog collection.
+ */
+export const showcaseDocsSite = {
+  kind: "site",
+  definitionKey: "showcase-docs-site",
+  name: "Showcase Docs",
+  systemName: "showcasedocs",
+  description: "Documentation site in the same collection.",
+  collectionSystem: "showcasecatalog",
+} satisfies SiteDefinition;

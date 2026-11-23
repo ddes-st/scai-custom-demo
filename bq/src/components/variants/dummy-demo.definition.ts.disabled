@@ -1,0 +1,22 @@
+import type { VariantsDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Dummy Headless Variants set — standalone `kind: "variants"` for generate/test.
+ *
+ * Emits:
+ * - site/…/Presentation/Headless Variants/DummyDemo.yml
+ * - site/…/Presentation/Headless Variants/DummyDemo/{Default,Alt}.yml
+ *
+ * Reference from a rendering/component with:
+ *   variants: { definitionKey: "dummy-demo-variants" }
+ * (mutually exclusive with inline `variants: [{ name }]`).
+ */
+export const dummyDemoVariantsDefinition = {
+  kind: "variants",
+  definitionKey: "dummy-demo-variants",
+  componentName: "DummyDemo",
+  icon: "Office/32x32/window_dialog.png",
+  variants: [{ name: "Default" }, { name: "Alt" }],
+} satisfies VariantsDefinition;
+
+export default dummyDemoVariantsDefinition;

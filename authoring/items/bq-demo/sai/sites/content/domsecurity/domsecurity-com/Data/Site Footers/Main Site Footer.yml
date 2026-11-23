@@ -1,0 +1,146 @@
+---
+ID: "f9da2b97-38b5-52bb-8c51-7f2364ceda19"
+Parent: "4a8d814b-8962-52c3-bce4-96d001bc43cc"
+Template: "9ece38e2-d054-59ef-a075-036bc4f616e7"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Site Footers/Main Site Footer"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Site Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb55b7cf-029c-4099-b1be-57d0d291948e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f2173ff4-23ea-599a-a4cd-daf54e1c1c98"
+      Hint: Brand Image
+      Value: "<image mediaid=\"{2649DE70-D09A-5418-92BD-486506352EFC}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "fb3577c1-13dd-55e7-86da-16f4e96c5ff6"
+      Hint: Brand Link
+      Value: "<link text=\"home\" linktype=\"external\" url=\"https://www.sfpi-group.com/global/fr/industries/sfpi-access\" anchor=\"\" target=\"\" />"
+    - ID: "acd21fba-ded6-55fa-a4a4-431e816f970b"
+      Hint: Country Link
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+    - ID: "ee2356d6-78f9-5251-87a0-0c67ba5f6a71"
+      Hint: Scroll To Top Link
+      Value: "<link text=\"scroll to top\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Site Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb55b7cf-029c-4099-b1be-57d0d291948e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f2173ff4-23ea-599a-a4cd-daf54e1c1c98"
+      Hint: Brand Image
+      Value: "<image mediaid=\"{2649DE70-D09A-5418-92BD-486506352EFC}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "fb3577c1-13dd-55e7-86da-16f4e96c5ff6"
+      Hint: Brand Link
+      Value: "<link text=\"home\" linktype=\"external\" url=\"https://www.sfpi-group.com/global/fr/industries/sfpi-access\" anchor=\"\" target=\"\" />"
+    - ID: "acd21fba-ded6-55fa-a4a4-431e816f970b"
+      Hint: Country Link
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+    - ID: "ee2356d6-78f9-5251-87a0-0c67ba5f6a71"
+      Hint: Scroll To Top Link
+      Value: "<link text=\"scroll to top\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Site Footer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb55b7cf-029c-4099-b1be-57d0d291948e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f2173ff4-23ea-599a-a4cd-daf54e1c1c98"
+      Hint: Brand Image
+      Value: "<image mediaid=\"{2649DE70-D09A-5418-92BD-486506352EFC}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "fb3577c1-13dd-55e7-86da-16f4e96c5ff6"
+      Hint: Brand Link
+      Value: "<link text=\"home\" linktype=\"external\" url=\"https://www.sfpi-group.com/global/fr/industries/sfpi-access\" anchor=\"\" target=\"\" />"
+    - ID: "acd21fba-ded6-55fa-a4a4-431e816f970b"
+      Hint: Country Link
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+    - ID: "ee2356d6-78f9-5251-87a0-0c67ba5f6a71"
+      Hint: Scroll To Top Link
+      Value: "<link text=\"scroll to top\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Pied de page du site
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb55b7cf-029c-4099-b1be-57d0d291948e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f2173ff4-23ea-599a-a4cd-daf54e1c1c98"
+      Hint: Brand Image
+      Value: "<image mediaid=\"{2649DE70-D09A-5418-92BD-486506352EFC}\" alt=\"DOM From Sfpi Group\" />"
+    - ID: "fb3577c1-13dd-55e7-86da-16f4e96c5ff6"
+      Hint: Brand Link
+      Value: "<link text=\"Accueil\" linktype=\"external\" url=\"https://www.sfpi-group.com/global/fr/industries/sfpi-access\" anchor=\"\" target=\"\" />"
+    - ID: "acd21fba-ded6-55fa-a4a4-431e816f970b"
+      Hint: Country Link
+      Value: "<link text=\"BE\" linktype=\"external\" url=\"http://dom-security.com/global/en/choose-your-country\" anchor=\"\" target=\"\" />"
+    - ID: "ee2356d6-78f9-5251-87a0-0c67ba5f6a71"
+      Hint: Scroll To Top Link
+      Value: "<link text=\"Retour en haut\" linktype=\"anchor\" url=\"#\" anchor=\"\" target=\"\" />"

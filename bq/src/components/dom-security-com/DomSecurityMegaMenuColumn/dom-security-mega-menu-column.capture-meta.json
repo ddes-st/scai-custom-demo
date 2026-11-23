@@ -1,0 +1,10 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom",
+  "sectionDir": "sections/section-02",
+  "contentHash": "0a55905d88b14355912f19a91acd8755440d186895d3580845dc0acb4d2a8093",
+  "conversionSourceHash": "35c6b0fad1112271162d4b0d65abc91f8fecf902eeb2b6be2c56ef70afbee171",
+  "role": "child",
+  "parentComponentName": "Header",
+  "definitionKey": "dom-security-mega-menu-column",
+  "generatedAt": "2026-10-05T01:34:41.014Z"
+}

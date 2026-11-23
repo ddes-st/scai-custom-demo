@@ -1,0 +1,95 @@
+﻿---
+ID: "3a478f2a-26ab-4781-a7dc-0ea3977efb94"
+Parent: "7bdd62cf-2ec9-40a5-a25f-dbe479c5f3f7"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Presentation/Available Renderings/Page Content"
+BranchID: "209f458a-5f7c-4024-9bbb-c78ad6d21abc"
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}
+    {2492BAC4-DA07-4C86-87F0-9873D40E2276}
+    {9C6D53E3-FE57-4638-AF7B-6D68304C7A94}
+    {3836D951-BB14-43AC-9231-649B7F245DC5}
+    {38B9D854-7798-5DBC-9FBC-63FE15758CC0}
+    {BF309A18-FBF5-56B2-8A41-4A41ED6D1CC3}
+    {2B7C5658-E489-58BF-A666-FF587735157E}
+    {A875A82E-2969-5CF0-B9BC-4A75F36425D6}
+    {064E0C97-56AC-517F-B3C0-7EAC3BADB4AA}
+    {8A453BB7-A4DC-57C8-87E0-3D2C43FB125C}
+    {CBAFA36A-976F-55B0-9468-500183A0986C}
+    {93C0B51D-93F5-57CB-8A0E-0B842F646EB7}
+    {D40C6E47-3A43-585F-9F7D-F836372277AE}
+    {1F15B793-742F-57EF-9A8E-4969B75E3BF6}
+    {E828B52F-2FB6-51D6-9D04-D19F56F12684}
+    {5606D409-1883-5C63-881F-438D4EF68CB1}
+    {77EE30D4-EBC6-533C-9E59-05FF153F8538}
+    {6BDAE866-FA46-5E13-AD6B-C49A60258E3C}
+    {5428CF79-5D31-528B-9501-741C752FF2C4}
+    {3BEC641B-88C3-5EC0-9736-813B7C4B50F5}
+    {D53C8440-D642-59C6-B991-4755C662504C}
+    {8924BDA0-596C-520E-88F6-5C12FB877BF0}
+    {EBCF6D13-1749-5469-93BD-8468F57A9363}
+    {BEE0B7ED-387D-535C-B26C-0D3A40A1E77B}
+    {0C3A257B-3428-55FF-BC28-CE176BAA4F5F}
+    {5BAE6500-BEF3-56D7-9F6E-D16D90F8F308}
+    {64046B48-C9BB-5AD4-8F0C-C17E642020C4}
+    {18B89B0C-E756-547D-BD3D-6E68BAA93A7B}
+    {460221FD-8DE1-53CA-B765-9779B9F69D6E}
+    {D4F6C2B3-FF4E-407D-ADC6-995127F4CFAD}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b5b75605-4d00-4ade-bf86-fd98b2b993d2"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{EDD5B21F-2BD2-4290-81A2-68428363D312}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014312Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8b7176fa-ca8b-4353-9a67-470644099b90"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johan.becue@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261023T144647Z
+- Language: "fr-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014312Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7b0e50a9-7149-4b87-9a2f-bbfdb8da561b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T134039Z

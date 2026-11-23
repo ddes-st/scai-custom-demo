@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-04",
+  "contentHash": "11953c5a1e86c22af3a11e071798fc8ddb2e71a4d7ab7f9bbf4562a5751e58b7",
+  "conversionSourceHash": "dfa63fcfb4063a5a7ec9402d528eda42a9e3f1079c9c63fe5e79d30e98308f49",
+  "role": "child",
+  "parentComponentName": "AxaInsuranceCategoryGrid",
+  "definitionKey": "axa-insurance-category-grid-item",
+  "generatedAt": "2026-09-30T14:10:27.191Z"
+}

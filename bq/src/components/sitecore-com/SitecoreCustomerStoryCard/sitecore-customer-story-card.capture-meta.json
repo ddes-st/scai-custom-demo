@@ -1,0 +1,30 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-09",
+  "contentHash": "7c42c4d01f952fbd1eb046b5f4b8ea9fdc1063c1dd43b55e500a3a3867f175ad",
+  "conversionSourceHash": "307042292c2f976ec543981f9235c3058e951fcd1ce53d801dd8440a6b27452b",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-customer-story-card",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:28:04.173Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreCustomerStoryCard",
+  "mediaFolders": [
+    "Customer Story Pillar Cards"
+  ],
+  "contentFolders": [
+    [
+      "Customer Story Pillar Cards"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.menzis.nl/",
+  "pageSlug": "www-menzis-nl--home",
+  "sectionDir": "www-menzis-nl--home/sections/section-02",
+  "contentHash": "633f26b74fbcd1757d5546acfe09b28640108342d26eaf86c369beb73fa40121",
+  "conversionSourceHash": "1d066277ded953464bb262fe291c6c2de6d0b1863ba7bdced688e892024a831f",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "navigation",
+  "placeholderKey": null,
+  "definitionKey": "menzis-global-navigation-context-link-list",
+  "codegenVersion": "section",
+  "generatedAt": "2026-11-19T13:08:25.618Z",
+  "forceRenamedFrom": "MenzisGlobalHeaderContextLinkList",
+  "previousDefinitionKey": "menzis-global-header-context-link-list",
+  "placeholderKeys": [],
+  "componentName": "MenzisGlobalNavigationContextLinkList",
+  "mediaFolders": [
+    "Link Lists"
+  ],
+  "contentFolders": [
+    [
+      "Link Lists"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

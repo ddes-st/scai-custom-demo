@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-08",
+  "contentHash": "e7d807bb2070dce0b205ad217b00188a2d4f46e991b2155e2e3478a17fb93a33",
+  "conversionSourceHash": "77e03bee446602aaf54083a5df15be05ba9163eebb4c1ba2c1ce7e2b9caa890d",
+  "role": "child",
+  "parentComponentName": "AxaGlobalNetworkStats",
+  "definitionKey": "axa-global-statistic",
+  "generatedAt": "2026-10-03T00:13:46.031Z"
+}

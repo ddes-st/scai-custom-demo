@@ -23,20 +23,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'edge.sitecorecloud.io',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'xmc-*.**',
         port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.sitecoresandbox.cloud',
-        port: '',
-        pathname: '/**',
       },
     ],
     // Disable image optimization in development to avoid upstream timeouts

@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-06",
+  "contentHash": "28a86bccd8ede14586d6bb240e0f8522d4fee67ad2619e6d5ad2ac087c266322",
+  "conversionSourceHash": "b52f32ef2ae81a219b13c5afc1290c7abc0d881d15510cc0c81a4197166875ca",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "carousel-cards",
+  "children": [
+    {
+      "componentName": "SitecoreAiWorkflowCard",
+      "definitionKey": "sitecore-ai-workflow-card",
+      "placeholderKey": "carousel-cards"
+    }
+  ],
+  "definitionKey": "sitecore-workflow-ai-cards-carousel",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:25:10.971Z",
+  "placeholderKeys": [
+    "carousel-cards"
+  ],
+  "componentName": "SitecoreWorkflowAiCardsCarousel",
+  "mediaFolders": [
+    "AI Workflow Cards Carousels"
+  ],
+  "contentFolders": [
+    [
+      "AI Workflow Cards Carousels"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

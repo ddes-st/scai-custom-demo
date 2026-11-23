@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-09",
+  "contentHash": "6e30f8ba2c0884d6f9289b2bf0e8e7ffec3805c1fdfa1381ee6ee5b3e63196ca",
+  "conversionSourceHash": "414a20a347605e8597088387e8b5b29fef950192e2390757ce9cab645068780f",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-press-quote-banner",
+  "menuStates": [],
+  "generatedAt": "2026-10-02T13:58:38.525Z"
+}

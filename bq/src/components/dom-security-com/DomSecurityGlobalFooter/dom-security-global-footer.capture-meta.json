@@ -1,0 +1,10 @@
+{
+  "url": "https://www.dom-security.com/be/en/newsroom",
+  "sectionDir": "sections/section-07",
+  "contentHash": "9858104a9e7e040d1835923ae079653fdaedb9d73df63b2e36a8893486e467c6",
+  "conversionSourceHash": "2a4a01f21e15789b6b335389d6678d6d62408e80ff8afcc28ba4ce902a5d622a",
+  "role": "child",
+  "parentComponentName": "Footer",
+  "definitionKey": "dom-security-global-footer",
+  "generatedAt": "2026-10-05T01:38:24.864Z"
+}

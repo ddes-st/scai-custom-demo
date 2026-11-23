@@ -1,0 +1,81 @@
+{
+  "www-crelan-be--nl-particulieren/sections/section-01": {
+    "componentName": "CrelanCookieConsentPreferences",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "CrelanCookiePreferenceCategory",
+        "definitionKey": "crelan-cookie-preference-category",
+        "placeholderKey": "category-items"
+      }
+    ],
+    "mediaFolders": [
+      "Cookie Consent Preferences"
+    ],
+    "definitionKey": "crelan-cookie-consent-preferences",
+    "updatedAt": "2026-11-05T13:03:36.809Z"
+  },
+  "www-crelan-be--nl-particulieren/sections/section-02": {
+    "componentName": "CrelanSiteHeader",
+    "role": "section",
+    "children": [],
+    "mediaFolders": [
+      "Site Headers"
+    ],
+    "definitionKey": "crelan-site-header",
+    "updatedAt": "2026-11-05T13:04:34.934Z"
+  },
+  "www-crelan-be--nl-particulieren/sections/section-03": {
+    "componentName": "CrelanImageHeroPromotions",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "CrelanImageHeroPromotionCard",
+        "definitionKey": "crelan-image-hero-promotion-card",
+        "placeholderKey": "hero-cards"
+      }
+    ],
+    "mediaFolders": [
+      "Image Hero Promotions"
+    ],
+    "definitionKey": "crelan-image-hero-promotions",
+    "updatedAt": "2026-11-05T13:05:18.272Z"
+  },
+  "www-crelan-be--nl-particulieren/sections/section-04": {
+    "componentName": "CrelanNavigationAndOfficeFinder",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "CrelanNavigationCard",
+        "definitionKey": "crelan-navigation-card",
+        "placeholderKey": "navigation-cards"
+      },
+      {
+        "componentName": "CrelanUspItem",
+        "definitionKey": "crelan-usp-item",
+        "placeholderKey": "usp-items"
+      }
+    ],
+    "mediaFolders": [
+      "Navigation And Office Finders"
+    ],
+    "definitionKey": "crelan-navigation-and-office-finder",
+    "updatedAt": "2026-11-05T13:06:07.974Z"
+  },
+  "www-crelan-be--nl-particulieren/sections/section-05": {
+    "componentName": "CrelanFooterLinks",
+    "role": "section",
+    "children": [
+      {
+        "componentName": "CrelanFooterColumn",
+        "definitionKey": "crelan-footer-column",
+        "placeholderKey": "footer-columns"
+      }
+    ],
+    "mediaFolders": [
+      "Footer Links"
+    ],
+    "definitionKey": "crelan-footer-links",
+    "updatedAt": "2026-11-05T13:06:53.896Z"
+  }
+}

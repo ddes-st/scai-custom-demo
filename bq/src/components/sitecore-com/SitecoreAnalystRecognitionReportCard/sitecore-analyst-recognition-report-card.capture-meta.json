@@ -1,0 +1,30 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-11",
+  "contentHash": "06999e356ee2fd9edb05d5a6a0c254d27711a6edc37f9bd8cc53aba440e64291",
+  "conversionSourceHash": "95080a4c842ad2f2fed0c2c405012d0662da824765f81cc5f896d3d97881c73d",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "sitecore-analyst-recognition-report-card",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:20:49.526Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreAnalystRecognitionReportCard",
+  "mediaFolders": [
+    "Analyst Recognition Report Cards"
+  ],
+  "contentFolders": [
+    [
+      "Analyst Recognition Report Cards"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

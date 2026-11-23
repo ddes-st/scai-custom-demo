@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-04",
+  "contentHash": "099170625a4891887200a5750f347fc4dbf3424a3953ae20d98f4c10cf24d865",
+  "conversionSourceHash": "f7d08e9f2c08b4173ea9b76ab462aabd7d3f9ecbcb8390c68369756e7d1084a1",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-product-wide-video-hero",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:23:40.119Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreProductWideVideoHero",
+  "mediaFolders": [
+    "Sitecore Ai Discovery Video Heros"
+  ],
+  "contentFolders": [
+    [
+      "Sitecore Ai Discovery Video Heros"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

@@ -1,0 +1,27 @@
+import type { EnumerationDefinition } from "../../../tools/definitions/types";
+
+/**
+ * Shared enumeration for the `Appearance` rendering parameter on the cards-and-lists parameters templates. Backs the curated-mode chrome pass-through (see `_card-chrome-adapter.ts`). Unset keeps each leaf card its own per-variant preset.
+ *
+ * Reference via `enumeration: { definitionKey: "card-appearance" }`. Lands at
+ * `<enumerationsRoot>/Components/Card/CardAppearance` per-site.
+ */
+export const cardAppearanceEnumDefinition = {
+  kind: "enumeration",
+  definitionKey: "card-appearance",
+  name: "CardAppearance",
+  location: { scope: "site", folder: ["Components", "Card"] },
+  cultures: ["nl-BE"],
+  displayName: "Card Appearance",
+  description:
+    "Card surface appearance forwarded to curated cards: elevated (shadow), outlined (border), inner (inset), bare (chromeless), or filled (tinted).",
+  constants: [
+    { name: "elevated", displayName: "Elevated" },
+    { name: "outlined", displayName: "Outlined" },
+    { name: "inner", displayName: "Inner" },
+    { name: "bare", displayName: "Bare" },
+    { name: "filled", displayName: "Filled" },
+  ],
+} satisfies EnumerationDefinition;
+
+export default cardAppearanceEnumDefinition;

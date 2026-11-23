@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-06",
+  "contentHash": "a31d817f01c538a82b476e124aec6763206d3a4a93b73ef221301c1856757268",
+  "conversionSourceHash": "aab1ce6843627ee3f47b3ab5bda8f7840cb7c4a785a56afcc52b89b34135c5c1",
+  "role": "child",
+  "parentComponentName": "AxaProofPointStats",
+  "definitionKey": "axa-proof-point",
+  "generatedAt": "2026-10-02T23:51:14.971Z"
+}

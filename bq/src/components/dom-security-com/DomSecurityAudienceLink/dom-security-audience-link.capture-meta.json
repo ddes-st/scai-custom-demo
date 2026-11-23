@@ -1,0 +1,10 @@
+{
+  "url": "https://www.dom-security.com/be/en",
+  "sectionDir": "sections/section-03",
+  "contentHash": "aa2c4cbbb450d7fd26f63cf836b06f7ca623897a4871c39eccc3340378d69ad0",
+  "conversionSourceHash": "2c3e325dcfcbbfe63a12c1eb628d0a1dab3b2625f50d4277a4998685610142e0",
+  "role": "child",
+  "parentComponentName": "DomSecurityHeader",
+  "definitionKey": "dom-security-audience-link",
+  "generatedAt": "2026-10-03T00:49:14.934Z"
+}

@@ -1,0 +1,30 @@
+{
+  "url": "https://www.crelan.be/nl/particulieren",
+  "pageSlug": "www-crelan-be--nl-particulieren",
+  "sectionDir": "www-crelan-be--nl-particulieren/sections/section-03",
+  "contentHash": "5e1f57c591893c32d159ede264666960f3f874bc0e6fe56d0144960fad74f45e",
+  "conversionSourceHash": "f6896d0b1dbbe397d80ebbfeb77f3565f7aeced9138bb8272a76548b360da28c",
+  "role": "child",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "definitionKey": "crelan-image-hero-promotion-card",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-05T13:05:18.120Z",
+  "placeholderKeys": [],
+  "componentName": "CrelanImageHeroPromotionCard",
+  "mediaFolders": [
+    "Image Hero Promotion Cards"
+  ],
+  "contentFolders": [
+    [
+      "Image Hero Promotion Cards"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

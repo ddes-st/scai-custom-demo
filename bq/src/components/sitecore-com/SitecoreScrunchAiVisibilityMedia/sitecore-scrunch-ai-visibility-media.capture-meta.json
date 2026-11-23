@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-07",
+  "contentHash": "1ff302cd00f6d7c8455551d15ebd10e78ac22883ff0c76214cc8aa598893b023",
+  "conversionSourceHash": "101c80a4a1b19840b07e506466f0dd6961da34db8edd2e7b929d2aa65f95764f",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-scrunch-ai-visibility-media",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:17:55.864Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreScrunchAiVisibilityMedia",
+  "mediaFolders": [
+    "Scrunch AI Visibility Video CTAs"
+  ],
+  "contentFolders": [
+    [
+      "Scrunch AI Visibility Video CTAs"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

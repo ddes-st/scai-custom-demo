@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-10",
+  "contentHash": "d3306a91805d6ac2d4a3fa1fd89680d98d1465b39bafa3fa7200c53a15977a84",
+  "conversionSourceHash": "72811fa7dd872bbc749359ade55c0ad3de1ec489e1f23a417526cad162317bee",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-customer-stories-media-slider",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:20:10.023Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreCustomerStoriesMediaSlider",
+  "mediaFolders": [
+    "Customer Story Media Items"
+  ],
+  "contentFolders": [
+    [
+      "Customer Story Media Items"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

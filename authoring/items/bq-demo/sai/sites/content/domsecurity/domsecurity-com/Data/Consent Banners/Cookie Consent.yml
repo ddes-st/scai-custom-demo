@@ -1,0 +1,158 @@
+---
+ID: "615c4213-7d4a-5d30-854d-bda283836999"
+Parent: "8eadc701-651e-5bca-b220-b0b8906d73ca"
+Template: "f6c8d430-f142-562e-8f39-416dc066992f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Consent Banners/Cookie Consent"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We do more Cookies
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "72168111-3ac7-5ba8-b9aa-25f5d62e2fad"
+      Hint: Heading
+      Value: We do more Cookies
+    - ID: "f95493f3-b628-5281-8475-3a1ba434b29f"
+      Hint: Intro
+      Value: "<p>Our site uses cookies. By continuing to use our site you are agreeing to our <a href=\"https://www.dom-security.com/be/en/legal/data-protection\">Data Protection</a>.</p>"
+    - ID: "cc51dbe0-183b-5146-949d-08d444c8e605"
+      Hint: Body
+      Value: "<p>We use cookies on our website. In addition to the mandatory cookies required for the basic technical functions of the website, this also includes optional additional cookies from our partners (Google Analytics, Facebook Connect, LinkedIn Analytics, LeadForensics), which help us to operate our website economically, to improve it and to analyse access to our website. Further information (incl. possible revocation at any time) under Data protection.</p>"
+    - ID: "527ea158-ca4c-5283-81e2-e321ee7c6ddb"
+      Hint: Manage Cookies
+      Value: "<link text=\"Manage Cookies\" linktype=\"internal\" url=\"/legal/cookies\" anchor=\"\" target=\"\" id=\"{4961AE7B-2BA7-52BE-87C4-42A63BABF5DA}\" />"
+    - ID: "477eceb3-ebd1-5184-b8c2-65cc4b66de7c"
+      Hint: Continue Without Cookies
+      Value: "<link text=\"Continue without cookies\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "683b8f51-731f-56e9-a285-0f64d5e51d17"
+      Hint: Accept And Close
+      Value: "<link text=\"Accept and close\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We do more Cookies
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "72168111-3ac7-5ba8-b9aa-25f5d62e2fad"
+      Hint: Heading
+      Value: We do more Cookies
+    - ID: "f95493f3-b628-5281-8475-3a1ba434b29f"
+      Hint: Intro
+      Value: "<p>Our site uses cookies. By continuing to use our site you are agreeing to our <a href=\"https://www.dom-security.com/be/en/legal/data-protection\">Data Protection</a>.</p>"
+    - ID: "cc51dbe0-183b-5146-949d-08d444c8e605"
+      Hint: Body
+      Value: "<p>We use cookies on our website. In addition to the mandatory cookies required for the basic technical functions of the website, this also includes optional additional cookies from our partners (Google Analytics, Facebook Connect, LinkedIn Analytics, LeadForensics), which help us to operate our website economically, to improve it and to analyse access to our website. Further information (incl. possible revocation at any time) under Data protection.</p>"
+    - ID: "527ea158-ca4c-5283-81e2-e321ee7c6ddb"
+      Hint: Manage Cookies
+      Value: "<link text=\"Manage Cookies\" linktype=\"internal\" url=\"/legal/cookies\" anchor=\"\" target=\"\" id=\"{4961AE7B-2BA7-52BE-87C4-42A63BABF5DA}\" />"
+    - ID: "477eceb3-ebd1-5184-b8c2-65cc4b66de7c"
+      Hint: Continue Without Cookies
+      Value: "<link text=\"Continue without cookies\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "683b8f51-731f-56e9-a285-0f64d5e51d17"
+      Hint: Accept And Close
+      Value: "<link text=\"Accept and close\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We do more Cookies
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "72168111-3ac7-5ba8-b9aa-25f5d62e2fad"
+      Hint: Heading
+      Value: We do more Cookies
+    - ID: "f95493f3-b628-5281-8475-3a1ba434b29f"
+      Hint: Intro
+      Value: "<p>Our site uses cookies. By continuing to use our site you are agreeing to our <a href=\"https://www.dom-security.com/be/en/legal/data-protection\">Data Protection</a>.</p>"
+    - ID: "cc51dbe0-183b-5146-949d-08d444c8e605"
+      Hint: Body
+      Value: "<p>We use cookies on our website. In addition to the mandatory cookies required for the basic technical functions of the website, this also includes optional additional cookies from our partners (Google Analytics, Facebook Connect, LinkedIn Analytics, LeadForensics), which help us to operate our website economically, to improve it and to analyse access to our website. Further information (incl. possible revocation at any time) under Data protection.</p>"
+    - ID: "527ea158-ca4c-5283-81e2-e321ee7c6ddb"
+      Hint: Manage Cookies
+      Value: "<link text=\"Manage Cookies\" linktype=\"internal\" url=\"/legal/cookies\" anchor=\"\" target=\"\" id=\"{4961AE7B-2BA7-52BE-87C4-42A63BABF5DA}\" />"
+    - ID: "477eceb3-ebd1-5184-b8c2-65cc4b66de7c"
+      Hint: Continue Without Cookies
+      Value: "<link text=\"Continue without cookies\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "683b8f51-731f-56e9-a285-0f64d5e51d17"
+      Hint: Accept And Close
+      Value: "<link text=\"Accept and close\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Nous faisons plus de cookies
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "72168111-3ac7-5ba8-b9aa-25f5d62e2fad"
+      Hint: Heading
+      Value: Nous faisons plus de cookies
+    - ID: "f95493f3-b628-5281-8475-3a1ba434b29f"
+      Hint: Intro
+      Value: "<p>Notre site utilise des cookies. En continuant à utiliser notre site, vous acceptez notre <a href=\"https://www.dom-security.com/be/en/legal/data-protection\">politique de protection des données</a>.</p>"
+    - ID: "cc51dbe0-183b-5146-949d-08d444c8e605"
+      Hint: Body
+      Value: "<p>Nous utilisons des cookies sur notre site web. Outre les cookies obligatoires nécessaires aux fonctions techniques de base du site web, cela comprend également des cookies supplémentaires facultatifs de nos partenaires (Google Analytics, Facebook Connect, LinkedIn Analytics, LeadForensics), qui nous aident à exploiter notre site web de manière rentable, à l’améliorer et à analyser les accès à notre site web. Vous trouverez de plus amples informations (y compris la possibilité de retirer votre consentement à tout moment) sous Protection des données.</p>"
+    - ID: "527ea158-ca4c-5283-81e2-e321ee7c6ddb"
+      Hint: Manage Cookies
+      Value: "<link text=\"Gérer les cookies\" linktype=\"internal\" url=\"/legal/cookies\" anchor=\"\" target=\"\" id=\"{4961AE7B-2BA7-52BE-87C4-42A63BABF5DA}\" />"
+    - ID: "477eceb3-ebd1-5184-b8c2-65cc4b66de7c"
+      Hint: Continue Without Cookies
+      Value: "<link text=\"Continuer sans cookies\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "683b8f51-731f-56e9-a285-0f64d5e51d17"
+      Hint: Accept And Close
+      Value: "<link text=\"Accepter et fermer\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"

@@ -1,0 +1,97 @@
+---
+ID: "b530edd6-8761-5bca-99d4-ca3ab3a250c5"
+Parent: "380d86b6-5a3a-56e1-8602-49f39b40753d"
+Template: "c91e8d59-a1a2-5e12-9984-70c27f0bcb77"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Products/scandinavian-round-cylinder/Swiss Profile"
+SharedFields:
+- ID: "ad963ea0-8b79-5f59-894e-f54a7483c36b"
+  Hint: Group
+  Value: Profile
+- ID: "c4a0a587-41f8-54bd-b4bc-bbf54f8ecea1"
+  Hint: Image Url
+  Value: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/PimDam/jpg/dom/e/elsprodc1sidedch/domelsprodc1sidedch-main-stainlesssteel-greenled.jpg?extension=webp"
+- ID: "4c925445-0da2-5243-b685-9550d6800467"
+  Hint: Href
+  Value: /products/swiss-double-cylinder-1-sided-readability
+- ID: "da75c6e6-e3af-5059-9cdd-1d2e6b319ed6"
+  Hint: Is Default
+  Value: 
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Swiss Profile
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "df0278d7-4472-571f-8bed-94e47b72a611"
+      Hint: Label
+      Value: Swiss Profile
+    - ID: "3cfe1795-2d28-5ea6-8bb5-a6a7db0ce562"
+      Hint: Image
+      Value: "<image mediaid=\"{2C40F2CB-AAEC-51CD-A1DE-3891E1300946}\" alt=\"Swiss Profile\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Zwitsers profiel
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "df0278d7-4472-571f-8bed-94e47b72a611"
+      Hint: Label
+      Value: Zwitsers profiel
+    - ID: "3cfe1795-2d28-5ea6-8bb5-a6a7db0ce562"
+      Hint: Image
+      Value: "<image mediaid=\"{2C40F2CB-AAEC-51CD-A1DE-3891E1300946}\" alt=\"Swiss Profile\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Profil suisse
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "df0278d7-4472-571f-8bed-94e47b72a611"
+      Hint: Label
+      Value: Profil suisse
+    - ID: "3cfe1795-2d28-5ea6-8bb5-a6a7db0ce562"
+      Hint: Image
+      Value: "<image mediaid=\"{2C40F2CB-AAEC-51CD-A1DE-3891E1300946}\" alt=\"Swiss Profile\" />"

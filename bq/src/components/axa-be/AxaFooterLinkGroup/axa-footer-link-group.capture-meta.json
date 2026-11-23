@@ -1,0 +1,10 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-13",
+  "contentHash": "ad7b5bf64c7798889decc348b1c8001b6ab9e6e2bd4f122bf123ac3a7307bcb9",
+  "conversionSourceHash": "b62c84e27063071dbc2b6dbd3ccc5cb029922b6f3edb344ecac3f2abd1ca246b",
+  "role": "child",
+  "parentComponentName": "AxaFooter",
+  "definitionKey": "axa-footer-link-group",
+  "generatedAt": "2026-10-02T14:00:29.055Z"
+}

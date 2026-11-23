@@ -1,0 +1,102 @@
+---
+ID: "d3bda89a-4575-58fd-8a14-0fdcc64af24f"
+Parent: "88cd35c9-442c-5aab-baf6-d8d2bff661e6"
+Template: "702e61b0-f894-5800-8955-267c973322ca"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Software/ENiQ App"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ENiQ App
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: ENiQ App
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: Manage ENiQ access rights and media from your smartphone.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{0CF16E00-D697-5C6D-A554-509584CDED16}\" alt=\"ENiQ App\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"Learn more\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ENiQ-app
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: ENiQ-app
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: Beheer ENiQ-toegangsrechten en media vanaf uw smartphone.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{0CF16E00-D697-5C6D-A554-509584CDED16}\" alt=\"ENiQ App\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"Meer informatie\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Application ENiQ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: Application ENiQ
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: Gérez les droits d’accès et les supports ENiQ depuis votre smartphone.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{0CF16E00-D697-5C6D-A554-509584CDED16}\" alt=\"ENiQ App\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"En savoir plus\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"

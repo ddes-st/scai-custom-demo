@@ -1,0 +1,31 @@
+{
+  "url": "https://www.sitecore.com/",
+  "pageSlug": "www-sitecore-com--home",
+  "sectionDir": "www-sitecore-com--home/sections/section-12",
+  "contentHash": "d9f99df095732739ead2bddcd2f2cba758c0da1ed6927b9ea977a9c48a8fd6df",
+  "conversionSourceHash": "81111ebd90d67456c82ad2e727942caeab4e1e21049a258841d6507d5ede27b9",
+  "role": "section",
+  "mode": "single",
+  "packageKind": "default",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "sitecore-ai-visibility-snapshot-cta",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:21:16.425Z",
+  "placeholderKeys": [],
+  "componentName": "SitecoreAiVisibilitySnapshotCta",
+  "mediaFolders": [
+    "AI Visibility Snapshot CTAs"
+  ],
+  "contentFolders": [
+    [
+      "AI Visibility Snapshot CTAs"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

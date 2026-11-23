@@ -1,0 +1,87 @@
+---
+ID: "0e5b6e9e-ca1e-506c-afeb-0a4a390d48a4"
+Parent: "b590cf5d-d2fd-5d15-9f21-7a950e309b93"
+Template: "6f108e3c-5d57-42f8-a910-c22920269b0a"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Link Lists/Primary Links Left/Homeowners"
+BranchID: "f2490b61-7d7d-4bbf-8cf6-3b355fdf4ce4"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "68c2a603-f98e-42a3-be2d-dd70598c2a63"
+      Hint: Link
+      Value: "<link text=\"Homeowners\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+- Language: be
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "68c2a603-f98e-42a3-be2d-dd70598c2a63"
+      Hint: Link
+      Value: "<link text=\"Homeowners\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+- Language: "nl-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "68c2a603-f98e-42a3-be2d-dd70598c2a63"
+      Hint: Link
+      Value: "<link text=\"Homeowners\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+- Language: "fr-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "68c2a603-f98e-42a3-be2d-dd70598c2a63"
+      Hint: Link
+      Value: "<link text=\"Propriétaires de logement\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"

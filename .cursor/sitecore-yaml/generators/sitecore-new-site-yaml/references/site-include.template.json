@@ -1,0 +1,46 @@
+{
+  "name": "new-site",
+  "path": "/sitecore/content/new-collection/new-site",
+  "allowedPushOperations": "CreateAndUpdate",
+  "rules": [
+    {
+      "path": "/home",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Media",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Data",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Dictionary",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Presentation",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Settings/Site Grouping",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "/Settings",
+      "scope": "ItemAndDescendants",
+      "allowedPushOperations": "CreateAndUpdate"
+    },
+    {
+      "path": "*",
+      "scope": "Ignored"
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BQ (Build Quick) — Capture &amp; Create User Guide</title>
+  <style>
+    :root {
+      --ink: #1a1d23;
+      --muted: #5c6570;
+      --line: #d8dde3;
+      --paper: #f7f5f1;
+      --accent: #d51130;
+      --code-bg: #eef1f4;
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 11pt; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Calibri, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      background: #fff;
+    }
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 16mm 18mm 20mm;
+    }
+    header.cover {
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.4rem;
+    }
+    .cover-logo {
+      display: block;
+      width: min(100%, 280px);
+      height: auto;
+      margin: 0 0 1rem;
+    }
+    .kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: 650;
+      margin: 0.3rem 0 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle { color: var(--muted); margin: 0; font-size: 1.02rem; }
+    .meta { margin-top: 0.85rem; font-size: 0.85rem; color: var(--muted); }
+    h2 {
+      font-size: 1.16rem;
+      margin: 1.5rem 0 0.5rem;
+      padding-top: 0.45rem;
+      border-top: 1px solid var(--line);
+    }
+    h3 { font-size: 1.02rem; margin: 1.05rem 0 0.35rem; }
+    h4 { font-size: 0.95rem; margin: 0.85rem 0 0.3rem; color: var(--ink); }
+    p { margin: 0.4rem 0 0.65rem; }
+    li { margin: 0.22rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin: 0.5rem 0 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.35rem 0.48rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--paper); font-weight: 650; }
+    code, pre {
+      font-family: "Cascadia Mono", "Consolas", "Courier New", monospace;
+      font-size: 0.78rem;
+    }
+    code {
+      background: var(--code-bg);
+      padding: 0.05rem 0.22rem;
+      border-radius: 3px;
+    }
+    pre {
+      background: #1a1d23;
+      color: #e8ecef;
+      padding: 0.75rem 0.9rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    pre code { background: none; color: inherit; padding: 0; }
+    .note {
+      background: var(--paper);
+      border-left: 4px solid var(--accent);
+      padding: 0.55rem 0.8rem;
+      margin: 0.7rem 0 0.95rem;
+    }
+    .toc { font-size: 0.92rem; columns: 2; column-gap: 1.5rem; }
+    .toc li { break-inside: avoid; }
+    footer.doc {
+      margin-top: 1.8rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    @media print {
+      .page { max-width: none; padding: 10mm 12mm; }
+      h2, h3, h4 { break-after: avoid; }
+      pre, table, .note { break-inside: avoid; }
+      .toc { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-logo" src="assets/bq-logo.jpg" alt="Build Quick (BQ) — Demo environments for SitecoreAI" />
+      <div class="kicker">SitecoreAI · BQ</div>
+      <h1>BQ (Build Quick) — Capture &amp; Create User Guide</h1>
+      <p class="subtitle">How to turn a live website into a SitecoreAI demo or proof-of-concept site: start with the easy path (capture screenshots, generate sections), then use the full command and environment reference when you need more control.</p>
+      <p class="meta">Run every command from the <code>bq/</code> folder unless noted. Capture output is written to <code>.bq/captures/</code> at the repository root. Copy <code>bq/.env.remote.example</code> to <code>bq/.env.local</code> (never commit secrets). Type contracts live in <code>bq/tools/definitions/types.ts</code>.</p>
+    </header>
+
+    <h2>Contents</h2>
+    <ol class="toc">
+      <li>What BQ is</li>
+      <li>The easy path — capture screenshots, generate sections</li>
+      <li>One-time setup</li>
+      <li>What happens under the hood</li>
+      <li>Environment variables (<code>.env.local</code>)</li>
+      <li>Definition files — why, kinds, placement, manual edits</li>
+      <li>Related content and content families</li>
+      <li>Page stubs</li>
+      <li>Languages and cultures</li>
+      <li>Source fidelity and visual fidelity</li>
+      <li>npm command reference (all options)</li>
+      <li>After a successful create</li>
+      <li>Caching, cost, and re-doing work</li>
+      <li>Troubleshooting</li>
+      <li>Further reading</li>
+    </ol>
+
+    <h2>1. What BQ is</h2>
+    <p><strong>BQ</strong> means <strong>Build Quick</strong>. It is the toolkit and Next.js app you use to <strong>build quick demo websites</strong> and <strong>build quick POC websites</strong> on SitecoreAI: take a real public site, capture it, generate Content SDK components and authoring definitions, serialize them into Sitecore, and show the result in the Pages editor.</p>
+    <p>In this repository BQ lives under the <code>bq/</code> directory. It combines a Sitecore Content SDK Next.js rendering host with Node tooling that fills that host from a marketing URL. The Next.js app is what the SitecoreAI editing experience calls for React. The tools produce components, <code>*.definition.ts</code> files, and YAML under <code>authoring/</code>.</p>
+    <p>Three layers work together. The <strong>Next.js app</strong> (<code>bq/src</code>) renders layouts from SitecoreAI. The <strong>capture workspace</strong> (<code>.bq/captures/{hostname}/</code>) stores screenshots, HTML, and AI notes. The <strong>authoring output</strong> (<code>authoring/items/bq-demo/sai/…</code>) is Sitecore Content Serialization YAML produced by generate—not by hand-editing <code>.yml</code>.</p>
+    <div class="note">
+      Contract: write React TSX and <code>*.definition.ts</code>. Run <code>authoring:generate</code> (or let create call it) to create or update Sitecore YAML. Do not invent item IDs or patch generated YAML to fix a demo.
+    </div>
+
+    <h2>2. The easy path — capture screenshots, generate sections</h2>
+    <p>If you only remember one recipe, remember this. You capture the live pages you care about (Playwright takes screenshots and slices the page into section bands), then you ask create to turn those sections into Sitecore components and authoring definitions. Create also merges unique layouts across the host, wires presentation, creates page stubs for uncaptured routes, translates seed content into your cultures when configured, and runs generate so YAML lands under <code>authoring/</code>. After that you start the local rendering host and open Pages.</p>
+    <p>Do this once from <code>bq/</code> after install and <code>.env.local</code> are in place (see §3). The <code>--</code> after each script name is required so npm passes flags through to the CLI.</p>
+<pre><code>cd bq
+
+# 1) Capture one or more pages (screenshots + section bands)
+npm run capture:webpage -- --urls "https://www.example.com/,https://www.example.com/newsroom"
+
+# 2) Generate Sitecore sections for every captured page on that host
+npm run create:sectioncomponents -- --url "https://www.example.com/" --all
+
+# 3) Run the local Pages rendering host
+npm run dev</code></pre>
+    <p>That is enough for a normal first demo. Capture stores everything under <code>.bq/captures/</code>. Create reads those captures, writes React and <code>*.definition.ts</code> under <code>bq/src/components/</code>, and invokes <code>authoring:generate</code> unless you skip it. You do not need to run merge by hand first—create runs a host section-registry merge as step 0 unless you pass <code>--skip-merge</code>.</p>
+    <p>When you only want one page instead of the whole host, drop <code>--all</code> and pass that page’s URL. When one band looks wrong after a successful create, re-run AI for that band alone with <code>--only section-04 --force:components</code> (see §13). Optional fidelity loops that score the generated UI against capture crops are off by default; turn them on with <code>--source-fidelity</code> or <code>--visual-fidelity</code> (or the matching env flags) when you want a tighter visual match—see §10.</p>
+    <div class="note">
+      Push or deploy the generated authoring YAML into your SitecoreAI environment before Pages can show the new renderings. Point the editing host at the origin where <code>npm run dev</code> is listening.
+    </div>
+
+    <h2>3. One-time setup</h2>
+    <p>From <code>bq/</code>: run <code>npm install</code>, then <code>npm run setup:playwright</code> so Chromium is available for capture (and for visual fidelity screenshots later). Copy <code>bq/.env.remote.example</code> to <code>bq/.env.local</code> and fill it in—do not commit that file. At minimum you need Edge context IDs, default site name, editing secret, Azure OpenAI endpoint and key, and the Environment automation credentials used by generate. Optionally set a dedicated screenshot-conversion model and <code>BQ_CULTURES</code> (comma-separated Sitecore cultures such as <code>nl-BE,fr-BE</code> or <code>de-DE,fr-FR</code>). Section 5 walks through every variable in the example file.</p>
+    <p><strong>Sitecore authoring credentials for generate.</strong> <code>definitions:generate</code> talks to the Sites API and runs <code>ser pull</code>/<code>ser push</code>. That needs an <strong>Environment automation client</strong> (not Design Library <code>SITECORE_AUTH_*</code>, not an Organization automation client, and not interactive <code>dotnet sitecore cloud login</code> alone). In Deploy: Credentials → <strong>Environment</strong> tab → Create credentials → Automation → copy into <code>SITECORE_AUTOMATION_CLIENT_ID</code> / <code>SITECORE_AUTOMATION_CLIENT_SECRET</code>. Also set <code>BQ_SITECORE_ENVIRONMENT_ID</code> (environment details card) and <code>BQ_SITECORE_ENDPOINT</code> (writable key under <code>.sitecore/user.json</code> → <code>endpoints</code>). Comments with the exact paths live in <code>bq/.env.remote.example</code>.</p>
+<pre><code>cd bq
+npm install
+npm run setup:playwright
+# edit .env.local</code></pre>
+
+    <h2>4. What happens under the hood</h2>
+    <p>Capture one or more public pages on the same host. Playwright stores screenshots and section bands. Merge builds a section registry of unique layouts. After that, merge also tries to group <strong>related content</strong> (for example a news article body with a newsroom list or teaser strip) into content families so create can share one Sitecore item template—see §7. Create generates React + definition files (normally automatically), wires presentation (shared layout chrome + page layouts), creates page stubs, translates seed content into your cultures, and runs generate. You start <code>npm run dev</code> and connect Pages to that host.</p>
+    <p>You can run the steps separately when you want to inspect the registry, refresh only the design guide, or rebuild stubs without regenerating components. Those scripts are documented in §11. For day-to-day work, the easy path in §2 is enough.</p>
+
+    <h2>5. Environment variables (<code>.env.local</code>)</h2>
+    <p>BQ reads configuration from <code>bq/.env.local</code>. Start from <code>bq/.env.remote.example</code>, which is commented so you can see where each value comes from. Variables fall into a few groups: the Next.js / Content SDK rendering host, Sitecore credentials for authoring generate, Azure OpenAI for capture and create, optional fidelity and translation controls, and optional Azure rate estimates for the cost lines printed in the terminal.</p>
+
+    <h3>5.1 Rendering host and Edge</h3>
+    <p><code>SITECORE_EDITING_SECRET</code> protects the editor endpoint your Next.js app exposes (by default <code>/api/editing/render</code>). <code>SITECORE_REVALIDATE_SECRET</code> is optional: when set, callers of <code>POST /api/revalidate</code> must send the same value in the <code>x-revalidate-secret</code> header; leave it empty to skip that check. <code>NEXT_PUBLIC_DEFAULT_SITE_NAME</code> is the Sitecore site the app treats as default. <code>NEXT_PUBLIC_DEFAULT_LANGUAGE</code> is the default app language.</p>
+    <p><code>SITECORE_EDGE_CONTEXT_ID</code> is the unified Edge context for server-side use and takes precedence over older Preview / Delivery Edge variables. <code>NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID</code> is the client-side context (and a fallback if the server variable is missing). Optionally override the Edge platform hostname with <code>NEXT_PUBLIC_SITECORE_EDGE_PLATFORM_HOSTNAME</code>, and optionally set <code>SITECORE_EXPERIENCE_EDGE_HOSTNAME</code> when media URL rewriting should target a custom Experience Edge host (for example staging).</p>
+    <p>Personalization is optional. <code>NEXT_PUBLIC_PERSONALIZE_SCOPE</code> isolates personalization data when several environments share a Personalize tenant; it should match <code>PAGES_PERSONALIZE_SCOPE</code> on the connected environment. <code>PERSONALIZE_MIDDLEWARE_CDP_TIMEOUT</code> and <code>PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT</code> are millisecond timeouts for CDP and Edge requests in the personalize middleware (default 400). For Content SDK debug logging, set <code>DEBUG</code> to patterns such as <code>content-sdk:*</code> as described in the example file.</p>
+
+    <h3>5.2 Sitecore credentials</h3>
+    <p><code>SITECORE_AUTH_CLIENT_ID</code>, <code>SITECORE_AUTH_CLIENT_SECRET</code>, and <code>SITECORE_RENDERINGHOST_NAME</code> are for Design Library / Content SDK auth only. Do not reuse them for Sites API or <code>definitions:generate</code>—the wrong credential type produces OAuth 401 errors.</p>
+    <p><code>SITECORE_AUTOMATION_CLIENT_ID</code> and <code>SITECORE_AUTOMATION_CLIENT_SECRET</code> must come from Deploy → Credentials → <strong>Environment</strong> tab → Automation for your project and environment. Those are required for BQ Sites API calls (create/update collections and sites) and for the non-interactive CLI login that <code>ser pull</code>/<code>ser push</code> use during generate. Organization automation clients get the wrong scopes and fail.</p>
+    <p><code>BQ_SITECORE_ENVIRONMENT_ID</code> is the SitecoreAI environment id shown on the environment details card in Deploy. <code>BQ_SITECORE_ENDPOINT</code> is the named writable endpoint under repo-root <code>.sitecore/user.json</code> → <code>endpoints</code> (the name you pass to <code>ser</code> with <code>-n</code>). There is no default; unset fails fast. You can override the endpoint per run with <code>--endpoint</code>.</p>
+    <p>To scope generate to one demo without regenerating every collection in the tree, set <code>BQ_GENERATE_URL</code> (hostname maps to site and collection, for example <code>www.sitecore.com</code> → <code>sitecore-com</code> / <code>sitecore</code>), or set <code>BQ_GENERATE_SITE</code> and/or <code>BQ_GENERATE_COLLECTION</code> explicitly. Create passes site and collection automatically for the capture host. The same scoping is available on the CLI as <code>--url</code>, <code>--site</code>, and <code>--collection</code>.</p>
+
+    <h3>5.3 Azure OpenAI and conversion models</h3>
+    <p>Capture AI and <code>create:sectioncomponents</code> need <code>AZURE_OPENAI_ENDPOINT</code>, <code>AZURE_OPENAI_API_KEY</code>, and usually <code>AZURE_OPENAI_DEFAULT_MODEL</code>. For screenshot-to-TSX, set <code>AZURE_OPENAI_SCREENSHOT_CONVERSION_MODEL</code> to your multimodal deployment; when unset, create falls back to the default model. <code>AZURE_OPENAI_SOURCE_FIDELITY_MODEL</code> is an optional stronger model for source and visual fidelity scoring; it falls back to the screenshot conversion model, then to the default. <code>AZURE_OPENAI_BENCHMARK_MODELS</code> is a comma-separated list of deployments for <code>npm run benchmark:layout-models</code> (the conversion model is used as the baseline).</p>
+
+    <h3>5.4 Source fidelity and visual fidelity</h3>
+    <p>Both modes are off by default. Enable them with boolean-style values (<code>true</code>/<code>false</code>, <code>1</code>/<code>0</code>, or <code>yes</code>/<code>no</code>, case-insensitive) or with the matching CLI flags described in §10.</p>
+    <p><code>BQ_SOURCE_FIDELITY</code> turns on source fidelity: after write, the tool scores generated TSX text against capture crops (no browser render) and patches the TSX in place until the score meets the minimum or iterations are exhausted. <code>BQ_SOURCE_FIDELITY_MIN_SCORE</code> is the accept threshold from 1–100 (default 90); a CLI <code>--source-fidelity=N</code> wins over the env minimum. <code>BQ_SOURCE_FIDELITY_MAX_ITERS</code> is how many score→patch→re-score rounds to allow (0–3, default 3). Setting max iters to <code>0</code> force-skips source fidelity even if the enable flag or CLI switch is on.</p>
+    <p><code>BQ_VISUAL_FIDELITY</code> turns on visual fidelity. For codegen v3, scoring/repair runs on the plain visual TSX before sitecoreize (shots under <code>sections/…/visual-fidelity/</code>); for non-v3, the written Sitecore package is rendered with placeholders filled, Playwright screenshots it, and on failure surgical change directives repair the package. <code>BQ_VISUAL_FIDELITY_MIN_SCORE</code> defaults to 95; <code>BQ_VISUAL_FIDELITY_MAX_ITERS</code> is 0–3 (default 3), and <code>0</code> force-skips visual fidelity. When both source and visual are enabled for a component, visual wins. Visual fidelity needs Chromium installed (<code>npm run setup:playwright</code> or <code>npx playwright install chromium</code>); a missing browser shows as score 0 with a launch error rather than a real layout score.</p>
+
+    <h3>5.5 Fixups, translations, cultures, and cost estimates</h3>
+    <p><code>BQ_SKIP_AI_SOURCE_FIXUPS=1</code> skips the warn-only TSX/client post-pass after codegen; definition fixups still always run. The same skip is available as <code>--skip-fixups</code> on create.</p>
+    <p>Culture and EN-seed translation use the same Azure OpenAI settings. Results are cached on disk at <code>.bq/definitions/cache/translations.json</code>. Bypass the cache with <code>BQ_FORCE_TRANSLATIONS=1</code> or with <code>--force:translations</code> on create / authoring generate. Set target Sitecore cultures with <code>BQ_CULTURES</code> (for example <code>de-DE,fr-FR</code>); capture and create also accept <code>--cultures</code>, which takes priority over page meta and then over this env value—see §9.</p>
+    <p>Terminal AI cost lines are estimates. Retail prices are cached under the repo <code>.bq/</code> folder (override path with <code>AZURE_MODEL_RATES_CACHE_PATH</code>; TTL days with <code>AZURE_MODEL_RATES_TTL_DAYS</code>). For negotiated org rates you may set <code>AZURE_BILLING_ACCOUNT_NAME</code>, <code>AZURE_BILLING_PROFILE_NAME</code>, and <code>AZURE_ACCESS_TOKEN</code> together (or use <code>az login</code>); optionally set <code>AZURE_PRICE_SHEET_API_VERSION</code>. If negotiated rates fail, the tool soft-falls back to Retail.</p>
+
+    <h2>6. Definition files — why, kinds, placement, manual work</h2>
+
+    <h3>6.1 Why BQ uses definition files instead of hand-written YAML</h3>
+    <p>Sitecore authoring items are large, nested YAML trees: template folders, field sections, Json Renderings, Available Renderings, Partial Designs, page <code>__Renderings</code> XML, datasource folders, language versions, and stable GUIDs. Asking an AI (or a person) to invent that YAML correctly every time is fragile. Small mistakes break serialization, layout, or the Content SDK component map.</p>
+    <p>A <strong>definition file</strong> (<code>*.definition.ts</code>) is a compact TypeScript object that describes the same intent in a shape that is easy for models and for code to produce: kind, keys, field names and types, seed content, placeholders, cultures, and presentation wiring. BQ’s generators then expand that object into full SCS YAML with consistent IDs, paths, and conventions.</p>
+    <p>That split has several benefits. <strong>For AI:</strong> create prompts ask for a definition object and a React component, not hundreds of lines of YAML. The model stays in one typed contract (<code>satisfies ComponentTemplateDefinition</code> and siblings in <code>tools/definitions/types.ts</code>). <strong>For programmed pipelines:</strong> merge, content-family field alignment, translation injection, stub emission, and presentation merge can mutate or rewrite definition TypeScript with ordinary code—merge field unions, set <code>datasourceTemplate</code> on thin family members, inject <code>cultures</code>, append Partial Design children—without parsing Sitecore YAML. <strong>For humans:</strong> you can read and edit a definition in an editor with TypeScript checking, then regenerate YAML. <strong>For demos:</strong> the same definition is the single source for templates, renderings, and seed items, so they stay in sync.</p>
+    <p>In short: definitions are the authoring API of BQ. YAML is a build artifact. Normally create writes definitions for you. When you need something special (extra data folder, custom stub, tweak a field, add a culture list by hand), you edit or add a definition and run generate—you do not start from empty YAML.</p>
+
+    <h3>6.2 Where definition files live</h3>
+    <p><code>authoring:generate</code> / <code>definitions:generate</code> discovers every file matching <code>*.definition.ts</code> under <code>bq/src/components/</code> (via the shared discover helper). Typical layout:</p>
+    <table>
+      <thead>
+        <tr><th>Path</th><th>Usual contents</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>bq/src/components/{hostSlug}/ComponentName/*.definition.ts</code></td>
+          <td>Component packages from create (e.g. <code>sitecore-com/SitecoreAnnouncementBar/…</code>)</td>
+        </tr>
+        <tr>
+          <td><code>bq/src/components/{hostSlug}/_page-stubs/*.definition.ts</code></td>
+          <td><code>kind: "page-stub"</code> routes</td>
+        </tr>
+        <tr>
+          <td><code>bq/src/components/sites/*-presentation.definition.ts</code></td>
+          <td><code>kind: "site-presentation"</code> (shared layout + page layouts)</td>
+        </tr>
+        <tr>
+          <td><code>bq/src/components/sites/*-site.definition.ts</code></td>
+          <td><code>kind: "site"</code></td>
+        </tr>
+        <tr>
+          <td><code>bq/src/components/collections/*.definition.ts</code></td>
+          <td><code>kind: "collection"</code></td>
+        </tr>
+        <tr>
+          <td><code>bq/src/components/data/*.definition.ts</code></td>
+          <td>Standalone <code>kind: "data"</code> models when shared</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Pair each UI component with a React module the Content SDK can map (same folder or adjacent). After adding a new TSX file, run <code>npm run sitecore-tools:generate-map</code> or <code>npm run dev</code> so the component map includes it. Definitions alone do not register React modules.</p>
+
+    <h3>6.3 Definition kinds (possibilities)</h3>
+    <p>All kinds are declared in <code>bq/tools/definitions/types.ts</code> as the union type <code>Definition</code>. The ones you meet most often:</p>
+    <table>
+      <thead>
+        <tr><th><code>kind</code></th><th>Role</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>component</code></td>
+          <td>Usual create output: rendering façade + datasource <code>model</code> (folder/item templates + fields), optional <code>parameters</code>, <code>variants</code>, <code>placeholders</code>, <code>content</code> seeds, <code>cultures</code>, optional <code>datasourceTemplate</code> / GraphQL query.</td>
+        </tr>
+        <tr>
+          <td><code>rendering</code></td>
+          <td>Same emit path as component, more explicit rendering shape; prefer <code>component</code> for new work.</td>
+        </tr>
+        <tr>
+          <td><code>data</code></td>
+          <td>Standalone data templates/folders (shared models not tied to one rendering).</td>
+        </tr>
+        <tr>
+          <td><code>parameters</code></td>
+          <td>Reusable rendering-parameters template referenced by <code>{ definitionKey }</code>.</td>
+        </tr>
+        <tr>
+          <td><code>variants</code></td>
+          <td>Headless Variants set under the site Presentation tree.</td>
+        </tr>
+        <tr>
+          <td><code>enumeration</code> / <code>dictionary</code> / <code>media</code> / <code>field-validator</code></td>
+          <td>Supporting authoring constructs (lists, dictionary phrases, media assets, validators).</td>
+        </tr>
+        <tr>
+          <td><code>collection</code> / <code>site</code></td>
+          <td>Headless collection and site scaffold.</td>
+        </tr>
+        <tr>
+          <td><code>site-presentation</code></td>
+          <td>Available Renderings, Partial Designs (shared layout chrome), and per-page layout wiring.</td>
+        </tr>
+        <tr>
+          <td><code>page-stub</code></td>
+          <td>Empty-ish page under Home for IA / link targets.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>On a <code>component</code>, important pieces include: <code>definitionKey</code> (kebab id used in maps and presentation), <code>componentName</code> (PascalCase React / item name), <code>collectionSystem</code> / <code>siteSystem</code>, <code>model.itemTemplate.sections[].fields[]</code> with Sitecore field type names (<code>Single-Line Text</code>, <code>Rich Text</code>, <code>Image</code>, <code>General Link</code>, <code>Checkbox</code>, <code>Droplink</code>, …), optional <code>shared: true</code> on fields, <code>content.items</code> seed bags, and <code>placeholders</code> with <code>allowedControls</code> listing other definitionKeys.</p>
+
+    <h3>6.4 Normally automatic — when to write one by hand</h3>
+    <p><code>npm run create:sectioncomponents</code> writes component definitions, stubs, and updates the site presentation definition for you. Manual definitions are for: scaffolding a component the capture path did not produce; adjusting fields or seeds after a review; adding a shared <code>data</code> or <code>enumeration</code> package; fixing presentation wiring that merge did not express; or building a tiny POC without a full capture.</p>
+    <p>To add a manual component package: create a folder under <code>bq/src/components/{hostSlug}/YourName/</code>; add <code>your-name.definition.ts</code> exporting an object with <code>satisfies ComponentTemplateDefinition</code> (or the matching kind type); add the React TSX that implements the rendering (named exports matching variants); if it must appear on a layout, update the site presentation definition (or re-run create for that page); run generate (below), then refresh the component map (<code>npm run sitecore-tools:generate-map</code> or <code>dev</code>); push or deploy authoring YAML into SitecoreAI as usual.</p>
+<pre><code># After editing or adding *.definition.ts under bq/src/components/
+cd bq
+npm run authoring:generate -- --site sitecore-com --collection sitecore
+# or only templates/renderings:
+npm run definitions:generate -- --site sitecore-com --collection sitecore
+# or only content seeds:
+npm run content:generate -- --site sitecore-com --collection sitecore</code></pre>
+    <p>Scope with <code>--site</code> and/or <code>--collection</code> (or env <code>BQ_GENERATE_SITE</code> / <code>BQ_GENERATE_COLLECTION</code>) so you do not regenerate every demo collection in the tree. Prefer <code>authoring:generate</code> so definitions and content stay aligned; it forwards the same argv to both generators.</p>
+
+    <h3>6.5 Shared layout via presentation definitions</h3>
+    <p>The <code>site-presentation</code> definition places header, footer, consent, and similar chrome on Partial Designs (shared layout placeholders such as <code>headless-header</code>, <code>headless-footer</code>, <code>headless-cookie</code>). Page body sections go on that page’s layout. Because shared datasources have language versions for each culture, switching language in SitecoreAI shows translated chrome immediately on every page that uses the shared layout—not only on the page you captured.</p>
+
+    <h2>7. Related content and content families</h2>
+    <p>Marketing sites rarely invent a brand-new content model for every band. A newsroom overview, a “latest news” teaser strip, an article header, and the article body usually describe the <strong>same kind of item</strong>—title, image, date, link, body—shown through different layouts. If create emitted a separate Sitecore item template for each layout, authors would maintain duplicate fields and seed data would drift. BQ therefore looks for <strong>related content</strong> across the host’s section registry and groups matching components into a <strong>content family</strong>.</p>
+    <p>That search runs during <code>capture:merge-sections</code> (also step 0 of <code>create:sectioncomponents</code>), after layout deduplication. It is multi-signal on purpose: a single shared heading or image URL is never enough. Merge combines page co-occurrence (layouts that appear together on many pages), overlapping suggested fields (Title, Image, Date, Link, Body, and similar), route and purpose taxonomy (tokens such as news, article, blog, press; listing names like grid/teasers versus detail header/body), and overlapping instance content hashes when taxonomy also matches. Site chrome—header, footer, navigation, consent—is excluded so it never joins a news family by accident.</p>
+    <p>The classic example is broader than “news + news list.” A host might end up with one family that includes a newsroom grid, latest teasers, an article header, and a rich article body. The same idea applies to press rooms and blogs. Roles inside the family describe how each layout participates: list or teaser layouts present many cards; detail header and detail body present one item. The <strong>owner</strong> is the member with the richest content model (usually the article body, not the largest HTML grid). Create emits a full item template and shared <code>content.items</code> seeds on that owner. Other members become thin renderings that point at the owner via <code>datasourceTemplate</code>, so Pages still has distinct components while authors edit one underlying template.</p>
+    <p>When create runs, it reads <code>contentFamilyId</code> from the registry, unions fields across member instances (matching values and preferring sensible names and types), writes shared seeds only on the owner, and aligns React field components (<code>Text</code> vs <code>Rich Text</code>) to the final types. Re-running create with the same captures is idempotent. For families to form, capture enough related URLs on the same host—typically a listing or homepage <em>and</em> at least one detail article—so co-occurrence and field overlap have something to work with.</p>
+    <p>Technical signal thresholds, owner scoring, and emit steps are documented in <code>bq/tools/capture/references/content-families.md</code>. The on-disk ledger is <code>{host}/section-registry/content-families.json</code>.</p>
+
+    <h2>8. Page stubs — what they are and why they exist</h2>
+    <p>You usually capture only a few URLs. Navigation and cards still link to many other paths. <strong>Page stubs</strong> (<code>kind: "page-stub"</code> under <code>_page-stubs/</code>) become Sitecore pages under Home so the IA matches the live site. Sources: <code>site-content-tree.json</code> (stub/mimicked routes) and same-site links found in definitions (create-if-absent). Tree stubs are capped (on the order of forty). A stub is a route + title, not a fully designed page—fill it later by capturing that URL or authoring in Pages.</p>
+    <p>Locale prefixes in URLs (<code>/be/en/…</code>, <code>/nl/…</code>, <code>/de/…</code>) are normalized to one item path where possible. Sitecore uses one page tree; languages are versions. Which languages you seed is configurable (next section)—not fixed to NL/FR.</p>
+
+    <h2>9. Languages and cultures — how to set them</h2>
+    <p>Codes such as <code>nl-BE</code> and <code>fr-BE</code> appear in many examples because those demos use them. For any site, choose the Sitecore culture codes you need.</p>
+    <p><strong>What cultures do.</strong> Capture stamps them on <code>page-meta.json</code>. Create writes <code>content.cultures</code> (and source <code>content.culture</code>) on definitions. Translation produces language versions of seed strings. The React component is unchanged.</p>
+    <p><strong>Shared layout.</strong> Chrome on Partial Designs uses those multi-language datasources, so language switch shows translated header/nav/footer immediately site-wide.</p>
+    <p><strong>Priority:</strong> (1) CLI <code>--cultures</code>, (2) capture <code>page-meta.json</code>, (3) <code>BQ_CULTURES</code> in <code>bq/.env.local</code>.</p>
+<pre><code>BQ_CULTURES=de-DE,fr-FR
+npm run capture:webpage -- --url "https://www.example.de/" --cultures "de-DE,fr-FR"
+npm run create:sectioncomponents -- --url "https://www.example.de/" --all --cultures "de-DE,fr-FR"
+npm run create:sectioncomponents -- --url "https://www.example.com/" --all --cultures "de-DE,it-IT" --force:translations</code></pre>
+    <p>Source language comes from the captured page; target cultures are the Sitecore versions to emit. Prefer re-running create over hand-editing dozens of definition files. Ensure languages exist in the SitecoreAI project.</p>
+
+    <h2>10. Source fidelity and visual fidelity</h2>
+    <p>After create writes a component package, you can optionally ask BQ to judge how well the result matches the capture crops and improve it. These loops are <strong>off by default</strong> because they add Azure cost and time. Enable them from the CLI or from <code>.env.local</code> (see §5.4).</p>
+    <p><strong>Source fidelity</strong> (<code>--source-fidelity[=N]</code> or <code>BQ_SOURCE_FIDELITY=true</code>) compares the generated TSX text to the desktop/tablet/mobile crops and applies a dense in-place patch when the score is below the minimum (default 90). It does not launch a browser. Use it when you want a cheap second look at structure and class choices without paying for a full render loop.</p>
+    <p><strong>Visual fidelity</strong> (<code>--visual-fidelity[=N]</code> or <code>BQ_VISUAL_FIDELITY=true</code>) is the stronger loop. With <strong>codegen v3</strong>, it runs on the plain visual TSX <em>before</em> sitecoreize: Playwright shots under <code>sections/…/visual-fidelity/&lt;Name&gt;/</code>, AI score vs crops (default minimum 95), then surgical Tailwind/layout repair (no Sitecore language) up to <code>BQ_VISUAL_FIDELITY_MAX_ITERS</code> rounds; post-write visual is skipped. For non-v3 (and <code>fidelity:component</code>), it still builds a Sitecore package preview (including AppPlaceholder children when the plan has them), scores, and surgically repairs the written package. When both source and visual are on, visual wins for that component. <code>BQ_VISUAL_FIDELITY_MAX_ITERS=0</code> disables the mode entirely.</p>
+    <p>Cached packages that create would normally skip are also skipped for fidelity. To force a fresh AI package (and therefore a fresh fidelity pass when fidelity is enabled), use <code>--force:components</code> or <code>--force:definition</code> rather than a full <code>--force:all</code> if you only need TSX/definitions rewritten. Install Chromium before relying on visual fidelity; without the browser binary the score stays at 0 and the log asks you to run <code>npx playwright install</code>.</p>
+<pre><code># Enable for one create run (optional min score)
+npm run create:sectioncomponents -- --url "https://www.example.com/" --all --visual-fidelity=95
+
+# Or leave BQ_VISUAL_FIDELITY=true in .env.local and re-score after regenerating packages
+npm run create:sectioncomponents -- --url "https://www.example.com/" --force:components</code></pre>
+    <p>Fidelity AI usage is rolled into the terminal cost totals alongside decompose and codegen. Prefer visual fidelity when the layout must look right across viewports; prefer source fidelity when you want a lighter check.</p>
+    <p>When you already have a component package on disk and only want to re-score or improve that one rendering—without merge, YAML emit, pull, or push—use <code>npm run fidelity:component</code>. Pass <code>--component</code> with the PascalCase folder name under <code>bq/src/components/{host}/</code>, the same <code>--visual-fidelity[=N]</code> / <code>--source-fidelity[=N]</code> flags (or the matching env vars), and optionally <code>--url</code> / <code>--host</code> so crops resolve from the right capture. Capture context normally comes from that component’s <code>*.capture-meta.json</code>. The command reuses the same fidelity loops as create and may rewrite TSX (and definition text on visual regen); it never runs <code>authoring:generate</code>. See §11.8 for the full option list.</p>
+<pre><code>npm run fidelity:component -- --component SitecoreCardGrid --url "https://www.example.com/" --visual-fidelity=95</code></pre>
+
+    <h2>11. npm command reference (all options)</h2>
+    <p>Every script below is defined in <code>bq/package.json</code>. Pass flags after <code>--</code>. Use <code>--help</code> on capture/create scripts for the live text. If you only need the happy path, stay with §2; this section is the full control surface.</p>
+
+    <h3>11.1 <code>npm run capture:webpage</code></h3>
+    <p>Entry point: Playwright visit → HTML, CSS, fonts, screenshots, section bands, AI section metadata, design guide.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--urls &lt;a,b,c&gt;</code></td><td>Comma-separated URLs (also accept bare https args).</td></tr>
+        <tr><td><code>--file &lt;path&gt;</code></td><td>Text file, one URL per line (<code>#</code> comments ignored).</td></tr>
+        <tr><td><code>--out &lt;dir&gt;</code></td><td>Output root (default <code>&lt;repo&gt;/.bq/captures</code>).</td></tr>
+        <tr><td><code>--full-page</code></td><td>Full scrollable page (default true).</td></tr>
+        <tr><td><code>--viewport-only</code></td><td>Above-the-fold only (weaker for full-page discovery).</td></tr>
+        <tr><td><code>--no-html</code></td><td>Skip saving page HTML.</td></tr>
+        <tr><td><code>--no-sections</code></td><td>Skip hybrid detection and section export.</td></tr>
+        <tr><td><code>--wait-ms &lt;n&gt;</code></td><td>Extra wait after readiness (default 0).</td></tr>
+        <tr><td><code>--timeout-ms &lt;n&gt;</code></td><td>Navigation timeout (default 60000).</td></tr>
+        <tr><td><code>--devices &lt;list&gt;</code></td><td><code>desktop</code>, <code>tablet</code>, <code>mobile</code> (default all). Desktop width follows SitecoreAI Desktop Small (1024).</td></tr>
+        <tr><td><code>--manifest</code></td><td>Write <code>manifest.json</code> listing outputs.</td></tr>
+        <tr><td><code>--load &lt;mode&gt;</code></td><td><code>commit</code> | <code>domcontentloaded</code> (default) | <code>networkidle</code>.</td></tr>
+        <tr><td><code>--styled-html</code></td><td>Also write legacy styled HTML variants (modern <code>section.html</code> is always self-contained).</td></tr>
+        <tr><td><code>--cultures &lt;list&gt;</code></td><td>Sitecore cultures stamped into <code>page-meta.json</code>. Default: <code>BQ_CULTURES</code>.</td></tr>
+        <tr><td><code>--force[=kinds]</code></td><td>Redo artifacts. Kinds: <code>html</code>, <code>css</code>, <code>fonts</code>, <code>screenshots</code>, <code>sections</code>, <code>design</code>, or <code>all</code>. Bare <code>--force</code> = all kinds.</td></tr>
+        <tr><td><code>-h</code> / <code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+<pre><code>npm run capture:webpage -- --urls "https://www.example.com/,https://www.example.com/about"
+npm run capture:webpage -- --file urls.txt --devices desktop,mobile --force=sections
+npm run capture:webpage -- --help</code></pre>
+
+    <h3>11.2 <code>npm run capture:merge-sections</code></h3>
+    <p>Host-wide section registry: unique layouts, <code>instances.json</code> refs, <code>registrySection</code> backlinks, then <strong>content families</strong> (related news/list/detail and similar groups—see §7), then section plans / site-summary / website design markdown. Does not open a browser for full capture. Create already runs this as step 0; use the standalone script when you want to inspect or refresh the registry without codegen.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--url &lt;https://…&gt;</code> or bare URL</td><td>Identifies the host folder under <code>.bq/captures/</code>; merges <strong>all</strong> page folders for that host.</td></tr>
+        <tr><td><code>--ai</code></td><td>Azure judge for unsure layout pairs.</td></tr>
+        <tr><td><code>--use-ai</code></td><td>Azure clusters all section HTMLs into parallel <code>section-registry-ai/</code> (create does not require it).</td></tr>
+        <tr><td><code>--force[=kinds]</code></td><td>Same capture force kinds as above where applicable.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+<pre><code>npm run capture:merge-sections -- --url "https://www.example.com/"
+npm run capture:merge-sections -- --url "https://www.example.com/" --ai</code></pre>
+
+    <h3>11.3 <code>npm run create:design-system</code></h3>
+    <p>Refreshes <code>ai-derived-design.md</code> for an existing capture folder (Azure from HTML+CSS). Does not generate React components.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--url</code> or bare URL</td><td>Resolves capture page folder.</td></tr>
+        <tr><td><code>--force[=kinds]</code></td><td>Redo; use <code>design</code> (or all) when sourceHash would skip Azure.</td></tr>
+        <tr><td><code>--wait-ms</code> / <code>--timeout-ms</code> / <code>--load</code></td><td>Same navigation knobs as capture when re-fetch is needed.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.4 <code>npm run capture:site-summary</code></h3>
+    <p>Disk-only rebuild of <code>site-summary.json</code> from existing page manifests.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--project &lt;path&gt;</code></td><td>Host capture folder, e.g. <code>../.bq/captures/www-example-com</code>.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.5 <code>npm run capture:site-content-tree</code></h3>
+    <p>Builds the site IA tree used for stubs. Create also builds/reads this; run alone to inspect or regenerate.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--project &lt;path&gt;</code></td><td>Host capture folder.</td></tr>
+        <tr><td><code>--site-content-path &lt;path&gt;</code></td><td>Optional Sitecore content path hint.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.6 <code>npm run capture:section-plans</code></h3>
+    <p>Regenerates <code>section-plan.json</code> files for registry components without Playwright.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--project &lt;path&gt;</code></td><td>Host capture folder.</td></tr>
+        <tr><td><code>--section &lt;folder&gt;</code></td><td>Optional single section folder name.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.7 <code>npm run create:sectioncomponents</code></h3>
+    <p>Main generation: merge (unless skipped) → screenshot-to-TSX/definitions (honoring <code>contentFamilyId</code> for thin family members and owner field unions—see §7) → optional source or visual fidelity (§10) → presentation + stubs → translations → <code>authoring:generate</code> (unless skipped). Never writes YAML itself.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--url &lt;url&gt;</code></td><td>Required. Captured page URL; with <code>--all</code>, host seed (processed first).</td></tr>
+        <tr><td><code>--all</code></td><td>Every captured page on the host: merge once, codegen each unique registry component once, wire all pages, generate once. Incompatible with <code>--only</code>.</td></tr>
+        <tr><td><code>--only &lt;section-NN&gt;</code></td><td>Convert a single section folder on that URL.</td></tr>
+        <tr><td><code>--collection &lt;name&gt;</code></td><td>Override collection system name.</td></tr>
+        <tr><td><code>--site &lt;name&gt;</code></td><td>Override site system name.</td></tr>
+        <tr><td><code>--cultures &lt;list&gt;</code></td><td>Sitecore cultures for definition content. Default: page-meta, else <code>BQ_CULTURES</code>.</td></tr>
+        <tr><td><code>--force</code> / force kinds</td><td>Bare <code>--force</code> = components + definition + yaml (not translations). <code>--force:components</code> / <code>--force:definition</code> re-run the AI package. <code>--force:yaml</code> re-runs YAML emit only. <code>--force:translations</code> bypasses translation cache. <code>--force:all</code> includes translations. Combine with commas, e.g. <code>--force:translations,yaml,definition</code>.</td></tr>
+        <tr><td><code>--dry-run</code></td><td>Plan only; no writes, no generate.</td></tr>
+        <tr><td><code>--skip-generate</code></td><td>Write TSX/definitions but skip <code>authoring:generate</code>.</td></tr>
+        <tr><td><code>--skip-fixups</code></td><td>Skip TSX/client warn-only post-pass (definition fixups still run). Also <code>BQ_SKIP_AI_SOURCE_FIXUPS=1</code>.</td></tr>
+        <tr><td><code>--source-fidelity[=N]</code></td><td>Enable source fidelity (TSX text vs crops → dense patch). Optional min score N (default 90). Off by default. Skipped when <code>BQ_SOURCE_FIDELITY_MAX_ITERS=0</code>.</td></tr>
+        <tr><td><code>--visual-fidelity[=N]</code></td><td>Enable visual fidelity (render → score → surgical repair). Optional min score N (default 95). Off by default. v3: pre-sitecoreize on visual TSX. When both are on, visual wins. Skipped when <code>BQ_VISUAL_FIDELITY_MAX_ITERS=0</code>.</td></tr>
+        <tr><td><code>--skip-merge</code></td><td>Skip step 0 host section-registry merge.</td></tr>
+        <tr><td><code>--merge-ai</code></td><td>Pass <code>--ai</code> into merge for unsure pairs.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+    <p>Env for conversion: <code>AZURE_OPENAI_SCREENSHOT_CONVERSION_MODEL</code> (fallback default model). Optional stronger model for fidelity scoring: <code>AZURE_OPENAI_SOURCE_FIDELITY_MODEL</code>. Cost estimates print per call, per section, fidelity rollups, and page totals.</p>
+<pre><code>npm run create:sectioncomponents -- --url "https://www.example.com/" --all
+npm run create:sectioncomponents -- --url "https://www.example.com/" --only section-04 --force:components
+npm run create:sectioncomponents -- --url "https://www.example.com/" --force:yaml
+npm run create:sectioncomponents -- --url "https://www.example.com/" --force:all
+npm run create:sectioncomponents -- --url "https://www.example.com/" --all --visual-fidelity
+npm run create:sectioncomponents -- --help</code></pre>
+
+    <h3>11.8 <code>npm run fidelity:component</code></h3>
+    <p>Standalone fidelity for <strong>one</strong> existing component package. Same source/visual loops as create (§10), but no merge, no presentation wiring, no translations batch, and no <code>authoring:generate</code> / <code>ser</code> pull or push. Use this to iterate on a single TSX after create already wrote the package.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--component &lt;Name&gt;</code></td><td>Required. PascalCase component folder (e.g. <code>SitecoreCardGrid</code>).</td></tr>
+        <tr><td><code>--url &lt;https://…&gt;</code></td><td>Captured page for crops. Default: <code>url</code> in the component’s <code>*.capture-meta.json</code>.</td></tr>
+        <tr><td><code>--host &lt;hostSlug&gt;</code></td><td>Host folder under <code>src/components</code>. Default: from <code>--url</code>, or the unique matching host folder.</td></tr>
+        <tr><td><code>--source-fidelity[=N]</code></td><td>Enable source fidelity (optional min score; default 90). Same env gates as create.</td></tr>
+        <tr><td><code>--visual-fidelity[=N]</code></td><td>Enable visual fidelity (optional min score; default 95). When both are on, visual wins.</td></tr>
+        <tr><td><code>--dry-run</code></td><td>Score without writing patched TSX/definition where supported.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+    <p>At least one fidelity mode must be enabled via CLI flag or <code>BQ_SOURCE_FIDELITY</code> / <code>BQ_VISUAL_FIDELITY</code>. The component must already exist under <code>bq/src/components/{host}/{ComponentName}/</code> with TSX, definition, and capture-meta that points at a captured section.</p>
+<pre><code>npm run fidelity:component -- --component SitecoreCardGrid --url "https://www.example.com/" --visual-fidelity=95
+npm run fidelity:component -- --component SitecoreMediaCallout --host sitecore-com --source-fidelity=90
+npm run fidelity:component -- --help</code></pre>
+
+    <h3>11.9 <code>npm run authoring:generate</code></h3>
+    <p>Runs <code>definitions:generate</code> then <code>content:generate</code> with the same CLI arguments. Converts all discovered <code>*.definition.ts</code> under <code>bq/src/components/</code> into SCS YAML under <code>authoring/</code>.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--site &lt;name&gt;</code></td><td>Limit generate to that site system (also <code>BQ_GENERATE_SITE</code>).</td></tr>
+        <tr><td><code>--collection &lt;name&gt;</code></td><td>Limit to that collection (also <code>BQ_GENERATE_COLLECTION</code>).</td></tr>
+        <tr><td><code>--skipPull</code> / <code>--skip-pull</code></td><td>Skip start orphan-heal + serialization pull (create often passes this on its final generate).</td></tr>
+        <tr><td><code>--skipSites</code> / <code>--skip-sites</code></td><td>Skip collection/site Phase 1 emit.</td></tr>
+      </tbody>
+    </table>
+<pre><code>npm run authoring:generate -- --site domsecurity-com --collection domsecurity
+npm run definitions:generate -- --site sitecore-com --collection sitecore
+npm run content:generate -- --site sitecore-com --collection sitecore</code></pre>
+    <p><code>definitions:generate</code> = templates, renderings, presentation YAML. <code>content:generate</code> = datasource items, dictionaries, stub pages, seeded content. Prefer the combined script unless you are debugging one half.</p>
+
+    <h3>11.10 Front-end and Sitecore tooling</h3>
+    <table>
+      <thead><tr><th>Script</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>npm run ensure:host-components</code></td><td>Ensures Partial Design / dynamic placeholder host component exists. Called by map generation.</td></tr>
+        <tr><td><code>npm run sitecore-tools:generate-map</code></td><td>Scans <code>bq/src/components</code> → Content SDK component map.</td></tr>
+        <tr><td><code>npm run sitecore-tools:generate-map:watch</code></td><td>Same on file changes.</td></tr>
+        <tr><td><code>npm run sitecore-tools:build</code></td><td>Sitecore CLI project build (metadata, sites, import map).</td></tr>
+        <tr><td><code>npm run next:dev</code></td><td>Next.js with inspector.</td></tr>
+        <tr><td><code>npm run next:build</code> / <code>next:start</code></td><td>Production Next only.</td></tr>
+        <tr><td><code>npm run dev</code></td><td>Map → Sitecore tools build → Next + map watch. Local Pages rendering host.</td></tr>
+        <tr><td><code>npm run build</code> / <code>start</code></td><td>Production build then start.</td></tr>
+        <tr><td><code>npm run lint</code></td><td>ESLint on <code>src</code> TypeScript.</td></tr>
+        <tr><td><code>npm run setup:playwright</code></td><td>Install Chromium for capture and visual fidelity.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.11 <code>npm run benchmark:layout-models</code></h3>
+    <p>Compares Azure deployment names on a short multimodal fidelity probe (not full codegen). Use when choosing <code>AZURE_OPENAI_SCREENSHOT_CONVERSION_MODEL</code>.</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>--url &lt;url&gt;</code></td><td>Required captured page URL.</td></tr>
+        <tr><td><code>--only &lt;section-NN,…&gt;</code></td><td>Sections to score (default: first five).</td></tr>
+        <tr><td><code>--models &lt;deploy,…&gt;</code></td><td>Azure deploy names to compare.</td></tr>
+        <tr><td><code>--help</code></td><td>Help text.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>12. After a successful create</h2>
+    <p>Push or deploy authoring for SitecoreAI. Start <code>npm run dev</code> from <code>bq/</code>. Point the Pages editing host at that origin. New renderings appear when the map and CM items are present. To check languages, open any page on the shared layout and switch culture: header, nav, and footer should show translated versions immediately.</p>
+
+    <h2>13. Caching, cost, and re-doing work</h2>
+    <p>Capture reuses complete artifacts unless <code>--force</code> kinds say otherwise. Create skips Azure when conversion hashes match or a registry package was already built—“skip AI” on a second run is success. Target <code>--only section-NN --force:components</code> for one bad band without refreshing translations. Use bare <code>--force</code> when you also want YAML emit for those packages, and <code>--force:all</code> (or <code>--force:translations</code>) when language seeds must refresh. Recapture with <code>--force=sections</code> when the live site changed. Translation cache: <code>--force:translations</code> or delete the translations cache under <code>.bq/</code>. Terminal cost lines are estimates; fidelity calls are included in the rollups when those modes are on.</p>
+
+    <h2>14. Troubleshooting</h2>
+    <p>No capture folder → URL slug mismatch; check <code>.bq/captures/</code> and <code>source-url.txt</code>. Bad section slices → <code>detected-sections.png</code>, then <code>--force=sections</code>. Duplicate news templates → run merge, then create again. Empty Pages → generate skipped, YAML not pushed, or <code>dev</code> not running. <code>--all</code> with <code>--only</code> rejected by design. Nav 404s → stubs + generate. Wrong languages → set <code>BQ_CULTURES</code> or <code>--cultures</code>, create with <code>--force:translations</code>, confirm languages in SitecoreAI. Manual definition not in YAML → file not under <code>bq/src/components/**/*.definition.ts</code>, or generate scoped to the wrong <code>--site</code>/<code>--collection</code>.</p>
+    <p><strong>Visual fidelity score 0 / Playwright launch error.</strong> Chromium is missing or outdated for the Playwright version in <code>bq/</code>. From <code>bq/</code> run <code>npm run setup:playwright</code> or <code>npx playwright install chromium</code>, then re-run create with <code>--force:components</code> (and fidelity enabled) so packages are scored again.</p>
+    <p><strong>Sites API / generate OAuth 401.</strong> Interactive <code>dotnet sitecore cloud login</code> will not fix this. Confirm <code>SITECORE_AUTOMATION_CLIENT_ID</code> / <code>SECRET</code> are from Deploy → Credentials → <strong>Environment</strong> → Automation (not Organization, not Design Library <code>SITECORE_AUTH_*</code>). Set <code>BQ_SITECORE_ENVIRONMENT_ID</code> and <code>BQ_SITECORE_ENDPOINT</code>. Generate refreshes CLI login non-interactively from those automation credentials before <code>ser</code> pull/push.</p>
+
+    <h2>15. Further reading</h2>
+    <p>CLI help: <code>npm run capture:webpage -- --help</code>, <code>npm run create:sectioncomponents -- --help</code>, <code>npm run fidelity:component -- --help</code>, <code>npm run capture:merge-sections -- --help</code>. Environment template with comments: <code>bq/.env.remote.example</code>. Type contracts: <code>bq/tools/definitions/types.ts</code>. On-disk capture contract: <code>bq/tools/capture/references/output-contract.md</code>. Capture flags: <code>bq/tools/capture/references/capture-options.md</code>. Content families: <code>bq/tools/capture/references/content-families.md</code>.</p>
+
+    <footer class="doc">
+      BQ (Build Quick) — Capture &amp; Create User Guide · Demo and POC websites on SitecoreAI · Scripts from <code>bq/</code> · Edit the HTML beside this PDF and regenerate the PDF after changes.
+    </footer>
+  </div>
+</body>
+</html>

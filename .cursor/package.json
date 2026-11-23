@@ -1,0 +1,11 @@
+{
+  "name": "cursor-skill-runtime",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture:webpage": "node capture-website/scripts/capture.mjs",
+    "capture:merge-sections": "node capture-website/scripts/merge-page-sections.mjs",
+    "create:sectioncomponents": "npm --prefix ../bq run create:sectioncomponents --"
+  },
+  "comment": "Playwright and capture implementation live in bq/. These scripts only forward to bq npm run capture:* / create:*."
+}

@@ -1,0 +1,85 @@
+﻿---
+ID: "bce01ef2-b82a-4508-9bf6-456819f8b37d"
+Parent: "7bdd62cf-2ec9-40a5-a25f-dbe479c5f3f7"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Presentation/Available Renderings/Navigation"
+BranchID: "4e841618-96a7-4761-a5eb-b613cbd6c887"
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {1DEB067F-0BB1-405E-94F5-2ABB537A6160}
+    {4956263D-1195-4D6E-931B-800EA625FF6F}
+    {5FF780A8-151D-5CBF-A72E-402DDA92EF6F}
+    {8CA80FA8-7F07-5567-A2ED-981D86638B3A}
+    {4D5E5F40-C56D-5EA2-BEFD-00C17BE4CFF4}
+    {CF9897CC-A69C-57E8-B10F-03941F76B59A}
+    {68B896CD-DD3B-50DE-8A8B-AC6C6AD46731}
+    {6704B920-05E0-555A-AB33-6218C80363F5}
+    {3929BD85-FE1A-539A-94CB-0D0DBC9D5F28}
+    {E74FC60D-A604-57E7-B721-16E103FB4757}
+    {2296F052-E20F-56CD-A8C0-2611704354CB}
+    {2B5849AD-0D41-538A-B3C1-4CAABB8BC1B9}
+    {BEA0CB1C-5320-5E8A-AA68-1376204543DE}
+    {BD914599-8CB9-5427-80E4-A4B3646D1208}
+    {C6FD3E17-9B92-50EE-8AAB-D88018463032}
+    {2E327DB3-9D50-56B7-B835-857349718AAB}
+    {43B3DD69-04CB-5111-B413-95667BA9C187}
+    {96F56BF6-67C1-57B9-909F-1F9A8F75FC11}
+    {C2ED4E8A-0222-50CC-809A-CFC451C8B309}
+    {4E163A32-461D-5906-9E17-EE6583D7F6C9}
+    {79F5AA6C-C476-59DD-930D-749D0C928CA4}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "23714f48-da0c-4477-aa8f-b5351463d45a"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{3A748197-A45F-4B5C-BC1A-E350F433F9E3}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014310Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7acc4601-8850-4817-baa9-1b7d1ed3e667"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261003T014310Z
+- Language: "fr-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014310Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fce8b388-8ab3-40e6-9b0e-fcc651de65ab"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T134039Z

@@ -13,6 +13,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { StructuredData } from '@/components/structured-data/StructuredData';
 import { generateWebPageSchema } from '@/lib/structured-data/schema';
 import { getBaseUrl } from '@/lib/utils';
+import { getHomeItemFields } from '@/lib/home-fields';
 
 type PageProps = {
   params: Promise<{
@@ -50,6 +51,8 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+  const homeFields = await getHomeItemFields({ site, locale, path, page });
+
   const routeFields = page.layout.sitecore.route?.fields as RouteFields;
   const pageTitle = routeFields?.Title?.value?.toString() || 'Page';
   const pageDescription = routeFields?.ogDescription?.value?.toString();
@@ -73,9 +76,9 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <NextIntlClientProvider>
-      <Providers page={page}>
+      <Providers page={page} homeFields={homeFields}>
         <StructuredData id="webpage-schema" data={webPageSchema} />
-        <Layout page={page} />
+        <Layout page={page} homeFields={homeFields} />
       </Providers>
     </NextIntlClientProvider>
   );

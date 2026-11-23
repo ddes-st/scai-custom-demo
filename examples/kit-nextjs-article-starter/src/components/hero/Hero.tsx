@@ -11,9 +11,9 @@ import { Default as AnimatedSection } from '@/components/animated-section/Animat
 import { Button } from '@/components/ui/button';
 import { Default as MediaSection } from '@/components/media-section/MediaSection.dev';
 import { getDatasource, getFieldValue } from '@/lib/component-props';
-import { HeroProps } from './hero.props';
+import { useHomeFields } from '@/contexts/HomeFieldsContext';
+import { HeroProps, HomeItemFields } from './hero.props';
 
-// Define heroVariants using class-variance-authority for styling
 export const heroVariants = cva('hero @container py-24 relative w-full overflow-hidden', {
   variants: {
     colorScheme: {
@@ -29,8 +29,49 @@ export const heroVariants = cva('hero @container py-24 relative w-full overflow-
   },
 });
 
-export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
-  // Destructure fields and params
+function formatHomeFieldValue(field: unknown): string {
+  if (field == null) return '—';
+  if (typeof field !== 'object') return String(field);
+  const record = field as Record<string, unknown>;
+  if ('value' in record) {
+    try {
+      return JSON.stringify(record.value, null, 2);
+    } catch {
+      return String(record.value);
+    }
+  }
+  try {
+    return JSON.stringify(field, null, 2);
+  } catch {
+    return String(field);
+  }
+}
+
+function HomeFieldsDump({ homeFields }: { homeFields?: HomeItemFields }) {
+  const entries = homeFields ? Object.entries(homeFields) : [];
+
+  return (
+    <div className="border-border bg-muted/40 mx-auto mt-12 w-full max-w-screen-xl border-t px-4 py-8 xl:px-8">
+      <h2 className="font-heading mb-4 text-lg font-medium">Home item fields</h2>
+      {entries.length === 0 ? (
+        <p className="text-muted-foreground text-sm">No home item fields available.</p>
+      ) : (
+        <dl className="grid gap-3 font-mono text-xs">
+          {entries.map(([key, field]) => (
+            <div key={key} className="border-border/60 grid gap-1 border-b pb-2 last:border-0">
+              <dt className="font-semibold">{key}</dt>
+              <dd className="text-muted-foreground whitespace-pre-wrap break-all">
+                {formatHomeFieldValue(field)}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  );
+}
+
+export const Default: React.FC<HeroProps> = ({ fields, params, page, homeFields: homeFieldsProp }) => {
   const datasource = getDatasource(fields);
 
   const {
@@ -59,11 +100,11 @@ export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
   const heroImageField4 = getFieldValue(heroImageOptional4);
 
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const isPageEditing = page.mode.isEditing;
-
-  const { colorScheme } = params;
-  // Use custom hook to match media queries
   const [isPlaying, setIsPlaying] = useState(true);
+  const homeFieldsFromContext = useHomeFields();
+  const homeFields = homeFieldsProp ?? homeFieldsFromContext;
+  const isPageEditing = page.mode.isEditing;
+  const { colorScheme } = params;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -75,7 +116,6 @@ export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
     return (
       <section className={cn(heroVariants({ colorScheme }), [params?.styles && params.styles])}>
         <div className="grid gap-20">
-          {/* Hero content */}
           <div className="mx-auto w-full max-w-screen-xl px-4 xl:px-8">
             <AnimatedSection
               direction="up"
@@ -118,7 +158,6 @@ export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
               </div>
             </AnimatedSection>
           </div>
-          {/* Hero image/video sections */}
           <div className="relative flex items-center justify-center overflow-x-hidden">
             <div className="@lg:gap-8 @lg:min-w-[120%] mx-auto flex min-w-[110%]  items-start gap-4 px-4">
               <div className="shrink-0 grow-0 basis-1/4">
@@ -160,7 +199,6 @@ export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
             </div>
           </div>
         </div>
-        {/* Play/Pause button - A11y */}
         {!prefersReducedMotion && (
           <Button
             variant="link"
@@ -172,9 +210,15 @@ export const Default: React.FC<HeroProps> = ({ fields, params, page }) => {
             {isPlaying ? <Pause size={16} /> : <Play size={16} />}
           </Button>
         )}
+        <HomeFieldsDump homeFields={homeFields} />
       </section>
     );
   }
 
-  return <NoDataFallback componentName="Hero" />;
+  return (
+    <>
+      <NoDataFallback componentName="Hero" />
+      <HomeFieldsDump homeFields={homeFields} />
+    </>
+  );
 };

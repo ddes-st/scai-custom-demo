@@ -21,6 +21,12 @@ export default defineCliConfig({
   },
   componentMap: {
     paths: ['src/components'],
-    exclude: ['src/components/content-sdk/*'],
+    exclude: [
+      'src/components/content-sdk/*',
+      // Shadcn/ui primitives — local React UI, not Sitecore components
+      'src/components/components/ui/*',
+      'src/components/lib/*',
+      'src/components/hooks/*',
+    ],
   },
 });

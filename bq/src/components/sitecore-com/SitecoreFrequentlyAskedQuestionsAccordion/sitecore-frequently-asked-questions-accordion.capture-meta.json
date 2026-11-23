@@ -1,0 +1,39 @@
+{
+  "url": "https://www.sitecore.com/platform",
+  "pageSlug": "www-sitecore-com--platform",
+  "sectionDir": "www-sitecore-com--platform/sections/section-11",
+  "contentHash": "f459979bd58d126adf761656b23fa56dce05e05ee069544f13503d23d45da762",
+  "conversionSourceHash": "60ff9f135a4bef87bf365e17366cdeabd66ba6b3a5e27586065edaa4e7d8069d",
+  "role": "section",
+  "mode": "composite",
+  "packageKind": "default",
+  "placeholderKey": "faq-items",
+  "children": [
+    {
+      "componentName": "SitecoreFrequentlyAskedQuestionItem",
+      "definitionKey": "sitecore-frequently-asked-question-item",
+      "placeholderKey": "faq-items"
+    }
+  ],
+  "definitionKey": "sitecore-frequently-asked-questions-accordion",
+  "codegenVersion": "v3",
+  "generatedAt": "2026-11-06T01:29:28.429Z",
+  "placeholderKeys": [
+    "faq-items"
+  ],
+  "componentName": "SitecoreFrequentlyAskedQuestionsAccordion",
+  "mediaFolders": [
+    "Frequently Asked Questions Accordions"
+  ],
+  "contentFolders": [
+    [
+      "Frequently Asked Questions Accordions"
+    ]
+  ],
+  "htmlImageCoverage": {
+    "ok": true,
+    "uncoveredCount": 0,
+    "revisionHints": [],
+    "logoRailChildOk": true
+  }
+}

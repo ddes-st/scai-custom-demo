@@ -1,0 +1,32 @@
+---
+ID: "e88379f5-fa6c-58c3-94b2-517ec624e8c2"
+Parent: "c307f88b-317b-466f-9948-81a3878e1ef2"
+Template: "3aea335c-d06d-45b1-841a-cbc8d2d1ce40"
+Path: "/sitecore/system/Settings/Project/domsecurity/domsecurity/Add DomSecurityGlobalFooters Data Item"
+SharedFields:
+- ID: "52c91c75-6698-4701-a8a2-242ace59a8d6"
+  Hint: Location
+  Value: "{BA2F959D-A614-4C92-8B57-F1FC1A323ABE}"
+- ID: "7868e6bc-525c-4fce-ab8a-77da3e09b171"
+  Hint: Name
+  Value: DomSecurityGlobalFooter
+- ID: "e62c28f0-9d3b-46e2-8bec-a5e120542499"
+  Hint: Template
+  Value: "{F9BEDF4E-F629-5347-A8C3-5F20A38239EF}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

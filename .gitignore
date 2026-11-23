@@ -1,9 +1,8 @@
-﻿dotnet-tools.json
-
 # may contain OAuth secrets, do not commit
 .sitecore/user.json
-.config/dotnet-tools.json
-dotnet-tools.json
+
+# BQ workspace (captures, caches, AI debug) — local only; do not commit
+.bq/
 
 # NuGet cache for Sitecore CLI
 .sitecore/package-cache/

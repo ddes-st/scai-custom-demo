@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": false,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "lib/*": ["./lib/*"],
+      "react": [
+        "../../../../../industry-verticals/kpmg/node_modules/@types/react"
+      ],
+      "react/*": [
+        "../../../../../industry-verticals/kpmg/node_modules/@types/react/*"
+      ],
+      "next-intl": [
+        "../../../../../industry-verticals/kpmg/node_modules/next-intl"
+      ],
+      "next-intl/*": [
+        "../../../../../industry-verticals/kpmg/node_modules/next-intl/*"
+      ],
+      "next/*": ["../../../../../industry-verticals/kpmg/node_modules/next/*"],
+      "@sitecore-content-sdk/nextjs": [
+        "../../../../../industry-verticals/kpmg/node_modules/@sitecore-content-sdk/nextjs"
+      ],
+      "@sitecore-content-sdk/nextjs/*": [
+        "../../../../../industry-verticals/kpmg/node_modules/@sitecore-content-sdk/nextjs/*"
+      ],
+      "@fortawesome/react-fontawesome": [
+        "../../../../../editing-hosts/jm3app/node_modules/@fortawesome/react-fontawesome"
+      ],
+      "@fortawesome/free-solid-svg-icons": [
+        "../../../../../editing-hosts/jm3app/node_modules/@fortawesome/free-solid-svg-icons"
+      ],
+      "clsx": ["../../../../../industry-verticals/kpmg/node_modules/clsx"],
+      "tailwind-merge": [
+        "../../../../../industry-verticals/kpmg/node_modules/tailwind-merge"
+      ],
+      "@sitecore-content-sdk/events": [
+        "../../../../../industry-verticals/kpmg/node_modules/@sitecore-content-sdk/events"
+      ]
+    }
+  },
+  "include": ["./**/*.ts", "./**/*.tsx"]
+}

@@ -1,0 +1,13 @@
+{
+  "url": "https://www.axa.be/nl/particulieren",
+  "sectionDir": "sections/section-03",
+  "contentHash": "7abb38a7a7b44079352c54492a4c159277e6b05473ae704264ed67bc80f12e3d",
+  "conversionSourceHash": "6702b0df1b7538a1ea6d5a918b8d16c9c74dfa5c24f3a6248ad3b2eabd790175",
+  "role": "section",
+  "mode": "single",
+  "placeholderKey": null,
+  "children": [],
+  "definitionKey": "axa-editorial-hero-banner",
+  "menuStates": [],
+  "generatedAt": "2026-10-03T00:12:02.071Z"
+}

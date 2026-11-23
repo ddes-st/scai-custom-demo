@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BQ Pipeline — Capture → Create Section Components</title>
+  <style>
+    :root {
+      --navy: #022b52;
+      --navy-mid: #0a3d6e;
+      --green: #40bd79;
+      --ink: #1a1a1a;
+      --muted: #5a6570;
+      --line: #d8dee6;
+      --paper: #ffffff;
+      --soft: #f4f7fa;
+      --warn: #c45c26;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: #c5ced8;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .deck-label {
+      max-width: 1100px;
+      margin: 24px auto 8px;
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .slide {
+      width: 1100px;
+      min-height: 620px;
+      margin: 16px auto;
+      padding: 48px 56px;
+      background: var(--paper);
+      box-shadow: 0 8px 28px rgba(2, 43, 82, 0.18);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 8px;
+      background: linear-gradient(180deg, var(--navy), var(--green));
+    }
+    .slide.cover {
+      background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, #0f4f7a 100%);
+      color: #fff;
+    }
+    .slide.cover::before { background: var(--green); }
+    .slide.cover h1 { color: #fff; border: 0; font-size: 42px; margin-top: 120px; }
+    .slide.cover p { color: rgba(255,255,255,0.85); font-size: 20px; max-width: 720px; }
+    .slide.cover .meta { position: absolute; bottom: 48px; left: 56px; color: rgba(255,255,255,0.65); font-size: 13px; }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      color: var(--navy);
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+    h2 { margin: 0 0 16px; font-size: 22px; color: var(--navy); }
+    h3 { margin: 18px 0 8px; font-size: 15px; color: var(--navy-mid); }
+    p { margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 20px; }
+    .card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .card strong { display: block; color: var(--navy); margin-bottom: 6px; font-size: 15px; }
+    .card code, code {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 12.5px;
+      background: #e8eef4;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: var(--navy);
+      color: #e8f0f7;
+      padding: 16px 18px;
+      border-radius: 8px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 14px 0;
+    }
+    pre .c { color: #8fd4a8; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--navy); color: #fff; font-weight: 600; }
+    tr:nth-child(even) td { background: var(--soft); }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .pill.ai { background: #dff5e8; color: #1a6b3c; }
+    .pill.sc { background: #e4eef8; color: var(--navy); }
+    .pill.mech { background: #eee; color: #444; }
+    .pill.warn { background: #fde8dc; color: var(--warn); }
+    .footer-num {
+      position: absolute;
+      right: 56px;
+      bottom: 28px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .slide.cover .footer-num { color: rgba(255,255,255,0.5); }
+    .flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 28px 0 12px;
+      flex-wrap: nowrap;
+    }
+    .flow-step {
+      flex: 1;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      padding: 14px 12px;
+      text-align: center;
+      min-width: 0;
+    }
+    .flow-step:first-child { border-radius: 8px 0 0 8px; }
+    .flow-step:last-child { border-radius: 0 8px 8px 0; }
+    .flow-step .n {
+      width: 28px; height: 28px; line-height: 28px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .flow-step strong { display: block; font-size: 13px; color: var(--navy); margin-bottom: 4px; }
+    .flow-step span { font-size: 11px; color: var(--muted); }
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      color: var(--green);
+      font-size: 22px;
+      padding: 0 4px;
+      flex: 0 0 auto;
+    }
+    .diagram {
+      margin: 20px 0 8px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .diagram svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+    .checklist { list-style: none; padding: 0; margin: 12px 0; }
+    .checklist li {
+      padding: 8px 0 8px 32px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 10px;
+      width: 18px; height: 18px;
+      border: 2px solid var(--navy);
+      border-radius: 3px;
+    }
+    .note {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--green);
+      background: var(--soft);
+      font-size: 13px;
+    }
+    .warn-box {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--warn);
+      background: #fff6f0;
+      font-size: 13px;
+    }
+    @media print {
+      html, body { background: #fff; }
+      .deck-label { display: none; }
+      .slide {
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        min-height: 100vh;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="deck-label">Deck A — How to use</div>
+
+<section class="slide cover">
+  <p class="muted" style="color:rgba(255,255,255,0.7);margin:0;letter-spacing:0.08em;text-transform:uppercase;font-size:12px;">Sitecore BQ tooling</p>
+  <h1>Capture a website → Sitecore components</h1>
+  <p>From a live URL to Content SDK packages and SitecoreAI items — using <code style="background:rgba(255,255,255,0.15);color:#fff;">capture:webpage</code> then <code style="background:rgba(255,255,255,0.15);color:#fff;">create:sectioncomponents</code>.</p>
+  <div class="meta">Deck A · Operator overview · bq/</div>
+  <div class="footer-num">1</div>
+</section>
+
+<section class="slide">
+  <h1>What BQ does</h1>
+  <p class="muted">Three stages, three places to look for results.</p>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="n">1</div>
+      <strong>Capture</strong>
+      <span>HTML · CSS · section crops · AI notes</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="n">2</div>
+      <strong>Create</strong>
+      <span>AI → React + definitions</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="n">3</div>
+      <strong>Authoring generate</strong>
+      <span>YAML · Sites API · ser push</span>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:28px;">
+    <div class="card"><strong>.bq/captures/…</strong>Evidence: HTML, PNGs, ai-debug, visual-fidelity</div>
+    <div class="card"><strong>bq/src/components/…</strong>FE packages: TSX + *.definition.ts</div>
+    <div class="card"><strong>authoring/items/…</strong>Serialization YAML for SitecoreAI</div>
+  </div>
+  <div class="footer-num">2</div>
+</section>
+
+<section class="slide">
+  <h1>Prerequisites</h1>
+  <div class="grid-2">
+    <div>
+      <h3>Workspace</h3>
+      <ul>
+        <li>Work in <code>bq/</code></li>
+        <li>Copy <code>.env.remote.example</code> → <code>.env.local</code></li>
+        <li><code>npm install</code></li>
+        <li><code>npm run setup:playwright</code></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Required secrets</h3>
+      <ul>
+        <li><strong>Azure OpenAI</strong> — API key, endpoint, model names</li>
+        <li><strong>SitecoreAI automation</strong> — client ID/secret (Environment → Automation)</li>
+        <li><code>BQ_SITECORE_ENVIRONMENT_ID</code></li>
+        <li><code>BQ_SITECORE_ENDPOINT</code> (e.g. bqAuthoring)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">Where to find SitecoreAI values: Deploy → Credentials (Environment Automation) and Environment Details. Full catalog: <code>bq/.env.remote.example</code>.</div>
+  <div class="footer-num">3</div>
+</section>
+
+<section class="slide">
+  <h1>Step 1 — Capture</h1>
+  <pre><span class="c"># from bq/</span>
+npm run capture:webpage -- --urls "https://www.energyprice.be/" --manifest</pre>
+  <div class="diagram">
+    <svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg" aria-label="Capture pipeline diagram">
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#40bd79"/></marker>
+      </defs>
+      <rect x="20" y="70" width="140" height="70" rx="8" fill="#022b52"/>
+      <text x="90" y="110" text-anchor="middle" fill="#fff" font-size="14" font-family="Segoe UI,sans-serif">Live URL</text>
+      <line x1="160" y1="105" x2="210" y2="105" stroke="#40bd79" stroke-width="2" marker-end="url(#arr)"/>
+      <rect x="210" y="55" width="170" height="100" rx="8" fill="#0a3d6e"/>
+      <text x="295" y="95" text-anchor="middle" fill="#fff" font-size="13" font-family="Segoe UI,sans-serif">Playwright</text>
+      <text x="295" y="118" text-anchor="middle" fill="#b8c9da" font-size="11" font-family="Segoe UI,sans-serif">screenshots · HTML</text>
+      <text x="295" y="136" text-anchor="middle" fill="#b8c9da" font-size="11" font-family="Segoe UI,sans-serif">section detection</text>
+      <line x1="380" y1="105" x2="430" y2="105" stroke="#40bd79" stroke-width="2" marker-end="url(#arr)"/>
+      <rect x="430" y="40" width="200" height="130" rx="8" fill="#f4f7fa" stroke="#022b52" stroke-width="1.5"/>
+      <text x="530" y="75" text-anchor="middle" fill="#022b52" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">Section folders</text>
+      <text x="530" y="100" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">section.html + PNGs</text>
+      <text x="530" y="120" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">section-information.json</text>
+      <text x="530" y="140" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">optional states/</text>
+      <line x1="630" y1="105" x2="680" y2="105" stroke="#40bd79" stroke-width="2" marker-end="url(#arr)"/>
+      <rect x="680" y="55" width="260" height="100" rx="8" fill="#dff5e8" stroke="#40bd79" stroke-width="1.5"/>
+      <text x="810" y="95" text-anchor="middle" fill="#1a6b3c" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">Azure enrich (optional)</text>
+      <text x="810" y="120" text-anchor="middle" fill="#1a6b3c" font-size="11" font-family="Segoe UI,sans-serif">ai-derived-design.md · section AI</text>
+    </svg>
+  </div>
+  <p class="muted">Log: <code>.bq/captures/&lt;host&gt;/capture.log</code></p>
+  <div class="footer-num">4</div>
+</section>
+
+<section class="slide">
+  <h1>Capture tree — where to look</h1>
+  <pre>.bq/captures/www-energyprice-be/
+  capture.log
+  section-registry/                 <span class="c"># after merge / create</span>
+  www-energyprice-be--home/
+    sections/section-01 … section-06/
+      section.html                  <span class="c"># styled truth for logos/layout</span>
+      section-*-{mobile,tablet,desktop}.png
+      section-information.json
+      ai-debug/                     <span class="c"># filled during create</span>
+      visual-fidelity/              <span class="c"># filled during create</span></pre>
+  <div class="note">Compare capture PNGs to later <code>visual-fidelity/attempt-*</code> and <code>sitecoreize-proof</code> shots to catch AI drift early (e.g. truncated SVG logos).</div>
+  <div class="footer-num">5</div>
+</section>
+
+<section class="slide">
+  <h1>Step 2 — Create section components</h1>
+  <pre>npm run create:sectioncomponents -- --url https://www.energyprice.be/ --force</pre>
+  <div class="grid-2">
+    <div class="card">
+      <strong>Useful variants</strong>
+      One page: <code>--page-only</code><br/>
+      One section: <code>--only section-06 --force</code><br/>
+      Skip Sitecore push: <code>--skip-generate</code><br/>
+      Plan only: <code>--dry-run</code>
+    </div>
+    <div class="card">
+      <strong>Default codegen = v3</strong>
+      1) Visual TSX (Tailwind, pixel-faithful)<br/>
+      2) Sitecoreize → Content SDK packages<br/>
+      (molecules / composites + definitions)
+    </div>
+  </div>
+  <div class="footer-num">6</div>
+</section>
+
+<section class="slide">
+  <h1>What create produces</h1>
+  <table>
+    <thead><tr><th>Layer</th><th>Location</th></tr></thead>
+    <tbody>
+      <tr><td>React packages</td><td><code>bq/src/components/&lt;prefix&gt;/ComponentName/</code></td></tr>
+      <tr><td>Definitions</td><td><code>*.definition.ts</code> beside TSX</td></tr>
+      <tr><td>AI debug I/O</td><td><code>sections/section-NN/ai-debug/</code></td></tr>
+      <tr><td>Visual proof shots</td><td><code>visual-fidelity/attempt-*</code> and <code>sitecoreize-proof/</code></td></tr>
+      <tr><td>Sitecore YAML</td><td>via <code>authoring:generate</code> → <code>authoring/items/…</code></td></tr>
+    </tbody>
+  </table>
+  <div class="footer-num">7</div>
+</section>
+
+<section class="slide">
+  <h1>Happy-path checklist</h1>
+  <ul class="checklist">
+    <li>Capture finished — sections + PNGs exist under <code>.bq/captures/…</code></li>
+    <li>Create finished all phases without error (<code>ok N/7</code> in terminal)</li>
+    <li>Packages under <code>bq/src/components/…</code></li>
+    <li><code>authoring:generate</code> succeeded (Sites API + ser)</li>
+    <li>Spot-check visual-fidelity shots vs capture crops</li>
+  </ul>
+  <h3>Knobs that change behavior</h3>
+  <p><code>BQ_CODEGEN_EVIDENCE_MODE=html|png</code> · <code>BQ_CODEGEN_PROMPT_VERSION=v3</code> · <code>BQ_CULTURES</code> · optional <code>--visual-fidelity</code> / <code>--source-fidelity</code> · <code>BQ_AI_DEBUG_DUMP</code></p>
+  <div class="footer-num">8</div>
+</section>
+
+<div class="deck-label">Deck B — Deep dive</div>
+
+<section class="slide cover">
+  <p style="color:rgba(255,255,255,0.7);margin:0;letter-spacing:0.08em;text-transform:uppercase;font-size:12px;">Sitecore BQ tooling</p>
+  <h1>Pipeline deep dive</h1>
+  <p>When Azure runs, when Sitecore is pushed, and where to find every outcome — capture → registry → AI codegen → FE write → SitecoreAI.</p>
+  <div class="meta">Deck B · Engineering / demo detail · bq/</div>
+  <div class="footer-num">9</div>
+</section>
+
+<section class="slide">
+  <h1>End-to-end timeline</h1>
+  <div class="diagram">
+    <svg viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg">
+      <text x="20" y="28" fill="#022b52" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">capture:webpage</text>
+      <rect x="20" y="40" width="960" height="50" rx="8" fill="#0a3d6e"/>
+      <text x="40" y="70" fill="#fff" font-size="13" font-family="Segoe UI,sans-serif">Playwright export · optional Azure design / section enrich → .bq/captures/…</text>
+
+      <text x="20" y="128" fill="#022b52" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">create:sectioncomponents (7 phases)</text>
+      <!-- phase boxes -->
+      <g font-family="Segoe UI,sans-serif" font-size="11">
+        <rect x="20" y="145" width="120" height="70" rx="6" fill="#f4f7fa" stroke="#022b52"/>
+        <text x="80" y="175" text-anchor="middle" fill="#022b52" font-weight="700">1 Merge</text>
+        <text x="80" y="195" text-anchor="middle" fill="#5a6570">registry</text>
+
+        <rect x="155" y="145" width="120" height="70" rx="6" fill="#dff5e8" stroke="#40bd79"/>
+        <text x="215" y="175" text-anchor="middle" fill="#1a6b3c" font-weight="700">2 Shared</text>
+        <text x="215" y="195" text-anchor="middle" fill="#1a6b3c">codegen AI</text>
+
+        <rect x="290" y="145" width="120" height="70" rx="6" fill="#e4eef8" stroke="#022b52"/>
+        <text x="350" y="175" text-anchor="middle" fill="#022b52" font-weight="700">3 Bootstrap</text>
+        <text x="350" y="195" text-anchor="middle" fill="#022b52">Sites API</text>
+
+        <rect x="425" y="145" width="120" height="70" rx="6" fill="#f4f7fa" stroke="#022b52"/>
+        <text x="485" y="175" text-anchor="middle" fill="#022b52" font-weight="700">4 Stub tree</text>
+        <text x="485" y="195" text-anchor="middle" fill="#5a6570">local YAML</text>
+
+        <rect x="560" y="145" width="140" height="70" rx="6" fill="#dff5e8" stroke="#40bd79"/>
+        <text x="630" y="175" text-anchor="middle" fill="#1a6b3c" font-weight="700">5 Page codegen</text>
+        <text x="630" y="195" text-anchor="middle" fill="#1a6b3c">visual+sitecoreize</text>
+
+        <rect x="715" y="145" width="110" height="70" rx="6" fill="#f4f7fa" stroke="#022b52"/>
+        <text x="770" y="175" text-anchor="middle" fill="#022b52" font-weight="700">6 Wire</text>
+        <text x="770" y="195" text-anchor="middle" fill="#5a6570">packages</text>
+
+        <rect x="840" y="145" width="140" height="70" rx="6" fill="#e4eef8" stroke="#022b52"/>
+        <text x="910" y="175" text-anchor="middle" fill="#022b52" font-weight="700">7 Generate</text>
+        <text x="910" y="195" text-anchor="middle" fill="#022b52">ser + Sites API</text>
+      </g>
+      <g font-size="12" font-family="Segoe UI,sans-serif">
+        <rect x="20" y="250" width="18" height="18" rx="3" fill="#dff5e8" stroke="#40bd79"/>
+        <text x="48" y="264" fill="#1a6b3c">Azure OpenAI</text>
+        <rect x="180" y="250" width="18" height="18" rx="3" fill="#e4eef8" stroke="#022b52"/>
+        <text x="208" y="264" fill="#022b52">SitecoreAI (API / ser)</text>
+        <rect x="400" y="250" width="18" height="18" rx="3" fill="#f4f7fa" stroke="#022b52"/>
+        <text x="428" y="264" fill="#5a6570">Local / mechanical</text>
+      </g>
+      <text x="20" y="310" fill="#5a6570" font-size="12" font-family="Segoe UI,sans-serif">Terminal: [bq:create:sectioncomponents] ok N/7 …</text>
+    </svg>
+  </div>
+  <div class="footer-num">10</div>
+</section>
+
+<section class="slide">
+  <h1>Capture: mechanical vs AI</h1>
+  <div class="grid-2">
+    <div class="card">
+      <strong><span class="pill mech">Mechanical</span> Playwright</strong>
+      Load URL · consent · hide CMP<br/>
+      Viewport screenshots<br/>
+      Hybrid section detection + export<br/>
+      Styled <code>section.html</code>, crops, fonts/CSS
+    </div>
+    <div class="card">
+      <strong><span class="pill ai">AI</span> Azure OpenAI</strong>
+      Page design guide (<code>ai-derived-design.md</code>)<br/>
+      Section enrich / decide batches<br/>
+      Skipped when artifacts reused<br/>
+      Usage in <code>capture.log</code>
+    </div>
+  </div>
+  <div class="note">Optional later: <code>npm run capture:merge-sections -- --url …</code> builds host <code>section-registry/</code>. Create also merges as phase 1 unless <code>--skip-merge</code>.</div>
+  <div class="footer-num">11</div>
+</section>
+
+<section class="slide">
+  <h1>Create phases (7) at a glance</h1>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Phase</th><th>AI?</th><th>Sitecore?</th><th>Outcome</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Merge section registry</td><td>Rarely</td><td>No</td><td>section-registry/, inventory</td></tr>
+      <tr><td>2</td><td>Codegen shared components</td><td><span class="pill ai">Yes</span></td><td>No</td><td>Shared FE packages</td></tr>
+      <tr><td>3</td><td>Bootstrap collection &amp; site</td><td>No</td><td><span class="pill sc">Sites API</span></td><td>Collection/site + CM bootstrap</td></tr>
+      <tr><td>4</td><td>Build page &amp; stub tree</td><td>No</td><td>Local</td><td>Presentation stubs</td></tr>
+      <tr><td>5</td><td>Codegen page sections</td><td><span class="pill ai">Heavy</span></td><td>No yet</td><td>TSX + definition.ts</td></tr>
+      <tr><td>6</td><td>Wire packages</td><td>Light</td><td>Local</td><td>Maps / presentation refs</td></tr>
+      <tr><td>7</td><td>authoring:generate</td><td>Translate maybe</td><td><span class="pill sc">ser + API</span></td><td>YAML emit + CM push</td></tr>
+    </tbody>
+  </table>
+  <div class="footer-num">12</div>
+</section>
+
+<section class="slide">
+  <h1>Phase 5 detail — codegen v3</h1>
+  <div class="diagram">
+    <svg viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#40bd79"/></marker>
+      </defs>
+      <rect x="30" y="90" width="150" height="80" rx="8" fill="#022b52"/>
+      <text x="105" y="125" text-anchor="middle" fill="#fff" font-size="13" font-family="Segoe UI,sans-serif">section.html</text>
+      <text x="105" y="145" text-anchor="middle" fill="#b8c9da" font-size="11" font-family="Segoe UI,sans-serif">+ crops / info</text>
+
+      <line x1="180" y1="130" x2="230" y2="130" stroke="#40bd79" stroke-width="2" marker-end="url(#a2)"/>
+
+      <rect x="230" y="70" width="180" height="120" rx="8" fill="#dff5e8" stroke="#40bd79"/>
+      <text x="320" y="110" text-anchor="middle" fill="#1a6b3c" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">1 · Visual AI</text>
+      <text x="320" y="135" text-anchor="middle" fill="#1a6b3c" font-size="11" font-family="Segoe UI,sans-serif">plain React / Tailwind</text>
+      <text x="320" y="155" text-anchor="middle" fill="#5a6570" font-size="10" font-family="Segoe UI,sans-serif">ai-debug/*visual*</text>
+      <text x="320" y="172" text-anchor="middle" fill="#5a6570" font-size="10" font-family="Segoe UI,sans-serif">attempt-1/shots</text>
+
+      <line x1="410" y1="130" x2="460" y2="130" stroke="#40bd79" stroke-width="2" marker-end="url(#a2)"/>
+
+      <rect x="460" y="70" width="200" height="120" rx="8" fill="#dff5e8" stroke="#40bd79"/>
+      <text x="560" y="110" text-anchor="middle" fill="#1a6b3c" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">2 · Sitecoreize AI</text>
+      <text x="560" y="135" text-anchor="middle" fill="#1a6b3c" font-size="11" font-family="Segoe UI,sans-serif">tsx + definitionTs</text>
+      <text x="560" y="155" text-anchor="middle" fill="#5a6570" font-size="10" font-family="Segoe UI,sans-serif">packages / composites</text>
+      <text x="560" y="172" text-anchor="middle" fill="#5a6570" font-size="10" font-family="Segoe UI,sans-serif">sitecoreize-proof/</text>
+
+      <line x1="660" y1="130" x2="710" y2="130" stroke="#40bd79" stroke-width="2" marker-end="url(#a2)"/>
+
+      <rect x="710" y="90" width="230" height="80" rx="8" fill="#0a3d6e"/>
+      <text x="825" y="125" text-anchor="middle" fill="#fff" font-size="13" font-family="Segoe UI,sans-serif">Write FE package</text>
+      <text x="825" y="148" text-anchor="middle" fill="#b8c9da" font-size="11" font-family="Segoe UI,sans-serif">bq/src/components/…</text>
+    </svg>
+  </div>
+  <p class="muted">Optional: TSX validate loop and definition parse retries can trigger more AI calls if codegen fails contracts / parse.</p>
+  <div class="footer-num">13</div>
+</section>
+
+<section class="slide">
+  <h1>When Azure is called</h1>
+  <table>
+    <thead><tr><th>Moment</th><th>Model knobs</th><th>Where you see usage</th></tr></thead>
+    <tbody>
+      <tr><td>Capture design / section enrich</td><td><code>AZURE_OPENAI_DEFAULT_MODEL</code></td><td><code>capture.log</code></td></tr>
+      <tr><td>Visual codegen</td><td><code>AZURE_OPENAI_SCREENSHOT_CONVERSION_MODEL</code></td><td><code>AI usage […/codegen-v3-visual]</code></td></tr>
+      <tr><td>Sitecoreize</td><td>same</td><td><code>AI usage […/codegen-v3-sitecoreize]</code></td></tr>
+      <tr><td>Validate / fidelity repair</td><td>default / <code>…_SOURCE_FIDELITY_MODEL</code></td><td>fidelity / validate logs</td></tr>
+      <tr><td>Translation fallback</td><td>Azure</td><td>generate logs</td></tr>
+      <tr><td>Merge <code>--ai</code></td><td>Azure</td><td>merge phase totals</td></tr>
+    </tbody>
+  </table>
+  <p class="muted" style="margin-top:14px;">No Azure for: Playwright alone, YAML emit, most Sites API CRUD (automation OAuth instead).</p>
+  <div class="footer-num">14</div>
+</section>
+
+<section class="slide">
+  <h1>When SitecoreAI is touched</h1>
+  <div class="diagram">
+    <svg viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="40" width="250" height="120" rx="10" fill="#e4eef8" stroke="#022b52"/>
+      <text x="165" y="85" text-anchor="middle" fill="#022b52" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">Phase 3 Bootstrap</text>
+      <text x="165" y="110" text-anchor="middle" fill="#022b52" font-size="12" font-family="Segoe UI,sans-serif">Sites API</text>
+      <text x="165" y="132" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">collections / sites</text>
+
+      <rect x="355" y="40" width="250" height="120" rx="10" fill="#e4eef8" stroke="#022b52"/>
+      <text x="480" y="85" text-anchor="middle" fill="#022b52" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">Phase 7 Generate</text>
+      <text x="480" y="110" text-anchor="middle" fill="#022b52" font-size="12" font-family="Segoe UI,sans-serif">ser pull / push</text>
+      <text x="480" y="132" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">+ Sites API emit</text>
+
+      <rect x="670" y="40" width="250" height="120" rx="10" fill="#f4f7fa" stroke="#022b52"/>
+      <text x="795" y="85" text-anchor="middle" fill="#022b52" font-size="14" font-weight="700" font-family="Segoe UI,sans-serif">Needs</text>
+      <text x="795" y="110" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">Automation client</text>
+      <text x="795" y="128" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">BQ_SITECORE_ENVIRONMENT_ID</text>
+      <text x="795" y="146" text-anchor="middle" fill="#5a6570" font-size="11" font-family="Segoe UI,sans-serif">BQ_SITECORE_ENDPOINT</text>
+    </svg>
+  </div>
+  <div class="note">Skip CM push with <code>--skip-generate</code> — FE packages under <code>bq/src/components</code> are still written.</div>
+  <div class="footer-num">15</div>
+</section>
+
+<section class="slide">
+  <h1>Outcomes map — where to look</h1>
+  <table>
+    <thead><tr><th>Question</th><th>Look here</th></tr></thead>
+    <tbody>
+      <tr><td>Did capture work?</td><td><code>.bq/captures/…/capture.log</code>, section PNGs</td></tr>
+      <tr><td>What did visual invent?</td><td><code>ai-debug/v3-visual-*.tsx.ai</code>, <code>attempt-1/shots</code></td></tr>
+      <tr><td>What did sitecoreize emit?</td><td><code>ai-debug/*sitecoreize*.raw.json.ai</code></td></tr>
+      <tr><td>FE package OK?</td><td><code>bq/src/components/&lt;brand&gt;/&lt;Name&gt;/</code></td></tr>
+      <tr><td>Definition seeds OK?</td><td><code>*.definition.ts</code> (e.g. <code>svgMarkup</code>)</td></tr>
+      <tr><td>Sitecoreize visual proof?</td><td><code>visual-fidelity/sitecoreize-proof/shots</code></td></tr>
+      <tr><td>Did CM get items?</td><td>generate console + <code>authoring/items/…</code> + CM</td></tr>
+      <tr><td>Cost / tokens?</td><td>create terminal <code>AI usage</code> lines</td></tr>
+    </tbody>
+  </table>
+  <div class="footer-num">16</div>
+</section>
+
+<section class="slide">
+  <h1>Failure mode — logo fidelity</h1>
+  <div class="diagram">
+    <svg viewBox="0 0 980 210" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="40" width="220" height="130" rx="8" fill="#dff5e8" stroke="#40bd79"/>
+      <text x="130" y="85" text-anchor="middle" fill="#1a6b3c" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">1 Capture HTML</text>
+      <text x="130" y="110" text-anchor="middle" fill="#1a6b3c" font-size="11" font-family="Segoe UI,sans-serif">Full SVG ~5–6 paths</text>
+      <text x="130" y="130" text-anchor="middle" fill="#1a6b3c" font-size="11" font-family="Segoe UI,sans-serif">wordmark as paths</text>
+      <text x="130" y="150" text-anchor="middle" fill="#40bd79" font-size="11" font-weight="700" font-family="Segoe UI,sans-serif">TRUTH</text>
+
+      <text x="265" y="110" fill="#40bd79" font-size="22" font-family="Segoe UI,sans-serif">→</text>
+
+      <rect x="290" y="40" width="220" height="130" rx="8" fill="#fde8dc" stroke="#c45c26"/>
+      <text x="400" y="85" text-anchor="middle" fill="#c45c26" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">2 Visual AI</text>
+      <text x="400" y="110" text-anchor="middle" fill="#c45c26" font-size="11" font-family="Segoe UI,sans-serif">2 paths + &lt;text&gt;</text>
+      <text x="400" y="130" text-anchor="middle" fill="#c45c26" font-size="11" font-family="Segoe UI,sans-serif">drops green .be</text>
+      <text x="400" y="150" text-anchor="middle" fill="#c45c26" font-size="11" font-weight="700" font-family="Segoe UI,sans-serif">FIRST BREAK</text>
+
+      <text x="535" y="110" fill="#40bd79" font-size="22" font-family="Segoe UI,sans-serif">→</text>
+
+      <rect x="560" y="40" width="220" height="130" rx="8" fill="#fde8dc" stroke="#c45c26"/>
+      <text x="670" y="85" text-anchor="middle" fill="#c45c26" font-size="13" font-weight="700" font-family="Segoe UI,sans-serif">3 Sitecoreize</text>
+      <text x="670" y="110" text-anchor="middle" fill="#c45c26" font-size="11" font-family="Segoe UI,sans-serif">svgMarkup = visual</text>
+      <text x="670" y="130" text-anchor="middle" fill="#c45c26" font-size="11" font-family="Segoe UI,sans-serif">locks the bad SVG</text>
+      <text x="670" y="150" text-anchor="middle" fill="#c45c26" font-size="11" font-weight="700" font-family="Segoe UI,sans-serif">PROPAGATES</text>
+
+      <text x="805" y="110" fill="#40bd79" font-size="22" font-family="Segoe UI,sans-serif">→</text>
+
+      <rect x="830" y="55" width="130" height="100" rx="8" fill="#022b52"/>
+      <text x="895" y="105" text-anchor="middle" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif">Compare</text>
+      <text x="895" y="125" text-anchor="middle" fill="#b8c9da" font-size="10" font-family="Segoe UI,sans-serif">3 PNG sets</text>
+    </svg>
+  </div>
+  <div class="warn-box">Always compare <code>section-*-tablet.png</code> vs <code>attempt-1</code> vs <code>sitecoreize-proof</code> before trusting CM. Prompts now harden “full HTML SVG / HTML wins for logos.”</div>
+  <div class="footer-num">17</div>
+</section>
+
+<section class="slide">
+  <h1>Force / cache · failure signatures</h1>
+  <div class="grid-2">
+    <div>
+      <h3>Force / cache</h3>
+      <ul>
+        <li>No <code>--force</code>: skip unchanged (hash + package)</li>
+        <li><code>--force</code> / <code>:components|:definition</code>: re-AI</li>
+        <li><code>--force:yaml</code>: re-emit YAML only</li>
+        <li><code>--only section-NN</code>: scope AI + emit</li>
+        <li><code>--codegen-only</code> / <code>--wire-only</code>: split A/B</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Failure signatures</h3>
+      <ul>
+        <li>Empty sections → capture / Playwright</li>
+        <li><code>…LogoSvg is not defined</code> → bad definition seed at generate</li>
+        <li><code>Expected "}" … ComponentTemplateDefinition</code> → broken def close</li>
+        <li><code>authoring:generate exited 1</code> → Sites API / ser / bad module</li>
+        <li>Wrong logo in attempt-1 → visual AI</li>
+        <li>Wrong only after sitecoreize → svgMarkup / Image preview</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-num">18</div>
+</section>
+
+<section class="slide">
+  <h1>Operator demo script</h1>
+  <pre><span class="c">cd bq</span>
+
+<span class="c"># 1 Capture</span>
+npm run capture:webpage -- --urls "https://www.energyprice.be/" --manifest
+
+<span class="c"># 2 Inspect crops under .bq/captures/.../sections/</span>
+
+<span class="c"># 3 Full create</span>
+npm run create:sectioncomponents -- --url https://www.energyprice.be/ --force
+
+<span class="c"># 4 Or one section after prompt tweaks</span>
+npm run create:sectioncomponents -- --url https://www.energyprice.be/ \
+  --only section-06 --force --page-only
+
+<span class="c"># 5 Compare attempt-1 vs sitecoreize-proof vs src/components</span></pre>
+  <div class="note">Env catalog: <code>bq/.env.remote.example</code> · This deck: <code>bq/docs/bq-pipeline-slides.html</code> / <code>bq-pipeline-slides.pdf</code></div>
+  <div class="footer-num">19</div>
+</section>
+
+</body>
+</html>
