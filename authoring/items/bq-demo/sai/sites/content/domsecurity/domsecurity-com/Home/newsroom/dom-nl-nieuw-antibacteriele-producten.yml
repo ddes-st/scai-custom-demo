@@ -1,14 +1,41 @@
 ﻿---
-ID: "06f50065-7320-5d04-a372-cd62da090f66"
-Parent: "9f92a889-b13d-53c9-9b1c-59c4b1cb965f"
+ID: "afeea2dc-198f-5e8d-a33c-3904c7a15dba"
+Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/dom-nl-nieuw-antibacteriele-producten"
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{CAC06C2A-243A-5B09-92D5-1C1AD34181C5}"
+          p:before="*"
+          s:ds="{2EA10C3F-43BA-570F-8D40-F32A262AA564}"
+          s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{11DFE87F-8996-5324-AE0E-B6AD0743B818}"
+          p:after="r[@uid='{CAC06C2A-243A-5B09-92D5-1C1AD34181C5}']"
+          s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
+          s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{3FFB78B0-CAE9-5258-A7A5-1EBB9FDF4E87}"
+          p:after="*[1=2]"
+          s:ds="{2EA10C3F-43BA-570F-8D40-F32A262AA564}"
+          s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
+          s:par=""
+          s:ph="headless-main" />
+      </d>
+    </r>
 Languages:
 - Language: en
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Group news
   Versions:
   - Version: 1
     Fields:
@@ -17,13 +44,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Group news
+      Value: "New: Anti-bacterial Digital Door Handles, Cylinder, and Panic Bars"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "6fba76f9-e046-4dcb-bbaf-5a870a73a154"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -31,10 +55,6 @@ Languages:
       Hint: __Updated
       Value: 20260101T120000Z
 - Language: "fr-BE"
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Actualités du groupe
   Versions:
   - Version: 1
     Fields:
@@ -43,13 +63,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Actualités du groupe
+      Value: "Nouveauté : poignées de porte numériques antibactériennes, cylindres et barres anti-panique"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "6fba76f9-e046-4dcb-bbaf-5a870a73a154"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -57,10 +74,6 @@ Languages:
       Hint: __Updated
       Value: 20260101T120000Z
 - Language: "nl-BE"
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Group News
   Versions:
   - Version: 1
     Fields:
@@ -69,13 +82,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Group News
+      Value: "Nieuw: antibacteriële digitale deurkrukken, cilinder en paniekstangen"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "6fba76f9-e046-4dcb-bbaf-5a870a73a154"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

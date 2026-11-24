@@ -1,8 +1,8 @@
 ﻿---
-ID: "d76a3742-8864-51d4-94e4-3717633b9db8"
-Parent: "8e6fc9a0-de00-5ea4-ad83-7dc801c489b9"
+ID: "42454df5-859a-5ccc-8e15-6394b9f95e97"
+Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/local-news/be-guard-s"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/data-on-card-update"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{3CCA888E-B3CD-5C91-8744-7CB19F395FCB}"
+          uid="{0E7CEF05-0C68-525C-AE64-582722F895F6}"
           p:before="*"
-          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
+          s:ds="{18795917-7DDB-5F65-BC56-3363F8B45E8F}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{54A41C6B-1DAF-5286-8180-5C10A06F3824}"
-          p:after="r[@uid='{3CCA888E-B3CD-5C91-8744-7CB19F395FCB}']"
+          uid="{09B4FBBA-667B-5273-BFF3-76DABA83742E}"
+          p:after="r[@uid='{0E7CEF05-0C68-525C-AE64-582722F895F6}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{8BE5E40E-1031-56B8-94D8-30EA000B8461}"
+          uid="{432533F7-05EA-5F89-983F-9412FE192708}"
           p:after="*[1=2]"
-          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
+          s:ds="{18795917-7DDB-5F65-BC56-3363F8B45E8F}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -44,10 +44,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Let the Guard S handle it
+      Value: "Now available: Data on Card on ENiQ App"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eb2a3769-a6a1-4fd9-9b2c-179a021c9c68"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -63,10 +66,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Laissez le garde S s’en charger
+      Value: "Disponible dès maintenant : Data on Card dans l’application ENiQ"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eb2a3769-a6a1-4fd9-9b2c-179a021c9c68"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -82,10 +88,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Laat Guard S het afhandelen
+      Value: "Nu beschikbaar: Data on Card in de ENiQ-app"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eb2a3769-a6a1-4fd9-9b2c-179a021c9c68"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

@@ -1,8 +1,8 @@
 ﻿---
-ID: "25d3c027-6d31-5345-8797-0a4ca84c2bab"
-Parent: "8e6fc9a0-de00-5ea4-ad83-7dc801c489b9"
+ID: "347c22da-5135-5bad-9c3e-c95eb221d25e"
+Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/local-news/be-tapkey-tapkey-event"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/the-best-of-dom-volume-4-is-here"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{A170B004-087A-50AD-B446-2ED8A45A566A}"
+          uid="{6E1F854C-0B60-5D78-83D4-46E46DD7C5C8}"
           p:before="*"
-          s:ds="{B56F61DA-B963-5243-80AC-E48A766FB23B}"
+          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{CBF9E858-19A9-5E7B-81D4-F81C852754A5}"
-          p:after="r[@uid='{A170B004-087A-50AD-B446-2ED8A45A566A}']"
+          uid="{192177CF-1718-598E-92DB-212F620A90F4}"
+          p:after="r[@uid='{6E1F854C-0B60-5D78-83D4-46E46DD7C5C8}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{DD5A4C1A-19A0-5E86-B16D-9A0794E35556}"
+          uid="{8ABCB6D7-B200-5DEB-B741-D15FE4F2AEF1}"
           p:after="*[1=2]"
-          s:ds="{B56F61DA-B963-5243-80AC-E48A766FB23B}"
+          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -44,17 +44,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: "News 24 May 2024 BE - Tapkey Tapkey Event"
-    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
-      Hint: __Owner
-      Value: |
-        sitecore\oPUjN5FAAA3BT8aeFwZ2HiynyL7LKjNs
+      Value: Read article
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5bda3a36-177e-4c15-a7dc-1e2d7fd3f35f"
+      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -70,13 +66,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: "BE - Tapkey Tapkey Event"
+      Value: Read Article
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5bda3a36-177e-4c15-a7dc-1e2d7fd3f35f"
+      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -92,13 +88,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: "BE - Événement Tapkey Tapkey"
+      Value: Lire l’article
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5bda3a36-177e-4c15-a7dc-1e2d7fd3f35f"
+      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -114,13 +110,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: "BE - Tapkey Tapkey Event"
+      Value: Read article
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5bda3a36-177e-4c15-a7dc-1e2d7fd3f35f"
+      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

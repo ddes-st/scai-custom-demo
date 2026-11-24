@@ -2,7 +2,7 @@
 ID: "36223404-fe29-55a6-a95f-8dfd48e516e0"
 Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/anti-microbial-products-news-update"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/anti-microbial-products-news-update"
 SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail

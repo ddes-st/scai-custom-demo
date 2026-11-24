@@ -1,8 +1,8 @@
 ﻿---
-ID: "e643921b-2609-570f-94b4-069cd30e3058"
+ID: "8dc57923-0a53-5db9-ba5d-5e4d8c2e5a65"
 Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/de-ix-teco-patent"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/dom-security-joins-tapkey-as-a-new-shareholder"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{C6C92539-D98E-5D5C-9ABF-9D3ED4457D25}"
+          uid="{05351E86-78E6-526B-B75D-0EE2A9E57E05}"
           p:before="*"
-          s:ds="{6E998F45-9415-5A89-BCF0-EEFAB9400842}"
+          s:ds="{B0A9EECD-2B45-5D65-B808-0A242AECC8D4}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{FFD0D5BC-DC62-597F-93A6-254032B567A7}"
-          p:after="r[@uid='{C6C92539-D98E-5D5C-9ABF-9D3ED4457D25}']"
+          uid="{4D77C534-1ED0-5FE5-A9D0-20E8806F32F3}"
+          p:after="r[@uid='{05351E86-78E6-526B-B75D-0EE2A9E57E05}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{9731632F-AEC1-5509-B67C-B1B6031BD319}"
+          uid="{72A87787-30E6-5F9C-989F-CCF4801B2152}"
           p:after="*[1=2]"
-          s:ds="{6E998F45-9415-5A89-BCF0-EEFAB9400842}"
+          s:ds="{B0A9EECD-2B45-5D65-B808-0A242AECC8D4}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -44,13 +44,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: European Patent Office Grants Patent to DOM ix Teco®
+      Value: DOM Security joins Tapkey as a new shareholder
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
+      Value: "1f436642-4459-47e1-a9f0-cfa5c29d4832"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -66,13 +66,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: L’Office européen des brevets accorde un brevet à DOM ix Teco®
+      Value: DOM Security devient un nouvel actionnaire de Tapkey
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
+      Value: "1f436642-4459-47e1-a9f0-cfa5c29d4832"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -88,13 +88,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Europees Octrooibureau kent octrooi toe aan DOM ix Teco®
+      Value: dom security joins tapkey as a new shareholder
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
+      Value: "1f436642-4459-47e1-a9f0-cfa5c29d4832"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

@@ -1,8 +1,8 @@
 ﻿---
-ID: "cfb7578d-5539-5d07-9236-3adf888c0efc"
-Parent: "06f50065-7320-5d04-a372-cd62da090f66"
+ID: "d76a3742-8864-51d4-94e4-3717633b9db8"
+Parent: "8e6fc9a0-de00-5ea4-ad83-7dc801c489b9"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/new-silca-machine-dom-hoberg"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/be-guard-s"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{35AA8184-634B-5556-8295-C4C13113416D}"
+          uid="{3CCA888E-B3CD-5C91-8744-7CB19F395FCB}"
           p:before="*"
-          s:ds="{A85E8F09-CAFE-5F30-8763-CA444DCA16A2}"
+          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{350882BA-F6C0-55F4-99D1-EC1AD8848A24}"
-          p:after="r[@uid='{35AA8184-634B-5556-8295-C4C13113416D}']"
+          uid="{54A41C6B-1DAF-5286-8180-5C10A06F3824}"
+          p:after="r[@uid='{3CCA888E-B3CD-5C91-8744-7CB19F395FCB}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{026CAA6A-F14D-5DE2-A4D1-C7D45AC76291}"
+          uid="{8BE5E40E-1031-56B8-94D8-30EA000B8461}"
           p:after="*[1=2]"
-          s:ds="{A85E8F09-CAFE-5F30-8763-CA444DCA16A2}"
+          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -44,13 +44,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: New Silca Machine Dom Hoberg
+      Value: Let the Guard S handle it
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -66,13 +63,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: nouvelle machine Silca DOM Hoberg
+      Value: Laissez le garde S s’en charger
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -88,13 +82,10 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: new silca machine dom hoberg
+      Value: Laat Guard S het afhandelen
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

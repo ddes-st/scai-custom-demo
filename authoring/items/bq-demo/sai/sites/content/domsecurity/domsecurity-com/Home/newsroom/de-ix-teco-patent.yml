@@ -1,8 +1,8 @@
 ﻿---
-ID: "81855a0e-1b83-54ec-b91d-b9b7e309f7fb"
+ID: "e643921b-2609-570f-94b4-069cd30e3058"
 Parent: "06f50065-7320-5d04-a372-cd62da090f66"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/de-best-of-dom-volume-4-is-here"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/de-ix-teco-patent"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{FDB9249A-CA58-5F3E-986D-1BD17D2B34E1}"
+          uid="{C6C92539-D98E-5D5C-9ABF-9D3ED4457D25}"
           p:before="*"
-          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
+          s:ds="{6E998F45-9415-5A89-BCF0-EEFAB9400842}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{6518AD66-386D-5B60-899A-475A487B1FFB}"
-          p:after="r[@uid='{FDB9249A-CA58-5F3E-986D-1BD17D2B34E1}']"
+          uid="{FFD0D5BC-DC62-597F-93A6-254032B567A7}"
+          p:after="r[@uid='{C6C92539-D98E-5D5C-9ABF-9D3ED4457D25}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{6E3C17CA-3FD0-5C88-8FB8-81E069920E2D}"
+          uid="{9731632F-AEC1-5509-B67C-B1B6031BD319}"
           p:after="*[1=2]"
-          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
+          s:ds="{6E998F45-9415-5A89-BCF0-EEFAB9400842}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -44,10 +44,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Best of DOM Volume 4 is here
+      Value: European Patent Office Grants Patent to DOM ix Teco®
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -63,10 +66,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Le meilleur de DOM, volume 4 est arrivé
+      Value: L’Office européen des brevets accorde un brevet à DOM ix Teco®
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -82,10 +88,13 @@ Languages:
       Value: 20260101T120000Z
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Het beste van DOM Volume 4 is er nu
+      Value: Europees Octrooibureau kent octrooi toe aan DOM ix Teco®
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "905298ec-7ddc-41e1-bcf0-41c42aab9b9c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ

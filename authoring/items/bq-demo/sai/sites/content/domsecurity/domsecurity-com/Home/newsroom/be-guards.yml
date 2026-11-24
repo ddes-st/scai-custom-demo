@@ -1,8 +1,8 @@
 ﻿---
-ID: "347c22da-5135-5bad-9c3e-c95eb221d25e"
-Parent: "06f50065-7320-5d04-a372-cd62da090f66"
+ID: "3918bdcd-e416-5aab-876b-db8166c4e6a1"
+Parent: "8e6fc9a0-de00-5ea4-ad83-7dc801c489b9"
 Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
-Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/the-best-of-dom-volume-4-is-here"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/be-guards"
 SharedFields:
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
@@ -12,23 +12,23 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{6E1F854C-0B60-5D78-83D4-46E46DD7C5C8}"
+          uid="{2D12C656-F67B-5554-8F66-A6E57AA38F7A}"
           p:before="*"
-          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
+          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
           s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{192177CF-1718-598E-92DB-212F620A90F4}"
-          p:after="r[@uid='{6E1F854C-0B60-5D78-83D4-46E46DD7C5C8}']"
+          uid="{EAB84D41-1887-5240-846A-F4F4634B32C4}"
+          p:after="r[@uid='{2D12C656-F67B-5554-8F66-A6E57AA38F7A}']"
           s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
           s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
           s:par=""
           s:ph="headless-main" />
         <r
-          uid="{8ABCB6D7-B200-5DEB-B741-D15FE4F2AEF1}"
+          uid="{3328F219-4BB8-5274-AE57-2054B9D603E4}"
           p:after="*[1=2]"
-          s:ds="{01D5F86C-014B-50D0-B459-2931BEE61E28}"
+          s:ds="{EB438C19-724E-51B1-A9EB-7DA98B011732}"
           s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
           s:par=""
           s:ph="headless-main" />
@@ -50,7 +50,7 @@ Languages:
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
+      Value: "f77e75fb-2612-485e-9ea9-11b44117e627"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -72,7 +72,7 @@ Languages:
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
+      Value: "f77e75fb-2612-485e-9ea9-11b44117e627"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -94,7 +94,7 @@ Languages:
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
+      Value: "f77e75fb-2612-485e-9ea9-11b44117e627"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
@@ -116,7 +116,7 @@ Languages:
       Value: BQ
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a47f47da-e24a-4f73-aef5-dcacd1d0f71e"
+      Value: "f77e75fb-2612-485e-9ea9-11b44117e627"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: BQ
