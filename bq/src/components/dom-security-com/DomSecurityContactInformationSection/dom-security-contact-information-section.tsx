@@ -22,8 +22,8 @@ function linkText(field: LinkField | undefined): string {
   return typeof text === "string" ? text : "";
 }
 
-function withLinkText(field: LinkField | undefined, text: string): LinkField | undefined {
-  if (!field?.value) return field;
+function withLinkText(field: LinkField, text: string): LinkField {
+  if (!field.value) return field;
   return { ...field, value: { ...field.value, text } };
 }
 
