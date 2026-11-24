@@ -18,7 +18,14 @@ import { resolveAuthoringGraphqlAuth } from "../shared/cm-delete-item";
 import { runAuthoringGraphql } from "../shared/authoring-graphql";
 import { resolveItemIdByPath } from "../shared/resolve-item-id-by-path";
 import { applyPageStubDefinition } from "./apply/page-stub";
-import type { Definition, PageDefinition } from "./types";
+import { applyComponentDefinition } from "./apply/component";
+import { applySitePresentationDefinition } from "./apply/site-presentation";
+import { applyComponentTemplateContent } from "../content/apply/items";
+import type {
+  ComponentTemplateDefinition,
+  Definition,
+  PageDefinition,
+} from "./types";
 
 const CONTENT_ROOT = "/sitecore/content/domsecurity/domsecurity-com";
 const TEMPLATE_ROOT = "/sitecore/templates/Project/domsecurity";
@@ -34,15 +41,66 @@ function pagePaths(definition: PageDefinition): string[] {
   const templatePath = templateName
     ? `${TEMPLATE_ROOT}/${templateName}`
     : "";
+  const landing = (definition.renderings || []).some(
+    (entry) => entry.definitionKey === "dom-security-landing-band",
+  );
   return [
     ...(templatePath ? [templatePath] : []),
     pagePath,
     ...parents,
     `${CONTENT_ROOT}/Presentation/Page Designs`,
-    "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityArticleHeader",
-    "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityShareBar",
-    "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityEditorialArticleBody",
+    ...(landing
+      ? [
+          `${CONTENT_ROOT}/Presentation/Partial Designs`,
+          `${CONTENT_ROOT}/Presentation/Headless Variants`,
+          `${CONTENT_ROOT}/Data/Landing Bands`,
+          `${CONTENT_ROOT}/Data/Landing Cards`,
+          `${CONTENT_ROOT}/Data/Contact Information Sections`,
+          "/sitecore/layout/Renderings/Project/domsecurity/Landing Band",
+          "/sitecore/layout/Renderings/Project/domsecurity/Landing Card",
+        ]
+      : [
+          "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityArticleHeader",
+          "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityShareBar",
+          "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityEditorialArticleBody",
+        ]),
   ];
+}
+
+function collectRenderingKeys(
+  entries: Array<{ definitionKey: string; children?: Array<{ definitionKey: string }> }> | undefined,
+  into: Set<string>,
+): void {
+  for (const entry of entries || []) {
+    into.add(entry.definitionKey);
+    collectRenderingKeys(entry.children, into);
+  }
+}
+
+async function applyReferencedComponents(
+  definition: PageDefinition,
+  registry: Map<string, Definition>,
+): Promise<void> {
+  const keys = new Set<string>();
+  collectRenderingKeys(definition.renderings, keys);
+  for (const key of keys) {
+    const component = registry.get(key);
+    if (!component || component.kind !== "component") continue;
+    console.log(`[bq:publish] component ${key}`);
+    await applyComponentDefinition(component, registry);
+    await applyComponentTemplateContent(component as ComponentTemplateDefinition);
+  }
+  if (!keys.size) return;
+  await applySitePresentationDefinition(
+    {
+      kind: "site-presentation",
+      definitionKey: `${definition.definitionKey}-available-renderings`,
+      siteSystem: definition.siteSystem,
+      collectionSystem: definition.collectionSystem,
+      availableRenderings: { "Page Content": [...keys] },
+    },
+    registry,
+  );
 }
 
 async function publishPath(sitecorePath: string, endpointName: string): Promise<void> {
@@ -114,6 +172,7 @@ async function main(): Promise<void> {
         throw new Error(`[bq:publish] "${key}" is not a page definition`);
       }
       console.log(`[bq:publish] authoring ${key} ${definition.routePath}`);
+      await applyReferencedComponents(definition, registry);
       const stats = await applyPageStubDefinition(definition, registry);
       console.log(
         `[bq:publish] authored ${key} created=${stats.created} updated=${stats.updated} unchanged=${stats.unchanged}`,

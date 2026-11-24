@@ -3,7 +3,12 @@
  * Insert Options for the template are written only on the routes named by
  * the page definition (`insertOnlyUnder`), so authors cannot pick it elsewhere.
  */
-import { ensureItemByPath, ensureItemTemplate, updateItem } from "../../shared/authoring-items";
+import {
+  ensureItemByPath,
+  ensureItemTemplate,
+  updateItem,
+  type AuthoringTemplateSectionInput,
+} from "../../shared/authoring-items";
 import { braceGuid } from "../../shared/ids";
 import { resolveItemIdByPath } from "../../shared/resolve-item-id-by-path";
 import { ensureHomePageFromRoute } from "../../shared/ensure-home-link-page";
@@ -45,6 +50,7 @@ function isImageValue(value: PageFieldValue): value is { url: string; alt?: stri
 export async function ensureProjectPageTemplate(options: {
   collectionSystem: string;
   name: string;
+  sections?: AuthoringTemplateSectionInput[];
   endpointName?: string;
 }): Promise<{ templateId: string; templatePath: string }> {
   const collectionSystem = options.collectionSystem.trim();
@@ -76,7 +82,7 @@ export async function ensureProjectPageTemplate(options: {
     name,
     baseTemplates: [base.id],
     icon: "Office/32x32/document_empty_landscape.png",
-    sections: ARTICLE_SECTIONS,
+    sections: options.sections?.length ? options.sections : ARTICLE_SECTIONS,
     endpointName: options.endpointName,
   });
   return { templateId: ensured.itemId, templatePath };

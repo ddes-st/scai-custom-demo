@@ -32,12 +32,12 @@ const ARTICLE_BODY = `
 <p><a href="https://www.dom-security.com/be/en/oplossingen/toegangscontrole-systeem/dom-tapkey-premium">Click here for more information about DOM Tapkey.</a></p>
 `.trim();
 
-/** News article /newsroom/local-news/den-dam-tapkey — News Page template. */
+/** News article under Home/news — News Page template. */
 export const denDamTapkey = {
   kind: "page",
   definitionKey: "den-dam-tapkey",
   name: "Den Dam Tapkey",
-  routePath: "/newsroom/local-news/den-dam-tapkey",
+  routePath: "/news/den-dam-tapkey",
   siteSystem: "domsecurity-com",
   collectionSystem: "domsecurity",
   navigationTitle: "Management flexibility for sports complex Den Dam thanks to Tapkey",
@@ -45,7 +45,7 @@ export const denDamTapkey = {
   cultures: ["nl-BE", "fr-BE"],
   pageTemplate: {
     name: "News Page",
-    insertOnlyUnder: ["/newsroom", "/newsroom/local-news", "/newsroom/group-news"],
+    insertOnlyUnder: ["/news"],
   },
   fields: {
     Title: "Management flexibility for sports complex Den Dam thanks to Tapkey",

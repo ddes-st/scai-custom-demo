@@ -1196,6 +1196,17 @@ export type PageContentFields = Record<string, PageFieldValue>;
 export type PageTemplateBinding = {
   name: string;
   insertOnlyUnder: string[];
+  /**
+   * `shell` keeps the item layout empty (shared page design, e.g. News Page).
+   * `composed` builds a page design from this page's renderings so each
+   * Landing Page can have its own body while the template stays empty.
+   */
+  presentation?: "shell" | "composed";
+  /** Template sections. Omitted templates keep the article field set. */
+  sections?: Array<{
+    name: string;
+    fields: Array<{ name: string; type: string }>;
+  }>;
 };
 
 /** One headless-main (or nested) rendering placement on a page or legacy presentation.pages entry. */

@@ -68,6 +68,28 @@ export const contactInformationSectionDefinition = {
           }
         },
       },
+      {
+        name: "Dom Metalux Contact",
+        displayName: "DOM-Metalux",
+        fields: {
+          "Section Title": "Contactez-nous",
+          Organization: "DOM-Metalux S.A.S.",
+          "Contact Heading": "Contact",
+          Phone: { text: "+ 33 (0) 3 25 05 03 86", url: "tel:+33325050386" },
+          Email: { text: "LinkedIn", url: "https://www.linkedin.com/company/dom-security" },
+          "Address Heading": "Adresse",
+          Address: "<p>47 bis Rue Jeanne d'Arc<br/>52115 Saint-Dizier<br/>France</p>",
+          "Directions Link": {
+            text: "Itinéraire",
+            url: "https://maps.google.com/?q=47+bis+Rue+Jeanne+d'Arc+52115+Saint-Dizier+France",
+          },
+          "Call Me Back": { text: "Nous appeler", url: "tel:+33325050386" },
+          "Fill Out The Form": {
+            text: "Nous écrire",
+            url: "https://www.dom-security.com/fr/fr/produits-1/access-control",
+          },
+        },
+      },
     ],
   },
 } satisfies ComponentTemplateDefinition;

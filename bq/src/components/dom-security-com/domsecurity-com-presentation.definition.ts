@@ -31,6 +31,8 @@ export const domsecuritycomPresentation = {
     "dom-security-share-bar",
     "dom-security-service-request-form",
     "dom-security-editorial-article-body",
+    "dom-security-landing-band",
+    "dom-security-landing-card",
     "dom-security-product",
     "dom-security-product-listing",
     "dom-security-product-category-header",

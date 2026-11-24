@@ -39,6 +39,7 @@ export async function applyPageStubDefinition(
     const ensuredTemplate = await ensureProjectPageTemplate({
       collectionSystem,
       name: pageTemplate.name.trim(),
+      sections: pageTemplate.sections,
     });
     pageTemplateId = ensuredTemplate.templateId;
   }

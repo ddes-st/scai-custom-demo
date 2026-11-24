@@ -562,6 +562,7 @@ export async function applySitePresentationDefinition(
     const ensuredTemplate = await ensureProjectPageTemplate({
       collectionSystem,
       name: templateName,
+      sections: pageDef.pageTemplate?.sections,
       endpointName,
     });
     ensuredTemplates.set(pageKey, ensuredTemplate);
@@ -719,6 +720,20 @@ export async function applySitePresentationDefinition(
       } catch (err) {
         console.warn(
           `${LOG_PREFIX} failed to patch ${pageSitecorePath}: ${err instanceof Error ? err.message : err}`,
+        );
+      }
+      if (pageDef.pageTemplate?.presentation === "composed") {
+        stats = mergeWriteStats(
+          stats,
+          await ensureComposedPageDesign({
+            site,
+            pageKey,
+            pageId,
+            pagePath: pageSitecorePath,
+            displayName: pageDef.navigationTitle || pageKey,
+            resolved: withRendering,
+            cultures: emitCultures,
+          }),
         );
       }
       const boundTemplate = ensuredTemplates.get(pageKey);
@@ -1544,6 +1559,122 @@ function resolvePresentationCultures(
   return [...seen];
 }
 
+function composedDesignItemName(pageKey: string): string {
+  const words = pageKey
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+  return words.join(" ") || "Landing";
+}
+
+/**
+ * Custom templates cannot store component XML on the page item (Edge drops the
+ * route). Compose the body on a partial, attach it to a page design that also
+ * keeps the Default chrome, and point this page at that design. The Landing
+ * Page template itself stays mapped to Default, so a new page under /lp is empty.
+ */
+async function ensureComposedPageDesign(options: {
+  site: PresentationSiteContext;
+  pageKey: string;
+  pageId: string;
+  pagePath: string;
+  displayName: string;
+  resolved: ResolvedHomeRendering[];
+  cultures: string[];
+}): Promise<ScsWriteStats> {
+  const stats = emptyWriteStats();
+  const endpointName = options.site.cmAlign?.endpointName;
+  const siteRoot = siteContentRoot(options.site);
+  const itemName = composedDesignItemName(options.pageKey);
+  const signature = options.pageKey;
+  const partialsFolder = await ensurePartialDesignsFolderParent({
+    collectionSystem: options.site.collectionSystem,
+    siteSystem: options.site.siteSystem,
+    handle: saiHandleFrom(`partial:${options.pageKey}`, 1),
+    endpointName,
+  });
+  const partialPath = `${siteRoot}/Presentation/Partial Designs/${itemName}`;
+  const layoutXml = buildHomeRenderingsXml(options.resolved);
+  const languages = await buildLanguageBlocks(
+    [
+      {
+        id: FIELD_IDS.DisplayName,
+        hint: "__Display name",
+        value: options.displayName || itemName,
+      },
+    ],
+    [],
+    options.cultures,
+    "en",
+  );
+  const partialWrite = await applyAuthoringItem(
+    `partial-design:${partialPath}`,
+    {
+      parent: partialsFolder.id,
+      template: PARTIAL_DESIGN_TEMPLATE_ID,
+      path: partialPath,
+      sharedFields: [
+        { id: FIELD_PARTIAL_SIGNATURE, hint: "Signature", value: signature },
+        { id: FIELD_RENDERINGS, hint: "__Renderings", value: layoutXml },
+      ],
+      languages,
+    },
+    { endpointName },
+  );
+  recordWrite(stats, partialWrite);
+
+  const designsPath = `${siteRoot}/Presentation/Page Designs`;
+  const folderId = await resolvePathId(options.site, designsPath);
+  if (!folderId) {
+    console.warn(`${LOG_PREFIX} Page Designs folder missing — skip ${itemName}`);
+    return stats;
+  }
+  const defaultRaw = await readItemFieldValue({
+    path: `${designsPath}/Default`,
+    fieldName: "PartialDesigns",
+    endpointName,
+  });
+  const chrome = parseMultilistIds(defaultRaw ?? "");
+  const partialId = canonicalItemId(partialWrite.itemId);
+  const partialIds = chrome.includes(partialId) ? chrome : [...chrome, partialId];
+  const designPath = `${designsPath}/${itemName}`;
+  const designWrite = await applyAuthoringItem(
+    `page-design:${designPath}`,
+    {
+      parent: folderId,
+      template: PAGE_DESIGN_TEMPLATE_ID,
+      path: designPath,
+      sharedFields: [
+        {
+          id: FIELD_PARTIAL_DESIGNS,
+          hint: "PartialDesigns",
+          value: partialIds.map(braceGuid).join("|"),
+        },
+      ],
+      languages,
+    },
+    { endpointName },
+  );
+  recordWrite(stats, designWrite);
+  try {
+    await updateItem({
+      itemId: options.pageId,
+      path: options.pagePath,
+      endpointName,
+      fields: [{ name: "Page Design", value: braceGuid(designWrite.itemId) }],
+    });
+    recordWrite(stats, "updated");
+    console.log(
+      `${LOG_PREFIX} composed page design "${itemName}" → ${options.pagePath}`,
+    );
+  } catch (err) {
+    console.warn(
+      `${LOG_PREFIX} could not assign Page Design on ${options.pagePath}: ${err instanceof Error ? err.message : err}`,
+    );
+  }
+  return stats;
+}
+
 /**
  * Ensure custom page templates (e.g. News Article) are mapped to Default page
  * design. Without TemplatesMapping, Edge/layout returns 404 for those items.
@@ -1603,7 +1734,7 @@ async function ensurePageDesignTemplateMappings(options: {
   let changed = false;
   for (const tid of options.pageTemplateIds) {
     const key = toScsYamlGuid(tid).toUpperCase();
-    if (!key || pairs.get(key) === defaultId) continue;
+    if (!key || pairs.has(key)) continue;
     pairs.set(key, defaultId);
     changed = true;
   }
