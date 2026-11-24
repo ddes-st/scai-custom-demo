@@ -3,6 +3,7 @@ import { CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { useEffect, JSX } from 'react';
 import { pageView } from '@sitecore-content-sdk/events';
 import { areBrowserCdpEventsEnabled } from 'lib/cdp-events-enabled';
+import { seedCustomerProfile } from 'lib/tracking/unified-data-layer';
 import config from 'sitecore.config';
 
 /**
@@ -50,6 +51,7 @@ const CdpPageView = (): JSX.Element => {
       pageVariantId,
       language,
     }).catch((e) => console.debug(e));
+    seedCustomerProfile();
   }, [mode, route, context.variantId, siteName]);
 
   return <></>;

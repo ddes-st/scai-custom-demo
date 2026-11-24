@@ -6,6 +6,7 @@ import { DEMO_PROFILE, displayName } from './demo-account';
 import {
   clearLoginIdentityGuard,
   ensureLoginIdentityFromSession,
+  pushLoginOpen,
   pushLoginToProfile,
   pushLogoutToProfile,
 } from './demo-cdp';
@@ -112,6 +113,7 @@ export default function DemoAccountChrome({
             if (isLoggedIn) {
               setMenuOpen((v) => !v);
             } else {
+              pushLoginOpen();
               setLoginOpen(true);
               setError('');
             }

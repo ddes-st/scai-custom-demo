@@ -3,7 +3,7 @@
 import { Text, useSitecore } from '@sitecore-content-sdk/nextjs';
 import type { TextField } from '@sitecore-content-sdk/nextjs';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ComponentProps } from 'lib/component-props';
 import {
   fieldImageSrc,
@@ -13,6 +13,7 @@ import {
   useWildcardItemContext,
   type WildcardLinkedItem,
 } from 'src/lib/wildcard';
+import { trackProductDetailView } from '../_demo/demo-cdp';
 
 interface Fields {
   'About Tab Label'?: TextField;
@@ -171,6 +172,17 @@ export const Default = (props: Props) => {
     setSlide(0);
     setHeroOverride('');
   }, [state.item?.id, defaultProfile?.name, defaultType?.name]);
+
+  const trackedProductId = useRef('');
+
+  useEffect(() => {
+    if (state.status !== 'resolved') return;
+    const id = state.item?.id || state.item?.name || '';
+    if (!id || trackedProductId.current === id) return;
+    trackedProductId.current = id;
+    const name = fieldText(state.fields, 'Title') || state.item?.displayName || state.item?.name || '';
+    trackProductDetailView(id, name);
+  }, [state.status, state.item?.id, state.item?.name, state.item?.displayName, state.fields]);
 
   const activeType = types.find((variant) => variant.name === typeName) || defaultType;
   const activeProfile = profiles.find((variant) => variant.name === profileName) || defaultProfile;

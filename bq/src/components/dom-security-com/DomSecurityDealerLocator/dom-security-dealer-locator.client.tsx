@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import { DEMO_PROFILE } from '../_demo/demo-account';
 import {
   pushDealerCallbackRequest,
   pushDealerPostalToProfile,
+  trackDealerClick,
+  trackDealerDetailView,
 } from '../_demo/demo-cdp';
 import { useDemoSession } from '../_demo/demo-session';
 
@@ -319,6 +321,23 @@ export default function DealerLocatorChrome({
     };
   }, []);
 
+  const selectDealer = useCallback((dealer: DealerRecord) => {
+    setActiveId(dealer.id);
+    trackDealerClick(dealer.id, dealer.title);
+    trackDealerDetailView(dealer.id, dealer.title);
+    const marker = markersRef.current.get(dealer.id);
+    try {
+      marker?.openPopup?.();
+      if (isValidLatLng(dealer.latitude, dealer.longitude)) {
+        mapRef.current?.setView?.([dealer.latitude, dealer.longitude], SEARCH_ZOOM, {
+          animate: true,
+        });
+      }
+    } catch {
+      /* ignore map interaction errors in editor */
+    }
+  }, []);
+
   // Sync dealer markers + origin (not active highlight — that is style-only).
   useEffect(() => {
     const w = typeof window !== 'undefined' ? (window as any) : null;
@@ -353,7 +372,7 @@ export default function DealerLocatorChrome({
           .bindPopup(
             `<strong>${escapeHtml(d.title)}</strong><br/>${escapeHtml(d.address)}<br/>${escapeHtml(d.address2)}`,
           )
-          .on('click', () => setActiveId(d.id));
+          .on('click', () => selectDealer(d));
         marker.addTo(map);
         markersRef.current.set(d.id, marker);
         bounds.push([d.latitude, d.longitude]);
@@ -368,7 +387,7 @@ export default function DealerLocatorChrome({
     }
 
     safeFitBounds(map, L, bounds);
-  }, [filtered, mapReady, origin]);
+  }, [filtered, mapReady, origin, selectDealer]);
 
   // Highlight active marker without rebuilding the whole layer group.
   useEffect(() => {
@@ -602,22 +621,7 @@ export default function DealerLocatorChrome({
                   <button
                     type="button"
                     className="block max-w-[58%] text-left"
-                    onClick={() => {
-                      setActiveId(d.id);
-                      const marker = markersRef.current.get(d.id);
-                      try {
-                        marker?.openPopup?.();
-                        if (isValidLatLng(d.latitude, d.longitude)) {
-                          mapRef.current?.setView?.(
-                            [d.latitude, d.longitude],
-                            SEARCH_ZOOM,
-                            { animate: true },
-                          );
-                        }
-                      } catch {
-                        /* ignore map interaction errors in editor */
-                      }
-                    }}
+                    onClick={() => selectDealer(d)}
                   >
                     <h3 className="m-0 text-[18px] leading-6 font-semibold text-black">{d.title}</h3>
                     <p className="m-0 text-[16px] leading-[1.35] font-light text-[#646363]">

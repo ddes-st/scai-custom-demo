@@ -4,6 +4,7 @@ import { Text, useSitecore } from '@sitecore-content-sdk/nextjs';
 import type { TextField } from '@sitecore-content-sdk/nextjs';
 import { useEffect, useMemo, useState } from 'react';
 import { ComponentProps } from 'lib/component-props';
+import { trackProductClick } from '../_demo/demo-cdp';
 import {
   fetchWildcardChildren,
   fieldPrimaryImageSrc,
@@ -293,6 +294,7 @@ export const Default = (props: Props) => {
               <a
                 key={product.id || product.name}
                 href={`/products/${product.name}`}
+                onClick={() => trackProductClick(product.id || product.name || name, name)}
                 className="group mt-10 flex w-full flex-col no-underline text-inherit sm:w-[49%] md:w-[32%] lg:w-[23.5%]"
               >
                 <div className="relative flex h-full flex-1 flex-col bg-[#e6e6e6]">

@@ -4,6 +4,7 @@ import { Text, useSitecore } from '@sitecore-content-sdk/nextjs';
 import type { TextField } from '@sitecore-content-sdk/nextjs';
 import { useEffect, useMemo, useState } from 'react';
 import { ComponentProps } from 'lib/component-props';
+import { pushProductSearch, trackProductClick } from '../_demo/demo-cdp';
 import DealerFinderSearch from '../DomSecurityDealerFinder/dom-security-dealer-finder.search';
 import {
   fetchWildcardChildren,
@@ -146,6 +147,13 @@ export const Default = (props: Props) => {
     Map<string, WildcardLinkedItem[]>
   >(new Map());
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 2) return;
+    const handle = window.setTimeout(() => pushProductSearch(trimmed), 700);
+    return () => window.clearTimeout(handle);
+  }, [query]);
   const [status, setStatus] = useState<'loading' | 'ready' | 'empty'>('loading');
 
   useEffect(() => {
@@ -306,6 +314,7 @@ export const Default = (props: Props) => {
                     <a
                       key={category.id || slug}
                       href={`/products/categories/${slug}`}
+                      onClick={() => trackProductClick(category.id || slug, title)}
                       className="mt-4 mb-6 block w-full px-[15px] text-center text-[#646363] no-underline transition-opacity hover:opacity-90 max-md:mt-0 max-md:mb-0 max-md:border-t max-md:border-[#c8c8c8] max-md:py-3 max-md:text-left first:max-md:border-t-0 sm:w-1/2 md:w-1/3 lg:w-1/4"
                     >
                       <div className="flex h-full min-h-[1.5rem] flex-col bg-[#e6e6e6] pb-5 max-md:flex-row max-md:items-center max-md:gap-4 max-md:bg-transparent max-md:pb-0">
