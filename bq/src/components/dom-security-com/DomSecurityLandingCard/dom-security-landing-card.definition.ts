@@ -45,6 +45,10 @@ export const landingCardDefinition = {
         fields: {
           Title: "Suivez l'historique des accès",
           Text: "<p>Voyez facilement qui entre et sort, et à quel moment. Surveillez l'activité, obtenez des informations en temps réel et exercez un meilleur contrôle sur votre système de sécurité.</p>",
+          Image: {
+            url: "https://p-cdn-sfpi.azureedge.net/fr/fr/-/media/DOM/DOM-Global/dom-eniq/access-control-grid-scroll-1.jpg?extension=webp",
+            alt: "Suivi de l'historique des accès",
+          },
         },
       },
       {
@@ -53,6 +57,10 @@ export const landingCardDefinition = {
         fields: {
           Title: "Accordez des autorisations flexibles en temps réel",
           Text: "<p>Un choix d'options de contrôle permet d'organiser facilement la sécurité de chaque utilisateur et du système dans son ensemble. Créez plusieurs clés numériques à la demande et installez du matériel d'accès en toute simplicité.</p>",
+          Image: {
+            url: "https://p-cdn-sfpi.azureedge.net/fr/fr/-/media/DOM/DOM-Global/dom-eniq/access-control-grid-scroll-2.jpg?extension=webp",
+            alt: "Autorisations d'accès en temps réel",
+          },
         },
       },
       {
@@ -61,6 +69,10 @@ export const landingCardDefinition = {
         fields: {
           Title: "Chiffrement de haute sécurité",
           Text: "<p>Grâce à notre technologie de chiffrement, il est pratiquement impossible pour des personnes non autorisées de compromettre votre sécurité d'accès.</p>",
+          Image: {
+            url: "https://p-cdn-sfpi.azureedge.net/fr/fr/-/media/DOM/DOM-Global/dom-eniq/access-control-grid-scroll-3.jpg?extension=webp",
+            alt: "Chiffrement de haute sécurité",
+          },
         },
       },
       {
@@ -69,6 +81,96 @@ export const landingCardDefinition = {
         fields: {
           Title: "Risque minimal",
           Text: "<p>Lorsqu'un utilisateur perd ses clés, le système peut les désactiver immédiatement. Plus besoin de changer les serrures — la sécurité est accessible en un clic.</p>",
+          Image: {
+            url: "https://p-cdn-sfpi.azureedge.net/fr/fr/-/media/DOM/DOM-Global/dom-eniq/access-control-grid-scroll-4.jpg?extension=webp",
+            alt: "Contrôle d'accès DOM",
+          },
+        },
+      },
+      {
+        name: "Icon Performance",
+        displayName: "Performance",
+        fields: { Title: "Performance" },
+      },
+      {
+        name: "Icon Cyber",
+        displayName: "Cybersécurité embarquée",
+        fields: { Title: "Cybersécurité embarquée" },
+      },
+      {
+        name: "Icon Hardware",
+        displayName: "Matériel ENiQ et Tapkey",
+        fields: { Title: "Matériel ENiQ et Tapkey" },
+      },
+      {
+        name: "Icon Design",
+        displayName: "Design",
+        fields: { Title: "Design" },
+      },
+      {
+        name: "Logo France Tv",
+        displayName: "France TV",
+        fields: { Title: "France TV" },
+      },
+      {
+        name: "Logo Chu",
+        displayName: "CHU",
+        fields: { Title: "CHU" },
+      },
+      {
+        name: "Logo Framatome",
+        displayName: "Framatome",
+        fields: { Title: "Framatome" },
+      },
+      {
+        name: "Logo Port Rochelle",
+        displayName: "Port de La Rochelle",
+        fields: { Title: "Port de La Rochelle" },
+      },
+      {
+        name: "Logo Ratp",
+        displayName: "RATP",
+        fields: { Title: "RATP" },
+      },
+      {
+        name: "Logo Total",
+        displayName: "Total",
+        fields: { Title: "Total" },
+      },
+      {
+        name: "Product Guard",
+        displayName: "DOM Guard",
+        fields: {
+          Title: "DOM Guard",
+          Text: "<p>Béquille électronique</p>",
+          Link: { text: "DOM Guard", url: "https://www.dom-security.com/fr/fr/produits-1/access-control/guard" },
+        },
+      },
+      {
+        name: "Product Pro",
+        displayName: "DOM Pro",
+        fields: {
+          Title: "DOM Pro",
+          Text: "<p>Cylindre électronique</p>",
+          Link: { text: "DOM Pro", url: "https://www.dom-security.com/fr/fr/produits-1/access-control/pro" },
+        },
+      },
+      {
+        name: "Product Loq",
+        displayName: "DOM Loq",
+        fields: {
+          Title: "DOM Loq",
+          Text: "<p>Serrure électronique pour meuble</p>",
+          Link: { text: "DOM Loq", url: "https://www.dom-security.com/fr/fr/produits-1/access-control/loq" },
+        },
+      },
+      {
+        name: "Product Wallreader",
+        displayName: "DOM Wallreader",
+        fields: {
+          Title: "DOM Wallreader",
+          Text: "<p>Lecteur mural</p>",
+          Link: { text: "DOM Wallreader", url: "https://www.dom-security.com/fr/fr/produits-1/access-control/wall-reader" },
         },
       },
       {

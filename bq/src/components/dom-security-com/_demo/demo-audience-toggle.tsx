@@ -26,7 +26,9 @@ export default function DemoAudienceToggle({
   const handleAudience = (next: DemoAudience) => {
     if (next === audience) return;
     setAudience(next);
-    pushAudienceToProfile(next, { isLoggedIn });
+    void pushAudienceToProfile(next, { isLoggedIn }).then((saved) => {
+      if (saved) window.location.reload();
+    });
   };
 
   return (

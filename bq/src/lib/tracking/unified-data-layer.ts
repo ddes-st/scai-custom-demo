@@ -169,6 +169,21 @@ async function safeIdentity(data: Parameters<typeof identity>[0]): Promise<boole
   }
 }
 
+/**
+ * Identity calls share one queue. The page-load seed must not be built early
+ * and land after a later audience switch, or CDP keeps primaryAudience=customer.
+ */
+let identityQueue: Promise<void> = Promise.resolve();
+
+function enqueueIdentity(build: () => Parameters<typeof identity>[0]): Promise<boolean> {
+  const run = identityQueue.then(() => safeIdentity(build()));
+  identityQueue = run.then(
+    () => undefined,
+    () => undefined,
+  );
+  return run;
+}
+
 async function safeEvent(
   type: string,
   extensionData?: Record<string, ExtValue | null | undefined>,
@@ -241,12 +256,13 @@ function identityForSession(
 
 /** Write the current external-attribute snapshot onto the active guest. */
 export function pushProfileSnapshot(profile: DemoProfile = DEMO_PROFILE): void {
-  void safeIdentity(identityForSession(buildProfileExtension(), profile));
+  void enqueueIdentity(() => identityForSession(buildProfileExtension(), profile));
 }
 
 /**
- * Once per browser session, publish the default audience (customer) so the
- * profile schema has a value before the header toggle is used.
+ * Once per browser session, publish the audience already stored for this
+ * browser. The payload is built when the queued call runs, so a Professional
+ * switch made before the seed is sent is not overwritten with customer.
  */
 export function seedCustomerProfile(): void {
   if (typeof window === 'undefined') return;
@@ -264,21 +280,22 @@ let loginIdentityInFlight: Promise<boolean> | null = null;
 
 function sendLoginIdentity(audience: DemoAudience, profile: DemoProfile): void {
   if (loginIdentitySentThisLoad || loginIdentityInFlight) return;
-  loginIdentityInFlight = (async () => {
-    const ok = await safeIdentity(
-      loginIdentityPayload(
-        profile,
-        buildProfileExtension({
-          [PROFILE_ATTRIBUTES.primaryAudience]: audience,
-          accountStatus: 'logged_in',
-        }),
-      ),
-    );
-    if (ok) loginIdentitySentThisLoad = true;
-    return ok;
-  })().finally(() => {
-    loginIdentityInFlight = null;
-  });
+  loginIdentityInFlight = enqueueIdentity(() =>
+    loginIdentityPayload(
+      profile,
+      buildProfileExtension({
+        [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+        accountStatus: 'logged_in',
+      }),
+    ),
+  )
+    .then((ok) => {
+      if (ok) loginIdentitySentThisLoad = true;
+      return ok;
+    })
+    .finally(() => {
+      loginIdentityInFlight = null;
+    });
 }
 
 /** Header Log in button. The form submit sends DOMSECURITY:LOGIN separately. */
@@ -317,11 +334,15 @@ export function pushLogoutToProfile(
   audience: DemoAudience,
   profile: DemoProfile = DEMO_PROFILE,
 ): void {
-  const extension = buildProfileExtension({
-    [PROFILE_ATTRIBUTES.primaryAudience]: audience,
-    accountStatus: 'logged_out',
-  });
-  void safeIdentity(loginIdentityPayload(profile, extension));
+  void enqueueIdentity(() =>
+    loginIdentityPayload(
+      profile,
+      buildProfileExtension({
+        [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+        accountStatus: 'logged_out',
+      }),
+    ),
+  );
   void safeEvent(UDL_EVENTS.logout, {
     accountStatus: 'logged_out',
     [PROFILE_ATTRIBUTES.primaryAudience]: audience,
@@ -331,22 +352,22 @@ export function pushLogoutToProfile(
 export function pushAudienceToProfile(
   audience: DemoAudience,
   options?: { isLoggedIn?: boolean },
-): void {
+): Promise<boolean> {
   const isLoggedIn = options?.isLoggedIn ?? getDemoSession().isLoggedIn;
-  const extension = buildProfileExtension({
-    [PROFILE_ATTRIBUTES.primaryAudience]: audience,
-    accountStatus: isLoggedIn ? 'logged_in' : 'anonymous',
-  });
   void safeEvent(UDL_EVENTS.audience, {
     [PROFILE_ATTRIBUTES.primaryAudience]: audience,
     audienceType: audience,
     accountStatus: isLoggedIn ? 'logged_in' : 'anonymous',
   });
-  void safeIdentity(
-    isLoggedIn
+  return enqueueIdentity(() => {
+    const extension = buildProfileExtension({
+      [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+      accountStatus: isLoggedIn ? 'logged_in' : 'anonymous',
+    });
+    return isLoggedIn
       ? loginIdentityPayload(DEMO_PROFILE, extension)
-      : anonymousIdentityPayload(extension),
-  );
+      : anonymousIdentityPayload(extension);
+  });
 }
 
 /** Primary location. Stays on the current guest; does not mint a postal identifier. */
@@ -354,15 +375,21 @@ export function pushPrimaryLocation(postalCode: string): void {
   const trimmed = postalCode.trim();
   if (!trimmed) return;
   writePostal(trimmed);
-  const extension = buildProfileExtension({
-    [PROFILE_ATTRIBUTES.primaryPostalCode]: trimmed,
-  });
   void safeEvent(UDL_EVENTS.primaryLocation, {
     [PROFILE_ATTRIBUTES.primaryPostalCode]: trimmed,
     dealerPostalCode: trimmed,
   });
-  const base = identityForSession(extension);
-  void safeIdentity({ ...base, postalCode: trimmed, country: 'BE', extensionData: extension });
+  void enqueueIdentity(() => {
+    const nextExtension = buildProfileExtension({
+      [PROFILE_ATTRIBUTES.primaryPostalCode]: trimmed,
+    });
+    return {
+      ...identityForSession(nextExtension),
+      postalCode: trimmed,
+      country: 'BE',
+      extensionData: nextExtension,
+    };
+  });
 }
 
 /** @deprecated Use pushPrimaryLocation. Kept so existing dealer search imports keep working. */

@@ -111,10 +111,24 @@ export const landingBandDefinition = {
         },
       },
       {
+        name: "Access Control Icons",
+        displayName: "Atouts du contrôle d'accès",
+        fields: {
+          Title: "Atouts",
+        },
+      },
+      {
         name: "Access Control Benefits",
         displayName: "Efficacité numérique",
         fields: {
           Title: "Découvrez l'efficacité numérique avec le contrôle d'accès DOM",
+        },
+      },
+      {
+        name: "Access Control Logos",
+        displayName: "Références",
+        fields: {
+          Title: "Références",
         },
       },
       {
@@ -130,6 +144,28 @@ export const landingBandDefinition = {
         fields: {
           Title: "Comparez les systèmes de contrôle d'accès électroniques pour votre entreprise",
           Body: COMPARE_TABLE,
+        },
+      },
+      {
+        name: "Access Control Integrate",
+        displayName: "Intégrer ENiQ",
+        fields: {
+          Title: "Intégrez l'écosystème ENiQ dans votre système de sécurité existant",
+          Image: {
+            url: "https://p-cdn-sfpi.azureedge.net/fr/fr/-/media/DOM/DOM-Global/dom-eniq/integrate-security.jpg?extension=webp",
+            alt: "Cylindre électronique intégré à un système de sécurité",
+          },
+          Link: {
+            text: "Découvrez DOMConnect",
+            url: "https://www.dom-security.com/fr/fr/produits-1/domconnect",
+          },
+        },
+      },
+      {
+        name: "Access Control Products",
+        displayName: "Produits compatibles",
+        fields: {
+          Title: "Découvrez les produits compatibles avec les solutions de contrôle d'accès DOM",
         },
       },
       {
