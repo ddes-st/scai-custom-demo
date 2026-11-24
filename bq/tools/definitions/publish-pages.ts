@@ -44,11 +44,26 @@ function pagePaths(definition: PageDefinition): string[] {
   const landing = (definition.renderings || []).some(
     (entry) => entry.definitionKey === "dom-security-landing-band",
   );
+  const about = definition.definitionKey === "about-us";
   return [
     ...(templatePath ? [templatePath] : []),
     pagePath,
     ...parents,
     `${CONTENT_ROOT}/Presentation/Page Designs`,
+    ...(about
+      ? [
+          `${CONTENT_ROOT}/Data/Technology Heroes`,
+          `${CONTENT_ROOT}/Data/About Stories`,
+          `${CONTENT_ROOT}/Data/Competence Showcases`,
+          `${CONTENT_ROOT}/Data/Competence Slides`,
+          `${CONTENT_ROOT}/Data/Centered Copy`,
+          "/sitecore/layout/Renderings/Project/domsecurity/Technology Hero",
+          "/sitecore/layout/Renderings/Project/domsecurity/About Story",
+          "/sitecore/layout/Renderings/Project/domsecurity/Competence Showcase",
+          "/sitecore/layout/Renderings/Project/domsecurity/Competence Slide",
+          "/sitecore/layout/Renderings/Project/domsecurity/Centered Copy",
+        ]
+      : []),
     ...(landing
       ? [
           `${CONTENT_ROOT}/Presentation/Partial Designs`,
@@ -59,7 +74,9 @@ function pagePaths(definition: PageDefinition): string[] {
           "/sitecore/layout/Renderings/Project/domsecurity/Landing Band",
           "/sitecore/layout/Renderings/Project/domsecurity/Landing Card",
         ]
-      : [
+      : about
+        ? []
+        : [
           "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityArticleHeader",
           "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityShareBar",
           "/sitecore/layout/Renderings/Project/domsecurity/DomSecurityEditorialArticleBody",

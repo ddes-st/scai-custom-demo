@@ -64,6 +64,21 @@ export const technologyHeroDefinition = {
           }
         },
       },
+      {
+        name: "About Us Hero",
+        displayName: "DOM HOBERG",
+        fields: {
+          Title: "DOM HOBERG",
+          Subtitle: "Providing mechanical, electronic and industrial locking solutions",
+          Video: "",
+          "Poster Image": {
+            url: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/DOM-BE/image/About-us2020.jpg?h=800&iar=0&w=1920&modified=20211231080742&extension=webp",
+            alt: "Building DOM HOBERG Wavre",
+          },
+          "Desktop CTA": { text: "About our companies", url: "#about-story" },
+          "Mobile CTA": { text: "About our companies", url: "#about-story" },
+        },
+      },
     ],
   },
 } satisfies ComponentTemplateDefinition;

@@ -14,6 +14,10 @@ export const domsecuritycomPresentation = {
   availableRenderings: {
   "Page Content": [
     "dom-security-technology-hero",
+    "dom-security-about-story",
+    "dom-security-competence-showcase",
+    "dom-security-competence-slide",
+    "dom-security-centered-copy",
     "dom-security-company-overview",
     "dom-security-recommendation-card",
     "dom-security-recommendation-grid",

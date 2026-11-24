@@ -22,10 +22,10 @@ export const Default = (props: TechnologyHeroProps) => {
     <section
       key={renderingId || props.rendering?.uid}
       id={renderingId || undefined}
-      className="relative z-0 mb-0 bg-white font-['Source_Sans_Pro',sans-serif] font-light text-black lg:mb-[144px] lg:pb-[36px]"
+      className="relative z-0 mb-0 bg-white font-['Source_Sans_Pro',sans-serif] font-light text-black lg:pb-[180px]"
     >
       <div className="relative sm:min-h-[200px] lg:h-[700px]">
-        <div className="relative leading-[0] lg:absolute lg:inset-0 lg:h-full">
+        <div className="relative leading-[0] lg:absolute lg:inset-0 lg:h-full [&_img]:block [&_img]:h-auto [&_img]:w-full [&_img]:object-cover lg:[&_img]:absolute lg:[&_img]:inset-0 lg:[&_img]:h-full">
           {videoUrl ? (
             <video
               className="block h-auto w-full object-cover object-center lg:h-full lg:max-h-full"
@@ -42,7 +42,7 @@ export const Default = (props: TechnologyHeroProps) => {
           ) : (
             <Image
               field={fields["Poster Image"]}
-              className="block h-auto w-full object-cover object-center lg:h-full"
+              className="block h-auto w-full object-cover object-center"
             />
           )}
           <svg
