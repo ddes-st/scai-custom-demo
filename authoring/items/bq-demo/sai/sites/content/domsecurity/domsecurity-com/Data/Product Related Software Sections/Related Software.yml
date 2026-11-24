@@ -1,0 +1,82 @@
+---
+ID: "1c0e8b73-a1c2-5463-8a2d-f8adc28a08c2"
+Parent: "7ea33b2a-67e2-52e2-a6f3-6801a7000364"
+Template: "5cd30ac4-0d4f-5f90-88ef-5a2d7ebcd824"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Related Software Sections/Related Software"
+SharedFields:
+- ID: "052f9c53-69a7-574f-ace2-0281fa811bff"
+  Hint: Software Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Product Software
+- ID: "37cdc5d7-8786-5a10-b833-24b63dd62b2f"
+  Hint: Source Root
+  Value: /sitecore/content/domsecurity/domsecurity-com/Data/Products
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Related Software
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "18c50433-94e0-5b19-a5a2-09f27cdaa5f8"
+      Hint: Heading
+      Value: Related software
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Gerelateerde software
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "18c50433-94e0-5b19-a5a2-09f27cdaa5f8"
+      Hint: Heading
+      Value: Gerelateerde software
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Logiciels associés
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "18c50433-94e0-5b19-a5a2-09f27cdaa5f8"
+      Hint: Heading
+      Value: Logiciels associés

@@ -1,0 +1,37 @@
+---
+ID: "2aa103a5-0f5b-5d7e-a63a-2a236c2831a4"
+Parent: "cb350387-5d27-54a1-aebe-786b641e7378"
+Template: "cb350387-5d27-54a1-aebe-786b641e7378"
+Path: "/sitecore/templates/Project/domsecurity/DomSecuritySiteFooter/Site Footer Folder/__Standard Values"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_window.png
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {9ECE38E2-D054-59EF-A075-036BC4F616E7}
+    {CB350387-5D27-54A1-AEBE-786B641E7378}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "31544627-d9fe-4b19-b149-471a877a5b3f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

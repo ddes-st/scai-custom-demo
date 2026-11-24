@@ -1,0 +1,88 @@
+---
+ID: "90202bd0-aec7-5579-bcf0-61db5d9dc9a3"
+Parent: "c159ae01-ddeb-5684-9f42-b5217f0689a1"
+Template: "3dbf9296-fe1b-5248-bfd9-bb9a0c844fbb"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories/els-pro-cylinder-cover"
+SharedFields:
+- ID: "723828e4-a060-50e0-ae22-ef84ff5d9671"
+  Hint: SKU
+  Value: ELS-CC-01
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Pro Cylinder Cover
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS Pro Cylinder Cover
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Protective cover for outdoor cylinder installations.
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Pro-cilinderkap
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ELS Pro-cilinderkap
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Beschermkap voor buiteninstallaties van gasflessen.
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Couvercle de cylindre ELS Pro
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Couvercle de cylindre ELS Pro
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Couvercle de protection pour installations de bouteilles en extérieur.

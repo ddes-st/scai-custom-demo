@@ -1,0 +1,157 @@
+---
+ID: "dd0256ba-e490-551d-9ba5-739b81884e2f"
+Parent: "2d57be47-76a9-5121-a596-4fef45fc576a"
+Template: "06922da2-dd2d-5483-81a3-f8204385c296"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Dealer Finders/Dealer Finder/Cipac Wavre b1fd7744"
+SharedFields:
+- ID: "5a3f9310-5734-5958-8a7b-0b0326a00dce"
+  Hint: Latitude
+  Value: 50.7315277
+- ID: "94497841-e076-5b16-ab12-533dc20b1810"
+  Hint: Longitude
+  Value: 4.5850657
+- ID: "b6d929ab-a9a9-5491-bbc4-7b404970529d"
+  Hint: External Id
+  Value: b1fd7744-a791-4150-b301-d11e13b455f8
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Cipac Wavre
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1b82ede8-2e62-4214-a6e1-1c5210099f02"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "0da5d787-e595-5504-b345-78152d06d03b"
+      Hint: Title
+      Value: Cipac Wavre
+    - ID: "b39ef1e8-88af-56c1-ab9a-d30f53793cb2"
+      Hint: Address
+      Value: Avenue Vésale 2
+    - ID: "e722cb3d-0c4f-527f-bd5f-97f963300e50"
+      Hint: Address Line 2
+      Value: 1300 Wavre
+    - ID: "ecefd0eb-17b9-564c-a9e8-3a3a0e0db94a"
+      Hint: Phone
+      Value: + 3210846703
+    - ID: "743fdb9b-ff0e-5b0b-9dff-78631c7c4b88"
+      Hint: Fax
+      Value: + 3210845419
+    - ID: "2cbbe636-f686-585c-87a8-52cd0248bdbd"
+      Hint: Email
+      Value: "key.wavre@cipac.be"
+    - ID: "74a6f772-5bb4-56b9-970a-cb7a82cff590"
+      Hint: Website
+      Value: "http://www.cipac.be"
+    - ID: "ca7ac6a0-8bac-57f9-93c7-f24d0bd5e6a4"
+      Hint: Types
+      Value: Mechanical locking systems
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Cipac Wavre
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1b82ede8-2e62-4214-a6e1-1c5210099f02"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "0da5d787-e595-5504-b345-78152d06d03b"
+      Hint: Title
+      Value: Cipac Wavre
+    - ID: "b39ef1e8-88af-56c1-ab9a-d30f53793cb2"
+      Hint: Address
+      Value: Vésale 2laan
+    - ID: "e722cb3d-0c4f-527f-bd5f-97f963300e50"
+      Hint: Address Line 2
+      Value: 1300 Waver
+    - ID: "ecefd0eb-17b9-564c-a9e8-3a3a0e0db94a"
+      Hint: Phone
+      Value: + 3210846703
+    - ID: "743fdb9b-ff0e-5b0b-9dff-78631c7c4b88"
+      Hint: Fax
+      Value: + 3210845419
+    - ID: "2cbbe636-f686-585c-87a8-52cd0248bdbd"
+      Hint: Email
+      Value: "key.wavre@cipac.be"
+    - ID: "74a6f772-5bb4-56b9-970a-cb7a82cff590"
+      Hint: Website
+      Value: "http://www.cipac.be"
+    - ID: "ca7ac6a0-8bac-57f9-93c7-f24d0bd5e6a4"
+      Hint: Types
+      Value: Mechanische vergrendelingssystemen
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Cipac Wavre
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1b82ede8-2e62-4214-a6e1-1c5210099f02"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "0da5d787-e595-5504-b345-78152d06d03b"
+      Hint: Title
+      Value: Cipac Wavre
+    - ID: "b39ef1e8-88af-56c1-ab9a-d30f53793cb2"
+      Hint: Address
+      Value: Avenue Vésale 2
+    - ID: "e722cb3d-0c4f-527f-bd5f-97f963300e50"
+      Hint: Address Line 2
+      Value: 1300 Wavre
+    - ID: "ecefd0eb-17b9-564c-a9e8-3a3a0e0db94a"
+      Hint: Phone
+      Value: + 3210846703
+    - ID: "743fdb9b-ff0e-5b0b-9dff-78631c7c4b88"
+      Hint: Fax
+      Value: + 3210845419
+    - ID: "2cbbe636-f686-585c-87a8-52cd0248bdbd"
+      Hint: Email
+      Value: "key.wavre@cipac.be"
+    - ID: "74a6f772-5bb4-56b9-970a-cb7a82cff590"
+      Hint: Website
+      Value: "http://www.cipac.be"
+    - ID: "ca7ac6a0-8bac-57f9-93c7-f24d0bd5e6a4"
+      Hint: Types
+      Value: Systèmes de verrouillage mécaniques

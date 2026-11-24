@@ -1,0 +1,37 @@
+---
+ID: "9a260566-0552-5806-8939-dc7ed81d1070"
+Parent: "66916cb4-c304-51ba-a6a3-74cc8adaaf5d"
+Template: "66916cb4-c304-51ba-a6a3-74cc8adaaf5d"
+Path: "/sitecore/templates/Project/domsecurity/DomSecurityConsentBanner/Consent Banner Folder/__Standard Values"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_window.png
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {F6C8D430-F142-562E-8F39-416DC066992F}
+    {66916CB4-C304-51BA-A6A3-74CC8ADAAF5D}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2d4b2099-4973-4c14-ba5f-34cb89a60cf3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

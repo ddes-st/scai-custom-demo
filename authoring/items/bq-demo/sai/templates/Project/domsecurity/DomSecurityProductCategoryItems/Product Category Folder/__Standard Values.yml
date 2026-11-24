@@ -1,0 +1,34 @@
+---
+ID: "45ff751b-3e82-5719-9685-3567352e4424"
+Parent: "d61da64e-ebce-5174-904d-1bc55c46fa64"
+Template: "d61da64e-ebce-5174-904d-1bc55c46fa64"
+Path: "/sitecore/templates/Project/domsecurity/DomSecurityProductCategoryItems/Product Category Folder/__Standard Values"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {A171BD5D-A590-545C-A629-52CDB846FBCA}
+    {D61DA64E-EBCE-5174-904D-1BC55C46FA64}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "173da8c1-bf87-4977-851f-465dd443a223"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

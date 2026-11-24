@@ -1,0 +1,91 @@
+---
+ID: "d50e6c49-4222-58de-80ff-1a08494ff11b"
+Parent: "7a97b922-b43e-5ad2-8770-a22efa5ff2b5"
+Template: "a171bd5d-a590-545c-a629-52cdb846fbca"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Categories/transponders"
+SharedFields:
+- ID: "1fdef62e-e0aa-5300-8abc-ea0b977f7746"
+  Hint: Theme Slug
+  Value: access-control-solutions
+- ID: "d89b6917-58fc-5dcf-9682-1ad57157898b"
+  Hint: Category1 Slug
+  Value: transponders
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Transponders
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "d83c2f13-8887-5a6f-b5d4-c173210d11ae"
+      Hint: Title
+      Value: Transponders
+    - ID: "9914fb35-7fe5-5184-871a-369ec497923b"
+      Hint: Description
+      Value: "<p>Cards, tags and transponders for electronic locking systems.</p>"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Transponders
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "d83c2f13-8887-5a6f-b5d4-c173210d11ae"
+      Hint: Title
+      Value: Transponders
+    - ID: "9914fb35-7fe5-5184-871a-369ec497923b"
+      Hint: Description
+      Value: "<p>Kaarten, tags en transponders voor elektronische sluitsystemen.</p>"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Transpondeurs
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "d83c2f13-8887-5a6f-b5d4-c173210d11ae"
+      Hint: Title
+      Value: Transpondeurs
+    - ID: "9914fb35-7fe5-5184-871a-369ec497923b"
+      Hint: Description
+      Value: "<p>Cartes, badges et transpondeurs pour systèmes de verrouillage électroniques.</p>"

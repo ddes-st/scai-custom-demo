@@ -1,0 +1,97 @@
+---
+ID: "fa407730-d127-5d93-9351-cdf13f6e127a"
+Parent: "c159ae01-ddeb-5684-9f42-b5217f0689a1"
+Template: "3dbf9296-fe1b-5248-bfd9-bb9a0c844fbb"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Accessories/eniq-transponder"
+SharedFields:
+- ID: "723828e4-a060-50e0-ae22-ef84ff5d9671"
+  Hint: SKU
+  Value: ENIQ-TR-01
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ENiQ Transponder
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ENiQ Transponder
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: RFID transponder compatible with ENiQ readers.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ENiQ Transponder\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ENiQ-transponder
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: ENiQ-transponder
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: RFID-transponder compatibel met ENiQ-lezers.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ENiQ Transponder\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Transpondeur ENiQ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "7d4476d2-a5d4-53dd-a801-f722185ad1fe"
+      Hint: Title
+      Value: Transpondeur ENiQ
+    - ID: "2120d2a4-70c6-5350-9447-0adb2153e8ee"
+      Hint: Description
+      Value: Transpondeur RFID compatible avec les lecteurs ENiQ.
+    - ID: "85db846c-fb4c-514c-bca3-2a93b769ff5e"
+      Hint: Image
+      Value: "<image mediaid=\"{ED37F1FC-8D6A-567B-9573-291D100B7D60}\" alt=\"ENiQ Transponder\" />"

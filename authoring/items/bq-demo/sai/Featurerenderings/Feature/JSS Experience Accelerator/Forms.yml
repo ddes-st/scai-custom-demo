@@ -1,0 +1,20 @@
+﻿---
+ID: "12d005b8-6919-4c62-af99-c1c93c445bed"
+Parent: "3b50355a-5e7c-4379-ad1f-a0b73d3a5aa9"
+Template: "7ee0975b-0698-493e-b3a2-0b2ef33d0522"
+Path: /sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Forms
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211018T092133Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f898a34e-d9bf-46c0-9d00-73687f24d58a"

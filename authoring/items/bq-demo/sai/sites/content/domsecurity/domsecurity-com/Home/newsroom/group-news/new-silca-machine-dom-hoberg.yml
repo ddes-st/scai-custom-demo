@@ -1,0 +1,103 @@
+﻿---
+ID: "cfb7578d-5539-5d07-9236-3adf888c0efc"
+Parent: "06f50065-7320-5d04-a372-cd62da090f66"
+Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Home/newsroom/group-news/new-silca-machine-dom-hoberg"
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{35AA8184-634B-5556-8295-C4C13113416D}"
+          p:before="*"
+          s:ds="{A85E8F09-CAFE-5F30-8763-CA444DCA16A2}"
+          s:id="{3BEC641B-88C3-5EC0-9736-813B7C4B50F5}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{350882BA-F6C0-55F4-99D1-EC1AD8848A24}"
+          p:after="r[@uid='{35AA8184-634B-5556-8295-C4C13113416D}']"
+          s:ds="{8C31F818-BA6C-53EF-9823-53DC26DF4E06}"
+          s:id="{D53C8440-D642-59C6-B991-4755C662504C}"
+          s:par=""
+          s:ph="headless-main" />
+        <r
+          uid="{026CAA6A-F14D-5DE2-A4D1-C7D45AC76291}"
+          p:after="*[1=2]"
+          s:ds="{A85E8F09-CAFE-5F30-8763-CA444DCA16A2}"
+          s:id="{8924BDA0-596C-520E-88F6-5C12FB877BF0}"
+          s:par=""
+          s:ph="headless-main" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: New Silca Machine Dom Hoberg
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: nouvelle machine Silca DOM Hoberg
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: new silca machine dom hoberg
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3b8e342b-8d07-45ff-85e7-364a9e3368a8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

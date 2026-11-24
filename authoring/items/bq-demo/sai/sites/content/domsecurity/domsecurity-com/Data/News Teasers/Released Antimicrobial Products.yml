@@ -1,0 +1,130 @@
+﻿---
+ID: "c0aab919-ee0d-5efc-a47c-2dc68227963f"
+Parent: "af7431a6-0852-5b8a-8236-3818b2d3a61f"
+Template: "c3e5dd6e-33d6-5d53-b06d-217c1084996f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/News Teasers/Released Antimicrobial Products"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Security Released New Anti-microbial Digital Door Handles, Cylinder, and Panic Bars"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Security Released New Anti-microbial Digital Door Handles, Cylinder, and Panic Bars"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{C4F084B7-A31C-5543-87F1-CF6A3F523A76}" alt="Electronic access control lock on a glass office door, with an inset graphic showing a blue protective barrier and Sanpure shield logo." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/dom-security-released-new-antimicrobial-digital-door-handles-cylinders-and-panic-bars" anchor="" target="" id="{28F6C387-29C5-5F18-8A16-98DAD9EB6698}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Security Released New Anti-microbial Digital Door Handles, Cylinder, and Panic Bars"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Security Released New Anti-microbial Digital Door Handles, Cylinder, and Panic Bars"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{C4F084B7-A31C-5543-87F1-CF6A3F523A76}" alt="Electronic access control lock on a glass office door, with an inset graphic showing a blue protective barrier and Sanpure shield logo." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/dom-security-released-new-antimicrobial-digital-door-handles-cylinders-and-panic-bars" anchor="" target="" id="{28F6C387-29C5-5F18-8A16-98DAD9EB6698}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM Security lance de nouvelles poignées de porte numériques, de nouveaux cylindres et de nouvelles barres anti-panique antimicrobiens"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "DOM Security lance de nouvelles poignées de porte numériques, de nouveaux cylindres et de nouvelles barres anti-panique antimicrobiens"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{C4F084B7-A31C-5543-87F1-CF6A3F523A76}" alt="Electronic access control lock on a glass office door, with an inset graphic showing a blue protective barrier and Sanpure shield logo." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lire l’article" linktype="internal" url="/newsroom/group-news/dom-security-released-new-antimicrobial-digital-door-handles-cylinders-and-panic-bars" anchor="" target="" id="{28F6C387-29C5-5F18-8A16-98DAD9EB6698}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Security heeft nieuwe antimicrobiële digitale deurkrukken, cilinders en paniekbalken uitgebracht
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: DOM Security heeft nieuwe antimicrobiële digitale deurkrukken, cilinders en paniekbalken uitgebracht
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{C4F084B7-A31C-5543-87F1-CF6A3F523A76}" alt="Electronic access control lock on a glass office door, with an inset graphic showing a blue protective barrier and Sanpure shield logo." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lees artikel" linktype="internal" url="/newsroom/group-news/dom-security-released-new-antimicrobial-digital-door-handles-cylinders-and-panic-bars" anchor="" target="" id="{28F6C387-29C5-5F18-8A16-98DAD9EB6698}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

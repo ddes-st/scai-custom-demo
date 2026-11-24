@@ -1,0 +1,84 @@
+---
+ID: "41b0383d-907b-59ea-8b1d-89553c5da69b"
+Parent: "0f19a143-a76e-5381-b597-2fd2b3b66265"
+Template: "c24ddc77-1e02-557a-8c5d-f323d2f4e6d5"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Headers/Header"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Header
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "663fb099-f713-55e7-ab72-fdf06b5c74b8"
+      Hint: Logo
+      Value: "<image mediaid=\"{C4B3F20F-DE3A-54DC-A22D-17705909D159}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "57cee37b-48e5-5ea2-bac9-47dbb1ea9dd1"
+      Hint: Tagline
+      Value: We DOMore for security
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Header
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "663fb099-f713-55e7-ab72-fdf06b5c74b8"
+      Hint: Logo
+      Value: "<image mediaid=\"{C4B3F20F-DE3A-54DC-A22D-17705909D159}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "57cee37b-48e5-5ea2-bac9-47dbb1ea9dd1"
+      Hint: Tagline
+      Value: Wij doen meer voor veiligheid
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: En-tête
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "663fb099-f713-55e7-ab72-fdf06b5c74b8"
+      Hint: Logo
+      Value: "<image mediaid=\"{C4B3F20F-DE3A-54DC-A22D-17705909D159}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "57cee37b-48e5-5ea2-bac9-47dbb1ea9dd1"
+      Hint: Tagline
+      Value: Nous en faisons plus pour la sécurité

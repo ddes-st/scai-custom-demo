@@ -1,0 +1,102 @@
+---
+ID: "34c0dae7-3399-5765-879c-fd21dc26b7fe"
+Parent: "88cd35c9-442c-5aab-baf6-d8d2bff661e6"
+Template: "702e61b0-f894-5800-8955-267c973322ca"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Product Software/ELS Software"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Software
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: ELS Software
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: The ELS software manages all access control devices in the ELS world in Data on Card and online operating modes.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{2C5A3EF6-ECB3-5508-85A3-5D6A6B9A843B}\" alt=\"ELS Software\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"Learn more\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Software
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: ELS Software
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: De ELS-software beheert alle toegangscontroleapparaten in de ELS-wereld in de werkingsmodi Data on Card en online.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{2C5A3EF6-ECB3-5508-85A3-5D6A6B9A843B}\" alt=\"ELS Software\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"Meer informatie\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ELS Software
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "26e55aa0-d3a7-5f3d-bacb-8bbbfb961bd1"
+      Hint: Title
+      Value: ELS Software
+    - ID: "011b3764-1b2a-5bd3-8baf-c804e63a9a79"
+      Hint: Summary
+      Value: Le logiciel ELS gère tous les dispositifs de contrôle d’accès de l’univers ELS en modes de fonctionnement Data on Card et en ligne.
+    - ID: "9061640b-9fe7-5498-97da-60c808f6769e"
+      Hint: Image
+      Value: "<image mediaid=\"{2C5A3EF6-ECB3-5508-85A3-5D6A6B9A843B}\" alt=\"ELS Software\" />"
+    - ID: "95849a31-552f-55ba-b288-cc85a31f7549"
+      Hint: Link
+      Value: "<link text=\"En savoir plus\" linktype=\"external\" url=\"/products/categories/apps-software\" anchor=\"\" target=\"\" />"

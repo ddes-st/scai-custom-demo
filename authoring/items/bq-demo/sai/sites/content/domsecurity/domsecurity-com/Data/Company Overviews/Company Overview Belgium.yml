@@ -1,0 +1,174 @@
+﻿---
+ID: "011a74d3-ff7d-5bd7-b4d1-b77862526c53"
+Parent: "b42b2f69-6fc2-58bf-bbd0-6ea9038dab4d"
+Template: "41692fa9-0102-59ca-85b2-195b61de7c4a"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Company Overviews/Company Overview Belgium"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We believe that everyone & everything of value deserves to be kept secure withou
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2fda4d28-ddee-5b30-b5e2-adf056ed624d"
+      Hint: Dealer Count
+      Value: 150
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "6d7f6637-fd62-5afd-a862-bd5b9d1b3a5a"
+      Hint: Body
+      Value: "That's why here at DOM we focus on three essential areas of expertise: hardware, software and mechatronics, developing the highest quality mechanical and access control solutions as well as committing ourselves to the constant innovation of our technologies."
+    - ID: "9fdfeb52-8705-5312-a7e4-ce816b4465ba"
+      Hint: CTA
+      Value: |
+        <link text="Find a reseller" linktype="internal" url="/" anchor="Dealer" target="" id="{9016EDE5-DFB5-4660-9E56-5C521738E3D7}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d1661478-c01e-508f-b1d2-d8e04c93e380"
+      Hint: Dealer Label
+      Value: specialized DOM dealers in Belgium
+    - ID: "d5ebe938-d391-5274-b8f4-1ca6da344552"
+      Hint: Background Image
+      Value: |
+        <image mediaid="{9811F717-392F-5DE6-8470-13EBD9D933E2}" alt="Belgium map background" />
+    - ID: "d7f86750-0e8d-5c18-98ff-be9bc69e781b"
+      Hint: Title
+      Value: We believe that everyone & everything of value deserves to be kept secure withou
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We believe that everyone & everything of value deserves to be kept secure withou
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2fda4d28-ddee-5b30-b5e2-adf056ed624d"
+      Hint: Dealer Count
+      Value: 150
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "6d7f6637-fd62-5afd-a862-bd5b9d1b3a5a"
+      Hint: Body
+      Value: |
+        <div class="ck-content"><p>That's why here at DOM we focus on three essential areas of expertise: hardware, software and mechatronics, developing the highest quality mechanical and access control solutions as well as committing ourselves to the constant innovation of our technologies.</p></div>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b53f24c6-bf67-42db-bb8b-2ab36db10f24"
+    - ID: "9fdfeb52-8705-5312-a7e4-ce816b4465ba"
+      Hint: CTA
+      Value: |
+        <link text="Find a reseller" linktype="internal" url="/" anchor="Dealer" target="" id="{9016EDE5-DFB5-4660-9E56-5C521738E3D7}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d1661478-c01e-508f-b1d2-d8e04c93e380"
+      Hint: Dealer Label
+      Value: specialized DOM dealers in Belgium
+    - ID: "d5ebe938-d391-5274-b8f4-1ca6da344552"
+      Hint: Background Image
+      Value: |
+        <image mediaid="{9811F717-392F-5DE6-8470-13EBD9D933E2}" alt="Belgium map background" />
+    - ID: "d7f86750-0e8d-5c18-98ff-be9bc69e781b"
+      Hint: Title
+      Value: We believe that everyone & everything of value deserves to be kept secure withou
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T133402Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Nous pensons que toute personne et toute chose de valeur méritent d’être gardées en sécurité sans
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2fda4d28-ddee-5b30-b5e2-adf056ed624d"
+      Hint: Dealer Count
+      Value: 150
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "6d7f6637-fd62-5afd-a862-bd5b9d1b3a5a"
+      Hint: Body
+      Value: "C’est pourquoi, chez DOM, nous nous concentrons sur trois domaines d’expertise essentiels : le matériel, les logiciels et la mécatronique, en développant des solutions mécaniques et de contrôle d’accès de la plus haute qualité, tout en nous engageant à innover constamment dans nos technologies."
+    - ID: "9fdfeb52-8705-5312-a7e4-ce816b4465ba"
+      Hint: CTA
+      Value: |
+        <link text="Trouver un revendeur" linktype="internal" url="/" anchor="Dealer" target="" id="{9016EDE5-DFB5-4660-9E56-5C521738E3D7}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d1661478-c01e-508f-b1d2-d8e04c93e380"
+      Hint: Dealer Label
+      Value: revendeurs DOM spécialisés en Belgique
+    - ID: "d5ebe938-d391-5274-b8f4-1ca6da344552"
+      Hint: Background Image
+      Value: |
+        <image mediaid="{9811F717-392F-5DE6-8470-13EBD9D933E2}" alt="Belgium map background" />
+    - ID: "d7f86750-0e8d-5c18-98ff-be9bc69e781b"
+      Hint: Title
+      Value: Nous pensons que toute personne et toute chose de valeur méritent d’être gardées en sécurité sans
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: We believe that everyone & everything of value deserves to be kept secure withou
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2fda4d28-ddee-5b30-b5e2-adf056ed624d"
+      Hint: Dealer Count
+      Value: 150
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "6d7f6637-fd62-5afd-a862-bd5b9d1b3a5a"
+      Hint: Body
+      Value: "That's why here at DOM we focus on three essential areas of expertise: hardware, software and mechatronics, developing the highest quality mechanical and access control solutions as well as committing ourselves to the constant innovation of our technologies."
+    - ID: "9fdfeb52-8705-5312-a7e4-ce816b4465ba"
+      Hint: CTA
+      Value: |
+        <link text="Find a reseller" linktype="internal" url="/" anchor="Dealer" target="" id="{9016EDE5-DFB5-4660-9E56-5C521738E3D7}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d1661478-c01e-508f-b1d2-d8e04c93e380"
+      Hint: Dealer Label
+      Value: specialized DOM dealers in Belgium
+    - ID: "d5ebe938-d391-5274-b8f4-1ca6da344552"
+      Hint: Background Image
+      Value: |
+        <image mediaid="{9811F717-392F-5DE6-8470-13EBD9D933E2}" alt="Belgium map background" />
+    - ID: "d7f86750-0e8d-5c18-98ff-be9bc69e781b"
+      Hint: Title
+      Value: We believe that everyone & everything of value deserves to be kept secure withou
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

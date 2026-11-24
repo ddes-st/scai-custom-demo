@@ -1,0 +1,110 @@
+---
+ID: "1ce68d5b-2844-5502-8e86-0867f4919fcf"
+Parent: "872892b0-1fce-56f7-903c-a0aa05904553"
+Template: "cc5e2566-0c88-578f-9821-7721e2f12eee"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Navigation Items/Products"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Products
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "de816761-05e4-5ea9-8ba2-6e9ba456dc88"
+      Hint: Link
+      Value: "<link text=\"Products\" linktype=\"internal\" url=\"/products\" anchor=\"\" target=\"\" id=\"{9D7F961F-1EDE-5BC7-B597-7BD9853F8823}\" />"
+    - ID: "ceac6439-a799-5f49-b583-73f7a1bcaa88"
+      Hint: Active
+      Value: 
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Products
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "de816761-05e4-5ea9-8ba2-6e9ba456dc88"
+      Hint: Link
+      Value: "<link text=\"Products\" linktype=\"internal\" url=\"/products\" anchor=\"\" target=\"\" id=\"{9D7F961F-1EDE-5BC7-B597-7BD9853F8823}\" />"
+    - ID: "ceac6439-a799-5f49-b583-73f7a1bcaa88"
+      Hint: Active
+      Value: 
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Products
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "de816761-05e4-5ea9-8ba2-6e9ba456dc88"
+      Hint: Link
+      Value: "<link text=\"Products\" linktype=\"internal\" url=\"/products\" anchor=\"\" target=\"\" id=\"{9D7F961F-1EDE-5BC7-B597-7BD9853F8823}\" />"
+    - ID: "ceac6439-a799-5f49-b583-73f7a1bcaa88"
+      Hint: Active
+      Value: 
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Produits
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "de816761-05e4-5ea9-8ba2-6e9ba456dc88"
+      Hint: Link
+      Value: "<link text=\"Produits\" linktype=\"internal\" url=\"/products\" anchor=\"\" target=\"\" id=\"{9D7F961F-1EDE-5BC7-B597-7BD9853F8823}\" />"
+    - ID: "ceac6439-a799-5f49-b583-73f7a1bcaa88"
+      Hint: Active
+      Value: 

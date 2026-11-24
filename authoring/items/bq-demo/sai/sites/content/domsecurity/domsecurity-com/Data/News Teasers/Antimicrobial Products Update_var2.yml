@@ -1,0 +1,250 @@
+﻿---
+ID: "5b195ec1-58d7-45dd-a61a-614f74a762f4"
+Parent: "af7431a6-0852-5b8a-8236-3818b2d3a61f"
+Template: "c3e5dd6e-33d6-5d53-b06d-217c1084996f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/News Teasers/Antimicrobial Products Update_var2"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Antimicrobial Products News Update
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Antimicrobial Products News Update
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d27c034d-17dd-4d33-9adc-6c7079949f1a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Glass office door with electronic access reader, overlooking a modern lobby; inset shows a blue shield certification logo and blue pipe." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/anti-microbial-products-news-update" anchor="" target="" id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Antimicrobial Products News Update
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Antimicrobial Products News Update
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4f72f818-6d0c-45ab-bbb0-1fc41993bc3f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Glass office door with electronic access reader, overlooking a modern lobby; inset shows a blue shield certification logo and blue pipe." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/anti-microbial-products-news-update" anchor="" target="" id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "5f703cd5-ffd2-4317-9b2b-950a66f2465e"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Mise à jour des actualités sur les produits antimicrobiens
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Mise à jour des actualités sur les produits antimicrobiens
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb9f3936-bd4b-4be6-9c5c-eb9bb5207f38"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Glass office door with electronic access reader, overlooking a modern lobby; inset shows a blue shield certification logo and blue pipe." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lire l’article" linktype="internal" url="/newsroom/group-news/anti-microbial-products-news-update" anchor="" target="" id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z
+  - Version: 2
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T133853Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Mise à jour des actualités sur les produits antimicrobiens
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9aa00125-1427-40e8-a6d3-c86bc0d29e46"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20261027T133853Z
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Porte de bureau vitrée avec lecteur d’accès électronique, donnant sur un hall moderne ; incrustation montrant un logo de certification bleu en forme de bouclier et un tuyau bleu." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" anchor="" target="" linktype="internal" text="Lire l’article" url="/newsroom/group-news/anti-microbial-products-news-update" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "2597fd3c-f0d7-41fa-ab43-77cf888fe47b"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Nieuwsupdate over antimicrobiële producten
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Nieuwsupdate over antimicrobiële producten
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0ddff3ad-4e53-442f-8dfb-337033a6b9cd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Glass office door with electronic access reader, overlooking a modern lobby; inset shows a blue shield certification logo and blue pipe." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lees artikel" linktype="internal" url="/newsroom/group-news/anti-microbial-products-news-update" anchor="" target="" id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z
+  - Version: 2
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T115047Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: Nieuwsupdate over antimicrobiële producten
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9b515c06-8c39-45d5-b192-f9f1d9cdbb89"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20261027T115047Z
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{9F550FF7-2F87-55DD-A5F9-08059C8E43AA}" alt="Glazen kantoordeur met elektronische toegangslezer, met uitzicht op een moderne lobby; inzet toont een blauw schildcertificatielogo en blauwe buis." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link id="{36223404-FE29-55A6-A95F-8DFD48E516E0}" anchor="" target="" linktype="internal" text="Lees artikel" url="/newsroom/group-news/anti-microbial-products-news-update" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140513Z

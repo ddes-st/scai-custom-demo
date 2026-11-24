@@ -1,0 +1,75 @@
+---
+ID: "2e9eb04e-827b-543b-927d-281fd718e70a"
+Parent: "28a57b9e-99a3-53c0-91e2-d9352685fc7a"
+Template: "85306e13-b5ba-5449-80e8-3a0ef16b21dc"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Audience Links/Professionals Audience Link"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Curious how DOM can support you in selling locking solutions?"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "dd173c8d-b218-5a65-9396-2f857fe5c2ff"
+      Hint: Link
+      Value: "<link text=\"Curious how DOM can support you in selling locking solutions?\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Benieuwd hoe DOM u kan ondersteunen bij de verkoop van vergrendelingsoplossingen?"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "dd173c8d-b218-5a65-9396-2f857fe5c2ff"
+      Hint: Link
+      Value: "<link text=\"Benieuwd hoe DOM u kan ondersteunen bij de verkoop van vergrendelingsoplossingen?\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Vous souhaitez savoir comment DOM peut vous aider à vendre des solutions de verrouillage ?"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "dd173c8d-b218-5a65-9396-2f857fe5c2ff"
+      Hint: Link
+      Value: "<link text=\"Vous souhaitez savoir comment DOM peut vous aider à vendre des solutions de verrouillage ?\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"

@@ -1,0 +1,43 @@
+﻿---
+ID: "440474f2-efde-4aa0-8985-dd031c8b9f9a"
+Parent: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
+Template: "5cbf61e4-06b9-4dda-ab1c-f6d89727ab54"
+Path: /sitecore/templates/Project/domsecurity/Page/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {5CBF61E4-06B9-4DDA-AB1C-F6D89727AB54}
+    {C14B6289-8AC2-439C-9E5B-40DE9F820C3F}
+    {0FA90071-A182-5178-8EDD-A2EC09469FB2}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "c27db6c5-e70e-4c2b-8823-5b5af84470c3"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14b66293-6c9e-4a6c-81ef-373df86ec770"
+      Hint: Title
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T013647Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8f66a4de-df2e-4bf0-a964-d3fe17e8d6e6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T114637Z

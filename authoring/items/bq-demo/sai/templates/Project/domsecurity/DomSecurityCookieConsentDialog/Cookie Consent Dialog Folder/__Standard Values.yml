@@ -1,0 +1,37 @@
+---
+ID: "626a9a8e-8d18-57d4-a123-48b91c0461ff"
+Parent: "3a822584-a2c5-5702-9ed5-7ba908ad587e"
+Template: "3a822584-a2c5-5702-9ed5-7ba908ad587e"
+Path: "/sitecore/templates/Project/domsecurity/DomSecurityCookieConsentDialog/Cookie Consent Dialog Folder/__Standard Values"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/folder_window.png
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {75FC9FD7-76AF-5298-A0F0-31C84C484CA7}
+    {3A822584-A2C5-5702-9ED5-7BA908AD587E}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6bd32c0d-99b0-4905-aa93-3363c74af435"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

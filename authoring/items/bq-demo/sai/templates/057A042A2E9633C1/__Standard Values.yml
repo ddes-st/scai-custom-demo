@@ -1,0 +1,31 @@
+﻿---
+ID: "acf48ce0-c120-4f83-a46a-51e27ef24b98"
+Parent: "09cd5f11-a5fa-5976-ac46-7e2363a0d185"
+Template: "09cd5f11-a5fa-5976-ac46-7e2363a0d185"
+Path: /sitecore/templates/Project/domsecurity/DomSecurityContactInformationSection/DomSecurityContactInformationSection Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261105T113842Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "00e09c58-3f42-4743-b8d2-06ec3984343e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\damien.despas@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261105T113842Z

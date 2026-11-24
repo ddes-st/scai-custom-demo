@@ -1,0 +1,133 @@
+﻿---
+ID: "e40e8fe0-8293-5ca2-89c6-9a735f1a3a3e"
+Parent: "cbc69344-3523-51ad-b088-f5d61c52b4f6"
+Template: "bdad13a2-9694-5806-b32d-db96fea7286c"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Products/multipoint-lock"
+SharedFields:
+- ID: "23dc8ecc-2c6e-5be6-844f-40905285b19f"
+  Hint: Theme Slug
+  Value: "door-hardware"
+- ID: "4f72d8e8-2d81-5581-b881-714703a1e88e"
+  Hint: Gallery Images
+  Value: "https://p-cdn-sfpi.azureedge.net/be/en/-/media/DOM/PimDam/jpg/dom/e/elsrfnetv8/domelsrfnetv8-main-white-greenled.jpg?extension=webp"
+- ID: "a2d45069-ceea-5bf8-bb9e-0f9ca22a01ac"
+  Hint: Category1 Slug
+  Value: "mechanical-locks"
+- ID: "ebc1d0bd-a60b-51fb-87c5-5d76446fa899"
+  Hint: Family
+  Value: "dom-multipoint"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: DOM Multipoint Lock
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2a289c04-6c02-5d49-8057-feea25c699d8"
+      Hint: Certifications
+      Value: RC2, CE
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: DOM Multipoint Lock
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Type: Multipoint · Points: 3–5</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Multipoint locking system for enhanced door security.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Multiple locking points</li><li>Smooth operation</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Multipoint locking for entrance doors
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Serrure multipoints DOM
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2a289c04-6c02-5d49-8057-feea25c699d8"
+      Hint: Certifications
+      Value: RC2, CE
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: Serrure multipoints DOM
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Type : Multipoint · Points : 3–5</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Système de verrouillage multipoint pour une sécurité renforcée de la porte.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Plusieurs points de verrouillage</li><li>Fonctionnement fluide</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Serrure multipoints pour portes d’entrée
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "DOM-meerpuntsslot"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "2a289c04-6c02-5d49-8057-feea25c699d8"
+      Hint: Certifications
+      Value: RC2, CE
+    - ID: "3791dc5c-fb28-5bbe-960e-494b8ccfd4f3"
+      Hint: Title
+      Value: "DOM-meerpuntsslot"
+    - ID: "5819dc09-d4f4-5929-b0ac-b4803002e43b"
+      Hint: Specs
+      Value: "<p>Type: Multipoint · Punten: 3–5</p>"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "7baa9339-90b2-5736-ba26-24d48b833541"
+      Hint: About
+      Value: <p>Meerpuntssluitsysteem voor verbeterde deurbeveiliging.</p>
+    - ID: "b837b1d3-e05b-5a90-8364-55d29c27496d"
+      Hint: Benefits
+      Value: <ul><li>Meerdere vergrendelingspunten</li><li>Soepele bediening</li></ul>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "f7576b50-b117-5a1c-ab12-b26286c06245"
+      Hint: Tagline
+      Value: Meerpuntssluiting voor toegangsdeuren

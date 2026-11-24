@@ -1,0 +1,130 @@
+﻿---
+ID: "18795917-7ddb-5f65-bc56-3363f8b45e8f"
+Parent: "af7431a6-0852-5b8a-8236-3818b2d3a61f"
+Template: "c3e5dd6e-33d6-5d53-b06d-217c1084996f"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/News Teasers/Data On Card"
+Languages:
+- Language: be
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Now available: Data on Card on ENiQ App"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "Now available: Data on Card on ENiQ App"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{AC1A69E7-6EAD-513B-8FD7-0C7BA0221709}" alt="Person holding a smartphone displaying a management app interface." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/data-on-card-update" anchor="" target="" id="{42454DF5-859A-5CCC-8E15-6394B9F95E97}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Now available: Data on Card on ENiQ App"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "Now available: Data on Card on ENiQ App"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{AC1A69E7-6EAD-513B-8FD7-0C7BA0221709}" alt="Person holding a smartphone displaying a management app interface." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Read article" linktype="internal" url="/newsroom/group-news/data-on-card-update" anchor="" target="" id="{42454DF5-859A-5CCC-8E15-6394B9F95E97}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Désormais disponible : Data on Card dans l’application ENiQ"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "Désormais disponible : Data on Card dans l’application ENiQ"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{AC1A69E7-6EAD-513B-8FD7-0C7BA0221709}" alt="Person holding a smartphone displaying a management app interface." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lire l’article" linktype="internal" url="/newsroom/group-news/data-on-card-update" anchor="" target="" id="{42454DF5-859A-5CCC-8E15-6394B9F95E97}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Nu beschikbaar: Data on Card in de ENiQ-app"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "29793394-2a92-5c40-9635-6e04e83100a6"
+      Hint: Title
+      Value: "Nu beschikbaar: Data on Card in de ENiQ-app"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "cf567990-feb1-5dbf-8ea7-631c70f18ad8"
+      Hint: Image
+      Value: |
+        <image mediaid="{AC1A69E7-6EAD-513B-8FD7-0C7BA0221709}" alt="Person holding a smartphone displaying a management app interface." />
+    - ID: "d7764b3b-66e3-510a-9934-d85db0cda25e"
+      Hint: Link
+      Value: |
+        <link text="Lees artikel" linktype="internal" url="/newsroom/group-news/data-on-card-update" anchor="" target="" id="{42454DF5-859A-5CCC-8E15-6394B9F95E97}" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z

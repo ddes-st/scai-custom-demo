@@ -1,0 +1,160 @@
+---
+ID: "da8a044b-52cd-4292-91f2-74c2df1fd885"
+Parent: "c7c3f4d3-3f4e-496f-aa0e-05b3b09a1625"
+Template: "fd2059fd-6043-4dfe-8c04-e2437ce87634"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Presentation/Partial Designs/Header"
+BranchID: "c755de9b-1e44-4c8f-b830-168212b57fe7"
+SharedFields:
+- ID: "55faae90-3bba-4f7f-96fe-13c3f40055ff"
+  Hint: Signature
+  Value: header
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{26331A46-A8B7-53AF-8AAA-2401A4C5F286}"
+          p:before="*"
+          s:ds="{F3C6D423-29CF-599C-853B-E473AF2505E0}"
+          s:id="{E74FC60D-A604-57E7-B721-16E103FB4757}"
+          s:par="DynamicPlaceholderId=1"
+          s:ph="headless-header" />
+        <r
+          uid="{15CBD498-9646-5117-816D-ECF52268B167}"
+          p:after="r[@uid='{26331A46-A8B7-53AF-8AAA-2401A4C5F286}']"
+          s:ds="{68E84ECC-2A33-5B64-8C39-5E117FD71F8A}"
+          s:id="{CF9897CC-A69C-57E8-B10F-03941F76B59A}"
+          s:par="FieldNames=%7Bd6bd04d6-a346-5712-9d02-357eec5e1483%7D"
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{E67622CF-B7FB-5F4B-92BD-6A30A994A73E}"
+          p:after="r[@uid='{15CBD498-9646-5117-816D-ECF52268B167}']"
+          s:ds="{CE212A98-6F32-538C-A746-4CAA43B2E0B0}"
+          s:id="{CF9897CC-A69C-57E8-B10F-03941F76B59A}"
+          s:par="FieldNames=%7Bd6bd04d6-a346-5712-9d02-357eec5e1483%7D"
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{24CC68B3-846D-564E-AC8A-EEFEACAA59B4}"
+          p:after="r[@uid='{E67622CF-B7FB-5F4B-92BD-6A30A994A73E}']"
+          s:ds="{CF605225-D3B5-54DA-8855-EE88B5768642}"
+          s:id="{CF9897CC-A69C-57E8-B10F-03941F76B59A}"
+          s:par="FieldNames=%7Bd6bd04d6-a346-5712-9d02-357eec5e1483%7D"
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{1AE0640F-5948-5706-942B-47AF6DBA4145}"
+          p:after="r[@uid='{24CC68B3-846D-564E-AC8A-EEFEACAA59B4}']"
+          s:ds="{232EF02B-D3FF-5208-BC2A-D34200D11A12}"
+          s:id="{2296F052-E20F-56CD-A8C0-2611704354CB}"
+          s:par=""
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{3F267593-0672-57F3-ACE6-F61A08214AB3}"
+          p:after="r[@uid='{1AE0640F-5948-5706-942B-47AF6DBA4145}']"
+          s:ds="{68E84ECC-2A33-5B64-8C39-5E117FD71F8A}"
+          s:id="{2B5849AD-0D41-538A-B3C1-4CAABB8BC1B9}"
+          s:par=""
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{31017C65-0A72-5D4D-8D1E-EF1C1118885C}"
+          p:after="r[@uid='{3F267593-0672-57F3-ACE6-F61A08214AB3}']"
+          s:ds="{CE212A98-6F32-538C-A746-4CAA43B2E0B0}"
+          s:id="{2B5849AD-0D41-538A-B3C1-4CAABB8BC1B9}"
+          s:par=""
+          s:ph="/headless-header/nav-mega-columns-1" />
+        <r
+          uid="{F1B7E814-B7DD-55D6-94ED-9547F5F36AFE}"
+          p:after="*[1=2]"
+          s:ds="{CF605225-D3B5-54DA-8855-EE88B5768642}"
+          s:id="{2B5849AD-0D41-538A-B3C1-4CAABB8BC1B9}"
+          s:par=""
+          s:ph="/headless-header/nav-mega-columns-1" />
+      </d>
+    </r>
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: 31e8f8cf-ac24-4267-adb5-db90b1a565f1
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Partial for headless-header; rendering dom-security-navigation ({E74FC60D-A604-57E7-B721-16E103FB4757})"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014322Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ef60b3de-f7a8-4869-9001-c3c85b1ab2b0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261003T014329Z
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Gedeeltelijk voor headless-header; rendering dom-security-navigation ({E74FC60D-A604-57E7-B721-16E103FB4757})"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014322Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ef60b3de-f7a8-4869-9001-c3c85b1ab2b0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261003T014329Z
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Partiel pour headless-header ; rendu de dom-security-navigation ({E74FC60D-A604-57E7-B721-16E103FB4757})"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261003T014322Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\tY79QRZt37uNpHBne5Ezny2Kk8zJtKcy
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ef60b3de-f7a8-4869-9001-c3c85b1ab2b0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261003T014329Z

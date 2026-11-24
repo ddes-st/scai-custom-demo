@@ -1,0 +1,201 @@
+---
+ID: "f3c6d423-29cf-599c-853b-e473af2505e0"
+Parent: "6ac334cc-d9a9-5b57-be33-ed49a3bf6014"
+Template: "7564b3b1-4c71-5b14-b46e-13c385538806"
+Path: "/sitecore/content/domsecurity/domsecurity-com/Data/Navigations/Main Navigation"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "22dbc66d-3065-5bb9-97a0-2501a2551f44"
+      Hint: Logo
+      Value: "<image mediaid=\"{E8CE5B12-237F-5666-A26E-DB972B3BCCCF}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "83980194-5e83-587e-815d-c577a526927b"
+      Hint: Home Link
+      Value: "<link text=\"home\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "f693c36d-bb10-5944-864f-c3eb1f6879d9"
+      Hint: Homeowners Link
+      Value: "<link text=\"Homeowners\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+    - ID: "c6b58918-8fe5-5f4d-8934-1ba5b2badc29"
+      Hint: Professionals Link
+      Value: "<link text=\"Professionals\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"
+    - ID: "57bdd0c4-719b-5ce6-8695-4094d6923bfc"
+      Hint: Industry Link
+      Value: "<link text=\"Industry\" linktype=\"internal\" url=\"/industry\" anchor=\"\" target=\"\" id=\"{5EA4F723-CE22-54B5-87B9-8790F11DE650}\" />"
+    - ID: "360e37a7-9497-5e03-b2fe-4e4d7ce2bc0f"
+      Hint: Products Label
+      Value: Products
+    - ID: "fd16c99c-87b2-5ef8-b4fd-dad92394a7c2"
+      Hint: Service Link
+      Value: "<link text=\"Service &amp; Support\" linktype=\"internal\" url=\"/service-and-support\" anchor=\"\" target=\"\" id=\"{76FDA704-EB18-5016-8CD7-9518E6AF95D8}\" />"
+    - ID: "1d37ec4c-6c9e-5caf-8687-25727ca0c8f9"
+      Hint: About Link
+      Value: "<link text=\"About Us\" linktype=\"internal\" url=\"/about-us\" anchor=\"\" target=\"\" id=\"{42ED1A49-77C0-5887-927E-845E0D3A5F6C}\" />"
+    - ID: "af551b6c-280b-5a88-ad4e-90dd8d6212c0"
+      Hint: Newsroom Link
+      Value: "<link text=\"Newsroom\" linktype=\"internal\" url=\"/newsroom\" anchor=\"\" target=\"\" id=\"{9F92A889-B13D-53C9-9B1C-59C4B1CB965F}\" />"
+    - ID: "81eff8a9-41f9-5be4-8f9d-eaec2abbd9a2"
+      Hint: Search Label
+      Value: Search
+    - ID: "798239e4-e1ce-52c5-8096-cccb7fa47b4a"
+      Hint: Language En
+      Value: "<link text=\"en\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "d2760a6d-3e5c-5434-95dd-fbcb8dd074ef"
+      Hint: Language Fr
+      Value: "<link text=\"fr\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "71095af2-5676-505d-ba8e-ea69bea695a3"
+      Hint: Language Nl
+      Value: "<link text=\"nl\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "974717f7-0025-55bb-95b9-227aef0f17de"
+      Hint: Category Help Link
+      Value: "<link text=\"Don't know the meaning of a category?\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69d44697-e0f6-50f8-92d1-015a4734619c"
+      Hint: Homeowner Highlight Label
+      Value: Highlight Homeowners Products
+- Language: "nl-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "22dbc66d-3065-5bb9-97a0-2501a2551f44"
+      Hint: Logo
+      Value: "<image mediaid=\"{E8CE5B12-237F-5666-A26E-DB972B3BCCCF}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "83980194-5e83-587e-815d-c577a526927b"
+      Hint: Home Link
+      Value: "<link text=\"Startpagina\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "f693c36d-bb10-5944-864f-c3eb1f6879d9"
+      Hint: Homeowners Link
+      Value: "<link text=\"Homeowners\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+    - ID: "c6b58918-8fe5-5f4d-8934-1ba5b2badc29"
+      Hint: Professionals Link
+      Value: "<link text=\"Professionals\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"
+    - ID: "57bdd0c4-719b-5ce6-8695-4094d6923bfc"
+      Hint: Industry Link
+      Value: "<link text=\"industry\" linktype=\"internal\" url=\"/industry\" anchor=\"\" target=\"\" id=\"{5EA4F723-CE22-54B5-87B9-8790F11DE650}\" />"
+    - ID: "360e37a7-9497-5e03-b2fe-4e4d7ce2bc0f"
+      Hint: Products Label
+      Value: Products
+    - ID: "fd16c99c-87b2-5ef8-b4fd-dad92394a7c2"
+      Hint: Service Link
+      Value: "<link text=\"Service &amp; Support\" linktype=\"internal\" url=\"/service-and-support\" anchor=\"\" target=\"\" id=\"{76FDA704-EB18-5016-8CD7-9518E6AF95D8}\" />"
+    - ID: "1d37ec4c-6c9e-5caf-8687-25727ca0c8f9"
+      Hint: About Link
+      Value: "<link text=\"About Us\" linktype=\"internal\" url=\"/about-us\" anchor=\"\" target=\"\" id=\"{42ED1A49-77C0-5887-927E-845E0D3A5F6C}\" />"
+    - ID: "af551b6c-280b-5a88-ad4e-90dd8d6212c0"
+      Hint: Newsroom Link
+      Value: "<link text=\"Newsroom\" linktype=\"internal\" url=\"/newsroom\" anchor=\"\" target=\"\" id=\"{9F92A889-B13D-53C9-9B1C-59C4B1CB965F}\" />"
+    - ID: "81eff8a9-41f9-5be4-8f9d-eaec2abbd9a2"
+      Hint: Search Label
+      Value: Search
+    - ID: "798239e4-e1ce-52c5-8096-cccb7fa47b4a"
+      Hint: Language En
+      Value: "<link text=\"en\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "d2760a6d-3e5c-5434-95dd-fbcb8dd074ef"
+      Hint: Language Fr
+      Value: "<link text=\"fr\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "71095af2-5676-505d-ba8e-ea69bea695a3"
+      Hint: Language Nl
+      Value: "<link text=\"nl\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "974717f7-0025-55bb-95b9-227aef0f17de"
+      Hint: Category Help Link
+      Value: "<link text=\"Don't know the meaning of a category?\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69d44697-e0f6-50f8-92d1-015a4734619c"
+      Hint: Homeowner Highlight Label
+      Value: Producten voor huiseigenaars in de kijker zetten
+- Language: "fr-BE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Navigation
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260101T120000Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: BQ
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: BQ
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260101T120000Z
+    - ID: "22dbc66d-3065-5bb9-97a0-2501a2551f44"
+      Hint: Logo
+      Value: "<image mediaid=\"{E8CE5B12-237F-5666-A26E-DB972B3BCCCF}\" alt=\"DOM Hoberg Logo\" />"
+    - ID: "83980194-5e83-587e-815d-c577a526927b"
+      Hint: Home Link
+      Value: "<link text=\"Accueil\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "f693c36d-bb10-5944-864f-c3eb1f6879d9"
+      Hint: Homeowners Link
+      Value: "<link text=\"Propriétaires de logement\" linktype=\"internal\" url=\"/homeowners\" anchor=\"\" target=\"\" id=\"{32D4DC0F-9C16-5F07-8A03-63EB8C2134BD}\" />"
+    - ID: "c6b58918-8fe5-5f4d-8934-1ba5b2badc29"
+      Hint: Professionals Link
+      Value: "<link text=\"Professionnels\" linktype=\"internal\" url=\"/professionals\" anchor=\"\" target=\"\" id=\"{FD5488A5-0919-5A4E-ABD0-20E456B2D331}\" />"
+    - ID: "57bdd0c4-719b-5ce6-8695-4094d6923bfc"
+      Hint: Industry Link
+      Value: "<link text=\"secteur\" linktype=\"internal\" url=\"/industry\" anchor=\"\" target=\"\" id=\"{5EA4F723-CE22-54B5-87B9-8790F11DE650}\" />"
+    - ID: "360e37a7-9497-5e03-b2fe-4e4d7ce2bc0f"
+      Hint: Products Label
+      Value: Produits
+    - ID: "fd16c99c-87b2-5ef8-b4fd-dad92394a7c2"
+      Hint: Service Link
+      Value: "<link text=\"Service &amp; assistance\" linktype=\"internal\" url=\"/service-and-support\" anchor=\"\" target=\"\" id=\"{76FDA704-EB18-5016-8CD7-9518E6AF95D8}\" />"
+    - ID: "1d37ec4c-6c9e-5caf-8687-25727ca0c8f9"
+      Hint: About Link
+      Value: "<link text=\"À propos de nous\" linktype=\"internal\" url=\"/about-us\" anchor=\"\" target=\"\" id=\"{42ED1A49-77C0-5887-927E-845E0D3A5F6C}\" />"
+    - ID: "af551b6c-280b-5a88-ad4e-90dd8d6212c0"
+      Hint: Newsroom Link
+      Value: "<link text=\"Salle de presse\" linktype=\"internal\" url=\"/newsroom\" anchor=\"\" target=\"\" id=\"{9F92A889-B13D-53C9-9B1C-59C4B1CB965F}\" />"
+    - ID: "81eff8a9-41f9-5be4-8f9d-eaec2abbd9a2"
+      Hint: Search Label
+      Value: Rechercher
+    - ID: "798239e4-e1ce-52c5-8096-cccb7fa47b4a"
+      Hint: Language En
+      Value: "<link text=\"en\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "d2760a6d-3e5c-5434-95dd-fbcb8dd074ef"
+      Hint: Language Fr
+      Value: "<link text=\"fr\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "71095af2-5676-505d-ba8e-ea69bea695a3"
+      Hint: Language Nl
+      Value: "<link text=\"nl\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "974717f7-0025-55bb-95b9-227aef0f17de"
+      Hint: Category Help Link
+      Value: "<link text=\"Vous ne connaissez pas la signification d’une catégorie ?\" linktype=\"internal\" url=\"/\" anchor=\"\" target=\"\" id=\"{9016EDE5-DFB5-4660-9E56-5C521738E3D7}\" />"
+    - ID: "69d44697-e0f6-50f8-92d1-015a4734619c"
+      Hint: Homeowner Highlight Label
+      Value: Mettre en avant les produits pour propriétaires
