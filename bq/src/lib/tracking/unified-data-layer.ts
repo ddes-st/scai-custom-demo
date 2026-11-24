@@ -261,8 +261,8 @@ export function pushProfileSnapshot(profile: DemoProfile = DEMO_PROFILE): void {
 
 /**
  * Once per browser session, publish the audience already stored for this
- * browser. The payload is built when the queued call runs, so a Professional
- * switch made before the seed is sent is not overwritten with customer.
+ * browser. The payload is built when the queued call runs, so a login that
+ * sets professional before the seed is sent is not overwritten with customer.
  */
 export function seedCustomerProfile(): void {
   if (typeof window === 'undefined') return;
@@ -278,8 +278,9 @@ export function seedCustomerProfile(): void {
 let loginIdentitySentThisLoad = false;
 let loginIdentityInFlight: Promise<boolean> | null = null;
 
-function sendLoginIdentity(audience: DemoAudience, profile: DemoProfile): void {
-  if (loginIdentitySentThisLoad || loginIdentityInFlight) return;
+function sendLoginIdentity(audience: DemoAudience, profile: DemoProfile): Promise<boolean> {
+  if (loginIdentitySentThisLoad) return Promise.resolve(true);
+  if (loginIdentityInFlight) return loginIdentityInFlight;
   loginIdentityInFlight = enqueueIdentity(() =>
     loginIdentityPayload(
       profile,
@@ -296,6 +297,7 @@ function sendLoginIdentity(audience: DemoAudience, profile: DemoProfile): void {
     .finally(() => {
       loginIdentityInFlight = null;
     });
+  return loginIdentityInFlight;
 }
 
 /** Header Log in button. The form submit sends DOMSECURITY:LOGIN separately. */
@@ -305,24 +307,20 @@ export function pushLoginOpen(): void {
   });
 }
 
-export function pushLoginToProfile(
-  audience: DemoAudience,
-  profile: DemoProfile = DEMO_PROFILE,
-): void {
+/** Successful login identifies the visitor as a professional. */
+export function pushLoginToProfile(profile: DemoProfile = DEMO_PROFILE): Promise<boolean> {
   void safeEvent(UDL_EVENTS.login, {
     accountStatus: 'logged_in',
-    [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+    [PROFILE_ATTRIBUTES.primaryAudience]: 'professional',
     email: profile.email.trim().toLowerCase(),
     customerNumber: profile.customerNumber,
   });
-  sendLoginIdentity(audience, profile);
+  return sendLoginIdentity('professional', profile);
 }
 
-export function ensureLoginIdentityFromSession(
-  audience: DemoAudience,
-  profile: DemoProfile = DEMO_PROFILE,
-): void {
-  sendLoginIdentity(audience, profile);
+export function ensureLoginIdentityFromSession(profile: DemoProfile = DEMO_PROFILE): void {
+  if (!getDemoSession().isLoggedIn) return;
+  void sendLoginIdentity('professional', profile);
 }
 
 export function clearLoginIdentityGuard(): void {
@@ -330,23 +328,22 @@ export function clearLoginIdentityGuard(): void {
   loginIdentityInFlight = null;
 }
 
-export function pushLogoutToProfile(
-  audience: DemoAudience,
-  profile: DemoProfile = DEMO_PROFILE,
-): void {
-  void enqueueIdentity(() =>
+/** Logout returns the visitor to the customer audience. */
+export function pushLogoutToProfile(profile: DemoProfile = DEMO_PROFILE): Promise<boolean> {
+  const saved = enqueueIdentity(() =>
     loginIdentityPayload(
       profile,
       buildProfileExtension({
-        [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+        [PROFILE_ATTRIBUTES.primaryAudience]: DEFAULT_PRIMARY_AUDIENCE,
         accountStatus: 'logged_out',
       }),
     ),
   );
   void safeEvent(UDL_EVENTS.logout, {
     accountStatus: 'logged_out',
-    [PROFILE_ATTRIBUTES.primaryAudience]: audience,
+    [PROFILE_ATTRIBUTES.primaryAudience]: DEFAULT_PRIMARY_AUDIENCE,
   });
+  return saved;
 }
 
 export function pushAudienceToProfile(

@@ -78,6 +78,17 @@ export const landingBandDefinition = {
     { name: "CardGrid" },
     { name: "Steps" },
     { name: "Cta" },
+    { name: "FullscreenHero" },
+    { name: "SplitCopy" },
+    { name: "IconRow" },
+    { name: "Zigzag" },
+    { name: "LogoStrip" },
+    { name: "OptionRow" },
+    { name: "Comparison" },
+    { name: "OverlayCta" },
+    { name: "MediaSplit" },
+    { name: "ProductCards" },
+    { name: "Brochure" },
   ],
   placeholders: [
     {

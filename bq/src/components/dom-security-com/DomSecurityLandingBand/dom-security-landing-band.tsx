@@ -521,3 +521,16 @@ export const Default = (props: LandingBandProps) => renderBand(props, "Default")
 export const CardGrid = (props: LandingBandProps) => renderBand(props, "CardGrid");
 export const Steps = (props: LandingBandProps) => renderBand(props, "Steps");
 export const Cta = (props: LandingBandProps) => renderBand(props, "Cta");
+
+/** Access-control sections. Same Landing Band datasource (Title, Body, Image, Link, cards). */
+export const FullscreenHero = AccessHero;
+export const SplitCopy = AccessIntro;
+export const IconRow = AccessIcons;
+export const Zigzag = AccessBenefits;
+export const LogoStrip = AccessLogos;
+export const OptionRow = AccessManage;
+export const Comparison = AccessCompare;
+export const OverlayCta = AccessChooser;
+export const MediaSplit = AccessIntegrate;
+export const ProductCards = AccessProducts;
+export const Brochure = AccessBrochure;

@@ -3,7 +3,6 @@ import type { ImageField, LinkField, TextField } from "@sitecore-content-sdk/nex
 import componentMap from ".sitecore/component-map";
 import type { ComponentWithContextProps } from "lib/component-props";
 import { cn } from "components/lib/utils";
-import DemoAudienceToggle from "../_demo/demo-audience-toggle";
 import NavigationChrome from "./dom-security-navigation.client";
 import { navItemClassName } from "./nav-item-styles.util";
 import { shouldOverlapMainHero } from "./nav-overlap.util";
@@ -105,10 +104,6 @@ export const Default = (props: NavigationProps) => {
             className="h-14 w-auto object-contain max-lg:mx-auto lg:h-full lg:w-full lg:object-contain lg:object-left"
           />
         </Link>
-
-        {/* Demo audience switch — sit beside the logo (left), not in the top-right utilities. */}
-        {/* Desktop: align with first L1 letter = lg:pl-[100px] + nav link px-[15px]. */}
-        <DemoAudienceToggle className="relative z-30 max-lg:order-first max-lg:mr-auto lg:absolute lg:left-[115px] lg:top-[0.35rem]" />
 
         <NavigationChrome
           overlap={overlap}

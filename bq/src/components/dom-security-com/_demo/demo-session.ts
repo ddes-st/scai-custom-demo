@@ -35,20 +35,14 @@ function readStorage(): DemoSessionState {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_STATE;
     const parsed = JSON.parse(raw) as Partial<DemoSessionState>;
-    const audience: DemoAudience =
-      parsed.audience === 'professional' ? 'professional' : 'customer';
     if (parsed.isLoggedIn) {
       return {
         isLoggedIn: true,
-        audience,
+        audience: 'professional',
         profile: DEMO_PROFILE,
       };
     }
-    return {
-      isLoggedIn: false,
-      audience,
-      profile: null,
-    };
+    return DEFAULT_STATE;
   } catch {
     return DEFAULT_STATE;
   }
@@ -100,30 +94,19 @@ export function getDemoSession(): DemoSessionState {
 
 export function loginDemo(email: string, password: string): boolean {
   if (!isValidDemoLogin(email, password)) return false;
-  const current = getSnapshot();
   writeState({
     isLoggedIn: true,
-    audience: current.audience,
+    audience: 'professional',
     profile: DEMO_PROFILE,
   });
   return true;
 }
 
 export function logoutDemo(): void {
-  const current = getSnapshot();
   writeState({
     isLoggedIn: false,
-    audience: current.audience,
+    audience: 'customer',
     profile: null,
-  });
-}
-
-export function setDemoAudience(audience: DemoAudience): void {
-  const current = getSnapshot();
-  writeState({
-    ...current,
-    audience,
-    profile: current.isLoggedIn ? DEMO_PROFILE : null,
   });
 }
 
@@ -132,12 +115,10 @@ export function useDemoSession() {
 
   const login = useCallback((email: string, password: string) => loginDemo(email, password), []);
   const logout = useCallback(() => logoutDemo(), []);
-  const setAudience = useCallback((audience: DemoAudience) => setDemoAudience(audience), []);
 
   return {
     ...session,
     login,
     logout,
-    setAudience,
   };
 }

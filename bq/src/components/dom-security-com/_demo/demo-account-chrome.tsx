@@ -60,8 +60,8 @@ export default function DemoAccountChrome({
   // Re-identify when a persisted demo session is restored (deduped across mounts).
   useEffect(() => {
     if (!isLoggedIn) return;
-    ensureLoginIdentityFromSession(audience, profile || DEMO_PROFILE);
-  }, [isLoggedIn, audience, profile]);
+    ensureLoginIdentityFromSession(profile || DEMO_PROFILE);
+  }, [isLoggedIn, profile]);
 
   const handleLoginSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -71,18 +71,23 @@ export default function DemoAccountChrome({
       setError('Invalid email or password. Use the demo account credentials.');
       return;
     }
-    pushLoginToProfile(audience, DEMO_PROFILE);
     setLoginOpen(false);
     setEmail('');
     setPassword('');
+    void pushLoginToProfile(DEMO_PROFILE).then((saved) => {
+      if (saved) window.location.reload();
+    });
   };
 
   const handleLogout = () => {
-    pushLogoutToProfile(audience, profile || DEMO_PROFILE);
+    const loggedOutProfile = profile || DEMO_PROFILE;
     clearLoginIdentityGuard();
     logout();
     setMenuOpen(false);
     setProfileOpen(false);
+    void pushLogoutToProfile(loggedOutProfile).then((saved) => {
+      if (saved) window.location.reload();
+    });
   };
 
   const accountLabel = isLoggedIn
