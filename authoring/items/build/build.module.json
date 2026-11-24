@@ -1,0 +1,15 @@
+{
+  "$schema": "../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "Build",
+  "items": {
+    "path": "items",
+    "includes": [
+      {
+        "name": "build",
+        "path": "/sitecore/templates/Project/build",
+        "scope": "SingleItem",
+        "allowedPushOperations": "CreateAndUpdate"
+      }
+    ]
+  }
+}

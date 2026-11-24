@@ -74,7 +74,7 @@
     }
   }, 
   "deployItems": {
-    "modules": []
+    "modules": ["Build"]
   },
   "postActions": {
     "actions": {
